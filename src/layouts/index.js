@@ -5,7 +5,7 @@ import './reset.css'
 import './index.css'
 import './variables.css'
 
-import Header from '../components/header/header'
+import Header from '../components/sections/header/header'
 
 const Layout = ({ children, data }) => (
   <div>

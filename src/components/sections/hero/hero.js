@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'react-emotion'
 import heroBg from './hero-bg.svg'
-import ContentContainer from '../ui/content-container'
-import Button from '../ui/button'
+import ContentContainer from '../../ui/content-container'
+import Button from '../../ui/button'
 import gitHubLogo from './github-logo.svg'
 
 const Hero = styled('section')({

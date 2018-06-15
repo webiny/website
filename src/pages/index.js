@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import Hero from '../components/hero/hero'
+import Hero from '../components/sections/hero/hero'
 
 const IndexPage = () => (
   <div>

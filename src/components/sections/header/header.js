@@ -4,8 +4,8 @@ import Link from 'gatsby-link'
 import { withPrefix } from 'gatsby-link'
 import logo from './webiny-logo.svg'
 import logoOrange from './webiny-orange-logo.svg'
-import Button from '../ui/button'
-import ContentContainer from '../ui/content-container'
+import Button from '../../ui/button'
+import ContentContainer from '../../ui/content-container'
 
 const NavBar = styled('div')({
   margin: '0 auto',
