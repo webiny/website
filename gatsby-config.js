@@ -10,5 +10,12 @@ module.exports = {
         fonts: ['source sans pro:300,400,500,600,700'],
       },
     },
+    {
+      resolve: 'gatsby-plugin-emotion',
+      options: {
+        sourceMap: true,
+        autoLabel: true,
+      },
+    },
   ],
 }

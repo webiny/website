@@ -1,7 +1,0 @@
-.hero {
-  width: 100%;
-  height: 100vh;
-  /*background-image: linear-gradient(-135deg, #7117ea 0%, #ea6060 68%);*/
-  background: url('./hero-bg.svg') no-repeat center center fixed;
-  background-size: cover;
-}
