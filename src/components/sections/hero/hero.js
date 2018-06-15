@@ -40,7 +40,7 @@ const Link = styled('a')({
   fontSize: 14,
   color: '#FFFFFF',
   textAlign: 'center',
-  fontWeight: 300,
+  fontWeight: 400,
   margin: '15px auto',
   display: 'block',
   textDecoration: 'none',

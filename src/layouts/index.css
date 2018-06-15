@@ -15,6 +15,11 @@ body {
   font-weight: 400;
   line-height: 1.45;
   color: #333;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.005);
+  backface-visibility: hidden;
 }
 
 p {

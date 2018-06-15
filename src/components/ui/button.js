@@ -20,6 +20,7 @@ const ButtonInner = styled('a')(
     border: '1px solid #cdcdcd',
     boxSizing: 'border-box',
     textDecoration: 'none',
+    fontWeight: 600,
     '&:hover': {
       boxShadow: '0px 0px 0px 3px #3FBFB0',
     },

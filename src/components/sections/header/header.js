@@ -35,7 +35,7 @@ const MenuItem = styled('li')({
   textAlign: 'center',
   fontSize: 16,
   a: {
-    fontWeight: 500,
+    fontWeight: 600,
     textDecoration: 'none',
     color: '#fff',
   },
@@ -55,6 +55,8 @@ const HeaderContainer = styled('header')(
     position: props.isSticky ? 'fixed' : 'absolute',
     backgroundColor: props.isSticky ? '#fff' : 'transparent',
     boxShadow: props.isSticky && '0 0 1px 1px rgba(34,45,57,.15)',
+    paddingTop: props.isSticky ? 10 : 20,
+    paddingBottom: props.isSticky ? 10 : 20,
     [MenuItem]: {
       a: {
         color: props.isSticky ? '#000' : '#fff',
