@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="12px" viewBox="0 0 8 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>bullet-arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home-v1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-page" transform="translate(-300.000000, -1148.000000)" fill="#FA5A28" fill-rule="nonzero">
+            <g id="CMS" transform="translate(0.000000, 525.000000)">
+                <g id="Tabs---First-Set" transform="translate(300.000000, 480.000000)">
+                    <g id="Simple-Editor" transform="translate(0.000000, 137.000000)">
+                        <g id="bullet-arrow" transform="translate(0.000000, 6.000000)">
+                            <path d="M0.381818182,9.96 L4.58181818,6 L0.381818182,2.04 C-0.127272727,1.56 -0.127272727,0.84 0.381818182,0.36 C0.890909091,-0.12 1.65454545,-0.12 2.16363636,0.36 L7.25454545,5.16 C7.76363636,5.64 7.76363636,6.36 7.25454545,6.84 L2.16363636,11.64 C1.90909091,11.88 1.65454545,12 1.27272727,12 C0.890909091,12 0.636363636,11.88 0.381818182,11.64 C-0.127272727,11.16 -0.127272727,10.44 0.381818182,9.96 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

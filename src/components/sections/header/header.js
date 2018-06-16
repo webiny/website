@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'react-emotion'
 import Link from 'gatsby-link'
 import { withPrefix } from 'gatsby-link'
-import logo from './webiny-logo.svg'
-import logoOrange from './webiny-orange-logo.svg'
+import theme from '../../utils/theme'
+import logo from './assets/webiny-logo.svg'
+import logoOrange from './assets/webiny-orange-logo.svg'
 import Button from '../../ui/button'
 import ContentContainer from '../../ui/content-container'
 
@@ -33,9 +34,9 @@ const Menu = styled('ul')({
 const MenuItem = styled('li')({
   marginLeft: 25,
   textAlign: 'center',
-  fontSize: 16,
+  fontSize: theme.fontSize.navMenuItem,
   a: {
-    fontWeight: 600,
+    fontWeight: theme.fontWeight.semiBold,
     textDecoration: 'none',
     color: '#fff',
   },
@@ -66,15 +67,14 @@ const HeaderContainer = styled('header')(
 )
 
 class Header extends React.Component {
-  constructor(props) {
-    super(props)
-    this.didScroll = false
-    this.state = { isSticky: false }
+  didScroll = false
+  state = { isSticky: false }
 
+  componentDidMount() {
     this.initScrollListener()
   }
 
-  initScrollListener() {
+  initScrollListener = () => {
     window.onscroll = () => {
       this.didScroll = true
     }

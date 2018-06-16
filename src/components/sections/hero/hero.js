@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'react-emotion'
-import heroBg from './hero-bg.svg'
+import heroBg from './assets/hero-bg.svg'
+import theme from '../../utils/theme'
 import ContentContainer from '../../ui/content-container'
 import Button from '../../ui/button'
-import gitHubLogo from './github-logo.svg'
+import gitHubLogo from './assets/github-logo.svg'
 
 const Hero = styled('section')({
   width: '100%',
-  minHeight: '100vh',
+  minHeight: 'calc(100vh - 150px)',
   background: 'url(' + heroBg + ') no-repeat left top fixed',
   backgroundSize: 'cover',
   paddingTop: 150,
@@ -15,8 +16,8 @@ const Hero = styled('section')({
 })
 
 const Title = styled('h1')({
-  fontSize: 38,
-  fontWeight: 600,
+  fontSize: theme.fontSize.h1,
+  fontWeight: theme.fontWeight.semiBold,
   marginBottom: 40,
 })
 
@@ -26,22 +27,22 @@ const LeftSide = styled('div')({
 })
 
 const SubText = styled('p')({
-  fontSize: 18,
+  fontSize: theme.fontSize.subText,
+  fontWeight: theme.fontWeight.light,
   lineHeight: '25px',
-  fontWeight: 300,
   marginBottom: 40,
 })
 
 const SemiBold = styled('span')({
-  fontWeight: 600,
+  fontWeight: theme.fontWeight.semiBold,
 })
 
 const Link = styled('a')({
   fontSize: 14,
   color: '#FFFFFF',
   textAlign: 'center',
-  fontWeight: 400,
-  margin: '15px auto',
+  fontWeight: theme.fontWeight.regular,
+  margin: '15px auto 0 auto',
   display: 'block',
   textDecoration: 'none',
   position: 'relative',
