@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home-v1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-page" transform="translate(-302.000000, -3549.000000)">
+            <g id="Made-for-devs" transform="translate(72.000000, 2829.000000)">
+                <g id="Features" transform="translate(205.000000, 383.000000)">
+                    <g id="UI-Components" transform="translate(0.000000, 310.000000)">
+                        <g id="Icon" transform="translate(25.000000, 27.000000)">
+                            <circle id="Oval-2" fill="#BEE9FF" cx="25" cy="25" r="25"></circle>
+                            <g id="baseline-mouse-24px" transform="translate(8.000000, 8.000000)">
+                                <polygon id="Shape" points="0 0 35 0 35 35 0 35"></polygon>
+                                <path d="M18.9583333,1.56041667 L18.9583333,13.125 L29.1666667,13.125 C29.1666667,7.175 24.71875,2.275 18.9583333,1.56041667 Z M5.83333333,21.875 C5.83333333,28.3208333 11.0541667,33.5416667 17.5,33.5416667 C23.9458333,33.5416667 29.1666667,28.3208333 29.1666667,21.875 L29.1666667,16.0416667 L5.83333333,16.0416667 L5.83333333,21.875 Z M16.0416667,1.56041667 C10.28125,2.275 5.83333333,7.175 5.83333333,13.125 L16.0416667,13.125 L16.0416667,1.56041667 Z" id="Shape" fill="#2E8DBD" fill-rule="nonzero"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

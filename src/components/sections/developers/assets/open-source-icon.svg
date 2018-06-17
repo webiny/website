@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home-v1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-page" transform="translate(-1003.000000, -3549.000000)" fill="#E04F5F">
+            <g id="Made-for-devs" transform="translate(72.000000, 2829.000000)">
+                <g id="Features" transform="translate(205.000000, 383.000000)">
+                    <g id="Open-Source" transform="translate(705.000000, 310.000000)">
+                        <g id="Icon" transform="translate(21.000000, 27.000000)">
+                            <circle id="Oval-2" fill-opacity="0.285552536" cx="25" cy="25" r="25"></circle>
+                            <g id="Audio_video-34" transform="translate(8.000000, 12.000000)" fill-rule="nonzero">
+                                <path d="M31.189596,3.04716556 C27.2718278,-0.870715232 20.919457,-0.870715232 17.0016887,3.04716556 L16.9984238,3.04716556 C13.0804305,-0.870715232 6.72817219,-0.870715232 2.81040397,3.04716556 C-1.1075894,6.96504636 -0.542649007,12.8240795 2.81040397,17.2350728 C6.36137748,21.906245 12.8447947,29.6128742 16.9984238,29.6128742 L17.0016887,29.6128742 C21.1554305,29.6128742 27.6386225,21.906245 31.189596,17.2350728 C34.5427616,12.8241921 35.1074768,6.96515894 31.189596,3.04716556 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

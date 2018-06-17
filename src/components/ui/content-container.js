@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'react-emotion'
+import theme from '../utils/theme'
 
 const ContentContainer = styled.div({
-  width: 1100,
+  width: theme.contentWidth,
   margin: '0 auto',
 })
 

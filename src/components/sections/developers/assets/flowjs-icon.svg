@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home-v1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-page" transform="translate(-1007.000000, -3863.000000)">
+            <g id="Made-for-devs" transform="translate(72.000000, 2829.000000)">
+                <g id="Features" transform="translate(205.000000, 383.000000)">
+                    <g id="Flow-Js" transform="translate(705.000000, 624.000000)">
+                        <g id="Icon" transform="translate(25.000000, 27.000000)">
+                            <circle id="Oval-2" fill="#EEF9FD" cx="25" cy="25" r="25"></circle>
+                            <g id="flow-logo" transform="translate(9.000000, 7.000000)" fill="#35C2FF" fill-rule="nonzero">
+                                <polyline id="Shape" points="23.3333333 34.1666667 23.3333333 25 14.1666667 25 23.3332204 34.1665547"></polyline>
+                                <polyline id="Shape" points="24.1665528 29.1666667 24.1665528 19.1666667 14.1666667 19.1666667 24.1666667 29.1666667"></polyline>
+                                <polyline id="Shape" points="18.3333333 25 18.3333333 35 28.3333333 35 18.3333333 25"></polyline>
+                                <polyline id="Shape" points="21.6666667 20 21.6666667 12.5 14.1666667 12.5 21.6666667 20"></polyline>
+                                <polyline id="Shape" points="26.6666667 18.3333333 26.6666667 8.33333333 16.6666667 8.33333333 26.6666667 18.3333333"></polyline>
+                                <polyline id="Shape" points="10 0 10 10 20 10 10 0"></polyline>
+                                <polyline id="Shape" points="11.6666667 15.8313006 11.6666667 5.83333333 0 5.83333333 9.60619529 15.8333333 11.6666667 15.8313006"></polyline>
+                                <polyline id="Shape" points="11.6666667 35 11.6666667 23.3333333 0 23.3333333 11.6666667 35"></polyline>
+                                <polyline id="Shape" points="11.6666667 25.8333333 11.6666667 15.8333333 1.66666667 15.8333333 11.6666667 25.8333333"></polyline>
+                                <polyline id="Shape" points="14.1666667 12.5 14.1666667 22.5 24.1666667 22.5 14.1666667 12.5"></polyline>
+                                <path d="M11.5467405,13.1952276 L11.5467405,3.33333333 L1.66666667,3.33333333 L11.5467405,13.1950048 M14.2865929,25.1382171 L14.2865929,35 L24.1666667,35 L14.2865929,25.1382171" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

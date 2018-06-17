@@ -58,8 +58,10 @@ const Line = styled('div')({
   borderBottom: '1px solid ' + theme.color.darkGray,
   position: 'absolute',
   top: '50%',
-  width: '100%',
+  left: 'calc(50% - ' + theme.contentWidth / 2 + 'px)',
+  width: theme.contentWidth,
   zIndex: 9,
+  margin: '0 auto',
 })
 
 const PluginsLogos = styled('img')({
