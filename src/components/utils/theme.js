@@ -7,6 +7,7 @@ export default {
     grayText: '#707070',
     primaryDark: '#FA5A28',
     secondaryDark: '#20C6B1',
+    codeBg: '#272823',
   },
   fontWeight: {
     bold: 700,

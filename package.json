@@ -7,15 +7,18 @@
     "emotion": "^9.2.3",
     "emotion-server": "^9.2.3",
     "emotion-theming": "^9.2.3",
-    "gatsby": "^1.9.247",
+    "express-graphql": "^0.6.6",
+    "gatsby": "^1.9.272",
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-emotion": "^1.1.17",
     "gatsby-plugin-google-fonts": "0.0.4",
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-typography": "^1.7.18",
+    "isomorphic-fetch": "^2.2.1",
     "react-addons-css-transition-group": "^15.6.2",
     "react-emotion": "^9.2.3",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-syntax-highlighter": "^7.0.4"
   },
   "keywords": [
     "gatsby"

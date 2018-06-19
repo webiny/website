@@ -120,7 +120,7 @@ class Gallery extends React.Component {
       // once the animation is done, add the new image to the top image
       //this.topImage = this.state.items[index].image
       imageTopNode.classList.remove('inactive')
-      this.setState({ activeItem: index }, () => {})
+      this.setState({ activeItem: index })
     }, 250)
   }
 

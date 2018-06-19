@@ -5,6 +5,7 @@ import theme from '../utils/theme'
 const ContentContainer = styled.div({
   width: theme.contentWidth,
   margin: '0 auto',
+  position: 'relative',
 })
 
 export default ({ children, ...props }) => (
