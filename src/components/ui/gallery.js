@@ -89,10 +89,6 @@ class Gallery extends React.Component {
   topImage = ''
   bottomImage = ''
 
-  constructor(props) {
-    super(props)
-  }
-
   setItems = items => {
     this.bottomImage = items[this.state.activeItem].image
     this.topImage = items[this.state.activeItem].image

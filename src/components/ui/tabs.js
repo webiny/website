@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import ContentContainer from './content-container'
 import styled from 'react-emotion'
 import theme from '../utils/theme'
@@ -62,10 +61,6 @@ const TabsContentContainer = styled('div')({
 
 class Tabs extends React.Component {
   state = { items: [], activeItem: 0 }
-
-  constructor(props) {
-    super(props)
-  }
 
   setItems = items => {
     this.setState({ items })

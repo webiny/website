@@ -7,32 +7,18 @@ import './variables.css'
 
 import Header from '../components/sections/header/header'
 
-const Layout = ({ children, data }) => (
+const Layout = () => (
   <div>
     <Helmet
-      title={data.site.siteMetadata.title}
+      title="Webiny"
       meta={[
         { name: 'description', content: 'Node.js Serverless CMS' },
         { name: 'keywords', content: 'cms, serverless, nodejs, open source' },
       ]}
     />
     <Header />
-    <div>{children()}</div>
+    <div>{this.props.children}</div>
   </div>
 )
 
-Layout.propTypes = {
-  children: PropTypes.func,
-}
-
 export default Layout
-
-export const query = graphql`
-  query SiteTitleQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`

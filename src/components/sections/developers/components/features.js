@@ -1,12 +1,9 @@
 import React from 'react'
 import styled from 'react-emotion'
-import { withPrefix } from 'gatsby-link'
 
 import theme from '../../../utils/theme'
 import ContentContainer from '../../../ui/content-container'
 
-import bg from '../assets/developers-bg.svg'
-import devIcon from '../assets/developers-icon.svg'
 import serverlessIcon from '../assets/serverless-icon.svg'
 import testCoverageIcon from '../assets/test-coverage-icon.svg'
 import graphqlIcon from '../assets/graphql-icon.svg'
@@ -20,7 +17,6 @@ import ormIcon from '../assets/orm-icon.svg'
 import i18nIcon from '../assets/i18n-icon.svg'
 import securityIcon from '../assets/security-icon.svg'
 import externalLinkIcon from '../assets/external-link-symbol.svg'
-import techLogos from '../assets/tech-logos.svg'
 
 const BoxContainer = styled('div')({
   display: 'flex',
@@ -115,9 +111,15 @@ class Features extends React.Component {
               set as the minumum requirement for all the server side components.
             </BoxDescription>
             <BoxFooter>
-              <img src="https://travis-ci.org/Webiny/webiny-js.svg?branch=master" />{' '}
+              <img
+                alt="Webiny Build"
+                src="https://travis-ci.org/Webiny/webiny-js.svg?branch=master"
+              />{' '}
               &nbsp;
-              <img src="https://coveralls.io/repos/github/Webiny/webiny-js/badge.svg?branch=master" />
+              <img
+                alt="Webiny Coverage"
+                src="https://coveralls.io/repos/github/Webiny/webiny-js/badge.svg?branch=master"
+              />
             </BoxFooter>
           </Box>
           <Box>
