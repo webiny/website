@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>outline-add_circle_outline-24px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home-v1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-page" transform="translate(-277.000000, -7227.000000)">
+            <g id="FAQ-/-Patreon" transform="translate(252.000000, 6718.000000)">
+                <g id="Questions" transform="translate(0.000000, 69.000000)">
+                    <g id="Hosting-Copy" transform="translate(24.000000, 436.000000)">
+                        <g id="outline-add_circle_outline-24px" transform="translate(0.000000, 3.000000)">
+                            <g id="Bounding_Boxes">
+                                <polygon id="Shape" points="0 0 18 0 18 18 0 18"></polygon>
+                            </g>
+                            <g id="Outline" transform="translate(1.285714, 1.285714)" fill="#000000" fill-rule="nonzero">
+                                <path d="M8.48571429,3.85714286 L6.94285714,3.85714286 L6.94285714,6.94285714 L3.85714286,6.94285714 L3.85714286,8.48571429 L6.94285714,8.48571429 L6.94285714,11.5714286 L8.48571429,11.5714286 L8.48571429,8.48571429 L11.5714286,8.48571429 L11.5714286,6.94285714 L8.48571429,6.94285714 L8.48571429,3.85714286 Z M7.71428571,0 C3.456,0 0,3.456 0,7.71428571 C0,11.9725714 3.456,15.4285714 7.71428571,15.4285714 C11.9725714,15.4285714 15.4285714,11.9725714 15.4285714,7.71428571 C15.4285714,3.456 11.9725714,0 7.71428571,0 Z M7.71428571,13.8857143 C4.31228571,13.8857143 1.54285714,11.1162857 1.54285714,7.71428571 C1.54285714,4.31228571 4.31228571,1.54285714 7.71428571,1.54285714 C11.1162857,1.54285714 13.8857143,4.31228571 13.8857143,7.71428571 C13.8857143,11.1162857 11.1162857,13.8857143 7.71428571,13.8857143 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
