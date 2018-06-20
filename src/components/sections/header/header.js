@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'react-emotion'
-import Link from 'gatsby-link'
-import { withPrefix } from 'gatsby-link'
 import theme from '../../utils/theme'
 import logo from './assets/webiny-logo.svg'
 import logoOrange from './assets/webiny-orange-logo.svg'
@@ -35,11 +33,12 @@ const MenuItem = styled('li')({
   marginLeft: 25,
   textAlign: 'center',
   fontSize: theme.fontSize.navMenuItem,
-  a: {
-    fontWeight: theme.fontWeight.semiBold,
-    textDecoration: 'none',
-    color: '#fff',
-  },
+})
+
+const Link = styled('a')({
+  fontWeight: theme.fontWeight.semiBold,
+  textDecoration: 'none',
+  color: '#fff',
 })
 
 const HeaderContainer = styled('header')(
@@ -59,7 +58,7 @@ const HeaderContainer = styled('header')(
     paddingTop: props.isSticky ? 10 : 20,
     paddingBottom: props.isSticky ? 10 : 20,
     [MenuItem]: {
-      a: {
+      [Link]: {
         color: props.isSticky ? '#000' : '#fff',
       },
     },
@@ -100,31 +99,32 @@ class Header extends React.Component {
         <ContentContainer>
           <NavBar>
             <WebinyLogo alt="Webiny Home">
-              <Link to="/">
-                <img src={this.state.isSticky ? logoOrange : logo} />
+              <Link href="/">
+                <img
+                  alt="Webiny Logo"
+                  src={this.state.isSticky ? logoOrange : logo}
+                />
               </Link>
             </WebinyLogo>
 
             <Menu>
               <MenuItem>
-                <Link to="https://github.com/webiny/webiny-js/">Pricing</Link>
+                <Link href="https://github.com/webiny/webiny-js/">Pricing</Link>
               </MenuItem>
               <MenuItem>
-                <Link to="https://docs.webiny.com/">Docs</Link>
+                <Link href="https://docs.webiny.com/">Docs</Link>
               </MenuItem>
               <MenuItem>
-                <Link to="https://community.webiny.com/">Community</Link>
+                <Link href="https://community.webiny.com/">Community</Link>
               </MenuItem>
               <MenuItem>
-                <Link to="https://blog.webiny.com/">Blog</Link>
+                <Link href="https://blog.webiny.com/">Blog</Link>
               </MenuItem>
               <MenuItem>
-                <Link to="https://github.com/webiny/webiny-js/">Source</Link>
+                <Link href="https://github.com/webiny/webiny-js/">Source</Link>
               </MenuItem>
               <MenuItem>
-                <Button navBar link="#">
-                  Get Started
-                </Button>
+                <Button link="#">Get Started</Button>
               </MenuItem>
             </Menu>
           </NavBar>

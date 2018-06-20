@@ -69,7 +69,7 @@ export default ({ children, ...props }) => (
           small, by giving you all the parts you need in a single package which
           is optimized to seamlessly work together in a performant way.
         </SubText>
-        <Button link="#" fullWidth>
+        <Button link="#" style="fullWidth">
           Get Started
         </Button>
         <Link href="#">

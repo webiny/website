@@ -5,13 +5,13 @@ import theme from '../../utils/theme'
 import Features from './components/features'
 import TechTools from './components/tech-tools'
 import ShowMeCode from './components/show-me-code'
+import AsDeveloper from './components/as-developer'
 
 import bg from './assets/developers-bg.svg'
 import devIcon from './assets/developers-icon.svg'
 
 const DevelopersContainer = styled('section')({
   background: 'url(' + bg + ') no-repeat left top',
-  backgroundSize: 'cover',
   width: '100%',
   paddingTop: 50,
 })
@@ -54,6 +54,7 @@ class Developers extends React.Component {
         <Features />
         <TechTools />
         <ShowMeCode />
+        <AsDeveloper />
       </DevelopersContainer>
     )
   }

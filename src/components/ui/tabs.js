@@ -17,14 +17,14 @@ const TabsMenu = styled('ul')({
 const TabsItemTitle = styled('h4')({
   fontSize: theme.fontSize.subText,
   fontWeight: theme.fontWeight.semiBold,
-  color: theme.color.black,
+  color: theme.color.white,
   transition: 'color 250ms',
   marginBottom: 20,
 })
 
 const TabsItemSubTitle = styled('p')({
   lineHeight: '175%',
-  color: theme.color.black,
+  color: theme.color.white,
   fontSize: theme.fontSize.navMenuSubItem,
   fontWeight: theme.fontWeight.regular,
 })
@@ -44,7 +44,7 @@ const TabsItem = styled('li')({
   borderBottom: '1px solid ' + theme.color.darkGray,
   '&.active': {
     [TabsItemTitle]: {
-      color: theme.color.primaryDark,
+      color: theme.color.white,
     },
     listStyleImage: 'url(' + arrow + ')',
   },

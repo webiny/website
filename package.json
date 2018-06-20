@@ -5,6 +5,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "babel-plugin-emotion": "^9.2.0",
+    "babel-plugin-inline-react-svg": "^0.5.2",
     "emotion": "^9.2.3",
     "emotion-server": "^9.2.3",
     "emotion-theming": "^9.2.3",
@@ -15,13 +16,15 @@
     "gatsby-plugin-google-fonts": "0.0.4",
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-typography": "^1.7.18",
+    "graphql-playground-react": "^1.7.0",
     "isomorphic-fetch": "^2.2.1",
     "react": "^16.4.1",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.4.1",
     "react-emotion": "^9.2.3",
     "react-helmet": "^5.2.0",
-    "react-syntax-highlighter": "^7.0.4"
+    "react-syntax-highlighter": "^7.0.4",
+    "subscriptions-transport-ws": "^0.9.11"
   },
   "keywords": [
     "gatsby"

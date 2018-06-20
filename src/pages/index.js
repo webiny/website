@@ -3,6 +3,7 @@ import Hero from '../components/sections/hero/hero'
 import Cms from '../components/sections/cms/cms'
 import Developers from '../components/sections/developers/developers'
 import Header from '../components/sections/header/header'
+import QuickStart from '../components/sections/quick-start/quick-start'
 import Helmet from 'react-helmet'
 
 import '../layouts/reset.css'
@@ -27,6 +28,7 @@ class IndexPage extends React.Component {
         <Hero />
         <Cms />
         <Developers />
+        <QuickStart />
       </div>
     )
   }

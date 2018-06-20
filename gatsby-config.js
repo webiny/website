@@ -7,7 +7,11 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
-        fonts: ['source sans pro:300,400,500,600,700'],
+        fonts: [
+          'source sans pro:300,400,500,600,700',
+          'source code pro:400,700',
+          'open sans:300,400,600,700',
+        ],
       },
     },
     {

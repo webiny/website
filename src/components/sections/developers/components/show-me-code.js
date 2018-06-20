@@ -4,8 +4,15 @@ import ContentContainer from '../../../ui/content-container'
 import Tabs from '../../../ui/tabs'
 import theme from '../../../utils/theme'
 import CodeBlock from '../../../ui/code-block'
+import { Provider } from 'react-redux'
+import { Playground, store } from 'graphql-playground-react'
 
 import showMeCode from '../assets/show-me-code.svg'
+import uiButtonsExample from '../assets/react-ui-buttons.jpg'
+
+const ShowMeCodeContainer = styled('div')({
+  padding: '40px 0',
+})
 
 const Title = styled('h4')({
   position: 'relative',
@@ -96,6 +103,28 @@ class ContactInformation extends React.Component {
 
 export default createComponent(ContactInformation);`
 
+const ReactComponentsCode = `<Grid.Col xs={12}>
+  <Button type="primary" icon="icon-user" label="Create"/>
+  <Button type="secondary" icon="icon-plus-circled" label="Create"/>
+  <Button type="default" icon="icon-plus" label="Create"/>
+</Grid.Col>
+`
+
+const ReactComponentsImage = styled('img')({
+  display: 'block',
+  width: '100%',
+  marginTop: 25,
+  boxShadow: '0 2px 5px 0 rgba(0,0,0,0.50)',
+  borderRadius: 8,
+})
+
+const ReactComponentsExample = () => (
+  <React.Fragment>
+    <CodeBlock code={ReactComponentsCode} language="html" />
+    <ReactComponentsImage alt="React UI Example" src={uiButtonsExample} />
+  </React.Fragment>
+)
+
 class ShowMeCode extends React.Component {
   state = {
     items: [
@@ -112,29 +141,40 @@ class ShowMeCode extends React.Component {
         ),
       },
       {
+        title: 'React Components',
+        subTitle: 'Load the UI button component in several different styles.',
+        content: <ReactComponentsExample />,
+      },
+      {
         title: 'Client API',
         subTitle:
           'From the client side, call the Webiny API and load the list of all active pages.',
-        content: 'test',
+        content: (
+          <Provider store={store}>
+            <Playground endpoint="https://api.graph.cool/simple/v1/swapi" />
+          </Provider>
+        ),
       },
     ],
   }
   render() {
     return (
-      <ContentContainer>
-        <Title>
-          <LineLeft />
-          <TitleImg src={showMeCode} />
-          <LineRight />
-        </Title>
-        <SubText>
-          There is no better way to get inspired than by seeing practical code
-          examples how Webiny can help you build your next project. From server
-          side, to translations, GraphQL API, to finally the frontend, Webiny
-          covers it all.
-        </SubText>
-        <Tabs items={this.state.items} />
-      </ContentContainer>
+      <ShowMeCodeContainer>
+        <ContentContainer>
+          <Title>
+            <LineLeft />
+            <TitleImg src={showMeCode} />
+            <LineRight />
+          </Title>
+          <SubText>
+            There is no better way to get inspired than by seeing practical code
+            examples how Webiny can help you build your next project. From
+            server side, to translations, GraphQL API, to finally the frontend,
+            Webiny covers it all.
+          </SubText>
+          <Tabs items={this.state.items} />
+        </ContentContainer>
+      </ShowMeCodeContainer>
     )
   }
 }
