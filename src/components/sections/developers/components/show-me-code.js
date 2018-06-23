@@ -4,8 +4,6 @@ import ContentContainer from '../../../ui/content-container'
 import Tabs from '../../../ui/tabs'
 import theme from '../../../utils/theme'
 import CodeBlock from '../../../ui/code-block'
-import { Provider } from 'react-redux'
-import { Playground, store } from 'graphql-playground-react'
 
 import showMeCode from '../assets/show-me-code.svg'
 import uiButtonsExample from '../assets/react-ui-buttons.jpg'
@@ -149,11 +147,7 @@ class ShowMeCode extends React.Component {
         title: 'Client API',
         subTitle:
           'From the client side, call the Webiny API and load the list of all active pages.',
-        content: (
-          <Provider store={store}>
-            <Playground endpoint="https://api.graph.cool/simple/v1/swapi" />
-          </Provider>
-        ),
+        content: <ReactComponentsExample />,
       },
     ],
   }
