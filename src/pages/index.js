@@ -9,6 +9,8 @@ import Developers from '../components/sections/developers/developers'
 import Header from '../components/sections/header/header'
 import QuickStart from '../components/sections/quick-start/quick-start'
 import Faq from '../components/sections/faq/faq'
+import Sidebar from '../components/sections/sidebar/sidebar'
+import Footer from '../components/sections/footer/footer'
 
 import '../layouts/reset.css'
 import '../layouts/index.css'
@@ -19,10 +21,15 @@ const FaqAndSidebar = styled('section')({
   display: 'flex',
   padding: '50px 0',
   margin: '0 auto',
+  justifyContent: 'space-between',
 })
 
 const FaqAndSidebarFaqBox = styled('div')({
   width: '66%',
+})
+
+const SidebarBox = styled('div')({
+  width: '33%',
 })
 
 class IndexPage extends React.Component {
@@ -48,7 +55,11 @@ class IndexPage extends React.Component {
           <FaqAndSidebarFaqBox>
             <Faq />
           </FaqAndSidebarFaqBox>
+          <SidebarBox>
+            <Sidebar />
+          </SidebarBox>
         </FaqAndSidebar>
+        <Footer />
       </div>
     )
   }

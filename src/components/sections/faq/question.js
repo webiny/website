@@ -10,9 +10,12 @@ const QuestionWrapper = styled('div')(
     display: 'block',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 25,
+
     border: '1px solid ' + theme.color.darkGray,
     marginTop: -1,
+    '&:last-child': {
+      boxShadow: '0 2px 4px 0 rgba(222,222,222,0.50)',
+    },
   },
   props => ({
     [Answer]: {
@@ -23,10 +26,8 @@ const QuestionWrapper = styled('div')(
       visibility: props.expanded ? 'visible' : 'hidden',
     },
     [QuestionBlock]: {
-      background:
-        'url(' +
-        (props.expanded ? questionContract : questionExpand) +
-        ') no-repeat right center',
+      backgroundImage:
+        'url(' + (props.expanded ? questionContract : questionExpand) + ')',
       color: props.expanded ? theme.color.primaryDark : '',
     },
   })
@@ -34,14 +35,17 @@ const QuestionWrapper = styled('div')(
 
 const QuestionBlock = styled('p')({
   display: 'block',
-  width: '100%',
+  width: 'auto',
   fontWeight: theme.fontWeight.semiBold,
-  background: 'url(' + questionExpand + ') no-repeat right center',
+  backgroundImage: 'url(' + questionExpand + ')',
+  backgroundPosition: 'right 25px center',
+  backgroundRepeat: 'no-repeat',
   marginBottom: 0,
+  padding: 25,
   cursor: 'pointer',
 })
 
-const Answer = styled('p')({
+const Answer = styled('div')({
   fontSize: theme.fontSize.paragraph,
   display: 'block',
   width: 'auto',

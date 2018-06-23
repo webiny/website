@@ -81,12 +81,12 @@ class Header extends React.Component {
     setInterval(() => {
       if (this.didScroll) {
         this.didScroll = false
-        if (document.documentElement.scrollTop > 0) {
+        if (document.documentElement.scrollTop > window.innerHeight) {
           if (this.state.isSticky) {
             return
           }
           this.setState({ isSticky: true })
-        } else {
+        } else if (document.documentElement.scrollTop < 1) {
           this.setState({ isSticky: false })
         }
       }

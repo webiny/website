@@ -8,6 +8,7 @@ export default {
     primaryDark: '#FA5A28',
     secondaryDark: '#20C6B1',
     codeBg: '#272823',
+    footerBg: '#282C34',
   },
   fontWeight: {
     bold: 700,
@@ -25,6 +26,7 @@ export default {
     navMenuItem: 16,
     navMenuSubItem: 15,
     paragraph: 15,
+    footer: 14,
   },
   contentWidth: 1100,
 }
