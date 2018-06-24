@@ -98,6 +98,7 @@ class Tabs extends React.Component {
   }
 
   componentDidMount() {
+    this.setState({ width: window.innerWidth })
     window.addEventListener('resize', () => {
       this.setState({ width: window.innerWidth })
     })
