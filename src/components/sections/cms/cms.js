@@ -141,10 +141,10 @@ class Cms extends React.Component {
           'Creating content is easy and intuitive with an editor that doesn’t clutter your interface.',
       },
       {
-        title: 'Localization',
+        title: 'Extendible',
         image: withPrefix('./cms/simple-editor-mock-dark.png?v=2'),
         subTitle:
-          'Truly rich content that will make your website pop and intrigue your users to stick around and keep coming for more.',
+          'You can build custom apps, widges and templates with Webiny. Every part of the system is fully customizable.',
       },
       {
         title: 'Headless',
