@@ -1,37 +1,58 @@
 import React from 'react'
 import styled from 'react-emotion'
-import heroBg from './assets/hero-bg.svg'
 import theme from '../../utils/theme'
+import mq from '../../utils/breakpoints'
 import ContentContainer from '../../ui/content-container'
 import Button from '../../ui/button'
+
+import heroBg from './assets/hero-bg.svg'
 import gitHubLogo from './assets/github-logo.svg'
 
-const Hero = styled('section')({
-  width: '100%',
-  minHeight: 'calc(100vh - 150px)',
-  background: 'url(' + heroBg + ') no-repeat left top fixed',
-  backgroundSize: 'cover',
-  paddingTop: 150,
-  color: '#fff',
-})
+const Hero = styled('section')(
+  {
+    width: '100%',
+    minHeight: 'calc(100vh - 150px)',
+    background: 'url(' + heroBg + ') no-repeat left top fixed',
+    backgroundSize: 'cover',
+    color: '#fff',
+    boxSizing: 'border-box',
+  },
+  mq({
+    textAlign: ['center', 'left'],
+    padding: ['100px 20px 0', '150px 0 25px'],
+  })
+)
 
-const Title = styled('h1')({
-  fontSize: theme.fontSize.h1,
-  fontWeight: theme.fontWeight.semiBold,
-  marginBottom: 40,
-})
+const Title = styled('h1')(
+  {
+    fontSize: theme.fontSize.h1,
+    fontWeight: theme.fontWeight.semiBold,
+    marginBottom: 40,
+  },
+  mq({
+    textAlign: ['center', 'left'],
+  })
+)
 
-const LeftSide = styled('div')({
-  width: 375,
-  textAlign: 'left',
-})
+const LeftSide = styled('div')(
+  {},
+  mq({
+    textAlign: ['center', 'left'],
+    width: ['100%', 375],
+  })
+)
 
-const SubText = styled('p')({
-  fontSize: theme.fontSize.subText,
-  fontWeight: theme.fontWeight.light,
-  lineHeight: '25px',
-  marginBottom: 40,
-})
+const SubText = styled('p')(
+  {
+    fontSize: theme.fontSize.subText,
+    fontWeight: theme.fontWeight.light,
+    lineHeight: '25px',
+    marginBottom: 40,
+  },
+  mq({
+    textAlign: ['center', 'left'],
+  })
+)
 
 const SemiBold = styled('span')({
   fontWeight: theme.fontWeight.semiBold,

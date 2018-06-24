@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'react-emotion'
 import theme from '../components/utils/theme'
+import mq from '../components/utils/breakpoints'
 
 import Hero from '../components/sections/hero/hero'
 import Cms from '../components/sections/cms/cms'
@@ -16,21 +17,31 @@ import '../layouts/reset.css'
 import '../layouts/index.css'
 import '../layouts/variables.css'
 
-const FaqAndSidebar = styled('section')({
-  width: theme.contentWidth,
-  display: 'flex',
-  padding: '50px 0',
-  margin: '0 auto',
-  justifyContent: 'space-between',
-})
+const FaqAndSidebar = styled('section')(
+  {
+    margin: '0 auto',
+    justifyContent: 'space-between',
+  },
+  mq({
+    display: ['block', 'flex'],
+    width: ['100%', theme.contentWidth],
+    padding: ['0', '50px 0'],
+  })
+)
 
-const FaqAndSidebarFaqBox = styled('div')({
-  width: '66%',
-})
+const FaqAndSidebarFaqBox = styled('div')(
+  {},
+  mq({
+    width: ['100%', '66%'],
+  })
+)
 
-const SidebarBox = styled('div')({
-  width: '33%',
-})
+const SidebarBox = styled('div')(
+  {},
+  mq({
+    width: ['100%', '33%'],
+  })
+)
 
 class IndexPage extends React.Component {
   render() {
@@ -43,6 +54,11 @@ class IndexPage extends React.Component {
             {
               name: 'keywords',
               content: 'cms, serverless, nodejs, open source',
+            },
+            {
+              name: 'viewport',
+              content:
+                'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1',
             },
           ]}
         />

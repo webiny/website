@@ -1,36 +1,42 @@
 import React from 'react'
 import styled from 'react-emotion'
 import { cx, css } from 'emotion'
+import mq from '../utils/breakpoints'
 import theme from '../utils/theme'
 
-const buttonDefault = css({
-  display: 'inline-block',
-  marginRight: 0,
-  marginLeft: 0,
-  padding: '14px 20px',
-  verticalAlign: 'top',
-  textAlign: 'center',
-  fontSize: 14,
-  lineHeight: 1,
-  borderRadius: 10,
-  willChange: 'opacity',
-  transition: 'all 0.2s',
-  cursor: 'pointer',
-  color: theme.color.black,
-  backgroundColor: '#fff',
-  border: '1px solid #cdcdcd',
-  boxSizing: 'border-box',
-  textDecoration: 'none',
-  fontWeight: 600,
-  width: 'auto',
-  '&:hover': {
-    boxShadow: '0px 0px 0px 3px #3FBFB0',
+const buttonDefault = css(
+  {
+    display: 'inline-block',
+    marginRight: 0,
+    marginLeft: 0,
+    padding: '14px 20px',
+    verticalAlign: 'top',
+    textAlign: 'center',
+    fontSize: 14,
+    lineHeight: 1,
+    borderRadius: 10,
+    willChange: 'opacity',
+    transition: 'all 0.2s',
+    cursor: 'pointer',
+    color: theme.color.black,
+    backgroundColor: '#fff',
+    border: '1px solid #cdcdcd',
+    boxSizing: 'border-box',
+    textDecoration: 'none',
+    fontWeight: 600,
+    boxSizing: 'border-box',
+    '&:hover': {
+      boxShadow: '0px 0px 0px 3px #3FBFB0',
+    },
+    '&:active': {
+      border: '1px solid #3FBFB0',
+      boxShadow: 'inset 0px 0px 2px 0px #3FBFB0',
+    },
   },
-  '&:active': {
-    border: '1px solid #3FBFB0',
-    boxShadow: 'inset 0px 0px 2px 0px #3FBFB0',
-  },
-})
+  mq({
+    width: ['100%', 'inherit'],
+  })
+)
 
 const buttonFullWidthStyle = css({
   width: '100%',

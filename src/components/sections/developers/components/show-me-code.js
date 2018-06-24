@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'react-emotion'
+import mq from '../../../utils/breakpoints'
 import ContentContainer from '../../../ui/content-container'
 import Tabs from '../../../ui/tabs'
 import theme from '../../../utils/theme'
@@ -8,9 +9,12 @@ import CodeBlock from '../../../ui/code-block'
 import showMeCode from '../assets/show-me-code.svg'
 import uiButtonsExample from '../assets/react-ui-buttons.jpg'
 
-const ShowMeCodeContainer = styled('div')({
-  padding: '40px 0',
-})
+const ShowMeCodeContainer = styled('div')(
+  {},
+  mq({
+    padding: ['10px 0', '40px 0'],
+  })
+)
 
 const Title = styled('h4')({
   position: 'relative',
@@ -21,35 +25,49 @@ const TitleImg = styled('img')({
   margin: '0 auto',
 })
 
-const LineLeft = styled('div')({
-  borderBottom: '1px solid ' + theme.color.darkGray,
-  position: 'absolute',
-  width: theme.contentWidth / 2 - 200 + 'px',
-  top: '50%',
-  left: 0,
-  zIndex: 9,
-  margin: '0 auto',
-})
+const LineLeft = styled('div')(
+  {
+    borderBottom: '1px solid ' + theme.color.darkGray,
+    position: 'absolute',
+    width: theme.contentWidth / 2 - 200 + 'px',
+    top: '50%',
+    left: 0,
+    zIndex: 9,
+    margin: '0 auto',
+  },
+  mq({
+    display: ['none', 'block'],
+  })
+)
 
-const LineRight = styled('div')({
-  borderBottom: '1px solid ' + theme.color.darkGray,
-  position: 'absolute',
-  top: '50%',
-  right: 0,
-  width: theme.contentWidth / 2 - 200 + 'px',
-  zIndex: 9,
-  margin: '0 auto',
-})
+const LineRight = styled('div')(
+  {
+    borderBottom: '1px solid ' + theme.color.darkGray,
+    position: 'absolute',
+    top: '50%',
+    right: 0,
+    width: theme.contentWidth / 2 - 200 + 'px',
+    zIndex: 9,
+    margin: '0 auto',
+  },
+  mq({
+    display: ['none', 'block'],
+  })
+)
 
-const SubText = styled('p')({
-  fontSize: theme.fontSize.subText,
-  fontWeight: theme.fontWeight.regular,
-  color: theme.color.white,
-  textAlign: 'center',
-  margin: '0 20%',
-  lineHeight: '150%',
-  marginBottom: 50,
-})
+const SubText = styled('p')(
+  {
+    fontSize: theme.fontSize.subText,
+    fontWeight: theme.fontWeight.regular,
+    color: theme.color.white,
+    textAlign: 'center',
+    lineHeight: '150%',
+    marginBottom: 50,
+  },
+  mq({
+    margin: ['0 20px', '0 20% 40px 20%'],
+  })
+)
 
 // prettier-ignore
 const OrmCodeSample = `import User from "./user.entity.js";

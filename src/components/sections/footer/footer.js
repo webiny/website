@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'react-emotion'
 import { css } from 'emotion'
 import theme from '../../utils/theme'
+import mq from '../../utils/breakpoints'
 import ContentContainer from '../../ui/content-container'
 import Newsletter from './newsletter'
 
@@ -12,24 +13,52 @@ const Wrapper = styled('div')({
   padding: '50px 0 5px',
 })
 
-const FlexDisplay = css({
-  display: 'flex',
-  justifyContent: 'space-between',
-})
+const FlexDisplay = css(
+  {
+    justifyContent: 'space-between',
+  },
+  mq({
+    display: ['block', 'flex'],
+  })
+)
 
-const Box = styled('div')({
-  width: '33%',
-})
+const Box = styled('div')(
+  {
+    boxSizing: 'border-box',
+  },
+  mq({
+    width: ['100%', '33%'],
+    padding: [20, 0],
+  })
+)
 
-const textRight = css({
-  textAlign: 'right',
-})
+const textRight = css(
+  {},
+  mq({
+    textAlign: ['center', 'right'],
+  })
+)
 
-const Logo = styled('img')({})
+const Logo = styled('img')(
+  {},
+  mq({
+    margin: ['0 auto 20px auto', '0'],
+    display: ['block', 'inline'],
+  })
+)
 
-const Copy = styled('p')({
-  fontSize: theme.fontSize.footer,
-  color: theme.color.darkGray,
+const Copy = styled('p')(
+  {
+    fontSize: theme.fontSize.footer,
+    color: theme.color.darkGray,
+  },
+  mq({
+    textAlign: ['center', 'initial'],
+  })
+)
+
+const textCenter = css({
+  textAlign: 'center !important',
 })
 
 const Link = styled('a')({
@@ -38,7 +67,6 @@ const Link = styled('a')({
 
 const Bottom = styled('div')({
   borderTop: '1px solid #3B3E45',
-  textAlign: 'center',
   width: '100%',
   clear: 'both',
   lineHeight: '200%',
@@ -69,7 +97,7 @@ const Footer = () => (
       </Box>
     </ContentContainer>
     <Bottom>
-      <Copy>
+      <Copy className={textCenter}>
         <Link href="#">Privacy Policy</Link> / <Link href="#">Contact Us</Link>{' '}
         <br />
         Webiny © {new Date().getFullYear()}

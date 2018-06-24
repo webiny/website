@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'react-emotion'
 
 import theme from '../../../utils/theme'
+import mq from '../../../utils/breakpoints'
 import ContentContainer from '../../../ui/content-container'
 
 import serverlessIcon from '../assets/serverless-icon.svg'
@@ -18,20 +19,31 @@ import i18nIcon from '../assets/i18n-icon.svg'
 import securityIcon from '../assets/security-icon.svg'
 import externalLinkIcon from '../assets/external-link-symbol.svg'
 
-const BoxContainer = styled('div')({
-  display: 'flex',
-  justifyContent: 'space-between',
-  marginBottom: 30,
-})
+const BoxContainer = styled('div')(
+  {
+    justifyContent: 'space-between',
+    marginBottom: 30,
+    boxSizing: 'border-box',
+  },
+  mq({
+    display: ['block', 'flex'],
+  })
+)
 
-const Box = styled('div')({
-  width: '26%',
-  backgroundColor: theme.color.white,
-  boxShadow: '0 2px 4px 0 rgba(125,69,69,0.50)',
-  borderRadius: 8,
-  padding: '100px 30px 30px',
-  position: 'relative',
-})
+const Box = styled('div')(
+  {
+    backgroundColor: theme.color.white,
+    boxShadow: '0 2px 4px 0 rgba(125,69,69,0.50)',
+    borderRadius: 8,
+    position: 'relative',
+    boxSizing: 'border-box',
+  },
+  mq({
+    width: ['auto', '33%'],
+    margin: [20, '0px 15px'],
+    padding: ['80px 30px 50px', '100px 30px 30px'],
+  })
+)
 
 const BoxTitle = styled('h5')({
   color: theme.color.black,

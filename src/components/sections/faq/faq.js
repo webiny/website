@@ -2,16 +2,29 @@ import React from 'react'
 import styled from 'react-emotion'
 import { css } from 'emotion'
 import theme from '../../utils/theme'
+import mq from '../../utils/breakpoints'
 import Question from './question'
 
 import arrowFaq from './assets/arrow-faq.svg'
 
-const Title = styled('h2')({
-  color: theme.color.black,
-  fontSize: theme.fontSize.h2,
-  marginBottom: 50,
-  marginTop: 25,
-})
+const FaqContainer = styled('section')(
+  {},
+  mq({
+    padding: [20, 0],
+  })
+)
+
+const Title = styled('h2')(
+  {
+    color: theme.color.black,
+    fontSize: theme.fontSize.h2,
+    marginBottom: 50,
+    marginTop: 25,
+  },
+  mq({
+    textAlign: ['center', 'left'],
+  })
+)
 
 const AdditionalFaq = styled('a')({
   marginTop: 25,
@@ -35,7 +48,7 @@ class Faq extends React.Component {
   }
   render() {
     return (
-      <React.Fragment>
+      <FaqContainer>
         <div>
           <Title>Frequently Asked Questions</Title>
           <Question title="Why should I use Webiny?">
@@ -69,7 +82,7 @@ class Faq extends React.Component {
         <AdditionalFaq href="#">
           Additional FAQ <img src={arrowFaq} />
         </AdditionalFaq>
-      </React.Fragment>
+      </FaqContainer>
     )
   }
 }

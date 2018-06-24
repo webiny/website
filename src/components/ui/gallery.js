@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 import ContentContainer from './content-container'
 import styled from 'react-emotion'
 import theme from '../utils/theme'
+import mq from '../utils/breakpoints'
+
 import arrow from './assets/bullet-arrow.svg'
 
 const GalleryContainer = styled('div')(
@@ -45,47 +47,63 @@ const GalleryItemContainer = styled('a')({
   },
 })
 
-const GalleryItem = styled('li')({
-  width: 300,
-  borderBottom: '1px solid ' + theme.color.darkGray,
-  '&.active': {
-    [GalleryItemTitle]: {
-      color: theme.color.primaryDark,
+const GalleryItem = styled('li')(
+  {
+    boxSizing: 'border-box',
+    '&.active': {
+      [GalleryItemTitle]: {
+        color: theme.color.primaryDark,
+      },
+      listStyleImage: 'url(' + arrow + ')',
     },
-    listStyleImage: 'url(' + arrow + ')',
+    '&:last-child': {
+      borderBottom: 'none',
+    },
   },
-  '&:last-child': {
-    borderBottom: 'none',
-  },
-})
+  mq({
+    width: ['100%', 300],
+    textAlign: ['center', 'left'],
+    padding: [20, 0],
+    borderBottom: ['none', '1px solid ' + theme.color.darkGray],
+  })
+)
 
-const GalleryImageContainer = styled('div')({
-  width: 750,
-  height: 550,
-  position: 'relative',
-})
+const GalleryImageContainer = styled('div')(
+  {
+    position: 'relative',
+  },
+  mq({
+    width: ['100%', 750],
+    height: ['auto', 550],
+  })
+)
 
-const GalleryImage = styled('img')({
-  width: 750,
-  transition: 'opacity 250ms ease-in-out',
-  boxShadow: '0 2px 4px 0 rgba(211,211,211,0.50)',
-  position: 'absolute',
-  top: 0,
-  left: 0,
-  opacity: 1,
-  '&.inactive': {
-    opacity: 0,
+const GalleryImage = styled('img')(
+  {
+    transition: 'opacity 250ms ease-in-out',
+    boxShadow: '0 2px 4px 0 rgba(211,211,211,0.50)',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    opacity: 1,
+    '&.inactive': {
+      opacity: 0,
+    },
+    '&.top': {
+      zIndex: 10,
+    },
+    '&.bottom': {
+      zIndex: 9,
+    },
   },
-  '&.top': {
-    zIndex: 10,
-  },
-  '&.bottom': {
-    zIndex: 9,
-  },
-})
+  mq({
+    width: ['100%', 750],
+    position: ['relative', 'absolute'],
+  })
+)
 
 class Gallery extends React.Component {
-  state = { items: [], activeItem: 0 }
+  state = { items: [], activeItem: 0, width: window.innerWidth }
   topImage = ''
   bottomImage = ''
 
@@ -96,6 +114,9 @@ class Gallery extends React.Component {
   }
 
   componentDidMount() {
+    window.addEventListener('resize', () => {
+      this.setState({ width: window.innerWidth })
+    })
     this.setItems(this.props.items)
   }
 
@@ -120,11 +141,7 @@ class Gallery extends React.Component {
     }, 250)
   }
 
-  render() {
-    if (this.state.items.length < 1) {
-      return null
-    }
-
+  renderDesktop = () => {
     return (
       <ContentContainer>
         <GalleryContainer right={this.props.right}>
@@ -162,6 +179,38 @@ class Gallery extends React.Component {
         </GalleryContainer>
       </ContentContainer>
     )
+  }
+
+  renderMobile = () => {
+    return (
+      <GalleryContainer>
+        <GalleryMenu>
+          {this.state.items.map((item, index) => {
+            return (
+              <GalleryItem key={item.title}>
+                <GalleryItemContainer>
+                  <GalleryItemTitle>{item.title}</GalleryItemTitle>
+                  <GalleryItemSubTitle>{item.subTitle}</GalleryItemSubTitle>
+                  <GalleryImage src={item.image} />
+                </GalleryItemContainer>
+              </GalleryItem>
+            )
+          })}
+        </GalleryMenu>
+      </GalleryContainer>
+    )
+  }
+
+  render() {
+    if (this.state.items.length < 1) {
+      return null
+    }
+
+    if (this.state.width < 1200) {
+      return this.renderMobile()
+    } else {
+      return this.renderDesktop()
+    }
   }
 }
 

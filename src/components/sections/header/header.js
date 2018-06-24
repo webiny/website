@@ -1,10 +1,14 @@
 import React from 'react'
 import styled from 'react-emotion'
 import theme from '../../utils/theme'
+import mq from '../../utils/breakpoints'
+import ContentContainer from '../../ui/content-container'
+import Button from '../../ui/button'
+
 import logo from './assets/webiny-logo.svg'
 import logoOrange from './assets/webiny-orange-logo.svg'
-import Button from '../../ui/button'
-import ContentContainer from '../../ui/content-container'
+import menuIcon from './assets/round-menu-24px.svg'
+import menuIconBlack from './assets/round-menu-24px-black.svg'
 
 const NavBar = styled('div')({
   margin: '0 auto',
@@ -13,21 +17,32 @@ const NavBar = styled('div')({
   justifyContent: 'space-between',
 })
 
-const WebinyLogo = styled('div')({
-  margin: 0,
-  padding: 0,
-  height: 42,
-  lineHeight: '100%',
-})
+const WebinyLogo = styled('div')(
+  {
+    margin: 0,
+    padding: 0,
+    height: 42,
+    lineHeight: '100%',
+    zIndex: 100,
+  },
+  mq({
+    paddingLeft: [20, 0],
+  })
+)
 
-const Menu = styled('ul')({
-  listStyle: 'none',
-  display: 'flex',
-  flexDirection: 'row',
-  flexWrap: 'wrap',
-  alignItems: 'center',
-  justifyContent: 'center',
-})
+const Menu = styled('ul')(
+  {
+    listStyle: 'none',
+    //display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  mq({
+    display: ['none', 'flex'],
+  })
+)
 
 const MenuItem = styled('li')({
   marginLeft: 25,
@@ -65,22 +80,84 @@ const HeaderContainer = styled('header')(
   })
 )
 
+const MobileMenu = styled('div')(
+  {
+    paddingRight: 20,
+    display: 'flex',
+    position: 'relative',
+  },
+  mq({
+    display: ['block', 'none'],
+  })
+)
+
+const MobileMenuIcon = styled('img')({
+  zIndex: 100,
+  position: 'absolute',
+  right: 20,
+  top: 6,
+})
+
+const MobileMenuList = styled('ul')(
+  {
+    width: '100%',
+    height: '100vh',
+    padding: 25,
+    backgroundColor: theme.color.white,
+    position: 'fixed',
+    zIndex: 50,
+    top: 0,
+    left: 0,
+    paddingTop: 100,
+    boxSizing: 'border-box',
+  },
+  props => ({
+    display: props.open ? 'block' : 'none',
+  })
+)
+
+const MobileMenuItem = styled('li')({
+  listStyle: 'none',
+  fontSize: 24,
+  marginBottom: 10,
+  [Link]: {
+    color: theme.color.black,
+  },
+})
+
 class Header extends React.Component {
   didScroll = false
-  state = { isSticky: false }
+  state = { isSticky: false, mobileMenuOpen: false }
 
   componentDidMount() {
     this.initScrollListener()
   }
 
+  toggleMobileMenu = () => {
+    this.setState(
+      {
+        mobileMenuOpen: !this.state.mobileMenuOpen,
+        isSticky: !this.state.mobileMenuOpen,
+      },
+      () => {
+        this.didScroll = true
+      }
+    )
+  }
+
   initScrollListener = () => {
-    window.onscroll = () => {
+    window.onscroll = event => {
       this.didScroll = true
     }
 
     setInterval(() => {
       if (this.didScroll) {
         this.didScroll = false
+
+        if (this.state.mobileMenuOpen) {
+          return
+        }
+
         if (document.documentElement.scrollTop > window.innerHeight) {
           if (this.state.isSticky) {
             return
@@ -102,7 +179,11 @@ class Header extends React.Component {
               <Link href="/">
                 <img
                   alt="Webiny Logo"
-                  src={this.state.isSticky ? logoOrange : logo}
+                  src={
+                    this.state.isSticky || this.state.mobileMenuOpen
+                      ? logoOrange
+                      : logo
+                  }
                 />
               </Link>
             </WebinyLogo>
@@ -127,6 +208,41 @@ class Header extends React.Component {
                 <Button link="#">Get Started</Button>
               </MenuItem>
             </Menu>
+
+            <MobileMenu>
+              <MobileMenuIcon
+                onClick={this.toggleMobileMenu}
+                src={
+                  this.state.mobileMenuOpen || this.state.isSticky
+                    ? menuIconBlack
+                    : menuIcon
+                }
+              />
+              <MobileMenuList open={this.state.mobileMenuOpen}>
+                <MobileMenuItem>
+                  <Link href="https://github.com/webiny/webiny-js/">
+                    Pricing
+                  </Link>
+                </MobileMenuItem>
+                <MobileMenuItem>
+                  <Link href="https://docs.webiny.com/">Docs</Link>
+                </MobileMenuItem>
+                <MobileMenuItem>
+                  <Link href="https://community.webiny.com/">Community</Link>
+                </MobileMenuItem>
+                <MobileMenuItem>
+                  <Link href="https://blog.webiny.com/">Blog</Link>
+                </MobileMenuItem>
+                <MobileMenuItem>
+                  <Link href="https://github.com/webiny/webiny-js/">
+                    Source
+                  </Link>
+                </MobileMenuItem>
+                <MobileMenuItem>
+                  <Button link="#">Get Started</Button>
+                </MobileMenuItem>
+              </MobileMenuList>
+            </MobileMenu>
           </NavBar>
         </ContentContainer>
       </HeaderContainer>

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'react-emotion'
 import theme from '../../utils/theme'
+import mq from '../../utils/breakpoints'
 
 import documentationIcon from './assets/documentation.svg'
 import forumIcon from './assets/forum.svg'
@@ -9,12 +10,18 @@ import blogIcon from './assets/blog.svg'
 import twitterIcon from './assets/twitter.svg'
 import arrowIcon from './assets/bullet-arrow-sidebar.svg'
 
-const Wrapper = styled('div')({
-  border: '1px solid ' + theme.color.darkGray,
-  boxShadow: '0 2px 4px 0 rgba(222,222,222,0.50)',
-  marginLeft: 50,
-  marginTop: 25,
-})
+const Wrapper = styled('div')(
+  {
+    border: '1px solid ' + theme.color.darkGray,
+    boxShadow: '0 2px 4px 0 rgba(222,222,222,0.50)',
+    marginTop: 25,
+  },
+  mq({
+    marginLeft: [20, 50],
+    marginRight: [20, 0],
+    marginBottom: [20, 0],
+  })
+)
 
 const Menu = styled('div')({})
 
