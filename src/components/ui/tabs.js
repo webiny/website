@@ -91,7 +91,7 @@ const TabsContentContainer = styled('div')(
 )
 
 class Tabs extends React.Component {
-  state = { items: [], activeItem: 0, width: window.innerWidth }
+  state = { items: [], activeItem: 0, width: 0 }
 
   setItems = items => {
     this.setState({ items })

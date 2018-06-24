@@ -103,7 +103,7 @@ const GalleryImage = styled('img')(
 )
 
 class Gallery extends React.Component {
-  state = { items: [], activeItem: 0, width: window.innerWidth }
+  state = { items: [], activeItem: 0, width: 0 }
   topImage = ''
   bottomImage = ''
 
