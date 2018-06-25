@@ -11,7 +11,6 @@ import gitHubLogo from './assets/github-logo.svg'
 const Hero = styled('section')(
   {
     width: '100%',
-    minHeight: 'calc(100vh - 150px)',
     background: 'url(' + heroBg + ') no-repeat left top fixed',
     backgroundSize: 'cover',
     color: '#fff',
@@ -19,7 +18,10 @@ const Hero = styled('section')(
   },
   mq({
     textAlign: ['center', 'left'],
-    padding: ['100px 20px 0', '150px 0 25px'],
+    padding: ['100px 20px 25px', '150px 0 25px'],
+    height: ['auto', 'calc(100vh - 150px)'],
+    minHeight: ['auto', 700],
+    maxHeight: ['auto', 768],
   })
 )
 
@@ -90,7 +92,7 @@ export default ({ children, ...props }) => (
           small, by giving you all the parts you need in a single package which
           is optimized to seamlessly work together in a performant way.
         </SubText>
-        <Button link="#" style="fullWidth">
+        <Button link="#" type="fullWidth">
           Get Started
         </Button>
         <Link href="#">

@@ -15,11 +15,11 @@ const DevelopersContainer = styled('section')(
   {
     background: 'url(' + bg + ') no-repeat center top',
     width: '100%',
-    paddingTop: 50,
   },
   mq({
-    backgroundSize: ['cover', 'auto'],
+    backgroundSize: ['cover', 'auto', 'cover'],
     backgroundPosition: ['right 0px top 70px', 'right 0px top 0px'],
+    paddingTop: [50, 50, 90],
   })
 )
 

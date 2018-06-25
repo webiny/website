@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'react-emotion'
 import theme from '../../utils/theme'
-import mq from '../../utils/breakpoints'
 
 import emailIcon from './assets/email-icon.svg'
 import newsletterBullet from './assets/newsletter-bullet.svg'
@@ -78,7 +77,7 @@ class Newsletter extends React.Component {
   }
 
   handleSubmit = event => {
-    if (this.state.email != '') {
+    if (this.state.email !== '') {
       this.setState({ email: 'Thanks!' })
     }
 

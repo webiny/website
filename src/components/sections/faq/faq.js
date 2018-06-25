@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'react-emotion'
-import { css } from 'emotion'
 import theme from '../../utils/theme'
 import mq from '../../utils/breakpoints'
 import Question from './question'
@@ -80,7 +79,7 @@ class Faq extends React.Component {
           <Question title="What can I build using Webiny?">It's FREE</Question>
         </div>
         <AdditionalFaq href="#">
-          Additional FAQ <img src={arrowFaq} />
+          Additional FAQ <img alt="arrow" src={arrowFaq} />
         </AdditionalFaq>
       </FaqContainer>
     )

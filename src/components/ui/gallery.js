@@ -18,9 +18,14 @@ const GalleryContainer = styled('div')(
   })
 )
 
-const GalleryMenu = styled('ul')({
-  listStyle: 'none',
-})
+const GalleryMenu = styled('ul')(
+  {
+    listStyle: 'none',
+  },
+  mq({
+    width: ['100%', 'auto'],
+  })
+)
 
 const GalleryItemTitle = styled('h4')({
   fontSize: theme.fontSize.subText,
@@ -95,10 +100,12 @@ const GalleryImage = styled('img')(
     '&.bottom': {
       zIndex: 9,
     },
+    margin: '0 auto',
   },
   mq({
     width: ['100%', 750],
     position: ['relative', 'absolute'],
+    maxWidth: [500, 750],
   })
 )
 

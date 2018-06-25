@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'react-emotion'
 import { cx, css } from 'emotion'
 import mq from '../utils/breakpoints'
 import theme from '../utils/theme'
@@ -21,7 +20,6 @@ const buttonDefault = css(
     color: theme.color.black,
     backgroundColor: '#fff',
     border: '1px solid #cdcdcd',
-    boxSizing: 'border-box',
     textDecoration: 'none',
     fontWeight: 600,
     boxSizing: 'border-box',
@@ -65,8 +63,8 @@ class Button extends React.Component {
 
   render() {
     let style = 'default'
-    if (this.props.hasOwnProperty('style')) {
-      style = this.props.style
+    if (this.props.hasOwnProperty('type')) {
+      style = this.props.type
     }
     style = cx(this.styles['default'], this.styles[style])
 

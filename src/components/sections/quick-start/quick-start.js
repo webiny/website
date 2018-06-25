@@ -56,8 +56,8 @@ class QuickStart extends React.Component {
               <Bold>Ready to try it out?</Bold> Our quick start tutorial will
               get you up and running in just few minutes.
             </Text>
-            <Button style="primary">
-              Quick Start <img src={buttonArrow} />
+            <Button type="primary">
+              Quick Start <img alt="arrow" src={buttonArrow} />
             </Button>
           </Wrapper>
         </ContentContainer>

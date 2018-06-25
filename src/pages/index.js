@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import styled from 'react-emotion'
 import theme from '../components/utils/theme'
 import mq from '../components/utils/breakpoints'
+import { withPrefix } from 'gatsby-link'
 
 import Hero from '../components/sections/hero/hero'
 import Cms from '../components/sections/cms/cms'
@@ -15,7 +16,6 @@ import Footer from '../components/sections/footer/footer'
 
 import '../layouts/reset.css'
 import '../layouts/index.css'
-import '../layouts/variables.css'
 
 const FaqAndSidebar = styled('section')(
   {
@@ -59,6 +59,15 @@ class IndexPage extends React.Component {
               name: 'viewport',
               content:
                 'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1',
+            },
+          ]}
+        />
+        <Helmet
+          link={[
+            {
+              rel: 'shortcut icon',
+              href: withPrefix('./favicon.ico'),
+              type: 'image/x-icon',
             },
           ]}
         />
