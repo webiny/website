@@ -1,18 +1,16 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import styled from 'react-emotion'
 import theme from '../components/utils/theme'
 import mq from '../components/utils/breakpoints'
-import { withPrefix } from 'gatsby-link'
 
-import Hero from '../components/sections/hero/hero'
-import Cms from '../components/sections/cms/cms'
-import Developers from '../components/sections/developers/developers'
-import Header from '../components/sections/header/header'
-import QuickStart from '../components/sections/quick-start/quick-start'
-import Faq from '../components/sections/faq/faq'
-import Sidebar from '../components/sections/sidebar/sidebar'
-import Footer from '../components/sections/footer/footer'
+import BaseLayout from '../layouts/base'
+import Hero from '../components/homepage/hero/hero'
+import Cms from '../components/homepage/cms/cms'
+import Developers from '../components/homepage/developers/developers'
+import QuickStart from '../components/homepage/quick-start/quick-start'
+import Faq from '../components/homepage/faq/faq'
+import Sidebar from '../components/homepage/sidebar/sidebar'
+import Footer from '../components/homepage/footer/footer'
 
 import '../layouts/reset.css'
 import '../layouts/index.css'
@@ -46,32 +44,7 @@ const SidebarBox = styled('div')(
 class IndexPage extends React.Component {
   render() {
     return (
-      <div>
-        <Helmet
-          title="Webiny"
-          meta={[
-            { name: 'description', content: 'Node.js Serverless CMS' },
-            {
-              name: 'keywords',
-              content: 'cms, serverless, nodejs, open source',
-            },
-            {
-              name: 'viewport',
-              content:
-                'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1',
-            },
-          ]}
-        />
-        <Helmet
-          link={[
-            {
-              rel: 'shortcut icon',
-              href: withPrefix('./favicon.ico'),
-              type: 'image/x-icon',
-            },
-          ]}
-        />
-        <Header />
+      <BaseLayout>
         <Hero />
         <Cms />
         <Developers />
@@ -85,7 +58,7 @@ class IndexPage extends React.Component {
           </SidebarBox>
         </FaqAndSidebar>
         <Footer />
-      </div>
+      </BaseLayout>
     )
   }
 }

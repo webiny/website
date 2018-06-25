@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'react-emotion'
-import theme from '../../utils/theme'
-import mq from '../../utils/breakpoints'
-import ContentContainer from '../../ui/content-container'
-import Button from '../../ui/button'
+import theme from '../utils/theme'
+import mq from '../utils/breakpoints'
+import ContentContainer from '../ui/content-container'
+import Button from '../ui/button'
 
 import logo from './assets/webiny-logo.svg'
 import logoOrange from './assets/webiny-orange-logo.svg'
@@ -176,7 +176,7 @@ class Header extends React.Component {
         <ContentContainer>
           <NavBar>
             <WebinyLogo alt="Webiny Home">
-              <Link href="/">
+              <Link rel="prerender" href="/">
                 <img
                   alt="Webiny Logo"
                   src={
@@ -190,7 +190,9 @@ class Header extends React.Component {
 
             <Menu>
               <MenuItem>
-                <Link href="https://github.com/webiny/webiny-js/">Pricing</Link>
+                <Link rel="prerender" href="/pricing">
+                  Pricing
+                </Link>
               </MenuItem>
               <MenuItem>
                 <Link href="https://docs.webiny.com/">Docs</Link>
@@ -220,7 +222,7 @@ class Header extends React.Component {
               />
               <MobileMenuList open={this.state.mobileMenuOpen}>
                 <MobileMenuItem>
-                  <Link href="https://github.com/webiny/webiny-js/">
+                  <Link rel="prerender" href="/pricing">
                     Pricing
                   </Link>
                 </MobileMenuItem>

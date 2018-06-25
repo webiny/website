@@ -68,6 +68,10 @@ class Button extends React.Component {
     }
     style = cx(this.styles['default'], this.styles[style])
 
+    if (this.props.hasOwnProperty('className')) {
+      style += ' ' + this.props.className
+    }
+
     return (
       <a href={this.props.link} className={style}>
         {this.props.children}
