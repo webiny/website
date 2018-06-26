@@ -5,6 +5,9 @@ import { withPrefix } from 'gatsby-link'
 import Header from '../components/header/header'
 import Footer from '../components/homepage/footer/footer'
 
+import './layouts/reset.css'
+import './layouts/index.css'
+
 class BaseLayout extends React.Component {
   render() {
     return (

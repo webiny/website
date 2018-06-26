@@ -11,9 +11,6 @@ import QuickStart from '../components/homepage/quick-start/quick-start'
 import Faq from '../components/homepage/faq/faq'
 import Sidebar from '../components/homepage/sidebar/sidebar'
 
-import '../layouts/reset.css'
-import '../layouts/index.css'
-
 const FaqAndSidebar = styled('section')(
   {
     margin: '0 auto',
