@@ -10,7 +10,6 @@ import Developers from '../components/homepage/developers/developers'
 import QuickStart from '../components/homepage/quick-start/quick-start'
 import Faq from '../components/homepage/faq/faq'
 import Sidebar from '../components/homepage/sidebar/sidebar'
-import Footer from '../components/homepage/footer/footer'
 
 import '../layouts/reset.css'
 import '../layouts/index.css'
@@ -57,7 +56,6 @@ class IndexPage extends React.Component {
             <Sidebar />
           </SidebarBox>
         </FaqAndSidebar>
-        <Footer />
       </BaseLayout>
     )
   }

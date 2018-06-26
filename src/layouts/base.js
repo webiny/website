@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import { withPrefix } from 'gatsby-link'
 
 import Header from '../components/header/header'
+import Footer from '../components/homepage/footer/footer'
 
 class BaseLayout extends React.Component {
   render() {
@@ -34,6 +35,7 @@ class BaseLayout extends React.Component {
         />
         <Header />
         {this.props.children}
+        <Footer />
       </div>
     )
   }

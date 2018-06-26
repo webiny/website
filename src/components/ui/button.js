@@ -54,10 +54,24 @@ const buttonPrimary = css({
   },
 })
 
+const buttonSecondary = css({
+  backgroundColor: theme.color.secondaryDark,
+  color: theme.color.white,
+  textTransform: 'uppercase',
+  fontSize: 20,
+  border: '1px solid #3FBFB0',
+  '&:hover, &:active': {
+    background: '#3FBFB0',
+    boxShadow: '0px 0px 0px 3px #3FBFB0',
+    borderColor: '#3FBFB0',
+  },
+})
+
 class Button extends React.Component {
   styles = {
     fullWidth: buttonFullWidthStyle,
     primary: buttonPrimary,
+    secondary: buttonSecondary,
     default: buttonDefault,
   }
 

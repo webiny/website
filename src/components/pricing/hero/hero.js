@@ -17,13 +17,15 @@ const Hero = styled('section')(
     color: '#fff',
     boxSizing: 'border-box',
     textAlign: 'center',
-    marginBottom: 100,
   },
   mq({
     padding: ['100px 20px 25px', '150px 0 25px'],
     height: ['auto', 'calc(100vh - 150px)'],
     minHeight: ['auto', 700],
     maxHeight: ['auto', 768],
+    marginBottom: [50, 100],
+    backgroundSize: ['cover'],
+    backgroundPosition: ['top', 'top', 'bottom'],
   })
 )
 
@@ -44,7 +46,7 @@ const SubText = styled('p')(
     marginBottom: 50,
   },
   mq({
-    margin: ['0 20px', '0 20% 40px 20%'],
+    margin: ['20px 20px', '0 20% 40px 20%'],
   })
 )
 
@@ -90,30 +92,49 @@ const PricingBox = styled('div')({
   color: theme.color.black,
 })
 
-const ReasonWrapper = styled('div')({
-  display: 'flex',
-  justifyContent: 'space-evenly',
-  marginBottom: 25,
-})
+const ReasonWrapper = styled('div')(
+  {
+    justifyContent: 'space-evenly',
+    marginBottom: 25,
+  },
+  mq({
+    display: ['block', 'flex'],
+  })
+)
 
-const ReasonsList = styled('ul')({
-  width: '40%',
-})
+const ReasonsList = styled('ul')(
+  {},
+  mq({
+    width: ['100%', '40%'],
+  })
+)
 
 const ReasonsItem = styled('li')(
   {
     listStyle: 'none',
     paddingLeft: 40,
-    textAlign: 'left',
     marginBottom: 15,
+    paddingRight: 0,
+    textAlign: 'left',
   },
-  props => ({
-    background: props.right
-      ? 'url(' + pricingBullet + ') no-repeat right 2px'
-      : 'url(' + pricingBullet + ') no-repeat left 2px',
-    paddingLeft: props.right ? 0 : 40,
-    paddingRight: props.right ? 40 : 0,
-    textAlign: props.right ? 'right' : 'left',
+  mq({
+    background: [
+      'url(' + pricingBullet + ') no-repeat left 2px',
+      'url(' + pricingBullet + ') no-repeat left 2px',
+    ],
+  })
+)
+
+const reasonsItemRight = css(
+  {},
+  mq({
+    background: [
+      'url(' + pricingBullet + ') no-repeat left 2px',
+      'url(' + pricingBullet + ') no-repeat right 2px',
+    ],
+    textAlign: ['left', 'right'],
+    paddingLeft: [40, 0],
+    paddingRight: [0, 40],
   })
 )
 
@@ -121,14 +142,17 @@ const Bold = styled('span')({
   fontWeight: theme.fontWeight.bold,
 })
 
-const button = css({
-  padding: '14px 100px !important',
-
-  boxShadow: '0 2px 3px 0 rgba(160,160,160,0.50)',
-  '> img': {
-    marginLeft: 10,
+const button = css(
+  {
+    boxShadow: '0 2px 3px 0 rgba(160,160,160,0.50)',
+    '> img': {
+      marginLeft: 10,
+    },
   },
-})
+  mq({
+    padding: [15, '14px 100px !important'],
+  })
+)
 
 export default ({ children, ...props }) => (
   <Hero {...props}>
@@ -146,16 +170,16 @@ export default ({ children, ...props }) => (
         <PricingBox>
           <ReasonWrapper>
             <ReasonsList>
-              <ReasonsItem right>
+              <ReasonsItem className={reasonsItemRight}>
                 <Bold>1GB</Bold> MySQL DB storage
               </ReasonsItem>
-              <ReasonsItem right>
+              <ReasonsItem className={reasonsItemRight}>
                 <Bold>10k</Bold> Lambda requests
               </ReasonsItem>
-              <ReasonsItem right>
+              <ReasonsItem className={reasonsItemRight}>
                 <Bold>10h</Bold> Lamda runtime
               </ReasonsItem>
-              <ReasonsItem right>
+              <ReasonsItem className={reasonsItemRight}>
                 <Bold>100</Bold> deployments per month
               </ReasonsItem>
             </ReasonsList>

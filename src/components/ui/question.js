@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'react-emotion'
-import theme from '../../utils/theme'
+import theme from '../utils/theme'
 
 import questionExpand from './assets/question-expand.svg'
 import questionContract from './assets/question-contract.svg'
@@ -10,7 +10,7 @@ const QuestionWrapper = styled('div')(
     display: 'block',
     justifyContent: 'space-between',
     alignItems: 'center',
-
+    backgroundColor: theme.color.white,
     border: '1px solid ' + theme.color.darkGray,
     marginTop: -1,
     '&:last-child': {
