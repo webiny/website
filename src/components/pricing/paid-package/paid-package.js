@@ -148,7 +148,7 @@ class PaidPackage extends React.Component {
           <ReasonsList>
             <ReasonsItem>Custom domain with HTTPS</ReasonsItem>
             <ReasonsItem>
-              <Bold>10GB</Bold> database storage
+              <Bold>5GB</Bold> database storage
             </ReasonsItem>
             <ReasonsItem>
               <Bold>500k</Bold> Lambda requests
@@ -162,7 +162,7 @@ class PaidPackage extends React.Component {
         <ExtraTitle>Extra usage: $20/package</ExtraTitle>
         <ReasonsList className={ExtraReasonsList}>
           <ReasonsItem>
-            <Bold>+10GB</Bold> database storage
+            <Bold>+5GB</Bold> database storage
           </ReasonsItem>
           <ReasonsItem>
             <Bold>+500k</Bold> Lambda requests

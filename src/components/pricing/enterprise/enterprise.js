@@ -45,7 +45,7 @@ const BoxContact = styled('div')(
     width: ['100%', '50%'],
     borderTopRightRadius: [0, 8],
     borderBottomLeftRadius: [8, 0],
-    padding: ['25px 0 25px 0', '15px 0 0 0'],
+    padding: ['25px 0 25px 0', '0 0 0 0'],
   })
 )
 
