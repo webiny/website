@@ -122,12 +122,13 @@ const ExtraReasonsList = css(
   {
     justifyContent: 'space-between',
     padding: '10px 0',
+    boxSizing: 'border-box',
   },
   mq({
     display: ['block', 'flex'],
     margin: ['0 25px 25px 25px', '0'],
     textAlign: ['center', 'left'],
-    width: ['100%', '100%'],
+    width: ['auto', '100%'],
   })
 )
 
