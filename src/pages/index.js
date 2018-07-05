@@ -40,7 +40,7 @@ const SidebarBox = styled('div')(
 class IndexPage extends React.Component {
   render() {
     return (
-      <BaseLayout>
+      <BaseLayout title="Webiny - Serverless React Node CMS">
         <Hero />
         <Cms />
         <Developers />

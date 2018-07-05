@@ -71,35 +71,35 @@ const BoxDescription = styled('p')({
 const Sidebar = () => (
   <Wrapper>
     <Menu>
-      <Item href="#">
+      <Item href="https://docs.webiny.com/">
         <BoxIcon src={documentationIcon} />
         <BoxTitle>Documentation</BoxTitle>
         <BoxDescription>
           Get started with tutorials, components and our API.
         </BoxDescription>
       </Item>
-      <Item href="#">
+      <Item href="https://community.webiny.com/">
         <BoxIcon src={forumIcon} />
-        <BoxTitle>Forum</BoxTitle>
+        <BoxTitle>Community</BoxTitle>
         <BoxDescription>
           Get started with tutorials, components and our API.
         </BoxDescription>
       </Item>
-      <Item href="#">
+      <Item href="https://github.com/Webiny/webiny-js">
         <BoxIcon src={githubIcon} />
         <BoxTitle>GitHub</BoxTitle>
         <BoxDescription>
           Get started with tutorials, components and our API.
         </BoxDescription>
       </Item>
-      <Item href="#">
+      <Item href="https://blog.webiny.com/">
         <BoxIcon src={blogIcon} />
         <BoxTitle>Blog</BoxTitle>
         <BoxDescription>
           Get started with tutorials, components and our API.
         </BoxDescription>
       </Item>
-      <Item href="#">
+      <Item href="https://twitter.com/WebinyPlatform">
         <BoxIcon src={twitterIcon} />
         <BoxTitle>Twitter</BoxTitle>
         <BoxDescription>

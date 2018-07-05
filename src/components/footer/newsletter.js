@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'react-emotion'
-import theme from '../../utils/theme'
+import theme from '../utils/theme'
 
 import emailIcon from './assets/email-icon.svg'
 import newsletterBullet from './assets/newsletter-bullet.svg'

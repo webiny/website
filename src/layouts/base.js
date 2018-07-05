@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { withPrefix } from 'gatsby-link'
 
 import Header from '../components/header/header'
-import Footer from '../components/homepage/footer/footer'
+import Footer from '../components/footer/footer'
 
 import './reset.css'
 import './index.css'
@@ -13,7 +13,7 @@ class BaseLayout extends React.Component {
     return (
       <div>
         <Helmet
-          title="Pricing - Webiny"
+          title={this.props.title}
           meta={[
             { name: 'description', content: 'Node.js Serverless CMS' },
             {

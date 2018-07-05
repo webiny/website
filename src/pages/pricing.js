@@ -10,7 +10,7 @@ import OpenSource from '../components/pricing/open-source/open-source'
 class PricingPage extends React.Component {
   render() {
     return (
-      <BaseLayout>
+      <BaseLayout title="Pricing - Webiny">
         <Hero />
         <PaidPackages />
         <Faq />

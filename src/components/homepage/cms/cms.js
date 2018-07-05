@@ -157,12 +157,11 @@ class Cms extends React.Component {
   render() {
     return (
       <CmsContainer>
-        <SubTitle>Content Management System</SubTitle>
+        <SubTitle>
+          We provide you with everything you would expect & more
+        </SubTitle>
         <SubText>
-          We believe that websites today require a system that can deliver a
-          rich and interactive experience. One that supports smart widgets,
-          beyond simple text and image. Webiny CMS is easy to use, but still
-          powerful enough to craft impressive online experiences.
+          We’ve built Webiny to go Beyond Your Regular Content Management System
         </SubText>
         <GalleryContainer>
           <Gallery items={this.state.firstGallery} />

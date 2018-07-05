@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'react-emotion'
 import { css } from 'emotion'
-import theme from '../../utils/theme'
-import mq from '../../utils/breakpoints'
-import ContentContainer from '../../ui/content-container'
+import theme from '../utils/theme'
+import mq from '../utils/breakpoints'
+import ContentContainer from '../ui/content-container'
 import Newsletter from './newsletter'
 
 import webinyLogo from './assets/webiny-footer-logo.svg'
@@ -88,8 +88,9 @@ const Footer = () => (
           Webiny is released under the MIT open source license.
           <br />
           <br />
-          <Link href="#">GitHub</Link> / <Link href="#">Twitter</Link> /{' '}
-          <Link href="#">YouTube</Link>
+          <Link href="https://github.com/Webiny/webiny-js">GitHub</Link> /{' '}
+          <Link href="https://twitter.com/WebinyPlatform">Twitter</Link> /{' '}
+          <Link href="https://video.webiny.com/">YouTube</Link>
         </Copy>
       </Box>
       <Box className={textRight}>
@@ -98,8 +99,8 @@ const Footer = () => (
     </ContentContainer>
     <Bottom>
       <Copy className={textCenter}>
-        <Link href="#">Privacy Policy</Link> / <Link href="#">Contact Us</Link>{' '}
-        <br />
+        <Link href="#">Privacy Policy</Link> /{' '}
+        <Link href="/contact-us">Contact Us</Link> <br />
         Webiny © {new Date().getFullYear()}
       </Copy>
     </Bottom>

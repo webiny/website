@@ -46,7 +46,7 @@ class Faq extends React.Component {
           />
         </ContentContainer>
         <AdditionalQuestions>More questions?</AdditionalQuestions>
-        <ContactUs href="mailto:info@webiny.com">Contact Us</ContactUs>
+        <ContactUs href="/contact-us">Contact Us</ContactUs>
       </FaqContainer>
     )
   }

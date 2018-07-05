@@ -95,7 +95,7 @@ class Enterprise extends React.Component {
           </ReasonsList>
           <BoxContact>
             Enterprise
-            <ContactUs href="mailto:info@webiny.com">
+            <ContactUs href="/contact-us">
               Contact us for more information
             </ContactUs>
           </BoxContact>
