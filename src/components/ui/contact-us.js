@@ -69,6 +69,11 @@ const button = css(
   })
 )
 
+const Arrow = styled('img')({
+  height: 9,
+  marginLeft: 5,
+})
+
 class ContactUs extends React.Component {
   constructor(props) {
     super(props)
@@ -127,7 +132,7 @@ class ContactUs extends React.Component {
             />
             <Button className={button} type="primary">
               Submit
-              <img alt="Submit" src={arrow} />
+              <Arrow alt="Submit" src={arrow} />
             </Button>
           </Box>
         )}

@@ -46,6 +46,11 @@ const Bold = styled('span')({
   fontWeight: theme.fontWeight.semiBold,
 })
 
+const Arrow = styled('img')({
+  height: 9,
+  marginLeft: 5,
+})
+
 class OpenSource extends React.Component {
   render() {
     return (
@@ -57,7 +62,7 @@ class OpenSource extends React.Component {
               Webiny on your own servers and self manage it.
             </Text>
             <Button type="secondary">
-              Open source <img alt="arrow" src={buttonArrow} />
+              Open source <Arrow alt="arrow" src={buttonArrow} />
             </Button>
           </Wrapper>
         </ContentContainer>

@@ -46,6 +46,11 @@ const Bold = styled('span')({
   fontWeight: theme.fontWeight.semiBold,
 })
 
+const Arrow = styled('img')({
+  height: 9,
+  marginLeft: 5,
+})
+
 class QuickStart extends React.Component {
   render() {
     return (
@@ -57,7 +62,7 @@ class QuickStart extends React.Component {
               get you up and running in just few minutes.
             </Text>
             <Button type="primary" link="/pricing">
-              Quick Start <img alt="arrow" src={buttonArrow} />
+              Quick Start <Arrow alt="arrow" src={buttonArrow} />
             </Button>
           </Wrapper>
         </ContentContainer>

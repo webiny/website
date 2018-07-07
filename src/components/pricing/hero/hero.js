@@ -154,6 +154,11 @@ const button = css(
   })
 )
 
+const Arrow = styled('img')({
+  height: 9,
+  marginLeft: 5,
+})
+
 export default ({ children, ...props }) => (
   <Hero {...props}>
     <ContentContainer>
@@ -192,7 +197,7 @@ export default ({ children, ...props }) => (
           </ReasonWrapper>
           <Button className={button} type="primary">
             Get Started
-            <img alt="Get Started" src={arrow} />
+            <Arrow alt="Get Started" src={arrow} />
           </Button>
         </PricingBox>
       </PricingBoxWrapper>
