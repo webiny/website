@@ -73,6 +73,13 @@ const container = css(
   })
 )
 
+const Image = styled('img')(
+  {},
+  mq({
+    width: [300, 'auto'],
+  })
+)
+
 export default ({ children, ...props }) => (
   <Hero {...props}>
     <ContentContainer className={container}>
@@ -85,7 +92,7 @@ export default ({ children, ...props }) => (
         </SubText>
       </LeftSide>
       <RightSide>
-        <img src={superhero} alt="Agency Supehero" />
+        <Image src={superhero} alt="Agency Supehero" />
       </RightSide>
     </ContentContainer>
   </Hero>

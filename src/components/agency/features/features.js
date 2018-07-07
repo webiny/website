@@ -24,11 +24,16 @@ const Box = styled('div')(
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 100,
+    display: 'flex',
   },
   mq({
-    display: ['block', 'flex'],
+    flexWrap: ['wrap', 'nowrap'],
+    textAlign: ['center', 'left'],
+    margin: ['0px 20px', '0 0 25px 0'],
   })
 )
+
+const zebra = css({}, mq({ flexDirection: ['column-reverse', 'row'] }))
 
 const BoxInner = styled('div')(
   {},
@@ -52,9 +57,12 @@ const Image = styled('img')({
   height: 250,
 })
 
-const alignRight = css({
-  textAlign: 'right',
-})
+const alignRight = css(
+  {},
+  mq({
+    textAlign: ['center', 'right'],
+  })
+)
 
 const ContactBlock = styled('div')({
   background: 'url(' + contactBg + ') no-repeat center top',
@@ -104,7 +112,7 @@ export default ({ children, ...props }) => (
         </BoxInner>
       </Box>
 
-      <Box>
+      <Box className={zebra}>
         <BoxInner>
           <Image src={dedicatedDeployment} alt="Dedicated deployment" />
         </BoxInner>
@@ -133,7 +141,7 @@ export default ({ children, ...props }) => (
         </BoxInner>
       </Box>
 
-      <Box>
+      <Box className={zebra}>
         <BoxInner>
           <Image src={increaseValue} alt="Increased value" />
         </BoxInner>
