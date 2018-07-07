@@ -66,6 +66,7 @@ const alignRight = css(
 
 const ContactBlock = styled('div')({
   background: 'url(' + contactBg + ') no-repeat center top',
+  backgroundSize: 'cover',
   textAlign: 'center',
   padding: 50,
 })

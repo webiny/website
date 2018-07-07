@@ -253,7 +253,9 @@ class Header extends React.Component {
                   </Link>
                 </MobileMenuItem>
                 <MobileMenuItem>
-                  <Button link="#">Get Started</Button>
+                  <Button type="primary" link="/pricing">
+                    Get Started
+                  </Button>
                 </MobileMenuItem>
               </MobileMenuList>
             </MobileMenu>
