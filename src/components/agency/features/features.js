@@ -157,11 +157,8 @@ export default ({ children, ...props }) => (
       </Box>
     </ContentContainer>
     <ContactBlock>
-      <SubTitle>Paid Package</SubTitle>
-      <SubText>
-        Our paid package comes with flexible pricing so you can grow your
-        website without worries.
-      </SubText>
+      <SubTitle>Contact Us</SubTitle>
+      <SubText>We are here for any questions you might have.</SubText>
       <ContactUs />
     </ContactBlock>
   </React.Fragment>

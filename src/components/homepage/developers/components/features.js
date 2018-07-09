@@ -11,13 +11,13 @@ import graphqlIcon from '../assets/graphql-icon.svg'
 import uiComponentsIcon from '../assets/ui-components-icon.svg'
 import documentedIcon from '../assets/documented-icon.svg'
 import openSourceIcon from '../assets/open-source-icon.svg'
-import headlessIcon from '../assets/headless-icon.svg'
 import materialThemeIcon from '../assets/material-theme-icon.svg'
 import flowjsIcon from '../assets/flowjs-icon.svg'
 import ormIcon from '../assets/orm-icon.svg'
 import i18nIcon from '../assets/i18n-icon.svg'
 import securityIcon from '../assets/security-icon.svg'
 import externalLinkIcon from '../assets/external-link-symbol.svg'
+import visualBuilderIcon from '../assets/visual-builder-icon.svg'
 
 const BoxContainer = styled('div')(
   {
@@ -194,31 +194,31 @@ class Features extends React.Component {
         </BoxContainer>
         <BoxContainer>
           <Box>
-            <BoxIcon src={headlessIcon} />
-            <BoxTitle>Headless</BoxTitle>
+            <BoxIcon src={visualBuilderIcon} />
+            <BoxTitle>Visual Builder</BoxTitle>
             <BoxDescription>
-              Although Webiny comes with a frontend for your website, that part
-              is optional. You can use existing, or build a new, frontend in any
-              language or technology. Just use our GraphQL API to retrieve and
-              display your content.
+              Unlike most visual website builders, that work with static HTML
+              blocks, our visual builder allows you to insert, control and
+              configure React components.
             </BoxDescription>
             <BoxFooter>
               <ExternalLink href="#">
-                Learn more about Webiny Headless CMS
+                Learn more about Visual Builder
               </ExternalLink>
             </BoxFooter>
           </Box>
           <Box>
             <BoxIcon src={materialThemeIcon} />
-            <BoxTitle>Material Theme</BoxTitle>
+            <BoxTitle>Theme</BoxTitle>
             <BoxDescription>
-              Every website requires a theme. At Webiny we provide one based on
-              the latest Google Material UI, which can be adapted to fit any
-              brand requirements and pretty much any visual style.
+              Every website requires a theme. Webiny CMS comes with a built-in
+              theme, but also supports custom themes build with React
+              components, so you can leverage the whole power of the Javascript
+              ecosystem.
             </BoxDescription>
             <BoxFooter>
               <ExternalLink href="#">
-                Learn more about the Material Theme
+                Learn more about the CMS Theme
               </ExternalLink>
             </BoxFooter>
           </Box>

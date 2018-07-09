@@ -29,14 +29,16 @@ const Input = styled('input')({
   boxSizing: 'border-box',
   width: '100%',
   marginBottom: 25,
-  padding: 10,
+  padding: 15,
   fontSize: theme.fontSize.paragraph,
-  fontWeight: theme.fontWeight.semiBold,
-  border: '2px solid ' + theme.color.darkGray,
+  fontWeight: theme.fontWeight.regular,
+  border: '1px solid ' + theme.color.darkGray,
+  backgroundColor: theme.color.lightGray,
   borderRadius: 4,
   outline: 'none',
+  transition: '225ms all',
   '&:focus, &:active': {
-    border: '2px solid ' + theme.color.grayText,
+    border: '1px solid ' + theme.color.grayText,
   },
 })
 const Textarea = styled('textarea')({
@@ -46,14 +48,16 @@ const Textarea = styled('textarea')({
   width: '100%',
   marginBottom: 40,
   height: 150,
-  padding: '7px 10px',
+  padding: 15,
   fontSize: theme.fontSize.paragraph,
-  fontWeight: theme.fontWeight.semiBold,
-  border: '2px solid ' + theme.color.darkGray,
+  fontWeight: theme.fontWeight.regular,
+  border: '1px solid ' + theme.color.darkGray,
+  backgroundColor: theme.color.lightGray,
   borderRadius: 4,
   outline: 'none',
+  transition: '225ms all',
   '&:focus, &:active': {
-    border: '2px solid ' + theme.color.grayText,
+    border: '1px solid ' + theme.color.grayText,
   },
 })
 
@@ -134,6 +138,12 @@ class ContactUs extends React.Component {
               Submit
               <Arrow alt="Submit" src={arrow} />
             </Button>
+          </Box>
+        )}
+        {this.state.submitted && (
+          <Box>
+            Thank you for your message. We will respond at the earliest
+            convenience.
           </Box>
         )}
       </BoxWrapper>

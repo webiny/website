@@ -4,6 +4,7 @@ import { withPrefix } from 'gatsby-link'
 
 import Header from '../components/header/header'
 import Footer from '../components/footer/footer'
+import CookieNotice from '../components/ui/cookie-notice'
 
 import './reset.css'
 import './index.css'
@@ -39,6 +40,7 @@ class BaseLayout extends React.Component {
         <Header />
         {this.props.children}
         <Footer />
+        <CookieNotice />
       </div>
     )
   }
