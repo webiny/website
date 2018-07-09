@@ -4,6 +4,7 @@ import { css } from 'emotion'
 import mq from '../../utils/breakpoints'
 import theme from '../../utils/theme'
 import ContentContainer from '../../ui/content-container'
+import Link from 'gatsby-link'
 
 import bulletImage from './assets/bullet.svg'
 
@@ -70,7 +71,7 @@ const ReasonsItem = styled('li')({
   },
 })
 
-const ContactUs = styled('a')({
+const contactUs = css({
   display: 'block',
   textAlign: 'center',
   fontSize: theme.fontSize.paragraph,
@@ -95,9 +96,9 @@ class Enterprise extends React.Component {
           </ReasonsList>
           <BoxContact>
             Enterprise
-            <ContactUs href="/contact-us">
+            <Link className={contactUs} to="/contact-us">
               Contact us for more information
-            </ContactUs>
+            </Link>
           </BoxContact>
         </Box>
       </ContentContainer>

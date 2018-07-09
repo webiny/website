@@ -79,7 +79,7 @@ const HeaderContainer = styled('header')(
     paddingTop: props.isSticky ? 10 : 20,
     paddingBottom: props.isSticky ? 10 : 20,
     [MenuItem]: {
-      [Link]: {
+      ['a.' + linkStyle]: {
         color: props.isSticky ? '#000' : '#fff',
       },
     },

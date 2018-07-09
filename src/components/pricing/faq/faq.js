@@ -4,6 +4,7 @@ import { css } from 'emotion'
 import theme from '../../utils/theme'
 import ContentContainer from '../../ui/content-container'
 import FaqComponent from '../../ui/faq'
+import Link from 'gatsby-link'
 
 const FaqContainer = styled('section')({
   backgroundColor: theme.color.lightGray,
@@ -20,7 +21,7 @@ const AdditionalQuestions = styled('h4')({
   fontSize: theme.fontSize.h4,
 })
 
-const ContactUs = styled('a')({
+const contactUs = css({
   display: 'block',
   textAlign: 'center',
   fontSize: theme.fontSize.paragraph,
@@ -46,7 +47,9 @@ class Faq extends React.Component {
           />
         </ContentContainer>
         <AdditionalQuestions>More questions?</AdditionalQuestions>
-        <ContactUs href="/contact-us">Contact Us</ContactUs>
+        <Link className={contactUs} to="/contact-us">
+          Contact Us
+        </Link>
       </FaqContainer>
     )
   }
