@@ -99,8 +99,15 @@ const Footer = () => (
     </ContentContainer>
     <Bottom>
       <Copy className={textCenter}>
-        <Link href="#">Privacy Policy</Link> /{' '}
-        <Link href="/contact-us">Contact Us</Link> <br />
+        <Link href="/contact-us">Contact Us</Link> /{' '}
+        <Link href="https://docs.webiny.com/privacy-policy">
+          Privacy Policy
+        </Link>{' '}
+        /{' '}
+        <Link href="https://docs.webiny.com/terms-of-service">
+          Terms of Service
+        </Link>
+        <br />
         Webiny © {new Date().getFullYear()}
       </Copy>
     </Bottom>

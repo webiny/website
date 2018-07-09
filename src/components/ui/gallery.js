@@ -2,8 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import ContentContainer from './content-container'
 import styled from 'react-emotion'
+import { css } from 'emotion'
 import theme from '../utils/theme'
 import mq from '../utils/breakpoints'
+import Img from 'react-progressive-bg-image'
 
 import arrow from './assets/bullet-arrow.svg'
 
@@ -83,7 +85,7 @@ const GalleryImageContainer = styled('div')(
   })
 )
 
-const GalleryImage = styled('img')(
+const galleryImage = css(
   {
     transition: 'opacity 250ms ease-in-out',
     boxShadow: '0 2px 4px 0 rgba(211,211,211,0.50)',
@@ -111,12 +113,8 @@ const GalleryImage = styled('img')(
 
 class Gallery extends React.Component {
   state = { items: [], activeItem: 0, width: 0 }
-  topImage = ''
-  bottomImage = ''
 
   setItems = items => {
-    this.bottomImage = items[this.state.activeItem].image
-    this.topImage = items[this.state.activeItem].image
     this.setState({ items })
   }
 
@@ -129,24 +127,8 @@ class Gallery extends React.Component {
   }
 
   setActiveItem = index => {
-    let imageTopNode = ReactDOM.findDOMNode(this.imageTop)
-    let imageBottomNode = ReactDOM.findDOMNode(this.imageBottom)
-    imageBottomNode.classList.add('bottom')
-    imageTopNode.classList.add('top')
-
-    // set the new image to bottom first
-    this.bottomImage = this.state.items[index].image
-
-    // fade out the top with the old image
-    imageTopNode.classList.add('inactive')
-    this.forceUpdate()
-
-    setTimeout(() => {
-      // once the animation is done, add the new image to the top image
-      //this.topImage = this.state.items[index].image
-      imageTopNode.classList.remove('inactive')
-      this.setState({ activeItem: index })
-    }, 250)
+    this.setState({ activeItem: index })
+    return
   }
 
   renderDesktop = () => {
@@ -171,17 +153,10 @@ class Gallery extends React.Component {
             })}
           </GalleryMenu>
           <GalleryImageContainer>
-            <GalleryImage
+            <Img
+              className={galleryImage}
               src={this.state.items[this.state.activeItem].image}
-              ref={image => {
-                this.imageTop = image
-              }}
-            />
-            <GalleryImage
-              src={this.bottomImage}
-              ref={image => {
-                this.imageBottom = image
-              }}
+              placeholder={arrow}
             />
           </GalleryImageContainer>
         </GalleryContainer>
@@ -199,7 +174,11 @@ class Gallery extends React.Component {
                 <GalleryItemContainer>
                   <GalleryItemTitle>{item.title}</GalleryItemTitle>
                   <GalleryItemSubTitle>{item.subTitle}</GalleryItemSubTitle>
-                  <GalleryImage src={item.image} />
+                  <Img
+                    placeholder={arrow}
+                    className={galleryImage}
+                    src={item.image}
+                  />
                 </GalleryItemContainer>
               </GalleryItem>
             )
