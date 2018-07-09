@@ -5,6 +5,7 @@ import theme from '../utils/theme'
 import mq from '../utils/breakpoints'
 import ContentContainer from '../ui/content-container'
 import Newsletter from './newsletter'
+import Link from 'gatsby-link'
 
 import webinyLogo from './assets/webiny-footer-logo.svg'
 
@@ -61,7 +62,7 @@ const textCenter = css({
   textAlign: 'center !important',
 })
 
-const Link = styled('a')({
+const linkStyle = css({
   color: theme.color.darkGray,
 })
 
@@ -88,9 +89,20 @@ const Footer = () => (
           Webiny is released under the MIT open source license.
           <br />
           <br />
-          <Link href="https://github.com/Webiny/webiny-js">GitHub</Link> /{' '}
-          <Link href="https://twitter.com/WebinyPlatform">Twitter</Link> /{' '}
-          <Link href="https://video.webiny.com/">YouTube</Link>
+          <Link
+            className={linkStyle}
+            href="https://github.com/Webiny/webiny-js"
+          >
+            GitHub
+          </Link>{' '}
+          /{' '}
+          <Link className={linkStyle} href="https://twitter.com/WebinyPlatform">
+            Twitter
+          </Link>{' '}
+          /{' '}
+          <Link className={linkStyle} href="https://video.webiny.com/">
+            YouTube
+          </Link>
         </Copy>
       </Box>
       <Box className={textRight}>
@@ -99,14 +111,20 @@ const Footer = () => (
     </ContentContainer>
     <Bottom>
       <Copy className={textCenter}>
-        <Link href="/contact-us">Contact Us</Link> /{' '}
-        <Link href="https://docs.webiny.com/privacy-policy">
-          Privacy Policy
+        <Link className={linkStyle} to="/contact-us">
+          Contact Us
         </Link>{' '}
         /{' '}
-        <Link href="https://docs.webiny.com/terms-of-service">
+        <a className={linkStyle} href="https://docs.webiny.com/privacy-policy">
+          Privacy Policy
+        </a>{' '}
+        /{' '}
+        <a
+          className={linkStyle}
+          href="https://docs.webiny.com/terms-of-service"
+        >
           Terms of Service
-        </Link>
+        </a>
         <br />
         Webiny © {new Date().getFullYear()}
       </Copy>

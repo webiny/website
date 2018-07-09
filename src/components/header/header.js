@@ -4,6 +4,8 @@ import theme from '../utils/theme'
 import mq from '../utils/breakpoints'
 import ContentContainer from '../ui/content-container'
 import Button from '../ui/button'
+import Link from 'gatsby-link'
+import { css } from 'emotion'
 
 import logo from './assets/webiny-logo.svg'
 import logoOrange from './assets/webiny-orange-logo.svg'
@@ -50,10 +52,14 @@ const MenuItem = styled('li')({
   fontSize: theme.fontSize.navMenuItem,
 })
 
-const Link = styled('a')({
+const linkStyle = css({
   fontWeight: theme.fontWeight.semiBold,
   textDecoration: 'none',
   color: '#fff',
+  transition: '250ms opacity',
+  '&:hover': {
+    opacity: '0.8',
+  },
 })
 
 const HeaderContainer = styled('header')(
@@ -176,7 +182,7 @@ class Header extends React.Component {
         <ContentContainer>
           <NavBar>
             <WebinyLogo alt="Webiny Home">
-              <Link rel="prerender" href="/">
+              <Link rel="prerender" to="/">
                 <img
                   alt="Webiny Logo"
                   src={
@@ -190,26 +196,37 @@ class Header extends React.Component {
 
             <Menu>
               <MenuItem>
-                <Link rel="prerender" href="/pricing">
+                <Link className={linkStyle} rel="prerender" to="/pricing">
                   Pricing
                 </Link>
               </MenuItem>
               <MenuItem>
-                <Link rel="prerender" href="/agency">
+                <Link className={linkStyle} rel="prerender" to="/agency">
                   For Agencies
                 </Link>
               </MenuItem>
               <MenuItem>
-                <Link href="https://docs.webiny.com/">Docs</Link>
+                <a className={linkStyle} href="https://docs.webiny.com/">
+                  Docs
+                </a>
               </MenuItem>
               <MenuItem>
-                <Link href="https://community.webiny.com/">Community</Link>
+                <a className={linkStyle} href="https://community.webiny.com/">
+                  Community
+                </a>
               </MenuItem>
               <MenuItem>
-                <Link href="https://blog.webiny.com/">Blog</Link>
+                <a className={linkStyle} href="https://blog.webiny.com/">
+                  Blog
+                </a>
               </MenuItem>
               <MenuItem>
-                <Link href="https://github.com/webiny/webiny-js/">Source</Link>
+                <a
+                  className={linkStyle}
+                  href="https://github.com/webiny/webiny-js/"
+                >
+                  Source
+                </a>
               </MenuItem>
               <MenuItem>
                 <Button link="/pricing" type={this.state.isSticky && 'primary'}>
@@ -229,28 +246,26 @@ class Header extends React.Component {
               />
               <MobileMenuList open={this.state.mobileMenuOpen}>
                 <MobileMenuItem>
-                  <Link rel="prerender" href="/pricing">
+                  <Link rel="prerender" to="/pricing">
                     Pricing
                   </Link>
                 </MobileMenuItem>
                 <MobileMenuItem>
-                  <Link rel="prerender" href="/agency">
+                  <Link rel="prerender" to="/agency">
                     For Agencies
                   </Link>
                 </MobileMenuItem>
                 <MobileMenuItem>
-                  <Link href="https://docs.webiny.com/">Docs</Link>
+                  <Link to="https://docs.webiny.com/">Docs</Link>
                 </MobileMenuItem>
                 <MobileMenuItem>
-                  <Link href="https://community.webiny.com/">Community</Link>
+                  <Link to="https://community.webiny.com/">Community</Link>
                 </MobileMenuItem>
                 <MobileMenuItem>
-                  <Link href="https://blog.webiny.com/">Blog</Link>
+                  <Link to="https://blog.webiny.com/">Blog</Link>
                 </MobileMenuItem>
                 <MobileMenuItem>
-                  <Link href="https://github.com/webiny/webiny-js/">
-                    Source
-                  </Link>
+                  <Link to="https://github.com/webiny/webiny-js/">Source</Link>
                 </MobileMenuItem>
                 <MobileMenuItem>
                   <Button type="primary" link="/pricing">

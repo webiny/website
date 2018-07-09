@@ -2,6 +2,7 @@ import React from 'react'
 import { cx, css } from 'emotion'
 import mq from '../utils/breakpoints'
 import theme from '../utils/theme'
+import Link from 'gatsby-link'
 
 const buttonDefault = css(
   {
@@ -24,12 +25,13 @@ const buttonDefault = css(
     letterSpacing: '.025em',
     fontWeight: 600,
     boxSizing: 'border-box',
+    outline: 'none',
+    border: 'none',
     '&:hover': {
       boxShadow: '0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08)',
       transform: 'translateY(-1px)',
     },
     '&:active': {
-      boxShadow: 'inset 0px 0px 2px 0px #3FBFB0',
       transform: 'translateY(1px)',
     },
   },
@@ -88,11 +90,19 @@ class Button extends React.Component {
       style += ' ' + this.props.className
     }
 
-    return (
-      <a href={this.props.link} className={style}>
-        {this.props.children}
-      </a>
-    )
+    if (this.props.hasOwnProperty('link')) {
+      return (
+        <Link to={this.props.link} className={style}>
+          {this.props.children}
+        </Link>
+      )
+    } else {
+      return (
+        <button className={style} onClick={this.props.onClick}>
+          {this.props.children}
+        </button>
+      )
+    }
   }
 }
 

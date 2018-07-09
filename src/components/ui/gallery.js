@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import ContentContainer from './content-container'
 import styled from 'react-emotion'
 import { css } from 'emotion'
