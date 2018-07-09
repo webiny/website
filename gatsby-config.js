@@ -21,13 +21,5 @@ module.exports = {
         autoLabel: true,
       },
     },
-    {
-      resolve: 'gatsby-plugin-netlify',
-      options: {
-        headers: {
-          '/*': ['Basic-Auth: webiny:dev'],
-        },
-      },
-    },
   ],
 }

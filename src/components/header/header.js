@@ -126,9 +126,6 @@ const MobileMenuItem = styled('li')({
   listStyle: 'none',
   fontSize: 24,
   marginBottom: 10,
-  [Link]: {
-    color: theme.color.black,
-  },
 })
 
 class Header extends React.Component {

@@ -4,9 +4,11 @@ import styled from 'react-emotion'
 import { css } from 'emotion'
 import theme from '../utils/theme'
 import mq from '../utils/breakpoints'
-import Img from 'react-progressive-bg-image'
+//import Img from 'react-progressive-bg-image'
 
 import arrow from './assets/bullet-arrow.svg'
+
+const Img = styled('img')({})
 
 const GalleryContainer = styled('div')(
   {
