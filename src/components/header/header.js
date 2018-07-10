@@ -126,7 +126,7 @@ const MobileMenuItem = styled('li')({
   listStyle: 'none',
   fontSize: 24,
   marginBottom: 10,
-  [Link]: {
+  a: {
     color: theme.color.black,
   },
 })
