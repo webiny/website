@@ -41,7 +41,7 @@ const Box = styled('div')(
   mq({
     width: ['auto', '33%'],
     margin: [20, '0px 15px'],
-    padding: ['80px 30px 50px', '100px 30px 30px'],
+    padding: ['80px 30px 50px', '90px 30px 30px'],
   })
 )
 
@@ -66,7 +66,7 @@ const BoxDescription = styled('p')({
   fontSize: theme.fontSize.paragraph,
   lineHeight: '150%',
   color: theme.color.black,
-  marginBottom: 20,
+  marginBottom: 30,
 })
 
 const BoxFooter = styled('div')({
@@ -102,10 +102,9 @@ class Features extends React.Component {
             <BoxIcon src={serverlessIcon} />
             <BoxTitle>Serverless</BoxTitle>
             <BoxDescription>
-              Serverless technology enables you to execute your code inside a
-              safe environment that is automatically managed for you. So no more
-              worries about patching your systems, more efficient cost, and
-              instant scalability.
+              Serverless technology enables you to execute code inside a safe
+              and managed environment. No more worries about patching your
+              systems. Benefit from efficient cost, and instant scalability.
             </BoxDescription>
             <BoxFooter>
               <Italic>

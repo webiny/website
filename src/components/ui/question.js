@@ -13,6 +13,7 @@ const QuestionWrapper = styled('div')(
     backgroundColor: theme.color.white,
     border: '1px solid ' + theme.color.darkGray,
     marginTop: -1,
+    position: 'relative',
     '&:last-child': {
       boxShadow: '0 2px 4px 0 rgba(222,222,222,0.50)',
     },
@@ -21,9 +22,10 @@ const QuestionWrapper = styled('div')(
     [Answer]: {
       //display: props.expanded ? 'block' : 'none',
       height: props.expanded ? 'auto' : 0,
-      margin: props.expanded ? '25px 25px' : 0,
+      margin: props.expanded ? '0 25px 25px 25px' : 0,
       opacity: props.expanded ? 1 : 0,
       visibility: props.expanded ? 'visible' : 'hidden',
+      display: props.expanded ? 'block' : 'none',
     },
     [QuestionBlock]: {
       backgroundImage:
@@ -53,6 +55,13 @@ const Answer = styled('div')({
   transition: 'all 250ms',
   li: {
     margin: 15,
+  },
+  a: {
+    color: theme.color.primaryDark,
+    textDecoration: 'none',
+    '&:hover': {
+      textDecoration: 'underline',
+    },
   },
 })
 

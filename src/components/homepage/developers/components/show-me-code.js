@@ -9,6 +9,8 @@ import CodeBlock from '../../../ui/code-block'
 import showMeCode from '../assets/show-me-code.svg'
 import uiButtonsExample from '../assets/react-ui-buttons.jpg'
 
+// https://graphql.github.io/swapi-graphql
+
 const ShowMeCodeContainer = styled('div')(
   {},
   mq({
@@ -161,12 +163,18 @@ class ShowMeCode extends React.Component {
         subTitle: 'Load the UI button component in several different styles.',
         content: <ReactComponentsExample />,
       },
+      /*
       {
         title: 'Client API',
         subTitle:
           'From the client side, call the Webiny API and load the list of all active pages.',
-        content: <ReactComponentsExample />,
+        content: (
+          <Provider store={store}>
+            <Playground endpoint="https://api.graph.cool/simple/v1/swapi" />
+          </Provider>
+        ),
       },
+      */
     ],
   }
   render() {

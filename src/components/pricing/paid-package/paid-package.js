@@ -9,6 +9,7 @@ import pricingBullet from './assets/pricing-bullet.svg'
 
 const maxWidth = css({
   maxWidth: 750,
+  marginBottom: 25,
 })
 
 const SubTitle = styled('h2')({
@@ -158,6 +159,8 @@ class PaidPackage extends React.Component {
               <Bold>500h</Bold> Lambda runtime
             </ReasonsItem>
             <ReasonsItem>Unlimited deployments per month</ReasonsItem>
+            <ReasonsItem>Global CDN</ReasonsItem>
+            <ReasonsItem>Email support</ReasonsItem>
           </ReasonsList>
         </Box>
         <ExtraTitle>Extra usage: $20/package</ExtraTitle>

@@ -23,13 +23,12 @@ const Box = styled('div')(
   {
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 100,
     display: 'flex',
   },
   mq({
     flexWrap: ['wrap', 'nowrap'],
     textAlign: ['center', 'left'],
-    margin: ['0px 20px', '0 0 25px 0'],
+    margin: ['0px 20px', '0 0 100px 0'],
   })
 )
 

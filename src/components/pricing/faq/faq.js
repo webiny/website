@@ -28,12 +28,114 @@ const contactUs = css({
   color: theme.color.black,
 })
 
+const howLambda = (
+  <React.Fragment>
+    <p>
+      Each request that lands on the API of your site is counted as one request.
+      The time from when the request was recieved, until the time a response is
+      delivered, or request it terminated, is counted as the run time. The run
+      time is rounded to the nearest 100ms.
+    </p>
+  </React.Fragment>
+)
+
+const lambdaLimits = (
+  <React.Fragment>
+    <p>
+      In case your site is on the <strong>Free Package</strong> all requests
+      will be denied, including the ones for static assets.
+    </p>
+    <p>
+      In case you are on the <strong>Paid Package</strong>, and extra usage
+      package are available, your requests will be served without any
+      interruptions.
+    </p>
+    <p>
+      In case an extra usage package is not available, all requests will be
+      denied, including the ones for static assets.
+    </p>
+  </React.Fragment>
+)
+
+const extraUsagePackageLimit = (
+  <React.Fragment>
+    <p>
+      Yes, you can. In your site manager you can define the maximum amount of
+      extra packages a website can consume.
+    </p>
+  </React.Fragment>
+)
+
+const cancelSub = (
+  <React.Fragment>
+    <p>
+      From the site manager interface you can upgrade or downgrade your
+      subscription at any time. An active subscription that is downgraded will
+      expire at the end of the billing period and automatically transition to a
+      free package if viable.
+    </p>
+    <p>
+      As for refunds, we do not offer refunds. You are welcome to try and use
+      our free package as long as you like, before you migrate onto a paid
+      package.
+    </p>
+  </React.Fragment>
+)
+
+const paymentMethods = (
+  <React.Fragment>
+    <p>
+      To sign up for the <strong>Free Package</strong> you don't need a credit
+      card.
+    </p>
+    <p>
+      To sign up for a <strong>Paid Package</strong> a credit card is required.
+      We accept all major credit and debit cards such as Visa, Mastercard or
+      American Express. For larger accounts we also accept bank transfers.
+    </p>
+  </React.Fragment>
+)
+
+const paymentCycles = (
+  <React.Fragment>
+    <p>
+      When you subscribe to a <strong>Paid Package</strong> we will initially
+      charge $25 to your credit or debit card.
+    </p>
+    <p>
+      Once the month expires, we will automatically renew your package, and bill
+      for any extra usage that might have occurred for the previous month.
+    </p>
+  </React.Fragment>
+)
+
 class Faq extends React.Component {
   state = {
     questions: [
       {
-        question: 'How much does it cost?',
-        answer: '$25 per month per site',
+        question: 'How are Lambda requests and run time calculated?',
+        answer: howLambda,
+      },
+      {
+        question: 'What happens if I go above the lambda package limits?',
+        answer: lambdaLimits,
+      },
+      {
+        question: 'Can I limit the extra usage packages?',
+        answer: extraUsagePackageLimit,
+      },
+      {
+        question: 'How can I cancel my subscription? Can I get a refund?',
+        answer: cancelSub,
+      },
+      {
+        question:
+          'Do I need a credit-card to signup and what payment methods you accept?',
+        answer: paymentMethods,
+      },
+      {
+        question: 'What are the payment cycles?',
+        answer: paymentCycles,
       },
     ],
   }
