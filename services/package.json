@@ -1,0 +1,12 @@
+{
+  "name": "webiny-services",
+  "version": "1.0.0",
+  "dependencies": {
+    "aws-sdk": "^2.275.1",
+    "querystring": "^0.2.0",
+    "request": "^2.87.0"
+  },
+  "devDependencies": {
+    "serverless-offline": "^3.25.6"
+  }
+}

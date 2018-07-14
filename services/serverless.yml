@@ -1,0 +1,24 @@
+service: webiny-website-services
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  subscribe:
+    handler: subscribe.handler
+    events:
+      - http:
+          path: subscribe
+          method: post
+  contact-us:
+    handler: contact-us.handler
+    events:
+      - http:
+          path: contact-us
+          method: post
+plugins:
+  - serverless-offline
+custom:
+  serverless-offline:
+    port: 4000
