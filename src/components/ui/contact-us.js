@@ -145,7 +145,7 @@ class ContactUs extends React.Component {
             <Textarea
               name="message"
               ref={this.messageRef}
-              placeholder="Your question, comment, feedback"
+              placeholder={this.props.placeholder}
               onChange={this.handleChange}
               value={this.state.question}
               required

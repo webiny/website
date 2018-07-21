@@ -17,6 +17,7 @@ const QuestionWrapper = styled('div')(
     '&:last-child': {
       boxShadow: '0 2px 4px 0 rgba(222,222,222,0.50)',
     },
+    transition: '225ms margin',
   },
   props => ({
     [Answer]: {
@@ -32,6 +33,7 @@ const QuestionWrapper = styled('div')(
         'url(' + (props.expanded ? questionContract : questionExpand) + ')',
       color: props.expanded ? theme.color.primaryDark : '',
     },
+    margin: props.expanded ? '10px 0' : '-1px 0 0 0',
   })
 )
 

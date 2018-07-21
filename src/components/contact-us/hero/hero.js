@@ -55,7 +55,7 @@ export default ({ children, ...props }) => (
         You are welcome to contact us with any question, feedback or comment you
         might have and we will try to respond in shortest possible time.
       </SubText>
-      <ContactUs />
+      <ContactUs placeholder="Your question, comment, feedback" />
     </ContentContainer>
   </Hero>
 )

@@ -85,12 +85,12 @@ const SubText = styled('p')(
     fontWeight: theme.fontWeight.regular,
     color: theme.color.white,
     textAlign: 'center',
-    margin: '0 20%',
     lineHeight: '150%',
     marginBottom: 50,
   },
   mq({
-    margin: ['0 20px', '0 20% 40px 20%'],
+    margin: ['0 20px', '0 auto 40px auto'],
+    width: ['100%', '400px'],
   })
 )
 
@@ -156,9 +156,12 @@ export default ({ children, ...props }) => (
       </Box>
     </ContentContainer>
     <ContactBlock>
-      <SubTitle>Contact Us</SubTitle>
-      <SubText>We are here for any questions you might have.</SubText>
-      <ContactUs />
+      <SubTitle>Let's Work Together</SubTitle>
+      <SubText>
+        Let us know about your agency, type or projects you usually do, and how
+        you want us to work together.
+      </SubText>
+      <ContactUs placeholder="Your message" />
     </ContactBlock>
   </React.Fragment>
 )
