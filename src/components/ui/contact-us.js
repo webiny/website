@@ -82,10 +82,10 @@ class ContactUs extends React.Component {
   constructor(props) {
     super(props)
 
-    this.state = { name: '', email: '', question: '', submitted: false }
+    this.state = { name: '', email: '', message: '', submitted: false }
     this.nameRef = React.createRef()
     this.emailRef = React.createRef()
-    this.questionRef = React.createRef()
+    this.messageRef = React.createRef()
   }
 
   handleChange = event => {
@@ -96,9 +96,25 @@ class ContactUs extends React.Component {
     if (
       this.state.email !== '' &&
       this.state.name !== '' &&
-      this.state.question !== ''
+      this.state.message !== ''
     ) {
       this.setState({ submitted: true })
+
+      const formData = Object.keys(this.state)
+        .map(key => {
+          return (
+            encodeURIComponent(key) + '=' + encodeURIComponent(this.state[key])
+          )
+        })
+        .join('&')
+
+      fetch('https://web-api.cloud.webiny.com/contact-us', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formData,
+      })
     }
 
     event.preventDefault()
@@ -127,8 +143,8 @@ class ContactUs extends React.Component {
               required
             />
             <Textarea
-              name="question"
-              ref={this.questionRef}
+              name="message"
+              ref={this.messageRef}
               placeholder="Your question, comment, feedback"
               onChange={this.handleChange}
               value={this.state.question}

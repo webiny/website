@@ -3,6 +3,12 @@ service: webiny-website-services
 provider:
   name: aws
   runtime: nodejs6.10
+  iamRoleStatements:
+    - Effect: 'Allow'
+      Action:
+        - 'ses:SendEmail'
+      Resource:
+        - 'arn:aws:ses:us-east-1:*'
 
 functions:
   subscribe:

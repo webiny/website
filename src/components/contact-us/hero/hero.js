@@ -18,7 +18,7 @@ const Hero = styled('section')(
   mq({
     padding: ['100px 20px 25px', '150px 0 25px'],
     //height: ['auto', 'calc(100vh - 150px)'],
-    //minHeight: ['auto'],
+    minHeight: ['auto', '700px'],
     //maxHeight: ['auto'],
     marginBottom: [50, 100],
     backgroundSize: ['cover'],

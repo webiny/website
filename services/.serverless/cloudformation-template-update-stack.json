@@ -78,6 +78,15 @@
                       "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/webiny-website-services-dev-contact-us:*:*"
                     }
                   ]
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "ses:SendEmail"
+                  ],
+                  "Resource": [
+                    "arn:aws:ses:us-east-1:*"
+                  ]
                 }
               ]
             }
@@ -104,7 +113,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/webiny-website-services/dev/1531600504448-2018-07-14T20:35:04.448Z/webiny-website-services.zip"
+          "S3Key": "serverless/webiny-website-services/dev/1532205814617-2018-07-21T20:43:34.617Z/webiny-website-services.zip"
         },
         "FunctionName": "webiny-website-services-dev-subscribe",
         "Handler": "subscribe.handler",
@@ -123,14 +132,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "SubscribeLambdaVersion6FoRbykIvapT1hf6fNDSLxKDECXpfq3He0ko7wz1hQQ": {
+    "SubscribeLambdaVersioncFL8UUue8ltzva8vFWsKlxmDZdfDRtCfbk3LhxHx6M": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "SubscribeLambdaFunction"
         },
-        "CodeSha256": "my8a6qzEhflkJX37G1aX8p3bh8zcTHme59W9IacvJOs="
+        "CodeSha256": "EUJMygo6KfAToFR/vQUQmB5rfm1R52gKJXn0BCLvaBk="
       }
     },
     "ContactDashusLambdaFunction": {
@@ -140,7 +149,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/webiny-website-services/dev/1531600504448-2018-07-14T20:35:04.448Z/webiny-website-services.zip"
+          "S3Key": "serverless/webiny-website-services/dev/1532205814617-2018-07-21T20:43:34.617Z/webiny-website-services.zip"
         },
         "FunctionName": "webiny-website-services-dev-contact-us",
         "Handler": "contact-us.handler",
@@ -159,14 +168,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "ContactDashusLambdaVersionk4SeGsp5FXaffHfwYrYN99zHQUBqykcemLvU79rtAg": {
+    "ContactDashusLambdaVersion61ymRmEO9Uo5rdzCSra4Boem0yTIGnwrDWm5AmsLH4": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ContactDashusLambdaFunction"
         },
-        "CodeSha256": "my8a6qzEhflkJX37G1aX8p3bh8zcTHme59W9IacvJOs="
+        "CodeSha256": "EUJMygo6KfAToFR/vQUQmB5rfm1R52gKJXn0BCLvaBk="
       }
     },
     "ApiGatewayRestApi": {
@@ -296,7 +305,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1531600504574": {
+    "ApiGatewayDeployment1532205814752": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -413,13 +422,13 @@
     "SubscribeLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "SubscribeLambdaVersion6FoRbykIvapT1hf6fNDSLxKDECXpfq3He0ko7wz1hQQ"
+        "Ref": "SubscribeLambdaVersioncFL8UUue8ltzva8vFWsKlxmDZdfDRtCfbk3LhxHx6M"
       }
     },
     "ContactDashusLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ContactDashusLambdaVersionk4SeGsp5FXaffHfwYrYN99zHQUBqykcemLvU79rtAg"
+        "Ref": "ContactDashusLambdaVersion61ymRmEO9Uo5rdzCSra4Boem0yTIGnwrDWm5AmsLH4"
       }
     },
     "ServiceEndpoint": {

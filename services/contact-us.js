@@ -9,9 +9,6 @@ const ses = new aws.SES({
 
 // Lambda Handler
 module.exports.handler = function(event, context, callback) {
-  const SUBSCRIBERS_LIST_ID = 'gVp3rBCx9E6GZtVznTEmwg'
-  const ENDPOINT = 'https://mailer.webiny.com/subscribe'
-
   // Parse the post body
   const data = qs.parse(event.body)
 
@@ -63,7 +60,7 @@ module.exports.handler = function(event, context, callback) {
   }
 
   ses.sendEmail(params, (err, data) => {
-    if (err) {
+    if (!err) {
       callback(null, {
         statusCode: 200,
         body: JSON.stringify({ status: true, msg: 'Thanks' }),
@@ -72,10 +69,10 @@ module.exports.handler = function(event, context, callback) {
       })
     } else {
       callback(null, {
-        statusCode: 200,
+        statusCode: 503,
         body: JSON.stringify({
           status: false,
-          msg: 'Oops...a strange error occurred, we are looking into it.',
+          msg: JSON.stringify(err),
         }),
         isBase64Encoded: false,
         headers: {},

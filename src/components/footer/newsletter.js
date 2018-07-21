@@ -79,6 +79,22 @@ class Newsletter extends React.Component {
   handleSubmit = event => {
     if (this.state.email !== '') {
       this.setState({ email: 'Thanks!' })
+
+      const formData = Object.keys(this.state)
+        .map(key => {
+          return (
+            encodeURIComponent(key) + '=' + encodeURIComponent(this.state[key])
+          )
+        })
+        .join('&')
+
+      fetch('https://web-api.cloud.webiny.com/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formData,
+      })
     }
 
     event.preventDefault()
