@@ -17,7 +17,7 @@ const QuestionWrapper = styled('div')(
     '&:last-child': {
       boxShadow: '0 2px 4px 0 rgba(222,222,222,0.50)',
     },
-    transition: '225ms margin',
+    transition: '225ms all ease',
   },
   props => ({
     [Answer]: {
@@ -26,7 +26,7 @@ const QuestionWrapper = styled('div')(
       margin: props.expanded ? '0 25px 25px 25px' : 0,
       opacity: props.expanded ? 1 : 0,
       visibility: props.expanded ? 'visible' : 'hidden',
-      display: props.expanded ? 'block' : 'none',
+      //display: props.expanded ? 'block' : 'none',
     },
     [QuestionBlock]: {
       backgroundImage:
@@ -54,7 +54,8 @@ const Answer = styled('div')({
   display: 'block',
   width: 'auto',
   height: 0,
-  transition: 'all 250ms',
+  //transition: 'all 1s',
+  overflow: 'hidden',
   li: {
     margin: 15,
   },
