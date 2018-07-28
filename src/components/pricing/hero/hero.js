@@ -1,16 +1,16 @@
-import React from 'react'
-import styled from 'react-emotion'
-import theme from '../../utils/theme'
-import { css } from 'emotion'
-import mq from '../../utils/breakpoints'
-import ContentContainer from '../../ui/content-container'
-import Button from '../../ui/button'
+import React from 'react';
+import styled from 'react-emotion';
+import theme from '../../utils/theme';
+import {css} from 'emotion';
+import mq from '../../utils/breakpoints';
+import ContentContainer from '../../ui/content-container';
+import Button from '../../ui/button';
 
-import heroBg from './assets/pricing-hero-bg.svg'
-import pricingBullet from './assets/pricing-bullet.svg'
-import arrow from './assets/gs-btn-arrow.svg'
+import heroBg from './assets/pricing-hero-bg.svg';
+import pricingBullet from './assets/pricing-bullet.svg';
+import arrow from './assets/gs-btn-arrow.svg';
 
-const Hero = styled('section')(
+const Hero = styled ('section') (
   {
     width: '100%',
     background: 'url(' + heroBg + ') no-repeat center top',
@@ -18,7 +18,7 @@ const Hero = styled('section')(
     boxSizing: 'border-box',
     textAlign: 'center',
   },
-  mq({
+  mq ({
     padding: ['100px 20px 25px', '120px 0 25px'],
     height: ['auto', 'calc(100vh - 150px)'],
     minHeight: ['auto', 700],
@@ -27,15 +27,15 @@ const Hero = styled('section')(
     backgroundSize: ['cover'],
     backgroundPosition: ['top', 'top', 'bottom'],
   })
-)
+);
 
-const Title = styled('h1')({
+const Title = styled ('h1') ({
   fontSize: theme.fontSize.h1,
   fontWeight: theme.fontWeight.semiBold,
   marginBottom: 25,
-})
+});
 
-const SubText = styled('p')(
+const SubText = styled ('p') (
   {
     fontSize: theme.fontSize.subText,
     fontWeight: theme.fontWeight.regular,
@@ -45,17 +45,17 @@ const SubText = styled('p')(
     lineHeight: '150%',
     marginBottom: 50,
   },
-  mq({
+  mq ({
     margin: ['20px 20px', '0 20% 40px 20%'],
   })
-)
+);
 
-const PricingBoxWrapper = styled('div')({
+const PricingBoxWrapper = styled ('div') ({
   position: 'relative',
   paddingTop: 85,
-})
+});
 
-const FreePrice = styled('div')({
+const FreePrice = styled ('div') ({
   position: 'absolute',
   background: '#FFFFFF',
   boxShadow: '0 2px 4px 0 rgba(233,233,233,0.50)',
@@ -73,15 +73,15 @@ const FreePrice = styled('div')({
   alignItems: 'center',
   flexDirection: 'column',
   justifyContent: 'flex-end',
-})
+});
 
-const FreePriceSubText = styled('span')({
+const FreePriceSubText = styled ('span') ({
   fontSize: theme.fontSize.subText,
   fontWeight: theme.fontWeight.semiBold,
   color: theme.color.grayText,
-})
+});
 
-const PricingBox = styled('div')({
+const PricingBox = styled ('div') ({
   background: theme.color.white,
   boxShadow: '0 2px 40px 10px rgba(152,152,152,0.50)',
   borderRadius: 8,
@@ -90,26 +90,26 @@ const PricingBox = styled('div')({
   maxWidth: 750,
   margin: '0 auto',
   color: theme.color.black,
-})
+});
 
-const ReasonWrapper = styled('div')(
+const ReasonWrapper = styled ('div') (
   {
     justifyContent: 'space-evenly',
     marginBottom: 25,
   },
-  mq({
+  mq ({
     display: ['block', 'flex'],
   })
-)
+);
 
-const ReasonsList = styled('ul')(
+const ReasonsList = styled ('ul') (
   {},
-  mq({
+  mq ({
     width: ['100%', '40%'],
   })
-)
+);
 
-const ReasonsItem = styled('li')(
+const ReasonsItem = styled ('li') (
   {
     listStyle: 'none',
     paddingLeft: 40,
@@ -117,17 +117,17 @@ const ReasonsItem = styled('li')(
     paddingRight: 0,
     textAlign: 'left',
   },
-  mq({
+  mq ({
     background: [
       'url(' + pricingBullet + ') no-repeat left 2px',
       'url(' + pricingBullet + ') no-repeat left 2px',
     ],
   })
-)
+);
 
-const reasonsItemRight = css(
+const reasonsItemRight = css (
   {},
-  mq({
+  mq ({
     background: [
       'url(' + pricingBullet + ') no-repeat left 2px',
       'url(' + pricingBullet + ') no-repeat right 2px',
@@ -136,30 +136,30 @@ const reasonsItemRight = css(
     paddingLeft: [40, 0],
     paddingRight: [0, 40],
   })
-)
+);
 
-const Bold = styled('span')({
+const Bold = styled ('span') ({
   fontWeight: theme.fontWeight.bold,
-})
+});
 
-const button = css(
+const button = css (
   {
     boxShadow: '0 2px 3px 0 rgba(160,160,160,0.50)',
     '> img': {
       marginLeft: 10,
     },
   },
-  mq({
+  mq ({
     padding: [15, '14px 100px !important'],
   })
-)
+);
 
-const Arrow = styled('img')({
+const Arrow = styled ('img') ({
   height: 9,
   marginLeft: 5,
-})
+});
 
-export default ({ children, ...props }) => (
+export default ({children, ...props}) => (
   <Hero {...props}>
     <ContentContainer>
       <Title>Simple and Flexible Pricing</Title>
@@ -189,7 +189,7 @@ export default ({ children, ...props }) => (
               </ReasonsItem>
             </ReasonsList>
             <ReasonsList>
-              <ReasonsItem>Temp domain with HTTPS</ReasonsItem>
+              <ReasonsItem>Your domain with HTTPS</ReasonsItem>
               <ReasonsItem>100GB static file storage</ReasonsItem>
               <ReasonsItem>Upload custom apps and packages</ReasonsItem>
               <ReasonsItem>Community support</ReasonsItem>
@@ -203,4 +203,4 @@ export default ({ children, ...props }) => (
       </PricingBoxWrapper>
     </ContentContainer>
   </Hero>
-)
+);

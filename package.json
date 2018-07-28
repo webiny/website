@@ -11,7 +11,7 @@
     "emotion-theming": "^9.2.3",
     "express-graphql": "^0.6.6",
     "facepaint": "^1.2.1",
-    "gatsby": "^2.0.0-beta.2",
+    "gatsby": "2.0.0-beta.2",
     "gatsby-link": "^2.0.0-beta.4",
     "gatsby-plugin-emotion": "^2.0.0-beta.1",
     "gatsby-plugin-google-fonts": "0.0.4",

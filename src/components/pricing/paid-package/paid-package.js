@@ -1,27 +1,27 @@
-import React from 'react'
-import styled from 'react-emotion'
-import { css } from 'emotion'
-import theme from '../../utils/theme'
-import mq from '../../utils/breakpoints'
-import ContentContainer from '../../ui/content-container'
+import React from 'react';
+import styled from 'react-emotion';
+import {css} from 'emotion';
+import theme from '../../utils/theme';
+import mq from '../../utils/breakpoints';
+import ContentContainer from '../../ui/content-container';
 
-import pricingBullet from './assets/pricing-bullet.svg'
+import pricingBullet from './assets/pricing-bullet.svg';
 
-const maxWidth = css({
+const maxWidth = css ({
   maxWidth: 750,
   marginBottom: 25,
-})
+});
 
-const SubTitle = styled('h2')({
+const SubTitle = styled ('h2') ({
   fontSize: theme.fontSize.h2,
   fontWeight: theme.fontWeight.semiBold,
   color: theme.color.black,
   textAlign: 'center',
   paddingTop: 25,
   marginTop: 0,
-})
+});
 
-const SubText = styled('p')(
+const SubText = styled ('p') (
   {
     fontSize: theme.fontSize.subText,
     fontWeight: theme.fontWeight.regular,
@@ -31,12 +31,12 @@ const SubText = styled('p')(
     lineHeight: '150%',
     marginBottom: 50,
   },
-  mq({
+  mq ({
     margin: ['0 20px', '0 20% 40px 20%'],
   })
-)
+);
 
-const Box = styled('div')(
+const Box = styled ('div') (
   {
     background: theme.color.white,
     boxShadow: '0 2px 40px 10px rgba(152,152,152,0.50)',
@@ -44,13 +44,13 @@ const Box = styled('div')(
     padding: 0,
     boxSizing: 'border-box',
   },
-  mq({
+  mq ({
     display: ['block', 'flex'],
     margin: [20, '0 auto'],
   })
-)
+);
 
-const Price = styled('div')(
+const Price = styled ('div') (
   {
     backgroundImage: 'linear-gradient(-135deg, #09E7D3 0%, #008BB6 68%)',
     borderTopLeftRadius: 8,
@@ -65,33 +65,33 @@ const Price = styled('div')(
     lineHeight: '70%',
     boxSizing: 'border-box',
   },
-  mq({
+  mq ({
     width: ['100%', '50%'],
     borderBottomLeftRadius: [0, 8],
     borderTopRightRadius: [8, 0],
     padding: ['45px 0 25px 0', '15px 0 0 0'],
   })
-)
+);
 
-const PriceSubText = styled('span')({
+const PriceSubText = styled ('span') ({
   fontSize: theme.fontSize.subText,
   fontWeight: theme.fontWeight.semiBold,
   color: theme.color.white,
   lineHeight: '150%',
-})
+});
 
-const ReasonsList = styled('ul')(
+const ReasonsList = styled ('ul') (
   {
     width: '50%',
     boxSizing: 'border-box',
     padding: 25,
   },
-  mq({
+  mq ({
     width: ['100%', '50%'],
   })
-)
+);
 
-const ReasonsItem = styled('li')({
+const ReasonsItem = styled ('li') ({
   listStyle: 'none',
   textAlign: 'left',
   marginBottom: 15,
@@ -100,13 +100,13 @@ const ReasonsItem = styled('li')({
   '&:last-child': {
     marginBottom: 0,
   },
-})
+});
 
-const Bold = styled('span')({
+const Bold = styled ('span') ({
   fontWeight: theme.fontWeight.bold,
-})
+});
 
-const ExtraTitle = styled('h3')(
+const ExtraTitle = styled ('h3') (
   {
     fontSize: theme.fontSize.h3,
     fontWeight: theme.fontWeight.semiBold,
@@ -114,27 +114,27 @@ const ExtraTitle = styled('h3')(
     color: theme.color.black,
     marginTop: 50,
   },
-  mq({
+  mq ({
     textAlign: ['center', 'left'],
   })
-)
+);
 
-const ExtraReasonsList = css(
+const ExtraReasonsList = css (
   {
     justifyContent: 'space-between',
     padding: '10px 0',
     boxSizing: 'border-box',
   },
-  mq({
+  mq ({
     display: ['block', 'flex'],
     margin: ['0 25px 25px 25px', '0'],
     textAlign: ['center', 'left'],
     width: ['auto', '100%'],
   })
-)
+);
 
 class PaidPackage extends React.Component {
-  render() {
+  render () {
     return (
       <ContentContainer className={maxWidth}>
         <SubTitle>Paid Package</SubTitle>
@@ -148,7 +148,6 @@ class PaidPackage extends React.Component {
             <PriceSubText>/month</PriceSubText>
           </Price>
           <ReasonsList>
-            <ReasonsItem>Custom domain with HTTPS</ReasonsItem>
             <ReasonsItem>
               <Bold>5GB</Bold> database storage
             </ReasonsItem>
@@ -160,6 +159,7 @@ class PaidPackage extends React.Component {
             </ReasonsItem>
             <ReasonsItem>Unlimited deployments per month</ReasonsItem>
             <ReasonsItem>Global CDN</ReasonsItem>
+            <ReasonsItem>Web Application Firewall</ReasonsItem>
             <ReasonsItem>Email support</ReasonsItem>
           </ReasonsList>
         </Box>
@@ -176,8 +176,8 @@ class PaidPackage extends React.Component {
           </ReasonsItem>
         </ReasonsList>
       </ContentContainer>
-    )
+    );
   }
 }
 
-export default PaidPackage
+export default PaidPackage;
