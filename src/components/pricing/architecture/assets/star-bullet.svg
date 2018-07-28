@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>baseline-stars-24px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Pricing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-745.000000, -3044.000000)">
+            <g id="Webiny-Serverless-Stack" transform="translate(63.000000, 2207.000000)">
+                <g id="Bullets-left" transform="translate(376.000000, 823.000000)">
+                    <g id="Bullet">
+                        <g id="baseline-stars-24px" transform="translate(304.000000, 12.000000)">
+                            <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                            <path d="M11.99,2 C6.47,2 2,6.48 2,12 C2,17.52 6.47,22 11.99,22 C17.52,22 22,17.52 22,12 C22,6.48 17.52,2 11.99,2 Z M16.23,18 L12,15.45 L7.77,18 L8.89,13.19 L5.16,9.96 L10.08,9.54 L12,5 L13.92,9.53 L18.84,9.95 L15.11,13.18 L16.23,18 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
