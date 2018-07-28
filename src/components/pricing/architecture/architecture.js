@@ -22,8 +22,8 @@ const ArchImg = styled ('img') (
     boxSizing: 'border-box',
   },
   mq ({
-    padding: [20, '100px 25px 50px 25px'],
-    width: ['100%', 'auto'],
+    padding: [20, '50px 0'],
+    width: ['100%', '750px'],
     margin: [0, '0 auto'],
   })
 );
