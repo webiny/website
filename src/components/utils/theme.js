@@ -9,6 +9,7 @@ export default {
     secondaryDark: '#20C6B1',
     codeBg: '#272823',
     footerBg: '#282C34',
+    dark: '#282C34',
   },
   fontWeight: {
     bold: 700,
@@ -29,4 +30,4 @@ export default {
     footer: 14,
   },
   contentWidth: 1100,
-}
+};

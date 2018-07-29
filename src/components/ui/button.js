@@ -1,10 +1,10 @@
-import React from 'react'
-import { cx, css } from 'emotion'
-import mq from '../utils/breakpoints'
-import theme from '../utils/theme'
-import Link from 'gatsby-link'
+import React from 'react';
+import {cx, css} from 'emotion';
+import mq from '../utils/breakpoints';
+import theme from '../utils/theme';
+import Link from 'gatsby-link';
 
-const buttonDefault = css(
+const buttonDefault = css (
   {
     display: 'inline-block',
     marginRight: 0,
@@ -35,16 +35,16 @@ const buttonDefault = css(
       transform: 'translateY(1px)',
     },
   },
-  mq({
+  mq ({
     width: ['100%', 'inherit'],
   })
-)
+);
 
-const buttonFullWidthStyle = css({
+const buttonFullWidthStyle = css ({
   width: '100%',
-})
+});
 
-const buttonPrimary = css({
+const buttonPrimary = css ({
   backgroundColor: theme.color.primaryDark,
   color: theme.color.white,
   textTransform: 'uppercase',
@@ -56,9 +56,9 @@ const buttonPrimary = css({
     //boxShadow: '0px 0px 0px 3px #FA5723',
     //borderColor: '#ED4005',
   },
-})
+});
 
-const buttonSecondary = css({
+const buttonSecondary = css ({
   backgroundColor: theme.color.secondaryDark,
   color: theme.color.white,
   textTransform: 'uppercase',
@@ -69,7 +69,13 @@ const buttonSecondary = css({
     //boxShadow: '0px 0px 0px 3px #3FBFB0',
     //borderColor: '#3FBFB0',
   },
-})
+});
+
+const buttonDark = css ({
+  backgroundColor: theme.color.dark,
+  color: theme.color.white,
+  textTransform: 'uppercase',
+});
 
 class Button extends React.Component {
   styles = {
@@ -77,33 +83,34 @@ class Button extends React.Component {
     primary: buttonPrimary,
     secondary: buttonSecondary,
     default: buttonDefault,
-  }
+    dark: buttonDark,
+  };
 
-  render() {
-    let style = 'default'
-    if (this.props.hasOwnProperty('type')) {
-      style = this.props.type
+  render () {
+    let style = 'default';
+    if (this.props.hasOwnProperty ('type')) {
+      style = this.props.type;
     }
-    style = cx(this.styles['default'], this.styles[style])
+    style = cx (this.styles['default'], this.styles[style]);
 
-    if (this.props.hasOwnProperty('className')) {
-      style += ' ' + this.props.className
+    if (this.props.hasOwnProperty ('className')) {
+      style += ' ' + this.props.className;
     }
 
-    if (this.props.hasOwnProperty('link')) {
+    if (this.props.hasOwnProperty ('link')) {
       return (
         <Link to={this.props.link} className={style}>
           {this.props.children}
         </Link>
-      )
+      );
     } else {
       return (
         <button className={style} onClick={this.props.onClick}>
           {this.props.children}
         </button>
-      )
+      );
     }
   }
 }
 
-export default Button
+export default Button;

@@ -1,38 +1,41 @@
-import React from 'react'
-import styled from 'react-emotion'
-import theme from '../utils/theme'
-import mq from '../utils/breakpoints'
-import ContentContainer from '../ui/content-container'
-import Button from '../ui/button'
-import Link from 'gatsby-link'
-import { css } from 'emotion'
+import React from 'react';
+import styled from 'react-emotion';
+import theme from '../utils/theme';
+import mq from '../utils/breakpoints';
+import ContentContainer from '../ui/content-container';
+import Button from '../ui/button';
+import Link from 'gatsby-link';
+import {css} from 'emotion';
 
-import logo from './assets/webiny-logo.svg'
-import logoOrange from './assets/webiny-orange-logo.svg'
-import menuIcon from './assets/round-menu-24px.svg'
-import menuIconBlack from './assets/round-menu-24px-black.svg'
+import logo from './assets/webiny-logo.svg';
+import logoOrange from './assets/webiny-orange-logo.svg';
+import menuIcon from './assets/round-menu-24px.svg';
+import menuIconBlack from './assets/round-menu-24px-black.svg';
 
-const NavBar = styled('div')({
+const NavBar = styled ('div') ({
   margin: '0 auto',
   display: 'flex',
   alignContent: 'flex-end',
   justifyContent: 'space-between',
-})
+});
 
-const WebinyLogo = styled('div')(
-  {
-    margin: 0,
-    padding: 0,
-    height: 42,
-    lineHeight: '100%',
-    zIndex: 100,
-  },
-  mq({
+const WebinyLogo = styled ('div') ({
+  margin: 0,
+  padding: 0,
+  lineHeight: '100%',
+  zIndex: 100,
+});
+
+const logoImage = css (
+  {},
+  mq ({
     paddingLeft: [20, 0],
+    height: [28, 42],
+    marginTop: [5],
   })
-)
+);
 
-const Menu = styled('ul')(
+const Menu = styled ('ul') (
   {
     listStyle: 'none',
     //display: 'flex',
@@ -41,18 +44,18 @@ const Menu = styled('ul')(
     alignItems: 'center',
     justifyContent: 'center',
   },
-  mq({
+  mq ({
     display: ['none', 'flex'],
   })
-)
+);
 
-const MenuItem = styled('li')({
+const MenuItem = styled ('li') ({
   marginLeft: 25,
   textAlign: 'center',
   fontSize: theme.fontSize.navMenuItem,
-})
+});
 
-const linkStyle = css({
+const linkStyle = css ({
   fontWeight: theme.fontWeight.semiBold,
   textDecoration: 'none',
   color: '#fff',
@@ -60,9 +63,9 @@ const linkStyle = css({
   '&:hover': {
     opacity: '0.8',
   },
-})
+});
 
-const HeaderContainer = styled('header')(
+const HeaderContainer = styled ('header') (
   {
     top: 0,
     left: 0,
@@ -84,27 +87,27 @@ const HeaderContainer = styled('header')(
       },
     },
   })
-)
+);
 
-const MobileMenu = styled('div')(
+const MobileMenu = styled ('div') (
   {
     paddingRight: 20,
     display: 'flex',
     position: 'relative',
   },
-  mq({
+  mq ({
     display: ['block', 'none'],
   })
-)
+);
 
-const MobileMenuIcon = styled('img')({
+const MobileMenuIcon = styled ('img') ({
   zIndex: 100,
   position: 'absolute',
   right: 20,
   top: 6,
-})
+});
 
-const MobileMenuList = styled('ul')(
+const MobileMenuList = styled ('ul') (
   {
     width: '100%',
     height: '100vh',
@@ -120,63 +123,73 @@ const MobileMenuList = styled('ul')(
   props => ({
     display: props.open ? 'block' : 'none',
   })
-)
+);
 
-const MobileMenuItem = styled('li')({
+const MobileMenuItem = styled ('li') ({
   listStyle: 'none',
   fontSize: 24,
   marginBottom: 10,
-  a: {
-    color: theme.color.black,
-  },
-})
+});
+
+const link = css ({
+  textDecoration: 'none',
+  color: theme.color.black,
+});
 
 class Header extends React.Component {
-  didScroll = false
-  state = { isSticky: false, mobileMenuOpen: false }
+  didScroll = false;
+  state = {isSticky: false, mobileMenuOpen: false, width: 1440};
 
-  componentDidMount() {
-    this.initScrollListener()
+  componentDidMount () {
+    this.setState ({width: window.innerWidth});
+    window.addEventListener ('resize', () => {
+      this.setState ({width: window.innerWidth});
+    });
+    this.initScrollListener ();
   }
 
   toggleMobileMenu = () => {
-    this.setState(
+    this.setState (
       {
         mobileMenuOpen: !this.state.mobileMenuOpen,
         isSticky: !this.state.mobileMenuOpen,
       },
       () => {
-        this.didScroll = true
+        this.didScroll = true;
       }
-    )
-  }
+    );
+  };
 
   initScrollListener = () => {
-    window.onscroll = event => {
-      this.didScroll = true
+    if (this.state.width < 1200) {
+      return;
     }
 
-    setInterval(() => {
+    window.onscroll = event => {
+      this.didScroll = true;
+    };
+
+    setInterval (() => {
       if (this.didScroll) {
-        this.didScroll = false
+        this.didScroll = false;
 
         if (this.state.mobileMenuOpen) {
-          return
+          return;
         }
 
         if (document.documentElement.scrollTop > window.innerHeight) {
           if (this.state.isSticky) {
-            return
+            return;
           }
-          this.setState({ isSticky: true })
+          this.setState ({isSticky: true});
         } else if (document.documentElement.scrollTop < 1) {
-          this.setState({ isSticky: false })
+          this.setState ({isSticky: false});
         }
       }
-    }, 100)
-  }
+    }, 100);
+  };
 
-  render() {
+  render () {
     return (
       <HeaderContainer isSticky={this.state.isSticky}>
         <ContentContainer>
@@ -185,6 +198,7 @@ class Header extends React.Component {
               <Link rel="prerender" to="/">
                 <img
                   alt="Webiny Logo"
+                  className={logoImage}
                   src={
                     this.state.isSticky || this.state.mobileMenuOpen
                       ? logoOrange
@@ -246,26 +260,42 @@ class Header extends React.Component {
               />
               <MobileMenuList open={this.state.mobileMenuOpen}>
                 <MobileMenuItem>
-                  <Link rel="prerender" to="/pricing">
+                  <Link className={link} rel="prerender" to="/">
+                    Home
+                  </Link>
+                </MobileMenuItem>
+                <MobileMenuItem>
+                  <Link className={link} rel="prerender" to="/pricing">
                     Pricing
                   </Link>
                 </MobileMenuItem>
                 <MobileMenuItem>
-                  <Link rel="prerender" to="/agency">
+                  <Link className={link} rel="prerender" to="/agency">
                     For Agencies
                   </Link>
                 </MobileMenuItem>
                 <MobileMenuItem>
-                  <Link to="https://docs.webiny.com/">Docs</Link>
+                  <Link className={link} to="https://docs.webiny.com/">
+                    Docs
+                  </Link>
                 </MobileMenuItem>
                 <MobileMenuItem>
-                  <Link to="https://community.webiny.com/">Community</Link>
+                  <Link className={link} to="https://community.webiny.com/">
+                    Community
+                  </Link>
                 </MobileMenuItem>
                 <MobileMenuItem>
-                  <Link to="https://blog.webiny.com/">Blog</Link>
+                  <Link className={link} to="https://blog.webiny.com/">
+                    Blog
+                  </Link>
                 </MobileMenuItem>
                 <MobileMenuItem>
-                  <Link to="https://github.com/webiny/webiny-js/">Source</Link>
+                  <Link
+                    className={link}
+                    to="https://github.com/webiny/webiny-js/"
+                  >
+                    Source
+                  </Link>
                 </MobileMenuItem>
                 <MobileMenuItem>
                   <Button type="primary" link="/pricing">
@@ -277,8 +307,8 @@ class Header extends React.Component {
           </NavBar>
         </ContentContainer>
       </HeaderContainer>
-    )
+    );
   }
 }
 
-export default Header
+export default Header;

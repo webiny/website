@@ -1,20 +1,21 @@
-import React from 'react'
-import styled from 'react-emotion'
-import theme from '../../utils/theme'
-import mq from '../../utils/breakpoints'
-import FaqComponent from '../../ui/faq'
-import Link from 'gatsby-link'
+import React from 'react';
+import styled from 'react-emotion';
+import {css} from 'emotion';
+import theme from '../../utils/theme';
+import mq from '../../utils/breakpoints';
+import FaqComponent from '../../ui/faq';
+import Link from 'gatsby-link';
 
-import arrowFaq from './assets/arrow-faq.svg'
+import arrowFaq from './assets/arrow-faq.svg';
 
-const FaqContainer = styled('section')(
+const FaqContainer = styled ('section') (
   {},
-  mq({
+  mq ({
     padding: [20, 0],
   })
-)
+);
 
-const AdditionalFaq = styled('a')({
+const additionalFaq = css ({
   marginTop: 25,
   display: 'block',
   width: '100%',
@@ -23,7 +24,7 @@ const AdditionalFaq = styled('a')({
   textAlign: 'right',
   color: theme.color.black,
   fontWeight: theme.fontWeight.semiBold,
-})
+});
 
 const canIUseWebiny = (
   <React.Fragment>
@@ -36,7 +37,7 @@ const canIUseWebiny = (
       stunning content in no time.
     </p>
   </React.Fragment>
-)
+);
 
 const howHard = (
   <React.Fragment>
@@ -61,7 +62,7 @@ const howHard = (
       contact our support team which is always glad to help a member in need.
     </p>
   </React.Fragment>
-)
+);
 
 const hereToHost = (
   <React.Fragment>
@@ -75,7 +76,7 @@ const hereToHost = (
       <Link to="/pricing">Click here to get started.</Link>
     </p>
   </React.Fragment>
-)
+);
 
 const canIBuildCustom = (
   <React.Fragment>
@@ -91,11 +92,12 @@ const canIBuildCustom = (
     </p>
     <p>
       Check our{' '}
-      <a href="https://docs.webiny.com/reference-manual">reference manual</a>{' '}
+      <a href="https://docs.webiny.com/reference-manual">reference manual</a>
+      {' '}
       for more information.
     </p>
   </React.Fragment>
-)
+);
 
 const howToSupport = (
   <React.Fragment>
@@ -114,7 +116,7 @@ const howToSupport = (
       <a href="https://docs.webiny.com/contribution-guide">this page</a>.
     </p>
   </React.Fragment>
-)
+);
 
 class Faq extends React.Component {
   state = {
@@ -140,8 +142,8 @@ class Faq extends React.Component {
         answer: howToSupport,
       },
     ],
-  }
-  render() {
+  };
+  render () {
     return (
       <FaqContainer>
         <div>
@@ -150,12 +152,12 @@ class Faq extends React.Component {
             questions={this.state.questions}
           />
         </div>
-        <AdditionalFaq href="https://docs.webiny.com/faq">
-          Additional FAQ <img alt="arrow" src={arrowFaq} />
-        </AdditionalFaq>
+        <Link className={additionalFaq} to="/contact-us">
+          Additional Questions <img alt="arrow" src={arrowFaq} />
+        </Link>
       </FaqContainer>
-    )
+    );
   }
 }
 
-export default Faq
+export default Faq;
