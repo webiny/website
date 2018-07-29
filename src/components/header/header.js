@@ -138,13 +138,9 @@ const link = css ({
 
 class Header extends React.Component {
   didScroll = false;
-  state = {isSticky: false, mobileMenuOpen: false, width: 1440};
+  state = {isSticky: false, mobileMenuOpen: false};
 
   componentDidMount () {
-    this.setState ({width: window.innerWidth});
-    window.addEventListener ('resize', () => {
-      this.setState ({width: window.innerWidth});
-    });
     this.initScrollListener ();
   }
 
@@ -161,10 +157,6 @@ class Header extends React.Component {
   };
 
   initScrollListener = () => {
-    if (this.state.width < 1200) {
-      return;
-    }
-
     window.onscroll = event => {
       this.didScroll = true;
     };
@@ -177,12 +169,12 @@ class Header extends React.Component {
           return;
         }
 
-        if (document.documentElement.scrollTop > window.innerHeight) {
+        if (window.scrollY > window.innerHeight) {
           if (this.state.isSticky) {
             return;
           }
           this.setState ({isSticky: true});
-        } else if (document.documentElement.scrollTop < 1) {
+        } else if (window.scrollY < 1) {
           this.setState ({isSticky: false});
         }
       }
