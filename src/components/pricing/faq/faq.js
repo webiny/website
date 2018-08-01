@@ -1,32 +1,32 @@
-import React from 'react'
-import styled from 'react-emotion'
-import { css } from 'emotion'
-import theme from '../../utils/theme'
-import ContentContainer from '../../ui/content-container'
-import FaqComponent from '../../ui/faq'
-import Link from 'gatsby-link'
+import React from 'react';
+import styled from 'react-emotion';
+import {css} from 'emotion';
+import theme from '../../utils/theme';
+import ContentContainer from '../../ui/content-container';
+import FaqComponent from '../../ui/faq';
+import Link from 'gatsby-link';
 
-const FaqContainer = styled('section')({
+const FaqContainer = styled ('section') ({
   backgroundColor: theme.color.lightGray,
   padding: '50px 0',
-})
+});
 
-const maxWidth = css({
+const maxWidth = css ({
   maxWidth: 750,
-})
+});
 
-const AdditionalQuestions = styled('h4')({
+const AdditionalQuestions = styled ('h4') ({
   textAlign: 'center',
   fontWeight: theme.fontWeight.semiBold,
   fontSize: theme.fontSize.h4,
-})
+});
 
-const contactUs = css({
+const contactUs = css ({
   display: 'block',
   textAlign: 'center',
   fontSize: theme.fontSize.paragraph,
   color: theme.color.black,
-})
+});
 
 const howLambda = (
   <React.Fragment>
@@ -37,7 +37,7 @@ const howLambda = (
       time is rounded to the nearest 100ms.
     </p>
   </React.Fragment>
-)
+);
 
 const lambdaLimits = (
   <React.Fragment>
@@ -55,7 +55,7 @@ const lambdaLimits = (
       denied, including the ones for static assets.
     </p>
   </React.Fragment>
-)
+);
 
 const extraUsagePackageLimit = (
   <React.Fragment>
@@ -64,7 +64,7 @@ const extraUsagePackageLimit = (
       extra packages a website can consume.
     </p>
   </React.Fragment>
-)
+);
 
 const cancelSub = (
   <React.Fragment>
@@ -80,7 +80,7 @@ const cancelSub = (
       package.
     </p>
   </React.Fragment>
-)
+);
 
 const paymentMethods = (
   <React.Fragment>
@@ -94,20 +94,19 @@ const paymentMethods = (
       American Express. For larger accounts we also accept bank transfers.
     </p>
   </React.Fragment>
-)
+);
 
 const paymentCycles = (
   <React.Fragment>
     <p>
-      When you subscribe to a <strong>Paid Package</strong> we will initially
-      charge $25 to your credit or debit card.
+      The payment cycles are once a month for the paid package, and your subscription is automatically renewed.
+      {' '}
     </p>
     <p>
-      Once the month expires, we will automatically renew your package, and bill
-      for any extra usage that might have occurred for the previous month.
+      In case you use up any extra usaged packages, they are billed the moment an extra usage package starts getting utilized.
     </p>
   </React.Fragment>
-)
+);
 
 class Faq extends React.Component {
   state = {
@@ -129,8 +128,7 @@ class Faq extends React.Component {
         answer: cancelSub,
       },
       {
-        question:
-          'Do I need a credit-card to signup and what payment methods you accept?',
+        question: 'Do I need a credit-card to signup and what payment methods you accept?',
         answer: paymentMethods,
       },
       {
@@ -138,8 +136,8 @@ class Faq extends React.Component {
         answer: paymentCycles,
       },
     ],
-  }
-  render() {
+  };
+  render () {
     return (
       <FaqContainer>
         <ContentContainer className={maxWidth}>
@@ -153,8 +151,8 @@ class Faq extends React.Component {
           Contact Us
         </Link>
       </FaqContainer>
-    )
+    );
   }
 }
 
-export default Faq
+export default Faq;

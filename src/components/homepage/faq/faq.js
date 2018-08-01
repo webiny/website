@@ -82,19 +82,18 @@ const canIBuildCustom = (
   <React.Fragment>
     <p>
       Let's answer it this way. We've build the CMS module for Webiny to
-      showcase the power of the underlaying technology.
+      showcase the power of the underlying technology.
     </p>
     <p>
       Webiny features numerous modules that you as a developer can leverage when
-      creating a custom app or module for Webiny. Some examples of these modules
-      are: ORM and the GraphQL API layer, security and user management,
-      translation integration, as well as the numerous React UI components.
+      creating a custom app.
+      Some examples of these modules
+      are: ORM, GraphQL API layer, security, user management,
+      translations numerous React UI components and many more.
     </p>
     <p>
-      Check our{' '}
-      <a href="https://docs.webiny.com/reference-manual">reference manual</a>
-      {' '}
-      for more information.
+      For the full list and detailed guides check our{' '}
+      <a href="https://docs.webiny.com/reference-manual">reference manual</a>.
     </p>
   </React.Fragment>
 );
