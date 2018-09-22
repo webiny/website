@@ -134,7 +134,7 @@ const Grid = styled("div")({
     marginRight: [0, 0],
     padding: ['0 25px', 0],
     '&.first':{
-      margin: [0, '100px 20px']
+      margin: [0, '100px 0px']
     },
   })
 );
@@ -165,6 +165,9 @@ const Cell = styled("div")({
     'p':{
       fontSize: 18
     },
+  },
+  '&:last-child':{
+    marginRight: '0 !important'
   }
 
 }, mq({
