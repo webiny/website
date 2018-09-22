@@ -117,7 +117,7 @@ class HostedVsOS extends React.Component {
       <ContentContainer className={maxWidth}>
         <SubTitle>Hosted or Open Source</SubTitle>
         <SubText>
-          Choose what better fits your need.
+          Here are the differences between the two options.
         </SubText>
 
         <Table>
@@ -130,19 +130,19 @@ class HostedVsOS extends React.Component {
             <Cell>Manual</Cell>
             <Cell><img src={check}/> <span>Automatic</span></Cell>
 
-          <Cell>Continuous database backups</Cell>
+          <Cell>Manage and renew SSL certificates</Cell>
           <Cell>Manual</Cell>
           <Cell><img src={check}/> <span>Automatic</span></Cell>
 
-          <Cell>Continuous database backups</Cell>
+          <Cell>Ensure infrastructure capacity, scalability & resiliency</Cell>
           <Cell>Manual</Cell>
           <Cell><img src={check}/> <span>Automatic</span></Cell>
 
-          <Cell>Continuous database backups</Cell>
+          <Cell>Content Security Policies & XSS protection.</Cell>
           <Cell>Manual</Cell>
           <Cell><img src={check}/> <span>Automatic</span></Cell>
 
-          <Cell>Continuous database backups</Cell>
+          <Cell>Data replication and durability.</Cell>
           <Cell>Manual</Cell>
           <Cell><img src={check}/> <span>Automatic</span></Cell>
 
