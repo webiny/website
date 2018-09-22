@@ -61,7 +61,7 @@ const Price = styled ('div') (
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent:  'flex-end', //'center',
     lineHeight: '70%',
     boxSizing: 'border-box',
   },
@@ -133,6 +133,36 @@ const ExtraReasonsList = css (
   })
 );
 
+const BetaBox = styled("div")({
+  background: '#FEF7D6',
+  border: '2px solid #FFE564',
+  borderRadius: 5,
+  width: '100%',
+  color: '#4A4A4A',
+  fontSize: '14px',
+  lineHeight: '140%',
+  fontWeight: 'normal',
+  position: 'relative',
+  boxSizing: 'border-box',
+  padding: '10px 7px 10px 60px',
+  marginTop: 30,
+  minHeight: 80,
+  textAlign: 'left',
+  '.questionMark':{
+    position: 'absolute',
+    textAlign:'center',
+    fontWeight: theme.fontWeight.bold,
+    top: 0,
+    left: 0,
+    height: '100%',
+    width: 50,
+    background: '#FFE564',
+    fontSize: 64,
+    color: '#FFFFFF',
+    lineHeight: '120%',
+  }
+});
+
 class PaidPackage extends React.Component {
   render () {
     return (
@@ -146,6 +176,14 @@ class PaidPackage extends React.Component {
           <Price>
             $25
             <PriceSubText>/month</PriceSubText>
+            <div style={{boxSizing: 'border-box', 'padding': '10px'}}>
+              <BetaBox>
+                <div className={"questionMark"}>!</div>
+                <strong>Beta Period:</strong> During the beta, this package is  available free of
+                charge. Beta ends on the 1st of Jan 2019, after  which the
+                billing period will start.
+              </BetaBox>
+            </div>
           </Price>
           <ReasonsList>
             <ReasonsItem>

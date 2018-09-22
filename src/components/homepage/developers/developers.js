@@ -7,6 +7,7 @@ import Features from './components/features'
 import TechTools from './components/tech-tools'
 import ShowMeCode from './components/show-me-code'
 import AsDeveloper from './components/as-developer'
+import Architecture from './components/architecture';
 
 import bg from './assets/developers-bg.svg'
 import devIcon from './assets/developers-icon.svg'
@@ -17,7 +18,7 @@ const DevelopersContainer = styled('section')(
     width: '100%',
   },
   mq({
-    backgroundSize: ['cover', 'auto', 'cover'],
+    backgroundSize: ['cover', 'cover', 'cover'],
     backgroundPosition: ['right 0px top 70px', 'right 0px top 0px'],
     paddingTop: [50, 50, 90],
   })
@@ -63,6 +64,7 @@ class Developers extends React.Component {
           complex things easier for you, so you spend less time coding, and more
           time with friends and family.
         </SubText>
+        <Architecture/>
         <Features />
         <TechTools />
         <ShowMeCode />

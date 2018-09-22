@@ -1,0 +1,795 @@
+{
+  "nodes": {
+    "SitePage /dev-404-page/": {
+      "jsonName": "dev-404-page-5f9",
+      "internalComponentName": "ComponentDev404Page",
+      "path": "/dev-404-page/",
+      "component": "/Users/svenalhamad/Dev/webiny-gatsby/.cache/dev-404-page.js",
+      "componentChunkName": "component---cache-dev-404-page-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin dev-404-page",
+      "pluginCreatorId": "Plugin dev-404-page",
+      "componentPath": "/Users/svenalhamad/Dev/webiny-gatsby/.cache/dev-404-page.js",
+      "id": "SitePage /dev-404-page/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "c339f14666b5c2b855e1a40c6f5db927",
+        "description": "Plugin dev-404-page",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin dev-404-page": {
+      "resolve": "/Users/svenalhamad/Dev/webiny-gatsby/node_modules/gatsby/dist/internal-plugins/dev-404-page",
+      "id": "Plugin dev-404-page",
+      "name": "dev-404-page",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "createPagesStatefully"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/svenalhamad/Dev/webiny-gatsby/node_modules/gatsby/dist/internal-plugins/dev-404-page",
+      "packageJson": {
+        "name": "dev-404-page",
+        "description": "Internal plugin to add a 404 page in development with helpful information",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "6f296eee3e5804626a399b26786379a5",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin load-babel-config": {
+      "resolve": "/Users/svenalhamad/Dev/webiny-gatsby/node_modules/gatsby/dist/internal-plugins/load-babel-config",
+      "id": "Plugin load-babel-config",
+      "name": "load-babel-config",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "onCreateBabelConfig"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/svenalhamad/Dev/webiny-gatsby/node_modules/gatsby/dist/internal-plugins/load-babel-config",
+      "packageJson": {
+        "name": "load-babel-config",
+        "description": "Internal plugin that handles loading Babel configs",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "423c5674d3e82787135fdf85da5b8a22",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin internal-data-bridge": {
+      "resolve": "/Users/svenalhamad/Dev/webiny-gatsby/node_modules/gatsby/dist/internal-plugins/internal-data-bridge",
+      "id": "Plugin internal-data-bridge",
+      "name": "internal-data-bridge",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "sourceNodes",
+        "onCreatePage"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/svenalhamad/Dev/webiny-gatsby/node_modules/gatsby/dist/internal-plugins/internal-data-bridge",
+      "packageJson": {
+        "name": "internal-data-bridge",
+        "description": "An internal Gatsby plugin which creates data nodes from internal data",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "412b7e3211d15aee71b03ac1e68ca5cf",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin prod-404": {
+      "resolve": "/Users/svenalhamad/Dev/webiny-gatsby/node_modules/gatsby/dist/internal-plugins/prod-404",
+      "id": "Plugin prod-404",
+      "name": "prod-404",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "onCreatePage"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/svenalhamad/Dev/webiny-gatsby/node_modules/gatsby/dist/internal-plugins/prod-404",
+      "packageJson": {
+        "name": "prod-404",
+        "description": "Internal plugin to detect various flavors of 404 pages and ensure there's a 404.html path created as well to ensure compatability with static hosts",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "261bf1e9ad34ec56ca1db1d34c04d9e9",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin query-runner": {
+      "resolve": "/Users/svenalhamad/Dev/webiny-gatsby/node_modules/gatsby/dist/internal-plugins/query-runner",
+      "id": "Plugin query-runner",
+      "name": "query-runner",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "onCreatePage"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/svenalhamad/Dev/webiny-gatsby/node_modules/gatsby/dist/internal-plugins/query-runner",
+      "packageJson": {
+        "name": "query-runner",
+        "description": "Internal plugin for running queries",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "14d18f94586d32aa8085defce0838eba",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin gatsby-plugin-react-helmet": {
+      "resolve": "/Users/svenalhamad/Dev/webiny-gatsby/node_modules/gatsby-plugin-react-helmet",
+      "id": "Plugin gatsby-plugin-react-helmet",
+      "name": "gatsby-plugin-react-helmet",
+      "version": "2.0.11",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [],
+      "browserAPIs": [],
+      "ssrAPIs": [
+        "onRenderBody"
+      ],
+      "pluginFilepath": "/Users/svenalhamad/Dev/webiny-gatsby/node_modules/gatsby-plugin-react-helmet",
+      "packageJson": {
+        "name": "gatsby-plugin-react-helmet",
+        "description": "Manage document head data with react-helmet. Provides drop-in server rendering support for Gatsby.",
+        "version": "2.0.11",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "favicon",
+          "react-helmet",
+          "seo",
+          "document",
+          "head",
+          "title",
+          "meta",
+          "link",
+          "script",
+          "base",
+          "noscript",
+          "style"
+        ],
+        "author": "Kyle Mathews <matthews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "babel-runtime",
+            "version": "^6.26.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "babel-cli",
+            "version": "^6.26.0"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.0.5"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "react-helmet",
+            "version": ">=5.1.3"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "d5785011755d2220bd4dd54a75abebe7",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin gatsby-plugin-google-fonts": {
+      "resolve": "/Users/svenalhamad/Dev/webiny-gatsby/node_modules/gatsby-plugin-google-fonts",
+      "id": "Plugin gatsby-plugin-google-fonts",
+      "name": "gatsby-plugin-google-fonts",
+      "version": "0.0.4",
+      "pluginOptions": {
+        "plugins": [],
+        "fonts": [
+          "source sans pro:300,400,500,600,700",
+          "source code pro:400,700",
+          "open sans:300,400,600,700"
+        ]
+      },
+      "nodeAPIs": [],
+      "browserAPIs": [],
+      "ssrAPIs": [
+        "onRenderBody"
+      ],
+      "pluginFilepath": "/Users/svenalhamad/Dev/webiny-gatsby/node_modules/gatsby-plugin-google-fonts",
+      "packageJson": {
+        "name": "gatsby-plugin-google-fonts",
+        "description": "Bring Google Fonts to Gatsby",
+        "version": "0.0.4",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gastby-plugin",
+          "react",
+          "google",
+          "fonts"
+        ],
+        "author": "Didier Franc <dev@didierfranc.com>",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "a4a885c41103cea47af69178d53d2a60",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin gatsby-plugin-emotion": {
+      "resolve": "/Users/svenalhamad/Dev/webiny-gatsby/node_modules/gatsby-plugin-emotion",
+      "id": "Plugin gatsby-plugin-emotion",
+      "name": "gatsby-plugin-emotion",
+      "version": "2.0.0-beta.1",
+      "pluginOptions": {
+        "plugins": [],
+        "sourceMap": true,
+        "autoLabel": true
+      },
+      "nodeAPIs": [
+        "onCreateBabelConfig"
+      ],
+      "browserAPIs": [
+        "onClientEntry"
+      ],
+      "ssrAPIs": [
+        "replaceRenderer"
+      ],
+      "pluginFilepath": "/Users/svenalhamad/Dev/webiny-gatsby/node_modules/gatsby-plugin-emotion",
+      "packageJson": {
+        "name": "gatsby-plugin-emotion",
+        "description": "Gatsby plugin to add support for Emotion",
+        "version": "2.0.0-beta.1",
+        "main": "index.js",
+        "keywords": [
+          "emotion",
+          "gatsby",
+          "gatsby-plugin"
+        ],
+        "author": "Tegan Churchill <churchill.tegan@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "7.0.0-beta.51"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "7.0.0-beta.51"
+          },
+          {
+            "name": "@babel/core",
+            "version": "7.0.0-beta.51"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.1.4"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "emotion",
+            "version": "7 || 8 || 9"
+          },
+          {
+            "name": "emotion-server",
+            "version": "7 || 8 || 9"
+          },
+          {
+            "name": "gatsby",
+            "version": ">2.0.0-alpha"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "d031ae9912c45e5e5906148b59628e7d",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin default-site-plugin": {
+      "resolve": "/Users/svenalhamad/Dev/webiny-gatsby",
+      "id": "Plugin default-site-plugin",
+      "name": "default-site-plugin",
+      "version": "6d902781c2e66339f1270ddddb20d542",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/svenalhamad/Dev/webiny-gatsby",
+      "packageJson": {
+        "name": "gatsby-starter-default",
+        "description": "Gatsby default starter",
+        "version": "1.0.0",
+        "keywords": [
+          "gatsby"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "babel-plugin-emotion",
+            "version": "^9.2.3"
+          },
+          {
+            "name": "babel-plugin-inline-react-svg",
+            "version": "^0.5.2"
+          },
+          {
+            "name": "emotion",
+            "version": "^9.2.3"
+          },
+          {
+            "name": "emotion-server",
+            "version": "^9.2.3"
+          },
+          {
+            "name": "emotion-theming",
+            "version": "^9.2.3"
+          },
+          {
+            "name": "express-graphql",
+            "version": "^0.6.6"
+          },
+          {
+            "name": "facepaint",
+            "version": "^1.2.1"
+          },
+          {
+            "name": "gatsby",
+            "version": "2.0.0-beta.2"
+          },
+          {
+            "name": "gatsby-link",
+            "version": "^2.0.0-beta.4"
+          },
+          {
+            "name": "gatsby-plugin-emotion",
+            "version": "^2.0.0-beta.1"
+          },
+          {
+            "name": "gatsby-plugin-google-fonts",
+            "version": "0.0.4"
+          },
+          {
+            "name": "gatsby-plugin-react-helmet",
+            "version": "^2.0.10"
+          },
+          {
+            "name": "gatsby-plugin-typography",
+            "version": "^1.7.18"
+          },
+          {
+            "name": "js-cookie",
+            "version": "^2.2.0"
+          },
+          {
+            "name": "react",
+            "version": "^16.4.1"
+          },
+          {
+            "name": "react-addons-css-transition-group",
+            "version": "^15.6.2"
+          },
+          {
+            "name": "react-dom",
+            "version": "^16.4.1"
+          },
+          {
+            "name": "react-emotion",
+            "version": "^9.2.5"
+          },
+          {
+            "name": "react-helmet",
+            "version": "^5.2.0"
+          },
+          {
+            "name": "react-progressive-bg-image",
+            "version": "^3.0.0"
+          },
+          {
+            "name": "react-syntax-highlighter",
+            "version": "^7.0.4"
+          },
+          {
+            "name": "styled-components",
+            "version": "^3.3.3"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "prettier",
+            "version": "^1.12.0"
+          },
+          {
+            "name": "serverless-offline",
+            "version": "^3.25.6"
+          }
+        ],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "79757309c8a09668a48d42fa209b0982",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin gatsby-plugin-page-creator": {
+      "resolve": "/Users/svenalhamad/Dev/webiny-gatsby/node_modules/gatsby-plugin-page-creator",
+      "id": "Plugin gatsby-plugin-page-creator",
+      "name": "gatsby-plugin-page-creator",
+      "version": "2.0.0-beta.1",
+      "pluginOptions": {
+        "plugins": [],
+        "path": "/Users/svenalhamad/Dev/webiny-gatsby/src/pages",
+        "pathCheck": false
+      },
+      "nodeAPIs": [
+        "createPagesStatefully"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/svenalhamad/Dev/webiny-gatsby/node_modules/gatsby-plugin-page-creator",
+      "packageJson": {
+        "name": "gatsby-plugin-page-creator",
+        "description": "Gatsby plugin that automatically creates pages from React components in specified directories",
+        "version": "2.0.0-beta.1",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "7.0.0-beta.51"
+          },
+          {
+            "name": "bluebird",
+            "version": "^3.5.0"
+          },
+          {
+            "name": "chokidar",
+            "version": "^1.7.0"
+          },
+          {
+            "name": "glob",
+            "version": "^7.1.1"
+          },
+          {
+            "name": "lodash",
+            "version": "^4.17.4"
+          },
+          {
+            "name": "parse-filepath",
+            "version": "^1.0.1"
+          },
+          {
+            "name": "slash",
+            "version": "^1.0.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "7.0.0-beta.51"
+          },
+          {
+            "name": "@babel/core",
+            "version": "7.0.0-beta.51"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.0.5"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": ">2.0.0-alpha"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "5bd5e55de36e4ea0fdb53043898d372a",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Site": {
+      "siteMetadata": {
+        "title": "Webiny"
+      },
+      "port": "8000",
+      "host": "localhost",
+      "pathPrefix": "",
+      "polyfill": true,
+      "buildTime": "2018-09-22T17:10:25.432Z",
+      "id": "Site",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "891b9e8bf5c585fe51096352a6ff2f8a",
+        "type": "Site",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /404/": {
+      "jsonName": "404-22d",
+      "internalComponentName": "Component404",
+      "path": "/404/",
+      "component": "/Users/svenalhamad/Dev/webiny-gatsby/src/pages/404.js",
+      "componentChunkName": "component---src-pages-404-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin gatsby-plugin-page-creator",
+      "pluginCreatorId": "Plugin gatsby-plugin-page-creator",
+      "componentPath": "/Users/svenalhamad/Dev/webiny-gatsby/src/pages/404.js",
+      "id": "SitePage /404/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "5aa78892dad2bba25d28d77ac6cfb07d",
+        "description": "Plugin gatsby-plugin-page-creator",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /agency/": {
+      "jsonName": "agency-996",
+      "internalComponentName": "ComponentAgency",
+      "path": "/agency/",
+      "component": "/Users/svenalhamad/Dev/webiny-gatsby/src/pages/agency.js",
+      "componentChunkName": "component---src-pages-agency-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin gatsby-plugin-page-creator",
+      "pluginCreatorId": "Plugin gatsby-plugin-page-creator",
+      "componentPath": "/Users/svenalhamad/Dev/webiny-gatsby/src/pages/agency.js",
+      "id": "SitePage /agency/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "64bc49070337a7c85f47e985b766cc60",
+        "description": "Plugin gatsby-plugin-page-creator",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /contact-us/": {
+      "jsonName": "contact-us-110",
+      "internalComponentName": "ComponentContactUs",
+      "path": "/contact-us/",
+      "component": "/Users/svenalhamad/Dev/webiny-gatsby/src/pages/contact-us.js",
+      "componentChunkName": "component---src-pages-contact-us-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin gatsby-plugin-page-creator",
+      "pluginCreatorId": "Plugin gatsby-plugin-page-creator",
+      "componentPath": "/Users/svenalhamad/Dev/webiny-gatsby/src/pages/contact-us.js",
+      "id": "SitePage /contact-us/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "01ee0404732da41f8fe8f3706dade97b",
+        "description": "Plugin gatsby-plugin-page-creator",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /": {
+      "jsonName": "index",
+      "internalComponentName": "ComponentIndex",
+      "path": "/",
+      "component": "/Users/svenalhamad/Dev/webiny-gatsby/src/pages/index.js",
+      "componentChunkName": "component---src-pages-index-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin gatsby-plugin-page-creator",
+      "pluginCreatorId": "Plugin gatsby-plugin-page-creator",
+      "componentPath": "/Users/svenalhamad/Dev/webiny-gatsby/src/pages/index.js",
+      "id": "SitePage /",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "f04ff0e4d4d26ba0db85bc987d04821f",
+        "description": "Plugin gatsby-plugin-page-creator",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /pricing/": {
+      "jsonName": "pricing-665",
+      "internalComponentName": "ComponentPricing",
+      "path": "/pricing/",
+      "component": "/Users/svenalhamad/Dev/webiny-gatsby/src/pages/pricing.js",
+      "componentChunkName": "component---src-pages-pricing-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin gatsby-plugin-page-creator",
+      "pluginCreatorId": "Plugin gatsby-plugin-page-creator",
+      "componentPath": "/Users/svenalhamad/Dev/webiny-gatsby/src/pages/pricing.js",
+      "id": "SitePage /pricing/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "5d30d42a29a986eac5ecf72546104ecf",
+        "description": "Plugin gatsby-plugin-page-creator",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /support/": {
+      "jsonName": "support-05f",
+      "internalComponentName": "ComponentSupport",
+      "path": "/support/",
+      "component": "/Users/svenalhamad/Dev/webiny-gatsby/src/pages/support.js",
+      "componentChunkName": "component---src-pages-support-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin gatsby-plugin-page-creator",
+      "pluginCreatorId": "Plugin gatsby-plugin-page-creator",
+      "componentPath": "/Users/svenalhamad/Dev/webiny-gatsby/src/pages/support.js",
+      "id": "SitePage /support/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "568f4c6d93bef67e7467c877b42702a5",
+        "description": "Plugin gatsby-plugin-page-creator",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /404.html": {
+      "jsonName": "404-html-516",
+      "internalComponentName": "Component404Html",
+      "path": "/404.html",
+      "component": "/Users/svenalhamad/Dev/webiny-gatsby/src/pages/404.js",
+      "componentChunkName": "component---src-pages-404-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin prod-404",
+      "pluginCreatorId": "Plugin prod-404",
+      "componentPath": "/Users/svenalhamad/Dev/webiny-gatsby/src/pages/404.js",
+      "id": "SitePage /404.html",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "b4399d5c8bbe9f8a7b21ebf70ff6e39c",
+        "description": "Plugin prod-404",
+        "owner": "internal-data-bridge"
+      }
+    }
+  },
+  "status": {
+    "plugins": {},
+    "PLUGINS_HASH": "715a3f54dae7e49d8c74e369e07aa89f"
+  },
+  "componentDataDependencies": {
+    "nodes": {},
+    "connections": {}
+  },
+  "jsonDataPaths": {
+    "dev-404-page-5f9": "path---dev-404-page-5-f-9-fab-P77TGLoqJ1EpUtoxQCre0cgqfHg",
+    "agency-996": "path---agency-996-739-V3KC0FycKrsgs24OGvi19FXpolQ",
+    "404-22d": "path---404-22-d-bce-l2o4DDwybLBccy6f4wvOjZKG598",
+    "contact-us-110": "path---contact-us-110-75b-xt220Myy7c7LAiSPT6WZeNPEzc",
+    "pricing-665": "path---pricing-665-bf7-Y5PUMmqJiYLBhAll4UYRWuNWhk",
+    "index": "path---index-6a9-LSiMoQWY422xlykZNZuT7BeI8k",
+    "404-html-516": "path---404-html-516-62a-xvohSnVd4ez7PE2xJMmv18R4tE",
+    "support-05f": "path---support-05-f-ca9-P5CJbEFPRjiUUOnShCH3gosqJQY"
+  }
+}

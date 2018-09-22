@@ -5,7 +5,8 @@ import mq from '../components/utils/breakpoints'
 
 import BaseLayout from '../layouts/base'
 import Hero from '../components/homepage/hero/hero'
-import Cms from '../components/homepage/cms/cms'
+//import Cms from '../components/homepage/cms/cms'
+import CmsV2 from '../components/homepage/cms-v2/cms'
 import Developers from '../components/homepage/developers/developers'
 import QuickStart from '../components/homepage/quick-start/quick-start'
 import Faq from '../components/homepage/faq/faq'
@@ -42,7 +43,8 @@ class IndexPage extends React.Component {
     return (
       <BaseLayout title="Webiny - Serverless CMS powered by React and Node">
         <Hero />
-        <Cms />
+        {/*<Cms />*/}
+        <CmsV2/>
         <Developers />
         <QuickStart />
         <FaqAndSidebar>

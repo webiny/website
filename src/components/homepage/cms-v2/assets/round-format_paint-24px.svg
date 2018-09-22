@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="24px" viewBox="0 0 21 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>round-format_paint-24px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home-v1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-page" transform="translate(-1008.000000, -1514.000000)">
+            <g id="CMS-v2" transform="translate(73.000000, 525.000000)">
+                <g id="Features--1" transform="translate(202.000000, 540.000000)">
+                    <g id="Easy-Theming" transform="translate(729.000000, 447.000000)">
+                        <g id="round-format_paint-24px">
+                            <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                            <path d="M20.8,4.4 L20.8,3.2 C20.8,2.54 20.26,2 19.6,2 L5.2,2 C4.54,2 4,2.54 4,3.2 L4,8 C4,8.66 4.54,9.2 5.2,9.2 L19.6,9.2 C20.26,9.2 20.8,8.66 20.8,8 L20.8,6.8 L22,6.8 L22,11.6 L11.2,11.6 C10.54,11.6 10,12.14 10,12.8 L10,24.8 C10,25.46 10.54,26 11.2,26 L13.6,26 C14.26,26 14.8,25.46 14.8,24.8 L14.8,14 L23.2,14 C23.86,14 24.4,13.46 24.4,12.8 L24.4,5.6 C24.4,4.94 23.86,4.4 23.2,4.4 L20.8,4.4 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

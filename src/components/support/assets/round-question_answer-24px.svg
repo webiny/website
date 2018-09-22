@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>round-question_answer-24px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Support" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-635.000000, -454.000000)" id="Resources">
+            <g transform="translate(276.000000, 377.000000)">
+                <g id="FAQ" transform="translate(357.000000, 74.000000)">
+                    <g id="round-question_answer-24px" transform="translate(0.000000, 1.000000)">
+                        <polygon id="Shape" points="0 0 28 0 28 28 0 28"></polygon>
+                        <path d="M22.7,6.6 L21.55,6.6 L21.55,15.8 C21.55,16.4325 21.0325,16.95 20.4,16.95 L6.6,16.95 L6.6,18.1 C6.6,19.365 7.635,20.4 8.9,20.4 L20.4,20.4 L25,25 L25,8.9 C25,7.635 23.965,6.6 22.7,6.6 Z M19.25,12.35 L19.25,4.3 C19.25,3.035 18.215,2 16.95,2 L4.3,2 C3.035,2 2,3.035 2,4.3 L2,19.25 L6.6,14.65 L16.95,14.65 C18.215,14.65 19.25,13.615 19.25,12.35 Z" id="Shape" fill="#FA5723" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

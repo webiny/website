@@ -227,12 +227,9 @@ class Header extends React.Component {
                 </a>
               </MenuItem>
               <MenuItem>
-                <a
-                  className={linkStyle}
-                  href="https://github.com/webiny/webiny-js/"
-                >
-                  Source
-                </a>
+                <Link className={linkStyle} rel="prerender" to="/support">
+                  Support
+                </Link>
               </MenuItem>
               <MenuItem>
                 <Button link="/pricing" type={this.state.isSticky && 'primary'}>
@@ -282,11 +279,8 @@ class Header extends React.Component {
                   </Link>
                 </MobileMenuItem>
                 <MobileMenuItem>
-                  <Link
-                    className={link}
-                    to="https://github.com/webiny/webiny-js/"
-                  >
-                    Source
+                  <Link className={link} rel="prerender" to="/support">
+                    Support
                   </Link>
                 </MobileMenuItem>
                 <MobileMenuItem>

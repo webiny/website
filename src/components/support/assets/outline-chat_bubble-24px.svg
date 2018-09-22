@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="27px" viewBox="0 0 27 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>outline-chat_bubble-24px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Support" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-276.000000, -725.000000)" fill="#FA5723" fill-rule="nonzero" id="Community">
+            <g transform="translate(276.000000, 646.000000)">
+                <g transform="translate(0.000000, 74.000000)" id="outline-chat_bubble-24px">
+                    <g transform="translate(0.000000, 5.000000)">
+                        <g id="Outline">
+                            <path d="M24.3,0 L2.7,0 C1.215,0 0,1.215 0,2.7 L0,27 L5.4,21.6 L24.3,21.6 C25.785,21.6 27,20.385 27,18.9 L27,2.7 C27,1.215 25.785,0 24.3,0 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
