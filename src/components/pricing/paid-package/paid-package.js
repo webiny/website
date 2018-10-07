@@ -6,6 +6,8 @@ import mq from '../../utils/breakpoints';
 import ContentContainer from '../../ui/content-container';
 
 import pricingBullet from './assets/pricing-bullet.svg';
+import arrow from './assets/gs-btn-arrow.svg';
+import Button from "../../ui/button";
 
 const maxWidth = css ({
   maxWidth: 750,
@@ -163,6 +165,23 @@ const BetaBox = styled("div")({
   }
 });
 
+const button = css (
+  {
+    boxShadow: '0 2px 3px 0 rgba(160,160,160,0.50)',
+    '> img': {
+      marginLeft: 10,
+    },
+  },
+  mq ({
+    padding: [15, '14px 100px !important'],
+  })
+);
+
+const Arrow = styled ('img') ({
+  height: 9,
+  marginLeft: 5,
+});
+
 class PaidPackage extends React.Component {
   render () {
     return (
@@ -195,10 +214,13 @@ class PaidPackage extends React.Component {
             <ReasonsItem>
               <Bold>500h</Bold> Lambda runtime
             </ReasonsItem>
-            <ReasonsItem>Unlimited deployments per month</ReasonsItem>
             <ReasonsItem>Global CDN</ReasonsItem>
-            <ReasonsItem>Web Application Firewall</ReasonsItem>
-            <ReasonsItem>Email support</ReasonsItem>
+            <ReasonsItem>Unlimited deployments per month</ReasonsItem>
+            <ReasonsItem>Auto scaling using extra usage packages</ReasonsItem>
+            <Button className={button} fullWidth={true} type="primary">
+              Get Started
+              <Arrow alt="Get Started" src={arrow} />
+            </Button>
           </ReasonsList>
         </Box>
         <ExtraTitle>Extra usage: $20/package</ExtraTitle>

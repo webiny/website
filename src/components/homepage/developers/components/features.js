@@ -93,10 +93,22 @@ const ExternalLink = styled('a')({
   textDecoration: 'none',
 })
 
+const SubTitle = styled('h2')({
+  fontSize: theme.fontSize.h2,
+  fontWeight: 500,
+  textTransform: 'uppercase',
+  color: theme.color.white,
+  textAlign: 'center',
+  paddingTop: 50,
+  marginTop: 0,
+  marginBottom: 75
+})
+
 class Features extends React.Component {
   render() {
     return (
       <ContentContainer>
+        <SubTitle>Features</SubTitle>
         <BoxContainer>
           <Box>
             <BoxIcon src={serverlessIcon} />

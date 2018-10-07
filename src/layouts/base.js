@@ -16,10 +16,10 @@ class BaseLayout extends React.Component {
         <Helmet
           title={this.props.title}
           meta={[
-            { name: 'description', content: 'Node.js Serverless CMS' },
+            { name: 'description', content: this.props.description },
             {
               name: 'keywords',
-              content: 'cms, serverless, nodejs, open source',
+              content: 'cms, serverless, nodejs, open source, reactjs, graphql',
             },
             {
               name: 'viewport',

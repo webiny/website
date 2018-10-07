@@ -26,6 +26,18 @@ const additionalFaq = css ({
   fontWeight: theme.fontWeight.semiBold,
 });
 
+const isItFree = (
+  <React.Fragment>
+    <p>
+      <strong>100% YES!</strong>
+    </p>
+    <p>
+      Webiny is an open source project under MIT license. You can download the
+      source code from our GitHub on <a href="https://github.com/webiny/webiny-js">https://github.com/webiny/webiny-js</a>.
+    </p>
+  </React.Fragment>
+);
+
 const canIUseWebiny = (
   <React.Fragment>
     <p>
@@ -120,6 +132,10 @@ const howToSupport = (
 class Faq extends React.Component {
   state = {
     questions: [
+      {
+        question: 'Is Webiny free?',
+        answer: isItFree,
+      },
       {
         question: 'Can I use Webiny to build a website?',
         answer: canIUseWebiny,

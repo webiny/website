@@ -158,8 +158,7 @@ export default ({ children, ...props }) => (
     <ContactBlock>
       <SubTitle>Let's Work Together</SubTitle>
       <SubText>
-        Let us know about your agency, type or projects you usually do, and how
-        you want us to work together.
+        Let us know about your agency, type or projects you usually do, and any ideas you want to share for us working together.
       </SubText>
       <ContactUs placeholder="Your message" />
     </ContactBlock>

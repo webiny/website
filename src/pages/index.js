@@ -41,7 +41,10 @@ const SidebarBox = styled('div')(
 class IndexPage extends React.Component {
   render() {
     return (
-      <BaseLayout title="Webiny - Serverless CMS powered by React and Node">
+      <BaseLayout
+        title="Webiny - Serverless CMS powered by React and Node"
+        desciption = "Webiny is a modern open source content management designed to run in a serverless environment.  Webiny is powered by React, Node and GraphQL.  Webiny features a visual page builder, so you can quickly create stunning web pages."
+      >
         <Hero />
         {/*<Cms />*/}
         <CmsV2/>

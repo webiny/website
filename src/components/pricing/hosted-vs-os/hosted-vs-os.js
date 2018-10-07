@@ -4,13 +4,16 @@ import {css} from 'emotion';
 import theme from '../../utils/theme';
 import mq from '../../utils/breakpoints';
 import ContentContainer from '../../ui/content-container';
+import Button from '../../ui/button';
 
 import check from './assets/check.svg';
+import arrow from './assets/gs-btn-arrow.svg';
 
 const maxWidth = css ({
   maxWidth: 750,
-  marginBottom: 25,
-});
+}, mq({
+  marginBottom: [0, 25]
+}));
 
 const SubTitle = styled ('h2') ({
   fontSize: theme.fontSize.h2,
@@ -94,7 +97,7 @@ const highlight = css`
     background-color: rgba(255,255,255,0.5);
     z-index: 5;
     width: calc(25% + 6px);
-    height: calc(87.1% + 10px);
+    height: calc(100% + 10px);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -110,6 +113,66 @@ const highlight = css`
     box-shadow: 0 3px 36px rgba(23,55,87,.1), 0 5px 15px rgba(0,0,0,.07);
 `;
 
+const SelectOption = styled('div')({
+  display: 'flex',
+  boxSizing: 'border-box',
+  alignItems: 'center',
+  position: 'relative',
+  'h4':{
+    marginTop: 0
+  },
+  border: '1px solid '+theme.color.lightGray,
+  boxShadow: '0 2px 4px 0 rgba(222,222,222,0.50)'
+}, mq({
+  flexDirection: ['column-reverse', 'row'],
+  margin: [20, '0 0 50px 0']
+}));
+
+const OpenSource = styled('div')({
+  textAlign: 'center',
+  backgroundColor: theme.color.darkGray,
+  boxSizing: 'border-box'
+}, mq({
+  width: ['100%', '50%'],
+  padding: ['50px 15px 15px 15px', '25px 50px 25px 25px'],
+}));
+
+const WebinyCloud = styled('div')({
+  textAlign: 'center',
+  backgroundColor: theme.color.secondaryDark,
+  boxSizing: 'border-box',
+  color: theme.color.white
+}, mq({
+  width: ['100%', '50%'],
+  padding: ['15px 15px 50px 15px', '25px 25px 25px 50px'],
+}));
+
+const Or = styled('div')({
+  borderRadius: '50%',
+  padding: '18px 20px',
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translateX(-50%) translateY(-50%)',
+  backgroundColor: 'white',
+  boxShadow: '0 2px 4px 0 rgba(233,233,233,0.50)'
+});
+
+const button = css (
+  {
+    '> img': {
+      marginLeft: 10,
+    },
+  },
+  mq ({
+    padding: [15, '14px 90px !important'],
+  })
+);
+
+const Arrow = styled ('img') ({
+  height: 9,
+  marginLeft: 5,
+});
 
 class HostedVsOS extends React.Component {
   render () {
@@ -123,33 +186,63 @@ class HostedVsOS extends React.Component {
         <Table>
             <Cell className={"header"}></Cell>
             <Cell className={"header"}>Open Source</Cell>
-            <Cell className={"header"}>Hosted</Cell>
+            <Cell className={"header"}>Webiny Cloud</Cell>
 
 
             <Cell>Continuous database backups</Cell>
             <Cell>Manual</Cell>
-            <Cell><img src={check}/> <span>Automatic</span></Cell>
+            <Cell><img src={check}/> <span>Included</span></Cell>
 
-          <Cell>Manage and renew SSL certificates</Cell>
-          <Cell>Manual</Cell>
-          <Cell><img src={check}/> <span>Automatic</span></Cell>
+            <Cell>Manage and renew SSL certificates</Cell>
+            <Cell>Manual</Cell>
+            <Cell><img src={check}/> <span>Included</span></Cell>
 
-          <Cell>Ensure infrastructure capacity, scalability & resiliency</Cell>
-          <Cell>Manual</Cell>
-          <Cell><img src={check}/> <span>Automatic</span></Cell>
+            <Cell>Scalable and resilient infrastructure</Cell>
+            <Cell>Manual</Cell>
+            <Cell><img src={check}/> <span>Included</span></Cell>
 
-          <Cell>Content Security Policies & XSS protection.</Cell>
-          <Cell>Manual</Cell>
-          <Cell><img src={check}/> <span>Automatic</span></Cell>
+            <Cell>HSTS and HTTP to HTTPS redirect</Cell>
+            <Cell>Manual</Cell>
+            <Cell><img src={check}/> <span>Included</span></Cell>
 
-          <Cell>Data replication and durability.</Cell>
-          <Cell>Manual</Cell>
-          <Cell><img src={check}/> <span>Automatic</span></Cell>
+            <Cell>Data replication and durability</Cell>
+            <Cell>Manual</Cell>
+            <Cell><img src={check}/> <span>Included</span></Cell>
+
+            <Cell>Performance and usage monitoring</Cell>
+            <Cell>Manual</Cell>
+            <Cell><img src={check}/> <span>Included</span></Cell>
+
+            <Cell>Content caching</Cell>
+            <Cell>Manual</Cell>
+            <Cell><img src={check}/> <span>Included</span></Cell>
+
+
+            <Cell>Sleep worry free</Cell>
+            <Cell>Manual</Cell>
+            <Cell><img src={check}/> <span>Included</span></Cell>
 
           <div className={highlight}/>
 
         </Table>
 
+        <SelectOption>
+          <OpenSource>
+            <h4>Open Source</h4>
+            <Button fullWidth={true} link={"https://docs.webiny.com/"} className={button}>
+              View the docs
+              <Arrow alt="Get Started" src={arrow} />
+            </Button>
+          </OpenSource>
+          <WebinyCloud>
+            <h4>Webiny Cloud</h4>
+            <Button fullWidth={true} class={button}>
+              Create my site
+              <Arrow alt="Get Started" src={arrow} />
+            </Button>
+          </WebinyCloud>
+          <Or>OR</Or>
+        </SelectOption>
       </ContentContainer>
     );
   }

@@ -44,12 +44,13 @@ const SubText = styled('p')(
     fontWeight: theme.fontWeight.regular,
     color: theme.color.white,
     textAlign: 'center',
-    margin: '0 20%',
+    margin: '0 auto',
     lineHeight: '150%',
-    marginBottom: 50,
+    maxWidth: 750,
   },
   mq({
-    margin: ['0 20px', '0 20% 40px 20%'],
+    margin: ['0 20px', '0 auto'],
+    paddingBottom: [0, 50]
   })
 )
 

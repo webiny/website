@@ -4,9 +4,9 @@ import theme from '../../../utils/theme'
 import mq from '../../../utils/breakpoints'
 import ContentContainer from '../../../ui/content-container'
 
-import architecture from '../assets/webiny-architecture.svg'
+import architecture from '../assets/webiny-architecture.png'
 import clientDeploy from '../assets/client-deploy.svg';
-import serviceDeploy from '../assets/service-deploy.svg';
+import apiDeploy from '../assets/api-deploy.svg';
 
 const Grid = styled("div")({
     width: '100%',
@@ -29,8 +29,8 @@ const Grid = styled("div")({
 );
 
 const Cell = styled("div")({
-  'h3':{
-    fontSize: theme.fontSize.h3,
+  'h2,h3':{
+    fontSize: theme.fontSize.h2,
     color: theme.color.white,
     marginTop: 0,
     fontWeight: theme.fontWeight.bold,
@@ -39,6 +39,9 @@ const Cell = styled("div")({
     'img':{
       marginRight: 20
     }
+  },
+  'h3':{
+    fontSize: theme.fontSize.h3,
   },
   'ol':{
     marginLeft: 20,
@@ -53,7 +56,7 @@ const Cell = styled("div")({
 }, mq({
   marginRight: [0, 150],
   img:{
-    width: ['100%', 'auto'],
+    width: ['100%', '400px'],
   }
 }));
 
@@ -64,11 +67,24 @@ const ClientBlock = styled("div")({
 }));
 const ServerBlock = styled("div")({});
 
+const SubTitle = styled('h2')({
+  fontSize: theme.fontSize.h2,
+  fontWeight: 500,
+  textTransform: 'uppercase',
+  color: theme.color.white,
+  textAlign: 'center',
+  paddingTop: 25,
+  marginTop: 0,
+  marginBottom: 75
+})
+
+
 class Architecture extends React.Component {
   render() {
     return (
       <ContentContainer>
-        <Grid className={"first"}>
+        <SubTitle>Architecture</SubTitle>
+        <Grid>
           <Cell>
             <img src={architecture}/>
           </Cell>
@@ -78,18 +94,18 @@ class Architecture extends React.Component {
               <ol>
                 <li>Quickly start building client side apps inside a ready made admin interface. </li>
                 <li>Webiny comes with a set of predefined React UI components, no need to reinvent the wheel.</li>
-                <li>Bundle and deploy your app using Webiny CLI  to Webiny Hosted platform.</li>
+                <li>Quickly bundle and deploy your app to Webiny Cloud using Webiny CLI.</li>
               </ol>
               <img src={clientDeploy}/>
             </ClientBlock>
             <ServerBlock>
               <h3>Server Side</h3>
               <ol>
-                <li>Take the microservices approach, and move yourself away from having a monolithic system.</li>
-                <li>Webiny comes with several built-in microservices, and you also have the option to register new ones.</li>
-                <li>Bundle and deploy your services using Webiny CLI to Webiny Hosted platform.</li>
+                <li>Take the API approach, use the built-in ORM and GraphQL SDL to quickly create new endpoints.</li>
+                <li>Webiny also comes with several built-in API endpoints that you can leverage in your apps.</li>
+                <li>Same as for the client side, using the CLI you can deploy your app to Webiny Cloud.</li>
               </ol>
-              <img src={serviceDeploy}/>
+              <img src={apiDeploy}/>
             </ServerBlock>
           </Cell>
         </Grid>

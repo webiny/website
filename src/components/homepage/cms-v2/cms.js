@@ -20,6 +20,9 @@ import themeIcon from './assets/round-format_paint-24px.svg';
 import designSystemIcon from './assets/round-palette-24px.svg';
 import previewIcon from './assets/round-desktop_mac-24px.svg';
 import layoutIcon from './assets/round-view_quilt-24px.svg';
+import plugIcon from './assets/plug-solid.svg';
+import cropRotateIcon from './assets/baseline-crop_rotate-24px.svg';
+import cloudIcon from './assets/baseline-cloud_queue-24px.svg';
 
 const CmsContainer = styled('section')({
   backgroundColor: theme.color.lightGray,
@@ -288,6 +291,56 @@ class Cms extends React.Component {
                 To build a great looking page, you need to have the freedom to place content around the page as you desire.
                 We’ve gone to great effort designing an editor that allows you to build full featured responsive grid layouts,
                 and arrange content in the way it deserves, without any constraints of traditional editors. We made building pages fun!
+              </p>
+            </Cell>
+          </Grid>
+
+          <Grid className={"first"}>
+            <Cell>
+              <img className={"image"} src={imageMock}/>
+            </Cell>
+            <Cell className={"headingCell"}>
+              <h3>Images - First Class Citizens</h3>
+              <p>
+                Images are an important part of every website. They add a colorful dynamic to pages, and peak visitors interest.
+                To properly support images, having simple mechanisms like uploading and just displaying an image are not enough.
+                Webiny, being a true modern CMS, comes with a versatile image editor, pluggable storage solutions, as well as
+                options to integrate with 3rd party delivery and optimization mechanisms
+              </p>
+            </Cell>
+          </Grid>
+          <Grid>
+            <Cell>
+              <h3>
+                <img src={cloudIcon}/>
+                3rd Party Integrations
+              </h3>
+              <p>
+                All mechanism like, upload, and displaying of image
+                can be controlled, allowing you to integrated existing and
+                proven 3rd party digital asset managers for upload and optimized delivery. Think of Akamai Image Manager, Cloudinary or Scene7.
+              </p>
+            </Cell>
+            <Cell>
+              <h3>
+                <img src={plugIcon} style={{height: '24px'}}/>
+                Storage Adapters
+              </h3>
+              <p>
+                By default Webiny comes with a local storage adapter, but this is nothing more than a plugin.
+                You can easily create your own storage, and integrate with popular  solutions like AWS S3, Google Cloud Storage, Azure Storage
+                and others.
+              </p>
+            </Cell>
+            <Cell>
+              <h3>
+                <img src={cropRotateIcon}/>
+                Built-in Image Editor
+              </h3>
+              <p>
+                The build-in image editor allows you to do essential image manipulations, like image crop, rotate, flip.
+                There are also more advance options, like drawing on top of images and the option to apply one of many
+                predefined filters.
               </p>
             </Cell>
           </Grid>

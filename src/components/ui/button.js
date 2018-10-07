@@ -41,7 +41,7 @@ const buttonDefault = css (
 );
 
 const buttonFullWidthStyle = css ({
-  width: '100%',
+  width: '100% !important',
 });
 
 const buttonPrimary = css ({
@@ -97,12 +97,25 @@ class Button extends React.Component {
       style += ' ' + this.props.className;
     }
 
+    if (this.props.hasOwnProperty ('fullWidth')) {
+      style += ' ' + this.styles.fullWidth;
+    }
+
     if (this.props.hasOwnProperty ('link')) {
-      return (
-        <Link to={this.props.link} className={style}>
-          {this.props.children}
-        </Link>
-      );
+
+      if(this.props.link.startsWith('http')){
+        return (
+          <a href={this.props.link} className={style}>
+            {this.props.children}
+          </a>
+        );
+      }else{
+        return (
+          <Link to={this.props.link} className={style}>
+            {this.props.children}
+          </Link>
+        );
+      }
     } else {
       return (
         <button className={style} onClick={this.props.onClick}>

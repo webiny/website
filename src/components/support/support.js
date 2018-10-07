@@ -84,7 +84,7 @@ const Cell = styled("div")({
     alignItems: 'center',
     'img':{
       marginRight: 20,
-      width: 32,
+      height: 32,
       '&.arrow':{
         marginLeft: 30,
         width: 10
@@ -102,6 +102,8 @@ const Cell = styled("div")({
     letterSpacing: 0.5,
     fontWeight: theme.fontWeight.regular,
     textDecoration: 'none',
+    display: 'flex',
+    alignItems: 'center',
     '&:hover':{
       textDecoration: 'underline'
     },
@@ -117,6 +119,7 @@ const Cell = styled("div")({
 
 const bodyStyle = css({
   color: '#4A4A4A',
+  marginBottom: 100,
   'h2':{
     fontSize: 28,
     fontWeight: theme.fontWeight.semiBold,
