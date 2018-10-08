@@ -215,8 +215,8 @@ class Cms extends React.Component {
               </h3>
               <p>
                 Nobody likes a closed system, that’s why almost every button, component or
-                functionality in Webiny is a plugin. This allowed us to build a system
-                that is fully customizable and extendable.
+                functionality in Webiny is a plugin. Benefits of such a system are that
+                you can fully customize it and extend it to fit your needs.
               </p>
             </Cell>
             <Cell>
@@ -227,7 +227,7 @@ class Cms extends React.Component {
               <p>
                 Never lose sight of who changed what. Have a time machine for your content.
                 Be able to go back and restore previous versions of a page, or quickly test
-                between multiple revisions, by just activating new versions.
+                between multiple revisions.
               </p>
             </Cell>
             <Cell>
@@ -248,11 +248,12 @@ class Cms extends React.Component {
             <Cell className={"headingCell"}>
               <h3>Building Blocks Included</h3>
               <p>
-                Often a CMS gives you the option to arrange your content in a sequence, image, text,
-                image, text … we think that this is bit boring, both for the person creating the content,
-                as well as the users consuming the content. To spin things around, Webiny features a set of
-                build-in inspirational blocks of content that you can just drop in your page and quickly
-                adjust to fit your needs. It will make every page a unique one.
+                Often a CMS gives you the option to arrange your content in a crude and boring way 
+                and your users will notice that. So what's good a CMS if it's not keeping your users engaged?
+                <br/><br/>
+                To spin things around, Webiny features a set of
+                build-in inspirational content blocks that you can just drop in your page and quickly
+                adjust to fit your needs. It will make every page a unique engaging experience.
               </p>
             </Cell>
             <Cell>
@@ -267,7 +268,7 @@ class Cms extends React.Component {
               </h3>
               <p>
                 Having a regular “button” component that you can insert in your pages is not enough, you need a Primary,
-                Secondary and a Default one, if not more. Webiny allows you to do just that. Have a component with
+                Secondary and a Default one, if not more. Webiny allows you to do just that. You can have a component with
                 predefined variants that match your design system ensuring all pages follow the same visual guidelines.
               </p>
             </Cell>
@@ -304,12 +305,13 @@ class Cms extends React.Component {
               <p>
                 Images are an important part of every website. They add a colorful dynamic to pages, and peak visitors interest.
                 To properly support images, having simple mechanisms like uploading and just displaying an image are not enough.
+                <br/><br/>
                 Webiny, being a true modern CMS, comes with a versatile image editor, pluggable storage solutions, as well as
                 options to integrate with 3rd party delivery and optimization mechanisms
               </p>
             </Cell>
           </Grid>
-          <Grid>
+          <Grid style={{paddingBottom: 20}}>
             <Cell>
               <h3>
                 <img src={cloudIcon}/>
@@ -353,8 +355,8 @@ class Cms extends React.Component {
               <img src={smallImageMock}/>
               <h3>Dark Mode</h3>
               <p>
-                They say that there are no two eyes that are alike,
-                so we dediced to add both light and dark mode to the Webiny administration.
+                They say that there are no two eyes alike. Some prefer white, some black.
+                Webiny features a light and a dark mode, make your pick.
               </p>
             </Cell>
             <Cell>

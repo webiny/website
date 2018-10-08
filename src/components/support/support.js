@@ -189,7 +189,7 @@ export default ({ children, ...props }) => (
           </a>
         </h3>
         <p>
-          Our documentation features many guide and tutorial to get  you started.
+          Our documentation features many guides and tutorials to get you started.
           Exploring the docs is the best way to learn how to use Webiny.
         </p>
       </Cell>

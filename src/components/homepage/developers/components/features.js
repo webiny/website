@@ -18,6 +18,8 @@ import i18nIcon from '../assets/i18n-icon.svg'
 import securityIcon from '../assets/security-icon.svg'
 import externalLinkIcon from '../assets/external-link-symbol.svg'
 import visualBuilderIcon from '../assets/visual-builder-icon.svg'
+import testPassing from '../assets/passing.svg';
+import testCoverage from '../assets/coveralls_95.svg';
 
 const BoxContainer = styled('div')(
   {
@@ -136,12 +138,12 @@ class Features extends React.Component {
             <BoxFooter>
               <img
                 alt="Webiny Build"
-                src="https://travis-ci.org/Webiny/webiny-js.svg?branch=master"
+                src={testPassing}
               />{' '}
               &nbsp;
               <img
                 alt="Webiny Coverage"
-                src="https://coveralls.io/repos/github/Webiny/webiny-js/badge.svg?branch=master"
+                src={testCoverage}
               />
             </BoxFooter>
           </Box>
