@@ -93,14 +93,19 @@ const quote = css({
   width: "100%"
 });
 
-const QuoteDetails = styled("div")({
-  display: "flex",
-  justifyContent: "space-between",
-  fontSize: theme.fontSize.h5,
-  padding: "25px 245px 0 260px",
-  textAlign: "left",
-  alignItems: "center"
-});
+const QuoteDetails = styled("div")(
+  {
+    display: "flex",
+    justifyContent: "space-between",
+    fontSize: theme.fontSize.h5,
+    textAlign: "left",
+    alignItems: "center"
+  },
+  mq({
+    flexDirection: ["column", "row"],
+    padding: [20, "25px 245px 0 260px"]
+  })
+);
 
 class Serverless extends React.Component {
   render() {
