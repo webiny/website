@@ -176,7 +176,7 @@ export default ({children, ...props}) => (
           <ReasonWrapper>
             <ReasonsList>
               <ReasonsItem className={reasonsItemRight}>
-                <Bold>1GB</Bold> MySQL DB storage
+                <Bold>100MB</Bold> MySQL DB storage
               </ReasonsItem>
               <ReasonsItem className={reasonsItemRight}>
                 <Bold>10k</Bold> Lambda requests

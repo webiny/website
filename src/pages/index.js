@@ -5,7 +5,7 @@ import mq from '../components/utils/breakpoints'
 
 import BaseLayout from '../layouts/base'
 import Hero from '../components/homepage/hero/hero'
-//import Cms from '../components/homepage/cms/cms'
+import Serverless from '../components/homepage/serverless/serverless';
 import CmsV2 from '../components/homepage/cms-v2/cms'
 import Developers from '../components/homepage/developers/developers'
 import QuickStart from '../components/homepage/quick-start/quick-start'
@@ -46,7 +46,7 @@ class IndexPage extends React.Component {
         desciption = "Webiny is a modern open source content management designed to run in a serverless environment.  Webiny is powered by React, Node and GraphQL.  Webiny features a visual page builder, so you can quickly create stunning web pages."
       >
         <Hero />
-        {/*<Cms />*/}
+        <Serverless/>
         <CmsV2/>
         <Developers />
         <QuickStart />

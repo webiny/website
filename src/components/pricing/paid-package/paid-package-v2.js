@@ -64,14 +64,14 @@ const Price = styled ('div') (
     alignItems: 'center',
     flexDirection: 'column',
     justifyContent:  'flex-end', //'center',
-    lineHeight: '100%',
+    lineHeight: '70%',
     boxSizing: 'border-box',
   },
   mq ({
     width: ['100%', '50%'],
     borderBottomLeftRadius: [0, 8],
     borderTopRightRadius: [8, 0],
-    padding: ['45px 0 25px 0', '0 0 25px 0'],
+    padding: ['45px 0 25px 0', '15px 0 0 0'],
   })
 );
 
@@ -135,12 +135,6 @@ const ExtraReasonsList = css (
   })
 );
 
-const BetaBoxWrapper = styled("div")({
-  boxSizing: 'border-box',
-  padding: '40px 10px 0px 10px',
-  marginBottom: '-15px'
-});
-
 const BetaBox = styled("div")({
   background: '#FEF7D6',
   border: '2px solid #FFE564',
@@ -199,26 +193,19 @@ class PaidPackage extends React.Component {
         </SubText>
         <Box>
           <Price>
-            $49
-            <PriceSubText>/month</PriceSubText>
-            <BetaBoxWrapper>
+            $1
+            <div style={{boxSizing: 'border-box', 'padding': '10px'}}>
               <BetaBox>
                 <div className={"questionMark"}>!</div>
                 <strong>Beta Period:</strong> During the beta, this package is  available free of
                 charge. Beta ends on the 1st of Jan 2019, after  which the
                 billing period will start.
               </BetaBox>
-            </BetaBoxWrapper>
+            </div>
           </Price>
           <ReasonsList>
             <ReasonsItem>
-              <Bold>1GB</Bold> database storage
-            </ReasonsItem>
-            <ReasonsItem>
-              <Bold>250k</Bold> Lambda requests
-            </ReasonsItem>
-            <ReasonsItem>
-              <Bold>250h</Bold> Lambda runtime
+              <Bold>Per 5000</Bold> API requests
             </ReasonsItem>
             <ReasonsItem>Global CDN</ReasonsItem>
             <ReasonsItem>Email Support</ReasonsItem>
