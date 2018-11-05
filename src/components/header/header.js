@@ -1,154 +1,154 @@
-import React from 'react';
-import styled from 'react-emotion';
-import theme from '../utils/theme';
-import mq from '../utils/breakpoints';
-import ContentContainer from '../ui/content-container';
-import Button from '../ui/button';
-import Link from 'gatsby-link';
-import {css} from 'emotion';
+import React from "react";
+import styled from "react-emotion";
+import theme from "../utils/theme";
+import mq from "../utils/breakpoints";
+import ContentContainer from "../ui/content-container";
+import Button from "../ui/button";
+import Link from "gatsby-link";
+import { css } from "emotion";
 
-import logo from './assets/webiny-logo.svg';
-import logoOrange from './assets/webiny-orange-logo.svg';
-import menuIcon from './assets/round-menu-24px.svg';
-import menuIconBlack from './assets/round-menu-24px-black.svg';
+import logo from "./assets/webiny-logo.svg";
+import logoOrange from "./assets/webiny-orange-logo.svg";
+import menuIcon from "./assets/round-menu-24px.svg";
+import menuIconBlack from "./assets/round-menu-24px-black.svg";
 
-const NavBar = styled ('div') ({
-  margin: '0 auto',
-  display: 'flex',
-  alignContent: 'flex-end',
-  justifyContent: 'space-between',
+const NavBar = styled("div")({
+  margin: "0 auto",
+  display: "flex",
+  alignContent: "flex-end",
+  justifyContent: "space-between"
 });
 
-const WebinyLogo = styled ('div') ({
+const WebinyLogo = styled("div")({
   margin: 0,
   padding: 0,
-  lineHeight: '100%',
-  zIndex: 100,
+  lineHeight: "100%",
+  zIndex: 100
 });
 
-const logoImage = css (
+const logoImage = css(
   {},
-  mq ({
+  mq({
     paddingLeft: [20, 0],
     height: [28, 42],
-    marginTop: [5],
+    marginTop: [5]
   })
 );
 
-const Menu = styled ('ul') (
+const Menu = styled("ul")(
   {
-    listStyle: 'none',
+    listStyle: "none",
     //display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "center",
+    justifyContent: "center"
   },
-  mq ({
-    display: ['none', 'flex'],
+  mq({
+    display: ["none", "flex"]
   })
 );
 
-const MenuItem = styled ('li') ({
+const MenuItem = styled("li")({
   marginLeft: 25,
-  textAlign: 'center',
-  fontSize: theme.fontSize.navMenuItem,
+  textAlign: "center",
+  fontSize: theme.fontSize.navMenuItem
 });
 
-const linkStyle = css ({
+const linkStyle = css({
   fontWeight: theme.fontWeight.semiBold,
-  textDecoration: 'none',
-  color: '#fff',
-  transition: '250ms opacity',
-  '&:hover': {
-    opacity: '0.8',
-  },
+  textDecoration: "none",
+  color: "#fff",
+  transition: "250ms opacity",
+  "&:hover": {
+    opacity: "0.8"
+  }
 });
 
-const HeaderContainer = styled ('header') (
+const HeaderContainer = styled("header")(
   {
     top: 0,
     left: 0,
     paddingTop: 15,
     paddingBottom: 15,
-    width: '100%',
-    transition: 'all 500ms',
-    zIndex: 100,
+    width: "100%",
+    transition: "all 500ms",
+    zIndex: 100
   },
   props => ({
-    position: props.isSticky ? 'fixed' : 'absolute',
-    backgroundColor: props.isSticky ? '#fff' : 'transparent',
-    boxShadow: props.isSticky && '0 0 1px 1px rgba(34,45,57,.15)',
+    position: props.isSticky ? "fixed" : "absolute",
+    backgroundColor: props.isSticky ? "#fff" : "transparent",
+    boxShadow: props.isSticky && "0 0 1px 1px rgba(34,45,57,.15)",
     paddingTop: props.isSticky ? 10 : 20,
     paddingBottom: props.isSticky ? 10 : 20,
     [MenuItem]: {
-      ['a.' + linkStyle]: {
-        color: props.isSticky ? '#000' : '#fff',
-      },
-    },
+      ["a." + linkStyle]: {
+        color: props.isSticky ? "#000" : "#fff"
+      }
+    }
   })
 );
 
-const MobileMenu = styled ('div') (
+const MobileMenu = styled("div")(
   {
     paddingRight: 20,
-    display: 'flex',
-    position: 'relative',
+    display: "flex",
+    position: "relative"
   },
-  mq ({
-    display: ['block', 'none'],
+  mq({
+    display: ["block", "none"]
   })
 );
 
-const MobileMenuIcon = styled ('img') ({
+const MobileMenuIcon = styled("img")({
   zIndex: 100,
-  position: 'absolute',
+  position: "absolute",
   right: 20,
-  top: 6,
+  top: 6
 });
 
-const MobileMenuList = styled ('ul') (
+const MobileMenuList = styled("ul")(
   {
-    width: '100%',
-    height: '100vh',
+    width: "100%",
+    height: "100vh",
     padding: 25,
     backgroundColor: theme.color.white,
-    position: 'fixed',
+    position: "fixed",
     zIndex: 50,
     top: 0,
     left: 0,
     paddingTop: 100,
-    boxSizing: 'border-box',
+    boxSizing: "border-box"
   },
   props => ({
-    display: props.open ? 'block' : 'none',
+    display: props.open ? "block" : "none"
   })
 );
 
-const MobileMenuItem = styled ('li') ({
-  listStyle: 'none',
+const MobileMenuItem = styled("li")({
+  listStyle: "none",
   fontSize: 24,
-  marginBottom: 10,
+  marginBottom: 10
 });
 
-const link = css ({
-  textDecoration: 'none',
-  color: theme.color.black,
+const link = css({
+  textDecoration: "none",
+  color: theme.color.black
 });
 
 class Header extends React.Component {
   didScroll = false;
-  state = {isSticky: false, mobileMenuOpen: false};
+  state = { isSticky: false, mobileMenuOpen: false };
 
-  componentDidMount () {
-    this.initScrollListener ();
+  componentDidMount() {
+    this.initScrollListener();
   }
 
   toggleMobileMenu = () => {
-    this.setState (
+    this.setState(
       {
         mobileMenuOpen: !this.state.mobileMenuOpen,
-        isSticky: !this.state.mobileMenuOpen,
+        isSticky: !this.state.mobileMenuOpen
       },
       () => {
         this.didScroll = true;
@@ -161,7 +161,7 @@ class Header extends React.Component {
       this.didScroll = true;
     };
 
-    setInterval (() => {
+    setInterval(() => {
       if (this.didScroll) {
         this.didScroll = false;
 
@@ -173,15 +173,15 @@ class Header extends React.Component {
           if (this.state.isSticky) {
             return;
           }
-          this.setState ({isSticky: true});
+          this.setState({ isSticky: true });
         } else if (window.scrollY < 1) {
-          this.setState ({isSticky: false});
+          this.setState({ isSticky: false });
         }
       }
     }, 100);
   };
 
-  render () {
+  render() {
     return (
       <HeaderContainer isSticky={this.state.isSticky}>
         <ContentContainer>
@@ -227,12 +227,12 @@ class Header extends React.Component {
                 </a>
               </MenuItem>
               <MenuItem>
-                <Link className={linkStyle} rel="prerender" to="/support">
+                <a className={linkStyle} href="https://support.webiny.com/">
                   Support
-                </Link>
+                </a>
               </MenuItem>
               <MenuItem>
-                <Button link="/pricing" type={this.state.isSticky && 'primary'}>
+                <Button link="/pricing" type={this.state.isSticky && "primary"}>
                   Get Started
                 </Button>
               </MenuItem>
@@ -279,9 +279,9 @@ class Header extends React.Component {
                   </Link>
                 </MobileMenuItem>
                 <MobileMenuItem>
-                  <Link className={link} rel="prerender" to="/support">
+                  <a className={link} href="https://support.webiny.com/">
                     Support
-                  </Link>
+                  </a>
                 </MobileMenuItem>
                 <MobileMenuItem>
                   <Button type="primary" link="/pricing">

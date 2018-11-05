@@ -1,31 +1,33 @@
-import React from 'react';
-import styled from 'react-emotion';
-import {css} from 'emotion';
-import theme from '../../utils/theme';
-import ContentContainer from '../../ui/content-container';
-import FaqComponent from '../../ui/faq';
-import Link from 'gatsby-link';
+import React from "react";
+import styled from "react-emotion";
+import { css } from "emotion";
+import theme from "../../utils/theme";
+import ContentContainer from "../../ui/content-container";
+import FaqComponent from "../../ui/faq";
+import Link from "gatsby-link";
 
-const FaqContainer = styled ('section') ({
+const FaqContainer = styled("section")({
   backgroundColor: theme.color.lightGray,
-  padding: '50px 0',
+  padding: "50px 0"
 });
 
-const maxWidth = css ({
-  maxWidth: 750,
+const maxWidth = css({
+  maxWidth: 750
 });
 
-const AdditionalQuestions = styled ('h4') ({
-  textAlign: 'center',
+const AdditionalQuestions = styled("h4")({
+  textAlign: "center",
   fontWeight: theme.fontWeight.semiBold,
-  fontSize: theme.fontSize.h4,
+  fontSize: theme.fontSize.h4
 });
 
-const contactUs = css ({
-  display: 'block',
-  textAlign: 'center',
+const contactUs = css({
+  display: "block",
+  textAlign: "center",
   fontSize: theme.fontSize.paragraph,
   color: theme.color.black,
+  cursor: "pointer",
+  textDecoration: "underline"
 });
 
 const howLambda = (
@@ -99,26 +101,29 @@ const paymentMethods = (
 const paymentCycles = (
   <React.Fragment>
     <p>
-      The payment cycles are once a month for the paid package, and your subscription is automatically renewed.
-      {' '}
+      The payment cycles are once a month for the paid package, and your
+      subscription is automatically renewed.{" "}
     </p>
     <p>
-      In case you use up any extra usaged packages, they are billed the moment an extra usage package starts getting utilized.
+      In case you use up any extra usaged packages, they are billed the moment
+      an extra usage package starts getting utilized.
     </p>
   </React.Fragment>
 );
 
 const extraPackageExpire = (
   <React.Fragment>
+    <p>Extra packages do not expire.</p>
     <p>
-      Extra packages do not expire.
+      For example, say you bought an extra package and used only half of the
+      lambda requests before your paid package renewed. The system will
+      automatically transfer the remainder of your extra package allowance to
+      the next month.{" "}
     </p>
     <p>
-      For example, say you bought an extra package and used only half of the lambda requests before your paid package renewed. The system will automatically transfer the remainder of your extra package allowance to the next month.
-      {' '}
-    </p>
-    <p>
-      Note: this doesn't apply to your paid package. When a paid package expires, the remainder of your allowance is not transfered to the next month.
+      Note: this doesn't apply to your paid package. When a paid package
+      expires, the remainder of your allowance is not transfered to the next
+      month.
     </p>
   </React.Fragment>
 );
@@ -126,13 +131,13 @@ const extraPackageExpire = (
 const taxIncluded = (
   <React.Fragment>
     <p>
-      Webiny as a legal UK entity is required by law to charge tax for all EU customers.
-      {' '}
-      The tax amount depends on your country of origin. For more information, visit our support page.
+      Webiny as a legal UK entity is required by law to charge tax for all EU
+      customers. The tax amount depends on your country of origin. For more
+      information, visit our support page.
     </p>
     <p>
-      For all other customers, there will be no to additional tax on top of the prices displayed above.
-      {' '}
+      For all other customers, there will be no to additional tax on top of the
+      prices displayed above.{" "}
     </p>
   </React.Fragment>
 );
@@ -141,40 +146,46 @@ class Faq extends React.Component {
   state = {
     questions: [
       {
-        question: 'How are Lambda requests and run time calculated?',
-        answer: howLambda,
+        question: "How are Lambda requests and run time calculated?",
+        answer: howLambda
       },
       {
-        question: 'What happens if I go above the lambda package limits?',
-        answer: lambdaLimits,
+        question: "What happens if I go above the lambda package limits?",
+        answer: lambdaLimits
       },
       {
-        question: 'Can I limit the extra usage packages?',
-        answer: extraUsagePackageLimit,
+        question: "Can I limit the extra usage packages?",
+        answer: extraUsagePackageLimit
       },
       {
-        question: 'How can I cancel my subscription? Can I get a refund?',
-        answer: cancelSub,
+        question: "How can I cancel my subscription? Can I get a refund?",
+        answer: cancelSub
       },
       {
-        question: 'Do I need a credit-card to signup and what payment methods you accept?',
-        answer: paymentMethods,
+        question:
+          "Do I need a credit-card to signup and what payment methods you accept?",
+        answer: paymentMethods
       },
       {
-        question: 'What are the payment cycles?',
-        answer: paymentCycles,
+        question: "What are the payment cycles?",
+        answer: paymentCycles
       },
       {
-        question: 'Do extra packages expire?',
-        answer: extraPackageExpire,
+        question: "Do extra packages expire?",
+        answer: extraPackageExpire
       },
       {
-        question: 'Is tax included in the price?',
-        answer: taxIncluded,
-      },
-    ],
+        question: "Is tax included in the price?",
+        answer: taxIncluded
+      }
+    ]
   };
-  render () {
+
+  openChat = () => {
+    window.kayako.maximize();
+  };
+
+  render() {
     return (
       <FaqContainer>
         <ContentContainer className={maxWidth}>
@@ -184,9 +195,9 @@ class Faq extends React.Component {
           />
         </ContentContainer>
         <AdditionalQuestions>More questions?</AdditionalQuestions>
-        <Link className={contactUs} to="/contact-us">
-          Contact Us
-        </Link>
+        <a className={contactUs} onClick={this.openChat}>
+          Send us a message
+        </a>
       </FaqContainer>
     );
   }
