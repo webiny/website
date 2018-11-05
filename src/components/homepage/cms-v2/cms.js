@@ -1,191 +1,191 @@
-import React from "react";
-import styled from "react-emotion";
-import theme from "../../utils/theme";
-import mq from "../../utils/breakpoints";
-import ContentContainer from "../../ui/content-container";
+import React from 'react';
+import styled from 'react-emotion';
+import theme from '../../utils/theme';
+import mq from '../../utils/breakpoints';
+import ContentContainer from '../../ui/content-container';
 
-import facebookLogo from "./assets/facebook.svg";
-import instagramLogo from "./assets/instagram.svg";
-import mailchimpLogo from "./assets/mailchimp.svg";
-import soundcloudLogo from "./assets/soundcloud.svg";
-import twitterLogo from "./assets/twitter.svg";
-import typeformLogo from "./assets/typeform.svg";
-import vimeoLogo from "./assets/vimeo.svg";
-import youtubeLogo from "./assets/youtube.svg";
-import imageMock from "./assets/cms-image-mock.svg";
-import smallImageMock from "./assets/cms-small-image-mock.svg";
-import pluginIcon from "./assets/round-extension-24px.svg";
-import revisionsIcon from "./assets/round-library_books-24px.svg";
-import themeIcon from "./assets/round-format_paint-24px.svg";
-import designSystemIcon from "./assets/round-palette-24px.svg";
-import previewIcon from "./assets/round-desktop_mac-24px.svg";
-import layoutIcon from "./assets/round-view_quilt-24px.svg";
-import plugIcon from "./assets/plug-solid.svg";
-import cropRotateIcon from "./assets/baseline-crop_rotate-24px.svg";
-import cloudIcon from "./assets/baseline-cloud_queue-24px.svg";
+import facebookLogo from './assets/facebook.svg';
+import instagramLogo from './assets/instagram.svg';
+import mailchimpLogo from './assets/mailchimp.svg';
+import soundcloudLogo from './assets/soundcloud.svg';
+import twitterLogo from './assets/twitter.svg';
+import typeformLogo from './assets/typeform.svg';
+import vimeoLogo from './assets/vimeo.svg';
+import youtubeLogo from './assets/youtube.svg';
+import imageMock from './assets/cms-image-mock.svg';
+import smallImageMock from './assets/cms-small-image-mock.svg';
+import pluginIcon from './assets/round-extension-24px.svg';
+import revisionsIcon from './assets/round-library_books-24px.svg';
+import themeIcon from './assets/round-format_paint-24px.svg';
+import designSystemIcon from './assets/round-palette-24px.svg';
+import previewIcon from './assets/round-desktop_mac-24px.svg';
+import layoutIcon from './assets/round-view_quilt-24px.svg';
+import plugIcon from './assets/plug-solid.svg';
+import cropRotateIcon from './assets/baseline-crop_rotate-24px.svg';
+import cloudIcon from './assets/baseline-cloud_queue-24px.svg';
 
-const CmsContainer = styled("section")({
-  backgroundColor: theme.color.lightGray
+const CmsContainer = styled ('section') ({
+  backgroundColor: theme.color.lightGray,
 });
 
-const GalleryContainer = styled("div")(
+const GalleryContainer = styled ('div') (
   {
     backgroundColor: theme.color.lightGray,
-    paddingBottom: 50
+    paddingBottom: 50,
   },
   props => ({
-    backgroundColor: props.white ? theme.color.white : theme.color.lightGray
+    backgroundColor: props.white ? theme.color.white : theme.color.lightGray,
   }),
-  mq({
-    paddingTop: [0, 50]
+  mq ({
+    paddingTop: [0, 50],
   })
 );
 
-const SubTitle = styled("h2")({
+const SubTitle = styled ('h2') ({
   fontSize: theme.fontSize.h2,
   fontWeight: theme.fontWeight.semiBold,
   color: theme.color.black,
-  textAlign: "center",
+  textAlign: 'center',
   paddingTop: 50,
-  marginTop: 0
+  marginTop: 0,
 });
 
-const SubText = styled("p")(
+const SubText = styled ('p') (
   {
     fontSize: theme.fontSize.subText,
     fontWeight: theme.fontWeight.regular,
-    textAlign: "center",
-    lineHeight: "150%",
+    textAlign: 'center',
+    lineHeight: '150%',
     marginBottom: 50,
-    maxWidth: 750
+    maxWidth: 750,
   },
-  mq({
-    margin: ["0 20px", "0 auto"]
+  mq ({
+    margin: ['0 20px', '0 auto'],
   })
 );
 
-const PluginsContainer = styled("div")({
+const PluginsContainer = styled ('div') ({
   //marginTop: 50,
-  position: "relative",
-  textAlign: "center"
+  position: 'relative',
+  textAlign: 'center',
 });
 
-const PluginsTitle = styled("div")({
+const PluginsTitle = styled ('div') ({
   fontWeight: theme.fontWeight.light,
   fontSize: theme.fontSize.h3,
   color: theme.color.grayText,
   backgroundColor: theme.color.white,
-  padding: "0 50px",
-  display: "inline-block",
+  padding: '0 50px',
+  display: 'inline-block',
   zIndex: 10,
-  position: "relative"
+  position: 'relative',
 });
 
-const Line = styled("div")(
+const Line = styled ('div') (
   {
-    borderBottom: "1px solid " + theme.color.darkGray,
-    position: "absolute",
-    top: "50%",
-    left: "calc(50% - " + theme.contentWidth / 2 + "px)",
+    borderBottom: '1px solid ' + theme.color.darkGray,
+    position: 'absolute',
+    top: '50%',
+    left: 'calc(50% - ' + theme.contentWidth / 2 + 'px)',
     width: theme.contentWidth,
     zIndex: 9,
-    margin: "0 auto"
+    margin: '0 auto',
   },
-  mq({
-    display: ["none", "block"]
+  mq ({
+    display: ['none', 'block'],
   })
 );
 
-const PluginsLogoWrapper = styled("div")(
+const PluginsLogoWrapper = styled ('div') (
   {
-    justifyContent: "space-between",
-    margin: "0 auto",
-    textAlign: "center",
-    boxSizing: "border-box"
+    justifyContent: 'space-between',
+    margin: '0 auto',
+    textAlign: 'center',
+    boxSizing: 'border-box',
   },
-  mq({
-    width: ["100%", theme.contentWidth],
-    display: ["block", "flex"],
-    padding: ["0 20px", 0]
+  mq ({
+    width: ['100%', theme.contentWidth],
+    display: ['block', 'flex'],
+    padding: ['0 20px', 0],
   })
 );
 
-const PluginsLogo = styled("img")(
+const PluginsLogo = styled ('img') (
   {
-    margin: "40px auto",
-    display: "block"
+    margin: '40px auto',
+    display: 'block',
   },
-  mq({
-    width: ["33%", "auto"],
-    height: [50, "auto"],
-    display: ["inline-block", "block"]
+  mq ({
+    width: ['33%', 'auto'],
+    height: [50, 'auto'],
+    display: ['inline-block', 'block'],
   })
 );
 
-const Grid = styled("div")(
+const Grid = styled ('div') (
   {
-    width: "100%",
-    display: "flex",
-    justifyContent: "space-between",
-    boxSizing: "border-box",
-    "&.first": {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'space-between',
+    boxSizing: 'border-box',
+    '&.first': {
       marginTop: 100,
-      marginBottom: 50
-    }
+      marginBottom: 50,
+    },
   },
-  mq({
-    flexDirection: ["column", "row"],
+  mq ({
+    flexDirection: ['column', 'row'],
     marginLeft: [0, 0],
     marginRight: [0, 0],
-    padding: ["0 25px", 0],
-    "&.first": {
-      margin: [0, "100px 0px"]
-    }
+    padding: ['0 25px', 0],
+    '&.first': {
+      margin: [0, '100px 0px'],
+    },
   })
 );
 
-const Cell = styled("div")(
+const Cell = styled ('div') (
   {
-    boxSizing: "border-box",
+    boxSizing: 'border-box',
     h3: {
       fontSize: theme.fontSize.h4,
       color: theme.color.black,
       marginTop: 0,
       fontWeight: theme.fontWeight.bold,
-      display: "flex",
-      alignItems: "center",
+      display: 'flex',
+      alignItems: 'center',
       img: {
-        marginRight: 20
-      }
+        marginRight: 20,
+      },
     },
     p: {
       fontSize: theme.fontSize.paragraph,
       color: theme.color.black,
-      lineHeight: "160%"
+      lineHeight: '160%',
     },
-    "&.headingCell": {
+    '&.headingCell': {
       h3: {
         fontSize: theme.fontSize.h2,
-        fontWeight: theme.fontWeight.semiBold
+        fontWeight: theme.fontWeight.semiBold,
       },
       p: {
-        fontSize: 18
-      }
+        fontSize: 18,
+      },
     },
-    "&:last-child": {
-      marginRight: "0 !important"
-    }
+    '&:last-child': {
+      marginRight: '0 !important',
+    },
   },
-  mq({
+  mq ({
     marginRight: [0, 50],
-    ".image": {
-      width: ["100%", "auto"]
-    }
+    '.image': {
+      width: ['100%', 'auto'],
+    },
   })
 );
 
 class Cms extends React.Component {
-  render() {
+  render () {
     return (
       <CmsContainer>
         <SubTitle>
@@ -196,11 +196,11 @@ class Cms extends React.Component {
         </SubText>
 
         <ContentContainer>
-          <Grid className={"first"}>
+          <Grid className={'first'}>
             <Cell>
-              <img className={"image"} src={imageMock} />
+              <img className={'image'} src={imageMock} />
             </Cell>
-            <Cell className={"headingCell"}>
+            <Cell className={'headingCell'}>
               <h3>Visual Website Builder</h3>
               <p>
                 Unleash your creativity. Don’t constrain your content inside a
@@ -243,14 +243,14 @@ class Cms extends React.Component {
               <p>
                 Days of complex template engines, file includes and special
                 variable tags are over. Building a theme for Webiny is nothing
-                more than plain old (S)CSS. For a designer, this means that the
-                learning curve is minimal.
+                more than plain old (S)CSS. For a designer, this means a minimal
+                learning curve.
               </p>
             </Cell>
           </Grid>
 
-          <Grid className={"first"}>
-            <Cell className={"headingCell"}>
+          <Grid className={'first'}>
+            <Cell className={'headingCell'}>
               <h3>Building Blocks Included</h3>
               <p>
                 Often a CMS gives you the option to arrange your content in a
@@ -265,7 +265,7 @@ class Cms extends React.Component {
               </p>
             </Cell>
             <Cell>
-              <img className={"image"} src={imageMock} />
+              <img className={'image'} src={imageMock} />
             </Cell>
           </Grid>
           <Grid>
@@ -278,7 +278,7 @@ class Cms extends React.Component {
                 Having a regular “button” component that you can insert in your
                 pages is not enough, you need a Primary, Secondary and a Default
                 one, if not more. Webiny allows you to do just that. You can
-                have a component with predefined variants that match your design
+                have a component with predefined style variants that match your design
                 system ensuring all pages follow the same visual guidelines.
               </p>
             </Cell>
@@ -293,7 +293,7 @@ class Cms extends React.Component {
                 like inside your theme and page layout? To get arround that
                 hassle, Webiny features Live Preview, where it can render your
                 whole page inside the editor to get the real sense of how the
-                content looks like.
+                full page looks like.
               </p>
             </Cell>
             <Cell>
@@ -312,11 +312,11 @@ class Cms extends React.Component {
             </Cell>
           </Grid>
 
-          <Grid className={"first"}>
+          <Grid className={'first'}>
             <Cell>
-              <img className={"image"} src={imageMock} />
+              <img className={'image'} src={imageMock} />
             </Cell>
-            <Cell className={"headingCell"}>
+            <Cell className={'headingCell'}>
               <h3>Images - First Class Citizens</h3>
               <p>
                 Images are an important part of every website. They add a
@@ -327,11 +327,11 @@ class Cms extends React.Component {
                 <br />
                 Webiny, being a true modern CMS, comes with a versatile image
                 editor, pluggable storage solutions, as well as options to
-                integrate with 3rd party delivery and optimization mechanisms
+                integrate with 3rd party delivery and optimization mechanisms.
               </p>
             </Cell>
           </Grid>
-          <Grid style={{ paddingBottom: 20 }}>
+          <Grid style={{paddingBottom: 20}}>
             <Cell>
               <h3>
                 <img src={cloudIcon} />
@@ -346,7 +346,7 @@ class Cms extends React.Component {
             </Cell>
             <Cell>
               <h3>
-                <img src={plugIcon} style={{ height: "24px" }} />
+                <img src={plugIcon} style={{height: '24px'}} />
                 Storage Adapters
               </h3>
               <p>
@@ -371,7 +371,7 @@ class Cms extends React.Component {
           </Grid>
         </ContentContainer>
 
-        <GalleryContainer white style={{ paddingBottom: 0 }}>
+        <GalleryContainer white style={{paddingBottom: 0}}>
           <ContentContainer>
             <Grid>
               <Cell>
@@ -388,7 +388,7 @@ class Cms extends React.Component {
                 <h3>Manage Users & Permissions</h3>
                 <p>
                   Full security control allows you to share your Webiny with
-                  others from your team, but still control who can access what.
+                  others team members, but still be in control of who can access what.
                 </p>
               </Cell>
               <Cell>
@@ -396,7 +396,7 @@ class Cms extends React.Component {
                 <h3>Guides & Tutorials Included</h3>
                 <p>
                   Starting with a new system can be challenging, so we’ve
-                  prepared several guides and tutorials to make it easier.
+                  prepared several guides and tutorials to make learning experience easier.
                 </p>
               </Cell>
             </Grid>

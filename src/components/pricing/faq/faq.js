@@ -108,6 +108,35 @@ const paymentCycles = (
   </React.Fragment>
 );
 
+const extraPackageExpire = (
+  <React.Fragment>
+    <p>
+      Extra packages do not expire.
+    </p>
+    <p>
+      For example, say you bought an extra package and used only half of the lambda requests before your paid package renewed. The system will automatically transfer the remainder of your extra package allowance to the next month.
+      {' '}
+    </p>
+    <p>
+      Note: this doesn't apply to your paid package. When a paid package expires, the remainder of your allowance is not transfered to the next month.
+    </p>
+  </React.Fragment>
+);
+
+const taxIncluded = (
+  <React.Fragment>
+    <p>
+      Webiny as a legal UK entity is required by law to charge tax for all EU customers.
+      {' '}
+      The tax amount depends on your country of origin. For more information, visit our support page.
+    </p>
+    <p>
+      For all other customers, there will be no to additional tax on top of the prices displayed above.
+      {' '}
+    </p>
+  </React.Fragment>
+);
+
 class Faq extends React.Component {
   state = {
     questions: [
@@ -134,6 +163,14 @@ class Faq extends React.Component {
       {
         question: 'What are the payment cycles?',
         answer: paymentCycles,
+      },
+      {
+        question: 'Do extra packages expire?',
+        answer: extraPackageExpire,
+      },
+      {
+        question: 'Is tax included in the price?',
+        answer: taxIncluded,
       },
     ],
   };

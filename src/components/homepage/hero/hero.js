@@ -1,14 +1,14 @@
-import React from 'react'
-import styled from 'react-emotion'
-import theme from '../../utils/theme'
-import mq from '../../utils/breakpoints'
-import ContentContainer from '../../ui/content-container'
-import Button from '../../ui/button'
+import React from 'react';
+import styled from 'react-emotion';
+import theme from '../../utils/theme';
+import mq from '../../utils/breakpoints';
+import ContentContainer from '../../ui/content-container';
+import Button from '../../ui/button';
 
-import heroBg from './assets/hero-bg.svg'
-import gitHubLogo from './assets/github-logo.svg'
+import heroBg from './assets/hero-bg.svg';
+import gitHubLogo from './assets/github-logo.svg';
 
-const Hero = styled('section')(
+const Hero = styled ('section') (
   {
     width: '100%',
     background: 'url(' + heroBg + ') no-repeat left top fixed',
@@ -16,51 +16,51 @@ const Hero = styled('section')(
     color: '#fff',
     boxSizing: 'border-box',
   },
-  mq({
+  mq ({
     textAlign: ['center', 'left'],
     padding: ['100px 20px 25px', '150px 0 25px'],
     height: ['auto', 'calc(100vh - 150px)'],
     minHeight: ['auto', 700],
     maxHeight: ['auto', 768],
   })
-)
+);
 
-const Title = styled('h1')(
+const Title = styled ('h1') (
   {
     fontSize: theme.fontSize.h1,
     fontWeight: theme.fontWeight.semiBold,
     marginBottom: 40,
   },
-  mq({
+  mq ({
     textAlign: ['center', 'left'],
   })
-)
+);
 
-const LeftSide = styled('div')(
+const LeftSide = styled ('div') (
   {},
-  mq({
+  mq ({
     textAlign: ['center', 'left'],
     width: ['100%', 375],
   })
-)
+);
 
-const SubText = styled('p')(
+const SubText = styled ('p') (
   {
     fontSize: theme.fontSize.subText,
     fontWeight: theme.fontWeight.light,
     lineHeight: '25px',
     marginBottom: 40,
   },
-  mq({
+  mq ({
     textAlign: ['center', 'left'],
   })
-)
+);
 
-const SemiBold = styled('span')({
+const SemiBold = styled ('span') ({
   fontWeight: theme.fontWeight.semiBold,
-})
+});
 
-const Link = styled('a')({
+const Link = styled ('a') ({
   fontSize: 14,
   color: '#FFFFFF',
   textAlign: 'center',
@@ -73,20 +73,20 @@ const Link = styled('a')({
   '&:hover': {
     textDecoration: 'underline',
   },
-})
+});
 
-const GitHubLogo = styled('img')({
+const GitHubLogo = styled ('img') ({
   position: 'absolute',
   left: 'calc(50% - 80px)',
   top: 3,
-})
+});
 
-export default ({ children, ...props }) => (
+export default ({children, ...props}) => (
   <Hero {...props}>
     <ContentContainer>
       <LeftSide>
         <Title>
-          Developer-friendly Serverless CMS for Modern Cloud Applications
+          Developer-friendly Serverless CMS powered by GraphQL and React
         </Title>
         <SubText>
           Webiny is a <SemiBold>serverless open source CMS</SemiBold> that
@@ -104,4 +104,4 @@ export default ({ children, ...props }) => (
       </LeftSide>
     </ContentContainer>
   </Hero>
-)
+);

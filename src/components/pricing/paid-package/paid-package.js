@@ -7,7 +7,7 @@ import ContentContainer from '../../ui/content-container';
 
 import pricingBullet from './assets/pricing-bullet.svg';
 import arrow from './assets/gs-btn-arrow.svg';
-import Button from "../../ui/button";
+import Button from '../../ui/button';
 
 const maxWidth = css ({
   maxWidth: 750,
@@ -63,7 +63,7 @@ const Price = styled ('div') (
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
-    justifyContent:  'flex-end', //'center',
+    justifyContent: 'flex-end', //'center',
     lineHeight: '100%',
     boxSizing: 'border-box',
   },
@@ -135,13 +135,13 @@ const ExtraReasonsList = css (
   })
 );
 
-const BetaBoxWrapper = styled("div")({
+const BetaBoxWrapper = styled ('div') ({
   boxSizing: 'border-box',
   padding: '40px 10px 0px 10px',
-  marginBottom: '-15px'
+  marginBottom: '-15px',
 });
 
-const BetaBox = styled("div")({
+const BetaBox = styled ('div') ({
   background: '#FEF7D6',
   border: '2px solid #FFE564',
   borderRadius: 5,
@@ -156,9 +156,9 @@ const BetaBox = styled("div")({
   marginTop: 30,
   minHeight: 80,
   textAlign: 'left',
-  '.questionMark':{
+  '.questionMark': {
     position: 'absolute',
-    textAlign:'center',
+    textAlign: 'center',
     fontWeight: theme.fontWeight.bold,
     top: 0,
     left: 0,
@@ -168,7 +168,7 @@ const BetaBox = styled("div")({
     fontSize: 64,
     color: '#FFFFFF',
     lineHeight: '120%',
-  }
+  },
 });
 
 const button = css (
@@ -203,8 +203,10 @@ class PaidPackage extends React.Component {
             <PriceSubText>/month</PriceSubText>
             <BetaBoxWrapper>
               <BetaBox>
-                <div className={"questionMark"}>!</div>
-                <strong>Beta Period:</strong> During the beta, this package is  available free of
+                <div className={'questionMark'}>!</div>
+                <strong>Beta Period:</strong>
+                {' '}
+                During the beta, this package is  available free of
                 charge. Beta ends on the 1st of Jan 2019, after  which the
                 billing period will start.
               </BetaBox>
@@ -237,10 +239,10 @@ class PaidPackage extends React.Component {
             <Bold>+1GB</Bold> database storage
           </ReasonsItem>
           <ReasonsItem>
-            <Bold>+250k</Bold> Lambda requests
+            <Bold>+100k</Bold> Lambda requests
           </ReasonsItem>
           <ReasonsItem>
-            <Bold>+250h</Bold> Lambda runtime
+            <Bold>+100h</Bold> Lambda runtime
           </ReasonsItem>
         </ReasonsList>
       </ContentContainer>
