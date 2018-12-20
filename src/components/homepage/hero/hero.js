@@ -85,19 +85,28 @@ export default ({children, ...props}) => (
   <Hero {...props}>
     <ContentContainer>
       <LeftSide>
-        <Title>
+        <Title data-aos="fade-up" data-aos-delay="300">
           Developer-friendly Serverless CMS powered by GraphQL and React
         </Title>
-        <SubText>
+        <SubText data-aos="fade-up" data-aos-delay="500">
           Webiny is a <SemiBold>serverless open source CMS</SemiBold> that
           allows you to build websites and web applications, both large and
           small, by giving you all the parts you need in a single package which
           is optimized to seamlessly work together in a performant way.
         </SubText>
-        <Button link="/pricing" type="fullWidth">
+        <Button
+          data-aos="fade-up"
+          data-aos-delay="500"
+          link="/pricing"
+          type="fullWidth"
+        >
           Get Started
         </Button>
-        <Link href="https://github.com/Webiny/webiny-js">
+        <Link
+          data-aos="fade-up"
+          data-aos-delay="500"
+          href="https://github.com/Webiny/webiny-js"
+        >
           <GitHubLogo src={gitHubLogo} />
           View Webiny on GitHub
         </Link>

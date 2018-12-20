@@ -188,15 +188,20 @@ class Cms extends React.Component {
   render () {
     return (
       <CmsContainer>
-        <SubTitle>
+        <SubTitle data-aos="fade-up" data-aos-offset="300">
           Webiny CMS provides you with everything you would expect & more
         </SubTitle>
-        <SubText>
+        <SubText data-aos="fade-up" data-aos-delay="250" data-aos-offset="300">
           We’ve built Webiny to go beyond your regular content management system
         </SubText>
 
         <ContentContainer>
-          <Grid className={'first'}>
+          <Grid
+            className={'first'}
+            data-aos="fade-up"
+            data-aos-delay="250"
+            data-aos-offset="300"
+          >
             <Cell>
               <img className={'image'} src={imageMock} />
             </Cell>
@@ -212,7 +217,7 @@ class Cms extends React.Component {
             </Cell>
           </Grid>
           <Grid>
-            <Cell>
+            <Cell data-aos="fade-up" data-aos-delay="150" data-aos-offset="300">
               <h3>
                 <img src={pluginIcon} />
                 Plugins
@@ -224,7 +229,7 @@ class Cms extends React.Component {
                 to fit your needs.
               </p>
             </Cell>
-            <Cell>
+            <Cell data-aos="fade-up" data-aos-delay="300" data-aos-offset="300">
               <h3>
                 <img src={revisionsIcon} />
                 Page Revisions
@@ -235,7 +240,7 @@ class Cms extends React.Component {
                 of a page, or quickly test between multiple revisions.
               </p>
             </Cell>
-            <Cell>
+            <Cell data-aos="fade-up" data-aos-delay="450" data-aos-offset="300">
               <h3>
                 <img src={themeIcon} />
                 Easy Theming
@@ -249,7 +254,12 @@ class Cms extends React.Component {
             </Cell>
           </Grid>
 
-          <Grid className={'first'}>
+          <Grid
+            className={'first'}
+            data-aos="fade-up"
+            data-aos-delay="250"
+            data-aos-offset="300"
+          >
             <Cell className={'headingCell'}>
               <h3>Building Blocks Included</h3>
               <p>
@@ -269,7 +279,7 @@ class Cms extends React.Component {
             </Cell>
           </Grid>
           <Grid>
-            <Cell>
+            <Cell data-aos="fade-up" data-aos-delay="150" data-aos-offset="300">
               <h3>
                 <img src={designSystemIcon} />
                 Follow your Design System
@@ -282,7 +292,7 @@ class Cms extends React.Component {
                 system ensuring all pages follow the same visual guidelines.
               </p>
             </Cell>
-            <Cell>
+            <Cell data-aos="fade-up" data-aos-delay="300" data-aos-offset="300">
               <h3>
                 <img src={previewIcon} />
                 Live Preview
@@ -296,7 +306,7 @@ class Cms extends React.Component {
                 full page looks like.
               </p>
             </Cell>
-            <Cell>
+            <Cell data-aos="fade-up" data-aos-delay="450" data-aos-offset="300">
               <h3>
                 <img src={layoutIcon} />
                 Build Layouts
@@ -312,7 +322,12 @@ class Cms extends React.Component {
             </Cell>
           </Grid>
 
-          <Grid className={'first'}>
+          <Grid
+            className={'first'}
+            data-aos="fade-up"
+            data-aos-delay="250"
+            data-aos-offset="300"
+          >
             <Cell>
               <img className={'image'} src={imageMock} />
             </Cell>
@@ -332,7 +347,7 @@ class Cms extends React.Component {
             </Cell>
           </Grid>
           <Grid style={{paddingBottom: 20}}>
-            <Cell>
+            <Cell data-aos="fade-up" data-aos-delay="150" data-aos-offset="300">
               <h3>
                 <img src={cloudIcon} />
                 3rd Party Integrations
@@ -344,7 +359,7 @@ class Cms extends React.Component {
                 Think of Akamai Image Manager, Cloudinary or Scene7.
               </p>
             </Cell>
-            <Cell>
+            <Cell data-aos="fade-up" data-aos-delay="300" data-aos-offset="300">
               <h3>
                 <img src={plugIcon} style={{height: '24px'}} />
                 Storage Adapters
@@ -356,7 +371,7 @@ class Cms extends React.Component {
                 Google Cloud Storage, Azure Storage and others.
               </p>
             </Cell>
-            <Cell>
+            <Cell data-aos="fade-up" data-aos-delay="450" data-aos-offset="300">
               <h3>
                 <img src={cropRotateIcon} />
                 Built-in Image Editor
@@ -374,7 +389,11 @@ class Cms extends React.Component {
         <GalleryContainer white style={{paddingBottom: 0}}>
           <ContentContainer>
             <Grid>
-              <Cell>
+              <Cell
+                data-aos="fade-up"
+                data-aos-delay="150"
+                data-aos-offset="300"
+              >
                 <img src={smallImageMock} />
                 <h3>Dark Mode</h3>
                 <p>
@@ -383,7 +402,11 @@ class Cms extends React.Component {
                   pick.
                 </p>
               </Cell>
-              <Cell>
+              <Cell
+                data-aos="fade-up"
+                data-aos-delay="300"
+                data-aos-offset="300"
+              >
                 <img src={smallImageMock} />
                 <h3>Manage Users & Permissions</h3>
                 <p>
@@ -391,7 +414,11 @@ class Cms extends React.Component {
                   others team members, but still be in control of who can access what.
                 </p>
               </Cell>
-              <Cell>
+              <Cell
+                data-aos="fade-up"
+                data-aos-delay="450"
+                data-aos-offset="300"
+              >
                 <img src={smallImageMock} />
                 <h3>Guides & Tutorials Included</h3>
                 <p>

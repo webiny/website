@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'react-emotion';
 import theme from '../components/utils/theme';
 import mq from '../components/utils/breakpoints';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import BaseLayout from '../layouts/base';
 import Hero from '../components/homepage/hero/hero';
@@ -39,18 +41,26 @@ const SidebarBox = styled ('div') (
 );
 
 class IndexPage extends React.Component {
+  componentDidMount () {
+    AOS.init ();
+  }
+
+  componentDidUpdate () {
+    AOS.refresh ();
+  }
+
   render () {
     return (
       <BaseLayout
         title="Webiny - Serverless CMS powered by GraphQL and React"
         desciption="Webiny is a modern open source content management designed to run in a serverless environment.  Webiny is powered by React, Node and GraphQL.  Webiny features a visual page builder, so you can quickly create stunning web pages."
       >
-        <Hero />
-        <Serverless />
+        <Hero data-aos="fade" />
+        <Serverless data-aos="fade-up" data-aos-offset="300" />
         <CmsV2 />
-        <Developers />
-        <QuickStart />
-        <FaqAndSidebar>
+        <Developers data-aos="fade-up" />
+        <QuickStart data-aos="fade-up" />
+        <FaqAndSidebar data-aos="fade-up">
           <FaqAndSidebarFaqBox>
             <Faq />
           </FaqAndSidebarFaqBox>

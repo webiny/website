@@ -1,116 +1,116 @@
-import React from "react";
-import styled from "react-emotion";
-import { css } from "emotion";
-import theme from "../../utils/theme";
-import mq from "../../utils/breakpoints";
-import ContentContainer from "../../ui/content-container";
+import React from 'react';
+import styled from 'react-emotion';
+import {css} from 'emotion';
+import theme from '../../utils/theme';
+import mq from '../../utils/breakpoints';
+import ContentContainer from '../../ui/content-container';
 
-import scaleImg from "./assets/serverless-scale.svg";
-import costConstrolImg from "./assets/serverless-cost-control.svg";
-import zeroMaintenanceImg from "./assets/serverless-zero-management.svg";
-import awsLogo from "./assets/amazon-web-services.svg";
+import scaleImg from './assets/serverless-scale.svg';
+import costConstrolImg from './assets/serverless-cost-control.svg';
+import zeroMaintenanceImg from './assets/serverless-zero-management.svg';
+import awsLogo from './assets/amazon-web-services.svg';
 
-const SubTitle = styled("h2")({
+const SubTitle = styled ('h2') ({
   fontSize: theme.fontSize.h2,
   fontWeight: theme.fontWeight.semiBold,
   color: theme.color.black,
-  textAlign: "center",
+  textAlign: 'center',
   paddingTop: 50,
-  marginTop: 0
+  marginTop: 0,
 });
 
-const SubText = styled("p")(
+const SubText = styled ('p') (
   {
     fontSize: theme.fontSize.subText,
     fontWeight: theme.fontWeight.regular,
-    textAlign: "center",
-    lineHeight: "150%",
-    maxWidth: 750
+    textAlign: 'center',
+    lineHeight: '150%',
+    maxWidth: 750,
   },
-  mq({
-    margin: ["0 20px", "0 auto 50px auto"]
+  mq ({
+    margin: ['0 20px', '0 auto 50px auto'],
   })
 );
 
-const Grid = styled("div")(
+const Grid = styled ('div') (
   {
-    width: "100%",
-    display: "flex",
-    justifyContent: "space-between",
-    boxSizing: "border-box",
-    marginBottom: 50
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'space-between',
+    boxSizing: 'border-box',
+    marginBottom: 50,
   },
-  mq({
-    flexDirection: ["column", "row"],
+  mq ({
+    flexDirection: ['column', 'row'],
     marginLeft: [0, 0],
     marginRight: [0, 0],
-    padding: ["0 25px", 0]
+    padding: ['0 25px', 0],
   })
 );
 
-const Cell = styled("div")(
+const Cell = styled ('div') (
   {
-    boxSizing: "border-box",
-    textAlign: "center",
+    boxSizing: 'border-box',
+    textAlign: 'center',
     h3: {
       fontSize: theme.fontSize.h3,
       color: theme.color.black,
-      margin: "25px 0 15px 0",
+      margin: '25px 0 15px 0',
       fontWeight: theme.fontWeight.bold,
-      textAlign: "center"
+      textAlign: 'center',
     },
     p: {
       fontSize: theme.fontSize.paragraph,
       color: theme.color.black,
-      lineHeight: "160%",
-      padding: "0 25px"
+      lineHeight: '160%',
+      padding: '0 25px',
     },
-    "&.headingCell": {
+    '&.headingCell': {
       h3: {
         fontSize: theme.fontSize.h2,
-        fontWeight: theme.fontWeight.semiBold
+        fontWeight: theme.fontWeight.semiBold,
       },
       p: {
-        fontSize: 18
-      }
+        fontSize: 18,
+      },
     },
-    "&:last-child": {
-      marginRight: "0 !important"
-    }
+    '&:last-child': {
+      marginRight: '0 !important',
+    },
   },
-  mq({
+  mq ({
     marginRight: [0, 50],
-    ".image": {
-      width: ["100%", "auto"]
-    }
+    '.image': {
+      width: ['100%', 'auto'],
+    },
   })
 );
 
-const quote = css({
-  border: "4px solid " + theme.color.primaryDark,
-  padding: "40px 20px",
+const quote = css ({
+  border: '4px solid ' + theme.color.primaryDark,
+  padding: '40px 20px',
   fontSize: theme.fontSize.h2,
-  width: "100%"
+  width: '100%',
 });
 
-const QuoteDetails = styled("div")(
+const QuoteDetails = styled ('div') (
   {
-    display: "flex",
-    justifyContent: "space-between",
+    display: 'flex',
+    justifyContent: 'space-between',
     fontSize: theme.fontSize.h5,
-    textAlign: "left",
-    alignItems: "center"
+    textAlign: 'left',
+    alignItems: 'center',
   },
-  mq({
-    flexDirection: ["column", "row"],
-    padding: [20, "25px 245px 0 260px"]
+  mq ({
+    flexDirection: ['column', 'row'],
+    padding: [20, '25px 245px 0 260px'],
   })
 );
 
 class Serverless extends React.Component {
-  render() {
+  render () {
     return (
-      <React.Fragment>
+      <section {...this.props}>
         <SubTitle>Go Serverless - Join The Next Cloud Revolution</SubTitle>
         <SubText>
           Forget about servers, maintenance, capacity provisioning and many
@@ -121,7 +121,7 @@ class Serverless extends React.Component {
 
         <ContentContainer>
           <Grid>
-            <Cell>
+            <Cell data-aos="fade-up" data-aos-delay="100" data-aos-offset="200">
               <img src={scaleImg} />
               <h3>Scale</h3>
               <p>
@@ -130,7 +130,7 @@ class Serverless extends React.Component {
                 when potential loses are highest.
               </p>
             </Cell>
-            <Cell>
+            <Cell data-aos="fade-up" data-aos-delay="200" data-aos-offset="200">
               <img src={costConstrolImg} />
               <h3>Cost Control</h3>
               <p>
@@ -139,7 +139,7 @@ class Serverless extends React.Component {
                 are using.
               </p>
             </Cell>
-            <Cell>
+            <Cell data-aos="fade-up" data-aos-delay="300" data-aos-offset="200">
               <img src={zeroMaintenanceImg} />
               <h3>Zero Maintenance</h3>
               <p>
@@ -150,19 +150,24 @@ class Serverless extends React.Component {
             </Cell>
           </Grid>
           <Grid>
-            <Cell className={quote}>
+            <Cell
+              className={quote}
+              data-aos="fade-up"
+              data-aos-delay="300"
+              data-aos-offset="300"
+            >
               <i>"Serverless is the future of development."</i>
               <QuoteDetails>
                 <div>
                   Werner Vogels <br />
                   <small>Chief Technology Officer</small>
                 </div>
-                <img style={{ height: "40px" }} src={awsLogo} />
+                <img style={{height: '40px'}} src={awsLogo} />
               </QuoteDetails>
             </Cell>
           </Grid>
         </ContentContainer>
-      </React.Fragment>
+      </section>
     );
   }
 }

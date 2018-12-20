@@ -1,30 +1,30 @@
-import React from 'react'
-import styled from 'react-emotion'
-import { css } from 'emotion'
+import React from 'react';
+import styled from 'react-emotion';
+import {css} from 'emotion';
 
-import theme from '../../../utils/theme'
-import mq from '../../../utils/breakpoints'
-import ContentContainer from '../../../ui/content-container'
+import theme from '../../../utils/theme';
+import mq from '../../../utils/breakpoints';
+import ContentContainer from '../../../ui/content-container';
 
-import asDevTitle from '../assets/as-developer-title.svg'
-import bulletIcon from '../assets/baseline-check_circle-24px.svg'
-import groupOfPeople from '../assets/as-dev-group-of-people.svg'
+import asDevTitle from '../assets/as-developer-title.svg';
+import bulletIcon from '../assets/baseline-check_circle-24px.svg';
+import groupOfPeople from '../assets/as-dev-group-of-people.svg';
 
-const TitleImg = styled('img')({
+const TitleImg = styled ('img') ({
   display: 'block',
   margin: '20px auto',
-})
+});
 
-const AsDevContainer = styled('div')(
+const AsDevContainer = styled ('div') (
   {
     backgroundColor: theme.color.white,
   },
-  mq({
+  mq ({
     padding: ['50px 0 0 0', '50px 0'],
   })
-)
+);
 
-const SubText = styled('p')(
+const SubText = styled ('p') (
   {
     fontSize: theme.fontSize.subText,
     fontWeight: theme.fontWeight.regular,
@@ -34,83 +34,83 @@ const SubText = styled('p')(
     lineHeight: '150%',
     marginBottom: 50,
   },
-  mq({
+  mq ({
     margin: ['0 20px 20px', '0 20% 40px 20%'],
   })
-)
+);
 
-const FlexContainer = styled('div')(
+const FlexContainer = styled ('div') (
   {},
-  mq({
+  mq ({
     display: ['block', 'flex'],
   })
-)
+);
 
-const FlexBox = styled('div')(
+const FlexBox = styled ('div') (
   {
     boxSizing: 'border-box',
   },
-  mq({
+  mq ({
     width: ['100%', '50%'],
     padding: [20, 0],
   })
-)
+);
 
-const ReasonsList = styled('ul')(
+const ReasonsList = styled ('ul') (
   {},
-  mq({
+  mq ({
     marginRight: [20, 60],
   })
-)
+);
 
-const ReasonsItem = styled('li')({
+const ReasonsItem = styled ('li') ({
   background: 'url(' + bulletIcon + ') no-repeat left 2px',
   listStyle: 'none',
   paddingLeft: 40,
-})
+});
 
-const ReasonsItemTitle = styled('h5')({
+const ReasonsItemTitle = styled ('h5') ({
   textTransform: 'uppercase',
   fontWeight: theme.fontWeight.bold,
   fontSize: 18,
-})
+});
 
-const ReasonsItemText = styled('p')({
+const ReasonsItemText = styled ('p') ({
   fontWeight: theme.fontWeight.regular,
   fontSize: 16,
-})
+});
 
-const GroupOfPeople = styled('img')(
+const GroupOfPeople = styled ('img') (
   {
     display: 'block',
   },
-  mq({
+  mq ({
     width: ['80%', 'auto'],
     margin: ['0 auto', 'auto'],
   })
-)
+);
 
-const QuoteBase = css(
+const QuoteBase = css (
   {
     textAlign: 'center',
     fontStyle: 'italic',
     fontSize: 18,
     color: theme.color.grayText,
   },
-  mq({
+  mq ({
     padding: ['25px 25px 0 25px', '25px 50px 0 50px'],
   })
-)
+);
 
-const Quote = styled('p')(QuoteBase)
+const Quote = styled ('p') (QuoteBase);
 
-const QuoteAuthor = styled('p')(QuoteBase, {
+const QuoteAuthor = styled ('p') (QuoteBase, {
   textAlign: 'right',
   padding: '0 50px',
-})
+});
 
 class AsDeveloper extends React.Component {
-  render() {
+  render () {
     return (
       <AsDevContainer>
         <TitleImg alt="As Developer" src={asDevTitle} />
@@ -119,7 +119,11 @@ class AsDeveloper extends React.Component {
         </SubText>
         <ContentContainer>
           <FlexContainer>
-            <FlexBox>
+            <FlexBox
+              data-aos="fade-right"
+              data-aos-delay="450"
+              data-aos-offset="300"
+            >
               <ReasonsList>
                 <ReasonsItem>
                   <ReasonsItemTitle>Efficiency</ReasonsItemTitle>
@@ -157,7 +161,11 @@ class AsDeveloper extends React.Component {
                 </ReasonsItem>
               </ReasonsList>
             </FlexBox>
-            <FlexBox>
+            <FlexBox
+              data-aos="fade-left"
+              data-aos-delay="450"
+              data-aos-offset="300"
+            >
               <GroupOfPeople alt="Group of People" src={groupOfPeople} />
               <Quote>
                 Life is one, so spend less time coding, and more time with
@@ -169,8 +177,8 @@ class AsDeveloper extends React.Component {
           </FlexContainer>
         </ContentContainer>
       </AsDevContainer>
-    )
+    );
   }
 }
 
-export default AsDeveloper
+export default AsDeveloper;

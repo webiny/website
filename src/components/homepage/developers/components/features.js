@@ -1,118 +1,122 @@
-import React from "react";
-import styled from "react-emotion";
+import React from 'react';
+import styled from 'react-emotion';
 
-import theme from "../../../utils/theme";
-import mq from "../../../utils/breakpoints";
-import ContentContainer from "../../../ui/content-container";
+import theme from '../../../utils/theme';
+import mq from '../../../utils/breakpoints';
+import ContentContainer from '../../../ui/content-container';
 
-import serverlessIcon from "../assets/serverless-icon.svg";
-import testCoverageIcon from "../assets/test-coverage-icon.svg";
-import graphqlIcon from "../assets/graphql-icon.svg";
-import uiComponentsIcon from "../assets/ui-components-icon.svg";
-import documentedIcon from "../assets/documented-icon.svg";
-import openSourceIcon from "../assets/open-source-icon.svg";
-import materialThemeIcon from "../assets/material-theme-icon.svg";
-import flowjsIcon from "../assets/flowjs-icon.svg";
-import ormIcon from "../assets/orm-icon.svg";
-import i18nIcon from "../assets/i18n-icon.svg";
-import securityIcon from "../assets/security-icon.svg";
-import externalLinkIcon from "../assets/external-link-symbol.svg";
-import visualBuilderIcon from "../assets/visual-builder-icon.svg";
-import testPassing from "../assets/passing.svg";
-import testCoverage from "../assets/coveralls_95.svg";
+import serverlessIcon from '../assets/serverless-icon.svg';
+import testCoverageIcon from '../assets/test-coverage-icon.svg';
+import graphqlIcon from '../assets/graphql-icon.svg';
+import uiComponentsIcon from '../assets/ui-components-icon.svg';
+import documentedIcon from '../assets/documented-icon.svg';
+import openSourceIcon from '../assets/open-source-icon.svg';
+import materialThemeIcon from '../assets/material-theme-icon.svg';
+import flowjsIcon from '../assets/flowjs-icon.svg';
+import ormIcon from '../assets/orm-icon.svg';
+import i18nIcon from '../assets/i18n-icon.svg';
+import securityIcon from '../assets/security-icon.svg';
+import externalLinkIcon from '../assets/external-link-symbol.svg';
+import visualBuilderIcon from '../assets/visual-builder-icon.svg';
+import testPassing from '../assets/passing.svg';
+import testCoverage from '../assets/coveralls_95.svg';
 
-const BoxContainer = styled("div")(
+const BoxContainer = styled ('div') (
   {
-    justifyContent: "space-between",
+    justifyContent: 'space-between',
     marginBottom: 30,
-    boxSizing: "border-box"
+    boxSizing: 'border-box',
   },
-  mq({
-    display: ["block", "flex"]
+  mq ({
+    display: ['block', 'flex'],
   })
 );
 
-const Box = styled("div")(
+const Box = styled ('div') (
   {
     backgroundColor: theme.color.white,
-    boxShadow: "0 2px 4px 0 rgba(125,69,69,0.50)",
-    borderRadius: 8,
-    position: "relative",
-    boxSizing: "border-box"
+    boxShadow: '0 2px 4px 0 rgba(125,69,69,0.50)',
+    borderRadius: 2,
+    position: 'relative',
+    boxSizing: 'border-box',
+    transition: 'box-shadow 0.3s ease-in-out',
+    '&:hover': {
+      boxShadow: '0 15px 15px 0 rgba(125,69,69,0.50)',
+    },
   },
-  mq({
-    width: ["auto", "33%"],
-    margin: [20, "0px 15px"],
-    padding: ["80px 30px 50px", "90px 30px 30px"]
+  mq ({
+    width: ['auto', '33%'],
+    margin: [20, '0px 15px'],
+    padding: ['80px 30px 50px', '90px 30px 30px'],
   })
 );
 
-const BoxTitle = styled("h5")({
+const BoxTitle = styled ('h5') ({
   color: theme.color.black,
   fontSize: theme.fontSize.h5,
   fontWeight: theme.fontWeight.semiBold,
-  textTransform: "uppercase ",
-  position: "absolute",
+  textTransform: 'uppercase ',
+  position: 'absolute',
   top: 35,
-  left: 100
+  left: 100,
 });
 
-const BoxIcon = styled("img")({
-  position: "absolute",
+const BoxIcon = styled ('img') ({
+  position: 'absolute',
   top: 20,
   left: 30,
-  height: 50
+  height: 50,
 });
 
-const BoxDescription = styled("p")({
+const BoxDescription = styled ('p') ({
   fontSize: theme.fontSize.paragraph,
-  lineHeight: "150%",
+  lineHeight: '150%',
   color: theme.color.black,
-  marginBottom: 30
+  marginBottom: 30,
 });
 
-const BoxFooter = styled("div")({
-  position: "absolute",
-  bottom: 20
+const BoxFooter = styled ('div') ({
+  position: 'absolute',
+  bottom: 20,
 });
 
-const Italic = styled("p")({
-  fontStyle: "italic",
+const Italic = styled ('p') ({
+  fontStyle: 'italic',
   fontSize: 14,
-  marginBottom: 0
+  marginBottom: 0,
 });
 
-const SmallText = styled("span")({
+const SmallText = styled ('span') ({
   fontSize: 12,
-  marginBottom: 0
+  marginBottom: 0,
 });
 
-const ExternalLink = styled("a")({
-  background: "url(" + externalLinkIcon + ") no-repeat 0px 3px",
+const ExternalLink = styled ('a') ({
+  background: 'url(' + externalLinkIcon + ') no-repeat 0px 3px',
   color: theme.color.grayText,
   fontSize: theme.fontSize.paragraph,
   paddingLeft: 20,
-  textDecoration: "none"
+  textDecoration: 'none',
 });
 
-const SubTitle = styled("h2")({
+const SubTitle = styled ('h2') ({
   fontSize: theme.fontSize.h2,
   fontWeight: 500,
-  textTransform: "uppercase",
+  textTransform: 'uppercase',
   color: theme.color.white,
-  textAlign: "center",
+  textAlign: 'center',
   paddingTop: 50,
   marginTop: 0,
-  marginBottom: 75
+  marginBottom: 75,
 });
 
 class Features extends React.Component {
-  render() {
+  render () {
     return (
       <ContentContainer>
         <SubTitle>Features</SubTitle>
         <BoxContainer>
-          <Box>
+          <Box data-aos="fade-up" data-aos-delay="150" data-aos-offset="300">
             <BoxIcon src={serverlessIcon} />
             <BoxTitle>Serverless</BoxTitle>
             <BoxDescription>
@@ -121,7 +125,7 @@ class Features extends React.Component {
               systems. Benefit from efficient cost, and instant scalability.
             </BoxDescription>
           </Box>
-          <Box>
+          <Box data-aos="fade-up" data-aos-delay="300" data-aos-offset="300">
             <BoxIcon src={testCoverageIcon} />
             <BoxTitle>95% TEST COVERAGE</BoxTitle>
             <BoxDescription>
@@ -134,7 +138,7 @@ class Features extends React.Component {
               <img alt="Webiny Coverage" src={testCoverage} />
             </BoxFooter>
           </Box>
-          <Box>
+          <Box data-aos="fade-up" data-aos-delay="450" data-aos-offset="300">
             <BoxIcon src={graphqlIcon} />
             <BoxTitle>GraphQL</BoxTitle>
             <BoxDescription>
@@ -151,7 +155,7 @@ class Features extends React.Component {
           </Box>
         </BoxContainer>
         <BoxContainer>
-          <Box>
+          <Box data-aos="fade-up" data-aos-delay="150" data-aos-offset="300">
             <BoxIcon src={uiComponentsIcon} />
             <BoxTitle>UI Components</BoxTitle>
             <BoxDescription>
@@ -166,7 +170,7 @@ class Features extends React.Component {
               </ExternalLink>
             </BoxFooter>
           </Box>
-          <Box>
+          <Box data-aos="fade-up" data-aos-delay="300" data-aos-offset="300">
             <BoxIcon src={documentedIcon} />
             <BoxTitle>Documented</BoxTitle>
             <BoxDescription>
@@ -178,7 +182,7 @@ class Features extends React.Component {
               <ExternalLink href="#">Webiny Documentation</ExternalLink>
             </BoxFooter>
           </Box>
-          <Box>
+          <Box data-aos="fade-up" data-aos-delay="450" data-aos-offset="300">
             <BoxIcon src={openSourceIcon} />
             <BoxTitle>Open Source</BoxTitle>
             <BoxDescription>
@@ -193,7 +197,7 @@ class Features extends React.Component {
           </Box>
         </BoxContainer>
         <BoxContainer>
-          <Box>
+          <Box data-aos="fade-up" data-aos-delay="150" data-aos-offset="300">
             <BoxIcon src={visualBuilderIcon} />
             <BoxTitle>Visual Builder</BoxTitle>
             <BoxDescription>
@@ -207,7 +211,7 @@ class Features extends React.Component {
               </ExternalLink>
             </BoxFooter>
           </Box>
-          <Box>
+          <Box data-aos="fade-up" data-aos-delay="300" data-aos-offset="300">
             <BoxIcon src={materialThemeIcon} />
             <BoxTitle>Theme</BoxTitle>
             <BoxDescription>
@@ -222,7 +226,7 @@ class Features extends React.Component {
               </ExternalLink>
             </BoxFooter>
           </Box>
-          <Box>
+          <Box data-aos="fade-up" data-aos-delay="450" data-aos-offset="300">
             <BoxIcon src={flowjsIcon} />
             <BoxTitle>FlowJS</BoxTitle>
             <BoxDescription>
@@ -237,7 +241,7 @@ class Features extends React.Component {
           </Box>
         </BoxContainer>
         <BoxContainer>
-          <Box>
+          <Box data-aos="fade-up" data-aos-delay="150" data-aos-offset="300">
             <BoxIcon src={ormIcon} />
             <BoxTitle>ORM</BoxTitle>
             <BoxDescription>
@@ -249,7 +253,7 @@ class Features extends React.Component {
               <ExternalLink href="#">Entities Documentation</ExternalLink>
             </BoxFooter>
           </Box>
-          <Box>
+          <Box data-aos="fade-up" data-aos-delay="300" data-aos-offset="300">
             <BoxIcon src={i18nIcon} />
             <BoxTitle>I18N</BoxTitle>
             <BoxDescription>
@@ -261,7 +265,7 @@ class Features extends React.Component {
               <ExternalLink href="#">I18n Documentation</ExternalLink>
             </BoxFooter>
           </Box>
-          <Box>
+          <Box data-aos="fade-up" data-aos-delay="450" data-aos-offset="300">
             <BoxIcon src={securityIcon} />
             <BoxTitle>Security</BoxTitle>
             <BoxDescription>
