@@ -1,12 +1,12 @@
-import React from 'react'
-import styled from 'react-emotion'
-import theme from '../../../utils/theme'
-import mq from '../../../utils/breakpoints'
-import ContentContainer from '../../../ui/content-container'
+import React from 'react';
+import styled from 'react-emotion';
+import theme from '../../../utils/theme';
+import mq from '../../../utils/breakpoints';
+import ContentContainer from '../../../ui/content-container';
 
-import techLogos from '../assets/tech-logos.svg'
+import techLogos from '../assets/tech-logos.svg';
 
-const Tools = styled('h4')(
+const Tools = styled ('h4') (
   {
     fontSize: theme.fontSize.h4,
     textTransform: 'uppercase',
@@ -15,31 +15,35 @@ const Tools = styled('h4')(
     margin: '50px auto',
     textAlign: 'center',
   },
-  mq({
+  mq ({
     margin: ['50px 20px', '50px auto'],
   })
-)
+);
 
-const ToolsLogos = styled('img')(
+const ToolsLogos = styled ('img') (
   {
     marginTop: 30,
   },
-  mq({
+  mq ({
     width: ['100%', 'auto'],
   })
-)
+);
 
 class TechTools extends React.Component {
-  render() {
+  render () {
     return (
-      <ContentContainer>
+      <ContentContainer
+        data-aos="fade-up"
+        data-aos-delay="300"
+        data-aos-offset="500"
+      >
         <Tools>
           CREATED WITH TECHNOLOGY AND TOOLS YOU KNOW AND LOVE
           <ToolsLogos src={techLogos} />
         </Tools>
       </ContentContainer>
-    )
+    );
   }
 }
 
-export default TechTools
+export default TechTools;

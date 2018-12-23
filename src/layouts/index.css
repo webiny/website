@@ -18,6 +18,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.005);
   backface-visibility: hidden;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 p {

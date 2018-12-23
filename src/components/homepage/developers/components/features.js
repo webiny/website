@@ -6,7 +6,8 @@ import mq from '../../../utils/breakpoints';
 import ContentContainer from '../../../ui/content-container';
 
 import serverlessIcon from '../assets/serverless-icon.svg';
-import testCoverageIcon from '../assets/test-coverage-icon.svg';
+//import testCoverageIcon from '../assets/test-coverage-icon.svg';
+import craIcon from '../assets/cra-icon.svg';
 import graphqlIcon from '../assets/graphql-icon.svg';
 import uiComponentsIcon from '../assets/ui-components-icon.svg';
 import documentedIcon from '../assets/documented-icon.svg';
@@ -14,7 +15,8 @@ import openSourceIcon from '../assets/open-source-icon.svg';
 import materialThemeIcon from '../assets/material-theme-icon.svg';
 import flowjsIcon from '../assets/flowjs-icon.svg';
 import ormIcon from '../assets/orm-icon.svg';
-import i18nIcon from '../assets/i18n-icon.svg';
+//import i18nIcon from '../assets/i18n-icon.svg';
+import integrationsIcon from '../assets/integrations-icon.svg';
 import securityIcon from '../assets/security-icon.svg';
 import externalLinkIcon from '../assets/external-link-symbol.svg';
 import visualBuilderIcon from '../assets/visual-builder-icon.svg';
@@ -126,18 +128,29 @@ class Features extends React.Component {
             </BoxDescription>
           </Box>
           <Box data-aos="fade-up" data-aos-delay="300" data-aos-offset="300">
+            <BoxIcon src={craIcon} />
+            <BoxTitle>CRA v2</BoxTitle>
+            <BoxDescription>
+              Webiny is built on top of the Create React App v2, an environment
+              that many developers already know and use today, so getting started with Webiny
+              will be a familiar experience from the start.
+            </BoxDescription>
+          </Box>
+          {/*
+          <Box data-aos="fade-up" data-aos-delay="300" data-aos-offset="300">
             <BoxIcon src={testCoverageIcon} />
             <BoxTitle>95% TEST COVERAGE</BoxTitle>
             <BoxDescription>
               Having great test coverage is essential for any continuous
               development and deployment environment. Webiny has 95% coverage
-              set as the minumum requirement for all the server side components.
+              set as the minimum requirement for all the server side components.
             </BoxDescription>
             <BoxFooter>
               <img alt="Webiny Build" src={testPassing} /> &nbsp;
               <img alt="Webiny Coverage" src={testCoverage} />
             </BoxFooter>
           </Box>
+          */}
           <Box data-aos="fade-up" data-aos-delay="450" data-aos-offset="300">
             <BoxIcon src={graphqlIcon} />
             <BoxTitle>GraphQL</BoxTitle>
@@ -147,11 +160,13 @@ class Features extends React.Component {
               familiar with the API endpoints. Popular companies like GitHub,
               Twitter, Facebook all use GraphQL, and so does Webiny.
             </BoxDescription>
+            {/*
             <BoxFooter>
               <ExternalLink href="#">
                 Webiny GraphQL Schema Explorer
               </ExternalLink>
             </BoxFooter>
+            */}
           </Box>
         </BoxContainer>
         <BoxContainer>
@@ -164,11 +179,13 @@ class Features extends React.Component {
               with that Webiny comes with over 70 React UI components which
               enable you to build your apps in less time.
             </BoxDescription>
+            {/*
             <BoxFooter>
               <ExternalLink href="#">
                 Learn more about UI Components
               </ExternalLink>
             </BoxFooter>
+            */}
           </Box>
           <Box data-aos="fade-up" data-aos-delay="300" data-aos-offset="300">
             <BoxIcon src={documentedIcon} />
@@ -202,29 +219,34 @@ class Features extends React.Component {
             <BoxTitle>Visual Builder</BoxTitle>
             <BoxDescription>
               Unlike most visual website builders, that work with static HTML
-              blocks, our visual builder allows you to insert, control and
-              configure React components.
+              blocks, our visual builder actually works with React components.
+              If you know how to create a React component, you will be able to
+              quickly and easily create new custom plugins and widges for the page builder.
             </BoxDescription>
+            {/*
             <BoxFooter>
               <ExternalLink href="#">
                 Learn more about Visual Builder
               </ExternalLink>
             </BoxFooter>
+            */}
           </Box>
           <Box data-aos="fade-up" data-aos-delay="300" data-aos-offset="300">
             <BoxIcon src={materialThemeIcon} />
             <BoxTitle>Theme</BoxTitle>
             <BoxDescription>
-              Every website requires a theme. Webiny CMS comes with a built-in
-              theme, but also supports custom themes build with React
-              components, so you can leverage the whole power of the Javascript
-              ecosystem.
+              Every website requires a theme. Webiny CMS comes with two built-in
+              themes. One for the administration, and one for the website. Both can
+              be fully customized to fit and design and style required. The website theme
+              is also fully mobile responsive.
             </BoxDescription>
+            {/*
             <BoxFooter>
               <ExternalLink href="#">
                 Learn more about the CMS Theme
               </ExternalLink>
             </BoxFooter>
+            */}
           </Box>
           <Box data-aos="fade-up" data-aos-delay="450" data-aos-offset="300">
             <BoxIcon src={flowjsIcon} />
@@ -235,9 +257,11 @@ class Features extends React.Component {
               “challenging” at times. To make it easier for everyone, our code
               is written using FlowJS static types for extra clarity.
             </BoxDescription>
+            {/*
             <BoxFooter>
               <ExternalLink href="#">Webiny License</ExternalLink>
             </BoxFooter>
+            */}
           </Box>
         </BoxContainer>
         <BoxContainer>
@@ -249,10 +273,21 @@ class Features extends React.Component {
               called “Entities” is designed for working with GraphQL, as well as
               it’s easy to use and flexible enough to support any use case.
             </BoxDescription>
+            {/*
             <BoxFooter>
               <ExternalLink href="#">Entities Documentation</ExternalLink>
             </BoxFooter>
+            */}
           </Box>
+          <Box data-aos="fade-up" data-aos-delay="300" data-aos-offset="300">
+            <BoxIcon src={integrationsIcon} />
+            <BoxTitle>Integrations</BoxTitle>
+            <BoxDescription>
+              Webiny is designed as a platform on top of which you can build custom applications, and not just webpages.
+              The integrated plugin system allows you to hook in into any part of the existing code and add or change current features and behaviors.
+            </BoxDescription>
+          </Box>
+          {/*
           <Box data-aos="fade-up" data-aos-delay="300" data-aos-offset="300">
             <BoxIcon src={i18nIcon} />
             <BoxTitle>I18N</BoxTitle>
@@ -265,6 +300,7 @@ class Features extends React.Component {
               <ExternalLink href="#">I18n Documentation</ExternalLink>
             </BoxFooter>
           </Box>
+          */}
           <Box data-aos="fade-up" data-aos-delay="450" data-aos-offset="300">
             <BoxIcon src={securityIcon} />
             <BoxTitle>Security</BoxTitle>
@@ -274,9 +310,11 @@ class Features extends React.Component {
               also supports multiple middlewares for authentication providesr,
               so you can easily hook a custom provider like SSO.
             </BoxDescription>
-            <BoxFooter>
-              <ExternalLink href="#">Security Documentation</ExternalLink>
-            </BoxFooter>
+            {/*
+              <BoxFooter>
+                <ExternalLink href="#">Security Documentation</ExternalLink>
+              </BoxFooter>
+              */}
           </Box>
         </BoxContainer>
       </ContentContainer>
