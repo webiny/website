@@ -12,7 +12,6 @@ import twitterLogo from './assets/twitter.svg';
 import typeformLogo from './assets/typeform.svg';
 import vimeoLogo from './assets/vimeo.svg';
 import youtubeLogo from './assets/youtube.svg';
-import imageMock from './assets/cms-image-mock.svg';
 import smallImageMock from './assets/cms-small-image-mock.svg';
 import pluginIcon from './assets/round-extension-24px.svg';
 import revisionsIcon from './assets/round-library_books-24px.svg';
@@ -23,6 +22,13 @@ import layoutIcon from './assets/round-view_quilt-24px.svg';
 import plugIcon from './assets/plug-solid.svg';
 import cropRotateIcon from './assets/baseline-crop_rotate-24px.svg';
 import cloudIcon from './assets/baseline-cloud_queue-24px.svg';
+
+import visualBuilderImg from './assets/webiny-cms-visual-page-builder.png';
+import buildingBlocksImg from './assets/webiny-cms-bulding-blocks.png';
+import imageEditorImg from './assets/webiny-cms-image-editor.png';
+import darkModeImg from './assets/dark-mode.png';
+import userPermissionsImg from './assets/users-permissions.png';
+import guidesTutorialsImg from './assets/guides-and-tutorials.png';
 
 const CmsContainer = styled ('section') ({
   backgroundColor: theme.color.lightGray,
@@ -179,7 +185,16 @@ const Cell = styled ('div') (
   mq ({
     marginRight: [0, 50],
     '.image': {
-      width: ['100%', 'auto'],
+      border: '1px solid #E6E6E6',
+      boxShadow: '0 4px 8px 0 rgba(209,209,209,0.50)',
+      borderRadius: 5,
+      width: ['100%', '630px'],
+    },
+    '.image-small': {
+      border: '1px solid #E6E6E6',
+      boxShadow: '0 2px 4px 0 rgba(209,209,209,0.50)',
+      borderRadius: 5,
+      width: ['100%', '330px'],
     },
   })
 );
@@ -203,7 +218,7 @@ class Cms extends React.Component {
             data-aos-offset="300"
           >
             <Cell>
-              <img className={'image'} src={imageMock} />
+              <img className={'image'} src={visualBuilderImg} />
             </Cell>
             <Cell className={'headingCell'}>
               <h3>Visual Website Builder</h3>
@@ -275,7 +290,7 @@ class Cms extends React.Component {
               </p>
             </Cell>
             <Cell>
-              <img className={'image'} src={imageMock} />
+              <img className={'image'} src={buildingBlocksImg} />
             </Cell>
           </Grid>
           <Grid>
@@ -329,7 +344,7 @@ class Cms extends React.Component {
             data-aos-offset="300"
           >
             <Cell>
-              <img className={'image'} src={imageMock} />
+              <img className={'image'} src={imageEditorImg} />
             </Cell>
             <Cell className={'headingCell'}>
               <h3>Images - First Class Citizens</h3>
@@ -394,7 +409,7 @@ class Cms extends React.Component {
                 data-aos-delay="150"
                 data-aos-offset="300"
               >
-                <img src={smallImageMock} />
+                <img className={'image-small'} src={darkModeImg} />
                 <h3>Dark Mode</h3>
                 <p>
                   They say that there are no two eyes alike. Some prefer white,
@@ -407,7 +422,7 @@ class Cms extends React.Component {
                 data-aos-delay="300"
                 data-aos-offset="300"
               >
-                <img src={smallImageMock} />
+                <img className={'image-small'} src={userPermissionsImg} />
                 <h3>Manage Users & Permissions</h3>
                 <p>
                   Full security control allows you to share your Webiny with
@@ -419,7 +434,7 @@ class Cms extends React.Component {
                 data-aos-delay="450"
                 data-aos-offset="300"
               >
-                <img src={smallImageMock} />
+                <img className={'image-small'} src={guidesTutorialsImg} />
                 <h3>Guides & Tutorials Included</h3>
                 <p>
                   Starting with a new system can be challenging, so we’ve
