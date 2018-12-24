@@ -136,7 +136,7 @@ class AsDeveloper extends React.Component {
                   <ReasonsItemTitle>WORRY FREE SCALE</ReasonsItemTitle>
                   <ReasonsItemText>
                     No more stressing out if a server is down, if you have
-                    enought capacity, or that all latest patches have been
+                    enough capacity, or that all latest patches have been
                     applied. Running Webiny in serverless mode will remove all
                     that hassle.
                   </ReasonsItemText>

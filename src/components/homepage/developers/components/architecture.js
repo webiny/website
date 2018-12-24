@@ -134,7 +134,7 @@ class Architecture extends React.Component {
                   Webiny comes with a set of predefined React UI components, no need to reinvent the wheel.
                 </li>
                 <li>
-                  Quickly bundle and deploy your app to Webiny Cloud using Webiny CLI.
+                  Bundle and deploy your app to Webiny Cloud using Webiny CLI.
                 </li>
               </ol>
               <img src={clientDeploy} />
