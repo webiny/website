@@ -69,7 +69,7 @@ const Cell = styled ('div') (
         fontSize: 14,
         display: 'block',
         content: 'counter(a)',
-        left: '-45px',
+        left: '-35px',
         top: 15,
         textAlign: 'center',
         paddingLeft: 1,

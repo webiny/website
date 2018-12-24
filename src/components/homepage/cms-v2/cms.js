@@ -184,6 +184,7 @@ const Cell = styled ('div') (
   },
   mq ({
     marginRight: [0, 50],
+    textAlign: ['center', 'left'],
     '.image': {
       border: '1px solid #E6E6E6',
       boxShadow: '0 4px 8px 0 rgba(209,209,209,0.50)',
@@ -195,6 +196,9 @@ const Cell = styled ('div') (
       boxShadow: '0 2px 4px 0 rgba(209,209,209,0.50)',
       borderRadius: 5,
       width: ['100%', '330px'],
+    },
+    h3: {
+      justifyContent: ['center', 'flex-start'],
     },
   })
 );
@@ -275,7 +279,7 @@ class Cms extends React.Component {
             data-aos-delay="250"
             data-aos-offset="300"
           >
-            <Cell className={'headingCell'}>
+            <Cell className={'headingCell reverse'}>
               <h3>Building Blocks Included</h3>
               <p>
                 Often a CMS gives you the option to arrange your content in a

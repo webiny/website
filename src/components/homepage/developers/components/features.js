@@ -42,6 +42,7 @@ const Box = styled ('div') (
     position: 'relative',
     boxSizing: 'border-box',
     transition: 'box-shadow 0.3s ease-in-out',
+    transitionProperty: 'opacity,transform,-webkit-transform, box-shadow !important',
     '&:hover': {
       boxShadow: '0 15px 15px 0 rgba(125,69,69,0.50)',
     },
@@ -71,10 +72,11 @@ const BoxIcon = styled ('img') ({
 });
 
 const BoxDescription = styled ('p') ({
-  fontSize: theme.fontSize.paragraph,
+  fontSize: 16,
   lineHeight: '150%',
   color: theme.color.black,
-  marginBottom: 30,
+  marginBottom: 0, //30,
+  letterSpacing: '0.3px',
 });
 
 const BoxFooter = styled ('div') ({
@@ -122,16 +124,17 @@ class Features extends React.Component {
             <BoxIcon src={serverlessIcon} />
             <BoxTitle>Serverless</BoxTitle>
             <BoxDescription>
-              Serverless technology enables you to execute code inside a safe
-              and managed environment. No more worries about patching your
-              systems. Benefit from efficient cost, and instant scalability.
+              Webiny is made for cloud scalability and optimized to run in a severless environment, be that Lambda or similar.
+              {' '}
+              Although not a requirement, but when using Aurora Serverless as the backend database, Webiny utilizes additional optimizations.
+              {' '}
             </BoxDescription>
           </Box>
           <Box data-aos="fade-up" data-aos-delay="300" data-aos-offset="300">
             <BoxIcon src={craIcon} />
             <BoxTitle>CRA v2</BoxTitle>
             <BoxDescription>
-              Webiny is built on top of the Create React App v2, an environment
+              We built Webiny on top of the Create React App v2, an environment
               that many developers already know and use today, so getting started with Webiny
               will be a familiar experience from the start.
             </BoxDescription>
@@ -156,9 +159,9 @@ class Features extends React.Component {
             <BoxTitle>GraphQL</BoxTitle>
             <BoxDescription>
               GraphQL is the next evolution of API. Powerful instructions and
-              intuitive schema discovery enable developers to quickly get
-              familiar with the API endpoints. Popular companies like GitHub,
-              Twitter, Facebook all use GraphQL, and so does Webiny.
+              intuitive schema discovery enable you to quickly get
+              familiar with the API. Popular companies like GitHub,
+              Twitter, Facebook all use GraphQL, and we follow that trend.
             </BoxDescription>
             {/*
             <BoxFooter>
@@ -174,10 +177,11 @@ class Features extends React.Component {
             <BoxIcon src={uiComponentsIcon} />
             <BoxTitle>UI Components</BoxTitle>
             <BoxDescription>
-              Building web applications can sometimes be a difficult task
-              especially if you don’t have all the right components. To help
-              with that Webiny comes with over 70 React UI components which
-              enable you to build your apps in less time.
+              Because Webiny is not just about building websites, but also
+              custom plugins and apps, which can be challenging if you don’t
+              have all the right components. To help
+              with that Webiny comes with several React UI components which
+              help you to build your apps in less time.
             </BoxDescription>
             {/*
             <BoxFooter>
@@ -195,9 +199,11 @@ class Features extends React.Component {
               most frustrated with bad, or lack of proper, documentation, and so
               are we! Therefore we invested extra effort into creating ours.
             </BoxDescription>
+            {/*
             <BoxFooter>
               <ExternalLink href="#">Webiny Documentation</ExternalLink>
             </BoxFooter>
+             */}
           </Box>
           <Box data-aos="fade-up" data-aos-delay="450" data-aos-offset="300">
             <BoxIcon src={openSourceIcon} />
@@ -208,9 +214,11 @@ class Features extends React.Component {
               Webiny is released under the MIT open-source license and will
               always remain FREE.
             </BoxDescription>
+            {/*
             <BoxFooter>
               <ExternalLink href="#">Webiny License</ExternalLink>
             </BoxFooter>
+            */}
           </Box>
         </BoxContainer>
         <BoxContainer>
@@ -220,7 +228,7 @@ class Features extends React.Component {
             <BoxDescription>
               Unlike most visual website builders, that work with static HTML
               blocks, our visual builder actually works with React components.
-              If you know how to create a React component, you will be able to
+              If you know how to create a React component, you can
               quickly and easily create new custom plugins and widges for the page builder.
             </BoxDescription>
             {/*
@@ -237,7 +245,7 @@ class Features extends React.Component {
             <BoxDescription>
               Every website requires a theme. Webiny CMS comes with two built-in
               themes. One for the administration, and one for the website. Both can
-              be fully customized to fit and design and style required. The website theme
+              be fully customized to fit any visual style required. The website theme
               is also fully mobile responsive.
             </BoxDescription>
             {/*

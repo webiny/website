@@ -35,7 +35,7 @@ class TechTools extends React.Component {
       <ContentContainer
         data-aos="fade-up"
         data-aos-delay="300"
-        data-aos-offset="500"
+        data-aos-offset="400"
       >
         <Tools>
           CREATED WITH TECHNOLOGY AND TOOLS YOU KNOW AND LOVE
