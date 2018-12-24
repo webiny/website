@@ -176,7 +176,7 @@ class AsDeveloper extends React.Component {
               <Desc>
                 <h3>BUILD MORE THAN WEBSITES</h3>
                 <p>
-                  Isn't just about websites, the underlying platform is open and designed for developing custom apps and plugins.
+                  Webiny isn't just about websites, the underlying platform is open and designed for developing custom apps and plugins.
                 </p>
               </Desc>
             </FlexBox>
