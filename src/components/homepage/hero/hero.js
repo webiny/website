@@ -94,19 +94,10 @@ export default ({children, ...props}) => (
           small, by giving you all the parts you need in a single package which
           is optimized to seamlessly work together in a performant way.
         </SubText>
-        <Button
-          data-aos="fade-up"
-          data-aos-delay="500"
-          link="/pricing"
-          type="fullWidth"
-        >
+        <Button link="/pricing" type="fullWidth">
           Get Started
         </Button>
-        <Link
-          data-aos="fade-up"
-          data-aos-delay="500"
-          href="https://github.com/Webiny/webiny-js"
-        >
+        <Link href="https://github.com/Webiny/webiny-js">
           <GitHubLogo src={gitHubLogo} />
           View Webiny on GitHub
         </Link>
