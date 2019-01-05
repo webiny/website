@@ -1,18 +1,18 @@
-import React from 'react'
+import React from 'react';
 
-import BaseLayout from '../layouts/base'
-import Hero from '../components/agency/hero/hero'
-import Features from '../components/agency/features/features'
+import BaseLayout from '../layouts/base';
+import Hero from '../components/agency/hero/hero';
+import Features from '../components/agency/features/features';
 
 class ContactUsPage extends React.Component {
-  render() {
+  render () {
     return (
-      <BaseLayout title="Agency - Webiny">
+      <BaseLayout title="CMS Made for Agencies - Webiny">
         <Hero />
         <Features />
       </BaseLayout>
-    )
+    );
   }
 }
 
-export default ContactUsPage
+export default ContactUsPage;
