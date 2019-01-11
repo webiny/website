@@ -34,11 +34,11 @@ class TechTools extends React.Component {
     return (
       <ContentContainer
         data-aos="fade-up"
-        data-aos-delay="300"
-        data-aos-offset="400"
+        data-aos-delay="150"
+        data-aos-offset="300"
       >
         <Tools>
-          CREATED WITH TECHNOLOGY AND TOOLS YOU KNOW AND LOVE
+          CREATED WITH TECHNOLOGY AND TOOLS YOU KNOW AND LOVE<br />
           <ToolsLogos src={techLogos} />
         </Tools>
       </ContentContainer>

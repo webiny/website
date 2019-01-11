@@ -52,6 +52,7 @@ const Cell = styled ('div') (
   {
     boxSizing: 'border-box',
     textAlign: 'center',
+    flexBasis: '100%',
     h3: {
       fontSize: theme.fontSize.h3,
       color: theme.color.black,
@@ -79,7 +80,6 @@ const Cell = styled ('div') (
     },
   },
   mq ({
-    marginRight: [0, 50],
     '.image': {
       width: ['100%', 'auto'],
     },

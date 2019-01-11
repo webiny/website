@@ -1,33 +1,33 @@
-import React from "react";
-import styled from "react-emotion";
-import { css } from "emotion";
-import theme from "../../utils/theme";
-import ContentContainer from "../../ui/content-container";
-import FaqComponent from "../../ui/faq";
-import Link from "gatsby-link";
+import React from 'react';
+import styled from 'react-emotion';
+import {css} from 'emotion';
+import theme from '../../utils/theme';
+import ContentContainer from '../../ui/content-container';
+import FaqComponent from '../../ui/faq';
+import Link from 'gatsby-link';
 
-const FaqContainer = styled("section")({
+const FaqContainer = styled ('section') ({
   backgroundColor: theme.color.lightGray,
-  padding: "50px 0"
+  padding: '50px 0',
 });
 
-const maxWidth = css({
-  maxWidth: 750
+const maxWidth = css ({
+  maxWidth: 750,
 });
 
-const AdditionalQuestions = styled("h4")({
-  textAlign: "center",
+const AdditionalQuestions = styled ('h4') ({
+  textAlign: 'center',
   fontWeight: theme.fontWeight.semiBold,
-  fontSize: theme.fontSize.h4
+  fontSize: theme.fontSize.h4,
 });
 
-const contactUs = css({
-  display: "block",
-  textAlign: "center",
+const contactUs = css ({
+  display: 'block',
+  textAlign: 'center',
   fontSize: theme.fontSize.paragraph,
   color: theme.color.black,
-  cursor: "pointer",
-  textDecoration: "underline"
+  cursor: 'pointer',
+  textDecoration: 'underline',
 });
 
 const howLambda = (
@@ -44,12 +44,7 @@ const howLambda = (
 const lambdaLimits = (
   <React.Fragment>
     <p>
-      In case your site is on the <strong>Free Package</strong> all requests
-      will be denied, including the ones for static assets.
-    </p>
-    <p>
-      In case you are on the <strong>Paid Package</strong>, and extra usage
-      package are available, your requests will be served without any
+      If an extra usage package is available, your requests will be served without any
       interruptions.
     </p>
     <p>
@@ -71,15 +66,12 @@ const extraUsagePackageLimit = (
 const cancelSub = (
   <React.Fragment>
     <p>
-      From the site manager interface you can upgrade or downgrade your
-      subscription at any time. An active subscription that is downgraded will
-      expire at the end of the billing period and automatically transition to a
-      free package if viable.
+      From the site manager interface you can cancel your
+      subscription at any time. An active subscription that is canceled will
+      expire at the end of the billing period and automatically deactivate the website.
     </p>
     <p>
-      As for refunds, we do not offer refunds. You are welcome to try and use
-      our free package as long as you like, before you migrate onto a paid
-      package.
+      As for refunds, please contact the support.
     </p>
   </React.Fragment>
 );
@@ -87,11 +79,12 @@ const cancelSub = (
 const paymentMethods = (
   <React.Fragment>
     <p>
-      To sign up for the <strong>Free Package</strong> you don't need a credit
-      card.
+      To sign up for a{' '}
+      <strong>Paid Package</strong>
+      {' '}
+      a credit card is required only after the trial period expires.
     </p>
     <p>
-      To sign up for a <strong>Paid Package</strong> a credit card is required.
       We accept all major credit and debit cards such as Visa, Mastercard or
       American Express. For larger accounts we also accept bank transfers.
     </p>
@@ -102,10 +95,10 @@ const paymentCycles = (
   <React.Fragment>
     <p>
       The payment cycles are once a month for the paid package, and your
-      subscription is automatically renewed.{" "}
+      subscription is automatically renewed.{' '}
     </p>
     <p>
-      In case you use up any extra usaged packages, they are billed the moment
+      In case you use up any extra usage packages, they are billed the moment
       an extra usage package starts getting utilized.
     </p>
   </React.Fragment>
@@ -118,7 +111,7 @@ const extraPackageExpire = (
       For example, say you bought an extra package and used only half of the
       lambda requests before your paid package renewed. The system will
       automatically transfer the remainder of your extra package allowance to
-      the next month.{" "}
+      the next month.{' '}
     </p>
     <p>
       Note: this doesn't apply to your paid package. When a paid package
@@ -137,7 +130,7 @@ const taxIncluded = (
     </p>
     <p>
       For all other customers, there will be no to additional tax on top of the
-      prices displayed above.{" "}
+      prices displayed above.{' '}
     </p>
   </React.Fragment>
 );
@@ -146,46 +139,45 @@ class Faq extends React.Component {
   state = {
     questions: [
       {
-        question: "How are Lambda requests and run time calculated?",
-        answer: howLambda
+        question: 'How are Lambda requests and run time calculated?',
+        answer: howLambda,
       },
       {
-        question: "What happens if I go above the lambda package limits?",
-        answer: lambdaLimits
+        question: 'What happens if I go above the lambda package limits?',
+        answer: lambdaLimits,
       },
       {
-        question: "Can I limit the extra usage packages?",
-        answer: extraUsagePackageLimit
+        question: 'Can I limit the extra usage packages?',
+        answer: extraUsagePackageLimit,
       },
       {
-        question: "How can I cancel my subscription? Can I get a refund?",
-        answer: cancelSub
+        question: 'How can I cancel my subscription? Can I get a refund?',
+        answer: cancelSub,
       },
       {
-        question:
-          "Do I need a credit-card to signup and what payment methods you accept?",
-        answer: paymentMethods
+        question: 'Do I need a credit-card to signup and what payment methods you accept?',
+        answer: paymentMethods,
       },
       {
-        question: "What are the payment cycles?",
-        answer: paymentCycles
+        question: 'What are the payment cycles?',
+        answer: paymentCycles,
       },
       {
-        question: "Do extra packages expire?",
-        answer: extraPackageExpire
+        question: 'Do extra packages expire?',
+        answer: extraPackageExpire,
       },
       {
-        question: "Is tax included in the price?",
-        answer: taxIncluded
-      }
-    ]
+        question: 'Is tax included in the price?',
+        answer: taxIncluded,
+      },
+    ],
   };
 
   openChat = () => {
-    window.kayako.maximize();
+    window.kayako.maximize ();
   };
 
-  render() {
+  render () {
     return (
       <FaqContainer>
         <ContentContainer className={maxWidth}>

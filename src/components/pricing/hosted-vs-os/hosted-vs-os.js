@@ -69,10 +69,15 @@ const Cell = styled ('div') (
     //color: '#9B9B9B',
     '&:nth-child(3n-2)': {
       padding: '.9em .8em .9em 1em',
-      justifyContent: 'flex-start',
+      alignItems: 'flex-start',
       textAlign: 'left',
       color: theme.color.black,
       fontWeight: theme.fontWeight.semiBold,
+      flexDirection: 'column',
+      small: {
+        fontWeight: theme.fontWeight.regular,
+        fontSize: '0.75rem',
+      },
     },
     '&.header': {
       backgroundColor: 'transparent',
@@ -205,49 +210,92 @@ class HostedVsOS extends React.Component {
           <Cell className={'header'}>Open Source</Cell>
           <Cell className={'header'}>Webiny Cloud</Cell>
 
-          <Cell>Continuous database backups</Cell>
+          <Cell>
+            Continuous database backups
+            <small>
+              Your backups are storred onto an encrypted volume with 99.999999999% durability.
+            </small>
+          </Cell>
           <Cell>Not Included</Cell>
           <Cell>
             <img src={check} /> <span>Included</span>
           </Cell>
 
-          <Cell>Automatically manage and renew SSL certificates</Cell>
+          <Cell>
+            Automatically manage and renew SSL certificates
+            <small>
+              No need to worry about when your certificate will expire. We will automatically rotate the certificates for you.
+            </small>
+          </Cell>
           <Cell>Not Included</Cell>
           <Cell>
             <img src={check} /> <span>Included</span>
           </Cell>
 
-          <Cell>Scalable and resilient infrastructure</Cell>
+          <Cell>
+            Scalable and resilient infrastructure
+            <small>
+              The intrastructure features several high-availabilty and fault tollerant components, as well as numerous caching layers to support your scale without compromising on performance.
+            </small>
+          </Cell>
           <Cell>Not Included</Cell>
           <Cell>
             <img src={check} /> <span>Included</span>
           </Cell>
 
-          <Cell>HSTS and HTTP to HTTPS redirect</Cell>
+          <Cell>
+            HSTS and HTTP to HTTPS redirect
+            <small>
+              We only serve websites via HTTPS, and the traffic on our network is end-to-end encrypted. If anyone tries accessing your website via HTTP, we will force a redirect to HTTPS.
+            </small>
+          </Cell>
           <Cell>Not Included</Cell>
           <Cell>
             <img src={check} /> <span>Included</span>
           </Cell>
 
-          <Cell>Data replication and high durability</Cell>
+          <Cell>
+            Data replication and high durability
+            <small>
+              On top of backups, both your live database storage, as well as static assets, are automatically replicated across several availability zones for added resiliency.
+            </small>
+          </Cell>
           <Cell>Not Included</Cell>
           <Cell>
             <img src={check} /> <span>Included</span>
           </Cell>
 
-          <Cell>Performance and usage monitoring</Cell>
+          <Cell>
+            Performance and usage monitoring
+            <small>
+              Have full insight into the performance of your website, know how fast your lambda functions execute, how many call there are and much more. -
+              {' '}
+              <strong>Coming soon</strong>
+            </small>
+          </Cell>
+          <Cell>Not Included</Cell>
+          <Cell>
+            {/*<img src={check} /> <span>Included</span>*/}
+            <span>Coming Soon</span>
+          </Cell>
+
+          <Cell>
+            Content caching
+            <small>
+              All your static content is automatically cached around the world for faster performance.
+            </small>
+          </Cell>
           <Cell>Not Included</Cell>
           <Cell>
             <img src={check} /> <span>Included</span>
           </Cell>
 
-          <Cell>Content caching</Cell>
-          <Cell>Not Included</Cell>
           <Cell>
-            <img src={check} /> <span>Included</span>
+            Sleep worry free
+            <small>
+              Leave the night shifts to us, you go and relax.
+            </small>
           </Cell>
-
-          <Cell>Sleep worry free</Cell>
           <Cell>Not Included</Cell>
           <Cell>
             <img src={check} /> <span>Included</span>

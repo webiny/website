@@ -61,7 +61,7 @@ class OpenSource extends React.Component {
               <Bold>Prefer the open source version?</Bold> You can install
               Webiny on your own servers and self manage it.
             </Text>
-            <Button type="dark">
+            <Button type="dark" link="https://docs.webiny.com/">
               Open source <Arrow alt="arrow" src={buttonArrow} />
             </Button>
           </Wrapper>

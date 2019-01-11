@@ -152,6 +152,7 @@ const Grid = styled ('div') (
 const Cell = styled ('div') (
   {
     boxSizing: 'border-box',
+    flexBasis: '100%',
     h3: {
       fontSize: theme.fontSize.h4,
       color: theme.color.black,

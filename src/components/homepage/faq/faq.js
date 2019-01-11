@@ -29,11 +29,14 @@ const additionalFaq = css ({
 const isItFree = (
   <React.Fragment>
     <p>
-      <strong>100% YES!</strong>
+      Webiny is an open source project under the MIT license. You can download the
+      source code from our
+      {' '}
+      <a href="https://github.com/webiny/webiny-js">GitHub</a>
+      .
     </p>
     <p>
-      Webiny is an open source project under MIT license. You can download the
-      source code from our GitHub on <a href="https://github.com/webiny/webiny-js">https://github.com/webiny/webiny-js</a>.
+      Webiny does come with an optional hosted fully managed serverless enviroment which is a paid option through which you support the future development of the platform.
     </p>
   </React.Fragment>
 );
@@ -76,24 +79,10 @@ const howHard = (
   </React.Fragment>
 );
 
-const hereToHost = (
-  <React.Fragment>
-    <p>
-      To host Webiny you need a MySQL database server, NodeJs server, and a
-      generic webserver to serve static assets.
-    </p>
-    <p>
-      We do provide a <strong>free hosting</strong> enviroment with
-      pre-installed Webiny instances.{' '}
-      <Link to="/pricing">Click here to get started.</Link>
-    </p>
-  </React.Fragment>
-);
-
 const canIBuildCustom = (
   <React.Fragment>
     <p>
-      Let's answer it this way. We've build the CMS module for Webiny to
+      Let's answer it this way. We built the CMS module for Webiny to
       showcase the power of the underlying technology.
     </p>
     <p>
@@ -102,10 +91,6 @@ const canIBuildCustom = (
       Some examples of these modules
       are: ORM, GraphQL API layer, security, user management,
       translations numerous React UI components and many more.
-    </p>
-    <p>
-      For the full list and detailed guides check our{' '}
-      <a href="https://docs.webiny.com/reference-manual">reference manual</a>.
     </p>
   </React.Fragment>
 );
@@ -145,10 +130,6 @@ class Faq extends React.Component {
         answer: howHard,
       },
       {
-        question: 'Where can I host Webiny?',
-        answer: hereToHost,
-      },
-      {
         question: 'Can I build custom apps and modules with Webiny?',
         answer: canIBuildCustom,
       },
@@ -168,7 +149,7 @@ class Faq extends React.Component {
           />
         </div>
         <Link className={additionalFaq} to="/contact-us">
-          Additional Questions <img alt="arrow" src={arrowFaq} />
+          Have more questions? <img alt="arrow" src={arrowFaq} />
         </Link>
       </FaqContainer>
     );

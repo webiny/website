@@ -1,7 +1,7 @@
 import React from 'react';
 
 import BaseLayout from '../layouts/base';
-import Hero from '../components/pricing/hero/hero';
+import Hero from '../components/pricing/hero/hero-v2';
 import PaidPackages from '../components/pricing/paid-package/paid-package';
 import Faq from '../components/pricing/faq/faq';
 //import Architecture from '../components/pricing/architecture/architecture';

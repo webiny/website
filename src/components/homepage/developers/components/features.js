@@ -14,14 +14,14 @@ import documentedIcon from '../assets/documented-icon.svg';
 import openSourceIcon from '../assets/open-source-icon.svg';
 import materialThemeIcon from '../assets/material-theme-icon.svg';
 import flowjsIcon from '../assets/flowjs-icon.svg';
-import ormIcon from '../assets/orm-icon.svg';
+import databaseIcon from '../assets/database-icon.svg';
 //import i18nIcon from '../assets/i18n-icon.svg';
 import integrationsIcon from '../assets/integrations-icon.svg';
 import securityIcon from '../assets/security-icon.svg';
 import externalLinkIcon from '../assets/external-link-symbol.svg';
 import visualBuilderIcon from '../assets/visual-builder-icon.svg';
-import testPassing from '../assets/passing.svg';
-import testCoverage from '../assets/coveralls_95.svg';
+//import testPassing from '../assets/passing.svg';
+//import testCoverage from '../assets/coveralls_95.svg';
 
 const BoxContainer = styled ('div') (
   {
@@ -274,12 +274,11 @@ class Features extends React.Component {
         </BoxContainer>
         <BoxContainer>
           <Box data-aos="fade-up" data-aos-delay="150" data-aos-offset="300">
-            <BoxIcon src={ormIcon} />
-            <BoxTitle>ORM</BoxTitle>
+            <BoxIcon src={databaseIcon} />
+            <BoxTitle>Document Database</BoxTitle>
             <BoxDescription>
-              Good ORM is important for developer experience. Webiny ORM, also
-              called “Entities” is designed for working with GraphQL, as well as
-              it’s easy to use and flexible enough to support any use case.
+              Webiny uses a document database, as they feature semi-structured documents which are perfect for modern API layers and easy for developers to work with.
+              By default you can use either MongoDb or the latest Amazon DocumentDB.
             </BoxDescription>
             {/*
             <BoxFooter>

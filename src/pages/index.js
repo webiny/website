@@ -55,7 +55,7 @@ class IndexPage extends React.Component {
         title="Webiny - Serverless CMS powered by GraphQL and React"
         description="Webiny is a modern open source content management designed to run in a serverless environment.  Webiny is powered by React, Node and GraphQL.  Webiny features a visual page builder, so you can quickly create stunning web pages."
       >
-        <Hero data-aos="fade" />
+        <Hero />
         <Serverless data-aos="fade-up" data-aos-offset="300" />
         <CmsV2 />
         <Developers data-aos="fade-up" />
