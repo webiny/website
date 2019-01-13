@@ -1,12 +1,25 @@
 import React from 'react';
 import styled from 'react-emotion';
+import {css} from 'emotion';
 import theme from '../../utils/theme';
 import mq from '../../utils/breakpoints';
 import ContentContainer from '../../ui/content-container';
 import Button from '../../ui/button';
+import Video from './video';
 
 import heroBg from './assets/hero-bg.svg';
 import gitHubLogo from './assets/github-logo.svg';
+
+const heroContainer = css (
+  {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+  mq ({
+    flexDirection: ['column', 'row'],
+    width: ['100%', 1300],
+  })
+);
 
 const Hero = styled ('section') (
   {
@@ -41,6 +54,14 @@ const LeftSide = styled ('div') (
   mq ({
     textAlign: ['center', 'left'],
     width: ['100%', 375],
+  })
+);
+
+const RightSide = styled ('div') (
+  {},
+  mq ({
+    //textAlign: ['center', 'left'],
+    width: ['100%', 800],
   })
 );
 
@@ -83,7 +104,7 @@ const GitHubLogo = styled ('img') ({
 
 export default ({children, ...props}) => (
   <Hero {...props}>
-    <ContentContainer>
+    <ContentContainer className={heroContainer}>
       <LeftSide>
         <Title data-aos="fade-up" data-aos-delay="300">
           Developer-friendly Serverless CMS powered by GraphQL and React
@@ -102,6 +123,7 @@ export default ({children, ...props}) => (
           View Webiny on GitHub
         </Link>
       </LeftSide>
+      <RightSide><Video /></RightSide>
     </ContentContainer>
   </Hero>
 );
