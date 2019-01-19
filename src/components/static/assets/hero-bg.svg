@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1439px" height="281px" viewBox="0 0 1439 281" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Hero Bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#FEE140" offset="0%"></stop>
+            <stop stop-color="#FA709A" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="100%" x2="0%" y2="0%" id="linearGradient-2">
+            <stop stop-color="#764BA2" offset="0%"></stop>
+            <stop stop-color="#667EEA" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Support" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-63.000000, -39.000000)" fill="url(#linearGradient-2)" id="Hero">
+            <g transform="translate(63.000000, 39.000000)">
+                <path d="M0,0 L1439,0 L1439,238.023803 C964.195125,266.674601 723.878047,281 718.048764,281 C712.219482,281 472.869894,266.674601 0,238.023803 L0,0 Z" id="Hero-Bg"></path>
+            </g>
+        </g>
+    </g>
+</svg>

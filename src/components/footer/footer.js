@@ -1,78 +1,78 @@
-import React from "react";
-import styled from "react-emotion";
-import { css } from "emotion";
-import theme from "../utils/theme";
-import mq from "../utils/breakpoints";
-import ContentContainer from "../ui/content-container";
-import Newsletter from "./newsletter";
-import Link from "gatsby-link";
+import React from 'react';
+import styled from 'react-emotion';
+import {css} from 'emotion';
+import theme from '../utils/theme';
+import mq from '../utils/breakpoints';
+import ContentContainer from '../ui/content-container';
+import Newsletter from './newsletter';
+import Link from 'gatsby-link';
 
-import webinyLogo from "./assets/webiny-footer-logo.svg";
+import webinyLogo from './assets/webiny-footer-logo.svg';
 
-const Wrapper = styled("div")({
+const Wrapper = styled ('div') ({
   backgroundColor: theme.color.footerBg,
-  padding: "50px 0 5px"
+  padding: '50px 0 5px',
 });
 
-const FlexDisplay = css(
+const FlexDisplay = css (
   {
-    justifyContent: "space-between"
+    justifyContent: 'space-between',
   },
-  mq({
-    display: ["block", "flex"]
+  mq ({
+    display: ['block', 'flex'],
   })
 );
 
-const Box = styled("div")(
+const Box = styled ('div') (
   {
-    boxSizing: "border-box"
+    boxSizing: 'border-box',
   },
-  mq({
-    width: ["100%", "33%"],
-    padding: [20, 0]
+  mq ({
+    width: ['100%', '33%'],
+    padding: [20, 0],
   })
 );
 
-const textRight = css(
+const textRight = css (
   {},
-  mq({
-    textAlign: ["center", "right"]
+  mq ({
+    textAlign: ['center', 'right'],
   })
 );
 
-const Logo = styled("img")(
+const Logo = styled ('img') (
   {},
-  mq({
-    margin: ["0 auto 20px auto", "0"],
-    display: ["block", "inline"]
+  mq ({
+    margin: ['0 auto 20px auto', '0'],
+    display: ['block', 'inline'],
   })
 );
 
-const Copy = styled("p")(
+const Copy = styled ('p') (
   {
     fontSize: theme.fontSize.footer,
-    color: theme.color.darkGray
+    color: theme.color.darkGray,
   },
-  mq({
-    textAlign: ["center", "initial"]
+  mq ({
+    textAlign: ['center', 'initial'],
   })
 );
 
-const textCenter = css({
-  textAlign: "center !important"
+const textCenter = css ({
+  textAlign: 'center !important',
 });
 
-const linkStyle = css({
-  color: theme.color.darkGray
+const linkStyle = css ({
+  color: theme.color.darkGray,
 });
 
-const Bottom = styled("div")({
-  borderTop: "1px solid #3B3E45",
-  width: "100%",
-  clear: "both",
-  lineHeight: "200%",
+const Bottom = styled ('div') ({
+  borderTop: '1px solid #3B3E45',
+  width: '100%',
+  clear: 'both',
+  lineHeight: '200%',
   paddingTop: 25,
-  marginTop: 25
+  marginTop: 25,
 });
 
 const Footer = () => (
@@ -91,12 +91,12 @@ const Footer = () => (
           <br />
           <a className={linkStyle} href="https://github.com/Webiny/webiny-js">
             GitHub
-          </a>{" "}
-          /{" "}
+          </a>{' '}
+          /{' '}
           <a className={linkStyle} href="https://twitter.com/WebinyPlatform">
             Twitter
-          </a>{" "}
-          /{" "}
+          </a>{' '}
+          /{' '}
           <a className={linkStyle} href="https://video.webiny.com/">
             YouTube
           </a>
@@ -110,23 +110,17 @@ const Footer = () => (
       <Copy className={textCenter}>
         <Link className={linkStyle} to="/contact-us">
           Contact Us
-        </Link>{" "}
-        /{" "}
-        <a
-          className={linkStyle}
-          href="https://support.webiny.com/article/3-privacy-policy"
-        >
+        </Link>{' '}
+        /{' '}
+        <Link className={linkStyle} to="/privacy-policy">
           Privacy Policy
-        </a>{" "}
-        /{" "}
-        <a
-          className={linkStyle}
-          href="https://support.webiny.com/article/4-terms-of-service"
-        >
+        </Link>{' '}
+        /{' '}
+        <Link className={linkStyle} to="/terms-of-service">
           Terms of Service
-        </a>
+        </Link>
         <br />
-        Webiny © {new Date().getFullYear()}
+        Webiny © {new Date ().getFullYear ()}
       </Copy>
     </Bottom>
   </Wrapper>
