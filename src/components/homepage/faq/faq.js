@@ -36,7 +36,7 @@ const isItFree = (
       .
     </p>
     <p>
-      Webiny does come with an optional hosted fully managed serverless enviroment which is a paid option through which you support the future development of the platform.
+      Webiny does come with an optional hosted fully managed serverless environment which is a paid option through which you support the future development of the platform.
     </p>
   </React.Fragment>
 );

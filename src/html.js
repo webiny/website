@@ -53,7 +53,7 @@ var HTML =
             id: '___gatsby',
             dangerouslySetInnerHTML: {
               __html: this.props.body +
-                `<script>(function(d,a){function c(){var b=d.createElement("script");b.async=!0;b.type="text/javascript";b.src=a._settings.messengerUrl;b.crossOrigin="anonymous";var c=d.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}window.kayako=a;a.readyQueue=[];a.newEmbedCode=!0;a.ready=function(b){a.readyQueue.push(b)};a._settings={apiUrl:"https://webiny.kayako.com/api/v1",messengerUrl:"https://webiny.kayakocdn.com/messenger",realtimeUrl:"wss://kre.kayako.net/socket"};window.attachEvent?window.attachEvent("onload",c):window.addEventListener("load",c,!1)})(document,window.kayako||{});</script>`,
+                `<script type="text/javascript"> window.$crisp=[];window.CRISP_WEBSITE_ID="2776e9a3-7196-4cd7-828a-96de2d509b75";(function(){ d=document;s=d.createElement("script"); s.src="https://client.crisp.chat/l.js"; s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})(); </script>`,
             },
           }),
           this.props.postBodyComponents

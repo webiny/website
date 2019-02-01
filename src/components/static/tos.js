@@ -49,6 +49,9 @@ export default ({children, ...props}) => (
               <li>
                 Content with the sole purpose of causing harm or inciting hate, or content that could be reasonably considered as slanderous or libelous.
               </li>
+              <li>
+                Pornographic content.
+              </li>
             </ol>
           </li>
           <li>
@@ -82,19 +85,15 @@ export default ({children, ...props}) => (
         <p>
           Webiny has certain soft and hard limits in using its service. Hard limits are automatically enforced by the Service. Soft limits are consumable resources that the User agrees not to exceed. The limits are as follows unless otherwise contractually agreed upon.
         </p>
-        <h4>For paid accounts: </h4>
+
         <ul>
           <li>Network bandwidth: 1TB/month - Soft</li>
           <li>Storage: 1TB - Soft</li>
         </ul>
-        <h4>For free accounts: </h4>
-        <ul>
-          <li>Network Bandwidth: 100GB/month - Soft</li>
-          <li>Storage: 100GB - Soft</li>
-        </ul>
+
         <h4>Use of other Webiny Services </h4>
         <p>
-          Webiny provides a MySQL database, storage and lambda functions that are strictly for use with sites deployed to Webiny hosted platform. All lambda functions hosted by Webiny must be called primarily by a website hosted on our service.
+          Webiny provides a DocumentDB database, storage and lambda functions that are strictly for use with sites deployed to Webiny hosted platform. All lambda functions hosted by Webiny must be invoked primarily by a website hosted on our service.
         </p>
         <p>
           Custom contracts may have exceptions to this rule, but all accounts without custom contracts, Paid or Free, are subject to it.

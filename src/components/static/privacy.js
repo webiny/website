@@ -41,9 +41,7 @@ export default ({children, ...props}) => (
         </p>
         <p>By using the Website, you consent to this policy.</p>
         <p>
-          If you have any comments on this privacy policy, please email them to
-          {' '}
-
+          If you have any comments on this privacy policy, please email them to privacy@webiny.com
         </p>
         <h3>
           2. Who We Are
@@ -56,17 +54,12 @@ export default ({children, ...props}) => (
             Controller - Webiny Ltd (Webiny) is the data controller and responsible for the personal data referred to in this privacy notice
           </li>
           <li>
-            Our site address is
-            {' '}
-
+            Our site address is https://www.webiny.com/
           </li>
           <li>Our company name is Webiny Ltd</li>
           <li>Our registered address is 3 Gower Street, London WC1E 6HA, UK</li>
           <li>
-            Our nominated representative or Data Protection Officer is Sven Al Hamad, Director of Webiny Ltd. If you have any questions about this privacy policy, including any requests to exercise your legal rights, please contact Sven at
-            {' '}
-
-            .
+            Our nominated representative or Data Protection Officer is Sven Al Hamad, Director of Webiny Ltd. If you have any questions about this privacy policy, including any requests to exercise your legal rights, please contact us at privacy@webiny.com.
           </li>
         </ul>
         <h3>
@@ -142,9 +135,7 @@ export default ({children, ...props}) => (
         </ol>
         <p>
           It is important that the personal data we hold about you is accurate and current. Please keep us informed if your personal data changes during your relationship with us by emailing us at
-          {' '}
-
-          .
+          privacy@webiny.com.
         </p>
         <p>
           You will not have to pay a fee to access your personal data (or to exercise any of the other rights). However, we may charge a reasonable fee if your request is clearly unfounded, repetitive or excessive. Alternatively, we may refuse to comply with your request in these circumstances.
@@ -291,19 +282,14 @@ export default ({children, ...props}) => (
           If you are a new member or customer, you will only be contacted if you agree to it.
         </p>
         <p>
-          If you don't want to be contacted for marketing purposes, please unsubscribe from our newsletter via the link at the end of each newsletter, or contacts us
-          {' '}
-
-          .
+          If you don't want to be contacted for marketing purposes, please unsubscribe from our newsletter via the link at the end of each newsletter, or contacts us privacy@webiny.com.
         </p>
         <p>
           Please note: We don't identify individuals to our advertisers, nor do we sell our data to them.
         </p>
         <p>
           In addition, if you don’t want us to use your personal data for any of the other reasons set out in this section, you can let us know at any time by contacting us
-          {' '}
-
-          , and we will delete your data from our systems. However, you acknowledge this will limit our ability to provide the best possible products and services to you.
+          privacy@webiny.com, and we will delete your data from our systems. However, you acknowledge this will limit our ability to provide the best possible products and services to you.
         </p>
         <p>
           In some cases, the collection of personal data may be a statutory or contractual requirement, and we will be limited in the products and services we can provide you if you don’t provide your personal data in these cases.
@@ -349,9 +335,7 @@ export default ({children, ...props}) => (
         </p>
         <p>
           You have the right to opt out of our processing your personal data for marketing purposes by contacting us at
-          {' '}
-
-          .
+          privacy@webiny.com.
         </p>
         <p>
           Although we try to provide protection, we cannot guarantee complete security for your data, and you take the risk that any sending of that data turns out to be not secure despite our efforts.
@@ -386,9 +370,7 @@ export default ({children, ...props}) => (
         </p>
         <p>
           We will only use your personal data for the purposes for which we collected it, unless we reasonably consider that we need to use it for another reason and that reason is compatible with the original purpose. If you wish to get an explanation as to how the processing for the new purpose is compatible with the original purpose, please contact us via email at
-          {' '}
-
-          . If we need to use your personal data for an unrelated purpose, we will notify you and we will explain the legal basis which allows us to do so. Please note that we may process your personal data without your knowledge or consent, in compliance with the above rules, where this is required or permitted by law.
+          privacy@webiny.com. If we need to use your personal data for an unrelated purpose, we will notify you and we will explain the legal basis which allows us to do so. Please note that we may process your personal data without your knowledge or consent, in compliance with the above rules, where this is required or permitted by law.
         </p>
         <h4>
 
@@ -413,10 +395,7 @@ export default ({children, ...props}) => (
           · Where we use providers based in the US, we may transfer data to them if they are part of the Privacy Shield which requires them to provide similar protection to personal data shared between the Europe and the US. For further details, see European Commission: EU-US Privacy Shield.
         </p>
         <p>
-          Please contact us via email at
-          {' '}
-
-          {' '}
+          Please contact us via email at privacy@webiny.com
           if you want further information on the specific mechanism used by us when transferring your personal data out of the EEA.
         </p>
         <h3>
@@ -432,21 +411,15 @@ export default ({children, ...props}) => (
         </h3>
         <p>
           The DPA and GDPR give you the right to access information held about you by us. Please write to us or contact us by email if you wish to request confirmation of what personal information we hold relating to you. You can write to us by email to
-          {' '}
-
-          . There is no charge for requesting that we provide you with details of the personal data that we hold. We will provide this information within one month of your requesting the data.
+          privacy@webiny.com. There is no charge for requesting that we provide you with details of the personal data that we hold. We will provide this information within one month of your requesting the data.
         </p>
         <p>
           You have the right to change the permissions that you have given us in relation to how we may use your data. You also have the right to request that we cease using your data or that we delete all personal data records that we hold relating to you. You can exercise these rights at any time by writing to us via email to
-          {' '}
-
-          .
+          privacy@webiny.com.
         </p>
         <p>
           You can ask us not to use your data for marketing. You can do this by contacting us at any time at
-          {' '}
-
-          .
+          privacy@webiny.com.
         </p>
         <p>Under the GDPR, you have the right to:</p>
         <p>
@@ -468,9 +441,7 @@ export default ({children, ...props}) => (
           You have the right to make a complaint at any time to the Information Commissioner's Office (ICO), the UK supervisory authority for data protection issues (
 
           ). We would, however, appreciate the chance to deal with your concerns before you approach the ICO so please contact us in the first instance. To enforce any of the foregoing rights or if you have any other questions about our site or this Privacy Policy, please contact us at
-          {' '}
-
-          .
+          privacy@webiny.com.
         </p>
         <h3>
 
@@ -481,9 +452,7 @@ export default ({children, ...props}) => (
         </p>
         <p>
           We welcome any queries, comments or requests you may have regarding this Privacy Policy. Please do not hesitate to contact us at Webiny Ltd, 3 Gower Street, London WC1E 6HA, UK or via email at
-          {' '}
-
-          .
+          privacy@webiny.com.
         </p>
         <h3>
 
