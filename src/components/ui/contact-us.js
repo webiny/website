@@ -108,6 +108,11 @@ class ContactUs extends React.Component {
         ['text', this.state.message],
       ]);
       window['$crisp'].push (['set', 'session:data', [[['contact-us', true]]]]);
+      window['$crisp'].push ([
+        'set',
+        'session:event',
+        [[['contact-us-message-sent', new Date ().toGMTString ()]]],
+      ]);
 
       /*
       const formData = Object.keys(this.state)
