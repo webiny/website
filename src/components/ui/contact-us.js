@@ -100,7 +100,7 @@ class ContactUs extends React.Component {
     ) {
       this.setState ({submitted: true});
 
-      window['$crisp'].push (['set', 'user:nickname', [this.state.email]]);
+      window['$crisp'].push (['set', 'user:nickname', [this.state.name]]);
       window['$crisp'].push (['set', 'user:email', [this.state.email]]);
       window['$crisp'].push ([
         'do',
