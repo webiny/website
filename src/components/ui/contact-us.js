@@ -1,18 +1,18 @@
-import React from 'react'
-import styled from 'react-emotion'
-import theme from '../utils/theme'
-import { css } from 'emotion'
-import mq from '../utils/breakpoints'
-import Button from './button'
+import React from 'react';
+import styled from 'react-emotion';
+import theme from '../utils/theme';
+import {css} from 'emotion';
+import mq from '../utils/breakpoints';
+import Button from './button';
 
-import arrow from './assets/gs-btn-arrow.svg'
+import arrow from './assets/gs-btn-arrow.svg';
 
-const BoxWrapper = styled('div')({
+const BoxWrapper = styled ('div') ({
   position: 'relative',
   paddingTop: 25,
-})
+});
 
-const Box = styled('form')({
+const Box = styled ('form') ({
   background: theme.color.white,
   boxShadow: '0 2px 40px 10px rgba(152,152,152,0.50)',
   borderRadius: 8,
@@ -21,9 +21,9 @@ const Box = styled('form')({
   maxWidth: 550,
   margin: '0 auto',
   color: theme.color.black,
-})
+});
 
-const Input = styled('input')({
+const Input = styled ('input') ({
   display: 'block',
   margin: '0 auto',
   boxSizing: 'border-box',
@@ -40,8 +40,8 @@ const Input = styled('input')({
   '&:focus, &:active': {
     border: '1px solid ' + theme.color.grayText,
   },
-})
-const Textarea = styled('textarea')({
+});
+const Textarea = styled ('textarea') ({
   display: 'block',
   margin: '0 auto',
   boxSizing: 'border-box',
@@ -59,38 +59,38 @@ const Textarea = styled('textarea')({
   '&:focus, &:active': {
     border: '1px solid ' + theme.color.grayText,
   },
-})
+});
 
-const button = css(
+const button = css (
   {
     boxShadow: '0 2px 3px 0 rgba(160,160,160,0.50)',
     '> img': {
       marginLeft: 10,
     },
   },
-  mq({
+  mq ({
     padding: [15, '14px 100px !important'],
   })
-)
+);
 
-const Arrow = styled('img')({
+const Arrow = styled ('img') ({
   height: 9,
   marginLeft: 5,
-})
+});
 
 class ContactUs extends React.Component {
-  constructor(props) {
-    super(props)
+  constructor (props) {
+    super (props);
 
-    this.state = { name: '', email: '', message: '', submitted: false }
-    this.nameRef = React.createRef()
-    this.emailRef = React.createRef()
-    this.messageRef = React.createRef()
+    this.state = {name: '', email: '', message: '', submitted: false};
+    this.nameRef = React.createRef ();
+    this.emailRef = React.createRef ();
+    this.messageRef = React.createRef ();
   }
 
   handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value })
-  }
+    this.setState ({[event.target.name]: event.target.value});
+  };
 
   handleSubmit = event => {
     if (
@@ -98,8 +98,17 @@ class ContactUs extends React.Component {
       this.state.name !== '' &&
       this.state.message !== ''
     ) {
-      this.setState({ submitted: true })
+      this.setState ({submitted: true});
 
+      window['$crisp'].push (['set', 'user:nickname', [this.state.email]]);
+      window['$crisp'].push (['set', 'user:email', [this.state.email]]);
+      window['$crisp'].push ([
+        'do',
+        'message:send',
+        ['text', this.state.message],
+      ]);
+
+      /*
       const formData = Object.keys(this.state)
         .map(key => {
           return (
@@ -115,14 +124,15 @@ class ContactUs extends React.Component {
         },
         body: formData,
       })
+      */
     }
 
-    event.preventDefault()
-  }
-  render() {
+    event.preventDefault ();
+  };
+  render () {
     return (
       <BoxWrapper>
-        {!this.state.submitted && (
+        {!this.state.submitted &&
           <Box onSubmit={this.handleSubmit}>
             <Input
               name="name"
@@ -154,17 +164,15 @@ class ContactUs extends React.Component {
               Submit
               <Arrow alt="Submit" src={arrow} />
             </Button>
-          </Box>
-        )}
-        {this.state.submitted && (
+          </Box>}
+        {this.state.submitted &&
           <Box>
             Thank you for your message. We will respond at the earliest
             convenience.
-          </Box>
-        )}
+          </Box>}
       </BoxWrapper>
-    )
+    );
   }
 }
 
-export default ContactUs
+export default ContactUs;
