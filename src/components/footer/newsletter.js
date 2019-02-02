@@ -78,7 +78,7 @@ class Newsletter extends React.Component {
 
   handleSubmit = event => {
     if (this.state.email !== '') {
-      this.setState ({email: 'Thanks!'});
+      this.setState ({email: "Thanks! You're on the list."});
 
       window['$crisp'].push (['set', 'user:email', [this.state.email]]);
       window['$crisp'].push (['set', 'session:data', [[['newsletter', true]]]]);
