@@ -85,7 +85,7 @@ class Newsletter extends React.Component {
       window['$crisp'].push ([
         'set',
         'session:event',
-        [[['newsletter-subscribed', new Date ().toGMTString ()]]],
+        [[['newsletter-subscribed', {date: new Date ().toGMTString ()}]]],
       ]);
 
       /*

@@ -111,7 +111,7 @@ class ContactUs extends React.Component {
       window['$crisp'].push ([
         'set',
         'session:event',
-        [[['contact-us-message-sent', new Date ().toGMTString ()]]],
+        [[['contact-us-message-sent', {date: new Date ().toGMTString ()}]]],
       ]);
 
       /*
