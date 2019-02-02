@@ -80,6 +80,10 @@ class Newsletter extends React.Component {
     if (this.state.email !== '') {
       this.setState ({email: 'Thanks!'});
 
+      window['$crisp'].push (['set', 'user:email', [this.state.email]]);
+      window['$crisp'].push (['set', 'session:data', [[['newsletter', true]]]]);
+
+      /*
       const formData = Object.keys (this.state)
         .map (key => {
           return (
@@ -97,6 +101,7 @@ class Newsletter extends React.Component {
         },
         body: formData,
       });
+      */
     }
 
     event.preventDefault ();
