@@ -33,8 +33,8 @@ const contactUs = css ({
 const howLambda = (
   <React.Fragment>
     <p>
-      Each request that lands on the API of your site is counted as one request.
-      The time from when the request was recieved, until the time a response is
+      Each request that invokes a Lamda is counted as one request. Usually that's a call to your API, or the Files service to retrieve a file.
+      The time from when the request was received, until the time a response is
       delivered, or request it terminated, is counted as the run time. The run
       time is rounded to the nearest 100ms.
     </p>
