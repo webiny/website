@@ -204,7 +204,7 @@ export default ({children, ...props}) => (
           <h3>
             <img src={faqIcon} />
             <a href="https://support.webiny.com/">
-              FAQ
+              Help Desk
               <img className={'arrow'} src={arrow} />
             </a>
           </h3>
