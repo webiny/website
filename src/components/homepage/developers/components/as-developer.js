@@ -135,10 +135,7 @@ class AsDeveloper extends React.Component {
                 <ReasonsItem>
                   <ReasonsItemTitle>WORRY FREE SCALE</ReasonsItemTitle>
                   <ReasonsItemText>
-                    No more stressing out if a server is down, if you have
-                    enough capacity, or that all latest patches have been
-                    applied. Running Webiny in serverless mode will remove all
-                    that hassle.
+                    Whether you're building a small website or already serving millions of users, Webiny has your back.
                   </ReasonsItemText>
                 </ReasonsItem>
                 <ReasonsItem>
@@ -154,7 +151,7 @@ class AsDeveloper extends React.Component {
                   <ReasonsItemTitle>PEACE OF MIND</ReasonsItemTitle>
                   <ReasonsItemText>
                     Because Webiny is designed as a set of numerous components
-                    working seamleslly together, you will experience less bugs
+                    working seamlessly together, you will experience less bugs
                     and less problems while developing. Your clients will be
                     happy, and you will have a peace of mind.
                   </ReasonsItemText>
@@ -168,7 +165,7 @@ class AsDeveloper extends React.Component {
             >
               <GroupOfPeople alt="Group of People" src={groupOfPeople} />
               <Quote>
-                Life is one, so spend less time coding, and more time with
+                You only live once, so spend less time coding, and more time with
                 friends and family creating memories and experiences worth
                 having.
               </Quote>

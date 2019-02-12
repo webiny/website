@@ -124,36 +124,20 @@ class Features extends React.Component {
             <BoxIcon src={serverlessIcon} />
             <BoxTitle>Serverless</BoxTitle>
             <BoxDescription>
-              Webiny is made for cloud scalability and optimized to run in a severless environment, be that Lambda or similar.
-              {' '}
-              Although not a requirement, but when using Aurora Serverless as the backend database, Webiny utilizes additional optimizations.
-              {' '}
+              Webiny is built on top of modern serverless technologies, which ensure
+              your apps run flawlessly in any circumstances. Focus completely on
+              developing your app instead of managing servers and other resources.
             </BoxDescription>
           </Box>
           <Box data-aos="fade-up" data-aos-delay="300" data-aos-offset="300">
             <BoxIcon src={craIcon} />
             <BoxTitle>CRA v2</BoxTitle>
             <BoxDescription>
-              We built Webiny on top of the Create React App v2, an environment
-              that many developers already know and use today, so getting started with Webiny
-              will be a familiar experience from the start.
+              To make app development easier, we decided to use Create React App,
+              an environment many developers already know and love, so getting
+              started with Webiny will be a familiar experience from the start.
             </BoxDescription>
           </Box>
-          {/*
-          <Box data-aos="fade-up" data-aos-delay="300" data-aos-offset="300">
-            <BoxIcon src={testCoverageIcon} />
-            <BoxTitle>95% TEST COVERAGE</BoxTitle>
-            <BoxDescription>
-              Having great test coverage is essential for any continuous
-              development and deployment environment. Webiny has 95% coverage
-              set as the minimum requirement for all the server side components.
-            </BoxDescription>
-            <BoxFooter>
-              <img alt="Webiny Build" src={testPassing} /> &nbsp;
-              <img alt="Webiny Coverage" src={testCoverage} />
-            </BoxFooter>
-          </Box>
-          */}
           <Box data-aos="fade-up" data-aos-delay="450" data-aos-offset="300">
             <BoxIcon src={graphqlIcon} />
             <BoxTitle>GraphQL</BoxTitle>
@@ -177,11 +161,10 @@ class Features extends React.Component {
             <BoxIcon src={uiComponentsIcon} />
             <BoxTitle>UI Components</BoxTitle>
             <BoxDescription>
-              Because Webiny is not just about building websites, but also
-              custom plugins and apps, which can be challenging if you don’t
-              have all the right components. To help
-              with that Webiny comes with several React UI components which
-              help you to build your apps in less time.
+              Webiny is not just about building websites, but also custom
+              plugins and apps. To help with that, we included a number of
+              React UI components which will speed up your development and
+              maintain consistency across your project.
             </BoxDescription>
             {/*
             <BoxFooter>
@@ -226,10 +209,10 @@ class Features extends React.Component {
             <BoxIcon src={visualBuilderIcon} />
             <BoxTitle>Visual Builder</BoxTitle>
             <BoxDescription>
-              Unlike most visual website builders, that work with static HTML
+              Unlike most visual website builders that work with static HTML
               blocks, our visual builder actually works with React components.
               If you know how to create a React component, you can
-              quickly and easily create new custom plugins and widges for the page builder.
+              quickly and easily create new custom plugins and elements for the page builder.
             </BoxDescription>
             {/*
             <BoxFooter>
@@ -312,10 +295,9 @@ class Features extends React.Component {
             <BoxIcon src={securityIcon} />
             <BoxTitle>Security</BoxTitle>
             <BoxDescription>
-              Security is at core of Webiny. Our GraphQL API permissions, as
-              best practices, are managed as part of the business logic. Webiny
-              also supports multiple middlewares for authentication providesr,
-              so you can easily hook a custom provider like SSO.
+              Webiny provides a simple yet effective security layer comprising
+              of scopes, roles and groups, which gives you fine-grained control
+              over data access. Define your scopes in code, then manage roles via user-friendly UI.
             </BoxDescription>
             {/*
               <BoxFooter>

@@ -5,7 +5,6 @@ import mq from '../../utils/breakpoints';
 
 import Features from './components/features';
 import TechTools from './components/tech-tools';
-import ShowMeCode from './components/show-me-code';
 import AsDeveloper from './components/as-developer-v2';
 import Architecture from './components/architecture';
 
@@ -70,7 +69,6 @@ class Developers extends React.Component {
         <Architecture />
         <Features />
         <TechTools />
-        <ShowMeCode />
         <AsDeveloper />
       </DevelopersContainer>
     );

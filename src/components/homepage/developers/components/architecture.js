@@ -140,16 +140,16 @@ class Architecture extends React.Component {
               <img src={clientDeploy} />
             </ClientBlock>
             <ServerBlock>
-              <h3>Server Side</h3>
+              <h3>API</h3>
               <ol>
                 <li>
-                  Take the API approach, use the built-in ORM and GraphQL SDL to quickly create new endpoints.
+                  Take the API approach, use the built-in ODM and GraphQL SDL to quickly create new endpoints.
                 </li>
                 <li>
                   Webiny also comes with several built-in APIs that you can leverage in your apps.
                 </li>
                 <li>
-                  Same as for the client side, using the CLI you can deploy your app to Webiny Cloud.
+                  Using our CLI you can deploy your API to the Webiny Cloud.
                 </li>
               </ol>
               <img src={apiDeploy} />
