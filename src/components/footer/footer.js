@@ -81,8 +81,7 @@ const Footer = () => (
       <Box>
         <Logo alt="Webiny" src={webinyLogo} />
         <Copy>
-          Webiny is a content management system, that is designed to run inside
-          a serverless environment. Webiny enables developers to build powerful
+          Webiny is a content management system designed to run inside a serverless environment. Webiny enables developers to build powerful
           websites and web applications by providing all required components.
           <br />
           <br />

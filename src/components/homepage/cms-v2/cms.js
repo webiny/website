@@ -86,6 +86,13 @@ const PluginsTitle = styled ('div') ({
   position: 'relative',
 });
 
+const PluginsSubTitle = styled ('p') ({
+  fontWeight: theme.fontWeight.light,
+  fontSize: theme.fontSize.paragraph,
+  color: theme.color.grayText,
+  textAlign: 'center',
+});
+
 const Line = styled ('div') (
   {
     borderBottom: '1px solid ' + theme.color.darkGray,
@@ -208,7 +215,7 @@ class Cms extends React.Component {
     return (
       <CmsContainer>
         <SubTitle data-aos="fade-up" data-aos-offset="300">
-          Webiny CMS provides you with everything you would expect & more
+          Webiny CMS provides you with all the common components, but expect more!
         </SubTitle>
         <SubText data-aos="fade-up" data-aos-delay="250" data-aos-offset="300">
           We’ve built Webiny to go beyond your regular content management system
@@ -461,6 +468,9 @@ class Cms extends React.Component {
             <PluginsLogo alt="Vimeo" src={vimeoLogo} />
             <PluginsLogo alt="SoundCloud" src={soundcloudLogo} />
           </PluginsLogoWrapper>
+          <PluginsSubTitle>
+            many more to come + you can build your own
+          </PluginsSubTitle>
         </GalleryContainer>
       </CmsContainer>
     );

@@ -1,14 +1,14 @@
-import React from 'react'
-import styled from 'react-emotion'
-import theme from '../../utils/theme'
-import { css } from 'emotion'
-import mq from '../../utils/breakpoints'
-import ContentContainer from '../../ui/content-container'
+import React from 'react';
+import styled from 'react-emotion';
+import theme from '../../utils/theme';
+import {css} from 'emotion';
+import mq from '../../utils/breakpoints';
+import ContentContainer from '../../ui/content-container';
 
-import heroBg from './assets/agency-hero-bg.svg'
-import superhero from './assets/agency-superhero.svg'
+import heroBg from './assets/agency-hero-bg.svg';
+import superhero from './assets/agency-superhero.svg';
 
-const Hero = styled('section')(
+const Hero = styled ('section') (
   {
     width: '100%',
     background: 'url(' + heroBg + ') no-repeat center top',
@@ -16,7 +16,7 @@ const Hero = styled('section')(
     boxSizing: 'border-box',
     textAlign: 'center',
   },
-  mq({
+  mq ({
     padding: ['100px 20px 25px', '150px 0 25px'],
     height: ['auto', 'calc(100vh - 150px)'],
     minHeight: ['auto', 700],
@@ -25,70 +25,71 @@ const Hero = styled('section')(
     backgroundSize: ['cover'],
     backgroundPosition: ['top', 'top', 'bottom'],
   })
-)
+);
 
-const Title = styled('h1')(
+const Title = styled ('h1') (
   {
     fontSize: theme.fontSize.h1,
     fontWeight: theme.fontWeight.semiBold,
     marginBottom: 40,
   },
-  mq({
+  mq ({
     textAlign: ['center', 'left'],
   })
-)
+);
 
-const LeftSide = styled('div')(
+const LeftSide = styled ('div') (
   {},
-  mq({
+  mq ({
     textAlign: ['center', 'left'],
     width: ['100%', 400],
   })
-)
+);
 
-const RightSide = styled('div')(
+const RightSide = styled ('div') (
   {},
-  mq({
+  mq ({
     textAlign: ['center', 'right'],
     width: ['100%', 600],
   })
-)
+);
 
-const SubText = styled('p')(
+const SubText = styled ('p') (
   {
     fontSize: theme.fontSize.subText,
     fontWeight: theme.fontWeight.light,
     lineHeight: '25px',
     marginBottom: 40,
   },
-  mq({
+  mq ({
     textAlign: ['center', 'left'],
   })
-)
+);
 
-const container = css(
+const container = css (
   {},
-  mq({
+  mq ({
     display: ['block', 'flex'],
   })
-)
+);
 
-const Image = styled('img')(
+const Image = styled ('img') (
   {},
-  mq({
+  mq ({
     width: [300, 'auto'],
   })
-)
+);
 
-export default ({ children, ...props }) => (
+export default ({children, ...props}) => (
   <Hero {...props}>
     <ContentContainer className={container}>
       <LeftSide>
         <Title>Focus on building your business, not another CMS.</Title>
         <SubText>
-          Keep your focus on building websites for your clients instead on
-          wasting time developing technology around it. Let Webiny be your
-          trusted partner and supercharge your development.
+          Keep your focus on building websites and apps for your clients instead on wasting time developing technology around it.
+        </SubText>
+        <SubText>
+          Get priority support and dedicated deployment by the team behind Webiny.
         </SubText>
       </LeftSide>
       <RightSide>
@@ -96,4 +97,4 @@ export default ({ children, ...props }) => (
       </RightSide>
     </ContentContainer>
   </Hero>
-)
+);

@@ -70,7 +70,7 @@ const SubText = styled ('p') (
     fontSize: theme.fontSize.subText,
     fontWeight: theme.fontWeight.light,
     lineHeight: '25px',
-    marginBottom: 40,
+    marginBottom: 20,
   },
   mq ({
     textAlign: ['center', 'left'],
@@ -110,10 +110,13 @@ export default ({children, ...props}) => (
           Developer-friendly Serverless CMS powered by GraphQL and React
         </Title>
         <SubText data-aos="fade-up" data-aos-delay="500">
-          Webiny is a <SemiBold>serverless open source CMS</SemiBold> that
-          allows you to build websites and web applications, both large and
-          small, by giving you all the parts you need in a single package which
-          is optimized to seamlessly work together in a performant way.
+          Webiny is a <SemiBold>serverless open source CMS</SemiBold>
+        </SubText>
+        <SubText data-aos="fade-up" data-aos-delay="500">
+          Build websites and web applications - both large and small without all the hassle you are used to.
+        </SubText>
+        <SubText data-aos="fade-up" data-aos-delay="500">
+          All the parts you need comes in a single package optimized to seamlessly work together in a performant way.
         </SubText>
         <Button link="/pricing" type="fullWidth">
           Get Started

@@ -54,6 +54,9 @@ export default ({children, ...props}) => (
         website without worries. No tiers, or upgrades required. Everything
         you need is included.
       </SubText>
+      <SubText>
+        Free to use as Open Source or be hassle-free with our cloud package
+      </SubText>
     </ContentContainer>
   </Hero>
 );
