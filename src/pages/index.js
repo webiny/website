@@ -7,6 +7,8 @@ import 'aos/dist/aos.css';
 
 import BaseLayout from '../layouts/base';
 import Hero from '../components/homepage/hero/hero';
+import WebinyUsage
+  from '../components/homepage/what-can-you-do/what-can-you-do';
 import Serverless from '../components/homepage/serverless/serverless';
 import CmsV2 from '../components/homepage/cms-v2/cms';
 import Developers from '../components/homepage/developers/developers';
@@ -56,10 +58,11 @@ class IndexPage extends React.Component {
         description="Webiny is a modern open source content management designed to run in a serverless environment.  Webiny is powered by React, Node and GraphQL.  Webiny features a visual page builder, so you can quickly create stunning web pages."
       >
         <Hero />
-        <Serverless data-aos="fade-up" data-aos-offset="300" />
+        <WebinyUsage />
         <CmsV2 />
         <Developers data-aos="fade-up" />
         <QuickStart data-aos="fade-up" />
+        <Serverless data-aos="fade-up" data-aos-offset="300" />
         <FaqAndSidebar data-aos="fade-up">
           <FaqAndSidebarFaqBox>
             <Faq />
