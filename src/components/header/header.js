@@ -239,7 +239,10 @@ class Header extends React.Component {
                 </a>
               </MenuItem>
               <MenuItem>
-                <Button link="/pricing" type={this.state.isSticky && 'primary'}>
+                <Button
+                  link="https://cloud.webiny.com/"
+                  type={this.state.isSticky && 'primary'}
+                >
                   Get Started
                 </Button>
               </MenuItem>
@@ -291,7 +294,7 @@ class Header extends React.Component {
                   </a>
                 </MobileMenuItem>
                 <MobileMenuItem>
-                  <Button type="primary" link="/pricing">
+                  <Button type="primary" link="https://cloud.webiny.com/">
                     Get Started
                   </Button>
                 </MobileMenuItem>

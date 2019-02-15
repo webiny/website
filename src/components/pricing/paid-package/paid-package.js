@@ -248,7 +248,12 @@ class PaidPackage extends React.Component {
             <ReasonsItem data-tip data-for="auto-scaling">
               Auto scaling using extra usage packages
             </ReasonsItem>
-            <Button className={button} fullWidth={true} type="primary">
+            <Button
+              className={button}
+              fullWidth={true}
+              type="primary"
+              link="https://cloud.webiny.com/"
+            >
               Get Started
               <Arrow alt="Get Started" src={arrow} />
               <br />

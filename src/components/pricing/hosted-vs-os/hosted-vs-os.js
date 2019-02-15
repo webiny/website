@@ -318,7 +318,11 @@ class HostedVsOS extends React.Component {
           </OpenSource>
           <WebinyCloud>
             <h4>Webiny Cloud</h4>
-            <Button fullWidth={true} class={button}>
+            <Button
+              fullWidth={true}
+              class={button}
+              link="https://cloud.webiny.com/"
+            >
               Create my site
               <Arrow alt="Get Started" src={arrow} />
             </Button>

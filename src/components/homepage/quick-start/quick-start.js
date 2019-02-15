@@ -58,10 +58,11 @@ class QuickStart extends React.Component {
         <ContentContainer>
           <Wrapper data-aos="fade-up" data-aos-delay="500">
             <Text>
-              <Bold>Ready to try it out?</Bold> Our quick start tutorial will
-              get you up and running in just few minutes.
+              <Bold>Ready to try it out?</Bold>
+              {' '}
+              Click here to create your Webiny account and website.
             </Text>
-            <Button type="primary" link="/pricing">
+            <Button type="primary" link="https://cloud.webiny.com/">
               Quick Start <Arrow alt="arrow" src={buttonArrow} />
             </Button>
           </Wrapper>

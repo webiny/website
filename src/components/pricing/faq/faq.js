@@ -35,8 +35,16 @@ const howLambda = (
     <p>
       Each request that invokes a Lambda is counted as one request. Usually that's a call to your API, or the Files service to retrieve a file.
       The time from when the request was received, until the time a response is
-      delivered, or request it terminated, is counted as the run time. The run
+      delivered, or request is terminated, is counted as the run time. The run
       time is rounded to the nearest 100ms.
+    </p>
+    <p>
+      For more detail, please see
+      {' '}
+      <a href="https://support.webiny.com/en/article/how-are-lambda-requests-and-run-time-calculated-10gyglr/">
+        this article
+      </a>
+      .
     </p>
   </React.Fragment>
 );
