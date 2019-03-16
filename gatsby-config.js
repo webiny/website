@@ -21,5 +21,17 @@ module.exports = {
         autoLabel: true,
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-35527198-1',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-facebook-pixel',
+      options: {
+        pixelId: '581721448994639',
+      },
+    },
   ],
-}
+};
