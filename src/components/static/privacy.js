@@ -72,7 +72,7 @@ export default ({children, ...props}) => (
           We will collect personal data on this Website only if it is directly provided to us by you the user, e.g. your e-mail address, name, home or work address and telephone number, and therefore has been provided by you with your consent.
         </p>
         <p>
-          We also use analytical and statistical tools that monitor details of your visits to our website and the resources that you access, including, but not limited to, traffic data, location data, weblogs and other communication data (but this data will not identify you personally).
+          We also use analytical and statistical tools that monitor details of your visits to our website and the resources that you access, including, but not limited to, traffic data, location data, weblogs and other communication data.
         </p>
         <p>
           We may collect, use, store and transfer different kinds of personal data about you which we have grouped together follows:
