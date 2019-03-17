@@ -90,9 +90,11 @@ const HeaderContainer = styled("header")(
 );
 
 const headerInnerContainer = css(
-    {},
+    {
+        maxWidth: 1300
+    },
     mq({
-        width: ["100%", 1300]
+        width: ["100%", "95%"]
     })
 );
 

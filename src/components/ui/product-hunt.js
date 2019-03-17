@@ -52,7 +52,10 @@ const Box = styled("div")(
         animationFillMode: "forwards",
         opacity: 0,
         visibility: "hidden",
-        boxSizing: "border-box"
+        boxSizing: "border-box",
+        ".ph-button": {
+            width: 220
+        }
     },
     mq({
         width: ["100%", "260px"]
@@ -98,7 +101,7 @@ class ProductHunt extends React.Component {
                     Hi 👋 do you like Webiny? Don't forget to show us your love on Product Hunt 🚀
                     <br />
                     <br />
-                    <Button type="primary" link="https://producthunt.com/">
+                    <Button className="ph-button" type="primary" link="https://producthunt.com/">
                         Webiny on Product Hunt
                     </Button>
                     <CloseBtn src={closeBtn} onClick={this.closeBox} />
