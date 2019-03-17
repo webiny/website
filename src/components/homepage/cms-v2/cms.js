@@ -3,6 +3,7 @@ import styled from 'react-emotion';
 import theme from '../../utils/theme';
 import mq from '../../utils/breakpoints';
 import ContentContainer from '../../ui/content-container';
+import ModalVideo from 'react-modal-video';
 
 import facebookLogo from './assets/facebook.svg';
 import instagramLogo from './assets/instagram.svg';
@@ -21,6 +22,7 @@ import layoutIcon from './assets/round-view_quilt-24px.svg';
 import plugIcon from './assets/plug-solid.svg';
 import cropRotateIcon from './assets/baseline-crop_rotate-24px.svg';
 import cloudIcon from './assets/baseline-cloud_queue-24px.svg';
+import videoPlayIcon from './assets/round-play_circle_outline-24px.svg';
 
 import visualBuilderImg from './assets/webiny-cms-visual-page-builder.png';
 import buildingBlocksImg from './assets/webiny-cms-building-blocks.png';
@@ -210,7 +212,34 @@ const Cell = styled ('div') (
   })
 );
 
+const PlayVideoLink = styled ('div') ({
+  cursor: 'pointer',
+  color: theme.color.primaryDark,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'flex-start',
+  '&:hover': {
+    textDecoration: 'underline',
+  },
+  img: {
+    height: 24,
+    marginRight: 10,
+  },
+});
+
 class Cms extends React.Component {
+  constructor () {
+    super ();
+    this.state = {
+      isOpen: false,
+    };
+    this.openModal = this.openModal.bind (this);
+  }
+
+  openModal () {
+    this.setState ({isOpen: true});
+  }
+
   render () {
     return (
       <CmsContainer>
@@ -240,6 +269,9 @@ class Cms extends React.Component {
                 pages and present your content in the way it deserves. Your
                 users will thank you.
               </p>
+              <PlayVideoLink onClick={this.openModal}>
+                <img src={videoPlayIcon} /> See it in action (12MIN)
+              </PlayVideoLink>
             </Cell>
           </Grid>
           <Grid>
@@ -472,6 +504,13 @@ class Cms extends React.Component {
             many more to come + you can build your own
           </PluginsSubTitle>
         </GalleryContainer>
+        <ModalVideo
+          channel="youtube"
+          autoplay={1}
+          isOpen={this.state.isOpen}
+          videoId="xpnshYqF3XU"
+          onClose={() => this.setState ({isOpen: false})}
+        />
       </CmsContainer>
     );
   }
