@@ -390,7 +390,7 @@ class Cms extends React.Component {
               <h3>Images - First Class Citizens</h3>
               <p>
                 Images are an important part of every website. They add a
-                colorful dynamic to pages, and peak visitors interest. To
+                colorful dynamic to pages, and pique visitors interest. To
                 properly support images, having simple mechanisms like uploading
                 and just displaying an image are not enough.
                 <br />
