@@ -44,7 +44,9 @@ const SidebarBox = styled ('div') (
 
 class IndexPage extends React.Component {
   componentDidMount () {
-    AOS.init ();
+    AOS.init ({
+      once: true,
+    });
   }
 
   componentDidUpdate () {
