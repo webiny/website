@@ -61,10 +61,11 @@ class IndexPage extends React.Component {
       >
         <Hero />
         <WebinyUsage />
+        <Serverless data-aos="fade-up" />
         <CmsV2 />
         <Developers data-aos="fade-up" />
         <QuickStart data-aos="fade-up" />
-        <Serverless data-aos="fade-up" />
+
         <FaqAndSidebar data-aos="fade-up">
           <FaqAndSidebarFaqBox>
             <Faq />

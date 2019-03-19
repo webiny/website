@@ -19,13 +19,19 @@ const fadeAnim = keyframes`
     }
 `;
 
-const Wrapper = styled("div")({
-    position: "fixed",
-    bottom: 25,
-    zIndex: 1000,
-    left: 25,
-    textAlign: "center"
-});
+const Wrapper = styled("div")(
+    {
+        position: "fixed",
+        zIndex: 1000,
+        textAlign: "center"
+    },
+    mq({
+        display: ["none", "block"],
+        left: [0, 25],
+        padding: [15, 0],
+        bottom: [40, 25]
+    })
+);
 
 const Box = styled("div")(
     {
@@ -45,10 +51,14 @@ const Box = styled("div")(
         animation: "5s " + fadeAnim,
         animationFillMode: "forwards",
         opacity: 0,
-        visibility: "hidden"
+        visibility: "hidden",
+        boxSizing: "border-box",
+        ".ph-button": {
+            width: 220
+        }
     },
     mq({
-        width: ["95%", "260px"]
+        width: ["100%", "260px"]
     })
 );
 
@@ -91,7 +101,7 @@ class ProductHunt extends React.Component {
                     Hi 👋 do you like Webiny? Don't forget to show us your love on Product Hunt 🚀
                     <br />
                     <br />
-                    <Button type="primary" link="https://producthunt.com/">
+                    <Button className="ph-button" type="primary" link="https://producthunt.com/">
                         Webiny on Product Hunt
                     </Button>
                     <CloseBtn src={closeBtn} onClick={this.closeBox} />

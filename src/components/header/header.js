@@ -90,9 +90,14 @@ const HeaderContainer = styled ('header') (
 );
 
 const headerInnerContainer = css (
-  {},
+  {
+    maxWidth: 1300,
+    width: '100%',
+    boxSizing: 'border-box',
+  },
   mq ({
-    width: ['100%', 1300],
+    width: ['100%', '100%'],
+    padding: [0, '0 5px', 0],
   })
 );
 
@@ -274,19 +279,19 @@ class Header extends React.Component {
                   </Link>
                 </MobileMenuItem>
                 <MobileMenuItem>
-                  <Link className={link} to="https://docs.webiny.com/">
+                  <a className={link} href="https://docs.webiny.com/">
                     Docs
-                  </Link>
+                  </a>
                 </MobileMenuItem>
                 <MobileMenuItem>
-                  <Link className={link} to="https://community.webiny.com/">
+                  <a className={link} href="https://community.webiny.com/">
                     Community
-                  </Link>
+                  </a>
                 </MobileMenuItem>
                 <MobileMenuItem>
-                  <Link className={link} to="https://blog.webiny.com/">
+                  <a className={link} href="https://blog.webiny.com/">
                     Blog
-                  </Link>
+                  </a>
                 </MobileMenuItem>
                 <MobileMenuItem>
                   <a className={link} href="https://support.webiny.com/">
