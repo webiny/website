@@ -91,7 +91,7 @@ const HeaderContainer = styled ('header') (
 
 const headerInnerContainer = css (
   {
-    maxWidth: 1300,
+    maxWidth: 1200,
     width: '100%',
     boxSizing: 'border-box',
   },
@@ -245,6 +245,14 @@ class Header extends React.Component {
               </MenuItem>
               <MenuItem>
                 <Button
+                  link="/contact-us"
+                  type={this.state.isSticky ? 'outlineDark' : 'outline'}
+                >
+                  Talk to us
+                </Button>
+              </MenuItem>
+              <MenuItem>
+                <Button
                   link="https://cloud.webiny.com/"
                   type={this.state.isSticky && 'primary'}
                 >
@@ -298,6 +306,12 @@ class Header extends React.Component {
                     Support
                   </a>
                 </MobileMenuItem>
+                <MobileMenuItem>
+                  <Button link="/contact-us" type="outlineDark">
+                    Talk to us
+                  </Button>
+                </MobileMenuItem>
+
                 <MobileMenuItem>
                   <Button type="primary" link="https://cloud.webiny.com/">
                     Get Started

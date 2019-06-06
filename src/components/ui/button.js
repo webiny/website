@@ -6,7 +6,9 @@ import Link from 'gatsby-link';
 
 const buttonDefault = css (
   {
-    display: 'inline-block',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     marginRight: 0,
     marginLeft: 0,
     padding: '14px 20px',
@@ -77,6 +79,22 @@ const buttonDark = css ({
   textTransform: 'uppercase',
 });
 
+const buttonOutline = css ({
+  backgroundColor: 'transparent',
+  color: theme.color.white,
+  textTransform: 'uppercase',
+  border: 'solid 2px #fff',
+  padding: '12px 20px',
+});
+
+const buttonOutlineDark = css ({
+  backgroundColor: 'transparent',
+  color: theme.color.dark,
+  textTransform: 'uppercase',
+  border: 'solid 2px ' + theme.color.dark,
+  padding: '12px 20px',
+});
+
 class Button extends React.Component {
   styles = {
     fullWidth: buttonFullWidthStyle,
@@ -84,6 +102,8 @@ class Button extends React.Component {
     secondary: buttonSecondary,
     default: buttonDefault,
     dark: buttonDark,
+    outline: buttonOutline,
+    outlineDark: buttonOutlineDark,
   };
 
   render () {
@@ -102,14 +122,13 @@ class Button extends React.Component {
     }
 
     if (this.props.hasOwnProperty ('link')) {
-
-      if(this.props.link.startsWith('http')){
+      if (this.props.link.startsWith ('http')) {
         return (
           <a href={this.props.link} className={style}>
             {this.props.children}
           </a>
         );
-      }else{
+      } else {
         return (
           <Link to={this.props.link} className={style}>
             {this.props.children}

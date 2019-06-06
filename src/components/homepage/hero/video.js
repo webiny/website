@@ -87,7 +87,7 @@ class Video extends React.Component {
         <VideoWrapper onClick={this.openModal}>
           <VideoImage src={videoBg} />
           <PlayButtonWrapper>
-            <img src={playIcon} />
+            <img height="75" src={playIcon} />
           </PlayButtonWrapper>
         </VideoWrapper>
         <ModalVideo
