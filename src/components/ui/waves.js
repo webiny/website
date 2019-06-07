@@ -1,40 +1,56 @@
-import React from 'react';
-import {css, keyframes} from 'emotion';
+import React from "react";
+import { css, keyframes } from "emotion";
 
-const wrapper = css`
+import waveBg from "./assets/wave.svg";
+
+const animSpeed = "60s";
+
+const ocean = css`
+    height: 5%;
     width: 100%;
-    height: 150px;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 5px;
-    background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
-    overflow: hidden;
+    bottom: -120px;
+    left: 0;
+    background: #015871;
 `;
 
-const waveAnim = keyframes`
-    from { transform: rotate(0deg);}
-    from { transform: rotate(360deg);}
-`;
+const animWave = keyframes`
+0% {
+  margin-left: 0;
+}
+100% {
+  margin-left: -1600px;
+}`;
+
+const animSwell = keyframes`
+0%, 100% {
+  transform: translate3d(0,-25px,0);
+}
+50% {
+  transform: translate3d(0,5px,0);
+}`;
 
 const wave = css`
-    width: 1000px;
-    height: 1025px;
+    background: url(${waveBg}) repeat-x;
     position: absolute;
-    top: -25%;
-    left: 50%;
-    margin-left: -500px;
-    margin-top: -500px;
-    border-radius: 35%;
-    background: rgba(255, 255, 255, .75);
-    animation: ${waveAnim} 15s infinite linear;
+    top: -198px;
+    width: 6400px;
+    height: 198px;
+    animation: ${animWave} ${animSpeed} cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    transform: translate3d(0, 0, 0);
+    &:nth-of-type(2) {
+        top: -175px;
+        animation: ${animWave} ${animSpeed} cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+            ${animSwell} ${animSpeed} ease -1.25s infinite;
+        opacity: 1;
+    }
 `;
 
-export default ({children, ...props}) => (
-  <React.Fragment>
-    <div className={wrapper}>
-      <div class={wave} />
-    </div>
-  </React.Fragment>
+export default ({ children, ...props }) => (
+    <React.Fragment>
+        <div className={ocean}>
+            <div className={wave} />
+            <div className={wave} />
+        </div>
+    </React.Fragment>
 );

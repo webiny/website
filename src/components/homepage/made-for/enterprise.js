@@ -7,7 +7,6 @@ import Wave from "../../ui/waves";
 import Button from "../../ui/button";
 
 import bullet from "./assets/bullet.svg";
-import arrow from "./assets/gs-btn-arrow.svg";
 
 const List = styled("ul")({
     boxSizing: "border-box",
@@ -81,33 +80,31 @@ const Arrow = styled("img")({
 
 export default ({ children, ...props }) => (
     <React.Fragment>
-        <Title>Frontend, backend, full stack, ninja</Title>
+        <Title>Enterprises</Title>
         <SubText>
-            No matter your role, we will equip you with all the tools, knowledge and support you
-            need to get started with your next project.
+            Standardize and bring together how your websites, applications, and APIs are developed.
+            Empower your developers and make them more productive at their work.
         </SubText>
         <List>
             <ListItem>
-                <Bold>Documented</Bold> - Our <a href="https://docs.webiny.com/">docs</a> portal has
-                tutorials for beginners and more advance coders.
+                <Bold>Governance</Bold> - Control which teams have access to which properties. Fence
+                off production access from staging and other environments.
             </ListItem>
             <ListItem>
-                <Bold>Customizable</Bold> - Webiny is meant to be built upon, adapt everything from
-                the UI to the API.
+                <Bold>Dedicate deployment</Bold> - A deployment with no other tenants. Ability to
+                choose from any of the AWS regions, or use your own.
             </ListItem>
             <ListItem>
-                <Bold>Open source</Bold> - There are not magic black boxes here. Our code is
-                available on <a href="https://github.com/webiny/webiny-js">GitHub</a>
-                .
-            </ListItem>
-            <ListItem>
-                <Bold>100% JavaScript</Bold> - Just one language is all you need to know.
+                <Bold>Cost & Scalability</Bold> - Embrace the benefits of serverless, with almost
+                instant scale outs and tremendous cost savings, when compared to a traditional VPS.
             </ListItem>
         </List>
         <Buttons>
-            <Button className={ctaButton} link="/developer" type="outlineDark">
-                See all developer features
-                <Arrow alt="Get Started" src={arrow} />
+            <Button className={ctaButton} link="/enterprise" type="outlineDark">
+                See all enterprise features
+            </Button>
+            <Button className={ctaButton} link="/contact-us" type="dark">
+                Talk to us
             </Button>
         </Buttons>
         <Wave />

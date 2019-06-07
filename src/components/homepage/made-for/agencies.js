@@ -7,7 +7,6 @@ import Wave from "../../ui/waves";
 import Button from "../../ui/button";
 
 import bullet from "./assets/bullet.svg";
-import arrow from "./assets/gs-btn-arrow.svg";
 
 const List = styled("ul")({
     boxSizing: "border-box",
@@ -81,33 +80,33 @@ const Arrow = styled("img")({
 
 export default ({ children, ...props }) => (
     <React.Fragment>
-        <Title>Frontend, backend, full stack, ninja</Title>
+        <Title>Digital agencies</Title>
         <SubText>
-            No matter your role, we will equip you with all the tools, knowledge and support you
-            need to get started with your next project.
+            We know what it means to operate an agency. We have been running one ourselves for
+            several years. This showed us that agencies need more than just a new technology. They
+            want one where they can talk to real humans behind it.
         </SubText>
         <List>
             <ListItem>
-                <Bold>Documented</Bold> - Our <a href="https://docs.webiny.com/">docs</a> portal has
-                tutorials for beginners and more advance coders.
+                <Bold>Partnership</Bold> - You will be treated as a partner, we know your business
+                relies on us.
             </ListItem>
             <ListItem>
-                <Bold>Customizable</Bold> - Webiny is meant to be built upon, adapt everything from
-                the UI to the API.
+                <Bold>Time to market</Bold> - Webiny will get you faster to a finished project.
+                Customers, and your margins, will love it.
             </ListItem>
             <ListItem>
-                <Bold>Open source</Bold> - There are not magic black boxes here. Our code is
-                available on <a href="https://github.com/webiny/webiny-js">GitHub</a>
-                .
-            </ListItem>
-            <ListItem>
-                <Bold>100% JavaScript</Bold> - Just one language is all you need to know.
+                <Bold>All inclusive</Bold> - We aim to provide a premium service to our partners.
+                With Webiny everything is included, from hosting, training, consultation, priority
+                support and much more.
             </ListItem>
         </List>
         <Buttons>
-            <Button className={ctaButton} link="/developer" type="outlineDark">
-                See all developer features
-                <Arrow alt="Get Started" src={arrow} />
+            <Button className={ctaButton} link="/agency" type="outlineDark">
+                See all agency features
+            </Button>
+            <Button className={ctaButton} link="/contact-us" type="dark">
+                Talk to us
             </Button>
         </Buttons>
         <Wave />
