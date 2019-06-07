@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="350px" height="304px" viewBox="0 0 350 304" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Home-v1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.05">
+        <g id="Main-page" transform="translate(-602.000000, -2790.000000)" fill="#131313" fill-rule="nonzero">
+            <g id="Webiny-platform" transform="translate(72.000000, 2388.000000)">
+                <g id="Webiny-CLI" transform="translate(530.000000, 402.000000)">
+                    <g id="blob-shape-(6)" transform="translate(0.000000, -0.000000)">
+                        <path d="M284.353234,55.8955224 C324.228856,91.7661692 358.445274,146.355721 348.084577,190.410448 C337.723881,234.465174 282.873134,267.985075 229.415423,287.052239 C176.044776,306.032338 123.9801,310.472637 85.2363184,290.621891 C46.4925373,270.68408 20.8955224,226.542289 8.44527363,177.699005 C-4.00497512,128.855721 -3.30845771,75.39801 22.9850746,42.6616915 C49.278607,10.0124378 101.256219,-2.00248756 150.099502,0.52238806 C198.855721,3.13432836 244.477612,20.1119403 284.353234,55.8955224 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

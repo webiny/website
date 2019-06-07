@@ -1,4 +1,5 @@
 import React from 'react';
+import {Transition} from 'react-transition-group';
 import ContentContainer from './content-container';
 import styled from 'react-emotion';
 import theme from '../utils/theme';
@@ -96,14 +97,28 @@ const TabsContentContainer = styled ('div') (
     position: 'relative',
   },
   mq ({
-    width: ['100%', 750],
+    width: ['100%', 850],
     height: ['auto', 550],
     marginTop: ['0', 20],
   })
 );
 
+const defaultStyle = {
+  transform: 'translateX(200px)',
+  opacity: 0,
+  transitionProperty: 'transform, opacity',
+  transitionTimingFunction: 'cubic-bezier(0, 0, .2, 1)',
+  transitionDuration: '225ms',
+  willChange: 'opacity, transform',
+};
+
+const transitionStyles = {
+  entering: {transform: 'translateX(200px)', opacity: 0},
+  entered: {transform: 'translateX(0px)', opacity: 1},
+};
+
 class Tabs extends React.Component {
-  state = {items: [], activeItem: 0, width: 0};
+  state = {items: [], activeItem: 0, width: 0, isShown: true};
 
   setItems = items => {
     this.setState ({items});
@@ -118,7 +133,13 @@ class Tabs extends React.Component {
   }
 
   setActiveItem = index => {
-    this.setState ({activeItem: index});
+    if (!this.state.isShown) {
+      this.setState ({activeItem: index, isShown: true});
+    } else {
+      this.setState ({isShown: false}, () => {
+        this.setActiveItem (index);
+      });
+    }
   };
 
   renderDesktop = () => {
@@ -141,9 +162,15 @@ class Tabs extends React.Component {
               );
             })}
           </TabsMenu>
-          <TabsContentContainer>
-            {this.state.items[this.state.activeItem].content}
-          </TabsContentContainer>
+          <Transition in={this.state.isShown} timeout={250} appear={true}>
+            {state => (
+              <TabsContentContainer
+                style={{...defaultStyle, ...transitionStyles[state]}}
+              >
+                {this.state.items[this.state.activeItem].content}
+              </TabsContentContainer>
+            )}
+          </Transition>
         </TabsContainer>
       </ContentContainer>
     );

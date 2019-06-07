@@ -11,8 +11,23 @@ const SubTitle = styled ('h2') ({
   textAlign: 'center',
   paddingTop: 50,
   marginTop: 25,
-  marginBottom: 75,
+  marginBottom: 10,
 });
+
+const SubText = styled ('p') (
+  {
+    fontSize: theme.fontSize.h3,
+    fontWeight: theme.fontWeight.regular,
+    color: theme.color.black,
+    textAlign: 'center',
+    margin: '0 20%',
+    lineHeight: '150%',
+    maxWidth: 680,
+  },
+  mq ({
+    margin: ['20px', '0 auto 75px auto'],
+  })
+);
 
 const Grid = styled ('div') (
   {
@@ -32,11 +47,15 @@ const Grid = styled ('div') (
 
 const Cell = styled ('div') (
   {
+    backgroundColor: theme.color.white,
+    boxShadow: '0 2px 4px 0 rgba(125,69,69,0.50)',
+    borderRadius: 2,
+    padding: '0 25px 10px 25px',
+    alignItems: 'center',
     boxSizing: 'border-box',
     textAlign: 'center',
     flexBasis: '100%',
     borderBottom: '5px solid ' + theme.color.primaryDark,
-    borderRadius: 5,
     marginRight: 40,
     display: 'flex',
     flexDirection: 'row',
@@ -53,7 +72,7 @@ const Number = styled ('h3') ({
   fontSize: 96,
   width: 100,
   lineHeight: '100px',
-  marginBottom: 20,
+  marginBottom: 0,
   marginTop: 0,
   textAlign: 'left',
   marginLeft: 10,
@@ -65,7 +84,7 @@ const Text = styled ('p') ({
   textAlign: 'left',
   fontWeight: theme.fontWeight.semiBold,
   marginTop: 5,
-  marginBottom: 20,
+  marginBottom: 0,
   '.orange': {
     color: theme.color.primaryDark,
   },
@@ -76,6 +95,9 @@ class Serverless extends React.Component {
     return (
       <section {...this.props}>
         <SubTitle>What you can do with Webiny</SubTitle>
+        <SubText>
+          Because the technology powering our CMS is designed to handle all kinds of challenges and uses-cases, you can use it to build much more than just websites.
+        </SubText>
 
         <ContentContainer>
           <Grid>

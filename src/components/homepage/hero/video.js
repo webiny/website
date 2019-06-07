@@ -10,24 +10,25 @@ import videoBg from './assets/webiny-video-bg.jpg';
 import playIcon from './assets/play-button.svg';
 import './assets/modal-video.min.css';
 
-const pulse = keyframes`
-  0% {
-    box-shadow: 0 0 0 0 rgba(0,204,176, 0.4);
-  }
-  70% {
-      box-shadow: 0 0 0 30px rgba(0,204,176, 0);
-  }
-  100% {
-      box-shadow: 0 0 0 0 rgba(0,204,176, 0);
-  }
+const float = keyframes`
+0% {
+  
+  transform: translatey(0px);
+}
+50% {
+  transform: translatey(-20px);
+}
+100% {
+  transform: translatey(0px);
+}
 `;
 
 const VideoImage = styled ('img') ({
   width: '100%',
   border: '1px solid #E6E6E6',
-  boxShadow: '0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3)',
   borderRadius: 5,
   //opacity: '0.7',
+  boxShadow: '0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3)',
   cursor: 'pointer',
   transition: 'opacity 0.3s',
 });
@@ -61,6 +62,8 @@ const VideoWrapper = styled ('div') ({
   position: 'relative',
   width: '100%',
   height: '100%',
+  transform: 'translateY(0)',
+  animation: float + ' 12s ease-in-out infinite',
   '&:hover': {
     [PlayButtonWrapper]: {
       opacity: 1,
