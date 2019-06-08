@@ -24,6 +24,7 @@
     "react": "^16.4.1",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.4.1",
+    "react-easy-swipe": "^0.0.17",
     "react-emotion": "^9.2.5",
     "react-helmet": "^5.2.0",
     "react-modal-video": "^1.2.1",

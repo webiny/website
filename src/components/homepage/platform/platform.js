@@ -3,8 +3,10 @@ import styled from 'react-emotion';
 import {css} from 'emotion';
 import theme from '../../utils/theme';
 import mq from '../../utils/breakpoints';
+import Link from 'gatsby-link';
 import ContentContainer from '../../ui/content-container';
 
+import rightArrow from './assets/arrow-right-solid.svg';
 import background from './assets/platform-bg.svg';
 import box1Bg from './assets/platform-bg-1.svg';
 import box2Bg from './assets/platform-bg-2.svg';
@@ -19,7 +21,7 @@ const wrapperClass = css (
     backgroundColor: ['#7B39D9', '#F7F7F7'],
     marginTop: [0, 0],
     paddingTop: [0, 120],
-    paddingBottom: [0, 100],
+    paddingBottom: [0, 50],
   })
 );
 
@@ -127,6 +129,17 @@ const Cell = styled ('div') (
   })
 );
 
+const linkStyle = css ({
+  color: theme.color.white,
+  fontWeight: theme.fontWeight.bold,
+  fontSize: 18,
+});
+
+const Arrow = styled ('img') ({
+  height: 9,
+  marginLeft: 5,
+});
+
 class Platform extends React.Component {
   render () {
     return (
@@ -164,6 +177,14 @@ class Platform extends React.Component {
                 {' '}
                 You can use our GraphQL API to programmatically control and manage your content.
               </p>
+            </Cell>
+          </Grid>
+          <Grid>
+            <Cell style={{textAlign: 'center', marginTop: 25, minHeight: 50}}>
+              <Link className={linkStyle} to="/features/platform">
+                Learn more about the platform
+                <Arrow src={rightArrow} />
+              </Link>
             </Cell>
           </Grid>
         </ContentContainer>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="46px" viewBox="0 0 27 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Testimonial-03" transform="translate(-106.000000, -412.000000)" fill="#A5A5A5" fill-rule="nonzero">
+            <g id="nextBtn" transform="translate(119.500000, 435.500000) scale(-1, 1) translate(-119.500000, -435.500000) translate(106.000000, 412.000000)">
+                <g id="chevron" transform="translate(0.483333, 0.011869)">
+                    <path d="M18.0511054,22.8353535 L1.161373,5.23588304 C-0.0330573899,3.99126046 0.0446438624,2.0482803 1.3349236,0.896115395 C2.62520334,-0.256049511 4.63945888,-0.181097754 5.83388927,1.06352483 L24.7256709,20.7491744 C25.8554804,21.9264606 25.8554804,23.7442465 24.7256709,24.9215326 L5.83388927,44.6071822 C4.63945888,45.8518048 2.62520334,45.9267566 1.3349236,44.7745917 C0.0446438624,43.6224268 -0.0330573899,41.6794466 1.161373,40.434824 L18.0511054,22.8353535 Z" id="Combined-Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

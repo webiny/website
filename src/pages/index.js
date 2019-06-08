@@ -10,6 +10,7 @@ import WebinyUsage
 import QuickStart from '../components/homepage/quick-start/quick-start';
 import Components from '../components/homepage/components/components';
 import Platform from '../components/homepage/platform/platform';
+import CaseStudies from '../components/homepage/case-studies/case-studies';
 
 class IndexPage extends React.Component {
   componentDidMount () {
@@ -30,6 +31,7 @@ class IndexPage extends React.Component {
       >
         <Hero />
         <WebinyUsage />
+        <CaseStudies />
         <MadeFor />
         <Components />
         <Platform />
