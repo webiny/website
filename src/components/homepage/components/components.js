@@ -117,11 +117,11 @@ const Cell = styled ('div') (
     },
   },
   mq ({
-    marginRight: [0, 50],
+    marginRight: [0, 25],
     textAlign: ['center', 'left'],
     '&:last-child': {
       marginRight: ['0 !important', '0 !important'],
-      marginLeft: ['0 !important', '50px !important'],
+      marginLeft: ['0 !important', '25px !important'],
     },
     '.image': {
       border: '1px solid #E6E6E6',
@@ -199,6 +199,17 @@ const PluginsLogo = styled ('img') (
   })
 );
 
+const ComingSoon = styled ('div') ({
+  fontSize: 10,
+  textTransform: 'uppercase',
+  color: theme.color.grayText,
+  backgroundColor: theme.color.darkGray,
+  borderRadius: 5,
+  padding: '2px 5px',
+  marginTop: 2,
+  marginLeft: 10,
+});
+
 const linkStyle = css ({
   color: theme.color.primaryDark,
   fontWeight: theme.fontWeight.bold,
@@ -243,7 +254,7 @@ class Components extends React.Component {
             </Cell>
             <Cell>
               <img className={'image-small'} src={formBuilderSrc} />
-              <h3>Form Builder</h3>
+              <h3>Form Builder <ComingSoon>Coming Soon</ComingSoon></h3>
               <p>
                 The perfect companion module for when you need to create forms and capture leads.
                 {' '}

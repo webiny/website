@@ -129,6 +129,17 @@ const Cell = styled ('div') (
   })
 );
 
+const ComingSoon = styled ('div') ({
+  fontSize: 10,
+  textTransform: 'uppercase',
+  color: theme.color.black,
+  backgroundColor: theme.color.darkGray,
+  borderRadius: 5,
+  padding: '2px 5px',
+  marginTop: 2,
+  marginLeft: 10,
+});
+
 const linkStyle = css ({
   color: theme.color.white,
   fontWeight: theme.fontWeight.bold,
@@ -171,7 +182,7 @@ class Platform extends React.Component {
               </p>
             </Cell>
             <Cell style={{backgroundImage: 'url(' + box2Bg + ')'}}>
-              <h3>Headless</h3>
+              <h3>Headless <ComingSoon>Coming Soon</ComingSoon></h3>
               <p>
                 Although Webiny has a visual page builder and a client-side, Webiny also features a headless module.
                 {' '}

@@ -31,6 +31,7 @@ const Hero = styled ('section') (
     backgroundSize: 'cover',
     color: '#fff',
     boxSizing: 'border-box',
+    backgroundColor: theme.color.lightGray,
   },
   mq ({
     textAlign: ['center', 'left'],
