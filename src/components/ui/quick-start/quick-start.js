@@ -59,6 +59,7 @@ class QuickStart extends React.Component {
           <Wrapper>
             <Text>
               <Bold>Ready to try it out?</Bold>
+              {' '}
               Let's start by creating your first website. It's only gonna take a minute.
             </Text>
             <Button type="primary" link="/pricing">
