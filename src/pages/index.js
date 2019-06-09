@@ -7,7 +7,7 @@ import Hero from '../components/homepage/hero/hero';
 import MadeFor from '../components/homepage/made-for/made-for';
 import WebinyUsage
   from '../components/homepage/what-can-you-do/what-can-you-do';
-import QuickStart from '../components/homepage/quick-start/quick-start';
+import QuickStart from '../components/ui/quick-start/quick-start';
 import Components from '../components/homepage/components/components';
 import Platform from '../components/homepage/platform/platform';
 import CaseStudies from '../components/homepage/case-studies/case-studies';

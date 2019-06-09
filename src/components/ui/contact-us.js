@@ -5,7 +5,7 @@ import {css} from 'emotion';
 import mq from '../utils/breakpoints';
 import Button from './button';
 
-import arrow from './assets/gs-btn-arrow.svg';
+import arrow from './assets/contact-us-arrow.svg';
 
 const BoxWrapper = styled ('div') ({
   position: 'relative',
@@ -63,6 +63,7 @@ const Textarea = styled ('textarea') ({
 
 const button = css (
   {
+    margin: '0 auto !important',
     boxShadow: '0 2px 3px 0 rgba(160,160,160,0.50)',
     '> img': {
       marginLeft: 10,

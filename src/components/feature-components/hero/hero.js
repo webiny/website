@@ -6,8 +6,8 @@ import mq from '../../utils/breakpoints';
 import Button from '../../ui/button';
 import ContentContainer from '../../ui/content-container';
 
-import heroBg from './assets/agency-hero-bg.svg';
-import superhero from './assets/undraw_business_deal_cpi9.svg';
+import heroBg from './assets/hero-bg.svg';
+import heroImage from './assets/man.svg';
 import bullet from './assets/bullet.svg';
 import arrowImg from './assets/gs-btn-arrow.svg';
 
@@ -15,6 +15,7 @@ const Hero = styled ('section') (
   {
     width: '100%',
     background: 'url(' + heroBg + ') no-repeat center top',
+    backgroundColor: theme.color.lightGray,
     color: '#fff',
     boxSizing: 'border-box',
     textAlign: 'center',
@@ -22,9 +23,9 @@ const Hero = styled ('section') (
   mq ({
     padding: ['100px 20px 25px', '150px 0 25px'],
     height: ['auto', 'calc(100vh - 150px)'],
-    minHeight: ['auto', 700],
+    minHeight: ['auto', 650],
     maxHeight: ['auto', 768],
-    marginBottom: [50, 100],
+    marginBottom: [0, 0],
     backgroundSize: ['cover'],
     backgroundPosition: ['top', 'top', 'bottom'],
   })
@@ -53,19 +54,7 @@ const RightSide = styled ('div') (
   {},
   mq ({
     textAlign: ['center', 'right'],
-    width: ['100%', 750],
-  })
-);
-
-const SubText = styled ('p') (
-  {
-    fontSize: theme.fontSize.subText,
-    fontWeight: theme.fontWeight.light,
-    lineHeight: '25px',
-    marginBottom: 40,
-  },
-  mq ({
-    textAlign: ['center', 'left'],
+    width: ['100%', '100%'],
   })
 );
 
@@ -77,9 +66,10 @@ const container = css (
 );
 
 const Image = styled ('img') (
-  {},
   mq ({
-    width: [300, 550],
+    width: [250, '100%'],
+    paddingRight: [0, 0],
+    height: ['auto', 550],
   })
 );
 
@@ -117,37 +107,35 @@ export default ({children, ...props}) => (
   <Hero {...props}>
     <ContentContainer className={container}>
       <LeftSide>
-        <Title>Digital Agencies & Partners</Title>
-        <SubText>
-          Focus on building your business, not another CMS. Let's join forces and ship product faster.
-        </SubText>
+        <Title>Webiny Components</Title>
         <List>
           <ListItem>
-            <Bold>Partnership</Bold>
-            {' '}
-            - You will be treated as a partner, we know your business
-            relies on us.
+            <Bold>Visual Website Builder</Bold>
+            - Build pages by using a powerful drag&drop interface.
           </ListItem>
           <ListItem>
-            <Bold>Time to market</Bold>
+            <Bold>Building Blocks</Bold>
             {' '}
-            - Webiny will get you faster to a finished project.
-            Customers, and your margins, both will benefit.
+            - Over 50 predefined content blocks with common design patterns come included.
           </ListItem>
           <ListItem>
-            <Bold>All inclusive</Bold>
+            <Bold>Image Editor</Bold>
             {' '}
-            - We aim to provide a premium service to our partners ensuring each project is a success.
+            - Using the included image editor you can manipulate your images.
+          </ListItem>
+          <ListItem>
+            <Bold>File Manager</Bold>
+            {' '}
+            - Upload, organise and search your files.
           </ListItem>
         </List>
-        <Button link="/contact-us" type="dark">
-          Let's talk
+        <Button link="/pricing" type="dark">
+          Get Started
           <Arrow src={arrowImg} />
         </Button>
-
       </LeftSide>
       <RightSide>
-        <Image src={superhero} alt="Agency Superhero" />
+        <Image src={heroImage} alt="Webiny Components" />
       </RightSide>
     </ContentContainer>
   </Hero>

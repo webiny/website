@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'react-emotion';
 
-import theme from '../../../utils/theme';
-import mq from '../../../utils/breakpoints';
-import ContentContainer from '../../../ui/content-container';
+import theme from '../../utils/theme';
+import mq from '../../utils/breakpoints';
+import ContentContainer from '../../ui/content-container';
 
 import serverlessIcon from '../assets/serverless-icon.svg';
 //import testCoverageIcon from '../assets/test-coverage-icon.svg';
@@ -120,7 +120,7 @@ class Features extends React.Component {
       <ContentContainer>
         <SubTitle>Features</SubTitle>
         <BoxContainer>
-          <Box data-aos="fade-up" data-aos-delay="150" data-aos-offset="300">
+          <Box>
             <BoxIcon src={serverlessIcon} />
             <BoxTitle>Serverless</BoxTitle>
             <BoxDescription>
@@ -129,7 +129,7 @@ class Features extends React.Component {
               developing your app instead of managing servers and other resources.
             </BoxDescription>
           </Box>
-          <Box data-aos="fade-up" data-aos-delay="300" data-aos-offset="300">
+          <Box>
             <BoxIcon src={craIcon} />
             <BoxTitle>CRA v2</BoxTitle>
             <BoxDescription>
@@ -138,7 +138,7 @@ class Features extends React.Component {
               started with Webiny will be a familiar experience from the start.
             </BoxDescription>
           </Box>
-          <Box data-aos="fade-up" data-aos-delay="450" data-aos-offset="300">
+          <Box>
             <BoxIcon src={graphqlIcon} />
             <BoxTitle>GraphQL</BoxTitle>
             <BoxDescription>
@@ -157,7 +157,7 @@ class Features extends React.Component {
           </Box>
         </BoxContainer>
         <BoxContainer>
-          <Box data-aos="fade-up" data-aos-delay="150" data-aos-offset="300">
+          <Box>
             <BoxIcon src={uiComponentsIcon} />
             <BoxTitle>UI Components</BoxTitle>
             <BoxDescription>
@@ -174,7 +174,7 @@ class Features extends React.Component {
             </BoxFooter>
             */}
           </Box>
-          <Box data-aos="fade-up" data-aos-delay="300" data-aos-offset="300">
+          <Box>
             <BoxIcon src={documentedIcon} />
             <BoxTitle>Documented</BoxTitle>
             <BoxDescription>
@@ -188,7 +188,7 @@ class Features extends React.Component {
             </BoxFooter>
              */}
           </Box>
-          <Box data-aos="fade-up" data-aos-delay="450" data-aos-offset="300">
+          <Box>
             <BoxIcon src={openSourceIcon} />
             <BoxTitle>Open Source</BoxTitle>
             <BoxDescription>
@@ -205,7 +205,7 @@ class Features extends React.Component {
           </Box>
         </BoxContainer>
         <BoxContainer>
-          <Box data-aos="fade-up" data-aos-delay="150" data-aos-offset="300">
+          <Box>
             <BoxIcon src={visualBuilderIcon} />
             <BoxTitle>Visual Builder</BoxTitle>
             <BoxDescription>
@@ -222,7 +222,7 @@ class Features extends React.Component {
             </BoxFooter>
             */}
           </Box>
-          <Box data-aos="fade-up" data-aos-delay="300" data-aos-offset="300">
+          <Box>
             <BoxIcon src={materialThemeIcon} />
             <BoxTitle>Theme</BoxTitle>
             <BoxDescription>
@@ -239,7 +239,7 @@ class Features extends React.Component {
             </BoxFooter>
             */}
           </Box>
-          <Box data-aos="fade-up" data-aos-delay="450" data-aos-offset="300">
+          <Box>
             <BoxIcon src={flowjsIcon} />
             <BoxTitle>FlowJS</BoxTitle>
             <BoxDescription>
@@ -256,7 +256,7 @@ class Features extends React.Component {
           </Box>
         </BoxContainer>
         <BoxContainer>
-          <Box data-aos="fade-up" data-aos-delay="150" data-aos-offset="300">
+          <Box>
             <BoxIcon src={databaseIcon} />
             <BoxTitle>Document Database</BoxTitle>
             <BoxDescription>
@@ -269,7 +269,7 @@ class Features extends React.Component {
             </BoxFooter>
             */}
           </Box>
-          <Box data-aos="fade-up" data-aos-delay="300" data-aos-offset="300">
+          <Box>
             <BoxIcon src={integrationsIcon} />
             <BoxTitle>Integrations</BoxTitle>
             <BoxDescription>
@@ -278,7 +278,7 @@ class Features extends React.Component {
             </BoxDescription>
           </Box>
           {/*
-          <Box data-aos="fade-up" data-aos-delay="300" data-aos-offset="300">
+          <Box>
             <BoxIcon src={i18nIcon} />
             <BoxTitle>I18N</BoxTitle>
             <BoxDescription>
@@ -291,7 +291,7 @@ class Features extends React.Component {
             </BoxFooter>
           </Box>
           */}
-          <Box data-aos="fade-up" data-aos-delay="450" data-aos-offset="300">
+          <Box>
             <BoxIcon src={securityIcon} />
             <BoxTitle>Security</BoxTitle>
             <BoxDescription>

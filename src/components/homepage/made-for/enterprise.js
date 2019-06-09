@@ -118,9 +118,11 @@ export default ({children, ...props}) => (
       </ListItem>
     </List>
     <Buttons>
+      {/*
       <Button className={ctaButton} link="/enterprise" type="outlineDark">
         See all enterprise features
       </Button>
+      */}
       <Button className={ctaButton} link="/contact-us" type="dark">
         Talk to us
       </Button>

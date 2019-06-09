@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="12px" viewBox="0 0 8 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Pricing" stroke="none" stroke-width="1" fill="#fff" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-838.000000, -750.000000)" fill="#fff" fill-rule="nonzero">
+            <g id="Top-Pricing-Box" transform="translate(407.000000, 357.000000)">
+                <g id="CTA-Button" transform="translate(223.000000, 376.000000)">
+                    <g id="bullet-arrow-copy" transform="translate(208.000000, 17.000000)">
+                        <path d="M0.4,9.96 L4.8,6 L0.4,2.04 C-0.133333333,1.56 -0.133333333,0.84 0.4,0.36 C0.933333333,-0.12 1.73333333,-0.12 2.26666667,0.36 L7.6,5.16 C8.13333333,5.64 8.13333333,6.36 7.6,6.84 L2.26666667,11.64 C2,11.88 1.73333333,12 1.33333333,12 C0.933333333,12 0.666666667,11.88 0.4,11.64 C-0.133333333,11.16 -0.133333333,10.44 0.4,9.96 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -6,15 +6,15 @@ import mq from '../../utils/breakpoints';
 import Button from '../../ui/button';
 import ContentContainer from '../../ui/content-container';
 
-import heroBg from './assets/agency-hero-bg.svg';
-import superhero from './assets/undraw_business_deal_cpi9.svg';
+import heroBg from './assets/hero-bg.svg';
+import superhero from './assets/superhero.svg';
 import bullet from './assets/bullet.svg';
-import arrowImg from './assets/gs-btn-arrow.svg';
 
 const Hero = styled ('section') (
   {
     width: '100%',
     background: 'url(' + heroBg + ') no-repeat center top',
+    backgroundColor: theme.color.lightGray,
     color: '#fff',
     boxSizing: 'border-box',
     textAlign: 'center',
@@ -22,9 +22,9 @@ const Hero = styled ('section') (
   mq ({
     padding: ['100px 20px 25px', '150px 0 25px'],
     height: ['auto', 'calc(100vh - 150px)'],
-    minHeight: ['auto', 700],
+    minHeight: ['auto', 650],
     maxHeight: ['auto', 768],
-    marginBottom: [50, 100],
+    marginBottom: [0, 0],
     backgroundSize: ['cover'],
     backgroundPosition: ['top', 'top', 'bottom'],
   })
@@ -34,6 +34,18 @@ const Title = styled ('h1') (
   {
     fontSize: theme.fontSize.h1,
     fontWeight: theme.fontWeight.semiBold,
+    marginBottom: 40,
+  },
+  mq ({
+    textAlign: ['center', 'left'],
+  })
+);
+
+const SubText = styled ('p') (
+  {
+    fontSize: theme.fontSize.subText,
+    fontWeight: theme.fontWeight.light,
+    lineHeight: '25px',
     marginBottom: 40,
   },
   mq ({
@@ -53,19 +65,7 @@ const RightSide = styled ('div') (
   {},
   mq ({
     textAlign: ['center', 'right'],
-    width: ['100%', 750],
-  })
-);
-
-const SubText = styled ('p') (
-  {
-    fontSize: theme.fontSize.subText,
-    fontWeight: theme.fontWeight.light,
-    lineHeight: '25px',
-    marginBottom: 40,
-  },
-  mq ({
-    textAlign: ['center', 'left'],
+    width: ['100%', 600],
   })
 );
 
@@ -77,9 +77,13 @@ const container = css (
 );
 
 const Image = styled ('img') (
-  {},
+  {
+    transform: 'scaleX(-1)',
+  },
   mq ({
-    width: [300, 550],
+    width: [250, 'auto'],
+    paddingRight: [0, 200],
+    height: ['auto', 550],
   })
 );
 
@@ -117,33 +121,42 @@ export default ({children, ...props}) => (
   <Hero {...props}>
     <ContentContainer className={container}>
       <LeftSide>
-        <Title>Digital Agencies & Partners</Title>
+        <Title>Made for developers</Title>
         <SubText>
-          Focus on building your business, not another CMS. Let's join forces and ship product faster.
+          We know who are the true superheroes behind every website. We made Webiny for you.
         </SubText>
         <List>
           <ListItem>
-            <Bold>Partnership</Bold>
+            <Bold>Documented</Bold>
             {' '}
-            - You will be treated as a partner, we know your business
-            relies on us.
+            - Our
+            {' '}
+            <a href="https://docs.webiny.com/">docs</a>
+            {' '}
+            portal has
+            tutorials for beginners and more advance coders.
           </ListItem>
           <ListItem>
-            <Bold>Time to market</Bold>
+            <Bold>Customizable</Bold>
             {' '}
-            - Webiny will get you faster to a finished project.
-            Customers, and your margins, both will benefit.
+            - Webiny is meant to be built upon, adapt everything from
+            the UI to the API.
           </ListItem>
           <ListItem>
-            <Bold>All inclusive</Bold>
+            <Bold>Open source</Bold>
             {' '}
-            - We aim to provide a premium service to our partners ensuring each project is a success.
+            - There are not magic black boxes here. Our code is
+            available on
+            {' '}
+            <a href="https://github.com/webiny/webiny-js">GitHub</a>
+            .
+          </ListItem>
+          <ListItem>
+            <Bold>100% JavaScript</Bold>
+            {' '}
+            - Just one language is all you need to know.
           </ListItem>
         </List>
-        <Button link="/contact-us" type="dark">
-          Let's talk
-          <Arrow src={arrowImg} />
-        </Button>
 
       </LeftSide>
       <RightSide>

@@ -129,7 +129,7 @@ export default ({children, ...props}) => (
       </ListItem>
     </List>
     <Buttons>
-      <Button className={ctaButton} link="/developer" type="outlineDark">
+      <Button className={ctaButton} link="/developers" type="outlineDark">
         See all developer features
         <Arrow alt="Get Started" src={arrow} />
       </Button>

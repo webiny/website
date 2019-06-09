@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'react-emotion';
-import theme from '../../../utils/theme';
-import mq from '../../../utils/breakpoints';
-import ContentContainer from '../../../ui/content-container';
+import theme from '../../utils/theme';
+import mq from '../../utils/breakpoints';
+import ContentContainer from '../../ui/content-container';
 
 import techLogos from '../assets/tech-logos.svg';
 
@@ -32,11 +32,7 @@ const ToolsLogos = styled ('img') (
 class TechTools extends React.Component {
   render () {
     return (
-      <ContentContainer
-        data-aos="fade-up"
-        data-aos-delay="150"
-        data-aos-offset="300"
-      >
+      <ContentContainer>
         <Tools>
           CREATED WITH TECHNOLOGY AND TOOLS YOU KNOW AND LOVE<br />
           <ToolsLogos src={techLogos} />

@@ -1,12 +1,20 @@
 import React from 'react';
 import styled from 'react-emotion';
-import theme from '../../../utils/theme';
-import mq from '../../../utils/breakpoints';
-import ContentContainer from '../../../ui/content-container';
+import {css} from 'emotion';
+import theme from '../../utils/theme';
+import mq from '../../utils/breakpoints';
+import ContentContainer from '../../ui/content-container';
 
 import architecture from '../assets/webiny-architecture.png';
 import clientDeploy from '../assets/client-deploy.svg';
 import apiDeploy from '../assets/api-deploy.svg';
+
+const archContainer = css (
+  {},
+  mq ({
+    marginTop: [20, 70],
+  })
+);
 
 const Grid = styled ('div') (
   {
@@ -110,19 +118,15 @@ const SubTitle = styled ('h2') ({
 class Architecture extends React.Component {
   render () {
     return (
-      <ContentContainer>
-        <SubTitle data-aos="fade-up" data-aos-offset="300">
+      <ContentContainer className={archContainer}>
+        <SubTitle>
           Architecture
         </SubTitle>
         <Grid>
-          <Cell
-            data-aos="fade-right"
-            data-aos-delay="500"
-            data-aos-offset="500"
-          >
+          <Cell>
             <img src={architecture} />
           </Cell>
-          <Cell data-aos="fade-left" data-aos-delay="500" data-aos-offset="350">
+          <Cell>
             <ClientBlock>
               <h3>Client Side</h3>
               <ol>

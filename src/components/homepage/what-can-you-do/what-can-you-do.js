@@ -39,7 +39,7 @@ const SubText = styled ('p') (
     maxWidth: 680,
   },
   mq ({
-    margin: ['20px', '0 auto 75px auto'],
+    margin: ['20px', '0 auto 25px auto'],
   })
 );
 
@@ -51,7 +51,6 @@ const Grid = styled ('div') (
     boxSizing: 'border-box',
     marginBottom: 0,
     borderRadius: 2,
-    //backgroundColor: 'white',
   },
   mq ({
     flexDirection: ['column', 'row'],
@@ -104,6 +103,12 @@ const Text = styled ('p') ({
   marginBottom: 0,
   '.orange': {
     color: theme.color.primaryDark,
+  },
+  '&.smaller': {
+    fontSize: 18,
+    textAlign: 'center',
+    width: '100%',
+    padding: '10px',
   },
 });
 
@@ -195,7 +200,7 @@ class WhatCanYouDo extends React.Component {
           <div className={insideServerless}>
             <Cell>
               <h4>
-                Insides the serverless environment
+                Inside the serverless environment
               </h4>
               <div className={'powered-by'}>Powered by</div>
               <div className={'aws-lambda'}>
@@ -204,6 +209,27 @@ class WhatCanYouDo extends React.Component {
               </div>
             </Cell>
           </div>
+          <SubText>
+            Webiny provides you with
+          </SubText>
+          <Grid className="smaller">
+            <Cell>
+
+              <Text className={'smaller'}>
+                Technology and components to create web projects
+              </Text>
+            </Cell>
+            <Cell>
+              <Text className={'smaller'}>
+                Managed and scalable serverless platform to run your code on
+              </Text>
+            </Cell>
+            <Cell>
+              <Text className={'smaller'}>
+                Tools to automate project creation and deployment
+              </Text>
+            </Cell>
+          </Grid>
         </ContentContainer>
       </section>
     );
