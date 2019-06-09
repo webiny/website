@@ -120,7 +120,7 @@ const InsideServerless = styled ('div') (
     boxSizing: 'border-box',
     [Cell]: {
       padding: '50px 25px',
-      backgroundColor: theme.color.primaryDark,
+      backgroundColor: theme.color.footerBg,
       color: theme.color.white,
     },
     h4: {
