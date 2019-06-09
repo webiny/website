@@ -112,7 +112,7 @@ const Text = styled ('p') ({
   },
 });
 
-const insideServerless = css (
+const InsideServerless = styled ('div') (
   {
     textAlign: 'center',
     alignItems: 'center',
@@ -120,6 +120,8 @@ const insideServerless = css (
     boxSizing: 'border-box',
     [Cell]: {
       padding: '50px 25px',
+      backgroundColor: theme.color.primaryDark,
+      color: theme.color.white,
     },
     h4: {
       fontWeight: theme.fontWeight.semiBold,
@@ -130,11 +132,11 @@ const insideServerless = css (
     },
     '.powered-by': {
       fontSize: 12,
-      color: theme.color.grayText,
+      color: theme.color.white,
     },
     '.aws-lambda': {
       fontSize: 16,
-      color: theme.color.black,
+      color: theme.color.white,
       fontWeight: theme.fontWeight.semiBold,
       position: 'relative',
       marginRight: 30,
@@ -197,7 +199,7 @@ class WhatCanYouDo extends React.Component {
               </Text>
             </Cell>
           </Grid>
-          <div className={insideServerless}>
+          <InsideServerless>
             <Cell>
               <h4>
                 Inside the serverless environment
@@ -208,7 +210,7 @@ class WhatCanYouDo extends React.Component {
                 <img src={lambdaLogo} height={24} />
               </div>
             </Cell>
-          </div>
+          </InsideServerless>
           <SubText>
             Webiny provides you with
           </SubText>
