@@ -11,7 +11,8 @@ import logo from './assets/webiny-logo.svg';
 import logoOrange from './assets/webiny-orange-logo.svg';
 import menuIcon from './assets/round-menu-24px.svg';
 import menuIconBlack from './assets/round-menu-24px-black.svg';
-import downArrow from './assets/down-arrow.svg';
+import downArrowWhite from './assets/down-arrow-white.svg';
+import downArrowBlack from './assets/down-arrow-black.svg';
 
 const NavBar = styled ('div') ({
   margin: '0 auto',
@@ -94,8 +95,11 @@ const DropDown = styled ('div') ({
   },
 });
 
-const DownArrow = styled ('img') ({
+const DownArrow = styled ('div') ({
   position: 'absolute',
+  width: 24,
+  height: 24,
+  background: 'url(' + downArrowWhite + ') no-repeat',
   top: 1,
   right: 0,
   color: 'white',
@@ -179,8 +183,14 @@ const HeaderContainer = styled ('header') (
     paddingTop: props.isSticky ? 10 : 20,
     paddingBottom: props.isSticky ? 10 : 20,
     [MenuItem]: {
+      color: props.isSticky ? '#000' : '#fff',
       ['a.' + linkStyle]: {
         color: props.isSticky ? '#000' : '#fff',
+      },
+      [DownArrow]: {
+        background: 'url(' +
+          (props.isSticky ? downArrowBlack : downArrowWhite) +
+          ') no-repeat',
       },
     },
   })
@@ -313,7 +323,7 @@ class Header extends React.Component {
             <Menu>
               <MenuItem className={linkStyle + ' ' + parentMenu}>
                 Product
-                <DownArrow src={downArrow} />
+                <DownArrow />
                 <DropDown>
                   <div className={dropdownArrow} />
                   <Link rel="prerender" to="/features/components">
@@ -337,7 +347,7 @@ class Header extends React.Component {
               </MenuItem>
               <MenuItem className={linkStyle + ' ' + parentMenu}>
                 Learn
-                <DownArrow src={downArrow} />
+                <DownArrow />
                 <DropDown>
                   <div className={dropdownArrow} />
                   <a href="https://docs.webiny.com/">
