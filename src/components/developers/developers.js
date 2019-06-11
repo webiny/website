@@ -17,8 +17,12 @@ const DevelopersContainer = styled ('section') (
   },
   mq ({
     backgroundSize: ['cover', 'cover', 'cover'],
-    backgroundPosition: ['right 0px top 70px', 'right 0px top 825px'],
-    paddingTop: [50, 50, 0],
+    backgroundPosition: [
+      'right 0px top 70px',
+      'right 0px top 800px',
+      'right 0px top 750px',
+    ],
+    paddingTop: [50, 0],
     paddingBottom: [25, 50],
   })
 );
