@@ -8,7 +8,7 @@ import Button from '../../ui/button';
 import Video from './video';
 
 import heroBg from './assets/hero-bg-2.svg';
-//import gitHubLogo from './assets/github-logo.svg';
+import gitHubLogo from './assets/github-logo.svg';
 //import buttonArrow from './assets/button-arrow.svg';
 import techStackLogos from './assets/tech-stack-logos.svg';
 
@@ -102,17 +102,17 @@ const SubText = styled ('p') (
     textAlign: ['center', 'left'],
   })
 );
-/*
+
 const Link = styled ('a') ({
   fontSize: 14,
   color: '#FFFFFF',
-  textAlign: 'center',
+  textAlign: 'left',
   fontWeight: theme.fontWeight.regular,
   margin: '15px auto 0 auto',
   display: 'block',
   textDecoration: 'none',
   position: 'relative',
-  paddingLeft: 10,
+  paddingLeft: 20,
   '&:hover': {
     textDecoration: 'underline',
   },
@@ -120,10 +120,9 @@ const Link = styled ('a') ({
 
 const GitHubLogo = styled ('img') ({
   position: 'absolute',
-  left: 'calc(50% - 80px)',
-  top: 3,
+  left: 0,
+  top: 4,
 });
-*/
 
 export default ({children, ...props}) => (
   <Hero {...props}>
@@ -145,12 +144,12 @@ export default ({children, ...props}) => (
             Request demo
           </Button>
         </Buttons>
-        {/*
+
         <Link href="https://github.com/Webiny/webiny-js">
           <GitHubLogo src={gitHubLogo} />
           View Webiny on GitHub
         </Link>
-        */}
+
       </LeftSide>
       <RightSide>
         <Video />

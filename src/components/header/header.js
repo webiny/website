@@ -326,11 +326,14 @@ class Header extends React.Component {
                 <DownArrow />
                 <DropDown>
                   <div className={dropdownArrow} />
+                  <Link rel="prerender" to="/why-webiny">
+                    Why Webiny?
+                  </Link>
                   <Link rel="prerender" to="/features/components">
                     Webiny Components
                   </Link>
                   <Link rel="prerender" to="/features/platform">
-                    Serverless Cloud Platform
+                    Serverless Cloud
                   </Link>
                   <Link rel="prerender" to="/developers">
                     For Developers
@@ -361,21 +364,23 @@ class Header extends React.Component {
                   </a>
                 </DropDown>
               </MenuItem>
-              <MenuItem>
-                <a className={linkStyle} href="https://community.webiny.com/">
-                  Community
-                </a>
+              <MenuItem className={linkStyle + ' ' + parentMenu}>
+                Resources
+                <DownArrow />
+                <DropDown>
+                  <div className={dropdownArrow} />
+                  <a href="https://blog.webiny.com/">
+                    Blog
+                  </a>
+                  <a href="https://support.webiny.com/">
+                    Support
+                  </a>
+                  <a href="https://community.webiny.com/">
+                    Community
+                  </a>
+                </DropDown>
               </MenuItem>
-              <MenuItem>
-                <a className={linkStyle} href="https://blog.webiny.com/">
-                  Blog
-                </a>
-              </MenuItem>
-              <MenuItem>
-                <a className={linkStyle} href="https://support.webiny.com/">
-                  Support
-                </a>
-              </MenuItem>
+
               <MenuItem>
                 <Button
                   link="/contact-us"
@@ -411,6 +416,12 @@ class Header extends React.Component {
                 </MobileMenuItem>
 
                 <MobileMenuItem>
+                  <Link className={link} rel="prerender" to="/why-webiny">
+                    Why Webiny?
+                  </Link>
+                </MobileMenuItem>
+
+                <MobileMenuItem>
                   <Link
                     className={link}
                     rel="prerender"
@@ -426,7 +437,7 @@ class Header extends React.Component {
                     rel="prerender"
                     to="/features/platform"
                   >
-                    Serverless Cloud Platform
+                    Serverless Cloud
                   </Link>
                 </MobileMenuItem>
 
