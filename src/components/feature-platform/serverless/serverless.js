@@ -121,7 +121,7 @@ class Serverless extends React.Component {
 
         <ContentContainer>
           <Grid>
-            <Cell data-aos="fade-up" data-aos-delay="100" data-aos-offset="200">
+            <Cell>
               <img src={scaleImg} />
               <h3>Scale</h3>
               <p>
@@ -130,7 +130,7 @@ class Serverless extends React.Component {
                 when potential loses are highest.
               </p>
             </Cell>
-            <Cell data-aos="fade-up" data-aos-delay="200" data-aos-offset="200">
+            <Cell>
               <img src={costConstrolImg} />
               <h3>Cost Control</h3>
               <p>
@@ -139,7 +139,7 @@ class Serverless extends React.Component {
                 are using.
               </p>
             </Cell>
-            <Cell data-aos="fade-up" data-aos-delay="300" data-aos-offset="200">
+            <Cell>
               <img src={zeroMaintenanceImg} />
               <h3>Zero Maintenance</h3>
               <p>
@@ -150,12 +150,7 @@ class Serverless extends React.Component {
             </Cell>
           </Grid>
           <Grid>
-            <Cell
-              className={quote}
-              data-aos="fade-up"
-              data-aos-delay="300"
-              data-aos-offset="300"
-            >
+            <Cell className={quote}>
               <i>"Serverless is the future of development."</i>
               <QuoteDetails>
                 <div>

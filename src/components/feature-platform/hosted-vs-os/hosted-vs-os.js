@@ -208,11 +208,44 @@ class HostedVsOS extends React.Component {
           <Cell className={'header'} />
           <Cell className={'header'}>Self-hosted</Cell>
           <Cell className={'header'}>Webiny Serverless Cloud</Cell>
+          <Cell>
+            Serverless scale
+            <small>
+              Handle even the highest peak demands without over-provisioning and overpaying for infrastructure.
+            </small>
+          </Cell>
+          <Cell>Not Included</Cell>
+          <Cell>
+            <img src={check} /> <span>Included</span>
+          </Cell>
 
           <Cell>
             Automatic deployments
             <small>
-              Use Webiny CLI to deploy and view your project within seconds.
+              Use Webiny CLI to configure and deploy your projects within seconds.
+            </small>
+          </Cell>
+          <Cell>Not Included</Cell>
+          <Cell>
+            <img src={check} /> <span>Included</span>
+          </Cell>
+
+          <Cell>
+            Server side render
+            <small>
+              SSR is quite a challenging task to do it right. With the managed hosted environment, your site automatically is server-side rendered by our platform.
+            </small>
+          </Cell>
+          <Cell>Not Included</Cell>
+          <Cell>
+            <img src={check} /> <span>Included</span>
+          </Cell>
+
+          <Cell>
+            Image manipulation service
+            <small>
+              Your images are automatically resized and optimized based on the user device so that always the best optimal copy is served, improving performance and not wasting bandwidth.
+              {' '}
             </small>
           </Cell>
           <Cell>Not Included</Cell>
