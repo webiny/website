@@ -415,14 +415,17 @@ export default ({children, ...props}) => (
         you can limit the number of packages each website can consume. These packages do not
         expire and resources that have not been used, roll over to the next month.
       </p>
-      {/*
       <p>
         Each Webiny website is subject to our
         {' '}
-        <a href="/fair-usage" target="_blank">Fair Usage Policy</a>
+        <a
+          href="https://support.webiny.com/en/article/fair-usage-policy-1g4gepe/"
+          target="_blank"
+        >
+          Fair Usage Policy
+        </a>
         .
       </p>
-      */}
       <p>
         <Bold>Need help to decide?</Bold> Please{' '}
         <Link to="/contact-us">reach out to us</Link>
