@@ -290,7 +290,7 @@ export default ({children, ...props}) => (
 
         <PackageFeatures>
           <li data-tip data-for="freelancer-api-calls">
-            50.000 API Call
+            50.000 API Calls
           </li>
           <li data-tip data-for="freelancer-db-storage">
             250MB Database Storage
@@ -299,7 +299,7 @@ export default ({children, ...props}) => (
             100 Deployments
           </li>
           <li data-tip data-for="freelancer-function">
-            1 Serverless Function
+            3 Serverless Functions
           </li>
           <li data-tip data-for="freelancer-support">
             Standard Support
@@ -327,7 +327,7 @@ export default ({children, ...props}) => (
         </Button>
         <PackageFeatures>
           <li data-tip data-for="agency-api-calls">
-            1.000.000 API Call
+            1.000.000 API Calls
           </li>
           <li data-tip data-for="agency-db-storage">
             1GB Database Storage
@@ -336,7 +336,7 @@ export default ({children, ...props}) => (
             1.000 Deployments
           </li>
           <li data-tip data-for="agency-functions">
-            5 Serverless Functions
+            25 Serverless Functions
           </li>
           <li data-tip data-for="agency-support">
             Priority Support
@@ -444,8 +444,8 @@ export default ({children, ...props}) => (
     </Tooltip>
 
     <Tooltip id="freelancer-function">
-      You get one serverless function which includes the Webiny Core API. You can modify the
-      API to fit your need.
+      You get 3 serverless functions. One is used for the Webiny Core API, and the rest can
+      host your custom APIs.
     </Tooltip>
 
     <Tooltip id="freelancer-support">Standard email and chat support.</Tooltip>
@@ -464,7 +464,7 @@ export default ({children, ...props}) => (
     </Tooltip>
 
     <Tooltip id="agency-functions">
-      You get 5 serverless functions. One is used for the Webiny Core API, and the rest can
+      You get 25 serverless functions. One is used for the Webiny Core API, and the rest can
       host your custom APIs.
     </Tooltip>
 
