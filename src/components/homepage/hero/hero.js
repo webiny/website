@@ -32,7 +32,7 @@ const Hero = styled("section")(
         backgroundSize: "cover",
         color: "#fff",
         boxSizing: "border-box",
-        backgroundColor: theme.color.lightGray
+        backgroundColor: "#fff" //theme.color.lightGray
     },
     mq({
         textAlign: ["center", "left"],
@@ -40,7 +40,7 @@ const Hero = styled("section")(
         height: ["auto", "calc(100vh - 100px)"],
         minHeight: ["auto", 800],
         //maxHeight: ["auto", 750],
-        marginBottom: [0, -50]
+        marginBottom: [0, -200]
     })
 );
 
