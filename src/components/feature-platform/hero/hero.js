@@ -46,7 +46,7 @@ const LeftSide = styled("div")(
     {},
     mq({
         textAlign: ["center", "left"],
-        width: ["100%", 400]
+        width: ["100%", 550]
     })
 );
 
@@ -107,19 +107,19 @@ export default ({ children, ...props }) => (
     <Hero {...props}>
         <ContentContainer className={container}>
             <LeftSide>
-                <Title>Webiny Platform</Title>
+                <Title>Serverless cloud platform that scales with your demand</Title>
                 <List>
                     <ListItem>
-                        <Bold>Serverless</Bold>
-                        - Your code is hosted inside a managed serverless cloud.
+                        <Bold>Serverless</Bold> - Your code is hosted inside a managed serverless
+                        cloud. No need to overprovision infrastructure to handle peak demand.
                     </ListItem>
                     <ListItem>
                         <Bold>Performance</Bold> - Our cloud is optimized for serving websites and
                         web application with a millisecond latency.
                     </ListItem>
                     <ListItem>
-                        <Bold>Caching</Bold> - It comes with a CDN for static content caching, and
-                        built-in redis cache layer for the API caching.
+                        <Bold>Microservices</Bold> - Your apps follow a microservices architecture.
+                        Routing and deployments are automatically handled for you.
                     </ListItem>
                     <ListItem>
                         <Bold>Services</Bold> - Benefit from built-in services handling image resize

@@ -46,7 +46,7 @@ const LeftSide = styled("div")(
     {},
     mq({
         textAlign: ["center", "left"],
-        width: ["100%", 400]
+        width: ["100%", 550]
     })
 );
 
@@ -107,15 +107,15 @@ export default ({ children, ...props }) => (
     <Hero {...props}>
         <ContentContainer className={container}>
             <LeftSide>
-                <Title>Webiny Components</Title>
+                <Title>Deliver projects in less time by using the included components</Title>
                 <List>
                     <ListItem>
                         <Bold>Visual Website Builder</Bold>
                         - Build pages by using a powerful drag&drop interface.
                     </ListItem>
                     <ListItem>
-                        <Bold>Building Blocks</Bold> - Over 50 predefined content blocks with common
-                        design patterns come included.
+                        <Bold>Form Builder</Bold> - Easily create form to convert your visitors into
+                        leads.
                     </ListItem>
                     <ListItem>
                         <Bold>Image Editor</Bold> - Using the included image editor you can
@@ -123,6 +123,10 @@ export default ({ children, ...props }) => (
                     </ListItem>
                     <ListItem>
                         <Bold>File Manager</Bold> - Upload, organise and search your files.
+                    </ListItem>
+                    <ListItem>
+                        <Bold>React components</Bold> - Expand Webiny and create your own apps by
+                        reusing a set of ready-made React components.
                     </ListItem>
                 </List>
                 <Button link="/pricing" type="dark">
