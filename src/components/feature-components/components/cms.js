@@ -4,6 +4,7 @@ import theme from '../../utils/theme';
 import mq from '../../utils/breakpoints';
 import ContentContainer from '../../ui/content-container';
 import ModalVideo from 'react-modal-video';
+import ComingSoon from '../../ui/coming-soon'
 
 import facebookLogo from './assets/facebook.svg';
 import instagramLogo from './assets/instagram.svg';
@@ -23,10 +24,17 @@ import plugIcon from './assets/plug-solid.svg';
 import cropRotateIcon from './assets/baseline-crop_rotate-24px.svg';
 import cloudIcon from './assets/baseline-cloud_queue-24px.svg';
 import videoPlayIcon from './assets/round-play_circle_outline-24px.svg';
+import zapierIcon from './assets/zapier.svg';
+import multiLanguageIcon from './assets/multi-language.svg';
+import uploadIcon from './assets/upload.svg';
+import tagIcon from './assets/tag.svg';
+import searchIcon from './assets/search.svg';
 
 import visualBuilderImg from './assets/webiny-cms-visual-page-builder.png';
 import buildingBlocksImg from './assets/webiny-cms-building-blocks.png';
 import imageEditorImg from './assets/webiny-cms-image-editor.png';
+import fileManagerImg from './assets/file-manager.jpg';
+import formBuilderImg from './assets/form-builder.jpg';
 import darkModeImg from './assets/dark-mode.png';
 import userPermissionsImg from './assets/users-permissions.png';
 import guidesTutorialsImg from './assets/guides-and-tutorials.png';
@@ -429,6 +437,105 @@ class Cms extends React.Component {
                 manipulations, like image crop, rotate, flip. There are also more
                 advance options, like drawing on top of images and the option to
                 apply one of many predefined filters.
+              </p>
+            </Cell>
+          </Grid>
+
+          <Grid className={'first'}>
+            <Cell className={'headingCell reverse'}>
+            <ComingSoon/>
+              <h3>Form Builder</h3> 
+              <p>
+                Forms are a crucial part of most websites. 
+                From simple "contact us" forms to the more complex lead generation forms, each form has different requirements,
+                fields, and layout.
+              </p>
+              <p>
+                Webiny Form Builder allows you to build custom made forms, without any code, and insert them into your pages. 
+                You can use predefined fields, or you can build custom fields, with different validation rules.
+                Generated forms, like pages, are automatically mobile responsive.
+              </p>
+            </Cell>
+            <Cell>
+              <img className={'image'} src={formBuilderImg} />
+            </Cell>
+          </Grid>
+          <Grid>
+            <Cell>
+              <h3>
+                <img src={zapierIcon} height={24} />
+                Zapier and Webhooks
+              </h3>
+              <p>
+                Each form has a set of triggers that you can configure. Each time someone submits the form, the triggers will be executed.
+                <br/>
+                This is great for when you want to send the data to a 3rd party like Salesforce, Hubspot CRM and others.
+              </p>
+            </Cell>
+            <Cell>
+              <h3>
+                <img src={revisionsIcon} />
+                Revisions
+              </h3>
+              <p>
+                Each form has a version and tracks all of its changes under the revision history. You can insert different form versions into different pages,
+                tracking which version performs better in terms of the conversion rate.
+              </p>
+            </Cell>
+            <Cell>
+              <h3>
+                <img src={multiLanguageIcon} height={24} />
+                Multi-language
+              </h3>
+              <p>
+                Publish your forms in multiple languages. Control everything from labels to error messages in each of your languages.
+              </p>
+            </Cell>
+          </Grid>
+
+          <Grid className={'first'}>
+            <Cell>
+              <img className={'image'} src={fileManagerImg} />
+            </Cell>
+            <Cell className={'headingCell'}>
+              <h3>File Manager</h3>
+              <p>
+                Upload, search, edit and organize your files through the File Manager component.
+                Anytime you need to upload an image, the File Manager will popup. This way you can choose an existing image, or upload a new one.
+              </p>
+              <p>
+                File Manager keeps all your files neatly organized and searchable, no need to re-upload the same image multiple times just because you needed it in 5 different places.
+                </p>
+            </Cell>
+          </Grid>
+          <Grid style={{paddingBottom: 20}}>
+            <Cell>
+              <h3>
+                <img src={uploadIcon} style={{height: '24px'}} />
+                Upload
+              </h3>
+              <p>
+                Files are uploaded through a simple drag&drop interface. You can upload a single image, or multiple images, at once.
+              </p>
+            </Cell>
+            <Cell>
+              <h3>
+                <img src={tagIcon} style={{height: '24px'}} />
+                Tag
+              </h3>
+              <p>
+                You can assign tags to each file. Tags work as a menu, which appears on the right side of the file manager. 
+                By clicking on a tag, all files with that tag will appear.
+                Each file can have multiple tags, making it a great way to structure your content.
+              </p>
+            </Cell>
+            <Cell>
+              <h3>
+                <img src={searchIcon} style={{height: '24px'}} />
+                Search
+              </h3>
+              <p>
+                The simple search input is a great way of finding that right file. The search is performed on both the filename, title as well as tags. Single input, multiple sources, ensure you always find what you're looking for.
               </p>
             </Cell>
           </Grid>
