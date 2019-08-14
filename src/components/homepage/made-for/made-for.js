@@ -39,7 +39,7 @@ class MadeFor extends React.Component {
     tabs: [
       {
         title: 'Developers',
-        subTitle: 'Create websites and applications is less time. Webiny provides you with all tools you need.',
+        subTitle: 'Create websites and applications in less time. Webiny provides you with all tools you need.',
         content: <Developers />,
       },
       {
