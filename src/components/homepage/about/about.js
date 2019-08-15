@@ -8,9 +8,9 @@ import ContentContainer from "../../ui/content-container";
 
 import imgArchitecture from "./assets/architecture.svg";
 import imgStack from "./assets/platform-stack.svg";
-import imgOpenSass from "./assets/webiny-vs-oss.svg";
 import imgBuildWith from "./assets/build-stuff.svg";
 import imgCli from "./assets/cli-bg.svg";
+import imgBuilder from "./assets/builder.svg";
 
 const wrapperClass = css(
     {
@@ -82,6 +82,10 @@ const Cell = styled("div")(
         },
         h3: {
             justifyContent: ["center", "flex-start"]
+        },
+        a: {
+            textDecoration: "none",
+            color: theme.color.primaryDark
         }
     })
 );
@@ -98,8 +102,13 @@ class About extends React.Component {
                         <Cell>
                             <h3>Build more than websites</h3>
                             <p>
-                                Webiny makes it easy to build websites, web applications, APIs and
-                                microservices inside the serverless environment.
+                                Webiny makes it easy to build{" "}
+                                <Link to="/use-case/serverless-websites">websites</Link>,{" "}
+                                <Link to="/use-case/serverless-web-applications">
+                                    web applications
+                                </Link>, <Link to="/use-case/serverless-graphql-api">APIs</Link> and{" "}
+                                <Link to="/use-case/microservices">microservices</Link> inside the
+                                serverless environment.
                             </p>
                         </Cell>
                     </Grid>
@@ -130,16 +139,15 @@ class About extends React.Component {
                     </Grid>
                     <Grid className="img-right">
                         <Cell>
-                            <h3>Managed yet customizable</h3>
+                            <h3>Ready-made apps to speed up your development</h3>
                             <p>
-                                You don’t need to hire people and lose time managing servers,
-                                security and backups or worry about uptime. Webiny includes a
-                                managed serverless environment, but one that allows you to upload
-                                custom code.
+                                The provided Webiny CLI enables you to quickly setup your
+                                development environment and then deploy your projects to any of the
+                                cloud providers.
                             </p>
                         </Cell>
                         <Cell>
-                            <img src={imgOpenSass} />
+                            <img src={imgBuilder} />
                         </Cell>
                     </Grid>
                     <Grid className="img-left">
@@ -150,8 +158,8 @@ class About extends React.Component {
                             <h3>Quick and easy setup</h3>
                             <p>
                                 The provided Webiny CLI enables you to quickly setup your
-                                development environment and then deploy your projects to Webiny
-                                Serverless Cloud.
+                                development environment and then deploy your projects to any of the
+                                cloud providers.
                             </p>
                         </Cell>
                     </Grid>

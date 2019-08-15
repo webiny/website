@@ -30,6 +30,7 @@
     "react-helmet": "^5.2.0",
     "react-modal-video": "^1.2.1",
     "react-progressive-bg-image": "^3.0.0",
+    "react-slick": "^0.25.2",
     "react-syntax-highlighter": "^7.0.4",
     "react-tooltip": "^3.9.0",
     "react-transition-group": "^4.1.0",

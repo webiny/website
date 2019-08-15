@@ -1,9 +1,9 @@
 import React from "react";
 import ContentContainer from "../ui/content-container";
-import Footer from "./components/footer";
-import Title from "./components/title";
-import Header from "./components/header";
-import { Grid, Cell } from "./components/layout";
+import Footer from "../ui/layout/footer";
+import Title from "../ui/layout/title";
+import Header from "../ui/layout/header";
+import { Grid, Cell } from "../ui/layout/layout";
 
 import headerBg from "./assets/header-bg-apis.svg";
 
@@ -35,9 +35,10 @@ const APIs = () => (
             <Grid right>
                 <Cell title="Take the  microservices approach">
                     <p>
-                        It’s the latest and greatest that technology provides. Each microservice is
-                        hosted inside a serverless function which scales together with your demand.
-                        There is no load this setup can’t take.
+                        It’s the latest and greatest that technology provides, however it's quite
+                        hard to configure everything correctly. With Webiny you'll get the whole
+                        setup for all your services included, as we'll as deploying new services is
+                        super easy.
                     </p>
                 </Cell>
                 <Cell>
@@ -83,11 +84,12 @@ const APIs = () => (
                 </Cell>
             </Grid>
             <Grid right>
-                <Cell title="Host your API inside a managed serverless cloud">
+                <Cell title="Great performance with serverless functions">
                     <p>
                         Building a great home for your API is challenging. We have invested
-                        significant time in creating the Webiny serverless cloud. Your API will be
-                        safe, perform amazingly well and scale to handle any demand.
+                        significant time in creating Webiny specifically for serverless environments
+                        so your API feels safe, performs amazingly well and scales to handle any
+                        demand.
                     </p>
                 </Cell>
                 <Cell>

@@ -1,9 +1,9 @@
 import React from "react";
 import ContentContainer from "../ui/content-container";
-import Footer from "./components/footer";
-import Title from "./components/title";
-import Header from "./components/header";
-import { Grid, Cell } from "./components/layout";
+import Footer from "../ui/layout/footer";
+import Title from "../ui/layout/title";
+import Header from "../ui/layout/header";
+import { Grid, Cell } from "../ui/layout/layout";
 
 import headerBg from "./assets/header-bg-websites.svg";
 
@@ -82,28 +82,16 @@ const Websites = () => (
                 </Cell>
             </Grid>
             <Grid right>
-                <Cell title="Great performance with the managed serverless cloud">
+                <Cell title="Great performance with serverless functions">
                     <p>
-                        From the included CDN to several caching layers, built-in server-side
-                        rendering and image optimization feature, Webiny sites will perform
-                        amazingly well in any geo, device, and throughput and you don’t need to
-                        worry about uptime.
+                        Your Webiny website runs inside a serverless environment, which offers
+                        unlimited scalability features, so no matter the load, your users will
+                        experience great performance and there is no need to over provision and
+                        overpay for infrastructure.
                     </p>
                 </Cell>
                 <Cell>
                     <img src={imgHosted} />
-                </Cell>
-            </Grid>
-            <Grid left>
-                <Cell>
-                    <img src={imgMultiSite} />
-                </Cell>
-                <Cell title="Manage multiple websites">
-                    <p>
-                        With Webiny Serverless Cloud you can create and host multiple websites. Know
-                        the usage and cost of each website. Access the admin section of each website
-                        from a single place.
-                    </p>
                 </Cell>
             </Grid>
         </ContentContainer>

@@ -326,19 +326,34 @@ class Header extends React.Component {
                         </WebinyLogo>
 
                         <Menu>
+                            <MenuItem>
+                                <Link className={linkStyle} rel="prerender" to="/why-serverless">
+                                    Why Serverless?
+                                </Link>
+                            </MenuItem>
+
+                            <MenuItem>
+                                <Link className={linkStyle} rel="prerender" to="/features">
+                                    Features
+                                </Link>
+                            </MenuItem>
+
                             <MenuItem className={linkStyle + " " + parentMenu}>
-                                The Product
+                                Included Apps
                                 <DownArrow />
                                 <DropDown>
                                     <div className={dropdownArrow} />
-                                    <Link rel="prerender" to="/features/platform">
-                                        Serverless Cloud Platform
-                                    </Link>
                                     <Link rel="prerender" to="/why-webiny">
-                                        Why Webiny?
+                                        Headless CMS
                                     </Link>
                                     <Link rel="prerender" to="/features/components">
-                                        Features
+                                        Visual page builder
+                                    </Link>
+                                    <Link rel="prerender" to="/developers">
+                                        Form builder
+                                    </Link>
+                                    <Link rel="prerender" to="/developers">
+                                        File manager
                                     </Link>
                                 </DropDown>
                             </MenuItem>
@@ -363,20 +378,7 @@ class Header extends React.Component {
                                     <Link rel="prerender" to="/use-case/microservices">
                                         Microservices
                                     </Link>
-                                    <hr />
-                                    <Link rel="prerender" to="/developers">
-                                        For Developers
-                                    </Link>
-                                    <Link rel="prerender" to="/agency">
-                                        For Agencies & Partners
-                                    </Link>
                                 </DropDown>
-                            </MenuItem>
-
-                            <MenuItem>
-                                <Link className={linkStyle} rel="prerender" to="/pricing">
-                                    Pricing
-                                </Link>
                             </MenuItem>
 
                             <MenuItem className={linkStyle + " " + parentMenu}>
@@ -391,17 +393,13 @@ class Header extends React.Component {
                                     <a href="https://blog.webiny.com/">Blog</a>
                                     <a href="https://support.webiny.com/">Support</a>
                                     <a href="https://community.webiny.com/">Community</a>
+                                    <hr />
+                                    <Link rel="prerender" to="/use-case/microservices">
+                                        About us
+                                    </Link>
                                 </DropDown>
                             </MenuItem>
 
-                            <MenuItem>
-                                <Button
-                                    link="/contact-us"
-                                    type={this.state.isSticky ? "outlineDark" : "outline"}
-                                >
-                                    Talk to us
-                                </Button>
-                            </MenuItem>
                             <MenuItem>
                                 <Button
                                     link="https://cloud.webiny.com/"

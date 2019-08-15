@@ -5,13 +5,12 @@ import theme from "../../utils/theme";
 import mq from "../../utils/breakpoints";
 import ContentContainer from "../../ui/content-container";
 import Button from "../../ui/button";
-import Video from "./video";
 
-import heroBg from "./assets/hero-bg-2.svg";
+import heroBg from "./assets/hero-bg.svg";
 import gitHubLogo from "./assets/github-logo.svg";
-//import buttonArrow from './assets/button-arrow.svg';
-import techStackLogos from "./assets/tech-stack-logos.svg";
-import bullet from "./assets/bullet.svg";
+import bullet from "./assets/circle-check.svg";
+import terminalImg from "./assets/terminal.svg";
+import webinyLogo from "./assets/webiny-orange-logo.svg";
 
 const heroContainer = css(
     {
@@ -28,46 +27,43 @@ const heroContainer = css(
 const Hero = styled("section")(
     {
         width: "100%",
-        background: "url(" + heroBg + ") no-repeat left bottom",
         backgroundSize: "cover",
-        color: "#fff",
+        color: theme.color.black,
         boxSizing: "border-box",
+        position: "relative",
         backgroundColor: "#fff" //theme.color.lightGray
     },
     mq({
         textAlign: ["center", "left"],
-        padding: ["100px 20px 25px", "150px 0 25px"],
-        height: ["auto", "calc(100vh - 100px)"],
-        minHeight: ["auto", 800],
+        padding: ["100px 20px 25px", "150px 0 25px"]
+        //height: ["auto", "calc(100vh - 100px)"],
+        //minHeight: ["auto", 800],
         //maxHeight: ["auto", 750],
-        marginBottom: [0, -200]
     })
 );
 
-const Title = styled("h1")(
-    {
-        fontSize: theme.fontSize.h1,
-        fontWeight: theme.fontWeight.semiBold,
-        marginBottom: 25
-    },
-    mq({
-        textAlign: ["center", "left"]
-    })
-);
+const Title = styled("h1")({
+    fontSize: 48,
+    fontWeight: theme.fontWeight.light,
+    marginBottom: 25,
+    textAlign: "left"
+});
 
 const LeftSide = styled("div")(
-    {},
+    {
+        margin: "0 auto 15px auto",
+        position: "relative"
+    },
     mq({
-        textAlign: ["center", "left"],
-        width: ["100%", 420]
+        width: ["100%", "auto"]
     })
 );
 
 const RightSide = styled("div")(
     {},
     mq({
-        //textAlign: ['center', 'left'],
-        width: ["100%", 675]
+        textAlign: ["center", "left"],
+        width: ["100%", 550]
     })
 );
 
@@ -84,45 +80,28 @@ const Buttons = styled("div")(
 const ctaButton = css(
     {
         position: "relative",
-        marginTop: 35
+        marginTop: 0,
+        marginRight: "25px !important",
+        "&:last-child": {
+            marginRight: "0 !important"
+        }
     },
     mq({
-        marginRight: [0, "25px !important"],
         width: ["150px !important", "auto !important"]
     })
 );
 
-const SubText = styled("p")(
-    {
-        fontSize: theme.fontSize.subText,
-        fontWeight: theme.fontWeight.light,
-        lineHeight: "25px",
-        marginBottom: 35
-    },
-    mq({
-        textAlign: ["center", "left"]
-    })
-);
-
-const Link = styled("a")({
-    fontSize: 14,
-    color: "#FFFFFF",
-    textAlign: "left",
-    fontWeight: theme.fontWeight.regular,
-    margin: "15px auto 0 auto",
-    display: "block",
-    textDecoration: "none",
-    position: "relative",
-    paddingLeft: 20,
-    "&:hover": {
-        textDecoration: "underline"
-    }
+const SubText = styled("p")({
+    fontSize: theme.fontSize.subText,
+    fontWeight: theme.fontWeight.light,
+    lineHeight: "25px",
+    marginBottom: 35,
+    textAlign: "left"
 });
 
 const GitHubLogo = styled("img")({
-    position: "absolute",
-    left: 0,
-    top: 4
+    position: "relative",
+    marginRight: 5
 });
 
 const List = styled("ul")(
@@ -147,7 +126,7 @@ const ListItem = styled("li")({
     background: "url(" + bullet + ") no-repeat left 2px",
     paddingLeft: 30,
     "&:last-child": {
-        marginBottom: 0
+        marginRight: 0
     },
     a: {
         color: theme.color.secondaryDark
@@ -155,19 +134,80 @@ const ListItem = styled("li")({
 });
 
 const Bold = styled("span")({
-    fontWeight: theme.fontWeight.bold
+    fontWeight: theme.fontWeight.semiBold
+});
+
+const TerminalBg = styled("div")({
+    position: "absolute",
+    left: 0,
+    zIndex: 1,
+    backgroundImage: "url(" + heroBg + ")",
+    backgroundSize: "100%",
+    backgroundPosition: "0px 0px",
+    backgroundRepeat: "no-repeat",
+    top: 75,
+    width: 750,
+    height: 640
+});
+
+const TerminalWrapper = styled("div")({
+    background: "url(" + terminalImg + ") no-repeat",
+    position: "absolute",
+    left: 150,
+    width: 450,
+    top: "50%",
+    transform: "translateY(-45%)",
+    zIndex: 2,
+    width: 450,
+    backgroundSize: "100%",
+    height: 310,
+    padding: "50px 0  0 50px",
+    boxSizing: "border-box"
+});
+
+const Code = styled("div")({
+    fontFamily: "monospace",
+    color: theme.color.black,
+    fontSize: 14,
+    position: "absolute",
+    width: 350,
+    zIndex: 3,
+    ".comment": {
+        color: theme.color.grayText
+    }
 });
 
 export default ({ children, ...props }) => (
     <Hero {...props}>
+        <TerminalWrapper>
+            <Code>
+                <span className="comment"># Step 1. Install webiny-cli</span>
+                <br />
+                $ npm install webiny-cli --dev <br />
+                <br />
+                <span className="comment"># Step 2. Create a project</span>
+                <br />
+                $ npm webiny init<br />
+                <br />
+                <span className="comment"># Step 3. Deploy to a serverless function</span>
+                <br />
+                $ sls deploy<br />
+                <br />
+                <span className="comment"># Your site is live!</span>
+                <br />
+                http://xyz.amazonaws.com/hello-world
+            </Code>
+        </TerminalWrapper>
+        <TerminalBg />
         <ContentContainer className={heroContainer}>
-            <LeftSide>
+            <LeftSide />
+            <RightSide>
+                <img src={webinyLogo} />
                 <Title>CMS for Serverless Web Development</Title>
 
                 <SubText>
                     The way how we build, deploy and operate the web is evolving. Webiny is a
-                    developer-friendly serverless CMS powered by Node and React with a headless
-                    GraphQL API.
+                    developer-friendly serverless CMS powered by Node, React and a GraphQL API.
                 </SubText>
 
                 <List>
@@ -175,31 +215,29 @@ export default ({ children, ...props }) => (
                         <Bold>Serverless</Bold>
                     </ListItem>
                     <ListItem>
-                        <Bold>Headless</Bold>
+                        <Bold>Open Source</Bold>
                     </ListItem>
                     <ListItem>
-                        <Bold>Open Source</Bold>
+                        <Bold>GraphQL</Bold>
+                    </ListItem>
+                    <ListItem>
+                        <Bold>Multi-cloud</Bold>
                     </ListItem>
                 </List>
 
-                <img src={techStackLogos} />
-
                 <Buttons>
-                    <Button className={ctaButton} link="/pricing" type="dark">
+                    <Button className={ctaButton} link="https://docs.webiny.com/" type="dark">
                         Get Started
                     </Button>
-                    <Button className={ctaButton} link="/contact-us" type="outline">
-                        Request demo
+                    <Button
+                        className={ctaButton}
+                        link="https://github.com/Webiny/webiny-js"
+                        type="outlineDark"
+                    >
+                        <GitHubLogo src={gitHubLogo} />
+                        View On GitHub
                     </Button>
                 </Buttons>
-
-                <Link href="https://github.com/Webiny/webiny-js">
-                    <GitHubLogo src={gitHubLogo} />
-                    View Webiny on GitHub
-                </Link>
-            </LeftSide>
-            <RightSide>
-                <Video />
             </RightSide>
         </ContentContainer>
     </Hero>

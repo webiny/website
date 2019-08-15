@@ -6,7 +6,7 @@ import mq from "../../utils/breakpoints";
 import ContentContainer from "../../ui/content-container";
 import Button from "../../ui/button";
 
-import buttonArrow from "../assets/button-arrow.svg";
+import buttonArrow from "./assets/button-arrow.svg";
 
 const Section = styled("section")(
     {
@@ -87,13 +87,13 @@ class Footer extends React.Component {
                         </Button>
                     </Wrapper>
                     <Wrapper>
-                        <h4>Have more questions?</h4>
+                        <h4>Have a question or need help?</h4>
                         <Text>
-                            Need help deciding and finding the right solution for you? Our sales
-                            operatives are here to answer any questions.
+                            Join our community of developers and fellow Webiny users. Share your
+                            experiences and your questions.
                         </Text>
-                        <Button type="dark" link="/pricing">
-                            Talk to us
+                        <Button type="dark" link="https://community.webiny.com">
+                            Join the community
                         </Button>
                     </Wrapper>
                 </ContentContainer>
