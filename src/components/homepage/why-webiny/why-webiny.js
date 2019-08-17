@@ -14,11 +14,12 @@ import imgSls from "./assets/sls.svg";
 import imgMicroservices from "./assets/microservices.svg";
 
 const wrapperClass = css(
-    {},
+    {
+        backgroundColor: "transparent"
+    },
     mq({
         paddingTop: [0, 70],
-        marginBottom: [25, 100],
-        backgroundColor: ["#F7F7F7", "transparent"]
+        paddingBottom: [25, 100]
     })
 );
 
@@ -37,8 +38,7 @@ const Grid = styled("div")(
         width: "100%",
         display: "flex",
         justifyContent: "space-between",
-        boxSizing: "border-box",
-        margin: "50px 0 25px 0"
+        boxSizing: "border-box"
     },
     mq({
         flexDirection: ["column", "row"],
@@ -47,7 +47,8 @@ const Grid = styled("div")(
         padding: ["0 25px", 0],
         "&.first": {
             margin: [0, "100px 0px"]
-        }
+        },
+        margin: ["0", "50px 0 25px 0"]
     })
 );
 
@@ -86,6 +87,9 @@ const Cell = styled("div")(
         ".image-small": {
             width: ["100%", "325px"],
             margin: "0 auto"
+        },
+        h3: {
+            flexDirection: ["column", "row"]
         }
     })
 );

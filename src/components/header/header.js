@@ -32,7 +32,7 @@ const logoImage = css(
     {},
     mq({
         paddingLeft: [20, 0],
-        height: [28, 42],
+        height: [28, 32],
         marginTop: [5]
     })
 );
@@ -266,6 +266,11 @@ class Header extends React.Component {
     state = { isSticky: false, mobileMenuOpen: false };
 
     componentDidMount() {
+        if (this.props.trackScroll === false) {
+            this.setState({ isSticky: true });
+            return;
+        }
+
         this.initScrollListener();
     }
 

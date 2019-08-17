@@ -22,93 +22,120 @@ const wrapperClass = css(
     mq({
         marginTop: [0, -200],
         paddingTop: [0, 200],
+        paddingBottom: [25, 100],
         backgroundColor: ["#F7F7F7", "transparent"]
     })
 );
 
-const SubTitle = styled("h2")({
-    fontSize: theme.fontSize.h2,
-    fontWeight: theme.fontWeight.semiBold,
-    color: theme.color.black,
-    textAlign: "center",
-    paddingTop: 50,
-    width: 650,
-    margin: "25px auto 40px auto"
-});
-
-const webinyAppsList = css({
-    ".slick-list": {
-        position: "relative",
-        padding: "46px 0 20px!important"
+const SubTitle = styled("h2")(
+    {
+        fontSize: theme.fontSize.h2,
+        fontWeight: theme.fontWeight.semiBold,
+        color: theme.color.black,
+        textAlign: "center",
+        paddingTop: 50,
+        margin: "25px auto 40px auto"
     },
-    ".slick-slide": {
-        transition: "all .2s ease",
-        outline: 0,
-        opacity: 0.6,
-        width: "350px!important",
-        //height: "160px!important",
-        padding: 30,
-        margin: "0 15px",
-        background: "#fcfcfc",
-        borderRadius: "3px",
-        overflow: "hidden",
-        display: "block",
-        boxSizing: "border-box",
-        cursor: "pointer",
-        "&:hover": {
-            opacity: 1
+    mq({
+        width: ["100%", 650]
+    })
+);
+
+const webinyAppsList = css(
+    {
+        ".slick-list": {
+            position: "relative"
         },
-        ".content": {
+        ".slick-slide": {
+            transition: "all .2s ease",
             outline: 0,
-            h3: {
-                fontSize: 24,
-                fontWeight: theme.fontWeight.semiBold,
-                marginBottom: 25,
-                marginTop: 0
+            opacity: 0.6,
+            //height: "160px!important",
+            padding: "20px 30px",
+            background: "#fcfcfc",
+            borderRadius: "3px",
+            overflow: "hidden",
+            display: "block",
+            boxSizing: "border-box",
+            cursor: "pointer",
+            borderBottom: "2px solid transparent",
+            "&:hover": {
+                opacity: 1
             },
-            p: {
-                fontSize: 18
+            ".content": {
+                outline: 0,
+                h3: {
+                    fontSize: 22,
+                    fontWeight: theme.fontWeight.semiBold,
+                    marginBottom: 10,
+                    marginTop: 0
+                },
+                p: {
+                    fontSize: 16,
+                    marginBottom: 10
+                },
+                a: {
+                    display: "block-inline",
+                    color: theme.color.primaryDark
+                }
+            }
+        },
+        ".slick-current": {
+            opacity: 1,
+            position: "relative",
+            overflow: "hidden",
+            background: "#fff",
+            boxShadow: "0 10px 20px rgba(91,107,174,.15)",
+            borderBottom: "2px solid #FA5723"
+        }
+    },
+    mq({
+        ".slick-slide": {
+            width: ["350px !important", "350px !important"],
+            margin: ["0 10px 0 15px", "0 15px"]
+        },
+        ".slick-list": {
+            padding: [0, "46px 0 20px!important"],
+            marginTop: ["40px", 0]
+        }
+    })
+);
+
+const webinyAppsImage = css(
+    {
+        ".slick-slide": {
+            outline: 0,
+            boxSizing: "border-box",
+            div: {
+                outline: 0
             },
-            a: {
-                display: "block-inline",
-                color: theme.color.primaryDark
+            img: {
+                outline: 0,
+                boxShadow: "0 5px 10px 0 rgba(0,0,0,0.15)",
+                //height: "350px !important",
+                margin: "0 auto",
+                outline: 0,
+                borderRadius: 5,
+                boxSizing: "border-box"
+            }
+        },
+        ".slick-dots": {
+            //bottom: -35,
+            "li button:before": {
+                fontSize: 15
             }
         }
     },
-    ".slick-current": {
-        opacity: 1,
-        position: "relative",
-        overflow: "hidden",
-        background: "#fff",
-        boxShadow: "0 10px 20px rgba(91,107,174,.15)",
-        borderBottom: "2px solid #FA5723"
-    }
-});
-
-const webinyAppsImage = css({
-    ".slick-slide": {
-        outline: 0,
-        div: {
-            outline: 0
-        },
-        img: {
-            outline: 0,
-            boxShadow: "0 5px 10px 0 rgba(0,0,0,0.15)",
-            width: "800px !important",
-            //height: "350px !important",
-            margin: "0 auto",
-            outline: 0,
-            borderRadius: 5,
-            boxSizing: "border-box"
+    mq({
+        ".slick-slide": {
+            padding: 10,
+            margin: 0,
+            img: {
+                width: ["350px", "800px !important"]
+            }
         }
-    },
-    ".slick-dots": {
-        bottom: -35,
-        "li button:before": {
-            fontSize: 15
-        }
-    }
-});
+    })
+);
 
 class Components extends React.Component {
     constructor(props) {
@@ -164,6 +191,33 @@ class Components extends React.Component {
                         swipeToSlide={true}
                         focusOnSelect={true}
                         className={webinyAppsList}
+                        responsive={[
+                            {
+                                breakpoint: 1024,
+                                settings: {
+                                    slidesToShow: 3,
+                                    slidesToScroll: 3,
+                                    infinite: true,
+                                    dots: true
+                                }
+                            },
+                            {
+                                breakpoint: 600,
+                                settings: {
+                                    slidesToShow: 2,
+                                    slidesToScroll: 2,
+                                    initialSlide: 2
+                                }
+                            },
+                            {
+                                breakpoint: 480,
+                                settings: {
+                                    slidesToShow: 1,
+                                    slidesToScroll: 1,
+                                    centerPadding: 0
+                                }
+                            }
+                        ]}
                     >
                         <div className="content">
                             <h3>Headless CMS</h3>

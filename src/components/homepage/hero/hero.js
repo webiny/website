@@ -42,12 +42,16 @@ const Hero = styled("section")(
     })
 );
 
-const Title = styled("h1")({
-    fontSize: 48,
-    fontWeight: theme.fontWeight.light,
-    marginBottom: 25,
-    textAlign: "left"
-});
+const Title = styled("h1")(
+    {
+        fontSize: 48,
+        fontWeight: theme.fontWeight.light,
+        marginBottom: 25
+    },
+    mq({
+        textAlign: ["center", "left"]
+    })
+);
 
 const LeftSide = styled("div")(
     {
@@ -91,18 +95,27 @@ const ctaButton = css(
     })
 );
 
-const SubText = styled("p")({
-    fontSize: theme.fontSize.subText,
-    fontWeight: theme.fontWeight.light,
-    lineHeight: "25px",
-    marginBottom: 35,
-    textAlign: "left"
-});
+const SubText = styled("p")(
+    {
+        fontSize: theme.fontSize.subText,
+        fontWeight: theme.fontWeight.light,
+        lineHeight: "25px",
+        marginBottom: 35
+    },
+    mq({
+        textAlign: ["center", "left"]
+    })
+);
 
-const GitHubLogo = styled("img")({
-    position: "relative",
-    marginRight: 5
-});
+const GitHubLogo = styled("img")(
+    {
+        position: "relative",
+        marginRight: 5
+    },
+    mq({
+        display: ["none", "block"]
+    })
+);
 
 const List = styled("ul")(
     {
@@ -137,45 +150,57 @@ const Bold = styled("span")({
     fontWeight: theme.fontWeight.semiBold
 });
 
-const TerminalBg = styled("div")({
-    position: "absolute",
-    left: 0,
-    zIndex: 1,
-    backgroundImage: "url(" + heroBg + ")",
-    backgroundSize: "100%",
-    backgroundPosition: "0px 0px",
-    backgroundRepeat: "no-repeat",
-    top: 75,
-    width: 750,
-    height: 640
-});
+const TerminalBg = styled("div")(
+    {
+        left: 0,
+        zIndex: 1,
+        backgroundImage: "url(" + heroBg + ")",
+        backgroundSize: "100%",
+        backgroundPosition: "0px 0px",
+        backgroundRepeat: "no-repeat",
+        top: 75
+    },
+    mq({
+        position: ["relative", "absolute"],
+        width: ["100%", 750],
+        height: [300, 640]
+    })
+);
 
-const TerminalWrapper = styled("div")({
-    background: "url(" + terminalImg + ") no-repeat",
-    position: "absolute",
-    left: 150,
-    width: 450,
-    top: "50%",
-    transform: "translateY(-45%)",
-    zIndex: 2,
-    width: 450,
-    backgroundSize: "100%",
-    height: 310,
-    padding: "50px 0  0 50px",
-    boxSizing: "border-box"
-});
+const TerminalWrapper = styled("div")(
+    {
+        background: "url(" + terminalImg + ") no-repeat",
+        position: "absolute",
+        transform: "translateY(-45%)",
+        zIndex: 2,
+        backgroundSize: "100%",
+        padding: "50px 0  0 50px",
+        boxSizing: "border-box",
+        height: 310
+    },
+    mq({
+        width: ["100%", 450],
+        left: [0, 150],
+        top: [200, "50%"]
+    })
+);
 
-const Code = styled("div")({
-    fontFamily: "monospace",
-    color: theme.color.black,
-    fontSize: 14,
-    position: "absolute",
-    width: 350,
-    zIndex: 3,
-    ".comment": {
-        color: theme.color.grayText
-    }
-});
+const Code = styled("div")(
+    {
+        fontFamily: "monospace",
+        color: theme.color.black,
+        position: "absolute",
+        width: 350,
+        zIndex: 3,
+        ".comment": {
+            color: theme.color.grayText
+        },
+        textAlign: "left"
+    },
+    mq({
+        fontSize: [12, 14]
+    })
+);
 
 export default ({ children, ...props }) => (
     <Hero {...props}>
@@ -235,7 +260,7 @@ export default ({ children, ...props }) => (
                         type="outlineDark"
                     >
                         <GitHubLogo src={gitHubLogo} />
-                        View On GitHub
+                        View GitHub
                     </Button>
                 </Buttons>
             </RightSide>
