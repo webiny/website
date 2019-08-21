@@ -126,7 +126,7 @@ class WhyWebiny extends React.Component {
                             <h3>The future is serverless</h3>
                             <p>
                                 Serverless will be the way how most, if not all, web applications
-                                will be created and Webiny makes it real easy.
+                                are created and Webiny makes it real easy.
                             </p>
                         </Cell>
                         <Cell>

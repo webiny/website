@@ -8,17 +8,18 @@ const Hero = styled("section")(
         color: "#fff",
         boxSizing: "border-box",
         textAlign: "center",
-        backgroundSize: "cover !important"
+        backgroundSize: "cover !important",
+        backgroundRepeat: "no-repeat"
     },
     mq({
         padding: ["100px 20px 25px", "150px 0 75px"],
         marginBottom: [50, 100],
-        backgroundPosition: ["top", "bottom", "bottom"]
+        backgroundPosition: ["center top", "center bottom", "center bottom"]
     })
 );
 
 const Header = props => (
-    <Hero style={{ background: "url(" + props.bg + ") no-repeat center top" }}>
+    <Hero className={props.className} style={{ backgroundImage: "url(" + props.bg + ")" }}>
         {props.children}
     </Hero>
 );
