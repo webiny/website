@@ -6,7 +6,6 @@ import mq from "../../utils/breakpoints";
 
 const GridBlock = styled("div")(
     {
-        width: "100%",
         display: "flex",
         justifyContent: "space-between",
         boxSizing: "border-box",
@@ -14,10 +13,16 @@ const GridBlock = styled("div")(
     },
     mq({
         "&.img-left": {
-            flexDirection: ["column", "row"]
+            flexDirection: ["column", "row"],
+            width: "100%"
         },
         "&.img-right": {
-            flexDirection: ["column-reverse", "row"]
+            flexDirection: ["column-reverse", "row"],
+            width: "100%"
+        },
+        "&.img-top": {
+            flexDirection: ["column", "column"],
+            width: "40%"
         },
         marginLeft: [0, 0],
         marginRight: [0, 0],
@@ -67,7 +72,15 @@ const CellBlock = styled("div")(
 );
 
 const Grid = props => (
-    <GridBlock className={(props.left && "img-left") + " " + (props.right && "img-right")}>
+    <GridBlock
+        className={
+            (props.left && "img-left") +
+            " " +
+            (props.right && "img-right") +
+            " " +
+            (props.top && "img-top")
+        }
+    >
         {props.children}
     </GridBlock>
 );

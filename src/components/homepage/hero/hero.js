@@ -231,7 +231,7 @@ export default ({ children, ...props }) => (
                 <Title>CMS for Serverless Web Development</Title>
 
                 <SubText>
-                    The way how we build, deploy and operate the web is evolving. Webiny is a
+                    The way we build, deploy and operate the web is evolving. Webiny is a
                     developer-friendly serverless CMS powered by Node, React and a GraphQL API.
                 </SubText>
 
