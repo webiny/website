@@ -1,269 +1,278 @@
-import React from "react";
-import styled from "react-emotion";
-import { css } from "emotion";
-import theme from "../../utils/theme";
-import mq from "../../utils/breakpoints";
-import ContentContainer from "../../ui/content-container";
-import Button from "../../ui/button";
+import React from 'react';
+import styled from 'react-emotion';
+import {css} from 'emotion';
+import theme from '../../utils/theme';
+import mq from '../../utils/breakpoints';
+import ContentContainer from '../../ui/content-container';
+import Button from '../../ui/button';
 
-import heroBg from "./assets/hero-bg.svg";
-import gitHubLogo from "./assets/github-logo.svg";
-import bullet from "./assets/circle-check.svg";
-import terminalImg from "./assets/terminal.svg";
-import webinyLogo from "./assets/webiny-orange-logo.svg";
+import heroBg from './assets/hero-bg.svg';
+import gitHubLogo from './assets/github-logo.svg';
+import bullet from './assets/circle-check.svg';
+import terminalImg from './assets/terminal.svg';
+import webinyLogo from './assets/webiny-orange-logo.svg';
 
-const heroContainer = css(
-    {
-        display: "flex",
-        justifyContent: "space-between",
-        maxWidth: 1300
-    },
-    mq({
-        flexDirection: ["column", "row"],
-        width: ["100%", 1200]
-    })
+const heroContainer = css (
+  {
+    display: 'flex',
+    justifyContent: 'space-between',
+    maxWidth: 1300,
+  },
+  mq ({
+    flexDirection: ['column', 'row'],
+    width: ['100%', 1200],
+  })
 );
 
-const Hero = styled("section")(
-    {
-        width: "100%",
-        backgroundSize: "cover",
-        color: theme.color.black,
-        boxSizing: "border-box",
-        position: "relative",
-        backgroundColor: "#fff" //theme.color.lightGray
-    },
-    mq({
-        textAlign: ["center", "left"],
-        padding: ["100px 20px 25px", "150px 0 25px"]
-        //height: ["auto", "calc(100vh - 100px)"],
-        //minHeight: ["auto", 800],
-        //maxHeight: ["auto", 750],
-    })
+const Hero = styled ('section') (
+  {
+    width: '100%',
+    maxWidth: 1300,
+    margin: '0 auto',
+    backgroundSize: 'cover',
+    color: theme.color.black,
+    boxSizing: 'border-box',
+    position: 'relative',
+    backgroundColor: '#fff', //theme.color.lightGray
+  },
+  mq ({
+    textAlign: ['center', 'left'],
+    padding: ['100px 20px 25px', '150px 0 25px'],
+    //height: ["auto", "calc(100vh - 100px)"],
+    //minHeight: ["auto", 800],
+    //maxHeight: ["auto", 750],
+  })
 );
 
-const Title = styled("h1")(
-    {
-        fontSize: 48,
-        fontWeight: theme.fontWeight.light,
-        marginBottom: 25
-    },
-    mq({
-        textAlign: ["center", "left"]
-    })
+const Title = styled ('h1') (
+  {
+    fontSize: 48,
+    fontWeight: theme.fontWeight.light,
+    marginBottom: 25,
+  },
+  mq ({
+    textAlign: ['center', 'left'],
+  })
 );
 
-const LeftSide = styled("div")(
-    {
-        margin: "0 auto 15px auto",
-        position: "relative"
-    },
-    mq({
-        width: ["100%", "auto"]
-    })
+const LeftSide = styled ('div') (
+  {
+    margin: '0 auto 15px auto',
+    position: 'relative',
+  },
+  mq ({
+    width: ['100%', 'auto'],
+  })
 );
 
-const RightSide = styled("div")(
-    {},
-    mq({
-        textAlign: ["center", "left"],
-        width: ["100%", 550]
-    })
+const RightSide = styled ('div') (
+  {},
+  mq ({
+    textAlign: ['center', 'left'],
+    width: ['100%', 550],
+  })
 );
 
-const Buttons = styled("div")(
-    {
-        display: "flex",
-        marginBottom: 25
-    },
-    mq({
-        justifyContent: ["space-around", "flex-start"]
-    })
+const Buttons = styled ('div') (
+  {
+    display: 'flex',
+    marginBottom: 25,
+  },
+  mq ({
+    justifyContent: ['space-around', 'flex-start'],
+  })
 );
 
-const ctaButton = css(
-    {
-        position: "relative",
-        marginTop: 0,
-        marginRight: "25px !important",
-        "&:last-child": {
-            marginRight: "0 !important"
-        }
+const ctaButton = css (
+  {
+    position: 'relative',
+    marginTop: 0,
+    marginRight: '25px !important',
+    '&:last-child': {
+      marginRight: '0 !important',
     },
-    mq({
-        width: ["150px !important", "auto !important"]
-    })
+  },
+  mq ({
+    width: ['150px !important', 'auto !important'],
+  })
 );
 
-const SubText = styled("p")(
-    {
-        fontSize: theme.fontSize.subText,
-        fontWeight: theme.fontWeight.light,
-        lineHeight: "25px",
-        marginBottom: 35
-    },
-    mq({
-        textAlign: ["center", "left"]
-    })
+const SubText = styled ('p') (
+  {
+    fontSize: theme.fontSize.subText,
+    fontWeight: theme.fontWeight.light,
+    lineHeight: '25px',
+    marginBottom: 35,
+  },
+  mq ({
+    textAlign: ['center', 'left'],
+  })
 );
 
-const GitHubLogo = styled("img")(
-    {
-        position: "relative",
-        marginRight: 5
-    },
-    mq({
-        display: ["none", "block"]
-    })
+const GitHubLogo = styled ('img') (
+  {
+    position: 'relative',
+    marginRight: 5,
+  },
+  mq ({
+    display: ['none', 'block'],
+  })
 );
 
-const List = styled("ul")(
-    {
-        boxSizing: "border-box",
-        padding: 0,
-        width: "100%",
-        marginBottom: 25,
-        display: "flex",
-        flexWrap: "wrap"
-    },
-    mq({
-        justifyContent: ["center", "space-between"]
-    })
+const List = styled ('ul') (
+  {
+    boxSizing: 'border-box',
+    padding: 0,
+    width: '100%',
+    marginBottom: 25,
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  mq ({
+    justifyContent: ['center', 'space-between'],
+  })
 );
 
-const ListItem = styled("li")({
-    listStyle: "none",
-    textAlign: "left",
-    marginBottom: 15,
-    marginRight: 25,
-    background: "url(" + bullet + ") no-repeat left 2px",
-    paddingLeft: 30,
-    "&:last-child": {
-        marginRight: 0
-    },
-    a: {
-        color: theme.color.secondaryDark
-    }
+const ListItem = styled ('li') ({
+  listStyle: 'none',
+  textAlign: 'left',
+  marginBottom: 15,
+  marginRight: 25,
+  background: 'url(' + bullet + ') no-repeat left 2px',
+  paddingLeft: 30,
+  '&:last-child': {
+    marginRight: 0,
+  },
+  a: {
+    color: theme.color.secondaryDark,
+  },
 });
 
-const Bold = styled("span")({
-    fontWeight: theme.fontWeight.semiBold
+const Bold = styled ('span') ({
+  fontWeight: theme.fontWeight.semiBold,
 });
 
-const TerminalBg = styled("div")(
-    {
-        left: 0,
-        zIndex: 1,
-        backgroundImage: "url(" + heroBg + ")",
-        backgroundSize: "100%",
-        backgroundPosition: "0px 0px",
-        backgroundRepeat: "no-repeat",
-        top: 75
-    },
-    mq({
-        position: ["relative", "absolute"],
-        width: ["100%", 750],
-        height: [300, 640]
-    })
+const TerminalBg = styled ('div') (
+  {
+    left: 0,
+    zIndex: 1,
+    backgroundImage: 'url(' + heroBg + ')',
+    backgroundSize: '100%',
+    backgroundPosition: '0px 0px',
+    backgroundRepeat: 'no-repeat',
+    top: 75,
+  },
+  mq ({
+    position: ['relative', 'absolute'],
+    width: ['100%', 750],
+    height: [300, 640],
+  })
 );
 
-const TerminalWrapper = styled("div")(
-    {
-        background: "url(" + terminalImg + ") no-repeat",
-        position: "absolute",
-        transform: "translateY(-45%)",
-        zIndex: 2,
-        backgroundSize: "100%",
-        padding: "50px 0  0 50px",
-        boxSizing: "border-box",
-        height: 310
-    },
-    mq({
-        width: ["100%", 450],
-        left: [0, 150],
-        top: [200, "50%"]
-    })
+const TerminalWrapper = styled ('div') (
+  {
+    background: 'url(' + terminalImg + ') no-repeat',
+    position: 'absolute',
+    transform: 'translateY(-45%)',
+    zIndex: 2,
+    backgroundSize: '100%',
+    padding: '50px 0  0 50px',
+    boxSizing: 'border-box',
+    height: 310,
+    maxWidth: 450,
+  },
+  mq ({
+    width: ['100%', 450],
+    left: [0, 150],
+    top: [200, '50%'],
+  })
 );
 
-const Code = styled("div")(
-    {
-        fontFamily: "monospace",
-        color: theme.color.black,
-        position: "absolute",
-        width: 350,
-        zIndex: 3,
-        ".comment": {
-            color: theme.color.grayText
-        },
-        textAlign: "left"
+const Code = styled ('div') (
+  {
+    fontFamily: 'monospace',
+    color: theme.color.black,
+    position: 'absolute',
+    width: 350,
+    zIndex: 3,
+    '.comment': {
+      color: theme.color.grayText,
     },
-    mq({
-        fontSize: [12, 14]
-    })
+    textAlign: 'left',
+  },
+  mq ({
+    fontSize: [12, 14],
+  })
 );
 
-export default ({ children, ...props }) => (
-    <Hero {...props}>
-        <TerminalWrapper>
-            <Code>
-                <span className="comment"># Step 1. Install webiny-cli</span>
-                <br />
-                $ npm install webiny-cli --dev <br />
-                <br />
-                <span className="comment"># Step 2. Create a project</span>
-                <br />
-                $ npm webiny init<br />
-                <br />
-                <span className="comment"># Step 3. Deploy to a serverless function</span>
-                <br />
-                $ sls deploy<br />
-                <br />
-                <span className="comment"># Your site is live!</span>
-                <br />
-                http://xyz.amazonaws.com/hello-world
-            </Code>
-        </TerminalWrapper>
-        <TerminalBg />
-        <ContentContainer className={heroContainer}>
-            <LeftSide />
-            <RightSide>
-                <img src={webinyLogo} />
-                <Title>CMS for Serverless Web Development</Title>
+export default ({children, ...props}) => (
+  <Hero {...props}>
+    <TerminalWrapper>
+      <Code>
+        <span className="comment"># Step 1. Install webiny-cli</span>
+        <br />
+        $ npm install webiny-cli --dev <br />
+        <br />
+        <span className="comment"># Step 2. Create a project</span>
+        <br />
+        $ npm webiny init<br />
+        <br />
+        <span className="comment">
+          # Step 3. Deploy to a serverless function
+        </span>
+        <br />
+        $ sls deploy<br />
+        <br />
+        <span className="comment"># Your site is live!</span>
+        <br />
+        http://xyz.amazonaws.com/hello-world
+      </Code>
+    </TerminalWrapper>
+    <TerminalBg />
+    <ContentContainer className={heroContainer}>
+      <LeftSide />
+      <RightSide>
+        <img src={webinyLogo} />
+        <Title>CMS for Serverless Web Development</Title>
 
-                <SubText>
-                    The way how we build, deploy and operate the web is evolving. Webiny is a
-                    developer-friendly serverless CMS powered by Node, React and a GraphQL API.
-                </SubText>
+        <SubText>
+          The way how we build, deploy and operate the web is evolving. Webiny is a
+          developer-friendly serverless CMS powered by Node, React and a GraphQL API.
+        </SubText>
 
-                <List>
-                    <ListItem>
-                        <Bold>Serverless</Bold>
-                    </ListItem>
-                    <ListItem>
-                        <Bold>Open Source</Bold>
-                    </ListItem>
-                    <ListItem>
-                        <Bold>GraphQL</Bold>
-                    </ListItem>
-                    <ListItem>
-                        <Bold>Multi-cloud</Bold>
-                    </ListItem>
-                </List>
+        <List>
+          <ListItem>
+            <Bold>Serverless</Bold>
+          </ListItem>
+          <ListItem>
+            <Bold>Open Source</Bold>
+          </ListItem>
+          <ListItem>
+            <Bold>GraphQL</Bold>
+          </ListItem>
+          <ListItem>
+            <Bold>Multi-cloud</Bold>
+          </ListItem>
+        </List>
 
-                <Buttons>
-                    <Button className={ctaButton} link="https://docs.webiny.com/" type="dark">
-                        Get Started
-                    </Button>
-                    <Button
-                        className={ctaButton}
-                        link="https://github.com/Webiny/webiny-js"
-                        type="outlineDark"
-                    >
-                        <GitHubLogo src={gitHubLogo} />
-                        View GitHub
-                    </Button>
-                </Buttons>
-            </RightSide>
-        </ContentContainer>
-    </Hero>
+        <Buttons>
+          <Button
+            className={ctaButton}
+            link="https://docs.webiny.com/"
+            type="dark"
+          >
+            Get Started
+          </Button>
+          <Button
+            className={ctaButton}
+            link="https://github.com/Webiny/webiny-js"
+            type="outlineDark"
+          >
+            <GitHubLogo src={gitHubLogo} />
+            View GitHub
+          </Button>
+        </Buttons>
+      </RightSide>
+    </ContentContainer>
+  </Hero>
 );
