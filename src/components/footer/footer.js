@@ -79,7 +79,7 @@ const Footer = () => (
   <Wrapper>
     <ContentContainer className={FlexDisplay}>
       <Box>
-        <Logo alt="Webiny" src={webinyLogo} />
+        <Logo src={webinyLogo} alt="Webiny Logo" />
         <Copy>
           Webiny is a content management system designed to run inside a serverless environment. Webiny enables developers to build powerful
           websites and web applications by providing all required components.

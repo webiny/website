@@ -155,7 +155,7 @@ const Bold = styled ('span') ({
 const TerminalBg = styled ('div') (
   {
     left: 0,
-    zIndex: 1,
+    zIndex: 0,
     backgroundImage: 'url(' + heroBg + ')',
     backgroundSize: '100%',
     backgroundPosition: '0px 0px',
@@ -173,7 +173,6 @@ const TerminalWrapper = styled ('div') (
   {
     background: 'url(' + terminalImg + ') no-repeat',
     position: 'absolute',
-    transform: 'translateY(-45%)',
     zIndex: 2,
     backgroundSize: '100%',
     padding: '50px 0  0 50px',
@@ -183,7 +182,8 @@ const TerminalWrapper = styled ('div') (
   },
   mq ({
     width: ['100%', 450],
-    left: [0, 150],
+    left: ['50%', 150],
+    transform: ['translate(-50%, -45%)', 'translateY(-45%)'],
     top: [200, '50%'],
   })
 );
@@ -232,7 +232,7 @@ export default ({children, ...props}) => (
     <ContentContainer className={heroContainer}>
       <LeftSide />
       <RightSide>
-        <img src={webinyLogo} />
+        <img src={webinyLogo} alt="Webiny logo" />
         <Title>CMS for Serverless Web Development</Title>
 
         <SubText>

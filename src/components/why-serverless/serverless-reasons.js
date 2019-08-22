@@ -44,7 +44,7 @@ const ServerlessReasons = () => (
       <Grid top className={containerStyle}>
         <div>
           <Cell>
-            <img src={zeroServers} />
+            <img src={zeroServers} alt="Zero servers to manage" />
           </Cell>
           <Cell title="Zero servers to manage">
             <p>
@@ -56,7 +56,7 @@ const ServerlessReasons = () => (
         </div>
         <div>
           <Cell>
-            <img src={usagePay} />
+            <img src={usagePay} alt="Pay for what you use" />
           </Cell>
           <Cell title="Pay for what you use">
             <p>
@@ -68,7 +68,7 @@ const ServerlessReasons = () => (
         </div>
         <div>
           <Cell>
-            <img src={buildFaster} />
+            <img src={buildFaster} alt="Build things faster" />
           </Cell>
           <Cell title="Build things faster">
             <p>
@@ -80,7 +80,7 @@ const ServerlessReasons = () => (
         </div>
         <div>
           <Cell>
-            <img src={scaling} />
+            <img src={scaling} alt="No more scaling headaches" />
           </Cell>
           <Cell title="No more scaling headaches">
             <p>
