@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home-v1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-page" transform="translate(-302.000000, -4183.000000)">
+            <g id="Made-for-devs" transform="translate(72.000000, 2829.000000)">
+                <g id="Features" transform="translate(205.000000, 383.000000)">
+                    <g id="ODM" transform="translate(0.000000, 944.000000)">
+                        <g id="Icon" transform="translate(25.000000, 27.000000)">
+                            <circle id="Oval-2" fill="#F7CEAA" cx="25" cy="25" r="25"></circle>
+                            <g id="database" transform="translate(12.000000, 10.000000)" fill="#E78455" fill-rule="nonzero">
+                                <path d="M26.25,4.28572266 L26.25,6.96427734 C26.25,9.32478516 20.3711133,11.25 13.125,11.25 C5.87888672,11.25 0,9.32478516 0,6.96427734 L0,4.28572266 C0,1.92521484 5.87888672,0 13.125,0 C20.3711133,0 26.25,1.92521484 26.25,4.28572266 Z M26.25,10.3125 L26.25,16.3392773 C26.25,18.6997852 20.3711133,20.625 13.125,20.625 C5.87888672,20.625 0,18.6997852 0,16.3392773 L0,10.3125 C2.81982422,12.2544727 7.9809375,13.1585156 13.125,13.1585156 C18.2690625,13.1585156 23.4301172,12.2544727 26.25,10.3125 Z M26.25,19.6875 L26.25,25.7142773 C26.25,28.0747852 20.3711133,30 13.125,30 C5.87888672,30 0,28.0747852 0,25.7142773 L0,19.6875 C2.81982422,21.6294727 7.9809375,22.5335156 13.125,22.5335156 C18.2690625,22.5335156 23.4301172,21.6294727 26.25,19.6875 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>baseline-check_circle-24px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home-v1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-page" transform="translate(-322.000000, -5722.000000)">
+            <g id="Mission----as-a-developer" transform="translate(320.000000, 5558.000000)">
+                <g id="Bullets" transform="translate(0.000000, 156.000000)">
+                    <g id="Bullet-1st">
+                        <g id="baseline-check_circle-24px" transform="translate(0.000000, 6.000000)">
+                            <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                            <path d="M12,2 C6.48,2 2,6.48 2,12 C2,17.52 6.48,22 12,22 C17.52,22 22,17.52 22,12 C22,6.48 17.52,2 12,2 Z M10,17 L5,12 L6.41,10.59 L10,14.17 L17.59,6.58 L19,8 L10,17 Z" id="Shape" fill="#3DBFB0" fill-rule="nonzero"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

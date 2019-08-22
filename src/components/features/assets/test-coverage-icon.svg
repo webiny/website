@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home-v1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-page" transform="translate(-650.000000, -3239.000000)">
+            <g id="Made-for-devs" transform="translate(72.000000, 2829.000000)">
+                <g id="Features" transform="translate(205.000000, 383.000000)">
+                    <g id="Test-coverage" transform="translate(352.000000, 0.000000)">
+                        <g id="Icon" transform="translate(21.000000, 27.000000)">
+                            <circle id="Oval-2" fill="#BFF1EB" cx="25" cy="25" r="25"></circle>
+                            <g id="baseline-bug_report-24px" transform="translate(10.000000, 7.000000)" fill="#00C7B1" fill-rule="nonzero">
+                                <path d="M30.5,10 L25.23125,10 C24.3875,8.5375 23.225,7.28125 21.81875,6.325 L24.875,3.26875 L22.23125,0.625 L18.1625,4.69375 C17.3,4.4875 16.41875,4.375 15.5,4.375 C14.58125,4.375 13.7,4.4875 12.85625,4.69375 L8.76875,0.625 L6.125,3.26875 L9.1625,6.325 C7.775,7.28125 6.6125,8.5375 5.76875,10 L0.5,10 L0.5,13.75 L4.41875,13.75 C4.325,14.36875 4.25,14.9875 4.25,15.625 L4.25,17.5 L0.5,17.5 L0.5,21.25 L4.25,21.25 L4.25,23.125 C4.25,23.7625 4.325,24.38125 4.41875,25 L0.5,25 L0.5,28.75 L5.76875,28.75 C7.71875,32.10625 11.3375,34.375 15.5,34.375 C19.6625,34.375 23.28125,32.10625 25.23125,28.75 L30.5,28.75 L30.5,25 L26.58125,25 C26.675,24.38125 26.75,23.7625 26.75,23.125 L26.75,21.25 L30.5,21.25 L30.5,17.5 L26.75,17.5 L26.75,15.625 C26.75,14.9875 26.675,14.36875 26.58125,13.75 L30.5,13.75 L30.5,10 Z M19.25,25 L11.75,25 L11.75,21.25 L19.25,21.25 L19.25,25 Z M19.25,17.5 L11.75,17.5 L11.75,13.75 L19.25,13.75 L19.25,17.5 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

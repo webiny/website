@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="528px" height="52px" viewBox="0 0 528 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Deploy - Server</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home-v1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-page" transform="translate(-775.000000, -4292.000000)">
+            <g id="Made-for-devs" transform="translate(72.000000, 3054.000000)">
+                <g id="Architecture-v2" transform="translate(204.000000, 459.000000)">
+                    <g id="Deploy---Server" transform="translate(499.000000, 779.000000)">
+                        <rect id="Rectangle-12" fill="#313131" x="0" y="0" width="528" height="52" rx="5"></rect>
+                        <text id="webiny-deploy-servic" font-family="Menlo-Regular, Menlo" font-size="14" font-weight="normal" fill="#FFFFFF">
+                            <tspan x="47" y="31">webiny deploy service {name}</tspan>
+                        </text>
+                        <text id="$" font-family="SourceSansPro-Bold, Source Sans Pro" font-size="24" font-weight="bold" fill="#5CC9B1">
+                            <tspan x="13.664" y="33">$</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
