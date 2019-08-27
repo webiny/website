@@ -157,7 +157,7 @@ class Components extends React.Component {
     return (
       <section {...this.props} className={wrapperClass}>
         <SubTitle>
-          Webiny comes with several ready-made serverless apps
+          Webiny Comes With Several Ready-Made Serverless Apps
         </SubTitle>
 
         <ContentContainer>
@@ -228,26 +228,26 @@ class Components extends React.Component {
               <p>
                 GraphQL based headless CMS with powerful content modeling features.
               </p>
-              <Link to="/apps/headless-cms">Learn More</Link>
+              <Link to="/serverless-app/headless-cms">Learn More</Link>
             </div>
             <div className="content">
               <h3>Page Builder</h3>
               <p>
                 For when you need a quick landing page created without any coding.
               </p>
-              <Link to="/apps/headless-cms">Learn More</Link>
+              <Link to="/serverless-app/page-builder">Learn More</Link>
             </div>
             <div className="content">
               <h3>Form Builder</h3>
               <p>
                 Create forms using a drag&drop interface and track how they convert.
               </p>
-              <Link to="/apps/headless-cms">Learn More</Link>
+              <Link to="/serverless-app/form-builder">Learn More</Link>
             </div>
             <div className="content">
               <h3>File Manager</h3>
               <p>Upload, categorize, search and edit your files.</p>
-              <Link to="/apps/headless-cms">Learn More</Link>
+              <Link to="/serverless-app/file-manager">Learn More</Link>
             </div>
           </Slider>
         </ContentContainer>

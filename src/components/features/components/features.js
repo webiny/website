@@ -5,7 +5,6 @@ import {css} from 'emotion';
 import theme from '../../utils/theme';
 import mq from '../../utils/breakpoints';
 import ContentContainer from '../../ui/content-container';
-import TechTools from './tech-tools';
 
 import serverlessIcon from '../assets/serverless-icon.svg';
 //import testCoverageIcon from '../assets/test-coverage-icon.svg';
@@ -34,6 +33,7 @@ const wrapperStyle = css (
   {
     background: 'url(' + bg + ') no-repeat center top',
     width: '100%',
+    backgroundColor: '#F7F7F7',
   },
   mq ({
     backgroundSize: ['cover', 'cover', 'cover'],
@@ -42,8 +42,9 @@ const wrapperStyle = css (
       'right 0px top 0px',
       'right 0px top 0px',
     ],
-    paddingTop: [50, 150],
+    paddingTop: [50, 200],
     paddingBottom: [25, 50],
+    marginTop: [0, -100],
   })
 );
 
@@ -384,7 +385,6 @@ class Features extends React.Component {
             </Box>
           </BoxContainer>
         </ContentContainer>
-        <TechTools />
       </section>
     );
   }

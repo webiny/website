@@ -50,6 +50,13 @@ const CellBlock = styled ('div') (
       color: theme.color.black,
       lineHeight: '160%',
     },
+    a: {
+      color: theme.color.primaryDark,
+      textDecoration: 'none',
+      '&:hover': {
+        textDecoration: 'underline',
+      },
+    },
   },
   mq ({
     marginRight: [0, 15],

@@ -353,16 +353,16 @@ class Header extends React.Component {
                 <DownArrow />
                 <DropDown>
                   <div className={dropdownArrow} />
-                  <Link rel="prerender" to="/why-webiny">
+                  <Link rel="prerender" to="/serverless-app/headless-cms">
                     Headless CMS
                   </Link>
-                  <Link rel="prerender" to="/features/components">
-                    Visual page builder
+                  <Link rel="prerender" to="/serverless-app/page-builder">
+                    Page Builder
                   </Link>
-                  <Link rel="prerender" to="/developers">
+                  <Link rel="prerender" to="/serverless-app/form-builder">
                     Form builder
                   </Link>
-                  <Link rel="prerender" to="/developers">
+                  <Link rel="prerender" to="/serverless-app/file-manager">
                     File manager
                   </Link>
                 </DropDown>

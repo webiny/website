@@ -80,7 +80,7 @@ class Footer extends React.Component {
           <Wrapper>
             <h4>Ready to try it out?</h4>
             <Text>
-              Let's start by creating your first website.
+              Get started with our step-by-step tutorial.
               {' '}
               <br />
               It's only gonna take a
@@ -94,7 +94,7 @@ class Footer extends React.Component {
             <h4>Have a question or need help?</h4>
             <Text>
               Join our community of developers and fellow Webiny users. Share your
-              experiences and your questions.
+              experiences and ask questions.
             </Text>
             <Button type="dark" link="https://community.webiny.com">
               Join the community

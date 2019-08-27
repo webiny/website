@@ -37,7 +37,7 @@ const SubTitle = styled ('h2') (
     margin: '25px auto 40px auto',
   },
   mq ({
-    width: ['100%', 650],
+    width: ['100%', 675],
   })
 );
 
@@ -48,8 +48,8 @@ const Bold = styled ('span') ({
 const Challenges = () => (
   <section className={wrapperClass}>
     <SubTitle>
-      However there are some challenges
-      going serverless, but Webiny helps solve those
+      However There Are Some Challenges Going Serverless, but Webiny Helps Solve Those
+      {' '}
     </SubTitle>
     <ContentContainer>
       <Grid left>

@@ -19,7 +19,7 @@ const heroStyle = css (
 const Hero = () => (
   <React.Fragment>
     <Header bg={headerBg} className={heroStyle}>
-      <Title>Why serverless?</Title>
+      <Title>Why Serverless?</Title>
       <Subtitle>
         Serverless is making big changes to how we operate, deploy, architect and run
         applications. There are many benefits that serverless brings, the ones below are

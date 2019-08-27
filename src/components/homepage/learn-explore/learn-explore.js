@@ -152,7 +152,7 @@ class LearnExplore extends React.Component {
   render () {
     return (
       <section {...this.props} className={wrapperClass}>
-        <SubTitle>Go serverless with Webiny</SubTitle>
+        <SubTitle>Go Serverless With Webiny</SubTitle>
 
         <ContentContainer>
           <Grid>
