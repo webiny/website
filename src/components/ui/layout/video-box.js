@@ -1,5 +1,5 @@
 import React from 'react';
-import {DefaultPlayer as Video} from 'react-html5video';
+//import {DefaultPlayer as Video} from 'react-html5video';
 import 'react-html5video/dist/styles.css';
 import {css} from 'emotion';
 
@@ -13,17 +13,35 @@ const videoPlayer = css ({
 });
 
 class VideoBox extends React.Component {
+  state = {
+    Video: null,
+  };
+
+  componentWillMount () {
+    import ('react-html5video').then (VideoLib => {
+      this.setState ({Video: VideoLib.DefaultPlayer});
+    });
+  }
+
+  componentDidMount () {
+    import ('react-html5video');
+  }
   render () {
-    return (
-      <Video
-        loop
-        muted
-        controls={['PlayPause', 'Seek', 'Fullscreen']}
-        className={videoPlayer}
-      >
-        <source src={this.props.file} type="video/mp4" />
-      </Video>
-    );
+    let {Video} = this.state;
+    if (!Video) {
+      return <div>Loading...</div>;
+    } else {
+      return (
+        <Video
+          loop
+          muted
+          controls={['PlayPause', 'Seek', 'Fullscreen']}
+          className={videoPlayer}
+        >
+          <source src={this.props.file} type="video/mp4" />
+        </Video>
+      );
+    }
   }
 }
 
