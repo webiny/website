@@ -12,7 +12,7 @@ import VideoBox from '../../ui/layout/video-box';
 import QuickStart from '../../ui/layout/footer';
 import AppList from '../components/app-list';
 
-import videoBg from './assets/webiny-video-bg.jpg';
+import HeroImage from './assets/page-builder.png';
 import HeroBg from './assets/hero-bg.svg';
 import PageBuilderDemoImg from './assets/page-builder-demo.png';
 import PageBuilderVideo from './assets/01-page-builder.mp4';
@@ -37,7 +37,7 @@ export default ({children, ...props}) => (
         'Build stunning landing pages with an easy to use drag&drop editor'
       }
       github="https://github.com/webiny/webiny-js"
-      media={<img src={videoBg} alt="Webiny Serverless Page Builder" />}
+      media={<img src={HeroImage} alt="Webiny Serverless Page Builder" />}
     >
       <List>
         <ListItem title={'Serverless & Self-hosted'}>

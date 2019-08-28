@@ -17,7 +17,9 @@ import imgCli from './assets/apis/webiny-cli.svg';
 const APIs = () => (
   <React.Fragment>
     <Header bg={headerBg}>
-      <Title>Create GraphQL APIs for your mobile and web apps</Title>
+      <Title>
+        Create GraphQL APIs for Your Mobile and Web Apps and Run Them Inside a Serverless Function
+      </Title>
     </Header>
     <ContentContainer>
       <Grid left>

@@ -19,7 +19,7 @@ import imgAcl from './assets/apps/acl.svg';
 const Applications = () => (
   <React.Fragment>
     <Header bg={headerBg}>
-      <Title>Build scalable serverless web application in less time</Title>
+      <Title>Build Scalable Serverless Web Application in Less Time</Title>
     </Header>
     <ContentContainer>
       <Grid left>

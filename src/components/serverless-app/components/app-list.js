@@ -198,7 +198,7 @@ class AppList extends React.Component {
                 </p>
                 <Button
                   className={ctaButton}
-                  link="/serverless-app/file-manager"
+                  link="/serverless-app/form-builder"
                   type="outlineDark"
                 >
                   Learn More
@@ -214,7 +214,7 @@ class AppList extends React.Component {
                 </p>
                 <Button
                   className={ctaButton}
-                  link="/serverless-app/form-builder"
+                  link="/serverless-app/file-manager"
                   type="outlineDark"
                 >
                   Learn More

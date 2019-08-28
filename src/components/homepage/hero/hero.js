@@ -209,16 +209,16 @@ export default ({children, ...props}) => (
   <Hero {...props}>
     <TerminalWrapper>
       <Code>
-        <span className="comment"># Step 1. Install webiny-cli</span>
+        <span className="comment">#1: Install webiny-cli</span>
         <br />
         $ npm install webiny-cli --dev <br />
         <br />
-        <span className="comment"># Step 2. Create a project</span>
+        <span className="comment">#2: Create a project</span>
         <br />
         $ npm webiny init<br />
         <br />
         <span className="comment">
-          # Step 3. Deploy to a serverless function
+          #3: Deploy using serverless framework
         </span>
         <br />
         $ sls deploy<br />
@@ -251,7 +251,7 @@ export default ({children, ...props}) => (
             <Bold>GraphQL</Bold>
           </ListItem>
           <ListItem>
-            <Bold>Multi-cloud</Bold>
+            <Bold>Self-hosted</Bold>
           </ListItem>
         </List>
 
