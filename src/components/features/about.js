@@ -17,7 +17,7 @@ const wrapperClass = css (
     backgroundColor: 'transparent',
   },
   mq ({
-    marginTop: [0, -80],
+    marginTop: [125, -80],
     paddingTop: [0, 150],
   })
 );

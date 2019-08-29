@@ -1,19 +1,23 @@
 import React from 'react';
 import styled from 'react-emotion';
 import ModalVideo from 'react-modal-video';
+import mq from '../../utils/breakpoints';
 
 import playIcon from './assets/play-button.svg';
 import './assets/modal-video.min.css';
 
 const VideoImage = styled ('img') ({
-  width: 800,
   border: '1px solid #E6E6E6',
   borderRadius: 5,
   //opacity: '0.7',
   boxShadow: '0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3)',
   cursor: 'pointer',
   transition: 'opacity 0.3s',
-});
+  boxSizing: 'border-box'
+},mq({
+  width: ['calc(100% - 50px)', 800],
+  margin: [25, 0]
+}));
 
 const PlayButtonWrapper = styled ('div') ({
   position: 'absolute',

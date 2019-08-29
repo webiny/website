@@ -28,7 +28,6 @@ const SubTitle = styled ('h2') (
   {
     fontSize: theme.fontSize.h2,
     fontWeight: theme.fontWeight.semiBold,
-    color: theme.color.white,
     textAlign: 'center',
     paddingTop: 50,
     marginBottom: 80,
@@ -37,21 +36,7 @@ const SubTitle = styled ('h2') (
     marginTop: [0, 25],
     marginLeft: [25, 0],
     marginRight: [25, 0],
-  })
-);
-
-const SubText = styled ('p') (
-  {
-    fontSize: theme.fontSize.h3,
-    fontWeight: theme.fontWeight.regular,
-    color: theme.color.white,
-    textAlign: 'center',
-    margin: '0 20%',
-    lineHeight: '150%',
-    maxWidth: 680,
-  },
-  mq ({
-    margin: ['20px', '0 auto 75px auto'],
+    color: [theme.color.black, theme.color.white],
   })
 );
 

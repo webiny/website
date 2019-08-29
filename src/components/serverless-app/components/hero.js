@@ -88,7 +88,6 @@ const RightSide = styled ('div') (
   {
     paddingTop: 50,
     img: {
-      maxWidth: 850,
       borderRadius: 5,
       overflow: 'hidden',
       border: '1px solid #E6E6E6',
@@ -98,7 +97,10 @@ const RightSide = styled ('div') (
   },
   mq ({
     textAlign: ['center', 'right'],
-    width: ['100%', 650],
+    width: ['auto', 650],
+    img: {
+      maxWidth: ['100%', 850],
+    },
   })
 );
 

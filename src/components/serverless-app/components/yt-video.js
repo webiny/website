@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'react-emotion';
 import {css} from 'emotion';
 import YTVideoComponent from '../../ui/layout/yt-video';
 import {SubTitle} from './titles';

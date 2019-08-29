@@ -9,6 +9,7 @@ import {Grid, Cell} from '../../ui/layout/layout';
 import VideoBox from '../../ui/layout/video-box';
 import QuickStart from '../../ui/layout/footer';
 import AppList from '../components/app-list';
+import mq from '../../utils/breakpoints';
 
 import HeroImage from './assets/file-manager.jpg';
 import HeroBg from './assets/hero-bg.svg';
@@ -20,20 +21,29 @@ import SearchVideo from './assets/03-search.mp4';
 import TagsVideo from './assets/04-tags.mp4';
 import LazyLoadVideo from './assets/05-lazy-load.mp4';
 
-const featureContainer = css ({
-  display: 'flex',
-  marginBottom: 50,
-});
+const featureContainer = css (
+  {
+    display: 'flex',
+    marginBottom: 50,
+  },
+  mq ({
+    flexDirection: ['column', 'row'],
+  })
+);
 
-const videoFeaturesContainer = css ({
-  background: 'url(' + background + ') no-repeat left top',
-  backgroundSize: 'contain',
-  textAlign: 'center',
-  margin: '-100px auto 0 auto',
-  padding: '200px 0 50px 0',
-  backgroundColor: '#F7F7F7',
-  backgroundPosition: '0 -5px',
-});
+const videoFeaturesContainer = css (
+  {
+    background: 'url(' + background + ') no-repeat left top',
+    backgroundSize: 'contain',
+    textAlign: 'center',
+    backgroundColor: '#F7F7F7',
+    backgroundPosition: '0 -5px',
+  },
+  mq ({
+    margin: [0, '-100px auto 0 auto'],
+    padding: [0, '200px 0 50px 0'],
+  })
+);
 
 export default ({children, ...props}) => (
   <React.Fragment>

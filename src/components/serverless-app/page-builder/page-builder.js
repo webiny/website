@@ -4,7 +4,7 @@ import Hero from '../components/hero';
 import {List, ListItem} from '../components/list';
 import FeatureBox from '../components/feature-box';
 import ContentContainer from '../../ui/content-container';
-import Installing from '../components/installing';
+import mq from '../../utils/breakpoints';
 import YTVideo from '../components/yt-video';
 import {SubTitle} from '../components/titles';
 import {Grid, Cell} from '../../ui/layout/layout';
@@ -23,10 +23,16 @@ import SeoVideo from './assets/05-seo.mp4';
 import MenuVideo from './assets/06-menu.mp4';
 import PageCategoriesVideo from './assets/07-page-categories.mp4';
 
-const featureContainer = css ({
-  display: 'flex',
-  marginBottom: 50,
-});
+const featureContainer = css (
+  {
+    display: 'flex',
+    marginBottom: 50,
+    boxSizing: 'border-box',
+  },
+  mq ({
+    flexDirection: ['column', 'row'],
+  })
+);
 
 export default ({children, ...props}) => (
   <React.Fragment>

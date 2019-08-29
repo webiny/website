@@ -1,16 +1,21 @@
 import React from 'react';
 //import {DefaultPlayer as Video} from 'react-html5video';
 import 'react-html5video/dist/styles.css';
+import mq from '../../utils/breakpoints';
 import {css} from 'emotion';
 
-const videoPlayer = css ({
-  backgroundColor: 'transparent',
-  border: '1px solid #E6E6E6',
-  boxShadow: '0 2px 4px 0 rgba(209,209,209,0.50)',
-  borderRadius: 5,
-  height: 329,
-  overflow: 'hidden',
-});
+const videoPlayer = css (
+  {
+    backgroundColor: 'transparent',
+    border: '1px solid #E6E6E6',
+    boxShadow: '0 2px 4px 0 rgba(209,209,209,0.50)',
+    borderRadius: 5,
+    overflow: 'hidden',
+  },
+  mq ({
+    height: ['auto', 329],
+  })
+);
 
 class VideoBox extends React.Component {
   state = {
