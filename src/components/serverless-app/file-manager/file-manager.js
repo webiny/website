@@ -12,14 +12,13 @@ import AppList from '../components/app-list';
 
 import HeroImage from './assets/file-manager.jpg';
 import HeroBg from './assets/hero-bg.svg';
-import PageBuilderVideo from './assets/01-page-builder.mp4';
-import BuildingBlocksVideo from './assets/02-building-blocks.mp4';
-import PageRevisionsVideo from './assets/03-page-revisions.mp4';
-import PageElementsVideo from './assets/04-page-elements.mp4';
-import SeoVideo from './assets/05-seo.mp4';
-import MenuVideo from './assets/06-menu.mp4';
-import PageCategoriesVideo from './assets/07-page-categories.mp4';
 import background from './assets/gray-bg-with-bg.svg';
+
+import DropFilesVideo from './assets/01-drop-files.mp4';
+import ImageEditorVideo from './assets/02-image-editor.mp4';
+import SearchVideo from './assets/03-search.mp4';
+import TagsVideo from './assets/04-tags.mp4';
+import LazyLoadVideo from './assets/05-lazy-load.mp4';
 
 const featureContainer = css ({
   display: 'flex',
@@ -86,7 +85,7 @@ export default ({children, ...props}) => (
         <SubTitle>Features</SubTitle>
         <Grid left>
           <Cell>
-            <VideoBox file={PageBuilderVideo} />
+            <VideoBox file={DropFilesVideo} />
           </Cell>
           <Cell title="Just drop your files">
             <p>
@@ -101,12 +100,12 @@ export default ({children, ...props}) => (
             </p>
           </Cell>
           <Cell>
-            <VideoBox file={PageElementsVideo} />
+            <VideoBox file={ImageEditorVideo} />
           </Cell>
         </Grid>
         <Grid left>
           <Cell>
-            <VideoBox file={PageRevisionsVideo} />
+            <VideoBox file={SearchVideo} />
           </Cell>
           <Cell title="Find the right files with ease">
             <p>
@@ -122,12 +121,12 @@ export default ({children, ...props}) => (
             </p>
           </Cell>
           <Cell>
-            <VideoBox file={BuildingBlocksVideo} />
+            <VideoBox file={TagsVideo} />
           </Cell>
         </Grid>
         <Grid left>
           <Cell>
-            <VideoBox file={SeoVideo} />
+            <VideoBox file={LazyLoadVideo} />
           </Cell>
           <Cell title="Don't worry about about how many files you have">
             <p>
