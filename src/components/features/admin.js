@@ -8,6 +8,7 @@ import ContentContainer from '../ui/content-container';
 import VideoBox from '../ui/layout/video-box';
 
 import background from './assets/gray-bg-with-bg.svg';
+import components from './assets/webiny-components.svg';
 
 import ServerlessBootstrapVideo from './assets/01-serverless-bootstrap.mp4';
 import ACLVideo from './assets/02-acl.mp4';
@@ -62,13 +63,15 @@ class YTVideo extends React.Component {
     return (
       <section className={container}>
         <ContentContainer>
+          {/*
           <SubTitle>Webiny Admin</SubTitle>
           <Description>
             Admin interface with user management, security and much more. All you need to build your next serverless application.
             {' '}
             All Webiny serverless apps are built on top of this platform.
           </Description>
-
+          <img src={components} style={{maxWidth: '850px'}} />
+          */}
           <Grid left>
             <Cell>
               <VideoBox file={ServerlessBootstrapVideo} />
@@ -77,8 +80,6 @@ class YTVideo extends React.Component {
               <p>
                 It's the perfect way to start building serverless applications.
                 You don't need to lose time on configuring the deployment scripts, webpack, and babel plugins, as well as figuring out how to structure your project.
-                {' '}
-                Webiny Admin contains only the core modules that you will need, with no overhead.
               </p>
             </Cell>
           </Grid>
