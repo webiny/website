@@ -87,7 +87,7 @@ const float = keyframes`
 const RightSide = styled ('div') (
   {
     paddingTop: 50,
-    img: {
+    '>img': {
       borderRadius: 5,
       overflow: 'hidden',
       border: '1px solid #E6E6E6',
@@ -134,10 +134,11 @@ export default props => (
         <Title>{props.title}</Title>
         {props.children}
 
-        <Button link={props.github} type="outline">
-          <GitHubLogo src={gitHubLogo} />
-          View on GitHub
-        </Button>
+        {props.github &&
+          <Button link={props.github} type="outline">
+            <GitHubLogo src={gitHubLogo} />
+            View on GitHub
+          </Button>}
 
       </LeftSide>
       <RightSide>

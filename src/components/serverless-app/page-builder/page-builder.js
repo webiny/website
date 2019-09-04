@@ -6,7 +6,7 @@ import FeatureBox from '../components/feature-box';
 import ContentContainer from '../../ui/content-container';
 import mq from '../../utils/breakpoints';
 import YTVideo from '../components/yt-video';
-import {SubTitle} from '../components/titles';
+import {SubTitle} from '../components/typography';
 import {Grid, Cell} from '../../ui/layout/layout';
 import VideoBox from '../../ui/layout/video-box';
 import QuickStart from '../../ui/layout/footer';
@@ -40,7 +40,7 @@ export default ({children, ...props}) => (
       bg={HeroBg}
       appName={'Page Builder'}
       title={
-        'Build stunning landing pages with an easy to use drag&drop editor'
+        'Build Stunning Landing Pages With an Easy to Use Drag&Drop Editor'
       }
       github="https://github.com/webiny/webiny-js"
       media={<img src={HeroImage} alt="Webiny Serverless Page Builder" />}

@@ -1,7 +1,7 @@
 import React from 'react';
 import {css} from 'emotion';
 import YTVideoComponent from '../../ui/layout/yt-video';
-import {SubTitle} from './titles';
+import {SubTitle} from './typography';
 import background from './assets/video-bg.svg';
 
 const videoContainer = css ({

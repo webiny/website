@@ -4,7 +4,7 @@ import Hero from '../components/hero';
 import {List, ListItem} from '../components/list';
 import FeatureBox from '../components/feature-box';
 import ContentContainer from '../../ui/content-container';
-import {SubTitle} from '../components/titles';
+import {SubTitle} from '../components/typography';
 import {Grid, Cell} from '../../ui/layout/layout';
 import VideoBox from '../../ui/layout/video-box';
 import QuickStart from '../../ui/layout/footer';
@@ -50,7 +50,7 @@ export default ({children, ...props}) => (
     <Hero
       bg={HeroBg}
       appName={'File Manager'}
-      title={'Upload, categorize, search and edit your files'}
+      title={'Upload, Categorize, Search and Edit Your Files'}
       github="https://github.com/webiny/webiny-js"
       media={<img src={HeroImage} alt="Webiny Serverless File Manager" />}
     >

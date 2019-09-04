@@ -120,7 +120,7 @@ class About extends React.Component {
                   Learn more about the
                   {' '}
                   <Link to="/serverless-app/headless-cms">
-                    Headless CMS module
+                    Headless CMS
                   </Link>
                   ,
                   {' '}

@@ -17,4 +17,12 @@ const SubTitle = styled ('h2') (
   })
 );
 
-export {SubTitle};
+const Paragraph = styled ('p') ({
+  fontSize: 18,
+  fontWeight: theme.fontWeight.regular,
+  color: theme.color.black,
+  lineHeight: '150%',
+  textAlign: 'left',
+});
+
+export {SubTitle, Paragraph};

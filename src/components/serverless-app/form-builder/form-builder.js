@@ -4,7 +4,7 @@ import Hero from '../components/hero';
 import {List, ListItem} from '../components/list';
 import FeatureBox from '../components/feature-box';
 import ContentContainer from '../../ui/content-container';
-import {SubTitle} from '../components/titles';
+import {SubTitle} from '../components/typography';
 import {Grid, Cell} from '../../ui/layout/layout';
 import VideoBox from '../../ui/layout/video-box';
 import QuickStart from '../../ui/layout/footer';

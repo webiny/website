@@ -5,12 +5,17 @@ import theme from '../utils/theme';
 import emailIcon from './assets/email-icon.svg';
 import newsletterBullet from './assets/newsletter-bullet.svg';
 
+const Form = styled ('form') ({});
+
 const Title = styled ('label') ({
   fontSize: theme.fontSize.h3,
-  color: theme.color.lightGray,
+  color: 'var(--nl-text-color)', //theme.color.lightGray,
   fontWeight: theme.fontWeight.bold,
   marginTop: 0,
   lineHeight: '150%',
+  textAlign: 'var(--nl-text-align)',
+  width: '100%',
+  display: 'inline-block',
 });
 
 const InputWrapper = styled ('form') ({
@@ -55,7 +60,7 @@ const NlReasons = styled ('ul') ({
 
 const NlReason = styled ('li') ({
   listStyle: 'none',
-  listStylePosition: 'right',
+  listStylePosition: 'outside',
   backgroundImage: 'url(' + newsletterBullet + ')',
   backgroundPosition: 'right 0 center',
   backgroundRepeat: 'no-repeat',
@@ -63,6 +68,7 @@ const NlReason = styled ('li') ({
   paddingRight: 25,
   fontSize: theme.fontSize.footer,
   marginBottom: 5,
+  textAlign: 'right',
 });
 
 class Newsletter extends React.Component {
@@ -76,7 +82,7 @@ class Newsletter extends React.Component {
   handleChange = event => {
     this.setState ({email: event.target.value});
   };
-
+  /*
   handleSubmit = event => {
     if (this.state.email !== '') {
       this.setState ({email: "Thanks! You're on the list."});
@@ -89,7 +95,7 @@ class Newsletter extends React.Component {
         [[['newsletter-subscribed', {date: new Date ().toGMTString ()}]]],
       ]);
 
-      /*
+      
       const formData = Object.keys (this.state)
         .map (key => {
           return (
@@ -107,30 +113,40 @@ class Newsletter extends React.Component {
         },
         body: formData,
       });
-      */
+      
     }
+    
 
     event.preventDefault ();
   };
+  */
   render () {
     return (
       <React.Fragment>
         <Title htmlFor="newsletter_email">Join Webiny Newsletter</Title>
-        <InputWrapper onSubmit={this.handleSubmit}>
+        <InputWrapper
+          action="https://webiny.us18.list-manage.com/subscribe/post?u=122d2713f699957c0f043cb42&amp;id=f0173e501c"
+          method="post"
+          id="mc-embedded-subscribe-form"
+          name="mc-embedded-subscribe-form"
+          class="validate"
+          target="_blank"
+          novalidate
+        >
           <Input
             ref={this.inputRef}
             placeholder="email@domain.com"
             type="email"
             onChange={this.handleChange}
             value={this.state.email}
-            name="email"
+            name="EMAIL"
             id="newsletter_email"
             required
           />
           <EmailIcon alt="Email" src={emailIcon} />
           <Submit>Join</Submit>
         </InputWrapper>
-        <NlReasons>
+        <NlReasons className="webiny-nl-reason-list">
           <NlReason>We send one newsletter a week.</NlReason>
           <NlReason>Contains only Webiny relevant content.</NlReason>
           <NlReason>Your email is not shared with any 3rd parties.</NlReason>

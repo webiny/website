@@ -12,6 +12,8 @@ import webinyLogo from './assets/webiny-footer-logo.svg';
 const Wrapper = styled ('div') ({
   backgroundColor: theme.color.footerBg,
   padding: '50px 0 5px',
+  '--nl-text-color': 'white',
+  '--nl-text-align': 'right',
 });
 
 const FlexDisplay = css (
