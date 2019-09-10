@@ -415,8 +415,11 @@ class Header extends React.Component {
                   <a href="https://support.webiny.com/">Support</a>
                   <a href="https://community.webiny.com/">Community</a>
                   <hr />
-                  <Link rel="prerender" to="/use-case/microservices">
+                  <Link rel="prerender" to="/about-us">
                     About us
+                  </Link>
+                  <Link rel="prerender" to="/contact-us">
+                    Contact us
                   </Link>
                 </DropDown>
               </MenuItem>

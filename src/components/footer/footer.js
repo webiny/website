@@ -109,6 +109,10 @@ const Footer = () => (
     </ContentContainer>
     <Bottom>
       <Copy className={textCenter}>
+        <Link className={linkStyle} to="/about-us">
+          About Us
+        </Link>{' '}
+        /{' '}
         <Link className={linkStyle} to="/contact-us">
           Contact Us
         </Link>{' '}
