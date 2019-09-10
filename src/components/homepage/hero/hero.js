@@ -269,7 +269,7 @@ export default ({children, ...props}) => (
             type="outlineDark"
           >
             <GitHubLogo src={gitHubLogo} />
-            View GitHub
+            View on GitHub
           </Button>
         </Buttons>
       </RightSide>

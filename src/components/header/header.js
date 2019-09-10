@@ -6,6 +6,7 @@ import ContentContainer from '../ui/content-container';
 import Button from '../ui/button';
 import Link from 'gatsby-link';
 import {css} from 'emotion';
+import GitHubButton from 'react-github-btn';
 
 import logo from './assets/webiny-logo.svg';
 import logoOrange from './assets/webiny-orange-logo.svg';
@@ -52,7 +53,7 @@ const Menu = styled ('ul') (
 );
 
 const linkStyle = css ({
-  fontWeight: theme.fontWeight.semiBold,
+  fontWeight: 600,
   textDecoration: 'none',
   color: '#fff',
   transition: '250ms opacity',
@@ -105,7 +106,7 @@ const DownArrow = styled ('div') ({
   width: 24,
   height: 24,
   background: 'url(' + downArrowWhite + ') no-repeat',
-  top: 1,
+  top: -1,
   right: 0,
   color: 'white',
 });
@@ -115,7 +116,7 @@ const MenuItem = styled ('li') ({
   textAlign: 'left',
   cursor: 'pointer',
   position: 'relative',
-  fontSize: theme.fontSize.navMenuItem,
+  fontSize: 14,
   '&:hover': {
     [DropDown]: {
       //display: 'block',
@@ -332,6 +333,16 @@ class Header extends React.Component {
             </WebinyLogo>
 
             <Menu>
+              <MenuItem style={{paddingTop: '5px'}}>
+                <GitHubButton
+                  href="https://github.com/webiny/webiny-js"
+                  data-icon="octicon-star"
+                  data-show-count="true"
+                  aria-label="Star webiny/webiny-js on GitHub"
+                >
+                  Star
+                </GitHubButton>
+              </MenuItem>
               <MenuItem>
                 <Link
                   className={linkStyle}
