@@ -39,69 +39,87 @@ const Title = styled ('h1') ({
   margin: '0 auto',
 });
 
-const styleSet = css ({
-  h2: {
-    textAlign: 'left',
-    paddingTop: 0,
-    marginTop: 0,
-    fontSize: 48,
-  },
-  p: {
-    fontSize: 24,
-  },
-  '.grid': {
-    alignItems: 'flex-start',
-    '>div:first-child': {
-      marginRight: 100,
+const styleSet = css (
+  {
+    h2: {
+      paddingTop: 0,
+      marginTop: 0,
+      fontSize: 48,
     },
-    '&.investors': {
-      h2: {
-        textAlign: 'center',
-        marginBottom: 0,
-      },
-      p: {
-        textAlign: 'center',
-      },
-      '.logos': {
-        textAlign: 'center',
-        img: {
-          height: 80,
-          width: 'auto',
+    p: {
+      fontSize: 24,
+    },
+    '.grid': {
+      alignItems: 'flex-start',
+      '&.investors': {
+        padding: '25px 0',
+        h2: {
+          textAlign: 'center',
+          marginBottom: 0,
+        },
+        p: {
+          textAlign: 'center',
+        },
+        '.logos': {
+          textAlign: 'center',
+          img: {
+            height: 80,
+            width: 'auto',
+          },
         },
       },
     },
   },
-});
+  mq ({
+    '.grid': {
+      flexDirection: ['column', 'row'],
+      '>div:first-child': {
+        marginRight: [0, 100],
+      },
+      h2: {
+        textAlign: ['center', 'left'],
+      },
+    },
+  })
+);
 
 const Bold = styled ('span') ({
   fontWeight: theme.fontWeight.semiBold,
 });
 
-const Profile = styled ('div') ({
-  display: 'flex',
-  marginBottom: 50,
-  img: {
-    height: 'auto',
-    width: '150px !important',
-    boxShadow: '0 10px 5px rgba(91,107,174,.05)',
-    borderRadius: '50%',
-  },
-  '>div': {
-    marginLeft: 50,
-  },
-  h3: {
-    marginBottom: 0,
-    fontSize: 24,
-    fontWeight: theme.fontWeight.semiBold,
-  },
-  a: {
-    color: theme.color.grayText,
-    textDecoration: 'underline',
-    '&:hover': {
-      color: theme.color.primaryDark,
+const Profile = styled ('div') (
+  {
+    display: 'flex',
+    marginBottom: 50,
+    img: {
+      height: '100%',
+      width: '150px !important',
+      boxShadow: '0 10px 5px rgba(91,107,174,.05)',
+      borderRadius: '50%',
+    },
+    h3: {
+      marginBottom: 0,
+      fontSize: 24,
+      fontWeight: theme.fontWeight.semiBold,
+    },
+    a: {
+      color: theme.color.grayText,
+      textDecoration: 'underline',
+      '&:hover': {
+        color: theme.color.primaryDark,
+      },
     },
   },
-});
+  mq ({
+    flexDirection: ['column', 'row'],
+    img: {
+      margin: ['0 auto 15px auto', 0],
+    },
+    '>div': {
+      marginLeft: [0, 50],
+    },
+  })
+);
 
 const ProfileTitle = styled ('div') ({
   marginBottom: 15,
@@ -160,7 +178,7 @@ export default ({children, ...props}) => (
         <Cell>
           <h2>Hello and welcome</h2>
           <p>
-            We at Webiny have a mission to empower developers with tools, processes and ready-made apps, so that they can create serverless applications with ease.
+            We at Webiny have a mission to empower developers with tools, processes and ready-made apps so that they can create serverless applications with ease.
           </p>
           <p><Bold>Our story</Bold></p>
 
@@ -169,11 +187,11 @@ export default ({children, ...props}) => (
           </p>
 
           <p>
-            Eventually we saw that the way we build and manage web applications is changing, that this “serverless” trend is actually here to stay, and not just that, we believe that in a few years time, serverless will be the way how most of the web is being built.
+            Eventually, we saw that the way we build and manage web applications is changing, that this “serverless” trend is actually here to stay, and not just that, we believe that in a few years time, serverless will be the way how most of the web is being built.
           </p>
 
           <p>
-            With this belief we decided to close down our service business and focus 100% of our effort towards building a CMS specifically for serverless web development, and thus Webiny CMS was born. 100% free and open source.
+            With this belief, we decided to close down our service business and focus 100% of our effort towards building a CMS specifically for serverless web development, and thus Webiny CMS was born. 100% free and open source.
           </p>
         </Cell>
         <Cell>
@@ -183,7 +201,7 @@ export default ({children, ...props}) => (
             name={'Sven Al Hamad'}
             title={'CEO'}
             desc={
-              'Mainly responsible for the UX, visuals, and overall company vision and direction.'
+              'Mainly responsible for the vision and direction of the company. Also in charge of UX and overall visuals.'
             }
             twitter={'SvenAlHamad'}
             github={'SvenAlHamad'}
@@ -194,7 +212,7 @@ export default ({children, ...props}) => (
             name={'Pavel Denisjuk'}
             title={'CTO'}
             desc={
-              'Mainly responsible for the UX, visuals, and overall company vision and direction.'
+              'In charge of the technology focus and architecture. Author of main core components and apps like Page Builder and Headless CMS.'
             }
             twitter={'paveldenisjuk'}
             github={'Pavel910'}
@@ -205,7 +223,7 @@ export default ({children, ...props}) => (
             name={'Adrian Smijulj'}
             title={'Core developer'}
             desc={
-              'Mainly responsible for the UX, visuals, and overall company vision and direction.'
+              "CTO's right hand. Created apps like Form Builder and File Manager. Authored several core components."
             }
             twitter={'doitadrian'}
             github={'doitadrian'}
