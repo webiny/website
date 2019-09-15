@@ -21,6 +21,9 @@ import FieldsVideo from './assets/03-fields.mp4';
 import MultiLangVideo from './assets/04-multi-language.mp4';
 import FormPreviewVideo from './assets/05-preview-theme.mp4';
 import FormSubmissionsVideo from './assets/06-submission.mp4';
+import RecaptchaTosVideo from './assets/07-recaptcha-tos.mp4';
+import WebhooksVideo from './assets/08-webhooks.mp4';
+import PageBuilderVideo from './assets/09-page-builder.mp4';
 import TagsVideo from './assets/01-builder.mp4';
 import LazyLoadVideo from './assets/01-builder.mp4';
 
@@ -154,7 +157,7 @@ export default ({children, ...props}) => (
             </p>
           </Cell>
           <Cell>
-            <VideoBox file={TagsVideo} />
+            <VideoBox file={RecaptchaTosVideo} />
           </Cell>
         </Grid>
         <Grid left>
@@ -180,7 +183,7 @@ export default ({children, ...props}) => (
         </Grid>
         <Grid left>
           <Cell>
-            <VideoBox file={TagsVideo} />
+            <VideoBox file={PageBuilderVideo} />
           </Cell>
           <Cell title="Integrated with Webiny Page Builder">
             <p>
@@ -198,7 +201,7 @@ export default ({children, ...props}) => (
             </p>
           </Cell>
           <Cell>
-            <VideoBox file={LazyLoadVideo} />
+            <VideoBox file={WebhooksVideo} />
           </Cell>
         </Grid>
       </ContentContainer>

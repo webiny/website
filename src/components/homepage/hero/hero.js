@@ -225,7 +225,7 @@ export default ({children, ...props}) => (
         <br />
         <span className="comment"># Your site is live!</span>
         <br />
-        http://xyz.amazonaws.com/hello-world
+        https://xyz.amazonaws.com/hello-world
       </Code>
     </TerminalWrapper>
     <TerminalBg />
@@ -248,7 +248,7 @@ export default ({children, ...props}) => (
             <Bold>Open Source</Bold>
           </ListItem>
           <ListItem>
-            <Bold>GraphQL</Bold>
+            <Bold>GraphQL API</Bold>
           </ListItem>
           <ListItem>
             <Bold>Self-hosted</Bold>
@@ -265,7 +265,7 @@ export default ({children, ...props}) => (
           </Button>
           <Button
             className={ctaButton}
-            link="https://github.com/Webiny/webiny-js"
+            link="https://github.com/webiny/webiny-js"
             type="outlineDark"
           >
             <GitHubLogo src={gitHubLogo} />

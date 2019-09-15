@@ -171,14 +171,14 @@ class LearnExplore extends React.Component {
               </p>
               <Button
                 className={ctaButton}
-                link="https://docs.webiny.com/"
+                link="https://docs.webiny.com/docs/developer-tutorials/local-setup"
                 type="dark"
               >
                 Get Started Tutorial
               </Button>
               <Button
                 className={ctaButton}
-                link="https://github.com/Webiny/webiny-js"
+                link="https://docs.webiny.com/"
                 type="outlineDark"
               >
                 Explore The Docs

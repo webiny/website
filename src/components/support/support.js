@@ -200,6 +200,7 @@ export default ({children, ...props}) => (
             Webiny.
           </p>
         </Cell>
+        {/* 
         <Cell>
           <h3>
             <img src={faqIcon} />
@@ -213,10 +214,11 @@ export default ({children, ...props}) => (
             answered your question there.
           </p>
         </Cell>
+        */}
         <Cell>
           <h3>
             <img src={bugIcon} />
-            <a href="https://github.com/Webiny/webiny-js/issues">
+            <a href="https://github.com/webiny/webiny-js/issues">
               Found a bug?
               <img className={'arrow'} src={arrow} />
             </a>
@@ -225,6 +227,22 @@ export default ({children, ...props}) => (
             Something broke, not working properly? Have a look at the current
             issues on our GitHub, or report an new one.
           </p>
+        </Cell>
+        <Cell>
+          <PremiumBox>
+            <h3>Premium Support</h3>
+            <div className={'icon'}>
+              <img src={supportIcon} />
+            </div>
+            <p>
+              Talk directly to the people that built Webiny. Get your problem
+              resolved quickly.
+              <br />
+              <Link to="/contact-us">
+                <strong>Contact us for more info.</strong>
+              </Link>
+            </p>
+          </PremiumBox>
         </Cell>
       </Grid>
     </ContentContainer>
@@ -258,22 +276,7 @@ export default ({children, ...props}) => (
             several other mainly technical topics. It’s a good place to explore.
           </p>
         </Cell>
-        <Cell>
-          <PremiumBox>
-            <h3>Premium Support</h3>
-            <div className={'icon'}>
-              <img src={supportIcon} />
-            </div>
-            <p>
-              Talk directly to the people that built Webiny. Get your problem
-              resolved quickly.
-              <br />
-              <Link to="/contact-us">
-                <strong>Contact us for more info.</strong>
-              </Link>
-            </p>
-          </PremiumBox>
-        </Cell>
+        <Cell />
       </Grid>
     </ContentContainer>
   </React.Fragment>

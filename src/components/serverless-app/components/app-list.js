@@ -96,7 +96,7 @@ const Cell = styled ('div') (
       textAlign: 'center',
     },
     img: {
-      width: 'auto',
+      width: 263,
       height: 145,
       overflow: 'hidden',
       margin: '0 -30px 25px -30px',

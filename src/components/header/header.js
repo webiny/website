@@ -371,10 +371,10 @@ class Header extends React.Component {
                     Page Builder
                   </Link>
                   <Link rel="prerender" to="/serverless-app/form-builder">
-                    Form builder
+                    Form Builder
                   </Link>
                   <Link rel="prerender" to="/serverless-app/file-manager">
-                    File manager
+                    File Manager
                   </Link>
                 </DropDown>
               </MenuItem>
@@ -412,7 +412,6 @@ class Header extends React.Component {
                   <a href="https://storybook.webiny.com/">Storybook</a>
                   <hr />
                   <a href="https://blog.webiny.com/">Blog</a>
-                  <a href="https://support.webiny.com/">Support</a>
                   <a href="https://community.webiny.com/">Community</a>
                   <hr />
                   <Link rel="prerender" to="/about-us">
@@ -421,12 +420,13 @@ class Header extends React.Component {
                   <Link rel="prerender" to="/contact-us">
                     Contact us
                   </Link>
+                  <Link to="/support">Support</Link>
                 </DropDown>
               </MenuItem>
 
               <MenuItem>
                 <Button
-                  link="https://cloud.webiny.com/"
+                  link="https://docs.webiny.com/docs/developer-tutorials/local-setup"
                   type={this.state.isSticky && 'primary'}
                 >
                   Get Started
@@ -510,7 +510,7 @@ class Header extends React.Component {
                   </a>
                 </MobileMenuItem>
                 <MobileMenuItem>
-                  <a className={link} href="https://support.webiny.com/">
+                  <a className={link} href="/support">
                     Support
                   </a>
                 </MobileMenuItem>

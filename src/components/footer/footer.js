@@ -90,7 +90,7 @@ const Footer = () => (
           Webiny is released under the MIT open source license.
           <br />
           <br />
-          <a className={linkStyle} href="https://github.com/Webiny/webiny-js">
+          <a className={linkStyle} href="https://github.com/webiny/webiny-js">
             GitHub
           </a>{' '}
           /{' '}
