@@ -8,8 +8,8 @@ import Link from 'gatsby-link';
 import {css} from 'emotion';
 import GitHubButton from 'react-github-btn';
 
-import logo from './assets/webiny-logo.svg';
-import logoOrange from './assets/webiny-orange-logo.svg';
+import logo from './assets/webiny-logo-with-icon-left-white.svg';
+import logoOrange from './assets/webiny-logo-with-icon-left-orange.svg';
 import menuIcon from './assets/round-menu-24px.svg';
 import menuIconBlack from './assets/round-menu-24px-black.svg';
 import downArrowWhite from './assets/down-arrow-white.svg';

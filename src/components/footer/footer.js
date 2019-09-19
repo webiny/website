@@ -7,7 +7,7 @@ import ContentContainer from '../ui/content-container';
 import Newsletter from './newsletter';
 import Link from 'gatsby-link';
 
-import webinyLogo from './assets/webiny-footer-logo.svg';
+import webinyLogo from './assets/webiny-icon-white.svg';
 
 const Wrapper = styled ('div') ({
   backgroundColor: theme.color.footerBg,
@@ -47,6 +47,7 @@ const Logo = styled ('img') (
   mq ({
     margin: ['0 auto 20px auto', '0'],
     display: ['block', 'inline'],
+    maxHeight: ['50px', '50px'],
   })
 );
 
