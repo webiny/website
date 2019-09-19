@@ -70,6 +70,9 @@ const RightSide = styled ('div') (
   mq ({
     textAlign: ['center', 'left'],
     width: ['100%', 550],
+    img: {
+      maxHeight: [40],
+    },
   })
 );
 
