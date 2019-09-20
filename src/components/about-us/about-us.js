@@ -11,6 +11,9 @@ import Sven from './assets/sven-webiny-profile.png';
 import Pavel from './assets/pavel-webiny-profile.png';
 import Adrian from './assets/adrian-webiny-profile.png';
 import E1 from './assets/e1-logo.png';
+import MkLogo from './assets/mk-logo.svg';
+import MkFounders from './assets/mk-founders.png';
+import MkProduct from './assets/mk-product.png';
 
 const Hero = styled ('section') (
   {
@@ -51,8 +54,9 @@ const styleSet = css (
     },
     '.grid': {
       alignItems: 'flex-start',
-      '&.investors': {
+      '&.investors, &.media-kit': {
         padding: '25px 0',
+        margin: '50px 0',
         h2: {
           textAlign: 'center',
           marginBottom: 0,
@@ -68,16 +72,50 @@ const styleSet = css (
           },
         },
       },
+      '&.media-kit': {
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        div: {
+          '&:last-child': {
+            margin: '0 !important',
+          },
+        },
+        img: {
+          width: 350,
+          outline: '0',
+          boxShadow: '0 1px 5px 0 rgba(0,0,0,0.15)',
+          borderRadius: 5,
+          display: 'block',
+        },
+      },
     },
   },
   mq ({
+    '.title': {
+      marginTop: [45, 0],
+      marginBottom: [0, 0],
+      padding: [0, '85px 0 0 0'],
+      h2: {
+        textAlign: 'center',
+      },
+    },
     '.grid': {
       flexDirection: ['column', 'row'],
-      '>div:first-child': {
+      '&.about div:first-child': {
         marginRight: [0, 100],
       },
       h2: {
         textAlign: ['center', 'left'],
+      },
+      '&.media-kit': {
+        margin: [0, '50px 0'],
+        div: {
+          flexBasis: ['100%', 350],
+          marginBottom: [25, 0],
+        },
+        img: {
+          margin: ['0 auto', 0],
+        },
       },
     },
   })
@@ -174,7 +212,7 @@ export default ({children, ...props}) => (
       </ContentContainer>
     </Hero>
     <ContentContainer className={styleSet}>
-      <Grid className={'grid'}>
+      <Grid className={'grid about'}>
         <Cell>
           <h2>Hello and welcome</h2>
           <p>
@@ -241,6 +279,44 @@ export default ({children, ...props}) => (
           <div className={'logos'}>
             <img src={E1} alt="Episode 1" />
           </div>
+        </Cell>
+      </Grid>
+    </ContentContainer>
+
+    <Divider />
+    <ContentContainer className={styleSet}>
+      <Grid className={'title'}>
+        <Cell>
+          <h2>Media Kit</h2>
+        </Cell>
+      </Grid>
+      <Grid className={'grid media-kit'}>
+        <Cell>
+          <a
+            href="https://drive.google.com/drive/u/2/folders/19BiuDSOrJ_H0HshmtQhsDGeslB-lVpom"
+            target="_blank"
+          >
+            <img src={MkLogo} alt="Webiny Logo" />
+            Download Webiny Logo
+          </a>
+        </Cell>
+        <Cell>
+          <a
+            href="https://drive.google.com/drive/u/2/folders/17ujXOoBMFwpyV4HtPUebeWs9_dZYF3u7"
+            target="_blank"
+          >
+            <img src={MkFounders} alt="Webiny Founders" />
+            Download Founders Photo
+          </a>
+        </Cell>
+        <Cell>
+          <a
+            href="https://drive.google.com/drive/u/2/folders/1CThk-B2_hl2Tg_5vLTPHSSv6zyYLsnTz"
+            target="_blank"
+          >
+            <img src={MkProduct} alt="Webiny Product Screenshot" />
+            Download Product Screenshots
+          </a>
         </Cell>
       </Grid>
     </ContentContainer>
