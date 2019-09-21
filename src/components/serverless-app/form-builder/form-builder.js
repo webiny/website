@@ -10,6 +10,7 @@ import VideoBox from '../../ui/layout/video-box';
 import QuickStart from '../../ui/layout/footer';
 import AppList from '../components/app-list';
 import mq from '../../utils/breakpoints';
+import SlsDesign from '../components/serverless-design.js';
 
 import HeroImage from './assets/form-builder.jpg';
 import HeroBg from './assets/hero-bg.svg';
@@ -72,6 +73,7 @@ export default ({children, ...props}) => (
         </ListItem>
       </List>
     </Hero>
+    <SlsDesign />
 
     <ContentContainer className={featureContainer}>
       <FeatureBox>

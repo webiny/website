@@ -7,6 +7,7 @@ import ContentContainer from '../../ui/content-container';
 import mq from '../../utils/breakpoints';
 import QuickStart from '../../ui/layout/footer';
 import AppList from '../components/app-list';
+import SlsDesign from '../components/serverless-design.js';
 
 import HeroBg from './assets/hero-bg.svg';
 import ComingSoon from './coming-soon';
@@ -44,6 +45,7 @@ export default ({children, ...props}) => (
         </ListItem>
       </List>
     </Hero>
+    <SlsDesign />
 
     <ContentContainer className={featureContainer}>
       <FeatureBox>

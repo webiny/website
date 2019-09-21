@@ -14,6 +14,8 @@ const Hero = styled ('section') (
     color: '#fff',
     boxSizing: 'border-box',
     textAlign: 'center',
+    position: 'relative',
+    zIndex: 1,
     //backgroundColor: '#292929',
   },
   mq ({

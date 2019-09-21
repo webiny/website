@@ -11,6 +11,7 @@ import {Grid, Cell} from '../../ui/layout/layout';
 import VideoBox from '../../ui/layout/video-box';
 import QuickStart from '../../ui/layout/footer';
 import AppList from '../components/app-list';
+import SlsDesign from '../components/serverless-design.js';
 
 import HeroImage from './assets/page-builder.png';
 import HeroBg from './assets/hero-bg.svg';
@@ -59,6 +60,7 @@ export default ({children, ...props}) => (
         </ListItem>
       </List>
     </Hero>
+    <SlsDesign />
 
     <ContentContainer className={featureContainer}>
       <FeatureBox>
