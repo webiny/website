@@ -95,7 +95,7 @@ export default props => (
       </Box>
       <Box number={2}>FORGET ABOUT MAINTENANCE AND SCALABILITY HEADACHES</Box>
       <Box number={3}>
-        DON'T OVERPAY YOUR CLOUD PROVIDER, PAY EXACTLY WHAT YOU HAVE USED.
+        DON'T OVERPAY YOUR CLOUD PROVIDER, PAY EXACTLY WHAT YOU'VE USED
       </Box>
     </BoxList>
     <Link className={linkMore} to="/why-serverless">
