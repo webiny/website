@@ -99,7 +99,7 @@ export default props => (
       </Box>
     </BoxList>
     <Link className={linkMore} to="/why-serverless">
-      Why use serverless? - Learn more <img src={rightArrow} />
+      Why go serverless? - Learn more <img src={rightArrow} />
     </Link>
 
   </SlsDesign>
