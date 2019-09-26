@@ -75,6 +75,7 @@ const linkMore = css ({
   fontSize: 16,
   img: {
     width: 14,
+    height: 24,
     marginLeft: 15,
   },
 });
