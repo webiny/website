@@ -61,7 +61,6 @@ const DropDown = styled ('div') (
     visibility: 'hidden',
     minWidth: '160px',
     boxSizing: 'border-box',
-    padding: '25px',
     opacity: 0,
     top: 20,
     left: 'calc(50% - 12px)',
@@ -75,7 +74,7 @@ const DropDown = styled ('div') (
       textDecoration: 'none',
       transition: '250ms opacity',
       display: 'block',
-      marginBottom: 15,
+      marginBottom: 25,
       '&:hover': {
         opacity: '0.8',
         textDecoration: 'underline',
@@ -96,6 +95,7 @@ const DropDown = styled ('div') (
     boxShadow: ['none', '0px 8px 16px 0px rgba(0,0,0,0.2)'],
     width: ['100%', 'auto'],
     backgroundColor: ['white', '#f9f9f9'],
+    padding: ['0 25px 10px 25px', 25],
     '.open': {
       display: 'block',
     },
