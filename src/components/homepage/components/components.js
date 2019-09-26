@@ -131,7 +131,7 @@ const webinyAppsImage = css (
       padding: 10,
       margin: 0,
       img: {
-        width: ['350px', '800px !important'],
+        width: ['calc(100vw - 20px)', '800px !important'],
       },
     },
   })
