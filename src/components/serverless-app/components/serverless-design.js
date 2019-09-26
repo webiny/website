@@ -10,7 +10,6 @@ import rightArrow from './assets/arrow-right-solid.svg';
 const SlsDesign = styled ('div') (
   {
     outline: 0,
-    marginTop: -225,
     color: theme.color.lightGray,
     zIndex: -10,
     borderRadius: '3px',
@@ -29,7 +28,8 @@ const SlsDesign = styled ('div') (
   mq ({
     padding: ['200px 10px 50px 10px', '200px 50px 50px 50px'],
     marginBottom: [50, 100],
-    paddingTop: ['200px', '170px'],
+    marginTop: [-225, -225, -300],
+    paddingTop: ['200px', '170px', '235px'],
   })
 );
 
