@@ -43,6 +43,8 @@ const SubTitle = styled ('h2') (
 
 const webinyAppsList = css (
   {
+    maxWidth: '100vw',
+    overflowX: 'hidden',
     '.slick-list': {
       position: 'relative',
     },
@@ -103,6 +105,8 @@ const webinyAppsList = css (
 
 const webinyAppsImage = css (
   {
+    maxWidth: '100vw',
+    overflowX: 'hidden',
     '.slick-slide': {
       outline: 0,
       boxSizing: 'border-box',
