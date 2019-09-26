@@ -196,7 +196,6 @@ const Code = styled ('div') (
     fontFamily: 'monospace',
     color: theme.color.black,
     position: 'absolute',
-    width: 350,
     zIndex: 3,
     '.comment': {
       color: theme.color.grayText,
@@ -205,6 +204,7 @@ const Code = styled ('div') (
   },
   mq ({
     fontSize: [12, 14],
+    width: [310, 350],
   })
 );
 
