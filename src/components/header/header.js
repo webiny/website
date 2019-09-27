@@ -62,7 +62,6 @@ const DropDown = styled ('div') (
     minWidth: '160px',
     boxSizing: 'border-box',
     opacity: 0,
-    top: 20,
     left: 'calc(50% - 12px)',
     transform: 'translateY(1em) translateX(-50%)',
     zIndex: '-1',
@@ -96,6 +95,7 @@ const DropDown = styled ('div') (
     width: ['100%', 'auto'],
     backgroundColor: ['white', '#f9f9f9'],
     padding: ['0 25px 10px 25px', 25],
+    top: [25, 50],
     '.open': {
       display: 'block',
     },
@@ -107,7 +107,7 @@ const DownArrow = styled ('div') ({
   width: 24,
   height: 24,
   background: 'url(' + downArrowWhite + ') no-repeat',
-  top: -1,
+  top: 14,
   right: 0,
   color: 'white',
 });
@@ -135,7 +135,9 @@ const MenuItem = styled ('li') (
   mq ({
     marginLeft: [0, 30],
     marginBottom: [15, 0],
-    paddingBottom: [15, 0],
+    marginTop: [0, -15],
+    paddingBottom: [15, 15],
+    paddingTop: [0, 15],
     borderBottom: ['1px solid ' + theme.color.lightGray, 'none'],
   })
 );
@@ -143,7 +145,7 @@ const MenuItem = styled ('li') (
 const parentMenu = css (
   {
     paddingRight: 25,
-    paddingBottom: 15,
+    paddingBottom: 0,
     marginRight: -5,
     '&:hover': {
       opacity: 1,
@@ -160,7 +162,7 @@ const dropdownArrow = css`
     position: absolute;
     background: #fff;
     border: 4px solid #fff;
-    top: -3px;
+    top: 2px;
     left: 50%;
     zindex: -1;
     &:after,
@@ -216,6 +218,9 @@ const HeaderContainer = styled ('header') (
           ') no-repeat',
       },
     },
+  }),
+  mq ({
+    height: ['auto', 45],
   })
 );
 
@@ -296,7 +301,7 @@ const NavBar = styled ('div') (
 
 const MenuItemList = props => (
   <React.Fragment>
-    <MenuItem style={{paddingTop: '5px'}}>
+    <MenuItem style={{paddingTop: '19px'}}>
       <GitHubButton
         href="https://github.com/webiny/webiny-js"
         data-icon="octicon-star"
