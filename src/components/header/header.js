@@ -102,15 +102,19 @@ const DropDown = styled ('div') (
   })
 );
 
-const DownArrow = styled ('div') ({
-  position: 'absolute',
-  width: 24,
-  height: 24,
-  background: 'url(' + downArrowWhite + ') no-repeat',
-  top: 14,
-  right: 0,
-  color: 'white',
-});
+const DownArrow = styled ('div') (
+  {
+    position: 'absolute',
+    width: 24,
+    height: 24,
+    background: 'url(' + downArrowWhite + ') no-repeat',
+    right: 0,
+    color: 'white',
+  },
+  mq ({
+    top: [-1, 14],
+  })
+);
 
 const MenuItem = styled ('li') (
   {
@@ -145,17 +149,15 @@ const MenuItem = styled ('li') (
 const parentMenu = css (
   {
     paddingRight: 25,
-    paddingBottom: 0,
     marginRight: -5,
     '&:hover': {
       opacity: 1,
     },
   },
-  mq (
-    {
-      //marginBottom: [0, -15],
-    }
-  )
+  mq ({
+    marginBottom: [15, 0],
+    paddingBottom: [15, 15],
+  })
 );
 
 const dropdownArrow = css`
@@ -299,9 +301,16 @@ const NavBar = styled ('div') (
   })
 );
 
+const githubMenu = css (
+  {},
+  mq ({
+    paddingTop: [5, 19],
+  })
+);
+
 const MenuItemList = props => (
   <React.Fragment>
-    <MenuItem style={{paddingTop: '19px'}}>
+    <MenuItem className={githubMenu}>
       <GitHubButton
         href="https://github.com/webiny/webiny-js"
         data-icon="octicon-star"
