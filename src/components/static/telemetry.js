@@ -37,17 +37,17 @@ export default ({children, ...props}) => (
         <dt>
           1) Number of deployments - each time you invoke
           {' '}
-          <code>sls deploy</code>
+          <code>sls</code> command inside a Webiny project folder
         </dt>
         <dd>Why: So we know how actively the Webiny library is used.</dd>
         <dt>
           2) Number of new project created - each time you invoke
           {' '}
-          <code>webiny create-project</code>
+          <code>webiny create-project</code> command
         </dt>
         <dd>Why: So we know how many projects are created.</dd>
-        <dt>3) List of Webiny apps that were deployed</dt>
-        <dd>Why: So we know which Webiny apps are used the most.</dd>
+        <dt>3) List of Webiny components that were deployed</dt>
+        <dd>Why: So we know which Webiny components are used the most.</dd>
         <dt>4) Timestamp</dt>
         <dd>
           Why: So we can track the trends between when different operations are invoked.
@@ -65,13 +65,14 @@ export default ({children, ...props}) => (
       </p>
       <h3>Can I opt-out?</h3>
       <p>
-        Yes - in the terminal, inside your project root, just run the command
+        Yes - in the terminal, just run the command
         {' '}
         <code>webiny disable-tracking</code>
-        .
+        .<br />
+        This disables tracking across all your Webiny projects.
       </p>
       <h3>What about sensitive data? (e.g. secrets)</h3>
-      <o>We do not track any other that that the one specified above.</o>
+      <o>We do not track anything other than what is specified above.</o>
       <h3>I have a comment or more questions, where can I send it to?</h3>
       <p>Please send all your inquiries to privacy@webiny.com</p>
     </div>
