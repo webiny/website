@@ -108,6 +108,10 @@ const Cell = styled ('div') (
         textDecoration: 'underline',
       },
     },
+    code: {
+      backgroundColor: '#fbf2e9',
+      padding: '0px 3px',
+    },
   },
   mq ({
     margin: ['0 25px', '0 150px'],
