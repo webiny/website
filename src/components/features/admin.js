@@ -155,7 +155,10 @@ class YTVideo extends React.Component {
           <Grid right>
             <Cell title="Extensible Login component">
               <p>
-                The given Login component by default uses the users in your database to authenticate them, but you can extend it by adding, for example, a  different authentication provider, such as AWS Cognito.
+                Webiny uses AWS Cognito to handle user sign-in as well as creation of new users and their authentication. The integration is fully seamless and done behind the scene. Using AWS Cognito brings a bullet-proof security to all your apps.
+              </p>
+              <p>
+                In case you want to use a different identity provider, like Auth0 or any other, you can do that by creating your own plugin. More details are available on our docs portal.
               </p>
             </Cell>
             <Cell>
