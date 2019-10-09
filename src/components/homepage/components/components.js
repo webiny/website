@@ -106,7 +106,8 @@ const webinyAppsList = css (
 const webinyAppsImage = css (
   {
     maxWidth: '100vw',
-    overflowX: 'hidden',
+    overflow: 'hidden',
+    paddingBottom: 20,
     '.slick-slide': {
       outline: 0,
       boxSizing: 'border-box',
@@ -125,6 +126,8 @@ const webinyAppsImage = css (
     },
     '.slick-dots': {
       //bottom: -35,
+      position: 'relative',
+      zIndex: 10,
       'li button:before': {
         fontSize: 15,
       },
