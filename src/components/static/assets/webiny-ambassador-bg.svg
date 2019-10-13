@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="846px" viewBox="0 0 1440 846" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0.786143006%" y1="32.7421875%" x2="63.0725881%" y2="54.4110919%" id="linearGradient-1">
+            <stop stop-color="#8F32EA" offset="0%"></stop>
+            <stop stop-color="#483EB6" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Swag" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(0.000000, -2852.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="Ambasador" transform="translate(0.000000, 2852.000000)">
+                <path d="M0,38.4822388 C102.54332,38.4822388 201.983364,80.8848606 296.810713,74.9130288 C477.731799,63.5193719 634.907434,0 715.99569,0 C919.54134,0 1016.79273,67.4660036 1156.89929,74.9130288 C1297.00584,82.3600541 1440,38.4822388 1440,38.4822388 C1440,38.4822388 1440,307.654826 1440,846 C1135.68166,846 902.346845,846 739.995546,846 C577.644247,846 330.979065,846 0,846 L0,38.4822388 Z" id="bg"></path>
+            </g>
+        </g>
+    </g>
+</svg>

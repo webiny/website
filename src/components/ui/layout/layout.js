@@ -95,7 +95,7 @@ const Grid = props => (
 );
 
 const Cell = props => (
-  <CellBlock>
+  <CellBlock className={props.className ? props.className : ''}>
     {props.comingSoon && <ComingSoon />}
     {props.title && <h3>{props.title}</h3>}
     {props.children}
