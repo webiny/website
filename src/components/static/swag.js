@@ -215,14 +215,14 @@ export default ({children, ...props}) => (
         </Cell>
         <Cell title="Become a Fan">
           <p>
-            A fan is someone who really loves what we do here. Fans gives us support to keep going forward. And everything we do, we do it for them. A Webiny fan is someone who has starred our GitHub, is subscribed to our newsletter, and follows us on either Twitter or YouTube.
+            A fan is someone who loves what we do here. Fans give us support to keep going forward. And everything we do, we do it for them. A Webiny fan is someone who 1.) starred our GitHub 2.) subscribed to our newsletter 4) follows us on either Twitter or YouTube.
           </p>
         </Cell>
       </Grid>
       <Grid right>
         <Cell title="Spread the Knowledge">
           <p>
-            If you have created a blog post, a tutorial or a video guide for any Webiny related topic, we would love to know about it so we can spread the word through our channels as well. On top of that, for every article we’ll send you a Webiny branded t-shirt.
+            You have created a blog post, a tutorial or a video guide for Webiny related content? We would love to know about it, so we can spread the word through our channels. On top of that, we’ll send you a Webiny branded t-shirt.
           </p>
         </Cell>
         <Cell>
@@ -243,14 +243,14 @@ export default ({children, ...props}) => (
         </Cell>
         <Cell title="Show us Your Work">
           <p>
-            Have you recently launched a project, a websites, or an app, that runs on Webiny? Or if you have created a Webiny plugin, if so, please send it over, and we’ll have a look and send you some stickers in return. Selected projects and teams have the chance to be showcased on our website.
+            Have you recently launched a project, a website, or an app, that runs on Webiny? Or if you have created a Webiny plugin? If so, please send it over, and we’ll have a look and send you some stickers in return. Selected projects and teams have the chance to be showcased on our website.
           </p>
         </Cell>
       </Grid>
       <Grid right>
         <Cell title="Our Thanks to All Contributors">
           <p>
-            Got your first Webiny PR merged, that’s awesome! Thank you so much for contributing your time to our project. Expect this small token of apprechiation from our side. We will also add you to our contributors page, as well as promote your profile on our website.
+            Got your first Webiny PR merged, that’s awesome! Thank you so much for contributing your time to our project. Expect this small token of appreciation. We will also add you to our contributors' page, as well as promote your profile on our website.
           </p>
         </Cell>
         <Cell>
@@ -267,7 +267,7 @@ export default ({children, ...props}) => (
       <ContentContainer className={containerStyle}>
         <SubTitle>How to Claim Your SWAG</SubTitle>
         <p>
-          Send and email to community@webiny.com with the following information:
+          Send an email to community@webiny.com with the following information:
         </p>
         <ClaimInstructions>
           <div>
@@ -321,7 +321,7 @@ export default ({children, ...props}) => (
           <Cell className={ambassadorContent}>
             <h2>Webiny Ambassador</h2>
             <p>
-              If you organised a Webiny meetup group, of want to organize one, we are happy to support you.
+              If you organized a Webiny meetup group, or want to organize one, we are happy to support you.
             </p>
             <p>
               <Bold>What we can offer:</Bold>
@@ -334,11 +334,7 @@ export default ({children, ...props}) => (
             </ul>
             <h4 className="joinTeam">Join Our Team</h4>
             <p>
-              For active ambasadors we can go a step further. If you enjoy educating others,
-              love building communities, organizing meetups, attending conferences, and
-              {' '}
-              spreading the word about Webiny, we are ready to offer you a full-time paid
-              position in our team.
+              For active ambassadors, we can go a step further. If you enjoy educating others, love building communities, organizing meetups, attending conferences, and spreading the word about Webiny, we are ready to offer you a full-time paid position in our team.
             </p>
             <p>
               To apply, please send your CV to info@webiny.com.
