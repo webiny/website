@@ -124,8 +124,7 @@ class WhyWebiny extends React.Component {
               />
               <h3>Made for developers</h3>
               <p>
-                Webiny was created with developers in mind. It’s a single platform
-                built with community accepted tools and libraries.
+                We created Webiny with developers in mind. It’s a single platform built with community accepted tools and libraries.
               </p>
             </Cell>
             <Cell>
@@ -136,8 +135,7 @@ class WhyWebiny extends React.Component {
               />
               <h3>The future is serverless</h3>
               <p>
-                Serverless will be the way how most, if not all, web applications
-                are created and Webiny makes it real easy.
+                Serverless will be the way how we create most, if not all, web applications and Webiny makes it real easy.
               </p>
             </Cell>
             <Cell>
@@ -150,8 +148,7 @@ class WhyWebiny extends React.Component {
                 Multi cloud support <ComingSoon>Coming Soon</ComingSoon>
               </h3>
               <p>
-                Webiny can be deployed to any of the major cloud providers, like
-                AWS, GCP or Azure.
+                Deployed Webiny to any of the major cloud providers, like AWS, GCP or Azure.
               </p>
             </Cell>
           </Grid>
