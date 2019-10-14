@@ -137,15 +137,19 @@ const ambassadorContent = css ({
   },
 });
 
-const claimSwagBlock = css ({
-  backgroundColor: '#292929',
-  color: theme.color.white,
-  padding: '50px 0 150px 0',
-  marginBottom: '-100px',
-  p: {
-    fontSize: 20,
+const claimSwagBlock = css (
+  {
+    backgroundColor: '#292929',
+    color: theme.color.white,
+    padding: '50px 0 150px 0',
+    p: {
+      fontSize: 20,
+    },
   },
-});
+  mq ({
+    marginBottom: [-100, -100, -150],
+  })
+);
 
 const ClaimInstructions = styled ('div') (
   {
