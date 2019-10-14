@@ -48,9 +48,7 @@ const ServerlessReasons = () => (
           </Cell>
           <Cell title="Zero servers to manage">
             <p>
-              Servers are still there, but they are abstracted away and managed by your
-              cloud provider. They are not your problem any more, same goes for
-              loadbalancers and autoscaling.
+              Servers are still there, but they are abstracted away and managed by your cloud provider. They are not your problem anymore, the same goes for load balancers and autoscaling.
             </p>
           </Cell>
         </div>
@@ -60,9 +58,7 @@ const ServerlessReasons = () => (
           </Cell>
           <Cell title="Pay for what you use">
             <p>
-              You pay for each execution of your function. This means you don’t need to
-              over-provision and therefore over-pay for infrastructure, especially for
-              those periods of peak demand.
+              Pay for each function execution. This means you don’t need to over-provision and thus over-pay for infrastructure. Especially for those periods of peak demand.
             </p>
           </Cell>
         </div>
@@ -72,9 +68,7 @@ const ServerlessReasons = () => (
           </Cell>
           <Cell title="Build things faster">
             <p>
-              Because all you need to do is deploy your code, and not lose time on
-              spinning up and configuring servers, you’ll iterate and launch your products
-              faster.
+              Because all you need to do is deploy your code, you won't lose time on spinning up and configuring servers. As a result you’ll iterate and launch products faster.
             </p>
           </Cell>
         </div>
@@ -84,9 +78,7 @@ const ServerlessReasons = () => (
           </Cell>
           <Cell title="No more scaling headaches">
             <p>
-              Serverless functions spin up in milliseconds. The moment there is a big
-              increase in demand, new functions are created and are instantly ready to
-              handle the new requests.
+              Serverless functions spin up in milliseconds the moment there is a demand increase. The newly created functions are immediately ready to handle new requests. And you, just sit and relax.
             </p>
           </Cell>
         </div>

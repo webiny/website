@@ -164,9 +164,9 @@ class LearnExplore extends React.Component {
                 <br />
               </h3>
               <p>
-                The Webiny get started tutorial will guide you step by step, from
-                installing your local dev environment to deploying your website to
-                your cloud provider of choice.<br />
+                Get started tutorial will guide you step by step. From installing a local dev environment to deploying a website.
+                <br />
+                <br />
                 <br />
               </p>
               <Button
@@ -188,8 +188,7 @@ class LearnExplore extends React.Component {
               <img src={imgExplore} alt="Explore" />
               <h4>Explore</h4>
               <h3>
-                Get to know Webiny, what you can build with it and some of its
-                features
+                Get to know Webiny, its features and what you can build using it
               </h3>
               <p>
                 Webiny is a powerful tool that allows you to build more than just

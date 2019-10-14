@@ -48,7 +48,7 @@ const Bold = styled ('span') ({
 const Challenges = () => (
   <section className={wrapperClass}>
     <SubTitle>
-      However There Are Some Challenges Going Serverless, but Webiny Helps Solve Those
+      There Are Some Challenges Going Serverless, but Webiny Helps Solve Those
       {' '}
     </SubTitle>
     <ContentContainer>
@@ -60,12 +60,13 @@ const Challenges = () => (
           <p>
             <Bold>Challenge:</Bold>
             {' '}
-            How do you structure your project, how do you deploy it, and how do you access it.
+            How do you structure your project, how do you deploy it, and how do you access it?
           </p>
           <p>
             <Bold>Solution:</Bold>
             {' '}
-            Webiny has a ready made structure that works for any type of a project, be that a website, an app or an API. And to deploy and access your project Webiny comes with a pre-made Serverless Framework configuration which deploys your project with a single command.
+            Webiny has a ready-made structure that works for any type of project, be that a website, an app or an API. To deploy and access a project, Webiny comes with a Serverless Framework configuration. It takes a single command line to deploy the project. Using a CDN URL that you get back, you can access the project.
+            {' '}
           </p>
         </Cell>
       </Grid>
@@ -74,12 +75,12 @@ const Challenges = () => (
           <p>
             <Bold>Challenge:</Bold>
             {' '}
-            Often jumping into a new technology is scary, especially if you need to go throuh a series of tutorials just to get to hello world.
+            Often jumping into new technology is scary. Especially if you need to go through a series of tutorials just to get to hello world.
           </p>
           <p>
             <Bold>Solution:</Bold>
             {' '}
-            Webiny comes with several ready-made serverless apps, which you install and deploy with a few simple commands, and right away you have a working app that you can interact with. It’s much more satisfying than just having a hello world on your screen.
+            Webiny comes with several ready-made serverless apps with a simple install process. Right away you'll have a working app that you can interact with. It’s much more satisfying than having a hello world on your screen.
             {' '}
           </p>
         </Cell>
@@ -101,7 +102,7 @@ const Challenges = () => (
           <p>
             <Bold>Solution:</Bold>
             {' '}
-            Webiny architecture is designed and coded from ground up for the serverless environment.  Your applications will automatically benefit just by running on top of it, so you don’t need to experiment, lose time and learn the hard way.
+            We architected and coded Webiny from ground up for the serverless environment. Your applications directly benefit by running on top of this stack. No need to experiment, lose time and learn the hard way. Use a proven and test solution.
           </p>
         </Cell>
       </Grid>
@@ -110,12 +111,12 @@ const Challenges = () => (
           <p>
             <Bold>Challenge:</Bold>
             {' '}
-            Creating an ACL is hard, and doing one inside serverless has its own set of unique challenges.
+            Creating an ACL is hard. Doing one inside a serverless function has its own set of unique challenges.
           </p>
           <p>
             <Bold>Solution:</Bold>
             {' '}
-            Webiny’s built-in ACL comes with a GraphQL integration, and the ability to create not just users, but also API tokens and all is controlled via a friendly user interface. The whole logic is running inside a dedicated serverless function.
+            Webiny has a built-in ACL that comes with a GraphQL integration. It has the ability to create users, roles, groups, and API tokens. It's all controlled via a friendly user interface. The whole logic is running inside a dedicated serverless function.
             {' '}
           </p>
         </Cell>
@@ -139,7 +140,7 @@ const Challenges = () => (
           <p>
             <Bold>Solution:</Bold>
             {' '}
-            Webiny comes with a dedicated function that specifically handles SSR. You don’t need to configure or install anything separately, it’s all included and pre-configured for you.
+            Webiny comes with a dedicated function that handles SSR. No need to configure or install anything separately. Everything is already included and pre-configured for you.
           </p>
         </Cell>
       </Grid>
@@ -148,12 +149,15 @@ const Challenges = () => (
           <p>
             <Bold>Challenge:</Bold>
             {' '}
-            A serverless function is a cloud-native service, so how do you replicate the whole setup on your local development environment?
+            A serverless function is a cloud-native service. So how do you replicate the whole setup on your local development environment?
           </p>
           <p>
             <Bold>Solution:</Bold>
             {' '}
-            Webiny has been built with a developer in mind. The whole Webiny setup is created so it can be installed and replicated on your local machine with just a few simple command, and it will run identically to when you deploy it to your cloud provider and their environment.
+            You don't. There are a plethora of services, and differences in them between the cloud providers.
+            {' '}
+            The only way to get a 1:1 environment is to deploy your functions and test then inside the cloud. Our development setup does just that. This way you can rest assured that what you test in development, is how it will behave in production.
+            {' '}
             {' '}
           </p>
         </Cell>
