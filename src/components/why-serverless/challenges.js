@@ -156,7 +156,7 @@ const Challenges = () => (
             {' '}
             You don't. There are a plethora of services, and differences in them between the cloud providers.
             {' '}
-            The only way to get a 1:1 environment is to deploy your functions and test then inside the cloud. Our development setup does just that. This way you can rest assured that what you test in development, is how it will behave in production.
+            The only way to get a 1:1 environment is to deploy your functions and test them inside the cloud. Our development setup does just that. This way you can rest assured that what you test in development, is how it will behave in production.
             {' '}
             {' '}
           </p>
