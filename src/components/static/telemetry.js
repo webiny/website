@@ -30,24 +30,26 @@ export default ({children, ...props}) => (
         usage information.
       </p>
       <p>
-        We highly value your privacy and have created this page to be fully transparent about the information we collect, how we use it, and what options you have to opt-out. We just want to add that this data doesn't reveal a single identifiable information of you as a private individual. The data is used in an honest way and with a single purpose - improving Webiny as a product for yourself and the wider community.
+        We highly value your privacy. We have created this page to be fully transparent about the information we collect. How we use the information, and what options you have to opt-out. We want to add that this data doesn't reveal a single identifiable information of you as an individual. We use the data in an honest way and with a single purpose - improving Webiny as a product for yourself and the wider community.
       </p>
-      <h3>What information is collected?</h3>
+      <h3>What information we collect:</h3>
       <List>
         <dt>
-          1) Number of deployments - each time you invoke
+          1) Number of deployments - each time you invoke the
           {' '}
           <code>sls</code> command inside a Webiny project folder
         </dt>
         <dd>Why: So we know how actively the Webiny library is used.</dd>
         <dt>
-          2) Number of new project created - each time you invoke
+          2) Number of new projects created - each time you invoke
           {' '}
           <code>webiny create-project</code> command
         </dt>
         <dd>Why: So we know how many projects are created.</dd>
         <dt>3) List of Webiny components that were deployed</dt>
-        <dd>Why: So we know which Webiny components are used the most.</dd>
+        <dd>
+          Why: So we understand which Webiny components are used the most.
+        </dd>
         <dt>4) Timestamp</dt>
         <dd>
           Why: So we can track the trends between when different operations are invoked.
@@ -59,13 +61,11 @@ export default ({children, ...props}) => (
       </List>
       <h3>What is the information used for?</h3>
       <p>
-        We use the information strictly internally for improving the product and understanding the usage patterns.
-        This helps us to build an overall better product, prioritize the important features, and fix the most urgent bugs.
-        {' '}
+        We use the information for improving the product and understanding usage patterns. This helps us to build a better experience, focus on the important features, and fix the most urgent bugs.
       </p>
       <h3>Can I opt-out?</h3>
       <p>
-        Yes - in the terminal, just run the command
+        Yes - in the terminal, run the command
         {' '}
         <code>webiny disable-tracking</code>
         .<br />
