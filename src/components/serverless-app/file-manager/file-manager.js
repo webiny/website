@@ -57,13 +57,13 @@ export default ({children, ...props}) => (
     >
       <List>
         <ListItem title={'Serverless & Self-hosted'}>
-          - Quick and easy deployment with Serverless Framework
+          - Quick and easy deployment with Serverless Framework.
         </ListItem>
         <ListItem title={'Cloud Native'}>
-          - The Webiny File Manager is designed to work with cloud storage services, like AWS S3
+          - Designed to work with a cloud storage service like AWS S3.
         </ListItem>
-        <ListItem title={'Image Optimized'}>
-          - The app is designed to handle large amounts of images in an optimal way
+        <ListItem title={'Data Optimized'}>
+          - Handle large amounts of files and images in an optimal way.
         </ListItem>
       </List>
     </Hero>
@@ -85,7 +85,7 @@ export default ({children, ...props}) => (
         Tag files for better search results
       </FeatureBox>
       <FeatureBox>
-        A component you can integrate into your own app
+        A component you can integrate into your own apps
       </FeatureBox>
       <FeatureBox>
         It can work with any 3rd party storage service
@@ -106,9 +106,9 @@ export default ({children, ...props}) => (
           </Cell>
         </Grid>
         <Grid right>
-          <Cell title="Image editor is built-in">
+          <Cell title="Built-in image editor">
             <p>
-              Images are often the types of files that need that extra touch. With File Manager, you can easily manipulate an image and apply different filter to it. This creates a copy of the image, so you never lose the original.
+              Images are often the types of files that need that extra touch. With File Manager, you can manipulate an image and apply different filter to it right there from within the UI. It will create a copy of the original image, so you never lose the source file.
             </p>
           </Cell>
           <Cell>
@@ -121,15 +121,14 @@ export default ({children, ...props}) => (
           </Cell>
           <Cell title="Find the right files with ease">
             <p>
-              There is an always visible search bar at the top of the screen. Any word you type in, the system will try to match agains the file name, any of the tags or the file label. This makes it easy to find the file you're looking for.
+              There is an always-visible search bar at the top of the screen. Any word you type in, the system will try to match against the file name, any of the tags or the file label. This makes it easy to find the file you're looking for.
             </p>
           </Cell>
         </Grid>
         <Grid right>
           <Cell title="Tag and organize files">
             <p>
-              Tags are displayed on the left side of the screen. They act similar to a folder. Clicking a tag, will only show images that have that tag.
-              You can always create new tags, just by tagging an image.{' '}
+              Tags are visible on the left side of the screen. They act similar to a folder. Clicking a tag, will only show images that have that tag applied. You can always create new tags by simply tagging an image.
             </p>
           </Cell>
           <Cell>
@@ -142,9 +141,7 @@ export default ({children, ...props}) => (
           </Cell>
           <Cell title="Don't worry about about how many files you have">
             <p>
-              In some cases, when you have a big number of images, they can slow down the load time it takes to display all that content on your screen.
-              {' '}
-              Often systems introduce pages to avoid that, but that's clumsy to use. Webiny File Manager uses an infinitive scroll and lazy loading, this way the content is displayed right away, and there is no need for pages.
+              In some cases, when you have a big number of images, they can slow down the load time it takes to display all that content on your screen. Often systems introduce pagination to avoid that, but that's clumsy to use. Webiny File Manager uses an infinitive scroll and lazy loading mechanism. This way the content is displayed right away, and there is no need to click through pages.
             </p>
           </Cell>
         </Grid>
