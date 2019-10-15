@@ -90,9 +90,7 @@ class About extends React.Component {
               </Cell>
               <Cell title="Microservice architecture">
                 <p>
-                  It’s the latest and greatest that the technology provides. Scalable
-                  serverless functions that scale together with your demand. There is
-                  no load it can’t handle.
+                  It’s the latest and greatest that technology provides. Run microservices inside scaleable serverless functions. There is no load it can’t handle.
                 </p>
               </Cell>
             </div>
@@ -103,8 +101,7 @@ class About extends React.Component {
               </Cell>
               <Cell title="Everything you need is included">
                 <p>
-                  This means seamless development experience, faster project
-                  turnaround time, less bugs and greater quality output.
+                  Seamless development experience, faster project turnaround time, fewer bugs and greater quality output.
                 </p>
               </Cell>
             </div>
@@ -129,7 +126,7 @@ class About extends React.Component {
                   </Link>
                   ,
                   {' '}
-                  <Link to="/serverless-app/form-builder">Form builder</Link>
+                  <Link to="/serverless-app/form-builder">Form Builder</Link>
                   {' '}
                   and
                   {' '}

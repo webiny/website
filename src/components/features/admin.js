@@ -78,15 +78,14 @@ class YTVideo extends React.Component {
             </Cell>
             <Cell title="Serverless boilerplate">
               <p>
-                It's the perfect way to start building serverless applications.
-                You don't need to lose time on configuring the deployment scripts, webpack, and babel plugins, as well as figuring out how to structure your project.
+                It's the perfect way to start building serverless applications. No need to waste time on configuring deployment scripts, webpack, and babel plugins or figuring out how to structure a project. With Webiny, just jump right in.
               </p>
             </Cell>
           </Grid>
           <Grid right>
-            <Cell title="Users, roles and groups">
+            <Cell title="Users, groups and roles">
               <p>
-                Security is a crucial layer in any application. Webiny includes a full-featured security module that's also connected to the GraphQL API layer. The built-in UI, to manage users, roles and groups, is intuitive and easy to use.
+                Security is a crucial layer in any application. Webiny includes a full-featured security module that's also connected to the GraphQL API layer. The built-in UI, to manage users, groups, and roles, is intuitive and easy to use.
               </p>
             </Cell>
             <Cell>
@@ -99,14 +98,17 @@ class YTVideo extends React.Component {
             </Cell>
             <Cell title="User profile module">
               <p>
-                Each user that has access to your site, will also have access to a module that allows them to control their profile info, like name, avatar and similar. They can also update their password.
+                Each user that has access to your site, will also have access to a module that allows them to control their profile. They can change their name, avatar, and similar info. They can also update their password.
+              </p>
+              <p>
+                All the UI and processes are there for you to use and integrate into your own apps. The data is automatically synced with an authentication provider, like AWS Cognito.
               </p>
             </Cell>
           </Grid>
           <Grid right>
-            <Cell title="Search bar that is always there">
+            <Cell title="Search bar that's always there">
               <p>
-                The admin theme is inspired and influenced by Google Material Design, as well as several Google products. One of the more noticeable UI components is the search bar. It's a single bar that any module can register its search function, as well as details for the advance search options.
+                The admin theme is inspired and influenced by Google Material Design. One of the more noticeable UI components is the search bar. It's a single bar that any module can register its own search function. There is also the option to register advance search filters to enable more powerful filtering.
               </p>
             </Cell>
             <Cell>
@@ -119,20 +121,20 @@ class YTVideo extends React.Component {
             </Cell>
             <Cell title="GraphQL playground">
               <p>
-                As a developer, you require a great understanding of your API as a whole. Webiny comes with a built-in GraphQL playground, which you control who can access and on which environment.
+                As a developer, you are required to have a great understanding of your API as a whole. Webiny comes with a built-in GraphQL playground to view the full schema and the docs. You can also control who has access to it and inside which environment.
               </p>
             </Cell>
           </Grid>
           <Grid right>
             <Cell title="React components">
               <p>
-                We have created over 30 React UI components while creating Webiny. We open-sourced all of them so it's easy for others to include them into their Webiny apps. They are available on our
+                We have created over 30 React UI components while building Webiny. We open-sourced all of them so it's easy for others to include them into their own Webiny apps. They are available on our
                 {' '}
                 <a href="https://storybook.webiny.com/" target="_blank">
                   storybook
                 </a>
                 {' '}
-                page and are part of the Webiny Admin package.
+                page.
               </p>
             </Cell>
             <Cell>
@@ -143,19 +145,16 @@ class YTVideo extends React.Component {
             <Cell>
               <VideoBox file={AdaptableThemeVideo} />
             </Cell>
-            <Cell title="Adaptable theme">
+            <Cell title="A theme that adapts">
               <p>
-                The built-in admin theme is fully customizable through CSS and React components.
-                The admin theme is built as a set of plugins that can be extended and altered.
-                {' '}
-                Even the simplest parts, like the Webiny logo, are made as a plugin that can be changed, giving you full control over the look and feel.
+                The built-in admin theme is customizable through CSS and React components. The admin theme is built as a set of plugins that can you can extend and altered. Even the simplest parts, like the Webiny logo, are made as plugins that you can change. This gives you full control over the look and feel.
               </p>
             </Cell>
           </Grid>
           <Grid right>
             <Cell title="Extensible Login component">
               <p>
-                Webiny uses AWS Cognito to handle user sign-in as well as creation of new users and their authentication. The integration is fully seamless and done behind the scene. Using AWS Cognito brings a bullet-proof security to all your apps.
+                Webiny uses AWS Cognito to handle user authentication and creation of new user accounts. The integration is seamless and done behind the scene. By using AWS Cognito Webiny brings bullet-proof security to all your apps.
               </p>
               <p>
                 In case you want to use a different identity provider, like Auth0 or any other, you can do that by creating your own plugin. More details are available on our docs portal.

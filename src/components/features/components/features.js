@@ -159,9 +159,7 @@ class Features extends React.Component {
               <BoxIcon src={craIcon} />
               <BoxTitle>CRA v2</BoxTitle>
               <BoxDescription>
-                To make app development easier, we decided to use Create React App, an
-                environment many developers already know and love, so getting started
-                with Webiny will be a familiar experience from the start.
+                To make app development easier, we decided to use Create React App. It's an environment many developers already know and love. Getting started with Webiny will be a familiar experience from the start.
               </BoxDescription>
             </Box>
             <Box>
@@ -187,10 +185,7 @@ class Features extends React.Component {
               <BoxIcon src={uiComponentsIcon} />
               <BoxTitle>UI Components</BoxTitle>
               <BoxDescription>
-                Webiny is not just about building websites, but also custom plugins and
-                apps. To help with that, we included a number of React UI components
-                which will speed up your development and maintain consistency across
-                your project.
+                Webiny is not about building just websites. You can build powerful apps and APIs. To help with that, we included a number of React UI components which will speed up your development and maintain consistency across your project.
               </BoxDescription>
               {/*
             <BoxFooter>
@@ -204,9 +199,7 @@ class Features extends React.Component {
               <BoxIcon src={documentedIcon} />
               <BoxTitle>Documented</BoxTitle>
               <BoxDescription>
-                StackOverflow developer survey report stated that developers are most
-                frustrated with bad, or lack of proper, documentation, and so are we!
-                Therefore we invested extra effort into creating ours.
+                StackOverflow developer survey report stated that developers are most frustrated with bad, or lack of proper documentation. And so are we! For that reason we invested extra effort into creating ours. We made it clean and easy to navigate.
               </BoxDescription>
               {/*
             <BoxFooter>
@@ -218,10 +211,7 @@ class Features extends React.Component {
               <BoxIcon src={openSourceIcon} />
               <BoxTitle>Open Source</BoxTitle>
               <BoxDescription>
-                Our believe is that software should be open, because it directly
-                benefits the community and the people around it. For this reason Webiny
-                is released under the MIT open-source license and will always remain
-                FREE.
+                Our belief is that software should be open. It directly benefits the community and the people around it. For that reason we released Webiny under the MIT open-source license. Webiny will always be and remain FREE.
               </BoxDescription>
               {/*
             <BoxFooter>
@@ -282,10 +272,7 @@ class Features extends React.Component {
               <BoxIcon src={visualBuilderIcon} />
               <BoxTitle>Visual Builder</BoxTitle>
               <BoxDescription>
-                Unlike most visual website builders that work with static HTML blocks,
-                our visual builder actually works with React components. If you know how
-                to create a React component, you can quickly and easily create new
-                custom plugins and elements for the page builder.
+                Most visual website builders work with static HTML blocks. Webiny is different. Our visual builder works with React components. If you know how to create a React component, you can quickly and easily create new plugins and elements. This makes it easy to expand and add new functionality to your site.
               </BoxDescription>
               {/*
             <BoxFooter>
@@ -299,10 +286,7 @@ class Features extends React.Component {
               <BoxIcon src={materialThemeIcon} />
               <BoxTitle>Theme</BoxTitle>
               <BoxDescription>
-                Every website requires a theme. Webiny CMS comes with two built-in
-                themes. One for the administration, and one for the website. Both can be
-                fully customized to fit any visual style required. The website theme is
-                also fully mobile responsive.
+                Every website requires a theme. Webiny CMS comes with two built-in themes. One for the administration, and one for the website. You can customize both to fit any visual style required. The website theme is also mobile responsive.
               </BoxDescription>
               {/*
             <BoxFooter>
@@ -316,10 +300,7 @@ class Features extends React.Component {
               <BoxIcon src={flowjsIcon} />
               <BoxTitle>FlowJS</BoxTitle>
               <BoxDescription>
-                Documentation is important, but so is having a readable and easy to
-                understand source code. Reading somebody elses code can be “challenging”
-                at times. To make it easier for everyone, our code is written using
-                FlowJS static types for extra clarity.
+                Documentation is important, but so is having a readable and easy to understand source code. Reading somebody else's code can be “challenging” at times. To make it easier for everyone, our code is written using FlowJS static types for extra clarity.
               </BoxDescription>
               {/*
             <BoxFooter>
@@ -333,10 +314,7 @@ class Features extends React.Component {
               <BoxIcon src={databaseIcon} />
               <BoxTitle>Document Database</BoxTitle>
               <BoxDescription>
-                Webiny uses a document database, as they feature semi-structured
-                documents which are perfect for modern API layers and easy for
-                developers to work with. By default you can use either MongoDb or the
-                latest Amazon DocumentDB.
+                Webiny uses a document database. They feature semi-structured documents which are perfect for modern API layers. For developers they are super easy to work with. By default you can use either MongoDB or AWS DocumentDB.
               </BoxDescription>
               {/*
             <BoxFooter>
@@ -348,10 +326,7 @@ class Features extends React.Component {
               <BoxIcon src={integrationsIcon} />
               <BoxTitle>Integrations</BoxTitle>
               <BoxDescription>
-                Webiny is designed as a platform on top of which you can build custom
-                applications, and not just webpages. The integrated plugin system allows
-                you to hook in into any part of the existing code and add or change
-                current features and behaviors.
+                Webiny is designed as a platform on top of which you can build custom applications. The integrated plugin system allows you to hook in into any part of the existing code. You can add, remove or change current features and behaviors. There are no roadblocks when you use Webiny.
               </BoxDescription>
             </Box>
             {/*
@@ -372,10 +347,7 @@ class Features extends React.Component {
               <BoxIcon src={securityIcon} />
               <BoxTitle>Security</BoxTitle>
               <BoxDescription>
-                Webiny provides a simple yet effective security layer comprising of
-                scopes, roles and groups, which gives you fine-grained control over data
-                access. Define your scopes in code, then manage roles via user-friendly
-                UI.
+                Webiny provides a simple yet effective security layer. It  comprises of scopes, roles and groups. This gives you fine-grained control over data access. You can define your scopes in code, then manage roles via a user-friendly UI.
               </BoxDescription>
               {/*
               <BoxFooter>
