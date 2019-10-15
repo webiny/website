@@ -179,7 +179,7 @@ export default ({children, ...props}) => (
       <ContentContainer>
         <Title>Support</Title>
         <SubText>
-          In need of some support? Explore the options available below.
+          Need some help? Explore the options below.
         </SubText>
       </ContentContainer>
     </Hero>
@@ -224,7 +224,7 @@ export default ({children, ...props}) => (
             </a>
           </h3>
           <p>
-            Something broke, not working properly? Have a look at the current
+            Something broke or not working properly? Have a look at the current
             issues on our GitHub, or report an new one.
           </p>
         </Cell>
@@ -258,9 +258,7 @@ export default ({children, ...props}) => (
             </a>
           </h3>
           <p>
-            Join the Webiny Community and get access to many smart people.
-            You’ll also find a lot of valuable information and get the
-            opportunity to ask fellow members questions.
+            Join the Webiny Community and get access to many smart people. You’ll find a lot of valuable information and get the opportunity to ask fellow members questions.
           </p>
         </Cell>
         <Cell>
@@ -272,8 +270,7 @@ export default ({children, ...props}) => (
             </a>
           </h3>
           <p>
-            We blog often about Webiny and its capabilities, features and
-            several other mainly technical topics. It’s a good place to explore.
+            We blog often about Webiny and its capabilities, features and several other technical topics. It’s a good place to explore.
           </p>
         </Cell>
         <Cell />

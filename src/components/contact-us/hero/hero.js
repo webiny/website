@@ -52,8 +52,7 @@ export default ({children, ...props}) => (
     <ContentContainer>
       <Title>Contact Us</Title>
       <SubText>
-        You are welcome to contact us with any question, feedback or comment you
-        might have and we will try to respond in shortest possible time.
+        You are welcome to contact us with any question, feedback or comment you might have. We'll try to respond in shortest possible time.
       </SubText>
       <ContactUs placeholder="Your message" />
     </ContentContainer>

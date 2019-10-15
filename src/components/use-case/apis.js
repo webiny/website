@@ -28,19 +28,14 @@ const APIs = () => (
         </Cell>
         <Cell title="Use GraphQL, the better way to build APIs">
           <p>
-            GraphQL brings numerous benefits over REST, however, some of the setup and
-            configuration can be challenging. With Webiny, you’ll get a preconfigured
-            environment and you can start creating your GraphQL API right away.
+            GraphQL brings numerous benefits over REST. However, some of the setup and configuration can be challenging. With Webiny, you’ll get a preconfigured environment and you can start creating your GraphQL API right away.
           </p>
         </Cell>
       </Grid>
       <Grid right>
         <Cell title="Take the  microservices approach">
           <p>
-            It’s the latest and greatest that technology provides, however it's quite
-            hard to configure everything correctly. With Webiny you'll get the whole
-            setup for all your services included, as we'll as deploying new services is
-            super easy.
+            It’s the latest and greatest that technology provides, but sometimes it's quite hard to configure everything correctly. With Webiny you'll get the whole setup included for all your services. We also made deploying services super easy.
           </p>
         </Cell>
         <Cell>
@@ -53,19 +48,14 @@ const APIs = () => (
         </Cell>
         <Cell title="Apollo Federation">
           <p>
-            Having multiple APIs is usually a requirement for any larger application. In
-            many cases, this ends up being a monolithic structure. To avoid that, Webiny
-            uses Apollo Federation which allows you to have multiple GraphQL services in
-            a single graph distributed across multiple functions.
+            Having several APIs is usually a rule for any larger application. In many cases this ends up being a monolithic structure. To avoid that, Webiny uses Apollo Federation. It allows you to build your data graph using microservices distributed across multiple functions.
           </p>
         </Cell>
       </Grid>
       <Grid right>
         <Cell title="Built-in access control layer">
           <p>
-            The fine-grain ACL layer inside Webiny allows you to configure user access
-            rights to the smallest unit. You can also issue API tokens for users to use
-            inside applications and 3rd party services.
+            The fine-grain ACL layer allows you to configure user access rights to the smallest scope. You can also issue API tokens for users to use inside 3rd party applications and services.
           </p>
         </Cell>
         <Cell>
@@ -78,10 +68,7 @@ const APIs = () => (
         </Cell>
         <Cell title="Great performance with serverless functions">
           <p>
-            Building a great home for your API is challenging. We have invested
-            significant time in creating Webiny specifically for serverless environments
-            so your API feels safe, performs amazingly well and scales to handle any
-            demand.
+            Webiny sites runs inside a serverless environment. That offers unlimited scalability so no matter the load. Your users will experience great performance. Serverless also eliminates the need to over provision and overpay for infrastructure.
           </p>
         </Cell>
       </Grid>

@@ -27,8 +27,7 @@ const Websites = () => (
         </Cell>
         <Cell title="Build pages and forms without code">
           <p>
-            Use the intuitive and powerful drag&drop builder to create stunning pages as
-            well as forms to capture your leads. No coding required!
+            Use the intuitive and powerful drag&drop builder to create stunning pages and forms to capture your leads. No coding knowledge required.
           </p>
         </Cell>
       </Grid>
@@ -38,8 +37,7 @@ const Websites = () => (
           title={'For more complex structures, there is a headless module'}
         >
           <p>
-            Content modeling and a GraphQL API for content distribution, the headless
-            module allows you to go beyond the web to display your content.{' '}
+            There is a UI and an API for content modeling and a GraphQL API for content distribution. The headless module allows you to go beyond the web to distribute and display your content.
           </p>
         </Cell>
         <Cell>
@@ -61,7 +59,7 @@ const Websites = () => (
         <Cell title="Use the ready-made integrations or create your own">
           <p>
             Things like youtube videos, cookie policy consents, google tag manager and
-            many more, are all included by default. If something is missing, just create
+            many more, are all included by default. If something is missing, it's easy to create
             a new plugin.
           </p>
         </Cell>
@@ -84,10 +82,7 @@ const Websites = () => (
       <Grid right>
         <Cell title="Great performance with serverless functions">
           <p>
-            Your Webiny website runs inside a serverless environment, which offers
-            unlimited scalability features, so no matter the load, your users will
-            experience great performance and there is no need to over provision and
-            overpay for infrastructure.
+            Webiny sites runs inside a serverless environment. That offers unlimited scalability so no matter the load. Your users will experience great performance. Serverless also eliminates the need to over provision and overpay for infrastructure.
           </p>
         </Cell>
         <Cell>

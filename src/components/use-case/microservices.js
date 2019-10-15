@@ -25,7 +25,7 @@ const Microservices = () => (
       <Grid right>
         <Cell title="Serverless Framework deployment">
           <p>
-            Webiny uses the community accepted Severless Framework to deploy functions.
+            Webiny uses the community accepted Serverless Framework to deploy functions.
             It's single command, and in case you want to expand and customize your
             deployment process, all you need to do is create a new plugin.
           </p>
@@ -65,17 +65,14 @@ const Microservices = () => (
           <p>
             Building and deploying microservices requires significant time. Webiny
             enables you to have your services up and running in less time and with less
-            effort leaving time for more important things.
+            effort. Leaving time for more important things.
           </p>
         </Cell>
       </Grid>
       <Grid right>
         <Cell title="Great performance with serverless functions">
           <p>
-            Your microservices run inside a serverless environment, which offers
-            unlimited scalability features, so no matter the load, your users will
-            experience great performance and there is no need to over provision and
-            overpay for infrastructure.
+            Webiny sites runs inside a serverless environment. That offers unlimited scalability so no matter the load. Your users will experience great performance. Serverless also eliminates the need to over provision and overpay for infrastructure.
           </p>
         </Cell>
         <Cell>

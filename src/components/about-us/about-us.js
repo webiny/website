@@ -216,20 +216,23 @@ export default ({children, ...props}) => (
         <Cell>
           <h2>Hello and welcome</h2>
           <p>
-            We at Webiny have a mission to empower developers with tools, processes and ready-made apps so that they can create serverless applications with ease.
+            At Webiny we have a mission to empower developers. We do that by providing tools, processes and ready-made apps. As a result, developers can create serverless applications with ease.
           </p>
           <p><Bold>Our story</Bold></p>
 
           <p>
-            Many moons ago, Webiny was just another digital agency building websites, fighting the technology and fixing bugs, many bugs.
+            Many moons ago, Webiny was just another digital agency. We were building websites, fighting the technology and fixing bugs, many bugs.
           </p>
 
           <p>
-            Eventually, we saw that the way we build and manage web applications is changing, that this “serverless” trend is actually here to stay, and not just that, we believe that in a few years time, serverless will be the way how most of the web is being built.
+            Eventually, we saw that the way we build and manage web applications is changing. We saw that this “serverless” trend is actually here to stay. Even more than that, we now believe that in a few years time, serverless will be the way how most of the web is created.
           </p>
 
           <p>
-            With this belief, we decided to close down our service business and focus 100% of our effort towards building a CMS specifically for serverless web development, and thus Webiny CMS was born. 100% free and open source.
+            With this belief, we decided to close down our service business and focus on a mission to built a serverless CMS. One this will become a foundation for all serverless applications. One that developers will see as a core part of their serverless stack.
+          </p>
+          <p>
+            We want to do all that, but with a community in mind, one that will help us achieve this goal.  As a result, we released Webiny under the MIT open-source licence so everyone can use it completely free of charge.
           </p>
         </Cell>
         <Cell>

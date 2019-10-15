@@ -28,16 +28,14 @@ const Applications = () => (
         </Cell>
         <Cell title="A library of ready-made React components">
           <p>
-            The given components make it easy to create simple and complex interfaces in
-            no time. Components are both visually designed and functionally created to
-            work together seamlessly.
+            The given components make it easy to create simple and complex interfaces in no time. Components are both designed and coded to seamlessly work together.
           </p>
         </Cell>
       </Grid>
       <Grid right>
         <Cell title="Local development environment">
           <p>
-            With a simple command install Webiny locally on your machine. Develope using
+            With a simple command install Webiny locally on your machine. Develop using
             favorite editor and environment, there are no magic black boxes here.
           </p>
         </Cell>
@@ -51,10 +49,7 @@ const Applications = () => (
         </Cell>
         <Cell title="Admin theme is included">
           <p>
-            The admin theme has all the required parts, from a clear UI, navigation,
-            user account area, search and login form. Everything is customizable. Just
-            by using the given admin theme you’ll save your self days if not weeks of
-            coding.
+            The admin theme has all the required parts, from a clean-looking UI, navigation, user account area, search and login form. Everything is customizable. By using the given admin theme you’ll save yourself days if not weeks of coding.
           </p>
         </Cell>
       </Grid>
@@ -90,10 +85,7 @@ const Applications = () => (
         </Cell>
         <Cell title="Great performance with serverless functions">
           <p>
-            Your Webiny website runs inside a serverless environment, which offers
-            unlimited scalability features, so no matter the load, your users will
-            experience great performance and there is no need to over provision and
-            overpay for infrastructure.
+            Webiny sites runs inside a serverless environment. That offers unlimited scalability so no matter the load. Your users will experience great performance. Serverless also eliminates the need to over provision and overpay for infrastructure.
           </p>
         </Cell>
       </Grid>
@@ -114,9 +106,7 @@ const Applications = () => (
         </Cell>
         <Cell title="Built-in access control layer">
           <p>
-            The fine-grain ACL layer inside Webiny allows you to configure user access
-            rights to the smallest unit. You can also issue API tokens for users to use
-            inside applications and 3rd party services.
+            The fine-grain ACL layer allows you to configure user access rights to the smallest scope. You can also issue API tokens for users to use inside 3rd party applications and services.
           </p>
         </Cell>
       </Grid>
