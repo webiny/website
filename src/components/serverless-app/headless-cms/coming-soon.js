@@ -43,8 +43,7 @@ export default ({children, ...props}) => (
     <CSBox>
       <SubTitle>Coming Soon</SubTitle>
       <Paragraph>
-        Webiny Headless CMS is currenty under development. Please join our
-        newsletter, and we will notify you once the app is released.
+        Webiny Headless CMS is currently under development. Please join our newsletter, and we will notify you once we  released the app.
       </Paragraph>
       <Newsletter />
     </CSBox>

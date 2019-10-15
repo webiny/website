@@ -48,7 +48,7 @@ export default ({children, ...props}) => (
     >
       <List>
         <ListItem title={'Serverless & Self-hosted'}>
-          - Quick and easy deployment with Serverless Framework
+          - Quick and easy deployment with Serverless Framework.
         </ListItem>
         <ListItem title={'Easy Theming'}>
           - Themes are created using
@@ -95,7 +95,7 @@ export default ({children, ...props}) => (
         </Cell>
         <Cell title="Drag&drop page builder">
           <p>
-            Unleash your creativity. Don’t constrain your content inside a "textarea". Webiny features, not a text editor, but a full featured drag&drop builder, allowing you to build more engaging pages and present your content in the way it deserves. Your users will thank you.
+            Unleash your creativity. Don’t constrain your content inside a "textarea". Webiny features, not a text editor, but a full featured drag&drop builder. This allows you to build more engaging pages and present your content in the way it deserves. Your users will thank you.
           </p>
         </Cell>
       </Grid>
@@ -105,7 +105,7 @@ export default ({children, ...props}) => (
             Often a CMS gives you the option to arrange your content in a crude and boring way and your users will notice that. So, what good is a CMS if it’s not keeping your users engaged?
           </p>
           <p>
-            To spin things around, Webiny features a set of built-in inspirational content blocks that you can just drop into your page and adjust it to fit your needs. It will make every page a unique engaging experience.
+            To spin things around, Webiny features a set of built-in inspirational content blocks. You can drop into your page and adjust them to fit your needs. It will make every page a unique engaging experience.
           </p>
         </Cell>
         <Cell>
@@ -118,17 +118,15 @@ export default ({children, ...props}) => (
         </Cell>
         <Cell title="Page revisions">
           <p>
-            Never lose sight of who changed what. Have a time machine for your content.  Be able to go back and restore previous versions of a page, or quickly test  between multiple revisions.
+            Never lose sight of who changed what. Go back in time and restore previous versions of a page. Work on new content drafts  without publishing them until ready.
+            {' '}
           </p>
         </Cell>
       </Grid>
       <Grid right>
         <Cell title="Page elements">
           <p>
-            The page editor features over 15 different elements that you can add to your page allowing you to create rich experiences for your visitors.
-            {' '}
-            If an element is missing, it’s easy to create new ones as they are simple React components. Each one can control its presentation layer, as well as additional settings and configuration options.
-            {' '}
+            Page builder features over 15 different elements you can add to a page. Create rich experiences for your visitors. If an element is missing, it’s easy to create one as they are simple React components. Each element controls its presentation layer, as well as settings and configuration options.
           </p>
         </Cell>
         <Cell>
@@ -141,14 +139,15 @@ export default ({children, ...props}) => (
         </Cell>
         <Cell title="SEO & social media">
           <p>
-            You can control your SEO title, description, keywords as well as any other tag that you require. On top of that, the Page builder comes with a set of predefined OpenGraph fields through which you can define how your page will look like when share across different social media sites.
+            Control the SEO aspects of a page. Tags like page title, description, keywords as well as any other. Page builder comes with a set of predefined OpenGraph fields. They define how a page looks when share across different social media sites.
+            {' '}
           </p>
         </Cell>
       </Grid>
       <Grid right>
         <Cell title="Navigation menus">
           <p>
-            Menus and navigation are crucial part of every site. The Page builder includes also a module for building navigational menus. You can insert pages, a list of pages, create sub-tree navigations as well as add external links.
+            Menus and navigation are crucial part of every site. Page builder includes a module for building navigation menus. Insert pages,  list of pages, or create a sub-tree navigation. You can also add external links and control the arrangement of menu items.
           </p>
         </Cell>
         <Cell>
@@ -161,7 +160,7 @@ export default ({children, ...props}) => (
         </Cell>
         <Cell title="Organize your content">
           <p>
-            To better organise your content, each page belongs to a specific page category. A category defines which theme layout will be used to display the page content, as well as a URL prefix, to make the URL look nicer and more structured.
+            To better organise the content, each page belongs to a specific page category. A page category defines which theme layout it will used to display the content. Page categories also control the URL prefix used for all page in this group. This makes the page URL look nice and structured.
           </p>
         </Cell>
       </Grid>

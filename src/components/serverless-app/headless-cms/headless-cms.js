@@ -35,7 +35,7 @@ export default ({children, ...props}) => (
     >
       <List>
         <ListItem title={'Serverless & Self-hosted'}>
-          - Quick and easy deployment with Serverless Framework
+          - Quick and easy deployment with Serverless Framework.
         </ListItem>
         <ListItem title={'GraphQL APIs'}>
           - There are 2 APIs, one for content management and one for content delivery.
@@ -55,7 +55,7 @@ export default ({children, ...props}) => (
         Multi-language support out-of-the-box
       </FeatureBox>
       <FeatureBox>
-        Create relationships between your content types
+        Create relationships between content types
       </FeatureBox>
     </ContentContainer>
     <ContentContainer className={featureContainer}>

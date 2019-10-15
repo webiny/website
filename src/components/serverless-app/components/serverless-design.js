@@ -92,7 +92,7 @@ export default props => (
     Serverless by design
     <BoxList>
       <Box number={1}>
-        USE A SINGLE COMMAND TO DEPLOY AND CONFIGURE SERVERLES INFRASTRUCTURE
+        USE A SINGLE COMMAND TO DEPLOY AND CONFIGURE SERVERLESS INFRASTRUCTURE
       </Box>
       <Box number={2}>FORGET ABOUT MAINTENANCE AND SCALABILITY HEADACHES</Box>
       <Box number={3}>
