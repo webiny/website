@@ -25,4 +25,12 @@ const Paragraph = styled ('p') ({
   textAlign: 'left',
 });
 
-export {SubTitle, Paragraph};
+const Bold = styled ('span') ({
+  fontWeight: theme.fontWeight.semiBold,
+});
+
+const Small = styled ('p') ({
+  fontSize: 12,
+});
+
+export {SubTitle, Paragraph, Bold, Small};

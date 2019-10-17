@@ -4,7 +4,7 @@ import Hero from '../components/hero';
 import {List, ListItem} from '../components/list';
 import FeatureBox from '../components/feature-box';
 import ContentContainer from '../../ui/content-container';
-import {SubTitle} from '../components/typography';
+import {SubTitle, Bold, Small} from '../components/typography';
 import {Grid, Cell} from '../../ui/layout/layout';
 import VideoBox from '../../ui/layout/video-box';
 import QuickStart from '../../ui/layout/footer';
@@ -26,7 +26,6 @@ import RecaptchaTosVideo from './assets/07-recaptcha-tos.mp4';
 import WebhooksVideo from './assets/08-webhooks.mp4';
 import PageBuilderVideo from './assets/09-page-builder.mp4';
 import TagsVideo from './assets/01-builder.mp4';
-import LazyLoadVideo from './assets/01-builder.mp4';
 
 const featureContainer = css (
   {
@@ -58,7 +57,7 @@ export default ({children, ...props}) => (
       bg={HeroBg}
       appName={'Form Builder'}
       title={'Create Forms Using a Drag&Drop Interface and Track Conversions'}
-      github="https://github.com/webiny/webiny-js"
+      github=""
       media={<img src={HeroImage} alt="Webiny Serverless Form Builder" />}
     >
       <List>
@@ -72,6 +71,19 @@ export default ({children, ...props}) => (
           - Have a full control over how your form will look like, including on mobile devices.
         </ListItem>
       </List>
+      <p>
+        <Bold>Coming soon!</Bold><br />
+        <Small>
+          The Form Builder app is due to be released Nov 2019. If you wish to be notified, it's best to
+          {' '}
+          <a
+            href="https://webiny.us18.list-manage.com/subscribe/post?u=122d2713f699957c0f043cb42&id=f0173e501c"
+            target="_blank"
+          >
+            subscribe to our newsletter.
+          </a>
+        </Small>
+      </p>
     </Hero>
     <SlsDesign />
 

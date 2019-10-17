@@ -66,7 +66,11 @@ const AppName = styled ('h3') (
 );
 
 const LeftSide = styled ('div') (
-  {},
+  {
+    a: {
+      color: theme.color.white,
+    },
+  },
   mq ({
     textAlign: ['center', 'left'],
     width: ['100%', 400],
