@@ -219,7 +219,7 @@ export default ({children, ...props}) => (
         </Cell>
         <Cell title="Become a Fan">
           <p>
-            A fan is someone who loves what we do here. Fans give us support to keep going forward. And everything we do, we do it for them. A Webiny fan is someone who 1.) starred our GitHub 2.) subscribed to our newsletter 4) follows us on either Twitter or YouTube.
+            A fan is someone who loves what we do here. Fans give us support to keep going forward. And everything we do, we do it for them. A Webiny fan is someone who 1.) starred our GitHub 2.) subscribed to our newsletter 3) follows us on either Twitter or YouTube.
           </p>
         </Cell>
       </Grid>
