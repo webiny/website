@@ -121,10 +121,12 @@ const Footer = () => (
         <Link className={linkStyle} to="/privacy-policy">
           Privacy Policy
         </Link>{' '}
+        {/*
         /{' '}
         <Link className={linkStyle} to="/terms-of-service">
           Terms of Service
         </Link>
+        */}
         <br />
         Webiny © {new Date ().getFullYear ()}
       </Copy>

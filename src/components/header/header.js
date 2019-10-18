@@ -7,6 +7,7 @@ import Button from '../ui/button';
 import Link from 'gatsby-link';
 import {css} from 'emotion';
 import GitHubButton from 'react-github-btn';
+import NewsBanner from '../ui/news-banner';
 
 import logo from './assets/webiny-logo-with-icon-left-white.svg';
 import logoOrange from './assets/webiny-logo-with-icon-left-orange.svg';
@@ -195,7 +196,6 @@ const dropdownArrow = css`
 
 const HeaderContainer = styled ('header') (
   {
-    top: 0,
     left: 0,
     paddingTop: 15,
     paddingBottom: 15,
@@ -209,6 +209,7 @@ const HeaderContainer = styled ('header') (
     boxShadow: props.isSticky && '0 0 1px 1px rgba(34,45,57,.15)',
     paddingTop: props.isSticky ? 10 : 20,
     paddingBottom: props.isSticky ? 10 : 20,
+    top: props.hasBanner ? (props.hideBanner ? 0 : 25) : 0,
     [MenuItem]: {
       color: props.isSticky ? '#000' : '#fff',
       ['a.' + linkStyle]: {
@@ -383,6 +384,9 @@ const MenuItemList = props => (
         <hr />
         <a href="https://blog.webiny.com/">Blog</a>
         <a href="https://community.webiny.com/">Community</a>
+        <Link rel="prerender" to="/swag">
+          SWAG
+        </Link>
         <hr />
         <Link rel="prerender" to="/about-us">
           About us
@@ -407,15 +411,34 @@ const MenuItemList = props => (
 
 class Header extends React.Component {
   didScroll = false;
-  state = {isSticky: false, mobileMenuOpen: false};
+  hasBanner = false;
+  bannerListnerer = false;
+  scrollListener = false;
+  state = {isSticky: false, mobileMenuOpen: false, hideBanner: false};
 
   componentDidMount () {
+    if (this.hasBanner) {
+      this.initBannerListener ();
+    }
+
     if (this.props.trackScroll === false) {
       this.setState ({isSticky: true});
       return;
     }
 
     this.initScrollListener ();
+  }
+
+  componentWillUnmount () {
+    if (this.hasBanner && this.bannerListnerer !== false) {
+      clearInterval (this.bannerListnerer);
+      this.bannerListnerer = false;
+    }
+
+    if (this.scrollListener !== false) {
+      clearInterval (this.scrollListener);
+      this.scrollListener = false;
+    }
   }
 
   toggleMobileMenu = () => {
@@ -435,7 +458,7 @@ class Header extends React.Component {
       this.didScroll = true;
     };
 
-    setInterval (() => {
+    this.scrollListener = setInterval (() => {
       if (this.didScroll) {
         this.didScroll = false;
 
@@ -455,49 +478,68 @@ class Header extends React.Component {
     }, 500);
   };
 
+  initBannerListener = () => {
+    this.bannerListnerer = setInterval (() => {
+      if (window.scrollY > 30 && this.state.hideBanner == false) {
+        this.setState ({hideBanner: true});
+      } else if (window.scrollY < 30 && this.state.hideBanner == true) {
+        this.setState ({hideBanner: false});
+      }
+    }, 500);
+  };
+
   render () {
     return (
-      <HeaderContainer isSticky={this.state.isSticky}>
-        <ContentContainer className={headerInnerContainer}>
-          <NavBar
-            className={
-              this.state.mobileMenuOpen ? 'mobile-opened' : 'mobile-closed'
-            }
-          >
-            <WebinyLogo alt="Webiny Home">
-              <Link rel="prerender" to="/">
-                <img
-                  alt="Webiny Logo"
-                  className={logoImage}
-                  src={
-                    this.state.isSticky || this.state.mobileMenuOpen
-                      ? logoOrange
-                      : logo
-                  }
-                />
-              </Link>
-            </WebinyLogo>
+      <React.Fragment>
+        {this.hasBanner && <NewsBanner />}
 
-            <Menu>
-              <MenuItemList sticky={this.state.isSticky} />
-            </Menu>
-
-            <MobileMenuIcon
-              onClick={this.toggleMobileMenu}
-              alt="Mobile Menu"
-              src={
-                this.state.mobileMenuOpen || this.state.isSticky
-                  ? menuIconBlack
-                  : menuIcon
+        <HeaderContainer
+          hasBanner={this.props.hasBanner}
+          isSticky={this.state.isSticky}
+          hideBanner={this.state.hideBanner}
+          hasBanner={this.hasBanner}
+        >
+          <ContentContainer className={headerInnerContainer}>
+            <NavBar
+              className={
+                this.state.mobileMenuOpen ? 'mobile-opened' : 'mobile-closed'
               }
-            />
-            <MobileMenu>
-              <MenuItemList sticky={this.state.mobileMenuOpen} />
-            </MobileMenu>
+            >
+              <WebinyLogo alt="Webiny Home">
+                <Link rel="prerender" to="/">
+                  <img
+                    alt="Webiny Logo"
+                    className={logoImage}
+                    src={
+                      this.state.isSticky || this.state.mobileMenuOpen
+                        ? logoOrange
+                        : logo
+                    }
+                  />
+                </Link>
+              </WebinyLogo>
 
-          </NavBar>
-        </ContentContainer>
-      </HeaderContainer>
+              <Menu>
+                <MenuItemList sticky={this.state.isSticky} />
+              </Menu>
+
+              <MobileMenuIcon
+                onClick={this.toggleMobileMenu}
+                alt="Mobile Menu"
+                src={
+                  this.state.mobileMenuOpen || this.state.isSticky
+                    ? menuIconBlack
+                    : menuIcon
+                }
+              />
+              <MobileMenu>
+                <MenuItemList sticky={this.state.mobileMenuOpen} />
+              </MobileMenu>
+
+            </NavBar>
+          </ContentContainer>
+        </HeaderContainer>
+      </React.Fragment>
     );
   }
 }
