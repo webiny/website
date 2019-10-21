@@ -183,14 +183,14 @@ export default ({children, ...props}) => (
             </p>
           </Cell>
         </Grid>
-        <Grid right>
-          <Cell title="CSV Export">
+        <Grid rigth>
+          <Cell title="Connect 3rd parties using Webhooks">
             <p>
-              Viewing form submissions from within the UI is easy, but in some cases it might not be enough. For those cases we've added the option to export form submissions. This way you can transfer the submissions into a 3rd party tool and do the additional processing there.
+              There are cases where you want to trigger specific actions each time someone submits a form. In some examples you might even want to notify and send the data to a 3rd party. Examples are zapier, slack and similar. Webiny Form Builder allows this integration via a webhook. All you need is the POST URL of the 3rd party.
             </p>
           </Cell>
           <Cell>
-            <VideoBox file={TagsVideo} />
+            <VideoBox file={WebhooksVideo} />
           </Cell>
         </Grid>
         <Grid left>
@@ -203,16 +203,18 @@ export default ({children, ...props}) => (
             </p>
           </Cell>
         </Grid>
-        <Grid rigth>
-          <Cell title="Connect 3rd parties using Webhooks">
+        {/*
+       <Grid right>
+          <Cell title="CSV Export">
             <p>
-              There are cases where you want to trigger specific actions each time someone submits a form. In some examples you might even want to notify and send the data to a 3rd party. Examples are zapier, slack and similar. Webiny Form Builder allows this integration via a webhook. All you need is the POST URL of the 3rd party.
+              Viewing form submissions from within the UI is easy, but in some cases it might not be enough. For those cases we've added the option to export form submissions. This way you can transfer the submissions into a 3rd party tool and do the additional processing there.
             </p>
           </Cell>
           <Cell>
-            <VideoBox file={WebhooksVideo} />
+            <VideoBox file={TagsVideo} />
           </Cell>
         </Grid>
+       */}
       </ContentContainer>
     </section>
     <AppList style={{backgroundColor: '#F7F7F7'}} />
