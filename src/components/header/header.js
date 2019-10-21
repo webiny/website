@@ -88,6 +88,24 @@ const DropDown = styled ('div') (
       margin: '-5px -10px 10px -10px',
       borderTop: 'none',
     },
+    '.section-wrapper': {
+      display: 'flex',
+      '.section': {
+        width: 120,
+        '.section-title': {
+          fontWeight: theme.fontWeight.semiBold,
+          marginBottom: 15,
+          cursor: 'text',
+          color: theme.color.black,
+        },
+        '&:last-child': {
+          marginBottom: '0px !important',
+        },
+      },
+      hr: {
+        display: 'none',
+      },
+    },
   },
   mq ({
     position: ['relative', 'absolute'],
@@ -99,6 +117,18 @@ const DropDown = styled ('div') (
     top: [25, 50],
     '.open': {
       display: 'block',
+    },
+    '.section-wrapper': {
+      marginTop: [-25, 0],
+      flexDirection: ['column', 'row'],
+      '.section': {
+        '.section-title': {
+          marginTop: [25, 0],
+        },
+        a: {
+          paddingLeft: [25, 0],
+        },
+      },
     },
   })
 );
@@ -378,23 +408,32 @@ const MenuItemList = props => (
       <DownArrow />
       <DropDown>
         <div className={dropdownArrow} />
-        <a href="https://docs.webiny.com/">Docs</a>
-        <a href="https://github.com/webiny/webiny-js">GitHub</a>
-        <a href="https://storybook.webiny.com/">Storybook</a>
-        <hr />
-        <a href="https://blog.webiny.com/">Blog</a>
-        <a href="https://community.webiny.com/">Community</a>
-        <Link rel="prerender" to="/swag">
-          SWAG
-        </Link>
-        <hr />
-        <Link rel="prerender" to="/about-us">
-          About us
-        </Link>
-        <Link rel="prerender" to="/contact-us">
-          Contact us
-        </Link>
-        <Link to="/support">Support</Link>
+        <div className="section-wrapper">
+          <div className="section">
+            <div className="section-title">Resources</div>
+            <a href="https://docs.webiny.com/">Docs</a>
+            <a href="https://blog.webiny.com/">Blog</a>
+            <a href="https://storybook.webiny.com/">Storybook</a>
+          </div>
+          <div className="section">
+            <div className="section-title">Community</div>
+            <a href="https://github.com/webiny/webiny-js">GitHub</a>
+            <a href="https://community.webiny.com/">Community</a>
+            <Link rel="prerender" to="/swag">
+              SWAG
+            </Link>
+          </div>
+          <div className="section">
+            <div className="section-title">Company</div>
+            <Link rel="prerender" to="/about-us">
+              About us
+            </Link>
+            <Link rel="prerender" to="/contact-us">
+              Contact us
+            </Link>
+            <Link to="/support">Support</Link>
+          </div>
+        </div>
       </DropDown>
     </MenuItem>
 
