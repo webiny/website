@@ -219,7 +219,28 @@ export default ({children, ...props}) => (
         </Cell>
         <Cell title="Become a Fan">
           <p>
-            A fan is someone who loves what we do here. Fans give us support to keep going forward. And everything we do, we do it for them. A Webiny fan is someone who 1.) starred our GitHub 2.) subscribed to our newsletter 3) follows us on either Twitter or YouTube.
+            A fan is someone who loves what we do here. Fans give us support to keep going forward. And everything we do, we do it for them.
+            {' '}
+            A Webiny fan is someone who 1.) starred our
+            {' '}
+            <a href="https://github.com/webiny/webiny-js">GitHub</a>{' '}
+
+            {' '}
+            2.)
+            {' '}
+            <a href="https://webiny.us18.list-manage.com/subscribe/post?u=122d2713f699957c0f043cb42&id=f0173e501c">
+              subscribed to our newsletter
+            </a>{' '}
+            3) follows us on either
+            {' '}
+            <a href="https://twitter.com/WebinyPlatform">Twitter</a>
+            {' '}
+            or
+            {' '}
+            <a href="https://www.youtube.com/channel/UCI5TBif-unrpn5htTRxXPQw">
+              YouTube
+            </a>
+            .
           </p>
         </Cell>
       </Grid>
