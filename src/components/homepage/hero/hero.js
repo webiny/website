@@ -180,7 +180,7 @@ const TerminalWrapper = styled ('div') (
     backgroundSize: '100%',
     padding: '50px 0  0 50px',
     boxSizing: 'border-box',
-    height: 310,
+    height: 350,
     maxWidth: 450,
   },
   mq ({
@@ -212,23 +212,29 @@ export default ({children, ...props}) => (
   <Hero {...props}>
     <TerminalWrapper>
       <Code>
-        <span className="comment">#1: Install webiny-cli</span>
+        <span className="comment">#1: Install Webiny CLI</span>
         <br />
-        $ npm install webiny-cli --dev <br />
+        $ yarn global add @webiny/cli<br />
         <br />
         <span className="comment">#2: Create a project</span>
         <br />
-        $ npm webiny init<br />
+        $ webiny create my-project-name<br />
         <br />
         <span className="comment">
-          #3: Deploy using serverless framework
+          #3: Deploy Webiny API
         </span>
         <br />
-        $ sls deploy<br />
+        $ webiny deploy-api<br />
+        <br />
+        <span className="comment">
+          #4: Deploy Webiny Apps (SPA)
+        </span>
+        <br />
+        $ webiny deploy-apps<br />
         <br />
         <span className="comment"># Your site is live!</span>
         <br />
-        https://xyz.amazonaws.com/hello-world
+        https://xyz.amazonaws.com/
       </Code>
     </TerminalWrapper>
     <TerminalBg />
