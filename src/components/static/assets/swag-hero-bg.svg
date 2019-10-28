@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="316px" viewBox="0 0 1440 316" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>light-blue-bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="14.5070348%" y1="47.5922068%" x2="100%" y2="51.4016072%" id="linearGradient-1">
+            <stop stop-color="#F09819" offset="0%"></stop>
+            <stop stop-color="#FF5858" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Swag" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="Hero">
+                <g id="light-blue-bg">
+                    <path d="M0,0 L1440,0 L1440,225.704918 C964.86517,286.449758 716.454428,316 710.621094,316 C704.787761,316 473.198504,286.449758 0,225.704918 L0,0 Z" id="Hero-Bg"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

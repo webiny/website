@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="590px" viewBox="0 0 1440 590" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0.786143006%" y1="27.0781839%" x2="63.0725881%" y2="55.8588095%" id="linearGradient-1">
+            <stop stop-color="#8F32EA" offset="0%"></stop>
+            <stop stop-color="#483EB6" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Features" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="purple-bg" transform="translate(719.500000, 102.500000) rotate(-180.000000) translate(-719.500000, -102.500000) translate(-1.000000, -385.000000)">
+                <path d="M-7.04858394e-12,44.3500979 C102.543937,44.3500979 201.98458,93.2183677 296.8125,86.3359375 C477.734675,73.2049499 634.911255,-1.13686838e-13 716,-1.13686838e-13 C919.546875,-1.13686838e-13 1016.79885,77.753373 1156.90625,86.3359375 C1297.01365,94.918502 1440.00867,44.3500979 1440.00867,44.3500979 C1440.00867,44.3500979 1440.00867,354.566732 1440.00867,975 C1135.6885,975 902.352276,975 740,975 C577.647724,975 330.981057,975 -7.04858394e-12,975 L-7.04858394e-12,44.3500979 Z" id="bg"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="732px" viewBox="0 0 1440 732" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Hero-Bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="61.6549414%" y1="64.5543194%" x2="0.786143006%" y2="-14.1096985%" id="linearGradient-1">
+            <stop stop-color="#C6426E" offset="0%"></stop>
+            <stop stop-color="#642B73" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Visual-Page-Builder" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="Hero">
+                <g id="light-blue-bg">
+                    <path d="M0,0 L1440,0 L1440,630 C964.86517,698.619171 716.454428,732 710.621094,732 C704.787761,732 473.198504,698.619171 0,630 L0,0 Z" id="Hero-Bg"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

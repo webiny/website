@@ -179,7 +179,7 @@ export default ({children, ...props}) => (
       <ContentContainer>
         <Title>Support</Title>
         <SubText>
-          In need of some support? Explore the options available below.
+          Need some help? Explore the options below.
         </SubText>
       </ContentContainer>
     </Hero>
@@ -200,6 +200,7 @@ export default ({children, ...props}) => (
             Webiny.
           </p>
         </Cell>
+        {/* 
         <Cell>
           <h3>
             <img src={faqIcon} />
@@ -213,49 +214,18 @@ export default ({children, ...props}) => (
             answered your question there.
           </p>
         </Cell>
+        */}
         <Cell>
           <h3>
             <img src={bugIcon} />
-            <a href="https://github.com/Webiny/webiny-js/issues">
+            <a href="https://github.com/webiny/webiny-js/issues">
               Found a bug?
               <img className={'arrow'} src={arrow} />
             </a>
           </h3>
           <p>
-            Something broke, not working properly? Have a look at the current
+            Something broke or not working properly? Have a look at the current
             issues on our GitHub, or report an new one.
-          </p>
-        </Cell>
-      </Grid>
-    </ContentContainer>
-    <ContentContainer className={bodyStyle}>
-      <h2>Community</h2>
-      <Grid>
-        <Cell>
-          <h3>
-            <img src={communityIcon} />
-            <a href="https://community.webiny.com/">
-              Community
-              <img className={'arrow'} src={arrow} />
-            </a>
-          </h3>
-          <p>
-            Join the Webiny Community and get access to many smart people.
-            You’ll also find a lot of valuable information and get the
-            opportunity to ask fellow members questions.
-          </p>
-        </Cell>
-        <Cell>
-          <h3>
-            <img src={blogIcon} />
-            <a href="https://blog.webiny.com/">
-              Blog
-              <img className={'arrow'} src={arrow} />
-            </a>
-          </h3>
-          <p>
-            We blog often about Webiny and its capabilities, features and
-            several other mainly technical topics. It’s a good place to explore.
           </p>
         </Cell>
         <Cell>
@@ -274,6 +244,36 @@ export default ({children, ...props}) => (
             </p>
           </PremiumBox>
         </Cell>
+      </Grid>
+    </ContentContainer>
+    <ContentContainer className={bodyStyle}>
+      <h2>Community</h2>
+      <Grid>
+        <Cell>
+          <h3>
+            <img src={communityIcon} />
+            <a href="https://community.webiny.com/">
+              Community
+              <img className={'arrow'} src={arrow} />
+            </a>
+          </h3>
+          <p>
+            Join the Webiny Community and get access to many smart people. You’ll find a lot of valuable information and get the opportunity to ask fellow members questions.
+          </p>
+        </Cell>
+        <Cell>
+          <h3>
+            <img src={blogIcon} />
+            <a href="https://blog.webiny.com/">
+              Blog
+              <img className={'arrow'} src={arrow} />
+            </a>
+          </h3>
+          <p>
+            We blog often about Webiny and its capabilities, features and several other technical topics. It’s a good place to explore.
+          </p>
+        </Cell>
+        <Cell />
       </Grid>
     </ContentContainer>
   </React.Fragment>

@@ -4,24 +4,15 @@ import theme from '../../utils/theme';
 import mq from '../../utils/breakpoints';
 import {css} from 'emotion';
 import Link from 'gatsby-link';
+import Slider from 'react-slick';
 import ContentContainer from '../../ui/content-container';
 
+import './assets/slider.css';
 import background from './assets/components-bg.svg';
-import visualWebsiteBuilderSrc
-  from './assets/webiny-visual-website-builder.png';
-
-import webinyImageEditorSrc from './assets/webiny-image-editor.png';
-import formBuilderSrc from './assets/webiny-form-builder.png';
-import rightArrow from './assets/arrow-right-solid.svg';
-
-import facebookLogo from './assets/facebook.svg';
-import instagramLogo from './assets/instagram.svg';
-import mailchimpLogo from './assets/mailchimp.svg';
-import soundcloudLogo from './assets/soundcloud.svg';
-import twitterLogo from './assets/twitter.svg';
-import typeformLogo from './assets/typeform.svg';
-import vimeoLogo from './assets/vimeo.svg';
-import youtubeLogo from './assets/youtube.svg';
+import fileManager from './assets/file-manager.jpg';
+import formBuilder from './assets/form-builder.jpg';
+import headlessCms from './assets/headless-cms.png';
+import pageBuilder from './assets/webiny-visual-page-builder.png';
 
 const wrapperClass = css (
   {
@@ -29,265 +20,243 @@ const wrapperClass = css (
     backgroundSize: 'cover',
   },
   mq ({
-    marginTop: [0, -80],
-    paddingTop: [0, 150],
+    marginTop: [0, -200],
+    paddingTop: [0, 200],
+    paddingBottom: [25, 100],
     backgroundColor: ['#F7F7F7', 'transparent'],
   })
 );
 
-const SubTitle = styled ('h2') ({
-  fontSize: theme.fontSize.h2,
-  fontWeight: theme.fontWeight.semiBold,
-  color: theme.color.black,
-  textAlign: 'center',
-  paddingTop: 50,
-  marginTop: 25,
-  marginBottom: 10,
-});
-
-const SubText = styled ('p') (
+const SubTitle = styled ('h2') (
   {
-    fontSize: theme.fontSize.h3,
-    fontWeight: theme.fontWeight.regular,
+    fontSize: theme.fontSize.h2,
+    fontWeight: theme.fontWeight.semiBold,
     color: theme.color.black,
     textAlign: 'center',
-    margin: '0 20%',
-    lineHeight: '150%',
-    maxWidth: 700,
+    paddingTop: 50,
+    margin: '25px auto 40px auto',
   },
   mq ({
-    margin: ['20px', '0 auto 75px auto'],
+    width: ['100%', 650],
   })
 );
 
-const Grid = styled ('div') (
+const webinyAppsList = css (
   {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'space-between',
-    boxSizing: 'border-box',
-    '&.first': {
-      marginTop: 100,
-      marginBottom: 50,
+    maxWidth: '100vw',
+    overflowX: 'hidden',
+    '.slick-list': {
+      position: 'relative',
+    },
+    '.slick-slide': {
+      transition: 'all .2s ease',
+      outline: 0,
+      opacity: 0.6,
+      //height: "160px!important",
+      padding: '20px 30px',
+      background: '#fcfcfc',
+      borderRadius: '3px',
+      overflow: 'hidden',
+      display: 'block',
+      boxSizing: 'border-box',
+      cursor: 'pointer',
+      borderBottom: '2px solid transparent',
+      '&:hover': {
+        opacity: 1,
+      },
+      '.content': {
+        outline: 0,
+        h3: {
+          fontSize: 22,
+          fontWeight: theme.fontWeight.semiBold,
+          marginBottom: 10,
+          marginTop: 0,
+        },
+        p: {
+          fontSize: 16,
+          marginBottom: 10,
+        },
+        a: {
+          display: 'block-inline',
+          color: theme.color.primaryDark,
+        },
+      },
+    },
+    '.slick-current': {
+      opacity: 1,
+      position: 'relative',
+      overflow: 'hidden',
+      background: '#fff',
+      boxShadow: '0 10px 20px rgba(91,107,174,.15)',
+      borderBottom: '2px solid #FA5723',
     },
   },
   mq ({
-    flexDirection: ['column', 'row'],
-    marginLeft: [0, 0],
-    marginRight: [0, 0],
-    padding: ['0 25px', 0],
-    '&.first': {
-      margin: [0, '100px 0px'],
+    '.slick-slide': {
+      width: ['calc(100vw - 30px) !important', '350px !important'],
+      margin: ['0 15px', '0 15px'],
+    },
+    '.slick-list': {
+      padding: [0, '46px 0 20px!important'],
+      marginTop: ['40px', 0],
     },
   })
 );
 
-const Cell = styled ('div') (
+const webinyAppsImage = css (
   {
-    boxSizing: 'border-box',
-    flexBasis: '100%',
-    h3: {
-      fontSize: theme.fontSize.h4,
-      color: theme.color.black,
-      marginTop: 0,
-      fontWeight: theme.fontWeight.bold,
-      display: 'flex',
-      alignItems: 'center',
+    maxWidth: '100vw',
+    overflow: 'hidden',
+    paddingBottom: 20,
+    '.slick-slide': {
+      outline: 0,
+      boxSizing: 'border-box',
+      div: {
+        outline: 0,
+      },
       img: {
-        marginRight: 0,
+        outline: 0,
+        boxShadow: '0 5px 10px 0 rgba(0,0,0,0.15)',
+        //height: "350px !important",
+        margin: '0 auto',
+        outline: 0,
+        borderRadius: 5,
+        boxSizing: 'border-box',
       },
     },
-    p: {
-      fontSize: theme.fontSize.paragraph,
-      color: theme.color.black,
-      lineHeight: '160%',
-    },
-    '&.headingCell': {
-      h3: {
-        fontSize: theme.fontSize.h2,
-        fontWeight: theme.fontWeight.semiBold,
-      },
-      p: {
-        fontSize: 18,
+    '.slick-dots': {
+      //bottom: -35,
+      position: 'relative',
+      zIndex: 10,
+      'li button:before': {
+        fontSize: 15,
       },
     },
-    '&:nth-child(2)': {
-      marginRight: '25px !important',
-      marginLeft: '25px !important',
-    },
   },
   mq ({
-    marginRight: [0, 25],
-    textAlign: ['center', 'left'],
-    '&:last-child': {
-      marginRight: ['0 !important', '0 !important'],
-      marginLeft: ['0 !important', '25px !important'],
-    },
-    '.image': {
-      border: '1px solid #E6E6E6',
-      boxShadow: '0 4px 8px 0 rgba(209,209,209,0.50)',
-      borderRadius: 5,
-      width: ['100%', '630px'],
-    },
-    '.image-small': {
-      border: '1px solid #E6E6E6',
-      boxShadow: '0 2px 4px 0 rgba(209,209,209,0.50)',
-      borderRadius: 5,
-      width: ['100%', '360px'],
-    },
-    h3: {
-      justifyContent: ['center', 'flex-start'],
+    '.slick-slide': {
+      padding: 10,
+      margin: 0,
+      img: {
+        width: ['calc(100vw - 20px)', '800px !important'],
+      },
     },
   })
 );
-
-const PluginsContainer = styled ('div') ({
-  marginTop: 50,
-  position: 'relative',
-  textAlign: 'center',
-});
-
-const PluginsTitle = styled ('div') ({
-  fontWeight: theme.fontWeight.light,
-  fontSize: theme.fontSize.h3,
-  color: theme.color.grayText,
-  backgroundColor: '#F7F7F7',
-  padding: '0 50px',
-  display: 'inline-block',
-  zIndex: 10,
-  position: 'relative',
-});
-
-const Line = styled ('div') (
-  {
-    borderBottom: '1px solid ' + theme.color.darkGray,
-    position: 'absolute',
-    top: '50%',
-    left: 'calc(50% - ' + theme.contentWidth / 2 + 'px)',
-    width: theme.contentWidth,
-    zIndex: 9,
-    margin: '0 auto',
-  },
-  mq ({
-    display: ['none', 'block'],
-  })
-);
-
-const PluginsLogoWrapper = styled ('div') (
-  {
-    justifyContent: 'space-between',
-    margin: '0 auto',
-    textAlign: 'center',
-    boxSizing: 'border-box',
-  },
-  mq ({
-    width: ['100%', theme.contentWidth],
-    display: ['block', 'flex'],
-    padding: ['0 20px', 0],
-  })
-);
-
-const PluginsLogo = styled ('img') (
-  {
-    margin: '40px auto',
-    display: 'block',
-  },
-  mq ({
-    width: ['33%', 'auto'],
-    height: [50, 'auto'],
-    display: ['inline-block', 'block'],
-  })
-);
-
-const ComingSoon = styled ('div') ({
-  fontSize: 10,
-  textTransform: 'uppercase',
-  color: theme.color.grayText,
-  backgroundColor: theme.color.darkGray,
-  borderRadius: 5,
-  padding: '2px 5px',
-  marginTop: 2,
-  marginLeft: 10,
-});
-
-const linkStyle = css ({
-  color: theme.color.primaryDark,
-  fontWeight: theme.fontWeight.bold,
-  fontSize: 18,
-});
-
-const Arrow = styled ('img') ({
-  height: 9,
-  marginLeft: 5,
-});
 
 class Components extends React.Component {
+  constructor (props) {
+    super (props);
+    this.state = {
+      nav1: null,
+      nav2: null,
+    };
+  }
+
+  componentDidMount () {
+    this.setState ({
+      nav1: this.slider1,
+      nav2: this.slider2,
+    });
+  }
+
   render () {
     return (
       <section {...this.props} className={wrapperClass}>
-        <SubTitle>Get to know our components</SubTitle>
-        <SubText>
-          Webiny features several different modules and components,
-          and all are available for you to use, to quickly get started on your next project.
-        </SubText>
+        <SubTitle>
+          Webiny Comes With Several Ready-Made Serverless Apps
+        </SubTitle>
 
         <ContentContainer>
-          <Grid>
-            <Cell>
-              <img className={'image-small'} src={visualWebsiteBuilderSrc} />
-              <h3>Visual Website Builder</h3>
+          <Slider
+            asNavFor={this.state.nav2}
+            ref={slider => (this.slider1 = slider)}
+            dots={true}
+            className={webinyAppsImage}
+            slidesToShow={1}
+            centerMode={true}
+            centerPadding={25}
+            fade={true}
+          >
+            <div>
+              <img src={headlessCms} alt="Webiny Serverless Headless CMS" />
+            </div>
+            <div>
+              <img src={pageBuilder} alt="Webiny Serverless Page Builder" />
+            </div>
+            <div>
+              <img src={formBuilder} alt="Webiny Serverless Form Builder" />
+            </div>
+            <div>
+              <img src={fileManager} alt="Webiny Serverless File Manager" />
+            </div>
+          </Slider>
+          <Slider
+            asNavFor={this.state.nav1}
+            ref={slider => (this.slider2 = slider)}
+            slidesToShow={3}
+            centerMode={true}
+            centerPadding={25}
+            swipeToSlide={true}
+            focusOnSelect={true}
+            className={webinyAppsList}
+            responsive={[
+              {
+                breakpoint: 1024,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  centerPadding: 0,
+                  centerMode: true,
+                },
+              },
+              {
+                breakpoint: 600,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  centerPadding: 0,
+                  centerMode: true,
+                },
+              },
+              {
+                breakpoint: 480,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  centerPadding: 0,
+                  centerMode: true,
+                },
+              },
+            ]}
+          >
+            <div className="content">
+              <h3>Headless CMS</h3>
               <p>
-                Unleash your creativity. Don’t constrain your content inside a "textarea".
-                {' '}
-                Webiny features, not a text editor, but a full-featured website builder.
-                {' '}
+                GraphQL based headless CMS with powerful content modeling features.
               </p>
-            </Cell>
-            <Cell>
-              <img className={'image-small'} src={webinyImageEditorSrc} />
-              <h3>File Manager & Image Editor</h3>
+              <Link to="/serverless-app/headless-cms">Learn More</Link>
+            </div>
+            <div className="content">
+              <h3>Page Builder</h3>
               <p>
-                Upload, browse and organize your files. Use the built-in image editor for that perfect crop.
-                {' '}
-                Apply a selection of filters and make your images pop.
+                For when you need a quick landing page created without any coding.
               </p>
-            </Cell>
-            <Cell>
-              <img className={'image-small'} src={formBuilderSrc} />
-              <h3>Form Builder <ComingSoon>Coming Soon</ComingSoon></h3>
+              <Link to="/serverless-app/page-builder">Learn More</Link>
+            </div>
+            <div className="content">
+              <h3>Form Builder</h3>
               <p>
-                The perfect companion module for when you need to create forms and capture leads.
-                {' '}
-                The same module enables you to build contact forms and much more.
-                {' '}
+                Create forms using a drag&drop interface and track how they convert.
               </p>
-            </Cell>
-          </Grid>
-
-          <Grid>
-            <Cell style={{textAlign: 'center', marginTop: 25}}>
-              <Link className={linkStyle} to="/features/components">
-                Learn more about our components
-                <Arrow src={rightArrow} />
-              </Link>
-            </Cell>
-          </Grid>
-
-          <PluginsContainer>
-            <PluginsTitle>FEATURED PLUGINS AND INTEGRATIONS</PluginsTitle>
-            <Line />
-          </PluginsContainer>
-          <PluginsLogoWrapper>
-            <PluginsLogo alt="Mailchimp" src={mailchimpLogo} />
-            <PluginsLogo alt="Twitter" src={twitterLogo} />
-            <PluginsLogo alt="YouTube" src={youtubeLogo} />
-            <PluginsLogo alt="Instagram" src={instagramLogo} />
-            <PluginsLogo alt="TypeForm" src={typeformLogo} />
-            <PluginsLogo alt="Facebook" src={facebookLogo} />
-            <PluginsLogo alt="Vimeo" src={vimeoLogo} />
-            <PluginsLogo alt="SoundCloud" src={soundcloudLogo} />
-          </PluginsLogoWrapper>
-
+              <Link to="/serverless-app/form-builder">Learn More</Link>
+            </div>
+            <div className="content">
+              <h3>File Manager</h3>
+              <p>Upload, categorize, search and edit your files.</p>
+              <Link to="/serverless-app/file-manager">Learn More</Link>
+            </div>
+          </Slider>
         </ContentContainer>
       </section>
     );

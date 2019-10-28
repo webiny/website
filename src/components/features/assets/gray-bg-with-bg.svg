@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="928px" viewBox="0 0 1440 928" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>gray-bg</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Visual-Page-Builder" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(0.000000, -1729.000000)">
+            <g id="See-it-in-action" transform="translate(0.000000, 1729.000000)">
+                <g id="gray-bg">
+                    <rect id="Rectangle" fill="#FFFFFF" x="0" y="3" width="1440" height="925"></rect>
+                    <path d="M-1.13686838e-13,-2.27373675e-13 C87.327814,72.7637788 232.214533,120.25206 434.660156,142.464844 C580.516339,158.468508 841.168092,141.872155 1121.27734,173.066406 C1193.72874,181.134926 1299.96962,207.779457 1440,253 L1440,928 L-1.13686838e-13,928 L-1.13686838e-13,-2.27373675e-13 Z" id="Rectangle" fill="#F7F7F7" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

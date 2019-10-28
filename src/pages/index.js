@@ -1,44 +1,26 @@
-import React from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from 'react';
 
-import BaseLayout from "../layouts/base";
-import Hero from "../components/homepage/hero/hero";
-import MadeFor from "../components/homepage/made-for/made-for";
-import WebinyUsage from "../components/homepage/what-can-you-do/what-can-you-do";
-import QuickStart from "../components/ui/quick-start/quick-start";
-import Components from "../components/homepage/components/components";
-import Platform from "../components/homepage/platform/platform";
-import CaseStudies from "../components/homepage/case-studies/case-studies";
-import About from "../components/homepage/about/about";
+import BaseLayout from '../layouts/base';
+import Hero from '../components/homepage/hero/hero';
+import WhyWebiny from '../components/homepage/why-webiny/why-webiny';
+import Components from '../components/homepage/components/components';
+import LearnExplore from '../components/homepage/learn-explore/learn-explore';
 
 class IndexPage extends React.Component {
-    componentDidMount() {
-        AOS.init({
-            once: true
-        });
-    }
-
-    componentDidUpdate() {
-        AOS.refresh();
-    }
-
-    render() {
-        return (
-            <BaseLayout
-                title="Webiny - Serverless CMS powered by GraphQL and React"
-                description="Webiny is a modern open source content management designed to run in a serverless environment.  Webiny is powered by React, Node and GraphQL.  Webiny features a visual page builder, so you can quickly create stunning web pages."
-            >
-                <Hero />
-                <About />
-                <CaseStudies />
-                <MadeFor />
-                <Components />
-                <Platform />
-                <QuickStart data-aos="fade-up" />
-            </BaseLayout>
-        );
-    }
+  render () {
+    return (
+      <BaseLayout
+        title="Webiny - Serverless CMS powered by GraphQL and React"
+        description="Webiny is a modern open source content management designed to run inside a serverless environment.  Webiny is powered by React, Node and GraphQL."
+        fixedHeader={true}
+      >
+        <Hero />
+        <WhyWebiny />
+        <Components />
+        <LearnExplore />
+      </BaseLayout>
+    );
+  }
 }
 
 export default IndexPage;

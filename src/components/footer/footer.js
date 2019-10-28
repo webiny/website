@@ -7,11 +7,13 @@ import ContentContainer from '../ui/content-container';
 import Newsletter from './newsletter';
 import Link from 'gatsby-link';
 
-import webinyLogo from './assets/webiny-footer-logo.svg';
+import webinyLogo from './assets/webiny-icon-white.svg';
 
 const Wrapper = styled ('div') ({
   backgroundColor: theme.color.footerBg,
   padding: '50px 0 5px',
+  '--nl-text-color': 'white',
+  '--nl-text-align': 'right',
 });
 
 const FlexDisplay = css (
@@ -45,6 +47,7 @@ const Logo = styled ('img') (
   mq ({
     margin: ['0 auto 20px auto', '0'],
     display: ['block', 'inline'],
+    maxHeight: ['50px', '50px'],
   })
 );
 
@@ -79,7 +82,7 @@ const Footer = () => (
   <Wrapper>
     <ContentContainer className={FlexDisplay}>
       <Box>
-        <Logo alt="Webiny" src={webinyLogo} />
+        <Logo src={webinyLogo} alt="Webiny Logo" />
         <Copy>
           Webiny is a content management system designed to run inside a serverless environment. Webiny enables developers to build powerful
           websites and web applications by providing all required components.
@@ -88,7 +91,7 @@ const Footer = () => (
           Webiny is released under the MIT open source license.
           <br />
           <br />
-          <a className={linkStyle} href="https://github.com/Webiny/webiny-js">
+          <a className={linkStyle} href="https://github.com/webiny/webiny-js">
             GitHub
           </a>{' '}
           /{' '}
@@ -107,6 +110,10 @@ const Footer = () => (
     </ContentContainer>
     <Bottom>
       <Copy className={textCenter}>
+        <Link className={linkStyle} to="/about-us">
+          About Us
+        </Link>{' '}
+        /{' '}
         <Link className={linkStyle} to="/contact-us">
           Contact Us
         </Link>{' '}
@@ -114,10 +121,12 @@ const Footer = () => (
         <Link className={linkStyle} to="/privacy-policy">
           Privacy Policy
         </Link>{' '}
+        {/*
         /{' '}
         <Link className={linkStyle} to="/terms-of-service">
           Terms of Service
         </Link>
+        */}
         <br />
         Webiny © {new Date ().getFullYear ()}
       </Copy>
