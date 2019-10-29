@@ -33,5 +33,13 @@ module.exports = {
         pixelId: '581721448994639',
       },
     },
+    {
+      resolve: 'gatsby-plugin-hotjar-tracking',
+      options: {
+        includeInDevelopment: false,
+        id: 637057,
+        sv: 6,
+      },
+    },
   ],
 };

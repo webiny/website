@@ -5202,6 +5202,13 @@ gatsby-plugin-google-fonts@0.0.4:
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-fonts/-/gatsby-plugin-google-fonts-0.0.4.tgz#dc1402a71f27c3ae6caee10777d10adadf74bd7c"
   integrity sha512-B9Q+dznk6UX2Fe7QyCTptiuLT+ZLtdFBs1lg5kvaVDyIlesEA2rSQqtB7IkEQflH91JPE4eAEM699JCPy7CFGg==
 
+gatsby-plugin-hotjar-tracking@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-hotjar-tracking/-/gatsby-plugin-hotjar-tracking-1.0.0.tgz#67952e430d9cc4cf981d3547862f20eeeeabe75d"
+  integrity sha512-BhsIbAaXgA/gQm0edf5E693RMy6tmgV0eadeOSP+oup8upU0oAX9dF/1GnpDKvYkXpERxav9crTXX/Suo15AvA==
+  dependencies:
+    babel-runtime "^6.26.0"
+
 gatsby-plugin-offline@^2.2.7:
   version "2.2.10"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-2.2.10.tgz#ff57ce38f2ecd115af45005fcfd7c0c90a8f07f2"
