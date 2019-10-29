@@ -37,24 +37,30 @@ export default ({children, ...props}) => (
         <dt>
           1) Number of deployments - each time you invoke the
           {' '}
-          <code>sls</code> command inside a Webiny project folder
+          <code>webiny deploy-*</code> command inside a Webiny project folder
         </dt>
         <dd>Why: So we know how actively the Webiny library is used.</dd>
         <dt>
           2) Number of new projects created - each time you invoke
           {' '}
-          <code>webiny create-project</code> command
+          <code>webiny create</code> command
         </dt>
         <dd>Why: So we know how many projects are created.</dd>
-        <dt>3) List of Webiny components that were deployed</dt>
+        <dt>
+          3) Number of removals - each time you invoke the
+          {' '}
+          <code>webiny remnove-*</code> command inside a Webiny project folder
+        </dt>
+        <dd>Why: So we know how actively the Webiny library is used.</dd>
+        <dt>4) List of Webiny components that were deployed</dt>
         <dd>
           Why: So we understand which Webiny components are used the most.
         </dd>
-        <dt>4) Timestamp</dt>
+        <dt>5) Timestamp</dt>
         <dd>
           Why: So we can track the trends between when different operations are invoked.
         </dd>
-        <dt>5) Current Webiny version</dt>
+        <dt>6) Current Webiny version</dt>
         <dd>
           Why: It's important to determine how backwards compatible new releases should be, as well as providing a migration path.
         </dd>
