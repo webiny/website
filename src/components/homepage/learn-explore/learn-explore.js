@@ -171,7 +171,7 @@ class LearnExplore extends React.Component {
               </p>
               <Button
                 className={ctaButton}
-                link="https://docs.webiny.com/docs/developer-tutorials/local-setup"
+                link="https://docs.webiny.com/docs/get-started/"
                 type="dark"
               >
                 Get Started Tutorial
