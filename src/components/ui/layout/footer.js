@@ -86,10 +86,7 @@ class Footer extends React.Component {
               It's only gonna take a
               minute.
             </Text>
-            <Button
-              type="primary"
-              link="https://docs.webiny.com/docs/get-started/"
-            >
+            <Button type="primary" link="https://docs.webiny.com/">
               Quick Start
             </Button>
           </Wrapper>
