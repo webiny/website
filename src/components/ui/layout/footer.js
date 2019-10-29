@@ -88,7 +88,7 @@ class Footer extends React.Component {
             </Text>
             <Button
               type="primary"
-              link="https://docs.webiny.com/docs/developer-tutorials/local-setup"
+              link="https://docs.webiny.com/docs/get-started/"
             >
               Quick Start
             </Button>

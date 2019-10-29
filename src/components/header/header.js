@@ -439,7 +439,7 @@ const MenuItemList = props => (
 
     <MenuItem>
       <Button
-        link="https://docs.webiny.com/docs/developer-tutorials/local-setup"
+        link="https://docs.webiny.com/docs/get-started/"
         type={props.sticky && 'primary'}
       >
         Get Started

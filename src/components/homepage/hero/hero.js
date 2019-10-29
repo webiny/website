@@ -267,7 +267,7 @@ export default ({children, ...props}) => (
         <Buttons>
           <Button
             className={ctaButton}
-            link="https://docs.webiny.com/docs/developer-tutorials/local-setup"
+            link="https://docs.webiny.com/docs/get-started/"
             type="dark"
           >
             Get Started
