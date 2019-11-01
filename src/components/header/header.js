@@ -447,7 +447,7 @@ const MenuItemList = props => (
 
 class Header extends React.Component {
   didScroll = false;
-  hasBanner = false;
+  hasBanner = true;
   bannerListnerer = false;
   scrollListener = false;
   state = {isSticky: false, mobileMenuOpen: false, hideBanner: false};
@@ -527,7 +527,13 @@ class Header extends React.Component {
   render () {
     return (
       <React.Fragment>
-        {this.hasBanner && <NewsBanner />}
+        {this.hasBanner &&
+          <NewsBanner
+            title="We just closed our seed round! Check it out."
+            link={
+              'https://blog.webiny.com/weve-closed-our-seed-round-84a572c56e2'
+            }
+          />}
 
         <HeaderContainer
           hasBanner={this.props.hasBanner}

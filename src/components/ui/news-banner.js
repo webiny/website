@@ -18,7 +18,7 @@ const NewsBanner = styled ('div') ({
   },
 });
 
-export default ({children, props}) => (
+export default ({...props}) => (
   <NewsBanner>
     <a href={props.link}>{props.title}</a>
   </NewsBanner>
