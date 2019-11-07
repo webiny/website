@@ -12,7 +12,9 @@ class GoalGaGithub extends React.Component {
           <script>
             {`
                 gtag('event', 'conversion', {'send_to': 'AW-698369826/2k0pCKfT0bIBEKKOgc0C'});
-                window.location.href = 'https://github.com/webiny/webiny-js';
+                setTimeout(()=>{
+                  window.location.href = 'https://github.com/webiny/webiny-js';
+                }, 500)
             `}
           </script>
 
