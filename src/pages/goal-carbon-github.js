@@ -11,7 +11,9 @@ class GoalCarbonGithub extends React.Component {
         <Helmet>
           <script>
             {`
-                window.location.href = 'https://github.com/webiny/webiny-js';
+                setTimeout(()=>{
+                  window.location.href = 'https://github.com/webiny/webiny-js';
+                }, 500)
             `}
           </script>
 
