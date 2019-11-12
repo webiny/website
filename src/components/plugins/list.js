@@ -121,24 +121,20 @@ class PluginList extends React.Component {
 
   renderResults (resultList) {
     // validate the results
-    if (
-      typeof resultList !== 'object' ||
-      !resultList.hasOwnProperty ('total') ||
-      !resultList.hasOwnProperty ('results')
-    ) {
+    if (typeof resultList !== 'object') {
       //return this.invalidResultSet ();
       return this.loadingResults ();
     }
 
     // check if we have at least 1 result to display
-    if (resultList.total < 1) {
+    if (this.props.total < 1) {
       return this.noResultsFound ();
     }
 
     // render the list of results
     return (
       <PluginListWrapper>
-        {resultList.results.map (plugin => {
+        {resultList.map (plugin => {
           return this.pluginBox (plugin);
         })}
       </PluginListWrapper>

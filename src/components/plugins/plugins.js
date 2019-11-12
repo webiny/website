@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import styled from 'react-emotion';
 import {css} from 'emotion';
 import theme from '../utils/theme';
@@ -7,6 +8,7 @@ import ContentContainer from '../ui/content-container';
 import {DelayInput} from 'react-delay-input';
 import PluginList from './list';
 import Footer from './footer';
+import Button from '../ui/button';
 
 import heroBg from './assets/plugins-hero-bg.svg';
 
@@ -71,26 +73,57 @@ const ResultNumber = styled ('p') ({
   marginTop: 5,
 });
 
-class HerosSearch extends React.Component {
+const Pagination = styled ('div') ({
+  width: '100%',
+  maxWidth: 350,
+  margin: '0 auto',
+  textAlign: 'center',
+  marginBottom: 50,
+});
+
+class Plugins extends React.Component {
   keywords = 'gatsby-plugin';
+  perPage = 6;
 
   constructor (props) {
     super (props);
 
-    this.state = {query: '', listResult: []};
+    this.state = {query: '', results: [], totalResults: 0};
+    this.page = 0;
     this.inputRef = React.createRef ();
   }
 
   handleChange = event => {
     let query = event.target.value;
-    this.setState ({query}, () => {
-      this.fetchResults (0);
-    });
+    this.setState (
+      {
+        query,
+        results: [],
+        totalResults: 0,
+      },
+      () => {
+        this.renderPlugins (0);
+      }
+    );
   };
 
   componentDidMount () {
     // first display the loading indicator
-    this.fetchResults (0);
+    this.renderPlugins (0);
+  }
+
+  async renderPlugins (from) {
+    const results = await this.fetchResults (from);
+    const previousResults = this.state.results;
+    this.setState (
+      {
+        results: previousResults.concat (results.results),
+        totalResults: results.total,
+      },
+      () => {
+        this.renderResultList ();
+      }
+    );
   }
 
   async fetchResults (from) {
@@ -100,28 +133,59 @@ class HerosSearch extends React.Component {
       (this.state.query !== '' ? this.state.query + '%20' : '') +
       'keywords%3A' +
       this.keywords +
-      ',not:deprecated,not:unstable&size=6&from=' +
+      ',not:deprecated,not:unstable&size=' +
+      this.perPage +
+      '&from=' +
       from;
-    console.log ('query:' + query);
     const response = await fetch (query);
     const pluginList = await response.json ();
 
-    // render the results
-    this.setState ({listResult: pluginList});
+    return pluginList;
+  }
+
+  renderResultList (results) {
+    // append the results to DOM
+    ReactDOM.render (
+      <PluginList
+        pluginList={this.state.results}
+        query={this.state.query}
+        total={this.state.totalResults}
+      />,
+      document.getElementById ('plugin-list')
+    );
   }
 
   renderResultNumber () {
     if (
-      typeof this.state.listResult !== 'object' ||
-      this.state.listResult.total < 1
+      typeof this.state.totalResults !== 'number' ||
+      this.state.totalResults < 1
     ) {
       return 'Zero plugins found';
     }
 
-    if (this.state.listResult.total > 1) {
-      return this.state.listResult.total + ' plugins found';
-    } else if (this.state.listResult.total === 1) {
+    if (this.state.totalResults > 1) {
+      return this.state.totalResults + ' plugins found';
+    } else if (this.state.totalResults === 1) {
       return 'Only one plugin found';
+    }
+  }
+
+  renderPagination () {
+    const numPages = this.state.totalResults / this.perPage;
+    if (numPages > this.page) {
+      return (
+        <Pagination>
+          <Button
+            type={'outlineDark'}
+            onClick={() => {
+              this.page++;
+              this.renderPlugins (this.page * this.perPage);
+            }}
+          >
+            Load More
+          </Button>
+        </Pagination>
+      );
     }
   }
 
@@ -157,14 +221,12 @@ class HerosSearch extends React.Component {
             </InputWrapper>
           </ContentContainer>
         </Hero>
-        <PluginList
-          pluginList={this.state.listResult}
-          query={this.state.query}
-        />
+        <div id="plugin-list" />
+        {this.renderPagination ()}
         <Footer />
       </React.Fragment>
     );
   }
 }
 
-export default HerosSearch;
+export default Plugins;

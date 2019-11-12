@@ -68,7 +68,7 @@ class Footer extends React.Component {
       <Section>
         <ContentContainer className={flexContainer}>
           <Wrapper>
-            <h4>want to submit a plugin?</h4>
+            <h4>Want to submit a plugin?</h4>
             <Text>
               That's great, we love to have it!
               <br />

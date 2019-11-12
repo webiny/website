@@ -1,7 +1,7 @@
 import React from 'react';
 
 import BaseLayout from '../layouts/base';
-import HeroSearch from '../components/plugins/hero-search.js';
+import Plugins from '../components/plugins/plugins.js';
 
 class PluginPage extends React.Component {
   render () {
@@ -11,7 +11,7 @@ class PluginPage extends React.Component {
         description="Webiny plugin repository. Find the right plugin for your Webiny serverless website."
         fixedHeader={true}
       >
-        <HeroSearch />
+        <Plugins />
       </BaseLayout>
     );
   }
