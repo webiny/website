@@ -382,7 +382,13 @@ const MenuItemList = props => (
         </Link>
       </DropDown>
     </MenuItem>
-
+    {/**
+    <MenuItem>
+      <Link className={linkStyle} rel="prerender" to="/plugins">
+        Plugins
+      </Link>
+    </MenuItem>
+ */}
     <MenuItem className={linkStyle + ' ' + parentMenu}>
       Use Cases
       <DownArrow />
