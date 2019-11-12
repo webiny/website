@@ -9,7 +9,6 @@ class PluginPage extends React.Component {
       <BaseLayout
         title="Webiny Plugins"
         description="Webiny plugin repository. Find the right plugin for your Webiny serverless website."
-        fixedHeader={true}
       >
         <Plugins />
       </BaseLayout>
