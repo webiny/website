@@ -36,14 +36,18 @@ const ResultSetMessage = styled ('div') ({
   },
 });
 
-const PluginListWrapper = styled ('div') ({
-  width: 1200,
-  margin: '50px auto',
-  display: 'flex',
-  alignItems: 'top',
-  justifyContent: 'space-between',
-  flexWrap: 'wrap',
-});
+const PluginListWrapper = styled ('div') (
+  {
+    margin: '50px auto',
+    display: 'flex',
+    alignItems: 'top',
+    flexWrap: 'wrap',
+  },
+  mq ({
+    width: ['100%', 1200],
+    justifyContent: ['center', 'space-between'],
+  })
+);
 
 const PluginBox = styled ('div') ({
   transition: 'all .2s ease',
