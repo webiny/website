@@ -76,7 +76,7 @@ class Footer extends React.Component {
             </Text>
             <Button
               type="primary"
-              link="https://docs.webiny.com/docs/plugins/add-plugin"
+              link="https://docs.webiny.com/docs/plugins/adding-your-plugin"
             >
               Add Plugin Guide
             </Button>
