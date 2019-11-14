@@ -82,7 +82,7 @@ const Pagination = styled ('div') ({
 });
 
 class Plugins extends React.Component {
-  keywords = 'gatsby-plugin';
+  keywords = 'webiny-plugin';
   perPage = 6;
 
   constructor (props) {
