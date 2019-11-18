@@ -420,6 +420,7 @@ const MenuItemList = props => (
             <a href="https://docs.webiny.com/">Docs</a>
             <a href="https://blog.webiny.com/">Blog</a>
             <a href="https://storybook.webiny.com/">Storybook</a>
+            <a href="https://github.com/webiny/webiny-js/projects/7">Roadmap</a>
           </div>
           <div className="section">
             <div className="section-title">Community</div>
@@ -428,6 +429,7 @@ const MenuItemList = props => (
             <Link rel="prerender" to="/swag">
               SWAG
             </Link>
+            <a href="https://spectrum.chat/webiny/">Chat</a>
           </div>
           <div className="section">
             <div className="section-title">Company</div>
@@ -438,6 +440,9 @@ const MenuItemList = props => (
               Contact us
             </Link>
             <Link to="/support">Support</Link>
+            <a href="https://github.com/webiny/webiny-js/blob/master/LICENSE">
+              License
+            </a>
           </div>
         </div>
       </DropDown>
