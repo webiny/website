@@ -102,6 +102,10 @@ const Footer = () => (
           <a className={linkStyle} href="https://video.webiny.com/">
             YouTube
           </a>
+          /{' '}
+          <a className={linkStyle} href="https://spectrum.chat/webiny/">
+            Spectrum Chat
+          </a>
         </Copy>
       </Box>
       <Box className={textRight}>
