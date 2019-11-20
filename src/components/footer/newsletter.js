@@ -82,20 +82,12 @@ class Newsletter extends React.Component {
   handleChange = event => {
     this.setState ({email: event.target.value});
   };
-  /*
+
   handleSubmit = event => {
     if (this.state.email !== '') {
       this.setState ({email: "Thanks! You're on the list."});
 
-      window['$crisp'].push (['set', 'user:email', [this.state.email]]);
-      window['$crisp'].push (['set', 'session:data', [[['newsletter', true]]]]);
-      window['$crisp'].push ([
-        'set',
-        'session:event',
-        [[['newsletter-subscribed', {date: new Date ().toGMTString ()}]]],
-      ]);
-
-      
+      /*
       const formData = Object.keys (this.state)
         .map (key => {
           return (
@@ -105,33 +97,34 @@ class Newsletter extends React.Component {
           );
         })
         .join ('&');
+      */
 
-      fetch ('https://web-api.cloud.webiny.com/subscribe', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: formData,
-      });
-      
+      fetch (
+        'https://app.mailerlite.com/webforms/submit/g9f1i1?fields%5Bemail%5D=' +
+          encodeURIComponent (this.state.email) +
+          '&ml-submit=1&ajax=1',
+        {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          //body: formData,
+        }
+      );
     }
-    
 
     event.preventDefault ();
   };
-  */
+
   render () {
     return (
       <React.Fragment>
         <Title htmlFor="newsletter_email">Join Webiny Newsletter</Title>
         <InputWrapper
-          action="https://webiny.us18.list-manage.com/subscribe/post?u=122d2713f699957c0f043cb42&amp;id=f0173e501c"
-          method="post"
-          id="mc-embedded-subscribe-form"
-          name="mc-embedded-subscribe-form"
-          class="validate"
+          action="https://app.mailerlite.com/webforms/landing/g9f1i1"
+          data-code="g9f1i1"
+          method="get"
           target="_blank"
-          novalidate
         >
           <Input
             ref={this.inputRef}
@@ -139,12 +132,12 @@ class Newsletter extends React.Component {
             type="email"
             onChange={this.handleChange}
             value={this.state.email}
-            name="EMAIL"
+            name="fields[email]"
             id="newsletter_email"
             required
           />
           <EmailIcon alt="Email" src={emailIcon} />
-          <Submit>Join</Submit>
+          <Submit onClick={this.handleSubmit}>Join</Submit>
         </InputWrapper>
         <NlReasons className="webiny-nl-reason-list">
           <NlReason>We send one newsletter a week.</NlReason>
