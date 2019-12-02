@@ -172,7 +172,8 @@ class Plugins extends React.Component {
 
   renderPagination () {
     const numPages = this.state.totalResults / this.perPage;
-    if (numPages > this.page) {
+    console.log ('num pages:' + numPages + ' current page: ' + this.page);
+    if (numPages > this.page + 1) {
       return (
         <Pagination>
           <Button
