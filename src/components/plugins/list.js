@@ -5,10 +5,6 @@ import mq from '../utils/breakpoints';
 
 import npmIcon from './assets/npm-brands.svg';
 
-// NOTES:
-// https://api-docs.npms.io/
-// todo: handle pagination
-
 const ResultSetMessage = styled ('div') ({
   width: '100%',
   height: '100%',
@@ -185,17 +181,33 @@ class PluginList extends React.Component {
   }
 
   pluginBox (plugin) {
+    let pluginName = plugin.package.name.split ('/')[1];
+    let orgName = plugin.package.name.split ('/')[0].replace ('@', '');
+
     return (
       <PluginBox
         key={plugin.package.links.npm}
-        onClick={() => {
+        onClick={e => {
+          e.stopPropagation ();
           this.openPluginRepo (plugin.package.links.npm);
         }}
       >
         <div className="content">
-          <h3>{plugin.package.name}</h3>
+          <h3>{pluginName}</h3>
           <p>
             {plugin.package.description}
+          </p>
+          <p>
+            Plugin by <a
+              onClick={e => {
+                e.preventDefault ();
+                e.stopPropagation ();
+                this.openPluginRepo ('https://github.com/' + orgName);
+              }}
+              href={'https://github.com/' + orgName}
+            >
+              {orgName}
+            </a>
           </p>
         </div>
         <div className="footer">
