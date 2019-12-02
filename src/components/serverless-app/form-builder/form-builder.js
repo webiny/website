@@ -57,7 +57,7 @@ export default ({children, ...props}) => (
       bg={HeroBg}
       appName={'Form Builder'}
       title={'Create Forms Using a Drag&Drop Interface and Track Conversions'}
-      github=""
+      getStarted="https://docs.webiny.com/docs/webiny-apps/form-builder/introduction"
       media={<img src={HeroImage} alt="Webiny Serverless Form Builder" />}
     >
       <List>
@@ -71,6 +71,7 @@ export default ({children, ...props}) => (
           - Have a full control over how your form will look like, including on mobile devices.
         </ListItem>
       </List>
+      {/** 
       <p>
         <Bold>Coming soon!</Bold><br />
         <Small>
@@ -84,6 +85,7 @@ export default ({children, ...props}) => (
           </a>
         </Small>
       </p>
+      */}
     </Hero>
     <SlsDesign />
 

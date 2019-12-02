@@ -52,7 +52,7 @@ export default ({children, ...props}) => (
       bg={HeroBg}
       appName={'File Manager'}
       title={'Upload, Categorize, Search and Edit Your Files'}
-      github="https://github.com/webiny/webiny-js"
+      getStarted="https://docs.webiny.com/docs/webiny-apps/file-manager/getting-started"
       media={<img src={HeroImage} alt="Webiny Serverless File Manager" />}
     >
       <List>

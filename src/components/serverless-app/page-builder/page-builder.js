@@ -43,7 +43,7 @@ export default ({children, ...props}) => (
       title={
         'Build Stunning Landing Pages With an Easy to Use Drag&Drop Editor'
       }
-      github="https://github.com/webiny/webiny-js"
+      getStarted="https://docs.webiny.com/docs/webiny-apps/page-builder/getting-started"
       media={<img src={HeroImage} alt="Webiny Serverless Page Builder" />}
     >
       <List>

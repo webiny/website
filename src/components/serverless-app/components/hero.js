@@ -146,6 +146,11 @@ export default props => (
             View on GitHub
           </Button>}
 
+        {props.getStarted &&
+          <Button link={props.getStarted} type="outline">
+            Get Started
+          </Button>}
+
       </LeftSide>
       <RightSide>
         {props.media}
