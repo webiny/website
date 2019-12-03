@@ -103,7 +103,7 @@ const Footer = () => (
             YouTube
           </a>
           /{' '}
-          <a className={linkStyle} href="https://gitter.im/Webiny">
+          <a className={linkStyle} href="https://gitter.im/Webiny/webiny-js">
             Gitter Chat
           </a>
         </Copy>
