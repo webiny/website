@@ -7,6 +7,7 @@ import ContentContainer from '../../ui/content-container';
 import {SubTitle, Bold, Small} from '../components/typography';
 import {Grid, Cell} from '../../ui/layout/layout';
 import VideoBox from '../../ui/layout/video-box';
+import YTVideo from '../components/yt-video';
 import QuickStart from '../../ui/layout/footer';
 import AppList from '../components/app-list';
 import mq from '../../utils/breakpoints';
@@ -25,7 +26,7 @@ import FormSubmissionsVideo from './assets/06-submission.mp4';
 import RecaptchaTosVideo from './assets/07-recaptcha-tos.mp4';
 import WebhooksVideo from './assets/08-webhooks.mp4';
 import PageBuilderVideo from './assets/09-page-builder.mp4';
-import TagsVideo from './assets/01-builder.mp4';
+import FormBuilderDemoImg from './assets/webiny-form-builder-video-preview.png';
 
 const featureContainer = css (
   {
@@ -112,100 +113,101 @@ export default ({children, ...props}) => (
       </FeatureBox>
     </ContentContainer>
 
-    <section className={videoFeaturesContainer}>
-      <ContentContainer>
-        <SubTitle>Features</SubTitle>
-        <Grid left>
-          <Cell>
-            <VideoBox file={BuilderVideo} />
-          </Cell>
-          <Cell title="Drag&drop form builder">
-            <p>
-              Drag and drop fields to create a form. It's super easy to use, no code required. Create anything from simple contact forms to complex sales forms, all in a few minutes.
-            </p>
-          </Cell>
-        </Grid>
-        <Grid right>
-          <Cell title="Create fields with custom validation rules">
-            <p>
-              There are endless applications for the forms. Some of them might require quite specific rules for what users can write into a field. The UI supports different validation rules to be set. From simple rules to creating a combinations with several rules. This control ensures the form only accepts the correct value sets.
-            </p>
-          </Cell>
-          <Cell>
-            <VideoBox file={ValidatorsVideo} />
-          </Cell>
-        </Grid>
-        <Grid left>
-          <Cell>
-            <VideoBox file={MultiLangVideo} />
-          </Cell>
-          <Cell title="Multi-language support throughout">
-            <p>
-              Creating multi-language content is quite challenging. Creating a form with multi-language support is even harder. Webiny Form Builder has numerous features for this use-case. From multi-language field names, placeholders, error messages and validation rules, to multi-language terms of service and captcha messages.
-            </p>
-          </Cell>
-        </Grid>
-        <Grid right>
-          <Cell title="Several different field types">
-            <p>
-              Webiny Form Builder features all the essential form elements you might need. This includes basic input fields, as well as text areas for longer text input. Fields like dropdowns, checkboxes, radio buttons, and hidden inputs are also included.
-            </p>
-          </Cell>
-          <Cell>
-            <VideoBox file={FieldsVideo} />
-          </Cell>
-        </Grid>
-        <Grid left>
-          <Cell>
-            <VideoBox file={FormPreviewVideo} />
-          </Cell>
-          <Cell title="Preview the form before saving">
-            <p>
-              Preview the form right within the form builder. The preview screen is fully 1:1 representation of how your form will look like once included in a page. The preview also follows the selected theme and all the visual rules that you might have defined.
-            </p>
-          </Cell>
-        </Grid>
-        <Grid right>
-          <Cell title="ReCAPTCHA and ToS rules">
-            <p>
-              The integrated option to add a ReCAPTCHA box protects the forms from those evil bots. There is also the option to configure a terms of service checkbox. The ToS is something a user must agree to before submitting the form. This ensuring your GDPR articles are obeyed.
-            </p>
-          </Cell>
-          <Cell>
-            <VideoBox file={RecaptchaTosVideo} />
-          </Cell>
-        </Grid>
-        <Grid left>
-          <Cell>
-            <VideoBox file={FormSubmissionsVideo} />
-          </Cell>
-          <Cell title="Track form performance">
-            <p>
-              For each form, you will have a clear overview on how the form is performing. You can view the details about each form submit. This provides the full information that the user has entered into the form.
-            </p>
-          </Cell>
-        </Grid>
-        <Grid rigth>
-          <Cell title="Connect 3rd parties using Webhooks">
-            <p>
-              There are cases where you want to trigger specific actions each time someone submits a form. In some examples you might even want to notify and send the data to a 3rd party. Examples are zapier, slack and similar. Webiny Form Builder allows this integration via a webhook. All you need is the POST URL of the 3rd party.
-            </p>
-          </Cell>
-          <Cell>
-            <VideoBox file={WebhooksVideo} />
-          </Cell>
-        </Grid>
-        <Grid left>
-          <Cell>
-            <VideoBox file={PageBuilderVideo} />
-          </Cell>
-          <Cell title="Integrated with Webiny Page Builder">
-            <p>
-              Once happy with how the form looks like, it's time to insert it into a page. The provided integration with Webiny Page Builder makes this super easy. It's a simple matter of dragging and dropping the form element into a column on a page. Once inserted you will select which form and which revision should to display.
-            </p>
-          </Cell>
-        </Grid>
-        {/*
+    <YTVideo img={FormBuilderDemoImg} id={'wwXSn05GWmo'} />
+
+    <ContentContainer>
+      <SubTitle>Features</SubTitle>
+      <Grid left>
+        <Cell>
+          <VideoBox file={BuilderVideo} />
+        </Cell>
+        <Cell title="Drag&drop form builder">
+          <p>
+            Drag and drop fields to create a form. It's super easy to use, no code required. Create anything from simple contact forms to complex sales forms, all in a few minutes.
+          </p>
+        </Cell>
+      </Grid>
+      <Grid right>
+        <Cell title="Create fields with custom validation rules">
+          <p>
+            There are endless applications for the forms. Some of them might require quite specific rules for what users can write into a field. The UI supports different validation rules to be set. From simple rules to creating a combinations with several rules. This control ensures the form only accepts the correct value sets.
+          </p>
+        </Cell>
+        <Cell>
+          <VideoBox file={ValidatorsVideo} />
+        </Cell>
+      </Grid>
+      <Grid left>
+        <Cell>
+          <VideoBox file={MultiLangVideo} />
+        </Cell>
+        <Cell title="Multi-language support throughout">
+          <p>
+            Creating multi-language content is quite challenging. Creating a form with multi-language support is even harder. Webiny Form Builder has numerous features for this use-case. From multi-language field names, placeholders, error messages and validation rules, to multi-language terms of service and captcha messages.
+          </p>
+        </Cell>
+      </Grid>
+      <Grid right>
+        <Cell title="Several different field types">
+          <p>
+            Webiny Form Builder features all the essential form elements you might need. This includes basic input fields, as well as text areas for longer text input. Fields like dropdowns, checkboxes, radio buttons, and hidden inputs are also included.
+          </p>
+        </Cell>
+        <Cell>
+          <VideoBox file={FieldsVideo} />
+        </Cell>
+      </Grid>
+      <Grid left>
+        <Cell>
+          <VideoBox file={FormPreviewVideo} />
+        </Cell>
+        <Cell title="Preview the form before saving">
+          <p>
+            Preview the form right within the form builder. The preview screen is fully 1:1 representation of how your form will look like once included in a page. The preview also follows the selected theme and all the visual rules that you might have defined.
+          </p>
+        </Cell>
+      </Grid>
+      <Grid right>
+        <Cell title="ReCAPTCHA and ToS rules">
+          <p>
+            The integrated option to add a ReCAPTCHA box protects the forms from those evil bots. There is also the option to configure a terms of service checkbox. The ToS is something a user must agree to before submitting the form. This ensuring your GDPR articles are obeyed.
+          </p>
+        </Cell>
+        <Cell>
+          <VideoBox file={RecaptchaTosVideo} />
+        </Cell>
+      </Grid>
+      <Grid left>
+        <Cell>
+          <VideoBox file={FormSubmissionsVideo} />
+        </Cell>
+        <Cell title="Track form performance">
+          <p>
+            For each form, you will have a clear overview on how the form is performing. You can view the details about each form submit. This provides the full information that the user has entered into the form.
+          </p>
+        </Cell>
+      </Grid>
+      <Grid rigth>
+        <Cell title="Connect 3rd parties using Webhooks">
+          <p>
+            There are cases where you want to trigger specific actions each time someone submits a form. In some examples you might even want to notify and send the data to a 3rd party. Examples are zapier, slack and similar. Webiny Form Builder allows this integration via a webhook. All you need is the POST URL of the 3rd party.
+          </p>
+        </Cell>
+        <Cell>
+          <VideoBox file={WebhooksVideo} />
+        </Cell>
+      </Grid>
+      <Grid left>
+        <Cell>
+          <VideoBox file={PageBuilderVideo} />
+        </Cell>
+        <Cell title="Integrated with Webiny Page Builder">
+          <p>
+            Once happy with how the form looks like, it's time to insert it into a page. The provided integration with Webiny Page Builder makes this super easy. It's a simple matter of dragging and dropping the form element into a column on a page. Once inserted you will select which form and which revision should to display.
+          </p>
+        </Cell>
+      </Grid>
+      {/*
        <Grid right>
           <Cell title="CSV Export">
             <p>
@@ -217,8 +219,8 @@ export default ({children, ...props}) => (
           </Cell>
         </Grid>
        */}
-      </ContentContainer>
-    </section>
+    </ContentContainer>
+
     <AppList style={{backgroundColor: '#F7F7F7'}} />
     <QuickStart />
   </React.Fragment>
