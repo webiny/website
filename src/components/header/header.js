@@ -540,9 +540,9 @@ class Header extends React.Component {
       <React.Fragment>
         {this.hasBanner &&
           <NewsBanner
-            title="We just closed our seed round! Check it out."
+            title="Webiny Form Builder Launched 🚀 - Support us on ProductHunt"
             link={
-              'https://blog.webiny.com/weve-closed-our-seed-round-84a572c56e2'
+              'https://www.producthunt.com/posts/webiny-serverless-cms-form-builder'
             }
           />}
 
