@@ -12,14 +12,20 @@ const NewsBanner = styled ('div') ({
   zIndex: 10,
   backgroundColor: '#292C33',
   paddingBottom: 5,
+  paddingTop: 7,
+  display: 'block',
+  minHeight: 40,
   a: {
     color: theme.color.white,
     textDecoration: 'none',
+    '&:hover': {
+      textDecoration: 'underline',
+    },
   },
 });
 
 export default ({...props}) => (
   <NewsBanner>
-    <a href={props.link}>{props.title}</a>
+    <a href={props.link} target="_blank">{props.title}</a>
   </NewsBanner>
 );

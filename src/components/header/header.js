@@ -239,7 +239,7 @@ const HeaderContainer = styled ('header') (
     boxShadow: props.isSticky && '0 0 1px 1px rgba(34,45,57,.15)',
     paddingTop: props.isSticky ? 10 : 20,
     paddingBottom: props.isSticky ? 10 : 20,
-    top: props.hasBanner ? (props.hideBanner ? 0 : 25) : 0,
+    top: props.hasBanner ? (props.hideBanner ? 0 : 35) : 0,
     [MenuItem]: {
       color: props.isSticky ? '#000' : '#fff',
       ['a.' + linkStyle]: {
@@ -540,10 +540,8 @@ class Header extends React.Component {
       <React.Fragment>
         {this.hasBanner &&
           <NewsBanner
-            title="Webiny Form Builder Launched 🚀 - Support us on ProductHunt"
-            link={
-              'https://www.producthunt.com/posts/webiny-serverless-cms-form-builder'
-            }
+            title="📢 We are hiring a Senior JavaScript Engineer - Click to Apply"
+            link={'https://careers.webiny.com/senior-javascript-engineer/en'}
           />}
 
         <HeaderContainer
