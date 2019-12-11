@@ -231,7 +231,6 @@ const HeaderContainer = styled ('header') (
     paddingBottom: 15,
     width: '100%',
     transition: 'all 500ms',
-    zIndex: 100,
   },
   props => ({
     position: props.isSticky ? 'fixed' : 'absolute',
@@ -240,6 +239,7 @@ const HeaderContainer = styled ('header') (
     paddingTop: props.isSticky ? 10 : 20,
     paddingBottom: props.isSticky ? 10 : 20,
     top: props.hasBanner ? (props.hideBanner ? 0 : 35) : 0,
+    zIndex: props.hasBanner ? (props.hideBanner ? 102 : 100) : 100,
     [MenuItem]: {
       color: props.isSticky ? '#000' : '#fff',
       ['a.' + linkStyle]: {
