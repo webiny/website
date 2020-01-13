@@ -87,7 +87,7 @@ const FooterMenu = () => (
       </Link>
     </MenuBlock>
     <MenuBlock>
-      <SectionTitle>Use Cases</SectionTitle>
+      <SectionTitle>Use Cases & Guides</SectionTitle>
       <Link rel="prerender" to="/use-case/serverless-websites">
         Build Serverless Websites
       </Link>
@@ -99,6 +99,9 @@ const FooterMenu = () => (
       </Link>
       <Link rel="prerender" to="/use-case/microservices">
         Build Microservices
+      </Link>
+      <Link rel="prerender" to="/guides/serverless-guide">
+        Guide to Serverless
       </Link>
     </MenuBlock>
     <MenuBlock>
