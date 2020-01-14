@@ -124,7 +124,13 @@ class Button extends React.Component {
     if (this.props.hasOwnProperty ('link')) {
       if (this.props.link.startsWith ('http')) {
         return (
-          <a href={this.props.link} className={style}>
+          <a
+            href={this.props.link}
+            className={style}
+            target={
+              this.props.hasOwnProperty ('target') ? this.props.target : '_self'
+            }
+          >
             {this.props.children}
           </a>
         );

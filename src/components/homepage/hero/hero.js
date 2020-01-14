@@ -5,6 +5,7 @@ import theme from '../../utils/theme';
 import mq from '../../utils/breakpoints';
 import ContentContainer from '../../ui/content-container';
 import Button from '../../ui/button';
+import {trackGaConversion} from '../../ui/functions';
 
 import heroBg from './assets/hero-bg.svg';
 import gitHubLogo from './assets/github-logo.svg';
@@ -208,80 +209,93 @@ const Code = styled ('div') (
   })
 );
 
-export default ({children, ...props}) => (
-  <Hero {...props}>
-    <TerminalWrapper>
-      <Code>
-        <span className="comment">#1: Install Webiny CLI</span>
-        <br />
-        $ yarn global add @webiny/cli<br />
-        <br />
-        <span className="comment">#2: Create a project</span>
-        <br />
-        $ webiny create my-project-name<br />
-        <br />
-        <span className="comment">
-          #3: Deploy Webiny API
-        </span>
-        <br />
-        $ webiny deploy-api<br />
-        <br />
-        <span className="comment">
-          #4: Deploy Webiny Apps (SPA)
-        </span>
-        <br />
-        $ webiny deploy-apps<br />
-        <br />
-        <span className="comment"># Your site is live!</span>
-        <br />
-        https://xyz.amazonaws.com/
-      </Code>
-    </TerminalWrapper>
-    <TerminalBg />
-    <ContentContainer className={heroContainer}>
-      <LeftSide />
-      <RightSide>
-        <img src={webinyLogo} alt="Webiny logo" />
-        <Title>CMS for Serverless Web Development</Title>
+class HeroComponent extends React.Component {
+  render () {
+    return (
+      <Hero {...this.props}>
+        <TerminalWrapper>
+          <Code>
+            <span className="comment">#1: Install Webiny CLI</span>
+            <br />
+            $ yarn global add @webiny/cli<br />
+            <br />
+            <span className="comment">#2: Create a project</span>
+            <br />
+            $ webiny create my-project-name<br />
+            <br />
+            <span className="comment">
+              #3: Deploy Webiny API
+            </span>
+            <br />
+            $ webiny deploy-api<br />
+            <br />
+            <span className="comment">
+              #4: Deploy Webiny Apps (SPA)
+            </span>
+            <br />
+            $ webiny deploy-apps<br />
+            <br />
+            <span className="comment"># Your site is live!</span>
+            <br />
+            https://xyz.amazonaws.com/
+          </Code>
+        </TerminalWrapper>
+        <TerminalBg />
+        <ContentContainer className={heroContainer}>
+          <LeftSide />
+          <RightSide>
+            <img src={webinyLogo} alt="Webiny logo" />
+            <Title>CMS for Serverless Web Development</Title>
 
-        <SubText>
-          The way we build, deploy and operate the web is evolving. Webiny is a
-          developer-friendly serverless CMS powered by Node, React and a GraphQL API.
-        </SubText>
+            <SubText>
+              The way we build, deploy and operate the web is evolving. Webiny is a
+              developer-friendly serverless CMS powered by Node, React and a GraphQL API.
+            </SubText>
 
-        <List>
-          <ListItem>
-            <Bold>Serverless</Bold>
-          </ListItem>
-          <ListItem>
-            <Bold>Open Source</Bold>
-          </ListItem>
-          <ListItem>
-            <Bold>GraphQL API</Bold>
-          </ListItem>
-          <ListItem>
-            <Bold>Self-hosted</Bold>
-          </ListItem>
-        </List>
+            <List>
+              <ListItem>
+                <Bold>Serverless</Bold>
+              </ListItem>
+              <ListItem>
+                <Bold>Open Source</Bold>
+              </ListItem>
+              <ListItem>
+                <Bold>GraphQL API</Bold>
+              </ListItem>
+              <ListItem>
+                <Bold>Self-hosted</Bold>
+              </ListItem>
+            </List>
 
-        <Buttons>
-          <Button
-            className={ctaButton}
-            link="https://docs.webiny.com/"
-            type="dark"
-          >
-            Get Started
-          </Button>
-          <Button
-            className={ctaButton}
-            link="https://github.com/webiny/webiny-js"
-            type="outlineDark"
-          >
-            <GitHubLogo src={gitHubLogo} />
-            View on GitHub
-          </Button>
-        </Buttons>
-      </RightSide>
-    </ContentContainer>
-  </Hero>
-);
+            <Buttons>
+              <Button
+                className={ctaButton}
+                link="https://docs.webiny.com/"
+                type="dark"
+              >
+                Get Started
+              </Button>
+              <div
+                onClick={() => {
+                  trackGaConversion ();
+                }}
+              >
+                <Button
+                  className={ctaButton}
+                  link="https://github.com/webiny/webiny-js"
+                  type="outlineDark"
+                  target="_blank"
+                >
+                  <GitHubLogo src={gitHubLogo} />
+                  View on GitHub
+                </Button>
+              </div>
+            </Buttons>
+          </RightSide>
+        </ContentContainer>
+      </Hero>
+    );
+  }
+}
+
+export default HeroComponent;

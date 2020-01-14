@@ -5,6 +5,7 @@ import theme from '../../utils/theme';
 import mq from '../../utils/breakpoints';
 import ContentContainer from '../../ui/content-container';
 import Button from '../../ui/button';
+import {trackGaConversion} from '../../ui/functions';
 
 import background from './assets/platform-bg.svg';
 import imgLearn from './assets/learn.svg';
@@ -224,13 +225,20 @@ class LearnExplore extends React.Component {
               >
                 Join The Community
               </Button>
-              <Button
-                className={ctaButton}
-                link="https://github.com/webiny/webiny-js"
-                type="outlineDark"
+              <div
+                onClick={() => {
+                  trackGaConversion ();
+                }}
               >
-                View GitHub
-              </Button>
+                <Button
+                  className={ctaButton}
+                  target="_blank"
+                  link="https://github.com/webiny/webiny-js"
+                  type="outlineDark"
+                >
+                  View GitHub
+                </Button>
+              </div>
             </Cell>
           </Grid>
         </ContentContainer>

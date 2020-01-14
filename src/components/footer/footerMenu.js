@@ -5,6 +5,7 @@ import theme from '../utils/theme';
 import mq from '../utils/breakpoints';
 import ContentContainer from '../ui/content-container';
 import Link from 'gatsby-link';
+import {trackGaConversion} from '../ui/functions';
 
 const MenuBlock = styled ('div') ({
   width: 'auto',
@@ -50,7 +51,14 @@ const FooterMenu = () => (
       <a href="https://github.com/webiny/webiny-js/blob/master/LICENSE">
         License
       </a>
-      <a href="https://github.com/webiny/webiny-js">GitHub repository</a>
+      <a
+        onClick={() => {
+          trackGaConversion ();
+        }}
+        href="https://github.com/webiny/webiny-js"
+      >
+        GitHub repository
+      </a>
       <a href="https://github.com/webiny/webiny-js/blob/master/CONTRIBUTING.md">
         Contribute
       </a>
@@ -60,7 +68,12 @@ const FooterMenu = () => (
       <Link to="/why-serverless">Why Serverless?</Link>
       <Link to="/features">Features</Link>
       {/*<Link to="/features">Features</Link>*/}
-      <a href="https://github.com/webiny/webiny-js/projects/7">
+      <a
+        onClick={() => {
+          trackGaConversion ();
+        }}
+        href="https://github.com/webiny/webiny-js/projects/7"
+      >
         Roadmap
       </a>
     </MenuBlock>

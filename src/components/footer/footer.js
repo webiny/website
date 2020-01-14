@@ -6,6 +6,7 @@ import mq from '../utils/breakpoints';
 import ContentContainer from '../ui/content-container';
 import Newsletter from './newsletter';
 import FooterMenu from './footerMenu';
+import {trackGaConversion} from '../ui/functions';
 
 import webinyLogo from './assets/webiny-logo-with-icon-left-white.svg';
 
@@ -91,7 +92,13 @@ const Footer = () => (
           <Copy>
             Webiny free to use and released under the MIT open source license.
             <br />
-            <a className={linkStyle} href="https://github.com/webiny/webiny-js">
+            <a
+              onClick={() => {
+                trackGaConversion ();
+              }}
+              className={linkStyle}
+              href="https://github.com/webiny/webiny-js"
+            >
               GitHub
             </a>{' '}
             /{' '}

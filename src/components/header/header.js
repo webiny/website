@@ -8,6 +8,7 @@ import Link from 'gatsby-link';
 import {css} from 'emotion';
 import GitHubButton from 'react-github-btn';
 import NewsBanner from '../ui/news-banner';
+import {trackGaConversion} from '../ui/functions';
 
 import logo from './assets/webiny-logo-with-icon-left-white.svg';
 import logoOrange from './assets/webiny-logo-with-icon-left-orange.svg';
@@ -342,14 +343,20 @@ const githubMenu = css (
 const MenuItemList = props => (
   <React.Fragment>
     <MenuItem className={githubMenu}>
-      <GitHubButton
-        href="https://github.com/webiny/webiny-js"
-        data-icon="octicon-star"
-        data-show-count="true"
-        aria-label="Star webiny/webiny-js on GitHub"
+      <div
+        onClick={() => {
+          trackGaConversion ();
+        }}
       >
-        Star
-      </GitHubButton>
+        <GitHubButton
+          href="https://github.com/webiny/webiny-js"
+          data-icon="octicon-star"
+          data-show-count="true"
+          aria-label="Star webiny/webiny-js on GitHub"
+        >
+          Star
+        </GitHubButton>
+      </div>
     </MenuItem>
     <MenuItem>
       <Link className={linkStyle} rel="prerender" to="/why-serverless">
@@ -420,11 +427,25 @@ const MenuItemList = props => (
             <a href="https://docs.webiny.com/">Docs</a>
             <a href="https://blog.webiny.com/">Blog</a>
             <a href="https://storybook.webiny.com/">Storybook</a>
-            <a href="https://github.com/webiny/webiny-js/projects/7">Roadmap</a>
+            <a
+              onClick={() => {
+                trackGaConversion ();
+              }}
+              href="https://github.com/webiny/webiny-js/projects/7"
+            >
+              Roadmap
+            </a>
           </div>
           <div className="section">
             <div className="section-title">Community</div>
-            <a href="https://github.com/webiny/webiny-js">GitHub</a>
+            <a
+              onClick={() => {
+                trackGaConversion ();
+              }}
+              href="https://github.com/webiny/webiny-js"
+            >
+              GitHub
+            </a>
             <a href="https://community.webiny.com/">Community</a>
             <Link rel="prerender" to="/swag">
               SWAG
