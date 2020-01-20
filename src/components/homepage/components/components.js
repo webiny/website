@@ -9,10 +9,10 @@ import ContentContainer from '../../ui/content-container';
 
 import './assets/slider.css';
 import background from './assets/components-bg.svg';
-import fileManager from './assets/file-manager.jpg';
-import formBuilder from './assets/form-builder.jpg';
-import headlessCms from './assets/headless-cms.png';
-import pageBuilder from './assets/webiny-visual-page-builder.png';
+import fileManager from './assets/file-manager-video.gif';
+import formBuilder from './assets/form-builder-video.gif';
+import headlessCms from './assets/headless-cms-coming-soon.png';
+import pageBuilder from './assets/page-builder-video.gif';
 
 const wrapperClass = css (
   {
@@ -179,9 +179,6 @@ class Components extends React.Component {
             fade={true}
           >
             <div>
-              <img src={headlessCms} alt="Webiny Serverless Headless CMS" />
-            </div>
-            <div>
               <img src={pageBuilder} alt="Webiny Serverless Page Builder" />
             </div>
             <div>
@@ -189,6 +186,9 @@ class Components extends React.Component {
             </div>
             <div>
               <img src={fileManager} alt="Webiny Serverless File Manager" />
+            </div>
+            <div>
+              <img src={headlessCms} alt="Webiny Serverless Headless CMS" />
             </div>
           </Slider>
           <Slider
@@ -231,13 +231,6 @@ class Components extends React.Component {
             ]}
           >
             <div className="content">
-              <h3>Headless CMS</h3>
-              <p>
-                GraphQL based headless CMS with powerful content modeling features.
-              </p>
-              <Link to="/serverless-app/headless-cms">Learn More</Link>
-            </div>
-            <div className="content">
               <h3>Page Builder</h3>
               <p>
                 For when you need a quick landing page created without any coding.
@@ -255,6 +248,13 @@ class Components extends React.Component {
               <h3>File Manager</h3>
               <p>Upload, categorize, search and edit your files.</p>
               <Link to="/serverless-app/file-manager">Learn More</Link>
+            </div>
+            <div className="content">
+              <h3>Headless CMS</h3>
+              <p>
+                GraphQL based headless CMS with powerful content modeling features.
+              </p>
+              <Link to="/serverless-app/headless-cms">Learn More</Link>
             </div>
           </Slider>
         </ContentContainer>
