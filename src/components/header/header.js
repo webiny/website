@@ -450,7 +450,7 @@ const MenuItemList = props => (
             <Link rel="prerender" to="/swag">
               SWAG
             </Link>
-            <a href="https://spectrum.chat/webiny/">Chat</a>
+            <a href="https://gitter.im/Webiny/webiny-js">Chat</a>
           </div>
           <div className="section">
             <div className="section-title">Company</div>
