@@ -14,7 +14,8 @@ import uiComponentsIcon from '../assets/ui-components-icon.svg';
 import documentedIcon from '../assets/documented-icon.svg';
 import openSourceIcon from '../assets/open-source-icon.svg';
 import materialThemeIcon from '../assets/material-theme-icon.svg';
-import flowjsIcon from '../assets/flowjs-icon.svg';
+//import flowjsIcon from '../assets/flowjs-icon.svg';
+import typescriptIcon from '../assets/typescript-icon.svg';
 import databaseIcon from '../assets/database-icon.svg';
 //import i18nIcon from '../assets/i18n-icon.svg';
 import integrationsIcon from '../assets/integrations-icon.svg';
@@ -297,10 +298,10 @@ class Features extends React.Component {
             */}
             </Box>
             <Box>
-              <BoxIcon src={flowjsIcon} />
-              <BoxTitle>FlowJS</BoxTitle>
+              <BoxIcon src={typescriptIcon} />
+              <BoxTitle>TypeScript</BoxTitle>
               <BoxDescription>
-                Documentation is important, but so is having a readable and easy to understand source code. Reading somebody else's code can be “challenging” at times. To make it easier for everyone, our code is written using FlowJS static types for extra clarity.
+                Documentation is important, but so is having a readable and easy to understand source code. Reading somebody else's code can be “challenging” at times. To make it easier for everyone, our code is written using TypeScript for extra clarity.
               </BoxDescription>
               {/*
             <BoxFooter>
