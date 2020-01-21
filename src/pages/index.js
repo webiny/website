@@ -5,6 +5,7 @@ import Hero from '../components/homepage/hero/hero';
 import WhyWebiny from '../components/homepage/why-webiny/why-webiny';
 import Components from '../components/homepage/components/components';
 import LearnExplore from '../components/homepage/learn-explore/learn-explore';
+import MoreThanCms from '../components/homepage/more-than-cms/more-than-cms';
 
 class IndexPage extends React.Component {
   render () {
@@ -16,6 +17,7 @@ class IndexPage extends React.Component {
       >
         <Hero />
         <WhyWebiny />
+        <MoreThanCms />
         <Components />
         <LearnExplore />
       </BaseLayout>

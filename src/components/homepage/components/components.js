@@ -16,14 +16,13 @@ import pageBuilder from './assets/page-builder-video.gif';
 
 const wrapperClass = css (
   {
-    background: 'url(' + background + ') no-repeat left top',
-    backgroundSize: 'cover',
+    //background: 'url(' + background + ') no-repeat left top',
+    //backgroundSize: 'cover',
+    backgroundColor: '#F7F7F7',
   },
   mq ({
-    marginTop: [0, -200],
-    paddingTop: [0, 200],
+    marginTop: [0, -25],
     paddingBottom: [25, 100],
-    backgroundColor: ['#F7F7F7', 'transparent'],
   })
 );
 

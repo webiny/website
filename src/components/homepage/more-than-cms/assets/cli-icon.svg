@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>cli-icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-246.000000, -2441.000000)" fill-rule="nonzero">
+            <g id="More-than-CMS" transform="translate(-472.000000, 1975.000000)">
+                <g id="CLI" transform="translate(718.000000, 466.000000)">
+                    <g id="cli-icon">
+                        <circle id="Oval-2" fill="#F7F7F7" cx="25" cy="25" r="25"></circle>
+                        <g id="window-maximize-regular" transform="translate(8.000000, 10.000000)">
+                            <path d="M30.8125,0 L3.1875,0 C1.42773438,0 0,1.43973214 0,3.21428571 L0,26.7857143 C0,28.5602679 1.42773438,30 3.1875,30 L30.8125,30 C32.5722656,30 34,28.5602679 34,26.7857143 L34,3.21428571 C34,1.43973214 32.5722656,0 30.8125,0 Z M31,26.6 C31,26.82 30.8182692,27 30.5961538,27 L3.40384615,27 C3.18173077,27 3,26.82 3,26.6 L3,11 L31,11 L31,26.6 Z" id="Shape" fill="#00CCB0"></path>
+                            <path d="M8.714,24.026 L8.714,21.086 L12.116,20.036 L14.972,19.07 L14.972,18.986 L12.116,18.02 L8.714,16.97 L8.714,14.03 L18.626,17.81 L18.626,20.246 L8.714,24.026 Z M20.264,21.926 L20.264,19.406 L25.556,19.406 L25.556,21.926 L20.264,21.926 Z" id="&gt;-" fill="#00D5AE"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

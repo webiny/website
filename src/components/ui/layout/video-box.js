@@ -29,7 +29,9 @@ class VideoBox extends React.Component {
   }
 
   componentDidMount () {
+    /*eslint-disable */
     import ('react-html5video');
+    /*eslint-enable */
   }
   render () {
     let {Video} = this.state;

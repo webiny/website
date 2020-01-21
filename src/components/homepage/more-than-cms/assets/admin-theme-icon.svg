@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>admin-theme-icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-246.000000, -2231.000000)">
+            <g id="More-than-CMS" transform="translate(-472.000000, 1975.000000)">
+                <g id="Admin-theme" transform="translate(718.000000, 256.000000)">
+                    <g id="admin-theme-icon">
+                        <circle id="Oval-2" fill="#F7F7F7" cx="25" cy="25" r="25"></circle>
+                        <g id="baseline-mouse-24px" transform="translate(7.000000, 8.000000)">
+                            <polygon id="Shape" points="0 0 35 0 35 35 0 35"></polygon>
+                            <path d="M18.9583333,1.56041667 L18.9583333,13.125 L29.1666667,13.125 C29.1666667,7.175 24.71875,2.275 18.9583333,1.56041667 Z M5.83333333,21.875 C5.83333333,28.3208333 11.0541667,33.5416667 17.5,33.5416667 C23.9458333,33.5416667 29.1666667,28.3208333 29.1666667,21.875 L29.1666667,16.0416667 L5.83333333,16.0416667 L5.83333333,21.875 Z M16.0416667,1.56041667 C10.28125,2.275 5.83333333,7.175 5.83333333,13.125 L16.0416667,13.125 L16.0416667,1.56041667 Z" id="Shape" fill="#00CCB0" fill-rule="nonzero"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
