@@ -22,14 +22,15 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: 'UA-35527198-1',
-      },
-    },
-    {
       resolve: 'gatsby-plugin-google-marketing-platform',
       options: {
+        dataLayer: {
+          // Preset dataLayer values
+          gaPropertyId: 'UA-35527198-1',
+        },
+        analytics: {
+          id: 'UA-35527198-1',
+        },
         optimize: {
           id: 'GTM-NJG8KQL',
         },
