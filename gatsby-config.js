@@ -33,7 +33,7 @@ module.exports = {
         },
         optimize: {
           id: 'GTM-NJG8KQL',
-          timeout: 100,
+          timeout: 250,
           activateOn: 'observer',
         },
       },
