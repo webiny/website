@@ -18,6 +18,14 @@ class BaseLayout extends React.Component {
         <Helmet>
           <script type="text/javascript">
             {`
+        // google optimize 360
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-35527198-1', { 'optimize_id': 'GTM-NJG8KQL'});
+
+        // crisp
         window.$crisp=[];
         window.CRISP_WEBSITE_ID="2776e9a3-7196-4cd7-828a-96de2d509b75";
         (function(){ 
