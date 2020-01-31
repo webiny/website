@@ -28,6 +28,14 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-google-marketing-platform',
+      options: {
+        optimize: {
+          id: 'GTM-NJG8KQL',
+        },
+      },
+    },
+    {
       resolve: 'gatsby-plugin-facebook-pixel',
       options: {
         pixelId: '581721448994639',
