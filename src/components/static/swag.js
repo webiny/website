@@ -237,7 +237,7 @@ export default ({children, ...props}) => (
             {' '}
             or
             {' '}
-            <a href="https://www.youtube.com/channel/UCI5TBif-unrpn5htTRxXPQw">
+            <a href="https://www.youtube.com/c/webiny">
               YouTube
             </a>
             .

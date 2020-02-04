@@ -106,7 +106,7 @@ const Footer = () => (
               Twitter
             </a>{' '}
             /{' '}
-            <a className={linkStyle} href="https://video.webiny.com/">
+            <a className={linkStyle} href="https://www.youtube.com/c/webiny">
               YouTube
             </a>
             /{' '}
