@@ -8,6 +8,7 @@ import LearnExplore from '../components/homepage/learn-explore/learn-explore';
 import MoreThanCms from '../components/homepage/more-than-cms/more-than-cms';
 import ServerlessBenefits
   from '../components/homepage/serverless-benefits/serverless-benefits';
+import Testimonials from '../components/homepage/testimonials/testimonials';
 
 class IndexPage extends React.Component {
   render () {
@@ -22,6 +23,7 @@ class IndexPage extends React.Component {
         <MoreThanCms />
         <Components />
         <ServerlessBenefits />
+        <Testimonials />
         <LearnExplore />
       </BaseLayout>
     );

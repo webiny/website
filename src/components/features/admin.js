@@ -21,33 +21,6 @@ import LoginFormVideo from './assets/08-login-form.mp4';
 import DarkModeVideo from './assets/09-dark-mode.mp4';
 import MenuVideo from './assets/10-menu.mp4';
 
-const SubTitle = styled ('h2') (
-  {
-    fontSize: theme.fontSize.h2,
-    fontWeight: theme.fontWeight.semiBold,
-    color: theme.color.black,
-    textAlign: 'center',
-    paddingTop: 50,
-    margin: '25px auto 40px auto',
-  },
-  mq ({
-    width: ['100%', 650],
-  })
-);
-
-const Description = styled ('p') (
-  {
-    fontSize: 18,
-    color: theme.color.black,
-    textAlign: 'center',
-    paddingTop: 0,
-    margin: '0 auto',
-  },
-  mq ({
-    width: ['100%', 650],
-  })
-);
-
 const container = css ({
   background: 'url(' + background + ') no-repeat left top',
   backgroundSize: 'contain',
