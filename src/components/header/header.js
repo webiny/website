@@ -396,77 +396,31 @@ const MenuItemList = props => (
       </Link>
     </MenuItem>
  */}
+
     <MenuItem className={linkStyle + ' ' + parentMenu}>
-      Use Cases
+      Community
       <DownArrow />
       <DropDown>
         <div className={dropdownArrow} />
-        <Link rel="prerender" to="/use-case/serverless-websites">
-          Websites
-        </Link>
-        <Link rel="prerender" to="/use-case/serverless-web-applications">
-          Web applications
-        </Link>
-        <Link rel="prerender" to="/use-case/serverless-graphql-api">
-          APIs
-        </Link>
-        <Link rel="prerender" to="/use-case/microservices">
-          Microservices
-        </Link>
+        <a href="https://github.com/webiny/webiny-js">
+          GitHub
+        </a>
+        <a href="https://community.webiny.com">
+          Forum
+        </a>
+        <a href="https://gitter.im/webiny/webiny-js">
+          Gitter Chat
+        </a>
+        <a href="https://blog.webiny.com">
+          Blog
+        </a>
       </DropDown>
     </MenuItem>
 
-    <MenuItem className={linkStyle + ' ' + parentMenu}>
-      Resources
-      <DownArrow />
-      <DropDown>
-        <div className={dropdownArrow} />
-        <div className="section-wrapper">
-          <div className="section">
-            <div className="section-title">Resources</div>
-            <a href="https://docs.webiny.com/">Docs</a>
-            <a href="https://blog.webiny.com/">Blog</a>
-            <a href="https://storybook.webiny.com/">Storybook</a>
-            <a
-              onClick={() => {
-                trackGaConversion ();
-              }}
-              href="https://github.com/webiny/webiny-js/projects/7"
-            >
-              Roadmap
-            </a>
-          </div>
-          <div className="section">
-            <div className="section-title">Community</div>
-            <a
-              onClick={() => {
-                trackGaConversion ();
-              }}
-              href="https://github.com/webiny/webiny-js"
-            >
-              GitHub
-            </a>
-            <a href="https://community.webiny.com/">Community</a>
-            <Link rel="prerender" to="/swag">
-              SWAG
-            </Link>
-            <a href="https://gitter.im/Webiny/webiny-js">Chat</a>
-          </div>
-          <div className="section">
-            <div className="section-title">Company</div>
-            <Link rel="prerender" to="/about-us">
-              About us
-            </Link>
-            <Link rel="prerender" to="/contact-us">
-              Contact us
-            </Link>
-            <Link to="/support">Support</Link>
-            <a href="https://github.com/webiny/webiny-js/blob/master/LICENSE">
-              License
-            </a>
-          </div>
-        </div>
-      </DropDown>
+    <MenuItem>
+      <Link className={linkStyle} rel="prerender" to="/about-us">
+        About Us
+      </Link>
     </MenuItem>
 
     <MenuItem>
