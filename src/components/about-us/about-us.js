@@ -10,6 +10,7 @@ import heroBg from './assets/hero-bg.svg';
 import Sven from './assets/sven-webiny-profile.png';
 import Pavel from './assets/pavel-webiny-profile.png';
 import Adrian from './assets/adrian-webiny-profile.png';
+import Andrei from './assets/andrei-webiny-profile.png';
 import E1 from './assets/e1-logo.png';
 import MkLogo from './assets/mk-logo.svg';
 import MkFounders from './assets/mk-founders.png';
@@ -194,7 +195,8 @@ const ProfileCard = props => (
         ,
         {' '}
         {' '}
-        <a href={'https://twitter.com/' + props.twitter}>Twitter</a>, {' '}
+        {props.twitter &&
+          <a href={'https://twitter.com/' + props.twitter}>Twitter, </a>}
         <a href={'https://github.com/' + props.github}>GitHub</a>
       </ProfileLinks>
     </div>
@@ -206,7 +208,7 @@ export default ({children, ...props}) => (
     <Hero {...props}>
       <ContentContainer>
         <Title>
-          Webiny Empowers Developers to Build Serverless Applications
+          Creating the CMS for the<br />Serverless Era
         </Title>
 
       </ContentContainer>
@@ -239,7 +241,7 @@ export default ({children, ...props}) => (
           <h2>Team</h2>
           <ProfileCard
             img={Sven}
-            name={'Sven Al Hamad'}
+            name={'🇬🇧 Sven Al Hamad'}
             title={'CEO'}
             desc={
               'Mainly responsible for the vision and direction of the company. Also in charge of UX and overall visuals.'
@@ -250,7 +252,7 @@ export default ({children, ...props}) => (
           />
           <ProfileCard
             img={Pavel}
-            name={'Pavel Denisjuk'}
+            name={'🇭🇷 Pavel Denisjuk'}
             title={'CTO'}
             desc={
               'In charge of the technology focus and architecture. Author of main core components and apps like Page Builder and Headless CMS.'
@@ -261,7 +263,7 @@ export default ({children, ...props}) => (
           />
           <ProfileCard
             img={Adrian}
-            name={'Adrian Smijulj'}
+            name={'🇭🇷 Adrian Smijulj'}
             title={'Core developer'}
             desc={
               "CTO's right hand. Created apps like Form Builder and File Manager. Authored several core components."
@@ -269,6 +271,16 @@ export default ({children, ...props}) => (
             twitter={'doitadrian'}
             github={'doitadrian'}
             linkedin={'adriansmijulj'}
+          />
+          <ProfileCard
+            img={Andrei}
+            name={'🇷🇴 Andrei Puiu'}
+            title={'Full-stack developer'}
+            desc={
+              'Working on webiny scaffolding, documentation and improving the DX.'
+            }
+            github={'Fsalker'}
+            linkedin={'antonio-andrei-p-a51b42116'}
           />
         </Cell>
       </Grid>
