@@ -561,8 +561,8 @@ class Header extends React.Component {
       <React.Fragment>
         {this.hasBanner &&
           <NewsBanner
-            title="📢 We are hiring a Senior JavaScript Engineer - Click to Apply"
-            link={'https://careers.webiny.com/senior-javascript-engineer/en'}
+            title="📢 We are hiring - Check the open positions"
+            link={'https://careers.webiny.com/'}
           />}
 
         <HeaderContainer
