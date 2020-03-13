@@ -55,7 +55,7 @@ const styleSet = css (
     },
     '.grid': {
       alignItems: 'flex-start',
-      '&.investors, &.media-kit': {
+      '&.investors, &.media-kit, &.traits': {
         padding: '25px 0',
         margin: '50px 0',
         h2: {
@@ -183,6 +183,31 @@ const Divider = styled ('div') ({
   borderBottom: '1px solid #E5E5E5',
 });
 
+const TraitBullet = styled ('div') ({
+  display: 'flex',
+  alignItems: 'center',
+  height: 150,
+  span: {
+    color: theme.color.primaryDark,
+    backgroundColor: '#FEC4B2',
+    borderRadius: '50%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 50,
+    height: 50,
+    fontSize: 32,
+    fontWeight: theme.fontWeight.bold,
+  },
+  p: {
+    fontSize: 20,
+    paddingLeft: 20,
+    textAlign: 'left !important',
+    width: '100%',
+    margin: '0',
+  },
+});
+
 const ProfileCard = props => (
   <Profile>
     <img src={props.img} alt={props.name} />
@@ -201,6 +226,13 @@ const ProfileCard = props => (
       </ProfileLinks>
     </div>
   </Profile>
+);
+
+const Trait = props => (
+  <TraitBullet>
+    <span>{props.num}</span>
+    <p>{props.children}</p>
+  </TraitBullet>
 );
 
 export default ({children, ...props}) => (
@@ -285,6 +317,56 @@ export default ({children, ...props}) => (
         </Cell>
       </Grid>
     </ContentContainer>
+
+    <Divider />
+    <ContentContainer className={styleSet}>
+      <Grid className={'grid traits'}>
+        <Cell>
+          <h2>Traits We Value</h2>
+          <Grid className={'grid'}>
+            <Cell>
+              <Trait num={1}>
+                We are curious and will never stop learning.
+              </Trait>
+              <Trait num={3}>
+                We respect and treat others the same way we want to be treated.
+              </Trait>
+              <Trait num={5}>
+                We are motivated by the problem we are solving and not just by money.
+              </Trait>
+              <Trait num={7}>
+                We value flexibility and freedom but also take on the responsibility and accountability for our work.
+              </Trait>
+              <Trait num={9}>
+                We truly believe that our work has impact and that Webiny will become the future of web development.
+              </Trait>
+            </Cell>
+            <Cell>
+              <Trait num={2}>
+                We always find time to help our fellow peers.
+              </Trait>
+              <Trait num={4}>
+                Each one of us has a voice and is  not afraid to speak their mind.
+              </Trait>
+
+              <Trait num={6}>
+                We strive to communicate as much and as clearly as possible as this is the lifestream of successful remote working.
+              </Trait>
+
+              <Trait num={8}>
+                We deeply care about the quality of our work.
+              </Trait>
+
+              <Trait num={10}>
+                More than anything I'm happy to help out a community member and make their day.
+              </Trait>
+            </Cell>
+          </Grid>
+
+        </Cell>
+      </Grid>
+    </ContentContainer>
+
     <Divider />
     <ContentContainer className={styleSet}>
       <Grid className={'grid investors'}>
