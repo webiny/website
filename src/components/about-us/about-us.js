@@ -5,6 +5,7 @@ import mq from '../utils/breakpoints';
 import {css} from 'emotion';
 import ContentContainer from '../ui/content-container';
 import {Grid, Cell} from '../ui/layout/layout';
+import Button from '../ui/button';
 
 import heroBg from './assets/hero-bg.svg';
 import Sven from './assets/sven-webiny-profile.png';
@@ -15,6 +16,7 @@ import E1 from './assets/e1-logo.png';
 import MkLogo from './assets/mk-logo.svg';
 import MkFounders from './assets/mk-founders.png';
 import MkProduct from './assets/mk-product.png';
+import benefitsBg from './assets/webiny-about-us-benefits-bg.svg';
 
 const Hero = styled ('section') (
   {
@@ -208,6 +210,101 @@ const TraitBullet = styled ('div') ({
   },
 });
 
+const benefits = css (
+  {
+    background: 'url(' + benefitsBg + ') no-repeat center top',
+    backgroundSize: 'cover',
+    color: theme.color.white,
+    textAlign: 'center',
+    paddingBottom: 50,
+    '.title': {
+      maxWidth: 750,
+      margin: '0 auto',
+      h2: {
+        textAlign: 'center',
+      },
+    },
+    '.careersBtn': {
+      maxWidth: 250,
+      color: theme.color.white,
+      margin: '50px auto',
+      '&:hover': {
+        textDecoration: 'none',
+      },
+    },
+    p: {
+      textAlign: 'center',
+      color: theme.color.white,
+      marginBottom: 50,
+      a: {
+        color: theme.color.white,
+        textDecoration: 'underline',
+      },
+    },
+    hr: {
+      borderColor: '#979797',
+      boxShadow: 'none',
+      borderTop: 'none',
+      borderLeft: 'none',
+      borderRight: 'none',
+    },
+    h3: {
+      fontSize: theme.fontSize.h3,
+      fontWeight: theme.fontWeight.semiBold,
+      textAlign: 'center',
+      color: theme.color.white,
+      margin: '50px auto',
+      justifyContent: 'center',
+    },
+  },
+  mq ({
+    width: ['100%', '100%'],
+    '.title': {
+      padding: ['0 15px', 0],
+      h2: {
+        fontSize: [28, 36],
+      },
+    },
+  })
+);
+
+const Perks = styled ('div') (
+  {
+    display: 'flex',
+    justifyContent: 'space-between',
+    flexWrap: 'wrap',
+    maxWidth: 1100,
+    margin: '0 auto',
+    '.box': {
+      display: 'block',
+      color: theme.color.black,
+      flex: '1 0 25%',
+      backgroundColor: theme.color.white,
+      boxSizing: 'border-box',
+      margin: 25,
+      backgroundColor: '#fff',
+      boxShadow: '0 2px 4px 0 rgba(0,0,0,0.50)',
+      borderRadius: 2,
+      padding: 40,
+      h4: {
+        textAlign: 'left',
+        fontWeight: theme.fontWeight.semiBold,
+        fontSize: theme.fontSize.h4,
+        marginTop: 0,
+        marginBottom: 25,
+      },
+      p: {
+        color: theme.color.black,
+        textAlign: 'left',
+        marginBottom: 0,
+      },
+    },
+  },
+  mq ({
+    flexDirection: ['column', 'row'],
+  })
+);
+
 const ProfileCard = props => (
   <Profile>
     <img src={props.img} alt={props.name} />
@@ -365,6 +462,103 @@ export default ({children, ...props}) => (
 
         </Cell>
       </Grid>
+    </ContentContainer>
+
+    <Divider />
+    <ContentContainer className={benefits}>
+      <Grid className={'title'}>
+        <Cell>
+          <h2>
+            If you’ve identified yourself in our values,
+            we would love to talk
+          </h2>
+          <Button
+            className="careersBtn"
+            link="https://careers.webiny.com"
+            type="dark"
+            target="_blank"
+          >
+            View open positions &nbsp; ▶
+          </Button>
+          <p>
+            Don't see the right opening at the moment?
+            Don’t worry, just email your CV to
+            {' '}
+            <a href="mailto:careers@webiny.com">careers@webiny.com</a>.
+          </p>
+          <hr />
+          <h3>Our Perks & Benefits</h3>
+        </Cell>
+      </Grid>
+
+      <Perks>
+        <div className={'box'}>
+          <h4>🌍 Flexible & remote work</h4>
+          <p>
+            We are a remote team, you can work from home or any other location you choose. All you need is an internet connection.
+          </p>
+        </div>
+
+        <div className={'box'}>
+          <h4>💵 Competitive salary</h4>
+          <p>
+            We pay competitive market rates, based on your location and experience.
+          </p>
+        </div>
+
+        <div className={'box'}>
+          <h4>📚 £1000 personal development budget</h4>
+          <p>
+            Each year you get a £1000 budget to spend on any books, conferences or training you wish to attend.
+          </p>
+        </div>
+
+        <div className={'box'}>
+          <h4>🏝 Unlimited vacation</h4>
+          <p>
+            We offer an unlimited paid time off and require you to take a minimum of 15 days off (paid) each year, alongside any public holidays.
+          </p>
+        </div>
+
+        <div className={'box'}>
+          <h4>📈 Stock options</h4>
+          <p>
+            We want our success to be your success. Each team member gets a certain number of stock options assigned that vest over a period of time.
+          </p>
+        </div>
+
+        <div className={'box'}>
+          <h4>💻 Equipment</h4>
+          <p>
+            We pay for any equipment you need, be that software or hardware.
+          </p>
+        </div>
+
+        <div className={'box'}>
+          <h4>🍼 Family leave</h4>
+          <p>
+            Starting a family is an important step in everyone's life. We want our employees to enjoy those moments without worrying about their job. We are offering all new parents (includes maternity, paternity, and adoption) 12 weeks of fully paid leave. This is available if you've been with Webiny for 12 months or more.
+            {' '}
+          </p>
+        </div>
+
+        <div className={'box'}>
+          <h4>🐥 Flexible workdays for new parents</h4>
+          <p>
+            Besides the family leave, if you are a new parent (been a parent for less than 1 year), you can choose to work for 3 or 4 days a week, instead of full-time, for the next 6 months for a pro-rata salary.
+          </p>
+        </div>
+      </Perks>
+
+      <Button
+        className="careersBtn"
+        link="https://careers.webiny.com"
+        type="dark"
+        target="_blank"
+      >
+        View open positions &nbsp; ▶
+      </Button>
+
     </ContentContainer>
 
     <Divider />
