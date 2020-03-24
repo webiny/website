@@ -8,7 +8,7 @@ import {css} from 'emotion';
 const codeStyle = css ({
   borderRadius: 5,
   fontSize: 14,
-  maxWidth: 500,
+  width: 650,
   maxHeight: 350,
 });
 

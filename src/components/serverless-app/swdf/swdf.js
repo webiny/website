@@ -63,7 +63,7 @@ export default ({children, ...props}) => (
     >
       <List>
         <ListItem title={'Build Serverless Apps FASTER'}>
-          - All-in-one framework designed from  ground up specifically for development of serverless applications.
+          - All-in-one framework designed from ground up specifically for development of serverless applications.
         </ListItem>
         <ListItem title={'Everything you need'}>
           - ACL layer, Apollo GraphQL API, Admin UI,  deployment mechanism, SSR, webpack & babel configurations, React components and much more.
@@ -197,14 +197,18 @@ export default ({children, ...props}) => (
             (...)
             
             type MyAppQuery {
+                # Returns a single product.
                 getProduct(id: ID): ProductResponse
 
+                # Returns a list of products.
                 listProducts(page: Int, perPage: Int, where: JSON, sort: JSON): ProductsListResponse
             }
 
             type MyAppMutation {
+                # Creates a new product.
                 createProduct(data: ProductInput!): ProductResponse
-
+                
+                # Updates an existing product.
                 updateProduct(id: ID!, data: ProductInput!): ProductResponse
             }
 
@@ -215,8 +219,6 @@ export default ({children, ...props}) => (
             type Mutation {
                 myApp: MyAppMutation
             }
-            
-            (...)
         \`,
         resolvers: {
             (...)
@@ -229,8 +231,6 @@ export default ({children, ...props}) => (
                 createProduct: resolveGet,
                 updateProduct: resolveList
             }
-            
-            (...)
         }
     }
 }`}
@@ -249,6 +249,7 @@ export default ({children, ...props}) => (
               {`import { pipe, withFields, string, number, boolean } from "@webiny/commodo";
 import { validation } from "@webiny/validation";
 
+// Create a new "User" model that consist of a couple of fields.
 const User = pipe(
     withFields({
         firstName: string(),
@@ -261,6 +262,8 @@ const User = pipe(
 
 (...)
 
+// Later down the road, you can create model instances, populate them
+// with data, do complex data validations, and save the data to a database.
 const user = new User();
 user.populate({
     firstName: "Adrian",
