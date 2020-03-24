@@ -30,7 +30,7 @@ const Bold = styled ('span') ({
 });
 
 const List = ({children, ...props}) => (
-  <ListUl>
+  <ListUl {...props}>
     {children}
   </ListUl>
 );

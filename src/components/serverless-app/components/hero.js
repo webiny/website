@@ -134,8 +134,8 @@ export default props => (
     style={{backgroundImage: 'url(' + props.bg + ')'}}
   >
     <ContentContainer className={container}>
-      <LeftSide>
-        <TopTitle>WEBINY SERVERLESS APP:</TopTitle>
+      <LeftSide className={'hero-left'}>
+        {props.appName && <TopTitle>WEBINY SERVERLESS APP:</TopTitle>}
         <AppName>{props.appName}</AppName>
         <Title>{props.title}</Title>
         {props.children}
@@ -152,7 +152,7 @@ export default props => (
           </Button>}
 
       </LeftSide>
-      <RightSide>
+      <RightSide className={'hero-right'}>
         {props.media}
       </RightSide>
     </ContentContainer>

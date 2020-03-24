@@ -371,7 +371,7 @@ const MenuItemList = props => (
     </MenuItem>
 
     <MenuItem className={linkStyle + ' ' + parentMenu}>
-      Included Apps
+      Products
       <DownArrow />
       <DropDown>
         <div className={dropdownArrow} />
@@ -386,6 +386,10 @@ const MenuItemList = props => (
         </Link>
         <Link rel="prerender" to="/serverless-app/file-manager">
           File Manager
+        </Link>
+        <hr />
+        <Link rel="prerender" to="/serverless-web-development-framework">
+          Serverless Web Development Framework
         </Link>
       </DropDown>
     </MenuItem>
