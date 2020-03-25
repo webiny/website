@@ -14,6 +14,7 @@ import Code from '../components/code';
 import DeveloperFeatures from './more-than-cms/more-than-cms';
 import SlsBenefits
   from '../../homepage/serverless-benefits/serverless-benefits';
+import StackAndBlocks from './stack-and-blocks';
 
 import HeroImage from './assets/serverless-web-development-framework.png';
 import HeroBg from './assets/hero-bg.svg';
@@ -99,9 +100,79 @@ export default ({children, ...props}) => (
       </FeatureBox>
     </ContentContainer>
 
+    <StackAndBlocks />
+
     <section>
       <ContentContainer>
         <SubTitle>Features</SubTitle>
+
+        <Grid right>
+          <Cell title="Install via Yarn">
+            <p>
+              To configure and install the complete environment, it’s a simple `yarn` command and just one configuration file.
+
+              Learn more >
+            </p>
+          </Cell>
+          <Cell>
+            <Code language="shell">
+              {`# Step 1. Install webiny-cli
+$ yarn global add @webiny/cli
+
+# Step 2. Create a project
+$ webiny create my-project-name
+
+# Step 3. deploy the API services
+$ webiny deploy-api
+
+# Step 4. deploy the API services
+$ webiny deploy-apps
+
+# Your project is live!
+https://xyz.amazonaws.com/`}
+            </Code>
+          </Cell>
+        </Grid>
+
+        <Grid right>
+          <Cell title="Webiny CLI">
+            <p>
+              Webiny CLI is the tool that you will use to build, watch and deploy your serverless applications.
+            </p>
+            <p>
+              CLI supports command like deploying only a specific service/API instead of the whole set, for much faster development experience.
+            </p>
+            <p>
+              CLI will also notify you via desktop notifications when the deployment is done, so you don’t need to watch the terminal all the time.
+            </p>
+          </Cell>
+          <Cell>
+            <Code language="shell">
+              {`Usage: webiny <command>
+
+Commands:
+  webiny create <name>     Create a new Webiny project.
+  webiny deploy-api        Deploy API from api folder.
+                           (NOTE: run from project root)
+  webiny deploy-apps       Deploy Apps from apps folder.
+                           (NOTE: run from project root)
+  webiny remove-api        Remove API.
+                           (NOTE: run from project root)
+  webiny remove-apps       Remove Apps.
+                           (NOTE: run from project root)
+  webiny disable-tracking  Disable tracking of Webiny stats.
+  webiny enable-tracking   Enable tracking of Webiny stats.
+
+Options:
+  --help     Show help                                [boolean]
+  --version  Show version number                      [boolean]
+
+Examples:
+  webiny deploy-api --env=dev --debug
+  webiny remove-api --env=dev --debug`}
+            </Code>
+          </Cell>
+        </Grid>
 
         <Grid right>
           <Cell title="Powered by plugins">

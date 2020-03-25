@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="87px" height="87px" viewBox="0 0 87 87" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="100%" x2="0%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#764BA2" offset="0%"></stop>
+            <stop stop-color="#667EEA" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-2" cx="41.5" cy="41.5" r="41.5"></circle>
+        <filter x="-4.8%" y="-2.4%" width="109.6%" height="109.6%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.855157382   0 0 0 0 0.855157382   0 0 0 0 0.855157382  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M25.5254698,0.409701065 L25.3241412,5.25192859 C25.3210462,5.32636592 25.3439837,5.39955566 25.3890093,5.45891217 C25.4959709,5.59991814 25.6969884,5.62751653 25.8379943,5.52055491 L27.7189497,4.09373554 L29.3076272,5.34523903 C29.367157,5.39213447 29.4413799,5.4164156 29.5171162,5.41377084 C29.6939928,5.40759417 29.8323724,5.2592002 29.8261958,5.08232363 L29.6540134,0.15166709 L32.0125838,0.00425643762 C33.1967147,-0.0697517449 34.216638,0.830180545 34.2906462,2.01431146 C34.2934345,2.05892495 34.2948297,2.1036146 34.2948297,2.14831514 L34.2948297,40.5795684 C34.2948297,41.7660099 33.3330289,42.7278107 32.1465874,42.7278107 C32.1144463,42.7278107 32.0823091,42.7270893 32.0502002,42.7256472 L3.37550243,41.4377752 C2.25873634,41.3876176 1.3670835,40.4893683 1.32515872,39.3722628 L0.00153840388,4.10377647 C-0.0421755831,2.9389967 0.850935831,1.95185944 2.01426568,1.87915132 L25.5254698,0.409701065 Z M20.0554768,16.1046962 C20.0554768,16.9404881 25.685257,16.5399149 26.4410055,15.9528287 C26.4410055,10.2612856 23.3870569,7.27046923 17.7947617,7.27046923 C12.2024663,7.27046923 9.06919453,10.3078185 9.06919453,14.8638448 C9.06919453,22.7989241 19.777845,22.9507916 19.777845,27.2790166 C19.777845,28.493957 19.1829201,29.2153279 17.874085,29.2153279 C16.1686333,29.2153279 15.4943849,28.344342 15.5737082,25.3829249 C15.5737082,24.7404841 9.06919453,24.5401975 8.87088618,25.3829249 C8.3659124,32.5594925 12.8370531,34.6294901 17.9534083,34.6294901 C22.9111169,34.6294901 26.7979605,31.9869106 26.7979605,27.2030829 C26.7979605,18.6985004 15.9306632,18.9263017 15.9306632,14.7119774 C15.9306632,13.0034674 17.1998366,12.7756661 17.9534083,12.7756661 C18.7466417,12.7756661 20.1744618,12.9154778 20.0554768,16.1046962 Z" id="path-4"></path>
+    </defs>
+    <g id="SWDF" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-1026.000000, -2506.000000)">
+            <g id="Storybook" transform="translate(924.000000, 2482.000000)">
+                <g id="Icon" transform="translate(104.000000, 24.000000)">
+                    <g id="Oval">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                        <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    </g>
+                    <g id="storybook-logo" transform="translate(22.100592, 20.136095)">
+                        <mask id="mask-5" fill="white">
+                            <use xlink:href="#path-4"></use>
+                        </mask>
+                        <use id="Combined-Shape" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-4"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
