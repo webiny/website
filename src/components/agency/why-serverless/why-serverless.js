@@ -144,7 +144,7 @@ class WhyServerless extends React.Component {
             <Title>Why serverless?</Title>
             <Button
               className={ctaButton}
-              link="https://github.com/webiny/webiny-js"
+              link="/why-serverless"
               type="default"
               target="_blank"
             >
