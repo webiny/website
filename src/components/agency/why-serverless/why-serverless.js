@@ -11,6 +11,7 @@ import serverlessTitleBg from './assets/serverless-bg.svg'
 import dottedLine from './assets/dotted-line.svg'
 import unlimitedScaleImage from './assets/unlimited-scale.svg'
 import noInfrastructureNeededImage from './assets/no-infrastructure-needed.svg'
+import fasterTimeImage from './assets/fast.svg'
 import payAsUsageImage from './assets/pay-as-usage.svg'
 
 const wrapperClass = css (
@@ -152,10 +153,10 @@ class WhyServerless extends React.Component {
             </Button>
           </TextWrapper>
           <ImagesWrapper>
-              <img src={unlimitedScaleImage} alt=''/>
-              <img src={noInfrastructureNeededImage} alt=''/>
-              <img src={payAsUsageImage} alt=''/>
-              <img src={payAsUsageImage} alt=''/>
+              <img src={unlimitedScaleImage} alt='unlimited scale out of the box'/>
+              <img src={noInfrastructureNeededImage} alt='no infrastructure to manage'/>
+              <img src={fasterTimeImage} alt='much faster time to market'/>
+              <img src={payAsUsageImage} alt='pay base on usage'/>
           </ImagesWrapper>
         </ContentContainer>
       </section>
