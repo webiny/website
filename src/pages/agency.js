@@ -8,6 +8,7 @@ import ReadyMadeApps from '../components/agency/ready-made-apps/ready-made-apps'
 import WebinyFeatures from '../components/agency/webiny-features/webiny-features';
 import DidYouKnow from '../components/agency/did-you-know/did-you-know';
 import Plugins from '../components/agency/plugins/plugins';
+import ForAgencies from '../components/agency/for-agencies/for-agencies';
 
 class AgencyPage extends React.Component {
   render () {
@@ -20,6 +21,7 @@ class AgencyPage extends React.Component {
         <WebinyFeatures />
         <DidYouKnow />
         <Plugins />
+        <ForAgencies />
       </BaseLayout>
     );
   }
