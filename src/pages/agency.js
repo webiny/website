@@ -7,6 +7,7 @@ import WhyServerless from '../components/agency/why-serverless/why-serverless';
 import ReadyMadeApps from '../components/agency/ready-made-apps/ready-made-apps';
 import WebinyFeatures from '../components/agency/webiny-features/webiny-features';
 import DidYouKnow from '../components/agency/did-you-know/did-you-know';
+import Plugins from '../components/agency/plugins/plugins';
 
 class AgencyPage extends React.Component {
   render () {
@@ -18,6 +19,7 @@ class AgencyPage extends React.Component {
         <ReadyMadeApps />
         <WebinyFeatures />
         <DidYouKnow />
+        <Plugins />
       </BaseLayout>
     );
   }
