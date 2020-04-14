@@ -54,7 +54,10 @@ const TitleWrapper = styled ('div') (
     backgroundImage: 'url(' + heroTitleBg + ')',
     backgroundPosition: 'top',
     backgroundRepeat: 'no-repeat',
-  }
+  },
+  mq ({
+    backgroundSize: ['0', 'auto']
+  })
 );
 
 

@@ -233,7 +233,7 @@ const leftArrowClass = css (
     }
   },
   mq ({
-    width: [30, 50],
+    width: ['30px !important', 50],
     left: [15, 30]
   })
 );
@@ -250,7 +250,7 @@ const rightArrowClass = css (
     }
   },
   mq ({
-    width: [30, 50],
+    width: ['30px !important', 50],
     right: [15, 30]
   })
 );
