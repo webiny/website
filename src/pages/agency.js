@@ -9,19 +9,34 @@ import WebinyFeatures from '../components/agency/webiny-features/webiny-features
 import DidYouKnow from '../components/agency/did-you-know/did-you-know';
 import Plugins from '../components/agency/plugins/plugins';
 import ForAgencies from '../components/agency/for-agencies/for-agencies';
+import ScheduleDemo from '../components/agency/schedule-demo/schedule-demo';
 
 class AgencyPage extends React.Component {
+  scheduleADemoRef = React.createRef();
+
+  goToScheduleDemoSection = () => {
+    if (this.scheduleADemoRef && this.scheduleADemoRef.current) {
+      const {offsetTop} = this.scheduleADemoRef.current
+      window.scrollTo({
+        top: offsetTop,
+        left: 0,
+        behavior: 'smooth'
+      })
+    }
+  }
+
   render () {
     return (
       <BaseLayout title="Webiny - How Agencies can benefit">
-        <Hero/>
+        <Hero handleDemoClick={this.goToScheduleDemoSection} />
         <WhatIsWebiny />
         <WhyServerless />
-        <ReadyMadeApps />
+        <ReadyMadeApps handleDemoClick={this.goToScheduleDemoSection} />
         <WebinyFeatures />
         <DidYouKnow />
-        <Plugins />
+        <Plugins handleDemoClick={this.goToScheduleDemoSection} />
         <ForAgencies />
+        <ScheduleDemo refFromParent={this.scheduleADemoRef} />
       </BaseLayout>
     );
   }
