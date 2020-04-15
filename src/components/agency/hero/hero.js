@@ -20,7 +20,12 @@ const heroContainerClass = css (
   },
   mq ({
     width: ['100%', '100%'],
-    height: ['65vh', 480]
+    height: ['75vh', 480],
+    '@media (min-width: 1460px)': {
+      height: 650,
+      justifyContent: 'center',
+      paddingBottom: 180
+    }
   })
 );
 
@@ -42,6 +47,10 @@ const HeroSection = styled ('section') (
     padding: ['100px 20px 25px', '180px 0 25px'],
     backgroundSize: ['auto', 'auto', 'cover'],
     backgroundPosition: ['top', 'top', 'top', 'center'],
+    '@media (min-width: 1460px)': {
+      backgroundPosition: 'center',
+      paddingTop: 0
+    }
   })
 );
 
