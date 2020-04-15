@@ -151,7 +151,8 @@ const AppsContainer = styled ('div') (
     width: ['100%', '100%'],
     flexDirection: ['column', 'row'],
     paddingTop: [40, 140],
-    paddingBottom: [40, 250]
+    paddingBottom: [40, 250],
+    paddingLeft: [0, 24]
   })
 );
 
@@ -239,7 +240,10 @@ const leftArrowClass = css (
   mq ({
     display: ['none !important', 'block !important'],
     width: ['30px !important', '50px !important'],
-    left: [15, '-15%']
+    left: [15, '-8%', '-15%'],
+    '@media (min-width: 1366px)': {
+      left: '-15%',
+    }
   })
 );
 
@@ -257,7 +261,10 @@ const rightArrowClass = css (
   mq ({
     display: ['none !important', 'block !important'],
     width: ['30px !important', '50px !important'],
-    right: [15, '-15%']
+    right: [15, '-8%', '-15%'],
+    '@media (min-width: 1366px)': {
+      right: '-15%',
+    }
   })
 );
 
@@ -313,7 +320,6 @@ const webinyAppsImage = css (
       },
     },
     '.slick-dots': {
-      position: 'relative',
       zIndex: 10,
       'li button:before': {
         fontSize: 30,
@@ -331,13 +337,30 @@ const webinyAppsImage = css (
       padding: 10,
       margin: 0,
       img: {
-        width: ['70%', '100%'],
-        minHeight: ['auto', '324px'],
-        minWidth: ['auto', '580px'],
+        width: ['80%', '90%'],
+        minHeight: ['auto', 'auto'],
+        minWidth: ['auto', 'auto'],
+        marginLeft: ['18%', '10%'],
+        marginTop: ['0', '3%'],
+        '@media (min-width: 768px)': {
+          width: '100%',
+          marginLeft: '5%',
+          marginTop: '3%'
+        },
+        '@media (min-width: 1024px)': {
+          width: '90%',
+          marginLeft: '10%',
+          marginTop: '3%'
+        },
+        '@media (min-width: 1336px)': {
+          width: 560,
+          marginLeft: 0
+        }
       },
     },
     '.slick-dots': {
-      bottom: [0,'-25%']
+      position: ['absolute','relative'],
+      bottom: ['-10%','-25%']
     },
   })
 );
