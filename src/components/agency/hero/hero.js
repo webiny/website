@@ -36,7 +36,7 @@ const HeroSection = styled ('section') (
     left: 0,
     zIndex: 0,
     backgroundImage: 'url(' + heroBg + ')',
-    backgroundRepeat: 'no-repeat',
+    backgroundRepeat: 'no-repeat'
   },
   mq ({
     padding: ['100px 20px 25px', '180px 0 25px'],
