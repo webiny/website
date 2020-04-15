@@ -117,11 +117,10 @@ const ArrowRight = styled ('img') (
 const ctaButton = css(
   {
     textTransform: 'uppercase',
-    paddingTop: '10px !important',
-    paddingBottom: '10px !important',
+    padding: '10px 12px !important'
   },
   mq ({
-    width: ['216px !important'],
+    width: ['230px !important'],
   })
 )
 
@@ -233,7 +232,7 @@ const leftArrowClass = css (
     }
   },
   mq ({
-    width: ['30px !important', 50],
+    width: ['30px !important', '50px !important'],
     left: [15, 30]
   })
 );
@@ -250,7 +249,7 @@ const rightArrowClass = css (
     }
   },
   mq ({
-    width: ['30px !important', 50],
+    width: ['30px !important', '50px !important'],
     right: [15, 30]
   })
 );
@@ -270,17 +269,18 @@ const RightArrowImage = styled ('img') (
 
 class ReadyMadeApps extends React.Component {
   render () {
+    const {handleDemoClick, ...restProps} = this.props
     return (
       <React.Fragment>
-        <section {...this.props} className={wrapperClass}>
+        <section {...restProps} className={wrapperClass}>
         <ContentContainer className={contentContainerClass}>
           <TextWrapper>
           <Title>Webiny comes with <HighlightedBg> several FREE </HighlightedBg>
           ready-made apps you can use today:</Title>
           <Button
-          className={ctaButton}
-          link="https://docs.webiny.com/"
-          type="secondary"
+            onClick={handleDemoClick}
+            className={ctaButton}
+            type="secondary"
           >
           <DemoIcon src={demoIcon}/>
           Schedule a 1:1 Demo
@@ -288,7 +288,7 @@ class ReadyMadeApps extends React.Component {
           </TextWrapper>
         </ContentContainer>
       </section>
-      <section {...this.props} className={wrapperWithBackgroundImageClass}>
+      <section {...restProps} className={wrapperWithBackgroundImageClass}>
         <AppsContainer>
           <LeftSide>
             <AppTitle>Page Builder</AppTitle>

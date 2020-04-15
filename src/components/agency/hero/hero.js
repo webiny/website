@@ -118,7 +118,7 @@ const ctaButton = css(
     padding: '10px 12px !important'
   },
   mq ({
-    width: ['216px !important'],
+    width: ['230px !important'],
   })
 );
 
@@ -134,8 +134,9 @@ const ScheduleDemoImage = styled ('img') (
 
 class HeroComponent extends React.Component {
   render () {
+    const {handleDemoClick, ...restProps} = this.props
     return (
-      <HeroSection {...this.props}>
+      <HeroSection {...restProps}>
         <ContentContainer className={heroContainerClass}>
           <TitleWrapper>
             <Title>
@@ -150,8 +151,8 @@ class HeroComponent extends React.Component {
           <ButtonWrapper>
             <FreeDemoImage src={freeArrowIcon}/>
             <Button
+              onClick={handleDemoClick}
               className={ctaButton}
-              link="https://docs.webiny.com/"
               type="secondary"
             >
               <ScheduleDemoImage src={demoIcon}/>

@@ -91,13 +91,12 @@ const SubTitle = styled ('p') (
 const ctaButton = css(
   {
     textTransform: 'uppercase',
-    paddingTop: '10px !important',
-    paddingBottom: '10px !important',
+    padding: '10px 12px !important',
     marginTop: -20,
     zIndex: 1
   },
   mq ({
-    width: ['216px !important']
+    width: ['230px !important']
   })
 );
 
@@ -113,8 +112,9 @@ const DemoIcon = styled ('img') (
 
 class Plugins extends React.Component {
   render () {
+    const {handleDemoClick, ...restProps} = this.props
     return (
-      <section {...this.props} className={wrapperClass}>
+      <section {...restProps} className={wrapperClass}>
         <ContentContainer className={contentContainerClass}>
           <TextWrapper>
             <Title>
@@ -125,8 +125,8 @@ class Plugins extends React.Component {
             </SubTitle>
           </TextWrapper>
           <Button
+            onClick={this.props.handleDemoClick}
             className={ctaButton}
-            link="https://docs.webiny.com/"
             type="secondary"
             >
             <DemoIcon src={demoIcon}/>
