@@ -18,11 +18,11 @@ const wrapperClass = css (
     backgroundPosition: 'top left',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
+    marginBottom: 0
   },
   mq ({
     paddingTop: [40, 0],
-    paddingBottom: [40, 0],
-    marginBottom: [24, 0]
+    paddingBottom: [40, 0]
   })
 );
 
@@ -32,14 +32,14 @@ const contentContainerClass = css (
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    width: '100%',
     height: '100%',
-    maxWidth: 1200
+    maxWidth: 1200,
+    marginBottom: 0
   },
   mq ({
+    width: ['100%', '100%'],
     paddingTop: [100, 180],
-    paddingBottom: [100, 180],
-    marginBottom: [24, 0]
+    paddingBottom: [100, 180]
   })
 );
 
