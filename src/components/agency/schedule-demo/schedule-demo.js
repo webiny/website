@@ -180,10 +180,11 @@ const ctaButton = css(
   {
     margin: '48px auto 0px !important',
     textTransform: 'uppercase',
-    zIndex: 1
+    zIndex: 1,
+    maxWidth: 397
   },
   mq ({
-    width: ['360px !important'],
+    width: ['80%', '360px !important'],
   })
 );
 

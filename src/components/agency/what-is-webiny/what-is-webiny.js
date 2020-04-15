@@ -22,6 +22,9 @@ const wrapperClass = css (
     paddingBottom: [25, 0],
     backgroundPosition: ['top', 'bottom'],
     backgroundSize: ['cover', 'cover'],
+    '@media (min-width: 1460px)': {
+      marginTop: -150
+    }
   })
 );
 
