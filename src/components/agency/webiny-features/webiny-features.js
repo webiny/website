@@ -98,6 +98,16 @@ const FeatureTitle = styled ('h2') (
   },
   mq ({
     marginBottom: [24, 40],
+    textAlign: ['center', 'left'],
+    '&.medium-width': {
+      maxWidth: ['100%',420]
+    },
+    '&.large-width': {
+      maxWidth: ['100%', 490]
+    },
+    '&.full-width': {
+      maxWidth: ['100%', '92%']
+    },
   })
 );
 
@@ -108,7 +118,12 @@ const FeatureDescription = styled ('p') (
     lineHeight: '30px',
     color: theme.color.black,
     marginBottom: 0
-  }
+  },
+  mq (
+    {
+      textAlign: ['center', 'left']
+    }
+  )
 );
 
 class WebinyFeatures extends React.Component {
@@ -119,8 +134,8 @@ class WebinyFeatures extends React.Component {
           <Feature>
               <FeatureImage src={heavyLiftingForYouImage} alt='webiny handles the heavy-lifting for you'/>
               <FeatureInfo>
-                <FeatureTitle>
-                  Let Webiny handle the <br />
+                <FeatureTitle className='medium-width'>
+                  Let Webiny handle the
                   heavy-lifting
                 </FeatureTitle>
                 <FeatureDescription>
@@ -131,8 +146,8 @@ class WebinyFeatures extends React.Component {
           <Feature>
               <FeatureImage src={toolsWeLoveImage} alt='use tools like React, GraphQL, Nodejs, Typescript, Babel and Webpack'/>
               <FeatureInfo>
-                <FeatureTitle>
-                Use tools you already <br/>
+                <FeatureTitle className='medium-width'>
+                Use tools you already
                 know and love
                 </FeatureTitle>
                 <FeatureDescription>
@@ -143,8 +158,8 @@ class WebinyFeatures extends React.Component {
           <Feature>
               <FeatureImage src={dynamicCMSImage} alt='webiny is a dynamic CMS not a static site generator'/>
               <FeatureInfo>
-                <FeatureTitle>
-                  Webiny is a dynamic CMS, <br/>
+                <FeatureTitle className='full-width'>
+                  Webiny is a dynamic CMS,
                   and not a static site generator
                 </FeatureTitle>
                 <FeatureDescription>
@@ -155,9 +170,9 @@ class WebinyFeatures extends React.Component {
           <Feature>
               <FeatureImage src={rocketSpeedImage} alt='no need to do scaling and infrastructure management'/>
               <FeatureInfo>
-                <FeatureTitle>
-                  Scaling and infrastructure <br/>
-                  management are things of <br/>
+                <FeatureTitle className='large-width'>
+                  Scaling and infrastructure
+                  management are things of
                   the past
                 </FeatureTitle>
                 <FeatureDescription>
