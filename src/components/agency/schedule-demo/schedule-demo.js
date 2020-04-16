@@ -184,7 +184,7 @@ const ctaButton = css(
     maxWidth: 397
   },
   mq ({
-    width: ['80%', '360px !important'],
+    width: ['80% !important', '360px !important'],
   })
 );
 
