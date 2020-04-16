@@ -142,10 +142,8 @@ class DidYouKnow extends React.Component {
               <Title>Do You Know</Title>
               <SubTitle>
               Did you know CocaCola <br/>
-              <HighlightedBg>
-              saved 65%
-              </HighlightedBg>
-              of their infrastructure cost <br/> by moving to serverless
+              <HighlightedBg>saved 65%</HighlightedBg>
+              &nbsp;of their infrastructure cost <br/> by moving to serverless
               </SubTitle>
             </TextWrapper>
             <HexagonImage src={didYouKnowHexagon} alt='hexagon art' />
