@@ -10,6 +10,7 @@ import DidYouKnow from '../components/agency/did-you-know/did-you-know';
 import Plugins from '../components/agency/plugins/plugins';
 import ForAgencies from '../components/agency/for-agencies/for-agencies';
 import ScheduleDemo from '../components/agency/schedule-demo/schedule-demo';
+import WhyChooseWebiny from '../components/agency/why-choose-webiny/why-choose-webiny';
 
 class AgencyPage extends React.Component {
   scheduleADemoRef = React.createRef();
@@ -31,6 +32,7 @@ class AgencyPage extends React.Component {
         <Hero handleDemoClick={this.goToScheduleDemoSection} />
         <WhatIsWebiny />
         <WhyServerless />
+        <WhyChooseWebiny />
         <ReadyMadeApps handleDemoClick={this.goToScheduleDemoSection} />
         <WebinyFeatures />
         <DidYouKnow />
