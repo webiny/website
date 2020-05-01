@@ -150,9 +150,10 @@ const Box =  styled ('div') (
     },
     '& li': {
       display: 'flex',
-      alignItems: 'center',
-      marginBottom: 16
-    }
+      justifyContent: 'flex-start',
+      marginBottom: 16,
+      fontSize: theme.fontSize.navMenuItem
+    },
   },
   mq ({
     width: ['90%', 320, 380],
@@ -174,7 +175,8 @@ const ProductTitle = styled ('h3') (
 
 const CheckMarkImg = styled ('img') (
   {
-    width: 16,
+    width: 19,
+    height: 19,
     marginRight: 16
   }
 );
@@ -182,7 +184,9 @@ const CheckMarkImg = styled ('img') (
 const DotImage = styled ('img') (
   {
     width: 6,
-    marginRight: 16
+    height: 6,
+    marginRight: 17,
+    padding: '8px 6px'
   }
 );
 

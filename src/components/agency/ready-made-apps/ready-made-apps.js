@@ -26,7 +26,7 @@ const wrapperClass = css (
   {
   },
   mq ({
-    paddingTop: [80, 40],
+    paddingTop: [80, 140],
     paddingBottom: [40, 60]
   })
 );
