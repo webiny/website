@@ -9,6 +9,8 @@ class PipeDriveForm extends React.Component {
   }
 
   render () {
+    let url = 'https://www.webiny.com/';
+
     return (
       <div
         className="pipedriveWebForms"
@@ -24,7 +26,7 @@ class PipeDriveForm extends React.Component {
       >
         <iframe
           src={`https://pipedrivewebforms.com/form/${this.props.formId}?embeded=1&uuid=${this.state.randomId}`}
-          name={`${window.document.URL}-${this.state.randomId}`}
+          name={`${url}-${this.state.randomId}`}
           scrolling="no"
           seamless="seamless"
           style={{
