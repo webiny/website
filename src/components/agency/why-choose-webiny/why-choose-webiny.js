@@ -23,8 +23,8 @@ const wrapperClass = css (
     backgroundRepeat: 'no-repeat',
     backgroundImage: 'url(' + grayBg + ')',
     '@media (min-width: 1920px)': {
-      backgroundPosition:  '0 270px !important'
-    }
+      backgroundPosition: '0 270px !important',
+    },
   },
   mq ({
     paddingTop: [40, 100],
@@ -40,12 +40,12 @@ const contentContainerClass = css (
     flexDirection: 'column',
     alignItems: 'center',
     maxWidth: 1200,
-    boxSizing: "border-box"
+    boxSizing: 'border-box',
   },
   mq ({
     width: ['100%', '100%'],
     height: ['100%', 'auto'],
-    padding: [0, '0px 16px', 0,]
+    padding: [0, '0px 16px', 0],
   })
 );
 
@@ -55,33 +55,29 @@ const TextWrapper = styled ('div') (
     margin: '0 auto',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   mq ({
-    marginBottom: [40, 80, 60]
+    marginBottom: [40, 80, 60],
   })
 );
 
-const Title = styled ('h2') (
-  {
-    fontSize: 48,
-    fontWeight: theme.fontWeight.bold,
-    color: theme.color.black,
-    textAlign: 'center',
-    paddingTop: 0,
-    marginTop: 0,
-    marginBottom: 12
-  }
-);
+const Title = styled ('h2') ({
+  fontSize: 48,
+  fontWeight: theme.fontWeight.bold,
+  color: theme.color.black,
+  textAlign: 'center',
+  paddingTop: 0,
+  marginTop: 0,
+  marginBottom: 12,
+});
 
-const TitleHighlight = styled ('span') (
-  {
-    backgroundImage: 'url(' + webinyBg + ')',
-    backgroundPositionX: 'right',
-    backgroundPositionY: 'bottom',
-    backgroundRepeat: 'no-repeat',
-  }
-);
+const TitleHighlight = styled ('span') ({
+  backgroundImage: 'url(' + webinyBg + ')',
+  backgroundPositionX: 'right',
+  backgroundPositionY: 'bottom',
+  backgroundRepeat: 'no-repeat',
+});
 
 const ComparisonWrapper = styled ('div') (
   {
@@ -98,8 +94,8 @@ const ComparisonWrapper = styled ('div') (
       top: '-5%',
       left: '5%',
       width: '100%',
-      height: '100%'
-    }
+      height: '100%',
+    },
   },
   mq ({
     overflow: ['hidden', 'visible'],
@@ -111,31 +107,31 @@ const ComparisonWrapper = styled ('div') (
       transform: ['rotate(90deg)', 'none'],
       top: ['0%', '20%'],
       left: ['-10%'],
-    }
+    },
   })
 );
 
-const BoxWrapper =  styled ('div') (
+const BoxWrapper = styled ('div') (
   {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-end',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   mq ({
     height: ['auto', 680],
     width: ['100%', 'auto'],
     '&:nth-child(2)': {
       marginLeft: [30, 0, 30],
-      marginRight: [30, 0, 30]
+      marginRight: [30, 0, 30],
     },
     '&:last-child': {
-      marginBottom: [40, 0]
-    }
+      marginBottom: [40, 0],
+    },
   })
 );
 
-const Box =  styled ('div') (
+const Box = styled ('div') (
   {
     position: 'relative',
     boxSizing: 'border-box',
@@ -146,55 +142,49 @@ const Box =  styled ('div') (
     padding: 32,
     color: theme.color.black,
     '& ul': {
-      listStyle: 'none'
+      listStyle: 'none',
     },
     '& li': {
       display: 'flex',
       justifyContent: 'flex-start',
       marginBottom: 16,
-      fontSize: theme.fontSize.navMenuItem
+      fontSize: theme.fontSize.navMenuItem,
     },
   },
   mq ({
     width: ['90%', 320, 380],
-    marginBottom: [200, 0]
+    marginBottom: [200, 0],
   })
 );
 
-const ProductTitle = styled ('h3') (
-  {
-    fontSize: 30,
-    fontWeight: theme.fontWeight.bold,
-    color: theme.color.black,
-    textAlign: 'center',
-    paddingTop: 0,
-    marginTop: 0,
-    marginBottom: 20,
-  }
-);
+const ProductTitle = styled ('h3') ({
+  fontSize: 30,
+  fontWeight: theme.fontWeight.bold,
+  color: theme.color.black,
+  textAlign: 'center',
+  paddingTop: 0,
+  marginTop: 0,
+  marginBottom: 20,
+});
 
-const CheckMarkImg = styled ('img') (
-  {
-    width: 19,
-    height: 19,
-    marginRight: 16
-  }
-);
+const CheckMarkImg = styled ('img') ({
+  width: 19,
+  height: 19,
+  marginRight: 16,
+});
 
-const DotImage = styled ('img') (
-  {
-    width: 6,
-    height: 6,
-    marginRight: 17,
-    padding: '8px 6px'
-  }
-);
+const DotImage = styled ('img') ({
+  width: 6,
+  height: 6,
+  marginRight: 17,
+  padding: '8px 6px',
+});
 
 const FlyingManImage = styled ('img') (
   {
     position: 'relative',
     zIndex: 1,
-    maxWidth: 200
+    maxWidth: 200,
   },
   mq ({
     width: ['50%', 'auto'],
@@ -206,7 +196,7 @@ const PlaneImage = styled ('img') (
   {
     position: 'relative',
     zIndex: 1,
-    maxWidth: 173
+    maxWidth: 173,
   },
   mq ({
     width: ['40%', 'auto'],
@@ -218,12 +208,11 @@ const RocketImage = styled ('img') (
   {
     position: 'relative',
     zIndex: 1,
-    maxWidth: 200
+    maxWidth: 200,
   },
   mq ({
     width: ['50%', 'auto'],
     marginBottom: [0, -20],
-
   })
 );
 
@@ -240,103 +229,109 @@ class WhyChooseWebiny extends React.Component {
           </TextWrapper>
           <ComparisonWrapper>
             <BoxWrapper>
-              <FlyingManImage src={flyingMan} alt='flying man'/>
+              <FlyingManImage src={flyingMan} alt="flying man" />
               <Box>
                 <ProductTitle>SasS CMS</ProductTitle>
                 <ul>
-                <li>
-                <CheckMarkImg src={checkMark} alt="check mark"/>
-                No need to manage infrastructure
-                </li>
-                <li>
-                <DotImage src={dot} alt="point"/>
-                Unable to customise the product
-                </li>
-                <li>
-                <DotImage src={dot} alt="point"/>
-                You can only build websites
-                </li>
-                <li>
-                <DotImage src={dot} alt="point"/>
-                Usually a black-box
-                </li>
-                <li>
-                <DotImage src={dot} alt="point"/>
-                You don't own your data
-                </li>
+                  <li>
+                    <CheckMarkImg src={checkMark} alt="check mark" />
+                    No need to manage infrastructure
+                  </li>
+                  <li>
+                    <DotImage src={dot} alt="point" />
+                    Unable to customise the product
+                  </li>
+                  <li>
+                    <DotImage src={dot} alt="point" />
+                    You can only build websites
+                  </li>
+                  <li>
+                    <DotImage src={dot} alt="point" />
+                    Usually a black-box
+                  </li>
+                  <li>
+                    <DotImage src={dot} alt="point" />
+                    You don't own your data
+                  </li>
                 </ul>
               </Box>
             </BoxWrapper>
 
             <BoxWrapper>
-              <PlaneImage src={plane} alt='plane' />
+              <PlaneImage src={plane} alt="plane" />
               <Box>
                 <ProductTitle>OpenSource CMS</ProductTitle>
                 <ul>
-                <li>
-                <CheckMarkImg src={checkMark} alt="check mark"/>
-                You can customise the product
-                </li>
-                <li>
-                <CheckMarkImg src={checkMark} alt="check mark"/>
-                Build more than websites
-                </li>
-                <li>
-                <DotImage src={dot} alt="point"/>
-                Need to hire people to manage
-                infrastructure
-                </li>
-                <li>
-                <DotImage src={dot} alt="point"/>
-                High total cost of ownership
-                </li>
-                <li>
-                <DotImage src={dot} alt="point"/>
-                Need to over provision and over pay for
-                infrastructure to handle peak demands
-                </li>
-                <li>
-                <DotImage src={dot} alt="point"/>
-                Worry about flash-crowds, networking,
-                orchestration, maintenance, and more
-                </li>
+                  <li>
+                    <CheckMarkImg src={checkMark} alt="check mark" />
+                    You can customise the product
+                  </li>
+                  <li>
+                    <CheckMarkImg src={checkMark} alt="check mark" />
+                    Build more than websites
+                  </li>
+                  <li>
+                    <DotImage src={dot} alt="point" />
+                    Need to hire people to manage
+                    infrastructure
+                  </li>
+                  <li>
+                    <DotImage src={dot} alt="point" />
+                    High total cost of ownership
+                  </li>
+                  <li>
+                    <DotImage src={dot} alt="point" />
+                    Need to over provision and over pay for
+                    infrastructure to handle peak demands
+                  </li>
+                  <li>
+                    <DotImage src={dot} alt="point" />
+                    Worry about flash-crowds, networking,
+                    orchestration, maintenance, and more
+                  </li>
                 </ul>
               </Box>
             </BoxWrapper>
 
             <BoxWrapper>
-              <RocketImage src={rocket} alt='rocket' />
+              <RocketImage src={rocket} alt="rocket" />
               <Box>
                 <ProductTitle>Webiny</ProductTitle>
                 <ul>
-                <li>
-                <CheckMarkImg src={checkMark} alt="check mark"/>
-                Serverless level scale with zero
-                infrastructure maintenance cost
-                </li>
-                <li>
-                <CheckMarkImg src={checkMark} alt="check mark"/>
-                Ability to build applications, APIs,
-                microservices and websites
-                </li>
-                <li>
-                <CheckMarkImg src={checkMark} alt="check mark"/>
-                Pay per request - never pay for what
-                you don't use
-                </li>
-                <li>
-                <CheckMarkImg src={checkMark} alt="check mark"/>
-                No vendor lock-in
-                </li>
-                <li>
-                <CheckMarkImg src={checkMark} alt="check mark"/>
-                Lower TCO when compared to both SaaS
-                and OpenSource
-                </li>
-                <li>
-                <CheckMarkImg src={checkMark} alt="check mark"/>
-                Runs on the architecture of the future
-                </li>
+                  <li>
+                    <CheckMarkImg src={checkMark} alt="check mark" />
+                    Serverless level scale, handle any peak demand right out of the box
+                  </li>
+                  <li>
+                    <CheckMarkImg src={checkMark} alt="check mark" />
+                    Save 60% on infrastructure cost compared to OpenSource
+                  </li>
+                  <li>
+                    <CheckMarkImg src={checkMark} alt="check mark" />
+                    Faster time to market as you don't spend time on architecting and orchestrating infrastructure
+                  </li>
+                  <li>
+                    <CheckMarkImg src={checkMark} alt="check mark" />
+                    Build applications, APIs,
+                    microservices and websites
+                  </li>
+                  <li>
+                    <CheckMarkImg src={checkMark} alt="check mark" />
+                    Pay per request - never overpay for infrastructure again
+                  </li>
+                  <li>
+                    <CheckMarkImg src={checkMark} alt="check mark" />
+                    No vendor lock-in
+                  </li>
+                  <li>
+                    <CheckMarkImg src={checkMark} alt="check mark" />
+                    Lower TCO when compared to both SaaS
+                    and OpenSource
+                  </li>
+                  <li>
+                    <CheckMarkImg src={checkMark} alt="check mark" />
+                    Runs on the architecture of the future
+                  </li>
                 </ul>
               </Box>
             </BoxWrapper>

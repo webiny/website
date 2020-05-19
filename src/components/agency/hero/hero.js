@@ -9,7 +9,7 @@ import Button from '../../ui/button';
 import heroBg from './assets/hero-bg.svg';
 import demoIcon from './assets/demo-icon.svg';
 import heroTitleBg from './assets/hero-title-bg.svg';
-import freeArrowIcon from './assets/free.svg'
+import freeArrowIcon from './assets/free.svg';
 
 const heroContainerClass = css (
   {
@@ -24,8 +24,8 @@ const heroContainerClass = css (
     '@media (min-width: 1460px)': {
       height: 650,
       justifyContent: 'center',
-      paddingBottom: 180
-    }
+      paddingBottom: 180,
+    },
   })
 );
 
@@ -41,7 +41,7 @@ const HeroSection = styled ('section') (
     left: 0,
     zIndex: 0,
     backgroundImage: 'url(' + heroBg + ')',
-    backgroundRepeat: 'no-repeat'
+    backgroundRepeat: 'no-repeat',
   },
   mq ({
     padding: ['100px 20px 25px', '180px 0 25px'],
@@ -49,8 +49,8 @@ const HeroSection = styled ('section') (
     backgroundPosition: ['top', 'top', 'top', 'center'],
     '@media (min-width: 1460px)': {
       backgroundPosition: 'center',
-      paddingTop: 0
-    }
+      paddingTop: 0,
+    },
   })
 );
 
@@ -65,10 +65,9 @@ const TitleWrapper = styled ('div') (
     backgroundRepeat: 'no-repeat',
   },
   mq ({
-    backgroundSize: ['0', 'auto']
+    backgroundSize: ['0', 'auto'],
   })
 );
-
 
 const Title = styled ('h1') (
   {
@@ -81,34 +80,32 @@ const Title = styled ('h1') (
   },
   mq ({
     marginLeft: [0, 'auto'],
-    marginRight: [0, 'auto']
+    marginRight: [0, 'auto'],
   })
 );
 
 const SubTitle = styled ('h3') (
   {
-    maxWidth: 337,
     fontSize: 24,
     fontWeight: theme.fontWeight.regular,
     lineHeight: '34px',
     marginTop: 0,
     marginBottom: 46,
-    color: theme.color.white
+    color: theme.color.white,
+    textAlign: 'center',
   },
   mq ({
-    textAlign: ['center', 'left'],
+    maxWidth: [337, 430],
     marginLeft: [0, 'auto'],
     marginRight: [0, 'auto'],
   })
 );
 
-const ButtonWrapper = styled ('div') (
-  {
-    position: 'relative',
-    display: 'flex',
-    justifyContent: 'center',
-  }
-);
+const ButtonWrapper = styled ('div') ({
+  position: 'relative',
+  display: 'flex',
+  justifyContent: 'center',
+});
 
 const FreeDemoImage = styled ('img') (
   {
@@ -121,10 +118,10 @@ const FreeDemoImage = styled ('img') (
   })
 );
 
-const ctaButton = css(
+const ctaButton = css (
   {
     textTransform: 'uppercase',
-    padding: '10px 12px !important'
+    padding: '10px 12px !important',
   },
   mq ({
     width: ['230px !important'],
@@ -143,28 +140,28 @@ const ScheduleDemoImage = styled ('img') (
 
 class HeroComponent extends React.Component {
   render () {
-    const {handleDemoClick, ...restProps} = this.props
+    const {handleDemoClick, ...restProps} = this.props;
     return (
       <HeroSection {...restProps}>
         <ContentContainer className={heroContainerClass}>
           <TitleWrapper>
             <Title>
-            Modern Development Tools to Scale
-            Your Dev Agency Faster.
+              Modern Development Tools to Scale
+              Your Dev Agency Faster.
             </Title>
           </TitleWrapper>
           <SubTitle>
             Zero Infrastructure Management.
-            Infinite Scaling. Open Source.
+            Infinite Scale. Open Source. Self Hosted.
           </SubTitle>
           <ButtonWrapper>
-            <FreeDemoImage src={freeArrowIcon}/>
+            <FreeDemoImage src={freeArrowIcon} />
             <Button
               onClick={handleDemoClick}
               className={ctaButton}
               type="secondary"
             >
-              <ScheduleDemoImage src={demoIcon}/>
+              <ScheduleDemoImage src={demoIcon} />
               Schedule a 1:1 Demo
             </Button>
           </ButtonWrapper>

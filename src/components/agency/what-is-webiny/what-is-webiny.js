@@ -6,8 +6,8 @@ import {css} from 'emotion';
 import Button from '../../ui/button';
 import ContentContainer from '../../ui/content-container';
 
-import whatIsWebinyLogos from './assets/what-is-webiny-logo.svg'
-import whatIsWebinyBg from './assets/what-is-webiny-bg.svg'
+import whatIsWebinyLogos from './assets/what-is-webiny-logo.svg';
+import whatIsWebinyBg from './assets/what-is-webiny-bg.svg';
 
 const wrapperClass = css (
   {
@@ -23,8 +23,8 @@ const wrapperClass = css (
     backgroundPosition: ['top', 'bottom'],
     backgroundSize: ['cover', 'cover'],
     '@media (min-width: 1460px)': {
-      marginTop: -150
-    }
+      marginTop: -150,
+    },
   })
 );
 
@@ -38,7 +38,7 @@ const contentContainerClass = css (
     backgroundRepeat: 'no-repeat',
     display: 'flex',
     alignItems: 'center',
-    maxWidth: 1200
+    maxWidth: 1200,
   },
   mq ({
     width: ['100%', '100%'],
@@ -47,17 +47,15 @@ const contentContainerClass = css (
     paddingBottom: [80, 160],
     backgroundSize: [0, '100%'],
   })
-)
+);
 
-const TextWrapper = styled ('div') (
-  {
-    maxWidth: 634,
-    margin: '0 auto',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center'
-  }
-)
+const TextWrapper = styled ('div') ({
+  maxWidth: 634,
+  margin: '0 auto',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+});
 
 const Title = styled ('h2') (
   {
@@ -78,24 +76,21 @@ const Description = styled ('p') (
   {
     fontSize: theme.fontSize.h5,
     textAlign: 'center',
-    marginBottom: 42
+    marginBottom: 42,
   },
   mq ({
-    padding: ['0px 16px', '0px']
+    padding: ['0px 16px', '0px'],
   })
-)
+);
 
-const HighlightedText = styled ('span') (
-  {
-    color: theme.color.primaryDark
-  }
-)
-
+const HighlightedText = styled ('span') ({
+  color: theme.color.primaryDark,
+});
 
 const ctaButton = css (
   {
     position: 'relative',
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
   },
   mq ({
     width: ['217px !important'],
@@ -110,14 +105,24 @@ class WhatIsWebiny extends React.Component {
           <TextWrapper>
             <Title>What is Webiny?</Title>
             <Description>
-              Webiny is an
-              <HighlightedText> open-source serverless CMS </HighlightedText>.
+              Webiny is a
+              <HighlightedText>
+                {' '}serverless development framework and a CMS
+              </HighlightedText>
+              .
               It's built on top of AWS cloud and uses the latest technologies such as
               <HighlightedText> NodeJs, React and GraphQL </HighlightedText>.
-              Create super fast websites,  apps and APIs that
-              <HighlightedText> scale to millions of users</HighlightedText>,
-              right out of the box, without the need for fancy network or performance experts.
+              It's designed for building websites,  apps and APIs that
+              <HighlightedText> scale to millions of users</HighlightedText>
+              {' '}
+              and run on top of serverless infrastructure like AWS Lambda.<br />
+              With serverless you
+              {' '}
+              <HighlightedText>
+                save 60% on infrastructure cost and even more on infrastructure operation and maintenance.
+              </HighlightedText>
             </Description>
+            {/* 
             <Button
               className={ctaButton}
               link="https://github.com/webiny/webiny-js"
@@ -126,6 +131,7 @@ class WhatIsWebiny extends React.Component {
             >
               Learn more
             </Button>
+            */}
           </TextWrapper>
         </ContentContainer>
       </section>
