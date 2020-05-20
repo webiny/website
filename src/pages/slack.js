@@ -1,6 +1,5 @@
 import React from 'react';
-
-import BaseLayout from '../layouts/base';
+import Head from '../layouts/components/head';
 
 class SlackPage extends React.Component {
   componentDidMount () {
@@ -12,11 +11,12 @@ class SlackPage extends React.Component {
   }
   render () {
     return (
-      <BaseLayout
-        title="Webiny - Slack Community"
-        description="Join Webiny community on Slack."
-        fixedHeader={true}
-      />
+      <React.Fragment>
+        <Head
+          title={'Webiny - Slack Community'}
+          description={'Join Webiny community on Slack.'}
+        />
+      </React.Fragment>
     );
   }
 }
