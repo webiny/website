@@ -5,12 +5,20 @@ import {List, ListItem} from '../components/list';
 import FeatureBox from '../components/feature-box';
 import ContentContainer from '../../ui/content-container';
 import mq from '../../utils/breakpoints';
+import YTVideo from '../components/yt-video';
+// headless-cms-demo png
+import PageBuilderDemoImg from './assets/page-builder-demo.png';
+import {SubTitle} from '../components/typography';
+import {Grid, Cell} from '../../ui/layout/layout';
+import VideoBox from '../../ui/layout/video-box';
 import QuickStart from '../../ui/layout/footer';
 import AppList from '../components/app-list';
 import SlsDesign from '../components/serverless-design.js';
-
 import HeroBg from './assets/hero-bg.svg';
 import ComingSoon from './coming-soon';
+import  {FirstBlock, SecondBlock} from './stack-and-blocks';
+import WhyChooseWebiny from '../../agency/why-choose-webiny/why-choose-webiny';
+import ServerlessBenefits from '../../homepage/serverless-benefits/serverless-benefits';
 
 const featureContainer = css (
   {
@@ -69,6 +77,138 @@ export default ({children, ...props}) => (
         Control roles & permissions ensuring your content is safe
       </FeatureBox>
     </ContentContainer>
+
+    <YTVideo img={PageBuilderDemoImg} id={'OQOmJZxT5dg'} />
+
+    <ContentContainer>
+      <SubTitle>Features</SubTitle>
+      <Grid left>
+        <Cell>
+          <VideoBox />
+        </Cell>
+        <Cell title="Content Modelling">
+          <p>
+            Powerful modelling features allow you to model the content and define relationships using a simple drag&drop editor.
+          </p>
+          <p>
+            At the same time, you are also building the UI for the input forms. Ensuring your editors have a pleasant user-experience while
+            working with your content.
+          </p>
+        </Cell>
+      </Grid>
+      <Grid right>
+        <Cell title="Content Localisation">
+          <p>
+            The localisation support is built into the core of Webiny Headless CMS. All your content is translateable and distributable in several languages.
+          </p>
+          <p>
+            Each editor chooses the languages they are working on. They can also instantly see the values of a specific field on all other languages.
+          </p>
+        </Cell>
+        <Cell>
+          <VideoBox />
+        </Cell>
+      </Grid>
+      <Grid left>
+        <Cell>
+          <VideoBox />
+        </Cell>
+        <Cell title="GraphQL API + Playground">
+          <p>
+            Both our management and our distribution API are powered by GraphQL. On top of that, Webiny exposes a GraphQL Playground you can use to
+            easily test and debug your API calls.
+          </p>
+        </Cell>
+      </Grid>
+    </ContentContainer>
+
+    <FirstBlock />
+
+    <ContentContainer>
+      <Grid right>
+        <Cell title="Asset Management">
+          <p>
+            Webiny File Manager is integrated directly into the Headless CMS giving you a whole asset management solution with integrated
+            tagging, searching and image editing features.
+          </p>
+        </Cell>
+        <Cell>
+          <VideoBox />
+        </Cell>
+      </Grid>
+      <Grid left>
+        <Cell>
+          <VideoBox />
+        </Cell>
+        <Cell title="Environments">
+          <p>
+            Environments are a powerful feature in Webiny Headless CMS. Creating a new environment copies all the data and all the models from the
+            current environment. This allows you to make changes and prepare new content in the background, while still serving production content
+            without interruption.
+          </p>
+        </Cell>
+      </Grid>
+      <Grid right>
+        <Cell title="Aliases">
+          <p>
+            Aliases go in hand with environments. Each environment is linked to an alias, which defines the GraphQL endpoint and which content and model
+            are going to be served.
+          </p>
+          <p>
+            An alias can be unlinked from one environment and linked to another environment. This allows instant switching between different version of your
+            content, as well as instant rollbacks.
+          </p>
+        </Cell>
+        <Cell>
+          <VideoBox />
+        </Cell>
+      </Grid>
+    </ContentContainer>
+
+    <SecondBlock />
+
+    <ContentContainer>
+      <Grid right>
+        <Cell>
+          <VideoBox />
+        </Cell>
+        <Cell title="Roles & Permissions">
+          <p>
+            The authentications and permissions are part of the Webiny core package and they also pass on to the Headless CMS.
+            Create users, user groups, roles and permissions to control who and how they access the system.
+          </p>
+          <p>
+            In addition to roles and permissions, each user can control their own set of personal access tokens.
+          </p>
+        </Cell>
+      </Grid>
+      <Grid left>
+        <Cell title="Device & Frontend Agnostic">
+          <p>
+            Webiny Headless CMS integrates with any web framework and even goes beyond that. Anything from building a website on top of Gatsby.js or using
+            Swift and displaying the content on an Apple Watch is supported.
+          </p>
+        </Cell>
+        <Cell>
+          <VideoBox />
+        </Cell>
+      </Grid>
+      <Grid right>
+        <Cell>
+          <VideoBox />
+        </Cell>
+        <Cell title="Content Model Menus">
+          <p>
+            Webiny features a menu component that is extended via the content models from the Headless CMS. This allows you to build great
+            backend experience for your team, making it easy and intuitive for them to find exactly the content they are looking for.
+          </p>
+        </Cell>
+      </Grid>
+    </ContentContainer>
+
+    <WhyChooseWebiny />
+
+    <ServerlessBenefits />
 
     <AppList />
     <QuickStart />
