@@ -19,7 +19,7 @@ import leftArrowIcon from './assets/left-arrow.svg';
 import './assets/slider.css';
 import fileManager from './assets/file-manager-video.gif';
 import formBuilder from './assets/form-builder-video.gif';
-import headlessCms from './assets/headless-cms-coming-soon.png';
+import headlessCms from './assets/headless-cms.gif';
 import pageBuilder from './assets/page-builder-video.gif';
 
 const wrapperClass = css (
@@ -429,6 +429,21 @@ class ReadyMadeApps extends React.Component {
                 ]}
               >
                 <div className={sliderContentClass}>
+                  <AppTitle>Headless CMS</AppTitle>
+                  <AppDescription>
+                    GraphQL based headless CMS with powerful content modeling features.
+                  </AppDescription>
+                  <Button
+                    className={appCtaButtonClass}
+                    link="/serverless-app/headless-cms"
+                    type="default"
+                    target="_blank"
+                  >
+                    Learn more
+                    <ArrowRight src={purpleArrowRight} />
+                  </Button>
+                </div>
+                <div className={sliderContentClass}>
                   <AppTitle>Page Builder</AppTitle>
                   <AppDescription>
                     Build stunning landing pages with an easy to use drag&drop editor
@@ -473,21 +488,6 @@ class ReadyMadeApps extends React.Component {
                     <ArrowRight src={purpleArrowRight} />
                   </Button>
                 </div>
-                <div className={sliderContentClass}>
-                  <AppTitle>Headless CMS</AppTitle>
-                  <AppDescription>
-                    GraphQL based headless CMS with powerful content modeling features.
-                  </AppDescription>
-                  <Button
-                    className={appCtaButtonClass}
-                    link="/serverless-app/headless-cms"
-                    type="default"
-                    target="_blank"
-                  >
-                    Learn more
-                    <ArrowRight src={purpleArrowRight} />
-                  </Button>
-                </div>
               </Slider>
             </LeftSide>
             <RightSide>
@@ -505,6 +505,9 @@ class ReadyMadeApps extends React.Component {
                 nextArrow={<NextArrow />}
               >
                 <div>
+                  <img src={headlessCms} alt="Webiny Serverless Headless CMS" />
+                </div>
+                <div>
                   <img src={pageBuilder} alt="Webiny Serverless Page Builder" />
                 </div>
                 <div>
@@ -512,9 +515,6 @@ class ReadyMadeApps extends React.Component {
                 </div>
                 <div>
                   <img src={fileManager} alt="Webiny Serverless File Manager" />
-                </div>
-                <div>
-                  <img src={headlessCms} alt="Webiny Serverless Headless CMS" />
                 </div>
               </Slider>
             </RightSide>
