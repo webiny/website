@@ -21,6 +21,11 @@ import WhyChooseWebiny from '../../agency/why-choose-webiny/why-choose-webiny';
 import ServerlessBenefits
   from '../../homepage/serverless-benefits/serverless-benefits';
 
+import ContentModelingVideo from './assets/content-modeling.mp4';
+import GraphQLPlaygroundVideo from './assets/graphql-playground.mp4';
+import AssetsVideo from './assets/asset-management.mp4';
+import EnvironmentsVideo from './assets/environments.mp4';
+
 const featureContainer = css (
   {
     display: 'flex',
@@ -85,9 +90,9 @@ export default ({children, ...props}) => (
       <SubTitle>Features</SubTitle>
       <Grid left>
         <Cell>
-          <VideoBox />
+          <VideoBox file={ContentModelingVideo} />
         </Cell>
-        <Cell title="Content Modelling">
+        <Cell title="Content Modeling">
           <p>
             Powerful modelling features allow you to model the content and define relationships using a simple drag&drop editor.
           </p>
@@ -112,7 +117,7 @@ export default ({children, ...props}) => (
       </Grid>
       <Grid left>
         <Cell>
-          <VideoBox />
+          <VideoBox file={GraphQLPlaygroundVideo} />
         </Cell>
         <Cell title="GraphQL API + Playground">
           <p>
@@ -134,12 +139,12 @@ export default ({children, ...props}) => (
           </p>
         </Cell>
         <Cell>
-          <VideoBox />
+          <VideoBox file={AssetsVideo} />
         </Cell>
       </Grid>
       <Grid left>
         <Cell>
-          <VideoBox />
+          <VideoBox file={EnvironmentsVideo} />
         </Cell>
         <Cell title="Environments">
           <p>
