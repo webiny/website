@@ -9,7 +9,7 @@ import Button from '../../ui/button';
 import background from './assets/app-list-bg.svg';
 import fileManager from './assets/file-manager.jpg';
 import formBuilder from './assets/form-builder.jpg';
-import headlessCms from './assets/headless-cms.png';
+import headlessCms from './assets/headless-cms-cover-graphql.png';
 import pageBuilder from './assets/webiny-visual-page-builder.png';
 
 const wrapperClass = css (
