@@ -16,9 +16,10 @@ import AppList from '../components/app-list';
 import SlsDesign from '../components/serverless-design.js';
 import HeroBg from './assets/hero-bg.svg';
 import ComingSoon from './coming-soon';
-import  {FirstBlock, SecondBlock} from './stack-and-blocks';
+import {FirstBlock, SecondBlock} from './stack-and-blocks';
 import WhyChooseWebiny from '../../agency/why-choose-webiny/why-choose-webiny';
-import ServerlessBenefits from '../../homepage/serverless-benefits/serverless-benefits';
+import ServerlessBenefits
+  from '../../homepage/serverless-benefits/serverless-benefits';
 
 const featureContainer = css (
   {
@@ -43,7 +44,7 @@ export default ({children, ...props}) => (
     >
       <List>
         <ListItem title={'Serverless & Self-hosted'}>
-          - Quick and easy deployment with Serverless Framework.
+          - Quick and easy deployment using Webiny CLI
         </ListItem>
         <ListItem title={'GraphQL APIs'}>
           - There are 2 APIs, one for content management and one for content delivery.
@@ -60,15 +61,15 @@ export default ({children, ...props}) => (
         A true headless CMS, that's also serverless
       </FeatureBox>
       <FeatureBox>
-        Multi-language support out-of-the-box
+        Save 60-80% on your cloud hosting bill
       </FeatureBox>
       <FeatureBox>
-        Create relationships between content types
+        Stop paying for stuff you don't use
       </FeatureBox>
     </ContentContainer>
     <ContentContainer className={featureContainer}>
       <FeatureBox>
-        Includes content modeling and content delivery API
+        Multi-language support out-of-the-box
       </FeatureBox>
       <FeatureBox>
         Manage your files and media assets
