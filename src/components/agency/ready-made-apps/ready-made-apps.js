@@ -7,14 +7,14 @@ import {css} from 'emotion';
 import Button from '../../ui/button';
 import ContentContainer from '../../ui/content-container';
 
-import purpleArrowRight from './assets/purple-arrow-right.svg'
-import readyMadeAppsBg from './assets/ready-made-apps-bg.svg'
-import readyMadeAppsTitleBg from './assets/ready-made-apps-title-bg.svg'
+import purpleArrowRight from './assets/purple-arrow-right.svg';
+import readyMadeAppsBg from './assets/ready-made-apps-bg.svg';
+import readyMadeAppsTitleBg from './assets/ready-made-apps-title-bg.svg';
 import demoIcon from './assets/demo-icon.svg';
-import mackBookAirFrame from './assets/macbook-air.svg'
-import pageBuilderImage from './assets/page-builder.png'
-import rightArrowIcon from './assets/right-arrow.svg'
-import leftArrowIcon from './assets/left-arrow.svg'
+import mackBookAirFrame from './assets/macbook-air.svg';
+import pageBuilderImage from './assets/page-builder.png';
+import rightArrowIcon from './assets/right-arrow.svg';
+import leftArrowIcon from './assets/left-arrow.svg';
 
 import './assets/slider.css';
 import fileManager from './assets/file-manager-video.gif';
@@ -23,11 +23,10 @@ import headlessCms from './assets/headless-cms-coming-soon.png';
 import pageBuilder from './assets/page-builder-video.gif';
 
 const wrapperClass = css (
-  {
-  },
+  {},
   mq ({
     paddingTop: [80, 140],
-    paddingBottom: [40, 60]
+    paddingBottom: [40, 60],
   })
 );
 
@@ -43,7 +42,7 @@ const wrapperWithBackgroundImageClass = css (
   mq ({
     backgroundSize: ['auto', 'cover'],
     paddingTop: [40, 0],
-    paddingBottom: [40, 0]
+    paddingBottom: [40, 0],
   })
 );
 
@@ -52,44 +51,38 @@ const contentContainerClass = css (
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    maxWidth: 1200
+    maxWidth: 1200,
   },
   mq ({
     width: ['100%', '100%'],
-    height: ['100%']
+    height: ['100%'],
   })
-)
-
-const TextWrapper = styled ('div') (
-  {
-    maxWidth: 768,
-    margin: '0 auto',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center'
-  }
-)
-
-const Title = styled ('h2') (
-  {
-    fontSize: theme.fontSize.h2,
-    fontWeight: theme.fontWeight.bold,
-    color: theme.color.black,
-    textAlign: 'center',
-    paddingTop: 0,
-    marginTop: 0,
-    marginBottom: 28,
-  }
 );
 
-const HighlightedBg = styled ('span') (
-  {
-    backgroundImage: 'url(' + readyMadeAppsTitleBg + ')',
-    backgroundPositionX: 'right',
-    backgroundPositionY: 'bottom',
-    backgroundRepeat: 'no-repeat',
-  }
-)
+const TextWrapper = styled ('div') ({
+  maxWidth: 768,
+  margin: '0 auto',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+});
+
+const Title = styled ('h2') ({
+  fontSize: theme.fontSize.h2,
+  fontWeight: theme.fontWeight.bold,
+  color: theme.color.black,
+  textAlign: 'center',
+  paddingTop: 0,
+  marginTop: 0,
+  marginBottom: 28,
+});
+
+const HighlightedBg = styled ('span') ({
+  backgroundImage: 'url(' + readyMadeAppsTitleBg + ')',
+  backgroundPositionX: 'right',
+  backgroundPositionY: 'bottom',
+  backgroundRepeat: 'no-repeat',
+});
 
 const appCtaButtonClass = css (
   {
@@ -104,32 +97,29 @@ const appCtaButtonClass = css (
     '&:hover': {
       boxShadow: 'none !important',
       '& img': {
-        transform: 'translateX(5px)'
-      }
-    }
+        transform: 'translateX(5px)',
+      },
+    },
   },
   mq ({
     width: ['150px !important'],
   })
 );
 
+const ArrowRight = styled ('img') ({
+  position: 'relative',
+  marginLeft: 5,
+});
 
-const ArrowRight = styled ('img') (
-  {
-    position: 'relative',
-    marginLeft: 5
-  }
-)
-
-const ctaButton = css(
+const ctaButton = css (
   {
     textTransform: 'uppercase',
-    padding: '10px 12px !important'
+    padding: '10px 12px !important',
   },
   mq ({
     width: ['230px !important'],
   })
-)
+);
 
 const DemoIcon = styled ('img') (
   {
@@ -145,26 +135,26 @@ const AppsContainer = styled ('div') (
   {
     display: 'flex',
     maxWidth: 1200,
-    margin: '0 auto'
+    margin: '0 auto',
   },
   mq ({
     width: ['100%', '100%'],
     flexDirection: ['column', 'row'],
     paddingTop: [40, 140],
     paddingBottom: [40, 250],
-    paddingLeft: [0, 24]
+    paddingLeft: [0, 24],
   })
 );
 
 const sliderContentClass = css (
   {
     display: 'flex !important',
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
   mq ({
-    alignItems: ['center', 'flex-start']
+    alignItems: ['center', 'flex-start'],
   })
-)
+);
 
 const LeftSide = styled ('div') (
   {
@@ -182,7 +172,7 @@ const RightSide = styled ('div') (
   },
   mq ({
     width: ['100%', '70%'],
-    marginTop: [0, -120]
+    marginTop: [0, -120],
   })
 );
 
@@ -218,13 +208,12 @@ const DeviceFrame = styled ('img') (
   {
     position: 'absolute',
     top: 0,
-    left: 0
+    left: 0,
   },
   mq ({
-    width: ['100%']
+    width: ['100%'],
   })
 );
-
 
 const leftArrowClass = css (
   {
@@ -234,8 +223,8 @@ const leftArrowClass = css (
     backgroundColor: 'transparent !important',
     zIndex: 5,
     '&:hover': {
-      boxShadow: 'none !important'
-    }
+      boxShadow: 'none !important',
+    },
   },
   mq ({
     display: ['none !important', 'block !important'],
@@ -243,7 +232,7 @@ const leftArrowClass = css (
     left: [15, '-8%', '-15%'],
     '@media (min-width: 1366px)': {
       left: '-15%',
-    }
+    },
   })
 );
 
@@ -255,8 +244,8 @@ const rightArrowClass = css (
     backgroundColor: 'transparent !important',
     zIndex: 5,
     '&:hover': {
-      boxShadow: 'none !important'
-    }
+      boxShadow: 'none !important',
+    },
   },
   mq ({
     display: ['none !important', 'block !important'],
@@ -264,22 +253,17 @@ const rightArrowClass = css (
     right: [15, '-8%', '-15%'],
     '@media (min-width: 1366px)': {
       right: '-15%',
-    }
+    },
   })
 );
 
-const LeftArrowImage = styled ('img') (
-  {
-    width: '100%'
-  }
-);
+const LeftArrowImage = styled ('img') ({
+  width: '100%',
+});
 
-const RightArrowImage = styled ('img') (
-  {
-    width: '100%'
-  }
-);
-
+const RightArrowImage = styled ('img') ({
+  width: '100%',
+});
 
 const webinyAppsList = css (
   {
@@ -287,10 +271,9 @@ const webinyAppsList = css (
     overflowX: 'hidden',
     '.slick-list': {
       position: 'relative',
-    }
+    },
   },
-  mq ({
-  })
+  mq ({})
 );
 
 const webinyAppsImage = css (
@@ -345,22 +328,22 @@ const webinyAppsImage = css (
         '@media (min-width: 768px)': {
           width: '100%',
           marginLeft: '5%',
-          marginTop: '3%'
+          marginTop: '3%',
         },
         '@media (min-width: 1024px)': {
           width: '90%',
           marginLeft: '10%',
-          marginTop: '3%'
+          marginTop: '3%',
         },
         '@media (min-width: 1336px)': {
           width: 560,
-          marginLeft: 0
-        }
+          marginLeft: 0,
+        },
       },
     },
     '.slick-dots': {
-      position: ['absolute','relative'],
-      bottom: ['-10%','-25%']
+      position: ['absolute', 'relative'],
+      bottom: ['-10%', '-25%'],
     },
   })
 );
@@ -382,159 +365,161 @@ class ReadyMadeApps extends React.Component {
   }
 
   render () {
-    const {handleDemoClick, ...restProps} = this.props
+    const {handleDemoClick, ...restProps} = this.props;
     return (
       <React.Fragment>
         <section {...restProps} className={wrapperClass}>
-        <ContentContainer className={contentContainerClass}>
-          <TextWrapper>
-          <Title>Webiny comes with <HighlightedBg> several FREE </HighlightedBg>
-          ready-made apps you can use today:</Title>
-          <Button
-            onClick={handleDemoClick}
-            className={ctaButton}
-            type="secondary"
-          >
-          <DemoIcon src={demoIcon}/>
-          Schedule a 1:1 Demo
-          </Button>
-          </TextWrapper>
-        </ContentContainer>
-      </section>
-      <section {...restProps} className={wrapperWithBackgroundImageClass}>
-        <AppsContainer>
-         <LeftSide>
-          <Slider
-            asNavFor={this.state.contentNav}
-            ref={slider => (this.slider2 = slider)}
-            slidesToShow={1}
-            centerMode={false}
-            centerPadding={25}
-            swipeToSlide={true}
-            focusOnSelect={true}
-            className={webinyAppsList}
-            responsive={[
-              {
-              breakpoint: 1024,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                centerPadding: 0,
-                centerMode: true,
-              },
-            },
-            {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                centerPadding: 0,
-                centerMode: true,
-                },
-              },
-            {
-              breakpoint: 480,
-                settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                centerPadding: 0,
-                centerMode: true,
-                },
-              },
-            ]}
-            >
-            <div className={sliderContentClass}>
-              <AppTitle>Page Builder</AppTitle>
-              <AppDescription>
-                Build Stunning Landing Pages With an Easy to Use Drag&Drop Editor
-              </AppDescription>
+          <ContentContainer className={contentContainerClass}>
+            <TextWrapper>
+              <Title>
+                Webiny comes with <HighlightedBg> several FREE </HighlightedBg>
+                ready-made apps you can use today:
+              </Title>
               <Button
-              className={appCtaButtonClass}
-              link="/serverless-app/page-builder"
-              type="default"
-              target="_blank"
+                onClick={handleDemoClick}
+                className={ctaButton}
+                type="secondary"
               >
-              Learn more
-              <ArrowRight src={purpleArrowRight}/>
+                <DemoIcon src={demoIcon} />
+                Schedule a 1:1 Demo
               </Button>
-            </div>
-            <div className={sliderContentClass}>
-              <AppTitle>Form Builder</AppTitle>
-              <AppDescription>
-              Create forms using a drag&drop interface and track how they convert.
-              </AppDescription>
-              <Button
-              className={appCtaButtonClass}
-              link="/serverless-app/form-builder"
-              type="default"
-              target="_blank"
+            </TextWrapper>
+          </ContentContainer>
+        </section>
+        <section {...restProps} className={wrapperWithBackgroundImageClass}>
+          <AppsContainer>
+            <LeftSide>
+              <Slider
+                asNavFor={this.state.contentNav}
+                ref={slider => (this.slider2 = slider)}
+                slidesToShow={1}
+                centerMode={false}
+                centerPadding={25}
+                swipeToSlide={true}
+                focusOnSelect={true}
+                className={webinyAppsList}
+                responsive={[
+                  {
+                    breakpoint: 1024,
+                    settings: {
+                      slidesToShow: 1,
+                      slidesToScroll: 1,
+                      centerPadding: 0,
+                      centerMode: true,
+                    },
+                  },
+                  {
+                    breakpoint: 600,
+                    settings: {
+                      slidesToShow: 1,
+                      slidesToScroll: 1,
+                      centerPadding: 0,
+                      centerMode: true,
+                    },
+                  },
+                  {
+                    breakpoint: 480,
+                    settings: {
+                      slidesToShow: 1,
+                      slidesToScroll: 1,
+                      centerPadding: 0,
+                      centerMode: true,
+                    },
+                  },
+                ]}
               >
-              Learn more
-              <ArrowRight src={purpleArrowRight}/>
-              </Button>
-            </div>
-            <div className={sliderContentClass}>
-              <AppTitle>File Manager</AppTitle>
-              <AppDescription>
-              Upload, categorize, search and edit your files.
-              </AppDescription>
-              <Button
-              className={appCtaButtonClass}
-              link="/serverless-app/file-manager"
-              type="default"
-              target="_blank"
+                <div className={sliderContentClass}>
+                  <AppTitle>Page Builder</AppTitle>
+                  <AppDescription>
+                    Build stunning landing pages with an easy to use drag&drop editor
+                  </AppDescription>
+                  <Button
+                    className={appCtaButtonClass}
+                    link="/serverless-app/page-builder"
+                    type="default"
+                    target="_blank"
+                  >
+                    Learn more
+                    <ArrowRight src={purpleArrowRight} />
+                  </Button>
+                </div>
+                <div className={sliderContentClass}>
+                  <AppTitle>Form Builder</AppTitle>
+                  <AppDescription>
+                    Create forms using a drag&drop interface and track how they convert.
+                  </AppDescription>
+                  <Button
+                    className={appCtaButtonClass}
+                    link="/serverless-app/form-builder"
+                    type="default"
+                    target="_blank"
+                  >
+                    Learn more
+                    <ArrowRight src={purpleArrowRight} />
+                  </Button>
+                </div>
+                <div className={sliderContentClass}>
+                  <AppTitle>File Manager</AppTitle>
+                  <AppDescription>
+                    Upload, categorize, search and edit your files.
+                  </AppDescription>
+                  <Button
+                    className={appCtaButtonClass}
+                    link="/serverless-app/file-manager"
+                    type="default"
+                    target="_blank"
+                  >
+                    Learn more
+                    <ArrowRight src={purpleArrowRight} />
+                  </Button>
+                </div>
+                <div className={sliderContentClass}>
+                  <AppTitle>Headless CMS</AppTitle>
+                  <AppDescription>
+                    GraphQL based headless CMS with powerful content modeling features.
+                  </AppDescription>
+                  <Button
+                    className={appCtaButtonClass}
+                    link="/serverless-app/headless-cms"
+                    type="default"
+                    target="_blank"
+                  >
+                    Learn more
+                    <ArrowRight src={purpleArrowRight} />
+                  </Button>
+                </div>
+              </Slider>
+            </LeftSide>
+            <RightSide>
+              <DeviceFrame src={mackBookAirFrame} alt="macbook" />
+              <Slider
+                asNavFor={this.state.imageNav}
+                ref={slider => (this.slider1 = slider)}
+                dots={true}
+                className={webinyAppsImage}
+                slidesToShow={1}
+                centerMode={true}
+                centerPadding={25}
+                fade={true}
+                prevArrow={<PrevArrow />}
+                nextArrow={<NextArrow />}
               >
-              Learn more
-              <ArrowRight src={purpleArrowRight}/>
-              </Button>
-            </div>
-            <div className={sliderContentClass}>
-              <AppTitle>Headless CMS</AppTitle>
-              <AppDescription>
-                GraphQL based headless CMS with powerful content modeling features.
-              </AppDescription>
-              <Button
-              className={appCtaButtonClass}
-              link="/serverless-app/headless-cms"
-              type="default"
-              target="_blank"
-              >
-              Learn more
-              <ArrowRight src={purpleArrowRight}/>
-              </Button>
-            </div>
-          </Slider>
-        </LeftSide>
-          <RightSide>
-            <DeviceFrame src={mackBookAirFrame} alt='macbook'/>
-            <Slider
-              asNavFor={this.state.imageNav}
-              ref={slider => (this.slider1 = slider)}
-              dots={true}
-              className={webinyAppsImage}
-              slidesToShow={1}
-              centerMode={true}
-              centerPadding={25}
-              fade={true}
-              prevArrow={<PrevArrow />}
-              nextArrow={<NextArrow />}
-            >
-              <div>
-                <img src={pageBuilder} alt="Webiny Serverless Page Builder" />
-              </div>
-              <div>
-                <img src={formBuilder} alt="Webiny Serverless Form Builder" />
-              </div>
-              <div>
-                <img src={fileManager} alt="Webiny Serverless File Manager" />
-              </div>
-              <div>
-                <img src={headlessCms} alt="Webiny Serverless Headless CMS" />
-              </div>
-          </Slider>
-          </RightSide>
-        </AppsContainer>
-      </section>
+                <div>
+                  <img src={pageBuilder} alt="Webiny Serverless Page Builder" />
+                </div>
+                <div>
+                  <img src={formBuilder} alt="Webiny Serverless Form Builder" />
+                </div>
+                <div>
+                  <img src={fileManager} alt="Webiny Serverless File Manager" />
+                </div>
+                <div>
+                  <img src={headlessCms} alt="Webiny Serverless Headless CMS" />
+                </div>
+              </Slider>
+            </RightSide>
+          </AppsContainer>
+        </section>
       </React.Fragment>
     );
   }
@@ -542,21 +527,30 @@ class ReadyMadeApps extends React.Component {
 
 export default ReadyMadeApps;
 
-
-function PrevArrow(props) {
-  const { className, style, onClick } = props;
+function PrevArrow (props) {
+  const {className, style, onClick} = props;
   return (
-    <Button type="default" className={leftArrowClass} style={style} onClick={onClick}>
-       <LeftArrowImage src={leftArrowIcon} alt='arrow to left'/>
+    <Button
+      type="default"
+      className={leftArrowClass}
+      style={style}
+      onClick={onClick}
+    >
+      <LeftArrowImage src={leftArrowIcon} alt="arrow to left" />
     </Button>
   );
 }
 
-function NextArrow(props) {
-  const { className, style, onClick } = props;
+function NextArrow (props) {
+  const {className, style, onClick} = props;
   return (
-    <Button type="default" className={rightArrowClass} style={style}  onClick={onClick}>
-       <RightArrowImage src={rightArrowIcon} alt='arrow to right'/>
+    <Button
+      type="default"
+      className={rightArrowClass}
+      style={style}
+      onClick={onClick}
+    >
+      <RightArrowImage src={rightArrowIcon} alt="arrow to right" />
     </Button>
   );
 }
