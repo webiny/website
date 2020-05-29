@@ -231,7 +231,7 @@ class WhyChooseWebiny extends React.Component {
             <BoxWrapper>
               <FlyingManImage src={flyingMan} alt="flying man" />
               <Box>
-                <ProductTitle>SasS CMS</ProductTitle>
+                <ProductTitle>SaaS CMS</ProductTitle>
                 <ul>
                   <li>
                     <CheckMarkImg src={checkMark} alt="check mark" />
