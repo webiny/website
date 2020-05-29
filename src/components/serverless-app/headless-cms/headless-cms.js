@@ -25,6 +25,7 @@ import ContentModelingVideo from './assets/content-modeling.mp4';
 import GraphQLPlaygroundVideo from './assets/graphql-playground.mp4';
 import AssetsVideo from './assets/asset-management.mp4';
 import EnvironmentsVideo from './assets/environments.mp4';
+import HeadlessCMSCover from './assets/headless-cms-cover-graphql.png';
 
 const featureContainer = css (
   {
@@ -45,7 +46,13 @@ export default ({children, ...props}) => (
       title={
         'GraphQL Based Headless CMS With Powerful Content Modeling Features'
       }
-      media={<ComingSoon />}
+      media={
+        <img
+          src={HeadlessCMSCover}
+          alt="Webiny Serverless Headless CMS - OpenSource"
+          style={{border: 'none'}}
+        />
+      }
     >
       <List>
         <ListItem title={'Serverless & Self-hosted'}>
