@@ -254,13 +254,13 @@ class HeroComponent extends React.Component {
                 <Bold>Serverless</Bold>
               </ListItem>
               <ListItem>
-                <Bold>Open Source</Bold>
+                <Bold>Open-Source</Bold>
               </ListItem>
               <ListItem>
                 <Bold>GraphQL API</Bold>
               </ListItem>
               <ListItem>
-                <Bold>Self-hosted</Bold>
+                <Bold>Self-Hosted</Bold>
               </ListItem>
             </List>
 
