@@ -7,7 +7,7 @@ import ContentContainer from '../../ui/content-container';
 import mq from '../../utils/breakpoints';
 import YTVideo from '../components/yt-video';
 // headless-cms-demo png
-import PageBuilderDemoImg from './assets/page-builder-demo.png';
+import HeadlessCMSDemoImg from './assets/youtube-headless-cms.png';
 import {SubTitle} from '../components/typography';
 import {Grid, Cell} from '../../ui/layout/layout';
 import VideoBox from '../../ui/layout/video-box';
@@ -92,7 +92,7 @@ export default ({children, ...props}) => (
       </FeatureBox>
     </ContentContainer>
 
-    <YTVideo img={PageBuilderDemoImg} id={'OQOmJZxT5dg'} />
+    <YTVideo img={HeadlessCMSDemoImg} id={'4jrv9ymlQuM'} />
 
     <ContentContainer>
       <SubTitle>Features</SubTitle>
