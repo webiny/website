@@ -46,7 +46,7 @@ const ServerlessReasons = () => (
           <Cell>
             <img src={zeroServers} alt="Zero servers to manage" />
           </Cell>
-          <Cell title="Zero servers to manage">
+          <Cell title="Forget about server management">
             <p>
               Servers are still there, but they are abstracted away and managed by your cloud provider. They are not your problem anymore, the same goes for load balancers and autoscaling.
             </p>
@@ -56,7 +56,7 @@ const ServerlessReasons = () => (
           <Cell>
             <img src={usagePay} alt="Pay for what you use" />
           </Cell>
-          <Cell title="Pay for what you use">
+          <Cell title="Stop paying for stuff you don't use">
             <p>
               Pay for each function execution. This means you don’t need to over-provision and thus over-pay for infrastructure. Especially for those periods of peak demand.
             </p>
