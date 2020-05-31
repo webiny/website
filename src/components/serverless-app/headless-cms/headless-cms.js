@@ -26,6 +26,7 @@ import GraphQLPlaygroundVideo from './assets/graphql-playground.mp4';
 import AssetsVideo from './assets/asset-management.mp4';
 import EnvironmentsVideo from './assets/environments.mp4';
 import HeadlessCMSCover from './assets/headless-cms-cover-graphql.png';
+import DeviceAgnostic from './assets/device-agnostic-img.svg';
 
 const featureContainer = css (
   {
@@ -196,10 +197,10 @@ export default ({children, ...props}) => (
         </Cell>
       </Grid>
       <Grid left>
-        <Cell title="Device & Frontend Agnostic">
+        <Cell title="Content Model Menus">
           <p>
-            Webiny Headless CMS integrates with any web framework and even goes beyond that. Anything from building a website on top of Gatsby.js or using
-            Swift and displaying the content on an Apple Watch is supported.
+            Webiny features a menu component that is extended via the content models from the Headless CMS. This allows you to build great
+            backend experience for your team, making it easy and intuitive for them to find exactly the content they are looking for.
           </p>
         </Cell>
         <Cell>
@@ -208,12 +209,12 @@ export default ({children, ...props}) => (
       </Grid>
       <Grid right>
         <Cell>
-          <VideoBox />
+          <img src={DeviceAgnostic} alt="Device & Frontend Agnostic" />
         </Cell>
-        <Cell title="Content Model Menus">
+        <Cell title="Device & Frontend Agnostic">
           <p>
-            Webiny features a menu component that is extended via the content models from the Headless CMS. This allows you to build great
-            backend experience for your team, making it easy and intuitive for them to find exactly the content they are looking for.
+            Webiny Headless CMS integrates with any web framework and even goes beyond that. Anything from building a website on top of Gatsby.js or using
+            Swift and displaying the content on an Apple Watch is supported.
           </p>
         </Cell>
       </Grid>
