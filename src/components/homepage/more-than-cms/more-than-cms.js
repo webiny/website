@@ -69,7 +69,7 @@ class MoreThanCms extends React.Component {
   render () {
     return (
       <section {...this.props} className={wrapperClass}>
-        <SubTitle>More Than “Just” a CMS</SubTitle>
+        <SubTitle>Made for Developers</SubTitle>
         <SubTitleText>
           Build Websites, Apps and APIs With Webiny<br />
           As a Developer You Will Benefit From Several Features
