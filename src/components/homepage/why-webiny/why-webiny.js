@@ -112,7 +112,7 @@ class WhyWebiny extends React.Component {
   render () {
     return (
       <section {...this.props} className={wrapperClass}>
-        <SubTitle>Why Webiny CMS?</SubTitle>
+        <SubTitle>Why Webiny?</SubTitle>
 
         <ContentContainer>
           <Grid>

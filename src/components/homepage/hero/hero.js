@@ -164,7 +164,7 @@ const TerminalBg = styled ('div') (
     backgroundSize: '100%',
     backgroundPosition: '0px 0px',
     backgroundRepeat: 'no-repeat',
-    top: 75,
+    top: 90,
   },
   mq ({
     position: ['relative', 'absolute'],
@@ -188,7 +188,7 @@ const TerminalWrapper = styled ('div') (
     width: ['100%', 450],
     left: ['50%', 150],
     transform: ['translate(-50%, -45%)', 'translateY(-45%)'],
-    top: [200, '50%'],
+    top: [200, '55%'],
   })
 );
 
@@ -215,29 +215,26 @@ class HeroComponent extends React.Component {
       <Hero {...this.props}>
         <TerminalWrapper>
           <Code>
-            <span className="comment">#1: Install Webiny CLI</span>
+            <span className="comment">#1: Install Webiny</span>
             <br />
-            $ yarn global add @webiny/cli<br />
-            <br />
-            <span className="comment">#2: Create a project</span>
-            <br />
-            $ webiny create my-project-name<br />
+            $ npx create-webiny-project new-project<br />
             <br />
             <span className="comment">
-              #3: Deploy Webiny API
+              #2: Deploy Webiny API
             </span>
             <br />
-            $ webiny deploy-api<br />
+            $ yarn webiny deploy-api<br />
             <br />
             <span className="comment">
-              #4: Deploy Webiny Apps (SPA)
+              #3: Access your project
             </span>
             <br />
-            $ webiny deploy-apps<br />
+            $ yarn start<br />
             <br />
-            <span className="comment"># Your site is live!</span>
+            <span className="comment">
+              #4: Have fun and create amazing new things
+            </span>
             <br />
-            https://xyz.amazonaws.com/
           </Code>
         </TerminalWrapper>
         <TerminalBg />
@@ -245,11 +242,11 @@ class HeroComponent extends React.Component {
           <LeftSide />
           <RightSide>
             <img src={webinyLogo} alt="Webiny logo" />
-            <Title>CMS for Serverless Web Development</Title>
+            <Title>The Easiest Way to Adopt Serverless</Title>
 
             <SubText>
               The way we build, deploy and operate the web is evolving. Webiny is a
-              developer-friendly serverless CMS powered by Node, React and a GraphQL API.
+              developer-friendly platform for building serverless applications.
             </SubText>
 
             <List>
