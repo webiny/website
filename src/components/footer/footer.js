@@ -101,19 +101,19 @@ const Footer = () => (
             >
               GitHub
             </a>{' '}
-            /{' '}
+            {' '}/{' '}
             <a className={linkStyle} href="https://twitter.com/WebinyPlatform">
               Twitter
             </a>{' '}
-            /{' '}
+            {' '}/{' '}
             <a className={linkStyle} href="https://www.youtube.com/c/webiny">
               YouTube
             </a>
-            /{' '}
-            <a className={linkStyle} href="https://gitter.im/Webiny/webiny-js">
-              Gitter Chat
+            {' '}/{' '}
+            <a className={linkStyle} href="https://www.webiny.com/slack">
+              Slack
             </a>
-            /{' '}
+            {' '}/{' '}
             <a className={linkStyle} href="https://blog.webiny.com">
               Blog
             </a>
