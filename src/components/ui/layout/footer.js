@@ -96,7 +96,7 @@ class Footer extends React.Component {
               Join our community of developers and fellow Webiny users. Share your
               experiences and ask questions.
             </Text>
-            <Button type="dark" link="https://community.webiny.com">
+            <Button type="dark" link="https://www.webiny.com/slack">
               Join the community
             </Button>
           </Wrapper>
