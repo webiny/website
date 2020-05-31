@@ -223,7 +223,7 @@ class HeroComponent extends React.Component {
               #2: Deploy Webiny API
             </span>
             <br />
-            $ yarn webiny deploy-api<br />
+            $ yarn webiny deploy api<br />
             <br />
             <span className="comment">
               #3: Access your project
