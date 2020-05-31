@@ -220,25 +220,18 @@ class LearnExplore extends React.Component {
               </p>
               <Button
                 className={ctaButton}
-                link="https://community.webiny.com/"
+                link="https://www.webiny.com/slack"
                 type="dark"
               >
-                Join The Community
+                Community Chat
               </Button>
-              <div
-                onClick={() => {
-                  trackGaConversion ();
-                }}
+              <Button
+                className={ctaButton}
+                link="https://community.webiny.com"
+                type="outlineDark"
               >
-                <Button
-                  className={ctaButton}
-                  target="_blank"
-                  link="https://github.com/webiny/webiny-js"
-                  type="outlineDark"
-                >
-                  View GitHub
-                </Button>
-              </div>
+                Community Forum
+              </Button>
             </Cell>
           </Grid>
         </ContentContainer>
