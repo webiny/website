@@ -412,8 +412,8 @@ const MenuItemList = props => (
         <a href="https://community.webiny.com">
           Forum
         </a>
-        <a href="https://gitter.im/webiny/webiny-js">
-          Gitter Chat
+        <a href="https://www.webiny.com/slack">
+          Slack
         </a>
         <a href="https://blog.webiny.com">
           Blog
