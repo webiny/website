@@ -9,8 +9,8 @@ import webinyBg from './assets/webiny-bg.svg';
 import artworkBg from './assets/artwork-bg.svg';
 import purpleBg from './assets/purple-bg.svg';
 import grayBg from './assets/gray-bg.svg';
-import checkMark from './assets/check-mark.svg';
-import dot from './assets/dot.svg';
+import checkMark from './assets/check_circle_outline-24px.svg';
+import uncheckMark from './assets/highlight_off-24px.svg';
 import flyingMan from './assets/fly-man.svg';
 import plane from './assets/plane.svg';
 import rocket from './assets/rocket.svg';
@@ -168,16 +168,15 @@ const ProductTitle = styled ('h3') ({
 });
 
 const CheckMarkImg = styled ('img') ({
-  width: 19,
-  height: 19,
+  width: 24,
+  height: 24,
   marginRight: 16,
 });
 
 const DotImage = styled ('img') ({
-  width: 6,
-  height: 6,
-  marginRight: 17,
-  padding: '8px 6px',
+  width: 24,
+  height: 24,
+  marginRight: 16,
 });
 
 const FlyingManImage = styled ('img') (
@@ -238,19 +237,19 @@ class WhyChooseWebiny extends React.Component {
                     No need to manage infrastructure
                   </li>
                   <li>
-                    <DotImage src={dot} alt="point" />
+                    <DotImage src={uncheckMark} alt="point" />
                     Unable to customise the product
                   </li>
                   <li>
-                    <DotImage src={dot} alt="point" />
+                    <DotImage src={uncheckMark} alt="point" />
                     You can only build websites
                   </li>
                   <li>
-                    <DotImage src={dot} alt="point" />
+                    <DotImage src={uncheckMark} alt="point" />
                     Usually a black-box
                   </li>
                   <li>
-                    <DotImage src={dot} alt="point" />
+                    <DotImage src={uncheckMark} alt="point" />
                     You don't own your data
                   </li>
                 </ul>
@@ -271,21 +270,21 @@ class WhyChooseWebiny extends React.Component {
                     Build more than websites
                   </li>
                   <li>
-                    <DotImage src={dot} alt="point" />
+                    <DotImage src={uncheckMark} alt="point" />
                     Need to hire people to manage
                     infrastructure
                   </li>
                   <li>
-                    <DotImage src={dot} alt="point" />
+                    <DotImage src={uncheckMark} alt="point" />
                     High total cost of ownership
                   </li>
                   <li>
-                    <DotImage src={dot} alt="point" />
+                    <DotImage src={uncheckMark} alt="point" />
                     Need to over provision and over pay for
                     infrastructure to handle peak demands
                   </li>
                   <li>
-                    <DotImage src={dot} alt="point" />
+                    <DotImage src={uncheckMark} alt="point" />
                     Worry about flash-crowds, networking,
                     orchestration, maintenance, and more
                   </li>
