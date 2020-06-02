@@ -8,10 +8,8 @@ import {Grid, Cell} from '../ui/layout/layout';
 import Button from '../ui/button';
 
 import heroBg from './assets/hero-bg.svg';
-import Sven from './assets/sven-webiny-profile.png';
-import Pavel from './assets/pavel-webiny-profile.png';
-import Adrian from './assets/adrian-webiny-profile.png';
-import Andrei from './assets/andrei-webiny-profile.png';
+import Team from './team';
+
 import E1 from './assets/e1-logo.png';
 import MkLogo from './assets/mk-logo.svg';
 import MkFounders from './assets/mk-founders.png';
@@ -57,6 +55,10 @@ const styleSet = css (
     },
     '.grid': {
       alignItems: 'flex-start',
+      '&.team': {
+        paddingTop: 15,
+        paddingBottom: 15,
+      },
       '&.investors, &.media-kit, &.traits': {
         padding: '25px 0',
         margin: '50px 0',
@@ -132,6 +134,9 @@ const Profile = styled ('div') (
   {
     display: 'flex',
     marginBottom: 50,
+    flexDirection: 'column',
+    alignItems: 'center',
+    textAlign: 'center',
     img: {
       height: '100%',
       width: '150px !important',
@@ -142,6 +147,7 @@ const Profile = styled ('div') (
       marginBottom: 0,
       fontSize: 24,
       fontWeight: theme.fontWeight.semiBold,
+      justifyContent: 'center',
     },
     a: {
       color: theme.color.grayText,
@@ -152,12 +158,8 @@ const Profile = styled ('div') (
     },
   },
   mq ({
-    flexDirection: ['column', 'row'],
     img: {
-      margin: ['0 auto 15px auto', 0],
-    },
-    '>div': {
-      marginLeft: [0, 50],
+      margin: ['0 auto 15px auto', 25],
     },
   })
 );
@@ -311,7 +313,7 @@ const ProfileCard = props => (
     <div>
       <h3>{props.name}</h3>
       <ProfileTitle>{props.title}</ProfileTitle>
-      <ProfileDesc>{props.desc}</ProfileDesc>
+      {/*<ProfileDesc>{props.desc}</ProfileDesc>*/}
       <ProfileLinks>
         <a href={'https://www.linkedin.com/in/' + props.linkedin}>LinkedIn</a>
         ,
@@ -337,7 +339,7 @@ export default ({children, ...props}) => (
     <Hero {...props}>
       <ContentContainer>
         <Title>
-          Creating the CMS for the<br />Serverless Era
+          Creating Tools and Solutions for the<br />Serverless Era
         </Title>
 
       </ContentContainer>
@@ -366,56 +368,15 @@ export default ({children, ...props}) => (
             We want to do all that, but with a community in mind, one that will help us achieve this goal.  As a result, we released Webiny under the MIT open-source licence so everyone can use it completely free of charge.
           </p>
         </Cell>
-        <Cell>
-          <h2>Team</h2>
-          <ProfileCard
-            img={Sven}
-            name={'🇬🇧 Sven Al Hamad'}
-            title={'CEO'}
-            desc={
-              'Mainly responsible for the vision and direction of the company. Also in charge of UX and overall visuals.'
-            }
-            twitter={'SvenAlHamad'}
-            github={'SvenAlHamad'}
-            linkedin={'svenalhamad'}
-          />
-          <ProfileCard
-            img={Pavel}
-            name={'🇭🇷 Pavel Denisjuk'}
-            title={'CTO'}
-            desc={
-              'In charge of the technology focus and architecture. Author of main core components and apps like Page Builder and Headless CMS.'
-            }
-            twitter={'paveldenisjuk'}
-            github={'Pavel910'}
-            linkedin={'paveldenisjuk'}
-          />
-          <ProfileCard
-            img={Adrian}
-            name={'🇭🇷 Adrian Smijulj'}
-            title={'Core developer'}
-            desc={
-              "CTO's right hand. Created apps like Form Builder and File Manager. Authored several core components."
-            }
-            twitter={'doitadrian'}
-            github={'doitadrian'}
-            linkedin={'adriansmijulj'}
-          />
-          <ProfileCard
-            img={Andrei}
-            name={'🇷🇴 Andrei Puiu'}
-            title={'Full-stack developer'}
-            desc={
-              'Working on webiny scaffolding, documentation and improving the DX.'
-            }
-            github={'Fsalker'}
-            linkedin={'antonio-andrei-p-a51b42116'}
-          />
-        </Cell>
       </Grid>
+
     </ContentContainer>
 
     <Divider />
+    <Team />
+
+    <Divider />
+
     <ContentContainer className={styleSet}>
       <Grid className={'grid traits'}>
         <Cell>
