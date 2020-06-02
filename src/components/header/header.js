@@ -526,7 +526,7 @@ class Header extends React.Component {
         {this.hasBanner &&
           <NewsBanner
             title={
-              'We are live on Product hunt - if you like our product, show us some love ♥️♥️♥️'
+              '♥️♥️♥️ We are live on Product hunt - if you like what you see here, please show us some love ♥️♥️♥️'
             }
             link={'https://www.webiny.com/product-hunt'}
           />}
