@@ -47,6 +47,7 @@ export default ({children, ...props}) => (
       title={
         'GraphQL Based Headless CMS With Powerful Content Modeling Features'
       }
+      getStarted="https://docs.webiny.com/docs/get-started/quick-start"
       media={
         <img
           src={HeadlessCMSCover}
