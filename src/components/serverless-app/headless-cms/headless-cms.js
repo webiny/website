@@ -22,9 +22,11 @@ import ServerlessBenefits
   from '../../homepage/serverless-benefits/serverless-benefits';
 
 import ContentModelingVideo from './assets/content-modeling.mp4';
+import I18nVideo from './assets/i18n.mp4';
 import GraphQLPlaygroundVideo from './assets/graphql-playground.mp4';
 import AssetsVideo from './assets/asset-management.mp4';
 import EnvironmentsVideo from './assets/environments.mp4';
+import ContentGroupsVideo from './assets/content-groups.mp4';
 import HeadlessCMSCover from './assets/headless-cms-cover-graphql.png';
 import DeviceAgnostic from './assets/device-agnostic-img.svg';
 
@@ -112,16 +114,16 @@ export default ({children, ...props}) => (
         </Cell>
       </Grid>
       <Grid right>
-        <Cell title="Content Localisation">
+        <Cell title="Content Localization">
           <p>
-            The localisation support is built into the core of Webiny Headless CMS. All your content is translateable and distributable in several languages.
+            The localization support is built into the core of Webiny Headless CMS. All your content is translateable and distributable in several languages.
           </p>
           <p>
             Each editor chooses the languages they are working on. They can also instantly see the values of a specific field on all other languages.
           </p>
         </Cell>
         <Cell>
-          <VideoBox />
+          <VideoBox file={I18nVideo} />
         </Cell>
       </Grid>
       <Grid left>
@@ -187,25 +189,26 @@ export default ({children, ...props}) => (
         <Cell>
           <VideoBox />
         </Cell>
-        <Cell title="Roles & Permissions">
+        <Cell title="Access Tokens">
           <p>
             The authentications and permissions are part of the Webiny core package and they also pass on to the Headless CMS.
             Create users, user groups, roles and permissions to control who and how they access the system.
           </p>
           <p>
-            In addition to roles and permissions, each user can control their own set of personal access tokens.
+            In addition to roles and permissions, each user can control their own set of personal access tokens. Each token is assigned to one or more environments.
+            {' '}
           </p>
         </Cell>
       </Grid>
       <Grid left>
-        <Cell title="Content Model Menus">
+        <Cell title="Content Model Groups">
           <p>
             Webiny features a menu component that is extended via the content models from the Headless CMS. This allows you to build great
             backend experience for your team, making it easy and intuitive for them to find exactly the content they are looking for.
           </p>
         </Cell>
         <Cell>
-          <VideoBox />
+          <VideoBox file={ContentGroupsVideo} />
         </Cell>
       </Grid>
       <Grid right>
