@@ -27,6 +27,7 @@ import GraphQLPlaygroundVideo from './assets/graphql-playground.mp4';
 import AssetsVideo from './assets/asset-management.mp4';
 import EnvironmentsVideo from './assets/environments.mp4';
 import ContentGroupsVideo from './assets/content-groups.mp4';
+import AliasesVideo from './assets/aliases.mp4';
 import HeadlessCMSCover from './assets/headless-cms-cover-graphql.png';
 import DeviceAgnostic from './assets/device-agnostic-img.svg';
 
@@ -177,7 +178,7 @@ export default ({children, ...props}) => (
           </p>
         </Cell>
         <Cell>
-          <VideoBox />
+          <VideoBox file={AliasesVideo} />
         </Cell>
       </Grid>
     </ContentContainer>
