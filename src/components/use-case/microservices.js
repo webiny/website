@@ -23,11 +23,10 @@ const Microservices = () => (
     </Header>
     <ContentContainer>
       <Grid right>
-        <Cell title="Serverless Framework deployment">
+        <Cell title="Plugin based CLI">
           <p>
-            Webiny uses the community accepted Serverless Framework to deploy functions.
-            It's single command, and in case you want to expand and customize your
-            deployment process, all you need to do is create a new plugin.
+            Our CLI allows you to shape your workflow by writing simple plugins. Even the default Webiny deployment mechanism is a plugin! Use community plugins or write your own, expanding your toolkit has never been easier.
+            {' '}
           </p>
         </Cell>
         <Cell>
