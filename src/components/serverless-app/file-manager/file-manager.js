@@ -57,7 +57,7 @@ export default ({children, ...props}) => (
     >
       <List>
         <ListItem title={'Serverless & Self-hosted'}>
-          - Quick and easy deployment with Serverless Framework.
+          - Quick and easy deployment using Webiny CLI.
         </ListItem>
         <ListItem title={'Cloud Native'}>
           - Designed to work with a cloud storage service like AWS S3.

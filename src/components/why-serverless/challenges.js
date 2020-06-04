@@ -65,7 +65,7 @@ const Challenges = () => (
           <p>
             <Bold>Solution:</Bold>
             {' '}
-            Webiny has a ready-made structure that works for any type of project, be that a website, an app or an API. To deploy and access a project, Webiny comes with a Serverless Framework configuration. It takes a single command line to deploy the project. Using a CDN URL that you get back, you can access the project.
+            Webiny has a ready-made structure that works for any type of project, be that a website, an app or an API. To deploy and access a project, Webiny comes with a CLI that automates that for you. It takes a single command line to deploy the project. Using a CDN URL that you get back, you can access the project.
             {' '}
           </p>
         </Cell>

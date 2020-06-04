@@ -62,7 +62,7 @@ export default ({children, ...props}) => (
     >
       <List>
         <ListItem title={'Serverless & Self-hosted'}>
-          - Quick and easy deployment using Webiny CLI
+          - Quick and easy deployment using Webiny CLI.
         </ListItem>
         <ListItem title={'GraphQL APIs'}>
           - There are 2 APIs, one for content management and one for content delivery.
