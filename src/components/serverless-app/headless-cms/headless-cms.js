@@ -278,6 +278,14 @@ export default ({children, ...props}) => (
             Webiny Headless CMS integrates with any web framework and even goes beyond that. Anything from building a website on top of Gatsby.js or using
             Swift and displaying the content on an Apple Watch is supported.
           </p>
+          <p>
+            <a
+              href="https://docs.webiny.com/docs/guides/headless-gatsby-tutorial"
+              target="_blank"
+            >
+              Learn more
+            </a>
+          </p>
         </Cell>
       </Grid>
     </ContentContainer>

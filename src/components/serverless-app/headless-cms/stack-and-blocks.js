@@ -8,6 +8,7 @@ import imgRightTool from './assets/right-tool.svg';
 import imgHosted from './assets/hosted-env.svg';
 import imgAcl from './assets/acl.svg';
 import imgHeadless from './assets/headless.svg';
+import imgCommunityTools from './assets/community-tools.svg';
 
 const BlockSection = styled ('section') (
   {
@@ -103,8 +104,8 @@ const FirstBlocks = () => (
       <Cell>
         <img
             className={'image-small'}
-            src={imgHeadless}
-            alt="imgHeadless"
+            src={imgCommunityTools}
+            alt="imgCommunityTools"
          />
         <h4>Made for Developers</h4>
         <h3>
