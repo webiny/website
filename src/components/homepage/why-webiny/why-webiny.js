@@ -10,7 +10,7 @@ import imgCommunityTools from './assets/community-tools.svg';
 import imgCompleteEnv from './assets/complete-env.svg';
 import imgJs from './assets/js.svg';
 import imgMultiCloud from './assets/multi-cloud.svg';
-import imgSls from './assets/sls.svg';
+import imgBuildMore from './assets/build-stuff.svg';
 import imgMicroservices from './assets/microservices.svg';
 
 const wrapperClass = css (
@@ -156,13 +156,12 @@ class WhyWebiny extends React.Component {
             <Cell>
               <img
                 className={'image-small'}
-                src={imgSls}
-                alt="Serverless Framework"
+                src={imgBuildMore}
+                alt="Build more than websites"
               />
-              <h3>Serverless Framework</h3>
+              <h3>Build more than websites</h3>
               <p>
-                Webiny uses Serverless Framework, so you benefit from its ecosystem
-                of tools and plugins.
+                Webiny makes it easy to build websites, web applications, APIs and microservices inside the serverless environment.
               </p>
             </Cell>
             <Cell>
