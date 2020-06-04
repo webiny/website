@@ -28,6 +28,7 @@ import AssetsVideo from './assets/asset-management.mp4';
 import EnvironmentsVideo from './assets/environments.mp4';
 import ContentGroupsVideo from './assets/content-groups.mp4';
 import AliasesVideo from './assets/aliases.mp4';
+import AccessTokenVideo from './assets/access-tokens.mp4';
 import HeadlessCMSCover from './assets/headless-cms-cover-graphql.png';
 import DeviceAgnostic from './assets/device-agnostic-img.svg';
 
@@ -112,6 +113,14 @@ export default ({children, ...props}) => (
             At the same time, you are also building the UI for the input forms. Ensuring your editors have a pleasant user-experience while
             working with your content.
           </p>
+          <p>
+            <a
+              href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/content-modeling"
+              target="_blank"
+            >
+              Learn more
+            </a>
+          </p>
         </Cell>
       </Grid>
       <Grid right>
@@ -121,6 +130,14 @@ export default ({children, ...props}) => (
           </p>
           <p>
             Each editor chooses the languages they are working on. They can also instantly see the values of a specific field on all other languages.
+          </p>
+          <p>
+            <a
+              href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/localization"
+              target="_blank"
+            >
+              Learn more
+            </a>
           </p>
         </Cell>
         <Cell>
@@ -135,6 +152,14 @@ export default ({children, ...props}) => (
           <p>
             Both our management and our distribution API are powered by GraphQL. On top of that, Webiny exposes a GraphQL Playground you can use to
             easily test and debug your API calls.
+          </p>
+          <p>
+            <a
+              href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/graphql-playground"
+              target="_blank"
+            >
+              Learn more
+            </a>
           </p>
         </Cell>
       </Grid>
@@ -164,6 +189,14 @@ export default ({children, ...props}) => (
             current environment. This allows you to make changes and prepare new content in the background, while still serving production content
             without interruption.
           </p>
+          <p>
+            <a
+              href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/environments"
+              target="_blank"
+            >
+              Learn more
+            </a>
+          </p>
         </Cell>
       </Grid>
       <Grid right>
@@ -175,6 +208,14 @@ export default ({children, ...props}) => (
           <p>
             An alias can be unlinked from one environment and linked to another environment. This allows instant switching between different version of your
             content, as well as instant rollbacks.
+          </p>
+          <p>
+            <a
+              href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/aliases"
+              target="_blank"
+            >
+              Learn more
+            </a>
           </p>
         </Cell>
         <Cell>
@@ -188,7 +229,7 @@ export default ({children, ...props}) => (
     <ContentContainer>
       <Grid right>
         <Cell>
-          <VideoBox />
+          <VideoBox file={AccessTokenVideo} />
         </Cell>
         <Cell title="Access Tokens">
           <p>
@@ -199,6 +240,14 @@ export default ({children, ...props}) => (
             In addition to roles and permissions, each user can control their own set of personal access tokens. Each token is assigned to one or more environments.
             {' '}
           </p>
+          <p>
+            <a
+              href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens"
+              target="_blank"
+            >
+              Learn more
+            </a>
+          </p>
         </Cell>
       </Grid>
       <Grid left>
@@ -206,6 +255,14 @@ export default ({children, ...props}) => (
           <p>
             Webiny features a menu component that is extended via the content models from the Headless CMS. This allows you to build great
             backend experience for your team, making it easy and intuitive for them to find exactly the content they are looking for.
+          </p>
+          <p>
+            <a
+              href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/content-modeling-groups"
+              target="_blank"
+            >
+              Learn more
+            </a>
           </p>
         </Cell>
         <Cell>
