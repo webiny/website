@@ -63,7 +63,7 @@ export default ({children, ...props}) => (
     >
       <List>
         <ListItem title={'Serverless & Self-hosted'}>
-          - Quick and easy deployment with Serverless Framework.
+          - Quick and easy deployment using Webiny CLI.
         </ListItem>
         <ListItem title={'Complete package'}>
           - Build forms, define terms and conditions, setup a captcha and view submissions.
