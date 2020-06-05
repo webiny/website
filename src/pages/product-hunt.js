@@ -11,7 +11,7 @@ class PhPage extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <Head title={'Webiny - Redirecting to Product Hunt'} />
+        <Head title={'Serverless Headless CMS by Webiny - Product Hunt'} />
       </React.Fragment>
     );
   }

@@ -443,7 +443,7 @@ const MenuItemList = props => (
 
 class Header extends React.Component {
   didScroll = false;
-  hasBanner = false;
+  hasBanner = true;
   bannerListnerer = false;
   scrollListener = false;
   state = {isSticky: false, mobileMenuOpen: false, hideBanner: false};
