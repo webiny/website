@@ -148,28 +148,28 @@ https://xyz.amazonaws.com/`}
           </Cell>
           <Cell>
             <Code language="shell">
-              {`Usage: webiny <command>
+              {`Usage: webiny <command> [options]
 
 Commands:
-  webiny create <name>     Create a new Webiny project.
-  webiny deploy-api        Deploy API from api folder.
-                           (NOTE: run from project root)
-  webiny deploy-apps       Deploy Apps from apps folder.
-                           (NOTE: run from project root)
-  webiny remove-api        Remove API.
-                           (NOTE: run from project root)
-  webiny remove-apps       Remove Apps.
-                           (NOTE: run from project root)
-  webiny disable-tracking  Disable tracking of Webiny stats.
-  webiny enable-tracking   Enable tracking of Webiny stats.
+webiny run <command> [options]         Run command defined in
+                                       webiny.config.js.
+                                       (NOTE: run from folder containing
+                                       webiny.config.js)
+webiny enable-tracking                 Enable tracking of Webiny stats.
+webiny disable-tracking                Disable tracking of Webiny stats.
+webiny deploy <folder> [resources...]  Deploy resources from <folder>.
+                                       (NOTE: run from project root)
+webiny remove <folder>                 Remove resources from <folder>.
+                                       (NOTE: run from project root)
+webiny scaffold                        Generate boilerplate code
 
 Options:
-  --help     Show help                                [boolean]
-  --version  Show version number                      [boolean]
+--help     Show help                                                 [boolean]
+--version  Show version number                                       [boolean]
 
 Examples:
-  webiny deploy-api --env=dev --debug
-  webiny remove-api --env=dev --debug`}
+webiny deploy api --env=dev
+webiny remove api --env=dev`}
             </Code>
           </Cell>
         </Grid>
