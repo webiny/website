@@ -5,7 +5,8 @@ class PhPage extends React.Component {
   componentDidMount () {
     const _w = typeof window !== 'undefined' ? window : false;
     if (_w !== false) {
-      window.location = 'https://www.producthunt.com/';
+      window.location =
+        'https://www.producthunt.com/posts/serverless-headless-cms-by-webiny';
     }
   }
   render () {
