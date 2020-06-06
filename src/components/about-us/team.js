@@ -28,7 +28,6 @@ const styleSet = css (
       fontSize: 24,
     },
     '.grid': {
-      alignItems: 'flex-start',
       '&.team': {
         paddingTop: 10,
         paddingBottom: 10,
@@ -36,6 +35,7 @@ const styleSet = css (
     },
   },
   mq ({
+    width: ['100%', '100%', 1200],
     '.title': {
       marginTop: [45, 0],
       marginBottom: [0, 0],
@@ -46,6 +46,7 @@ const styleSet = css (
     },
     '.grid': {
       flexDirection: ['column', 'row'],
+      alignItems: ['center', 'flex-start'],
       '&.about div:first-child': {
         marginRight: [0, 100],
       },
@@ -93,11 +94,13 @@ const Profile = styled ('div') (
 const ProfileTitle = styled ('div') ({
   marginBottom: 15,
 });
+
 const ProfileDesc = styled ('div') ({
   fontSize: 14,
   color: theme.color.grayText,
   marginBottom: 15,
 });
+
 const ProfileLinks = styled ('div') (
   {
     //display: 'flex',
@@ -114,16 +117,16 @@ const ProfileCard = props => (
       {/*<ProfileDesc>{props.desc}</ProfileDesc>*/}
       <ProfileLinks>
         {props.linkedin &&
-          <a href={'https://www.linkedin.com/in/' + props.linkedin}>
+          <a href={'https://www.linkedin.com/in/' + props.linkedin} target="_blank">
             LinkedIn
           </a>}
         {(props.twitter || props.github) && props.linkedin && ','}
         {' '}
         {props.twitter &&
-          <a href={'https://twitter.com/' + props.twitter}>Twitter, </a>}
+          <a href={'https://twitter.com/' + props.twitter} target="_blank">Twitter, </a>}
         {' '}
         {props.github &&
-          <a href={'https://github.com/' + props.github}>GitHub</a>}
+          <a href={'https://github.com/' + props.github} target="_blank">GitHub</a>}
       </ProfileLinks>
     </div>
   </Profile>
@@ -200,7 +203,9 @@ export default ({children, ...props}) => (
             img={Ashu}
             name={'🇮🇳 Ashutosh'}
             title={'Full-stack developer'}
+            twitter={'BhardwajAshu96'}
             github={'Ashu96'}
+            linkedin={'iamashutoshbhardwaj'}
           />
         </Cell>
         <Cell>
