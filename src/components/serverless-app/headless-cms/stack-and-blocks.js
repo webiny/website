@@ -103,10 +103,10 @@ const FirstBlocks = () => (
     <Grid>
       <Cell>
         <img
-            className={'image-small'}
-            src={imgCommunityTools}
-            alt="imgCommunityTools"
-         />
+          className={'image-small'}
+          src={imgCommunityTools}
+          alt="imgCommunityTools"
+        />
         <h4>Made for Developers</h4>
         <h3>
           We created Webiny with developers in mind. It's a single platform built with community accepted tools and libraries.
@@ -114,10 +114,7 @@ const FirstBlocks = () => (
         </h3>
       </Cell>
       <Cell>
-        <img
-            className={'image-small'}
-            src={imgMicroservices}
-            alt="Explore" />
+        <img className={'image-small'} src={imgMicroservices} alt="Explore" />
         <h4>Microservices architecture</h4>
         <h3>
           Webiny is built as a set of microservices using serverless technologies. Infinitive scale, zero maintenance.
@@ -125,10 +122,7 @@ const FirstBlocks = () => (
         </h3>
       </Cell>
       <Cell>
-        <img
-            className={'image-small'}
-            src={imgRightTool}
-            alt="Storybook" />
+        <img className={'image-small'} src={imgRightTool} alt="Storybook" />
         <h4>Full Customizable</h4>
         <h3>
           Webiny is open-source which allows you to modify, extend and adapt the system so it exactly fits your needs.
@@ -142,22 +136,15 @@ const SecondBlocks = () => (
   <ContentContainer>
     <Grid>
       <Cell>
-        <img
-            className={'image-small'}
-            src={imgHeadless}
-            alt="imgHeadless"
-         />
+        <img className={'image-small'} src={imgHeadless} alt="imgHeadless" />
         <h4>Multi-channel distribution</h4>
         <h3>
-          The beauty of suing a headless CMS is that your content becomes device and channel agnostic.
+          The beauty of using a headless CMS is that your content becomes device and channel agnostic.
           <br /><br />
         </h3>
       </Cell>
       <Cell>
-        <img
-            className={'image-small'}
-            src={imgHosted}
-            alt="Explore" />
+        <img className={'image-small'} src={imgHosted} alt="Explore" />
         <h4>Self-hosted serverless</h4>
         <h3>
           No need to make any tradeoffs between using a scaleable SaaS solution, or using a customizable open-source solution. Webiny is best of both.
@@ -165,10 +152,7 @@ const SecondBlocks = () => (
         </h3>
       </Cell>
       <Cell>
-        <img
-            className={'image-small'}
-            src={imgAcl}
-            alt="Secure" />
+        <img className={'image-small'} src={imgAcl} alt="Secure" />
         <h4>Secure</h4>
         <h3>
           Issue API tokens for users to use inside 3rd party applications and services.
@@ -177,7 +161,6 @@ const SecondBlocks = () => (
     </Grid>
   </ContentContainer>
 );
-
 
 class FirstBlock extends React.Component {
   render () {
@@ -203,4 +186,4 @@ class SecondBlock extends React.Component {
   }
 }
 
-export { FirstBlock, SecondBlock }
+export {FirstBlock, SecondBlock};
