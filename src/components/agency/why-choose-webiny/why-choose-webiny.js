@@ -25,11 +25,11 @@ const wrapperClass = css (
     '@media (min-width: 1920px)': {
       backgroundPosition: '0 270px !important',
     },
+    backgroundSize: 'cover',
   },
   mq ({
     paddingTop: [40, 100],
     paddingBottom: [40, 100],
-    backgroundSize: ['cover', 'contain'],
     backgroundPosition: ['center', 'bottom'],
   })
 );
