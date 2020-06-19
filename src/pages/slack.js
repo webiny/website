@@ -2,14 +2,14 @@ import React from 'react';
 import Head from '../layouts/components/head';
 
 class SlackPage extends React.Component {
-  componentDidMount () {
+  componentDidMount() {
     const _w = typeof window !== 'undefined' ? window : false;
     if (_w !== false) {
       window.location =
-        'https://join.slack.com/t/webiny-community/shared_invite/zt-efh2ns3n-1sUBOp_sVBH3Kxt_aKCT6Q';
+        'https://join.slack.com/t/webiny-community/shared_invite/zt-fbd7an44-FroBp7xLjIY~9eVluWsPoQ';
     }
   }
-  render () {
+  render() {
     return (
       <React.Fragment>
         <Head
