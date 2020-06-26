@@ -351,7 +351,7 @@ const MenuItemList = (props) => (
         }}
       >
         <GitHubButton
-          href="https://github.com/webiny/webiny-js"
+          href="https://github./webiny/webiny-js"
           data-icon="octicon-star"
           data-show-count="true"
           aria-label="Star webiny/webiny-js on GitHub"
@@ -418,6 +418,7 @@ const MenuItemList = (props) => (
         <a href="https://community.webiny.com">Forum</a>
         <a href="https://www.webiny.com/slack">Slack</a>
         <a href="https://blog.webiny.com">Blog</a>
+        <a href="/events">Events</a>
       </DropDown>
     </MenuItem>
 

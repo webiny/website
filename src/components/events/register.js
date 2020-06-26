@@ -3,20 +3,19 @@ import styled from "react-emotion";
 import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 import { css } from "emotion";
+
+import Button from "../ui/button";
 import ContentContainer from "../ui/content-container";
 
 import sectionBg from "./assets/register-to-event.jpg";
-// import adminThemeIcon from './assets/admin-theme-icon.svg';
-// import ssrIcon from './assets/ssr-icon.svg';
-// import cssJsIcon from './assets/css-js-icon.png';
-// import cliIcon from './assets/cli-icon.svg';
-// import buildSitesAppsIcon from './assets/build-site-apps-icon.svg';
-// import lambdaIcon from './assets/lambda-icon.svg';
+import freeArrowIcon from "./assets/free.svg";
+import demoIcon from "./assets/demo-icon.svg";
 
 const wrapperClass = css(
   {
     background: "url(" + sectionBg + ") no-repeat center top",
     backgroundSize: "cover",
+    padding: ["0 5px 5px 5px", "5px 0 20px 0"]
   },
   mq({
     padding: ["0 15px 25px 15px", "25px 0 50px 0"],
@@ -65,18 +64,68 @@ const FeatureList = styled("ul")(
   })
 );
 
+const ButtonWrapper = styled("div")({
+  position: "relative",
+  display: "flex",
+  justifyContent: "center",
+});
+
+const FreeDemoImage = styled("img")(
+  {
+    position: "absolute",
+    top: 25,
+    right: -150,
+  },
+  mq({
+    display: ["none", "block"],
+  })
+);
+
+const ctaButton = css(
+  {
+    textTransform: "uppercase",
+    padding: "10px 12px !important",
+  },
+  mq({
+    width: ["230px !important"],
+  })
+);
+
+const ScheduleDemoImage = styled("img")(
+  {
+    position: "relative",
+    marginRight: 8,
+  },
+  mq({
+    display: ["block"],
+  })
+);
+
+
 class Register extends React.Component {
   render() {
+    const { handleDemoClick, ...restProps } = this.props;
     return (
       <section {...this.props} className={wrapperClass}>
         <SubTitle>Speak at a Webiny Online Meetup</SubTitle>
         <SubTitleText>
           Build Websites, Apps and APIs With Webiny
           <br />
-          As a Developer You Will Benefit From Several Features
+          Speak at a Webiny Online Meetup and share your ideas
         </SubTitleText>
 
         <FeatureList></FeatureList>
+        <ButtonWrapper>
+            <FreeDemoImage src={freeArrowIcon} />
+            <Button
+              onClick={handleDemoClick}
+              className={ctaButton}
+              type="secondary"
+            >
+              <ScheduleDemoImage src={demoIcon} />
+              Become a speaker
+            </Button>
+          </ButtonWrapper>
 
         <ContentContainer />
       </section>

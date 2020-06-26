@@ -31,7 +31,7 @@ const SubTitle = styled("h2")(
   {
     fontSize: theme.fontSize.h2,
     fontWeight: theme.fontWeight.semiBold,
-    color: theme.color.black,
+    color: theme.color.grayText,
     textAlign: "center",
     margin: "25px auto 0px auto",
   },
@@ -40,7 +40,7 @@ const SubTitle = styled("h2")(
   })
 );
 
-const webinyAppsList = css(
+const webinyVideosList = css(
   {
     maxWidth: "100vw",
     overflowX: "hidden",
@@ -51,7 +51,8 @@ const webinyAppsList = css(
       transition: "all .2s ease",
       outline: 0,
       opacity: 0.6,
-      //height: "160px!important",
+      height: "300px !important",
+      marginBotttom: "-150px",
       padding: "20px 30px",
       background: "#fcfcfc",
       borderRadius: "3px",
@@ -67,18 +68,27 @@ const webinyAppsList = css(
         outline: 0,
         h3: {
           fontSize: 32,
-          fontWeight: theme.fontWeight.primaryDark,
+          fontWeight: theme.fontWeight.semiBold,
+          color: theme.color.secondaryDark,
           marginBottom: 10,
           marginTop: 0,
+        },
+        h4: {
+        ontSize: 22,
+        fontWeight: theme.fontWeight.regular,
+        color: theme.color.grayText,
+        marginBottom: 10,
+        marginTop: 0,
         },
         p: {
           fontSize: 16,
           marginBottom: 10,
+          color: theme.color.grayText,
         },
         a: {
-          display: "block-inline",
+          display: "block-inline",   
           color: theme.color.primaryDark,
-          //   textDecoration: 0
+          fontSize: theme.fontSize.h3,
         },
       },
     },
@@ -95,6 +105,7 @@ const webinyAppsList = css(
     ".slick-slide": {
       width: ["calc(100vw - 30px) !important", "350px !important"],
       margin: ["0 15px", "0 15px"],
+    //   height: ["260px !important"]
     },
     ".slick-list": {
       padding: [0, "46px 0 20px!important"],
@@ -103,7 +114,7 @@ const webinyAppsList = css(
   })
 );
 
-const webinyAppsImage = css(
+const webinyVideosImage = css(
   {
     maxWidth: "100vw",
     overflow: "hidden",
@@ -125,7 +136,7 @@ const webinyAppsImage = css(
       },
     },
     ".slick-dots": {
-      //bottom: -35,
+    //   bottom: -35,
       position: "relative",
       zIndex: 10,
       "li button:before": {
@@ -170,8 +181,8 @@ class Events extends React.Component {
             asNavFor={this.state.nav2}
             ref={(slider) => (this.slider1 = slider)}
             dots={true}
-            className={webinyAppsImage}
-            slidesToShow={1}
+            className={webinyVideosImage}
+            slidesToShow={1}f
             centerMode={true}
             centerPadding={25}
             fade={true}
@@ -189,7 +200,7 @@ class Events extends React.Component {
             centerPadding={25}
             swipeToSlide={true}
             focusOnSelect={true}
-            className={webinyAppsList}
+            className={webinyVideosList}
             responsive={[
               {
                 breakpoint: 1024,
@@ -221,38 +232,49 @@ class Events extends React.Component {
             ]}
           >
             <div className="content">
-              <h3 className="event-card-title">Commodo Getting Started</h3>
+              <h3 className="event-card-title">Commodo</h3>
               <span>02/07/2020</span>
-              <h4>Knowledge Sharing Session [5]</h4>
+              <h4>Knowledge Sharing Session [0]</h4>
               <p>
                 GraphQL based headless CMS with powerful content modeling
                 features.
               </p>
-              <Link to="/events/event-1">Session [0]</Link>
+              <Link to="/events/event-0">View Event</Link>
+            </div>
+            <div className="content">
+              <h3 className="event-card-title">Webiny Setup</h3>
+              <span>09/07/2020</span>
+              <span>Remote</span>
+
+              <h4>Knowledge Sharing Session [1]</h4>
+              <p>
+                GraphQL based headless CMS with powerful content modeling
+                features.
+              </p>
+              <Link to="/events/event-1">View Event</Link>
             </div>
             <div className="content">
               <h3 className="event-card-title">Commodo Getting Started</h3>
-              <span>02/07/2020</span>
+              <span>16/07/2020</span>
 
-              <h4>Knowledge Sharing Session [5]</h4>
+              <h4>Knowledge Sharing Session [2]</h4>
               <p>
                 GraphQL based headless CMS with powerful content modeling
                 features.
               </p>
-              <Link to="/events/event-1">Session [0]</Link>
+              <Link to="/events/event-2">View Event</Link>
             </div>
             <div className="content">
               <h3 className="event-card-title">Commodo Getting Started</h3>
-              <span>02/07/2020</span>
+              <span>23/07/2020</span>
 
-              <h4>Knowledge Sharing Session [5]</h4>
+              <h4>Knowledge Sharing Session [3]</h4>
               <p>
                 GraphQL based headless CMS with powerful content modeling
                 features.
               </p>
-              <Link to="/events/event-1">Session [0]</Link>
+              <Link to="/events/event-3">View Event</Link>
             </div>
-            
           </Slider>
         </ContentContainer>
       </section>
