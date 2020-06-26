@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import BaseLayout from '../layouts/base';
-import Tos from '../components/static/tos';
+import BaseLayout from "../layouts/base";
+import Tos from "../components/static/tos";
 
 class TosPage extends React.Component {
-  render () {
+  render() {
     return (
       <BaseLayout title="Terms of Service - Webiny">
         <Tos />

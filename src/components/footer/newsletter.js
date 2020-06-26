@@ -1,91 +1,91 @@
-import React from 'react';
-import styled from 'react-emotion';
-import theme from '../utils/theme';
+import React from "react";
+import styled from "react-emotion";
+import theme from "../utils/theme";
 
-import emailIcon from './assets/email-icon.svg';
-import newsletterBullet from './assets/newsletter-bullet.svg';
+import emailIcon from "./assets/email-icon.svg";
+import newsletterBullet from "./assets/newsletter-bullet.svg";
 
-const Form = styled ('form') ({});
+const Form = styled("form")({});
 
-const Title = styled ('label') ({
+const Title = styled("label")({
   fontSize: theme.fontSize.h3,
-  color: 'var(--nl-text-color)', //theme.color.lightGray,
+  color: "var(--nl-text-color)", //theme.color.lightGray,
   fontWeight: theme.fontWeight.bold,
   marginTop: 0,
-  lineHeight: '150%',
-  textAlign: 'var(--nl-text-align)',
-  width: '100%',
-  display: 'inline-block',
+  lineHeight: "150%",
+  textAlign: "var(--nl-text-align)",
+  width: "100%",
+  display: "inline-block",
 });
 
-const InputWrapper = styled ('form') ({
-  position: 'relative',
+const InputWrapper = styled("form")({
+  position: "relative",
 });
 
-const Input = styled ('input') ({
+const Input = styled("input")({
   background: theme.color.white,
-  border: '1px solid #979797',
+  border: "1px solid #979797",
   borderRadius: 8,
   fontSize: 18,
-  padding: '15px 25px 15px 50px',
-  width: '100%',
-  boxSizing: 'border-box',
-  outline: 'none',
+  padding: "15px 25px 15px 50px",
+  width: "100%",
+  boxSizing: "border-box",
+  outline: "none",
 });
 
-const Submit = styled ('button') ({
-  background: '#282C34',
+const Submit = styled("button")({
+  background: "#282C34",
   borderRadius: 8,
-  position: 'absolute',
+  position: "absolute",
   color: theme.color.lightGray,
-  textTransform: 'uppercase',
-  padding: '5px 20px',
+  textTransform: "uppercase",
+  padding: "5px 20px",
   fontWeight: theme.fontWeight.semiBold,
   fontSize: theme.fontSize.footer,
   right: 15,
   top: 12,
-  outline: 'none',
+  outline: "none",
 });
 
-const EmailIcon = styled ('img') ({
-  position: 'absolute',
+const EmailIcon = styled("img")({
+  position: "absolute",
   left: 15,
-  top: 'calc(50% - 7px)',
+  top: "calc(50% - 7px)",
 });
 
-const NlReasons = styled ('ul') ({
+const NlReasons = styled("ul")({
   margin: 0,
   paddingTop: 15,
 });
 
-const NlReason = styled ('li') ({
-  listStyle: 'none',
-  listStylePosition: 'outside',
-  backgroundImage: 'url(' + newsletterBullet + ')',
-  backgroundPosition: 'right 0 center',
-  backgroundRepeat: 'no-repeat',
+const NlReason = styled("li")({
+  listStyle: "none",
+  listStylePosition: "outside",
+  backgroundImage: "url(" + newsletterBullet + ")",
+  backgroundPosition: "right 0 center",
+  backgroundRepeat: "no-repeat",
   color: theme.color.lightGray,
   paddingRight: 25,
   fontSize: theme.fontSize.footer,
   marginBottom: 5,
-  textAlign: 'right',
+  textAlign: "right",
 });
 
 class Newsletter extends React.Component {
-  constructor (props) {
-    super (props);
+  constructor(props) {
+    super(props);
 
-    this.state = {email: ''};
-    this.inputRef = React.createRef ();
+    this.state = { email: "" };
+    this.inputRef = React.createRef();
   }
 
-  handleChange = event => {
-    this.setState ({email: event.target.value});
+  handleChange = (event) => {
+    this.setState({ email: event.target.value });
   };
 
-  handleSubmit = event => {
-    if (this.state.email !== '') {
-      this.setState ({email: "Thanks! You're on the list."});
+  handleSubmit = (event) => {
+    if (this.state.email !== "") {
+      this.setState({ email: "Thanks! You're on the list." });
 
       /*
       const formData = Object.keys (this.state)
@@ -99,24 +99,24 @@ class Newsletter extends React.Component {
         .join ('&');
       */
 
-      fetch (
-        'https://app.mailerlite.com/webforms/submit/g9f1i1?fields%5Bemail%5D=' +
-          encodeURIComponent (this.state.email) +
-          '&ml-submit=1&ajax=1',
+      fetch(
+        "https://app.mailerlite.com/webforms/submit/g9f1i1?fields%5Bemail%5D=" +
+          encodeURIComponent(this.state.email) +
+          "&ml-submit=1&ajax=1",
         {
-          method: 'GET',
+          method: "GET",
           headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
+            "Content-Type": "application/x-www-form-urlencoded",
           },
           //body: formData,
         }
       );
     }
 
-    event.preventDefault ();
+    event.preventDefault();
   };
 
-  render () {
+  render() {
     return (
       <React.Fragment>
         <Title htmlFor="newsletter_email">Join Webiny Newsletter</Title>

@@ -1,42 +1,42 @@
-import React from 'react';
-import styled from 'react-emotion';
-import {css} from 'emotion';
-import theme from '../utils/theme';
-import mq from '../utils/breakpoints';
-import ContentContainer from '../ui/content-container';
-import Link from 'gatsby-link';
-import {trackGaConversion} from '../ui/functions';
+import React from "react";
+import styled from "react-emotion";
+import { css } from "emotion";
+import theme from "../utils/theme";
+import mq from "../utils/breakpoints";
+import ContentContainer from "../ui/content-container";
+import Link from "gatsby-link";
+import { trackGaConversion } from "../ui/functions";
 
-const MenuBlock = styled ('div') ({
-  width: 'auto',
-  display: 'flex',
-  flexDirection: 'column',
-  lineHeight: '30px',
+const MenuBlock = styled("div")({
+  width: "auto",
+  display: "flex",
+  flexDirection: "column",
+  lineHeight: "30px",
   a: {
     color: theme.color.white,
-    textDecoration: 'none',
-    '&:hover': {
-      textDecoration: 'underline',
+    textDecoration: "none",
+    "&:hover": {
+      textDecoration: "underline",
     },
   },
 });
 
-const SectionTitle = styled ('span') ({
+const SectionTitle = styled("span")({
   fontWeight: theme.fontWeight.bold,
-  display: 'inline-block',
+  display: "inline-block",
   marginBottom: 15,
 });
 
-const footerMenu = css (
+const footerMenu = css(
   {
-    flexDirection: 'column',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "column",
+    flexDirection: "row",
+    justifyContent: "space-between",
     color: theme.color.white,
     paddingBottom: 20,
   },
-  mq ({
-    display: ['none', 'flex'],
+  mq({
+    display: ["none", "flex"],
   })
 );
 
@@ -53,7 +53,7 @@ const FooterMenu = () => (
       </a>
       <a
         onClick={() => {
-          trackGaConversion ();
+          trackGaConversion();
         }}
         href="https://github.com/webiny/webiny-js"
       >
@@ -70,7 +70,7 @@ const FooterMenu = () => (
       {/*<Link to="/features">Features</Link>*/}
       <a
         onClick={() => {
-          trackGaConversion ();
+          trackGaConversion();
         }}
         href="https://github.com/webiny/webiny-js/projects/7"
       >
@@ -119,11 +119,19 @@ const FooterMenu = () => (
     </MenuBlock>
     <MenuBlock>
       <SectionTitle>Company</SectionTitle>
-      <Link rel="prerender" to="/about-us">About Us</Link>
+      <Link rel="prerender" to="/about-us">
+        About Us
+      </Link>
       <a href="https://careers.webiny.com">Careers</a>
-      <Link rel="prerender" to="/privacy-policy">Privacy Policy</Link>
-      <Link rel="prerender" to="/contact-us">Contact Us</Link>
-      <Link rel="prerender" to="/support">Support</Link>
+      <Link rel="prerender" to="/privacy-policy">
+        Privacy Policy
+      </Link>
+      <Link rel="prerender" to="/contact-us">
+        Contact Us
+      </Link>
+      <Link rel="prerender" to="/support">
+        Support
+      </Link>
     </MenuBlock>
   </ContentContainer>
 );

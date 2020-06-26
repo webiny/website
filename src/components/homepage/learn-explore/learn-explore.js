@@ -1,89 +1,89 @@
-import React from 'react';
-import styled from 'react-emotion';
-import {css} from 'emotion';
-import theme from '../../utils/theme';
-import mq from '../../utils/breakpoints';
-import ContentContainer from '../../ui/content-container';
-import Button from '../../ui/button';
-import {trackGaConversion} from '../../ui/functions';
+import React from "react";
+import styled from "react-emotion";
+import { css } from "emotion";
+import theme from "../../utils/theme";
+import mq from "../../utils/breakpoints";
+import ContentContainer from "../../ui/content-container";
+import Button from "../../ui/button";
+import { trackGaConversion } from "../../ui/functions";
 
-import background from './assets/platform-bg.svg';
-import imgLearn from './assets/learn.svg';
-import imgExplore from './assets/explore.svg';
-import imgCommunity from './assets/community.svg';
+import background from "./assets/platform-bg.svg";
+import imgLearn from "./assets/learn.svg";
+import imgExplore from "./assets/explore.svg";
+import imgCommunity from "./assets/community.svg";
 
-const wrapperClass = css (
+const wrapperClass = css(
   {
-    background: 'url(' + background + ') no-repeat left top',
-    backgroundSize: 'cover',
+    background: "url(" + background + ") no-repeat left top",
+    backgroundSize: "cover",
   },
-  mq ({
-    backgroundColor: ['#7B39D9', '#F7F7F7'],
+  mq({
+    backgroundColor: ["#7B39D9", "#F7F7F7"],
     marginTop: [0, 0],
     paddingTop: [0, 120],
     paddingBottom: [0, 50],
   })
 );
 
-const SubTitle = styled ('h2') (
+const SubTitle = styled("h2")(
   {
     fontSize: theme.fontSize.h2,
     fontWeight: theme.fontWeight.semiBold,
     color: theme.color.white,
-    textAlign: 'center',
+    textAlign: "center",
     paddingTop: 50,
     marginBottom: 80,
   },
-  mq ({
+  mq({
     marginTop: [0, 25],
     marginLeft: [25, 0],
     marginRight: [25, 0],
   })
 );
 
-const SubText = styled ('p') (
+const SubText = styled("p")(
   {
     fontSize: theme.fontSize.h3,
     fontWeight: theme.fontWeight.regular,
     color: theme.color.white,
-    textAlign: 'center',
-    margin: '0 20%',
-    lineHeight: '150%',
+    textAlign: "center",
+    margin: "0 20%",
+    lineHeight: "150%",
     maxWidth: 680,
   },
-  mq ({
-    margin: ['20px', '0 auto 75px auto'],
+  mq({
+    margin: ["20px", "0 auto 75px auto"],
   })
 );
 
-const Grid = styled ('div') (
+const Grid = styled("div")(
   {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'space-between',
-    boxSizing: 'border-box',
-    '&.first': {
+    width: "100%",
+    display: "flex",
+    justifyContent: "space-between",
+    boxSizing: "border-box",
+    "&.first": {
       marginTop: 100,
       marginBottom: 50,
     },
   },
-  mq ({
-    flexDirection: ['column', 'row'],
+  mq({
+    flexDirection: ["column", "row"],
     marginLeft: [0, 0],
     marginRight: [0, 0],
-    padding: ['0 25px', 0],
-    '&.first': {
-      margin: [0, '100px 0px'],
+    padding: ["0 25px", 0],
+    "&.first": {
+      margin: [0, "100px 0px"],
     },
   })
 );
 
-const Cell = styled ('div') (
+const Cell = styled("div")(
   {
-    boxSizing: 'border-box',
-    flexBasis: '100%',
-    backgroundColor: '#fff',
-    boxShadow: '0 2px 4px 0 rgba(0,0,0,0.50)',
+    boxSizing: "border-box",
+    flexBasis: "100%",
+    backgroundColor: "#fff",
+    boxShadow: "0 2px 4px 0 rgba(0,0,0,0.50)",
     borderRadius: 2,
     padding: 40,
     h3: {
@@ -92,9 +92,9 @@ const Cell = styled ('div') (
       marginBottom: 25,
       marginTop: 0,
       fontWeight: theme.fontWeight.semiBold,
-      display: 'flex',
-      alignItems: 'center',
-      textAlign: 'center',
+      display: "flex",
+      alignItems: "center",
+      textAlign: "center",
       img: {
         marginRight: 20,
       },
@@ -103,54 +103,54 @@ const Cell = styled ('div') (
       fontSize: 24,
       color: theme.color.primaryDark,
       marginTop: 0,
-      textAlign: 'center',
+      textAlign: "center",
     },
     p: {
       fontSize: theme.fontSize.paragraph,
       color: theme.color.grayText,
-      lineHeight: '160%',
-      textAlign: 'center',
+      lineHeight: "160%",
+      textAlign: "center",
     },
     img: {
       width: 350,
-      margin: '0 -40px',
+      margin: "0 -40px",
     },
-    '&:last-child': {
-      marginRight: '0 !important',
+    "&:last-child": {
+      marginRight: "0 !important",
     },
   },
-  mq ({
+  mq({
     marginRight: [0, 75],
     marginBottom: [25, 0],
     minHeight: [400, 380],
-    textAlign: ['center', 'left'],
-    '.image': {
-      border: '1px solid #E6E6E6',
-      boxShadow: '0 4px 8px 0 rgba(209,209,209,0.50)',
+    textAlign: ["center", "left"],
+    ".image": {
+      border: "1px solid #E6E6E6",
+      boxShadow: "0 4px 8px 0 rgba(209,209,209,0.50)",
       borderRadius: 5,
-      width: ['100%', '630px'],
+      width: ["100%", "630px"],
     },
-    '.image-small': {
-      border: '1px solid #E6E6E6',
-      boxShadow: '0 2px 4px 0 rgba(209,209,209,0.50)',
+    ".image-small": {
+      border: "1px solid #E6E6E6",
+      boxShadow: "0 2px 4px 0 rgba(209,209,209,0.50)",
       borderRadius: 5,
-      width: ['100%', '330px'],
+      width: ["100%", "330px"],
     },
     h3: {
-      justifyContent: ['center', 'flex-start'],
+      justifyContent: ["center", "flex-start"],
     },
   })
 );
 
-const ctaButton = css ({
+const ctaButton = css({
   marginBottom: 25,
-  '&:last-child': {
+  "&:last-child": {
     marginBottom: 0,
   },
 });
 
 class LearnExplore extends React.Component {
-  render () {
+  render() {
     return (
       <section {...this.props} className={wrapperClass}>
         <SubTitle>Go Serverless With Webiny</SubTitle>
@@ -161,11 +161,13 @@ class LearnExplore extends React.Component {
               <img src={imgLearn} alt="Learn" />
               <h4>Learn</h4>
               <h3>
-                Get started with your next project in a few easy steps<br />
+                Get started with your next project in a few easy steps
+                <br />
                 <br />
               </h3>
               <p>
-                Get started tutorial will guide you step by step. From installing a local dev environment to deploying a website.
+                Get started tutorial will guide you step by step. From
+                installing a local dev environment to deploying a website.
                 <br />
                 <br />
                 <br />
@@ -192,9 +194,10 @@ class LearnExplore extends React.Component {
                 Get to know Webiny, its features and what you can build using it
               </h3>
               <p>
-                Webiny is a powerful tool that allows you to build more than just
-                websites. It’s packed with many features that will drastically
-                reduce development time and increase the quality of your code.
+                Webiny is a powerful tool that allows you to build more than
+                just websites. It’s packed with many features that will
+                drastically reduce development time and increase the quality of
+                your code.
               </p>
               <Button className={ctaButton} link="/features" type="dark">
                 View Features
@@ -214,9 +217,10 @@ class LearnExplore extends React.Component {
                 Join our growing family of developers and share your learnings
               </h3>
               <p>
-                We have a growing community of developers. The aim is to help each
-                other have the best possible time with Webiny. The core Webiny team
-                is also there and it’s the best place to share your feedback.
+                We have a growing community of developers. The aim is to help
+                each other have the best possible time with Webiny. The core
+                Webiny team is also there and it’s the best place to share your
+                feedback.
               </p>
               <Button
                 className={ctaButton}

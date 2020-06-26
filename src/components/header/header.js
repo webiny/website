@@ -1,25 +1,25 @@
-import React from 'react';
-import styled from 'react-emotion';
-import theme from '../utils/theme';
-import mq from '../utils/breakpoints';
-import ContentContainer from '../ui/content-container';
-import Button from '../ui/button';
-import Link from 'gatsby-link';
-import { css } from 'emotion';
-import GitHubButton from 'react-github-btn';
-import NewsBanner from '../ui/news-banner';
-import { trackGaConversion } from '../ui/functions';
+import React from "react";
+import styled from "react-emotion";
+import theme from "../utils/theme";
+import mq from "../utils/breakpoints";
+import ContentContainer from "../ui/content-container";
+import Button from "../ui/button";
+import Link from "gatsby-link";
+import { css } from "emotion";
+import GitHubButton from "react-github-btn";
+import NewsBanner from "../ui/news-banner";
+import { trackGaConversion } from "../ui/functions";
 
-import logo from './assets/webiny-logo-with-icon-left-white.svg';
-import logoOrange from './assets/webiny-logo-with-icon-left-orange.svg';
-import menuIcon from './assets/round-menu-24px.svg';
-import menuIconBlack from './assets/round-menu-24px-black.svg';
-import downArrowWhite from './assets/down-arrow-white.svg';
-import downArrowBlack from './assets/down-arrow-black.svg';
+import logo from "./assets/webiny-logo-with-icon-left-white.svg";
+import logoOrange from "./assets/webiny-logo-with-icon-left-orange.svg";
+import menuIcon from "./assets/round-menu-24px.svg";
+import menuIconBlack from "./assets/round-menu-24px-black.svg";
+import downArrowWhite from "./assets/down-arrow-white.svg";
+import downArrowBlack from "./assets/down-arrow-black.svg";
 
-const WebinyLogo = styled('div')({
+const WebinyLogo = styled("div")({
   padding: 0,
-  lineHeight: '100%',
+  lineHeight: "100%",
   zIndex: 100,
 });
 
@@ -32,98 +32,99 @@ const logoImage = css(
   })
 );
 
-const Menu = styled('ul')(
+const Menu = styled("ul")(
   {
-    listStyle: 'none',
+    listStyle: "none",
     //display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "center",
+    justifyContent: "center",
   },
   mq({
-    display: ['none', 'flex'],
+    display: ["none", "flex"],
   })
 );
 
 const linkStyle = css({
   fontWeight: 600,
-  textDecoration: 'none',
-  color: '#fff',
-  transition: '250ms opacity',
-  '&:hover': {
-    opacity: '0.8',
+  textDecoration: "none",
+  color: "#fff",
+  transition: "250ms opacity",
+  "&:hover": {
+    opacity: "0.8",
   },
 });
 
-const DropDown = styled('div')(
+const DropDown = styled("div")(
   {
-    textAlign: 'left',
+    textAlign: "left",
     borderRadius: 2,
-    visibility: 'hidden',
-    minWidth: '160px',
-    boxSizing: 'border-box',
+    visibility: "hidden",
+    minWidth: "160px",
+    boxSizing: "border-box",
     opacity: 0,
-    left: 'calc(50% - 12px)',
-    transform: 'translateY(1em) translateX(-50%)',
-    zIndex: '-1',
-    transition: 'all 0.1s ease-in-out 0s, visibility 0s linear 0.1s, z-index 0s linear 0.01s',
+    left: "calc(50% - 12px)",
+    transform: "translateY(1em) translateX(-50%)",
+    zIndex: "-1",
+    transition:
+      "all 0.1s ease-in-out 0s, visibility 0s linear 0.1s, z-index 0s linear 0.01s",
     a: {
       color: theme.color.black,
       fontWeight: theme.fontWeight.regular,
       fontSize: theme.fontSize.navMenuSubItem,
-      textDecoration: 'none',
-      transition: '250ms opacity',
-      display: 'block',
+      textDecoration: "none",
+      transition: "250ms opacity",
+      display: "block",
       marginBottom: 25,
-      '&:hover': {
-        opacity: '0.8',
-        textDecoration: 'underline',
+      "&:hover": {
+        opacity: "0.8",
+        textDecoration: "underline",
       },
-      '&:last-child': {
+      "&:last-child": {
         marginBottom: 0,
       },
     },
     hr: {
-      borderColor: '#e8e8e8',
-      margin: '-5px -10px 10px -10px',
-      borderTop: 'none',
+      borderColor: "#e8e8e8",
+      margin: "-5px -10px 10px -10px",
+      borderTop: "none",
     },
-    '.section-wrapper': {
-      display: 'flex',
-      '.section': {
+    ".section-wrapper": {
+      display: "flex",
+      ".section": {
         width: 120,
-        '.section-title': {
+        ".section-title": {
           fontWeight: theme.fontWeight.semiBold,
           marginBottom: 15,
-          cursor: 'text',
+          cursor: "text",
           color: theme.color.black,
         },
-        '&:last-child': {
-          marginBottom: '0px !important',
+        "&:last-child": {
+          marginBottom: "0px !important",
         },
       },
       hr: {
-        display: 'none',
+        display: "none",
       },
     },
   },
   mq({
-    position: ['relative', 'absolute'],
-    display: ['none', 'block'],
-    boxShadow: ['none', '0px 8px 16px 0px rgba(0,0,0,0.2)'],
-    width: ['100%', 'auto'],
-    backgroundColor: ['white', '#f9f9f9'],
-    padding: ['0 25px 10px 25px', 25],
+    position: ["relative", "absolute"],
+    display: ["none", "block"],
+    boxShadow: ["none", "0px 8px 16px 0px rgba(0,0,0,0.2)"],
+    width: ["100%", "auto"],
+    backgroundColor: ["white", "#f9f9f9"],
+    padding: ["0 25px 10px 25px", 25],
     top: [25, 50],
-    '.open': {
-      display: 'block',
+    ".open": {
+      display: "block",
     },
-    '.section-wrapper': {
+    ".section-wrapper": {
       marginTop: [-25, 0],
-      flexDirection: ['column', 'row'],
-      '.section': {
-        '.section-title': {
+      flexDirection: ["column", "row"],
+      ".section": {
+        ".section-title": {
           marginTop: [25, 0],
         },
         a: {
@@ -134,37 +135,37 @@ const DropDown = styled('div')(
   })
 );
 
-const DownArrow = styled('div')(
+const DownArrow = styled("div")(
   {
-    position: 'absolute',
+    position: "absolute",
     width: 24,
     height: 24,
-    background: 'url(' + downArrowWhite + ') no-repeat',
+    background: "url(" + downArrowWhite + ") no-repeat",
     right: 0,
-    color: 'white',
+    color: "white",
   },
   mq({
     top: [-1, 14],
   })
 );
 
-const MenuItem = styled('li')(
+const MenuItem = styled("li")(
   {
-    textAlign: 'left',
-    cursor: 'pointer',
-    position: 'relative',
+    textAlign: "left",
+    cursor: "pointer",
+    position: "relative",
     fontSize: 14,
     color: theme.color.black,
-    '&:hover, &:focus': {
+    "&:hover, &:focus": {
       [DropDown]: {
         //display: 'block',
-        visibility: 'visible',
-        display: 'block',
+        visibility: "visible",
+        display: "block",
         opacity: 1,
         zIndex: 1,
         //left: 'calc(-50% - 25px)',
-        transform: 'translateY(0%) translateX(-50%)',
-        transitionDelay: '0s, 0s, 0.1s',
+        transform: "translateY(0%) translateX(-50%)",
+        transitionDelay: "0s, 0s, 0.1s",
       },
     },
   },
@@ -174,7 +175,7 @@ const MenuItem = styled('li')(
     marginTop: [0, -15],
     paddingBottom: [15, 15],
     paddingTop: [0, 15],
-    borderBottom: ['1px solid ' + theme.color.lightGray, 'none'],
+    borderBottom: ["1px solid " + theme.color.lightGray, "none"],
   })
 );
 
@@ -182,7 +183,7 @@ const parentMenu = css(
   {
     paddingRight: 25,
     marginRight: -5,
-    '&:hover': {
+    "&:hover": {
       opacity: 1,
     },
   },
@@ -193,141 +194,142 @@ const parentMenu = css(
 );
 
 const dropdownArrow = css`
-    position: absolute;
-    background: #fff;
-    border: 4px solid #fff;
-    top: 2px;
+  position: absolute;
+  background: #fff;
+  border: 4px solid #fff;
+  top: 2px;
+  left: 50%;
+  zindex: -1;
+  &:after,
+  &:before {
+    bottom: 100%;
     left: 50%;
-    zindex: -1;
-    &:after,
-    &:before {
-        bottom: 100%;
-        left: 50%;
-        border: solid transparent;
-        content: " ";
-        height: 0;
-        width: 0;
-        position: absolute;
-        pointer-events: none;
-    }
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
 
-    &:after {
-        border-color: rgba(136, 183, 213, 0);
-        border-bottom-color: #fff;
-        border-width: 5px;
-        margin-left: -5px;
-    }
-    &:before {
-        border-color: rgba(194, 225, 245, 0);
-        border-bottom-color: #fff;
-        border-width: 11px;
-        margin-left: -11px;
-    }
+  &:after {
+    border-color: rgba(136, 183, 213, 0);
+    border-bottom-color: #fff;
+    border-width: 5px;
+    margin-left: -5px;
+  }
+  &:before {
+    border-color: rgba(194, 225, 245, 0);
+    border-bottom-color: #fff;
+    border-width: 11px;
+    margin-left: -11px;
+  }
 `;
 
-const HeaderContainer = styled('header')(
+const HeaderContainer = styled("header")(
   {
     left: 0,
     paddingTop: 15,
     paddingBottom: 15,
-    width: '100%',
-    transition: 'all 500ms',
+    width: "100%",
+    transition: "all 500ms",
   },
-  props => ({
-    position: props.isSticky ? 'fixed' : 'absolute',
-    backgroundColor: props.isSticky ? '#fff' : 'transparent',
-    boxShadow: props.isSticky && '0 0 1px 1px rgba(34,45,57,.15)',
+  (props) => ({
+    position: props.isSticky ? "fixed" : "absolute",
+    backgroundColor: props.isSticky ? "#fff" : "transparent",
+    boxShadow: props.isSticky && "0 0 1px 1px rgba(34,45,57,.15)",
     paddingTop: props.isSticky ? 10 : 20,
     paddingBottom: props.isSticky ? 10 : 20,
     top: props.hasBanner ? (props.hideBanner ? 0 : 35) : 0,
     zIndex: props.hasBanner ? (props.hideBanner ? 102 : 100) : 100,
     [MenuItem]: {
-      color: props.isSticky ? '#000' : '#fff',
-      ['a.' + linkStyle]: {
-        color: props.isSticky ? '#000' : '#fff',
+      color: props.isSticky ? "#000" : "#fff",
+      ["a." + linkStyle]: {
+        color: props.isSticky ? "#000" : "#fff",
       },
       [DownArrow]: {
-        background: 'url(' +
+        background:
+          "url(" +
           (props.isSticky ? downArrowBlack : downArrowWhite) +
-          ') no-repeat',
+          ") no-repeat",
       },
     },
   }),
   mq({
-    height: ['auto', 45],
+    height: ["auto", 45],
   })
 );
 
 const headerInnerContainer = css(
   {
     maxWidth: 1200,
-    width: '100%',
-    boxSizing: 'border-box',
+    width: "100%",
+    boxSizing: "border-box",
   },
   mq({
-    width: ['100%', '100%'],
-    padding: [0, '0 5px', 0],
+    width: ["100%", "100%"],
+    padding: [0, "0 5px", 0],
   })
 );
 
-const MobileMenu = styled('ul')(
+const MobileMenu = styled("ul")(
   {
     paddingRight: 20,
-    display: 'flex',
-    position: 'relative',
-    height: 'calc(100vh - 80px)',
-    overflowX: 'scroll',
-    width: 'auto',
+    display: "flex",
+    position: "relative",
+    height: "calc(100vh - 80px)",
+    overflowX: "scroll",
+    width: "auto",
     margin: 15,
-    listStyle: 'none',
-    boxSizing: 'border-box',
-    backgroundColor: 'white',
+    listStyle: "none",
+    boxSizing: "border-box",
+    backgroundColor: "white",
     padding: 15,
     borderRadius: 5,
   },
   mq({
-    display: ['block', 'none'],
+    display: ["block", "none"],
   })
 );
 
-const MobileMenuIcon = styled('img')(
+const MobileMenuIcon = styled("img")(
   {
     zIndex: 100,
-    position: 'absolute',
+    position: "absolute",
     right: 20,
     top: 17,
   },
   mq({
-    display: ['block', 'none'],
+    display: ["block", "none"],
   })
 );
 
 const link = css({
-  textDecoration: 'none',
+  textDecoration: "none",
   color: theme.color.black,
 });
 
-const NavBar = styled('div')(
+const NavBar = styled("div")(
   {
-    margin: '0 auto',
-    display: 'flex',
-    alignContent: 'flex-end',
-    justifyContent: 'space-between',
+    margin: "0 auto",
+    display: "flex",
+    alignContent: "flex-end",
+    justifyContent: "space-between",
     [MobileMenu]: {
-      display: 'none',
+      display: "none",
     },
-    '&.mobile-opened': {
+    "&.mobile-opened": {
       backgroundColor: theme.color.darkGray,
-      height: '100vh',
-      justifyContent: 'flex-start',
+      height: "100vh",
+      justifyContent: "flex-start",
       [MobileMenu]: {
-        display: 'none',
-        display: 'block',
+        display: "none",
+        display: "block",
       },
     },
   },
   mq({
-    flexDirection: ['column', 'row'],
+    flexDirection: ["column", "row"],
     marginTop: [-10, 0],
     paddingTop: [10, 0],
   })
@@ -340,7 +342,7 @@ const githubMenu = css(
   })
 );
 
-const MenuItemList = props => (
+const MenuItemList = (props) => (
   <React.Fragment>
     <MenuItem className={githubMenu}>
       <div
@@ -376,7 +378,7 @@ const MenuItemList = props => (
       </Link>
     </MenuItem>
 
-    <MenuItem className={linkStyle + ' ' + parentMenu}>
+    <MenuItem className={linkStyle + " " + parentMenu}>
       Products
       <DownArrow />
       <DropDown>
@@ -407,23 +409,15 @@ const MenuItemList = props => (
     </MenuItem>
  */}
 
-    <MenuItem className={linkStyle + ' ' + parentMenu}>
+    <MenuItem className={linkStyle + " " + parentMenu}>
       Community
       <DownArrow />
       <DropDown>
         <div className={dropdownArrow} />
-        <a href="https://github.com/webiny/webiny-js">
-          GitHub
-        </a>
-        <a href="https://community.webiny.com">
-          Forum
-        </a>
-        <a href="https://www.webiny.com/slack">
-          Slack
-        </a>
-        <a href="https://blog.webiny.com">
-          Blog
-        </a>
+        <a href="https://github.com/webiny/webiny-js">GitHub</a>
+        <a href="https://community.webiny.com">Forum</a>
+        <a href="https://www.webiny.com/slack">Slack</a>
+        <a href="https://blog.webiny.com">Blog</a>
       </DropDown>
     </MenuItem>
 
@@ -434,7 +428,7 @@ const MenuItemList = props => (
     </MenuItem>
 
     <MenuItem>
-      <Button link="https://docs.webiny.com/" type={props.sticky && 'primary'}>
+      <Button link="https://docs.webiny.com/" type={props.sticky && "primary"}>
         Get Started
       </Button>
     </MenuItem>
@@ -486,7 +480,7 @@ class Header extends React.Component {
   };
 
   initScrollListener = () => {
-    window.onscroll = event => {
+    window.onscroll = (event) => {
       this.didScroll = true;
     };
 
@@ -523,13 +517,14 @@ class Header extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {this.hasBanner &&
+        {this.hasBanner && (
           <NewsBanner
             title={
-              '♥️♥️♥️ We are live on Product hunt - if you like what you see here, please show us some love ♥️♥️♥️'
+              "♥️♥️♥️ We are live on Product hunt - if you like what you see here, please show us some love ♥️♥️♥️"
             }
-            link={'https://www.webiny.com/product-hunt'}
-          />}
+            link={"https://www.webiny.com/product-hunt"}
+          />
+        )}
 
         <HeaderContainer
           hasBanner={this.props.hasBanner}
@@ -540,7 +535,7 @@ class Header extends React.Component {
           <ContentContainer className={headerInnerContainer}>
             <NavBar
               className={
-                this.state.mobileMenuOpen ? 'mobile-opened' : 'mobile-closed'
+                this.state.mobileMenuOpen ? "mobile-opened" : "mobile-closed"
               }
             >
               <WebinyLogo alt="Webiny Home">
@@ -573,7 +568,6 @@ class Header extends React.Component {
               <MobileMenu>
                 <MenuItemList sticky={this.state.mobileMenuOpen} />
               </MobileMenu>
-
             </NavBar>
           </ContentContainer>
         </HeaderContainer>

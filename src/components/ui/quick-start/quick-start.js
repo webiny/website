@@ -1,8 +1,8 @@
-import React from 'react';
-import Footer from '../layout/footer';
+import React from "react";
+import Footer from "../layout/footer";
 
 class QuickStart extends React.Component {
-  render () {
+  render() {
     return <Footer />;
   }
 }

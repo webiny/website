@@ -1,16 +1,16 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import Head from './components/head';
+import React from "react";
+import Helmet from "react-helmet";
+import Head from "./components/head";
 
-import Header from '../components/header/header';
-import Footer from '../components/footer/footer';
-import CookieNotice from '../components/ui/cookie-notice';
+import Header from "../components/header/header";
+import Footer from "../components/footer/footer";
+import CookieNotice from "../components/ui/cookie-notice";
 
-import './reset.css';
-import './index.css';
+import "./reset.css";
+import "./index.css";
 
 class BaseLayout extends React.Component {
-  render () {
+  render() {
     return (
       <React.Fragment>
         <Head title={this.props.title} description={this.props.description} />

@@ -1,13 +1,12 @@
-import React from 'react';
-import Helmet from 'react-helmet';
+import React from "react";
+import Helmet from "react-helmet";
 
-import RedirectLayout from '../layouts/redirect';
+import RedirectLayout from "../layouts/redirect";
 
 class GoalCarbonGithub extends React.Component {
-  render () {
+  render() {
     return (
       <RedirectLayout title="Redirecting to GitHub">
-
         <Helmet>
           <script>
             {`
@@ -16,9 +15,7 @@ class GoalCarbonGithub extends React.Component {
                 }, 500)
             `}
           </script>
-
         </Helmet>
-
       </RedirectLayout>
     );
   }

@@ -1,17 +1,16 @@
-import React from 'react';
+import React from "react";
 
-import BaseLayout from '../layouts/base';
-import Hero from '../components/homepage/hero/hero';
-import WhyWebiny from '../components/homepage/why-webiny/why-webiny';
-import Components from '../components/homepage/components/components';
-import LearnExplore from '../components/homepage/learn-explore/learn-explore';
-import MoreThanCms from '../components/homepage/more-than-cms/more-than-cms';
-import ServerlessBenefits
-  from '../components/homepage/serverless-benefits/serverless-benefits';
-import Testimonials from '../components/homepage/testimonials/testimonials';
+import BaseLayout from "../layouts/base";
+import Hero from "../components/homepage/hero/hero";
+import WhyWebiny from "../components/homepage/why-webiny/why-webiny";
+import Components from "../components/homepage/components/components";
+import LearnExplore from "../components/homepage/learn-explore/learn-explore";
+import MoreThanCms from "../components/homepage/more-than-cms/more-than-cms";
+import ServerlessBenefits from "../components/homepage/serverless-benefits/serverless-benefits";
+import Testimonials from "../components/homepage/testimonials/testimonials";
 
 class IndexPage extends React.Component {
-  render () {
+  render() {
     return (
       <BaseLayout
         title="Webiny - Serverless CMS powered by GraphQL and React"

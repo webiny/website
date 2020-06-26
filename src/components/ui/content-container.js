@@ -1,18 +1,18 @@
-import React from 'react';
-import styled from 'react-emotion';
-import theme from '../utils/theme';
-import mq from '../utils/breakpoints';
+import React from "react";
+import styled from "react-emotion";
+import theme from "../utils/theme";
+import mq from "../utils/breakpoints";
 
-const ContentContainer = styled.div (
+const ContentContainer = styled.div(
   {
-    margin: '0 auto',
-    position: 'relative',
+    margin: "0 auto",
+    position: "relative",
   },
-  mq ({
-    width: ['100%', theme.contentWidth],
+  mq({
+    width: ["100%", theme.contentWidth],
   })
 );
 
-export default ({children, ...props}) => (
+export default ({ children, ...props }) => (
   <ContentContainer {...props}>{children}</ContentContainer>
 );

@@ -1,39 +1,40 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import {withPrefix} from 'gatsby-link';
-import ogImage from '../assets/webiny-serverless-cms-og.jpg';
+import React from "react";
+import Helmet from "react-helmet";
+import { withPrefix } from "gatsby-link";
+import ogImage from "../assets/webiny-serverless-cms-og.jpg";
 
 class Head extends React.Component {
-  render () {
+  render() {
     return (
       <React.Fragment>
         <Helmet
           title={this.props.title}
-          htmlAttributes={{lang: 'en'}}
+          htmlAttributes={{ lang: "en" }}
           meta={[
-            {name: 'description', content: this.props.description},
+            { name: "description", content: this.props.description },
             {
-              name: 'keywords',
-              content: 'cms, serverless, nodejs, open source, reactjs, graphql',
+              name: "keywords",
+              content: "cms, serverless, nodejs, open source, reactjs, graphql",
             },
             {
-              name: 'viewport',
-              content: 'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5',
+              name: "viewport",
+              content:
+                "width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5",
             },
             {
-              name: 'og:type',
-              content: 'website',
+              name: "og:type",
+              content: "website",
             },
             {
-              name: 'og:title',
+              name: "og:title",
               content: this.props.title,
             },
             {
-              name: 'og:image',
+              name: "og:image",
               content: ogImage,
             },
             {
-              name: 'og:description',
+              name: "og:description",
               content: this.props.description,
             },
           ]}
@@ -41,9 +42,9 @@ class Head extends React.Component {
         <Helmet
           link={[
             {
-              rel: 'shortcut icon',
-              href: withPrefix ('./favicon.ico'),
-              type: 'image/x-icon',
+              rel: "shortcut icon",
+              href: withPrefix("./favicon.ico"),
+              type: "image/x-icon",
             },
           ]}
         />
@@ -97,7 +98,6 @@ class Head extends React.Component {
               `}
           </script>
         </Helmet>
-
       </React.Fragment>
     );
   }

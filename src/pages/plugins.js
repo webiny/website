@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import BaseLayout from '../layouts/base';
-import Plugins from '../components/plugins/plugins.js';
+import BaseLayout from "../layouts/base";
+import Plugins from "../components/plugins/plugins.js";
 
 class PluginPage extends React.Component {
-  render () {
+  render() {
     return (
       <BaseLayout
         title="Webiny Plugins"

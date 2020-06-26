@@ -1,8 +1,8 @@
-import React from 'react';
-import Head from './components/head';
+import React from "react";
+import Head from "./components/head";
 
 class RedirectLayout extends React.Component {
-  render () {
+  render() {
     return (
       <React.Fragment>
         <Head title={this.props.title} description={this.props.description} />

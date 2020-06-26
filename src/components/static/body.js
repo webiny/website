@@ -1,71 +1,71 @@
-import React from 'react';
-import styled from 'react-emotion';
-import {css} from 'emotion';
-import theme from '../utils/theme';
-import mq from '../utils/breakpoints';
-import ContentContainer from '../ui/content-container';
+import React from "react";
+import styled from "react-emotion";
+import { css } from "emotion";
+import theme from "../utils/theme";
+import mq from "../utils/breakpoints";
+import ContentContainer from "../ui/content-container";
 
-import heroBg from './assets/hero-bg.svg';
+import heroBg from "./assets/hero-bg.svg";
 
-const Hero = styled ('section') (
+const Hero = styled("section")(
   {
-    width: '100%',
-    background: 'url(' + heroBg + ') no-repeat center top',
-    color: '#fff',
-    boxSizing: 'border-box',
-    textAlign: 'center',
+    width: "100%",
+    background: "url(" + heroBg + ") no-repeat center top",
+    color: "#fff",
+    boxSizing: "border-box",
+    textAlign: "center",
   },
-  mq ({
-    padding: ['100px 20px 25px', '150px 0 25px'],
+  mq({
+    padding: ["100px 20px 25px", "150px 0 25px"],
     marginBottom: [50, 100],
-    backgroundSize: ['cover'],
-    backgroundPosition: ['top', 'bottom', 'bottom'],
+    backgroundSize: ["cover"],
+    backgroundPosition: ["top", "bottom", "bottom"],
   })
 );
 
-const Title = styled ('h1') ({
+const Title = styled("h1")({
   fontSize: theme.fontSize.h1,
   fontWeight: theme.fontWeight.semiBold,
   marginBottom: 25,
 });
 
-const Grid = styled ('div') (
+const Grid = styled("div")(
   {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'space-between',
-    boxSizing: 'border-box',
-    '&.first': {
+    width: "100%",
+    display: "flex",
+    justifyContent: "space-between",
+    boxSizing: "border-box",
+    "&.first": {
       marginTop: 100,
       marginBottom: 50,
     },
   },
-  mq ({
-    flexDirection: ['column', 'row'],
+  mq({
+    flexDirection: ["column", "row"],
     marginLeft: [0, 0],
     marginRight: [0, 0],
-    padding: ['25px 25px', 0],
-    '&.first': {
-      margin: [0, '100px 20px'],
+    padding: ["25px 25px", 0],
+    "&.first": {
+      margin: [0, "100px 20px"],
     },
   })
 );
 
-const Cell = styled ('div') (
+const Cell = styled("div")(
   {
-    boxSizing: 'border-box',
-    width: '100%',
+    boxSizing: "border-box",
+    width: "100%",
     h3: {
       fontSize: theme.fontSize.h4,
       color: theme.color.black,
       marginTop: 0,
       fontWeight: theme.fontWeight.bold,
-      display: 'flex',
-      alignItems: 'center',
+      display: "flex",
+      alignItems: "center",
       img: {
         marginRight: 20,
         height: 32,
-        '&.arrow': {
+        "&.arrow": {
           marginLeft: 30,
           width: 10,
         },
@@ -75,7 +75,7 @@ const Cell = styled ('div') (
       fontSize: theme.fontSize.paragraph,
       color: theme.color.black,
       fontSize: 17,
-      lineHeight: '29px',
+      lineHeight: "29px",
       fontWeight: 400,
     },
     h3: {
@@ -85,45 +85,45 @@ const Cell = styled ('div') (
       marginBottom: 16,
       fontSize: 20,
     },
-    'ul, ol': {
-      marginBottom: '1em',
+    "ul, ol": {
+      marginBottom: "1em",
       marginTop: 0,
-      paddingLeft: '2em',
+      paddingLeft: "2em",
       color: theme.color.black,
     },
     li: {
       marginTop: 10,
       fontSize: 17,
-      lineHeight: '29px',
+      lineHeight: "29px",
       fontWeight: 400,
     },
     a: {
       color: theme.color.primaryDark,
       letterSpacing: 0.5,
       fontWeight: theme.fontWeight.regular,
-      textDecoration: 'none',
-      display: 'flex',
-      alignItems: 'center',
-      '&:hover': {
-        textDecoration: 'underline',
+      textDecoration: "none",
+      display: "flex",
+      alignItems: "center",
+      "&:hover": {
+        textDecoration: "underline",
       },
     },
     code: {
-      backgroundColor: '#fbf2e9',
-      padding: '0px 3px',
+      backgroundColor: "#fbf2e9",
+      padding: "0px 3px",
     },
   },
-  mq ({
-    margin: ['0 25px', '0 150px'],
-    '.image': {
-      width: ['100%', 'auto'],
+  mq({
+    margin: ["0 25px", "0 150px"],
+    ".image": {
+      width: ["100%", "auto"],
     },
   })
 );
 
-const bodyStyle = css (
+const bodyStyle = css(
   {
-    color: '#4A4A4A',
+    color: "#4A4A4A",
     marginBottom: 100,
     h2: {
       fontSize: 28,
@@ -131,14 +131,14 @@ const bodyStyle = css (
       marginBottom: 40,
     },
   },
-  mq ({
+  mq({
     h2: {
-      textAlign: ['center', 'left'],
+      textAlign: ["center", "left"],
     },
   })
 );
 
-export default ({children, ...props}) => (
+export default ({ children, ...props }) => (
   <React.Fragment>
     <Hero>
       <ContentContainer>
@@ -147,9 +147,7 @@ export default ({children, ...props}) => (
     </Hero>
     <ContentContainer className={bodyStyle}>
       <Grid>
-        <Cell>
-          {children}
-        </Cell>
+        <Cell>{children}</Cell>
       </Grid>
     </ContentContainer>
   </React.Fragment>

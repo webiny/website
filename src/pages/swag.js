@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import BaseLayout from '../layouts/base';
-import Swag from '../components/static/swag';
+import BaseLayout from "../layouts/base";
+import Swag from "../components/static/swag";
 
 class TelemetryPage extends React.Component {
-  render () {
+  render() {
     return (
       <BaseLayout title="Swag - Webiny" fixedHeader={true}>
         <Swag />

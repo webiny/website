@@ -1,186 +1,186 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import styled from 'react-emotion';
-import {css} from 'emotion';
-import theme from '../utils/theme';
-import mq from '../utils/breakpoints';
-import ContentContainer from '../ui/content-container';
-import {DelayInput} from 'react-delay-input';
-import PluginList from './list';
-import Footer from './footer';
-import Button from '../ui/button';
+import React from "react";
+import ReactDOM from "react-dom";
+import styled from "react-emotion";
+import { css } from "emotion";
+import theme from "../utils/theme";
+import mq from "../utils/breakpoints";
+import ContentContainer from "../ui/content-container";
+import { DelayInput } from "react-delay-input";
+import PluginList from "./list";
+import Footer from "./footer";
+import Button from "../ui/button";
 
-import heroBg from './assets/plugins-hero-bg.svg';
+import heroBg from "./assets/plugins-hero-bg.svg";
 
-const Hero = styled ('section') (
+const Hero = styled("section")(
   {
-    width: '100%',
-    background: 'url(' + heroBg + ') no-repeat center top',
-    color: '#fff',
-    boxSizing: 'border-box',
-    textAlign: 'center',
+    width: "100%",
+    background: "url(" + heroBg + ") no-repeat center top",
+    color: "#fff",
+    boxSizing: "border-box",
+    textAlign: "center",
   },
-  mq ({
-    padding: ['100px 20px 25px', '150px 0 25px'],
+  mq({
+    padding: ["100px 20px 25px", "150px 0 25px"],
     marginBottom: [50, 100],
-    backgroundSize: ['cover'],
-    backgroundPosition: ['top', 'bottom', 'bottom'],
+    backgroundSize: ["cover"],
+    backgroundPosition: ["top", "bottom", "bottom"],
   })
 );
 
-const Title = styled ('h1') ({
+const Title = styled("h1")({
   fontSize: theme.fontSize.h1,
   fontWeight: theme.fontWeight.semiBold,
   marginBottom: 15,
 });
 
-const SubText = styled ('p') (
+const SubText = styled("p")(
   {
     fontSize: theme.fontSize.subText,
     fontWeight: theme.fontWeight.regular,
     color: theme.color.white,
-    textAlign: 'center',
-    lineHeight: '150%',
+    textAlign: "center",
+    lineHeight: "150%",
     marginBottom: 15,
   },
-  mq ({
-    margin: ['20px 20px', '0 20% 40px 20%'],
+  mq({
+    margin: ["20px 20px", "0 20% 40px 20%"],
   })
 );
 
-const InputWrapper = styled ('form') ({
-  position: 'relative',
-  width: '100%',
+const InputWrapper = styled("form")({
+  position: "relative",
+  width: "100%",
   maxWidth: 700,
-  margin: '0 auto',
+  margin: "0 auto",
 });
 
-const inputStyle = css ({
+const inputStyle = css({
   background: theme.color.white,
-  border: '1px solid #979797',
+  border: "1px solid #979797",
   borderRadius: 8,
   fontSize: 18,
-  padding: '15px',
-  width: '100%',
-  boxSizing: 'border-box',
-  outline: 'none',
+  padding: "15px",
+  width: "100%",
+  boxSizing: "border-box",
+  outline: "none",
 });
 
-const ResultNumber = styled ('p') ({
+const ResultNumber = styled("p")({
   fontSize: theme.fontSize.paragraph,
   fontWeight: theme.fontWeight.semiBold,
-  textAlign: 'left',
+  textAlign: "left",
   marginTop: 5,
 });
 
-const Pagination = styled ('div') ({
-  width: '100%',
+const Pagination = styled("div")({
+  width: "100%",
   maxWidth: 350,
-  margin: '0 auto',
-  textAlign: 'center',
+  margin: "0 auto",
+  textAlign: "center",
   marginBottom: 50,
 });
 
 class Plugins extends React.Component {
-  keywords = 'webiny-plugin';
+  keywords = "webiny-plugin";
   perPage = 6;
 
-  constructor (props) {
-    super (props);
+  constructor(props) {
+    super(props);
 
-    this.state = {query: '', results: [], totalResults: 0};
+    this.state = { query: "", results: [], totalResults: 0 };
     this.page = 0;
-    this.inputRef = React.createRef ();
+    this.inputRef = React.createRef();
   }
 
-  handleChange = event => {
+  handleChange = (event) => {
     let query = event.target.value;
-    this.setState (
+    this.setState(
       {
         query,
         results: [],
         totalResults: 0,
       },
       () => {
-        this.renderPlugins (0);
+        this.renderPlugins(0);
       }
     );
   };
 
-  componentDidMount () {
+  componentDidMount() {
     // first display the loading indicator
-    this.renderPlugins (0);
+    this.renderPlugins(0);
   }
 
-  async renderPlugins (from) {
-    const results = await this.fetchResults (from);
+  async renderPlugins(from) {
+    const results = await this.fetchResults(from);
     const previousResults = this.state.results;
-    this.setState (
+    this.setState(
       {
-        results: previousResults.concat (results.results),
+        results: previousResults.concat(results.results),
         totalResults: results.total,
       },
       () => {
-        this.renderResultList ();
+        this.renderResultList();
       }
     );
   }
 
-  async fetchResults (from) {
+  async fetchResults(from) {
     // query the registry
     const query =
-      'https://api.npms.io/v2/search?q=' +
-      (this.state.query !== '' ? this.state.query + '%20' : '') +
-      'keywords%3A' +
+      "https://api.npms.io/v2/search?q=" +
+      (this.state.query !== "" ? this.state.query + "%20" : "") +
+      "keywords%3A" +
       this.keywords +
-      ',not:deprecated,not:unstable&size=' +
+      ",not:deprecated,not:unstable&size=" +
       this.perPage +
-      '&from=' +
+      "&from=" +
       from;
-    const response = await fetch (query);
-    const pluginList = await response.json ();
+    const response = await fetch(query);
+    const pluginList = await response.json();
 
     return pluginList;
   }
 
-  renderResultList (results) {
+  renderResultList(results) {
     // append the results to DOM
-    ReactDOM.render (
+    ReactDOM.render(
       <PluginList
         pluginList={this.state.results}
         query={this.state.query}
         total={this.state.totalResults}
       />,
-      document.getElementById ('plugin-list')
+      document.getElementById("plugin-list")
     );
   }
 
-  renderResultNumber () {
+  renderResultNumber() {
     if (
-      typeof this.state.totalResults !== 'number' ||
+      typeof this.state.totalResults !== "number" ||
       this.state.totalResults < 1
     ) {
-      return 'Zero plugins found';
+      return "Zero plugins found";
     }
 
     if (this.state.totalResults > 1) {
-      return this.state.totalResults + ' plugins found';
+      return this.state.totalResults + " plugins found";
     } else if (this.state.totalResults === 1) {
-      return 'Only one plugin found';
+      return "Only one plugin found";
     }
   }
 
-  renderPagination () {
+  renderPagination() {
     const numPages = this.state.totalResults / this.perPage;
-    console.log ('num pages:' + numPages + ' current page: ' + this.page);
+    console.log("num pages:" + numPages + " current page: " + this.page);
     if (numPages > this.page + 1) {
       return (
         <Pagination>
           <Button
-            type={'outlineDark'}
+            type={"outlineDark"}
             onClick={() => {
               this.page++;
-              this.renderPlugins (this.page * this.perPage);
+              this.renderPlugins(this.page * this.perPage);
             }}
           >
             Load More
@@ -190,20 +190,18 @@ class Plugins extends React.Component {
     }
   }
 
-  render () {
-    const resultNumber = this.renderResultNumber ();
+  render() {
+    const resultNumber = this.renderResultNumber();
 
     return (
       <React.Fragment>
         <Hero>
           <ContentContainer>
             <Title>Webiny Plugins</Title>
-            <SubText>
-              Find the right plugins for your Webiny apps.
-            </SubText>
+            <SubText>Find the right plugins for your Webiny apps.</SubText>
             <InputWrapper
-              onSubmit={e => {
-                e.preventDefault ();
+              onSubmit={(e) => {
+                e.preventDefault();
               }}
             >
               <DelayInput
@@ -216,14 +214,12 @@ class Plugins extends React.Component {
                 name="query"
                 autoComplete="off"
               />
-              <ResultNumber>
-                {resultNumber}
-              </ResultNumber>
+              <ResultNumber>{resultNumber}</ResultNumber>
             </InputWrapper>
           </ContentContainer>
         </Hero>
         <div id="plugin-list" />
-        {this.renderPagination ()}
+        {this.renderPagination()}
         <Footer />
       </React.Fragment>
     );

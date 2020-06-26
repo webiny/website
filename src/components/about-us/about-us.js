@@ -1,49 +1,49 @@
-import React from 'react';
-import styled from 'react-emotion';
-import theme from '../utils/theme';
-import mq from '../utils/breakpoints';
-import {css} from 'emotion';
-import ContentContainer from '../ui/content-container';
-import {Grid, Cell} from '../ui/layout/layout';
-import Button from '../ui/button';
+import React from "react";
+import styled from "react-emotion";
+import theme from "../utils/theme";
+import mq from "../utils/breakpoints";
+import { css } from "emotion";
+import ContentContainer from "../ui/content-container";
+import { Grid, Cell } from "../ui/layout/layout";
+import Button from "../ui/button";
 
-import heroBg from './assets/hero-bg.svg';
-import Team from './team';
+import heroBg from "./assets/hero-bg.svg";
+import Team from "./team";
 
-import E1 from './assets/e1-logo.png';
-import MkLogo from './assets/mk-logo.svg';
-import MkFounders from './assets/mk-founders.png';
-import MkProduct from './assets/mk-product.png';
-import benefitsBg from './assets/webiny-about-us-benefits-bg.svg';
+import E1 from "./assets/e1-logo.png";
+import MkLogo from "./assets/mk-logo.svg";
+import MkFounders from "./assets/mk-founders.png";
+import MkProduct from "./assets/mk-product.png";
+import benefitsBg from "./assets/webiny-about-us-benefits-bg.svg";
 
-const Hero = styled ('section') (
+const Hero = styled("section")(
   {
-    width: '100%',
-    background: 'url(' + heroBg + ') no-repeat center top',
-    color: '#fff',
-    boxSizing: 'border-box',
-    textAlign: 'center',
+    width: "100%",
+    background: "url(" + heroBg + ") no-repeat center top",
+    color: "#fff",
+    boxSizing: "border-box",
+    textAlign: "center",
   },
-  mq ({
-    padding: ['100px 20px 25px', '150px 0 25px'],
+  mq({
+    padding: ["100px 20px 25px", "150px 0 25px"],
     //height: ['auto', 'calc(100vh - 150px)'],
-    minHeight: ['auto', '360px'],
+    minHeight: ["auto", "360px"],
     //maxHeight: ['auto'],
     marginBottom: [50, 0],
-    backgroundSize: ['cover'],
-    backgroundPosition: ['top', 'top', 'bottom'],
+    backgroundSize: ["cover"],
+    backgroundPosition: ["top", "top", "bottom"],
   })
 );
 
-const Title = styled ('h1') ({
+const Title = styled("h1")({
   fontSize: theme.fontSize.h1,
   fontWeight: theme.fontWeight.semiBold,
   marginBottom: 25,
   maxWidth: 600,
-  margin: '0 auto',
+  margin: "0 auto",
 });
 
-const styleSet = css (
+const styleSet = css(
   {
     h2: {
       paddingTop: 0,
@@ -53,162 +53,160 @@ const styleSet = css (
     p: {
       fontSize: 24,
     },
-    '.grid': {
-      alignItems: 'flex-start',
-      '&.team': {
+    ".grid": {
+      alignItems: "flex-start",
+      "&.team": {
         paddingTop: 15,
         paddingBottom: 15,
       },
-      '&.investors, &.media-kit, &.traits': {
-        padding: '25px 0',
-        margin: '50px 0',
+      "&.investors, &.media-kit, &.traits": {
+        padding: "25px 0",
+        margin: "50px 0",
         h2: {
-          textAlign: 'center',
+          textAlign: "center",
           marginBottom: 0,
         },
         p: {
-          textAlign: 'center',
+          textAlign: "center",
         },
-        '.logos': {
-          textAlign: 'center',
+        ".logos": {
+          textAlign: "center",
           img: {
             height: 80,
-            width: 'auto',
+            width: "auto",
           },
         },
       },
-      '&.media-kit': {
-        justifyContent: 'space-between',
-        alignItems: 'center',
+      "&.media-kit": {
+        justifyContent: "space-between",
+        alignItems: "center",
         div: {
-          '&:last-child': {
-            margin: '0 !important',
+          "&:last-child": {
+            margin: "0 !important",
           },
         },
         img: {
           width: 350,
-          outline: '0',
-          boxShadow: '0 1px 5px 0 rgba(0,0,0,0.15)',
+          outline: "0",
+          boxShadow: "0 1px 5px 0 rgba(0,0,0,0.15)",
           borderRadius: 5,
-          display: 'block',
+          display: "block",
         },
       },
     },
   },
-  mq ({
-    width: ['100%', '100%', 1200],
-    '.title': {
+  mq({
+    width: ["100%", "100%", 1200],
+    ".title": {
       marginTop: [45, 0],
       marginBottom: [0, 0],
-      padding: [0, '85px 0 0 0'],
+      padding: [0, "85px 0 0 0"],
       h2: {
-        textAlign: 'center',
+        textAlign: "center",
       },
     },
-    '.grid': {
-      flexDirection: ['column', 'row'],
-      '&.about div:first-child': {
+    ".grid": {
+      flexDirection: ["column", "row"],
+      "&.about div:first-child": {
         marginRight: [0, 100],
       },
       h2: {
-        textAlign: ['center', 'left'],
+        textAlign: ["center", "left"],
       },
-      '&.media-kit': {
-        margin: [0, '50px 0'],
+      "&.media-kit": {
+        margin: [0, "50px 0"],
         div: {
-          flexBasis: ['100%', 350],
+          flexBasis: ["100%", 350],
           marginBottom: [25, 0],
         },
         img: {
-          margin: ['0 auto', 0],
+          margin: ["0 auto", 0],
         },
       },
     },
   })
 );
 
-const Bold = styled ('span') ({
+const Bold = styled("span")({
   fontWeight: theme.fontWeight.semiBold,
 });
 
-const Profile = styled ('div') (
+const Profile = styled("div")(
   {
-    display: 'flex',
+    display: "flex",
     marginBottom: 50,
-    flexDirection: 'column',
-    alignItems: 'center',
-    textAlign: 'center',
+    flexDirection: "column",
+    alignItems: "center",
+    textAlign: "center",
     img: {
-      height: '100%',
-      width: '150px !important',
-      boxShadow: '0 10px 5px rgba(91,107,174,.05)',
-      borderRadius: '50%',
+      height: "100%",
+      width: "150px !important",
+      boxShadow: "0 10px 5px rgba(91,107,174,.05)",
+      borderRadius: "50%",
     },
     h3: {
       marginBottom: 0,
       fontSize: 24,
       fontWeight: theme.fontWeight.semiBold,
-      justifyContent: 'center',
+      justifyContent: "center",
     },
     a: {
       color: theme.color.grayText,
-      textDecoration: 'underline',
-      '&:hover': {
+      textDecoration: "underline",
+      "&:hover": {
         color: theme.color.primaryDark,
       },
     },
   },
-  mq ({
+  mq({
     img: {
-      margin: ['0 auto 15px auto', 25],
+      margin: ["0 auto 15px auto", 25],
     },
   })
 );
 
-const ProfileTitle = styled ('div') ({
+const ProfileTitle = styled("div")({
   marginBottom: 15,
 });
-const ProfileDesc = styled ('div') ({
+const ProfileDesc = styled("div")({
   fontSize: 14,
   color: theme.color.grayText,
   marginBottom: 15,
 });
-const ProfileLinks = styled ('div') (
-  {
-    //display: 'flex',
-    //justifyContent: 'space-between',
-  }
-);
-
-const Divider = styled ('div') ({
-  width: '100%',
-  height: 20,
-  backgroundColor: '#F4F6F8',
-  borderTop: '1px solid #E5E5E5',
-  borderBottom: '1px solid #E5E5E5',
+const ProfileLinks = styled("div")({
+  //display: 'flex',
+  //justifyContent: 'space-between',
 });
 
-const TraitPair = styled ('div') (
+const Divider = styled("div")({
+  width: "100%",
+  height: 20,
+  backgroundColor: "#F4F6F8",
+  borderTop: "1px solid #E5E5E5",
+  borderBottom: "1px solid #E5E5E5",
+});
+
+const TraitPair = styled("div")(
   {
-    display: 'flex'
+    display: "flex",
   },
-  mq ({
-    flexDirection: ['column', 'row'],
+  mq({
+    flexDirection: ["column", "row"],
   })
 );
 
-const TraitBullet = styled ('div') (
+const TraitBullet = styled("div")(
   {
-    display: 'flex',
-    alignItems: 'center',
+    display: "flex",
+    alignItems: "center",
     height: 150,
     span: {
       color: theme.color.primaryDark,
-      backgroundColor: '#FEC4B2',
-      borderRadius: '50%',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
+      backgroundColor: "#FEC4B2",
+      borderRadius: "50%",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
       width: 50,
       height: 50,
       fontSize: 32,
@@ -217,70 +215,70 @@ const TraitBullet = styled ('div') (
     p: {
       fontSize: 20,
       paddingLeft: 20,
-      textAlign: 'left !important',
-      width: '100%',
-      margin: '0',
+      textAlign: "left !important",
+      width: "100%",
+      margin: "0",
     },
   },
   mq({
-    width: ['100%', '48%'],
-    ':nth-child(2)' : {
-      marginLeft: [0, 16]
+    width: ["100%", "48%"],
+    ":nth-child(2)": {
+      marginLeft: [0, 16],
     },
   })
 );
 
-const benefits = css (
+const benefits = css(
   {
-    background: 'url(' + benefitsBg + ') no-repeat center top',
-    backgroundSize: 'cover',
+    background: "url(" + benefitsBg + ") no-repeat center top",
+    backgroundSize: "cover",
     color: theme.color.white,
-    textAlign: 'center',
+    textAlign: "center",
     paddingBottom: 50,
-    '.title': {
+    ".title": {
       maxWidth: 750,
-      margin: '0 auto',
+      margin: "0 auto",
       h2: {
-        textAlign: 'center',
+        textAlign: "center",
       },
     },
-    '.careersBtn': {
+    ".careersBtn": {
       maxWidth: 250,
       color: theme.color.white,
-      margin: '50px auto',
-      '&:hover': {
-        textDecoration: 'none',
+      margin: "50px auto",
+      "&:hover": {
+        textDecoration: "none",
       },
     },
     p: {
-      textAlign: 'center',
+      textAlign: "center",
       color: theme.color.white,
       marginBottom: 50,
       a: {
         color: theme.color.white,
-        textDecoration: 'underline',
+        textDecoration: "underline",
       },
     },
     hr: {
-      borderColor: '#979797',
-      boxShadow: 'none',
-      borderTop: 'none',
-      borderLeft: 'none',
-      borderRight: 'none',
+      borderColor: "#979797",
+      boxShadow: "none",
+      borderTop: "none",
+      borderLeft: "none",
+      borderRight: "none",
     },
     h3: {
       fontSize: theme.fontSize.h3,
       fontWeight: theme.fontWeight.semiBold,
-      textAlign: 'center',
+      textAlign: "center",
       color: theme.color.white,
-      margin: '50px auto',
-      justifyContent: 'center',
+      margin: "50px auto",
+      justifyContent: "center",
     },
   },
-  mq ({
-    width: ['100%', '100%'],
-    '.title': {
-      padding: ['0 15px', 0],
+  mq({
+    width: ["100%", "100%"],
+    ".title": {
+      padding: ["0 15px", 0],
       h2: {
         fontSize: [28, 36],
       },
@@ -288,26 +286,26 @@ const benefits = css (
   })
 );
 
-const Perks = styled ('div') (
+const Perks = styled("div")(
   {
-    display: 'flex',
-    justifyContent: 'space-between',
-    flexWrap: 'wrap',
+    display: "flex",
+    justifyContent: "space-between",
+    flexWrap: "wrap",
     maxWidth: 1100,
-    margin: '0 auto',
-    '.box': {
-      display: 'block',
+    margin: "0 auto",
+    ".box": {
+      display: "block",
       color: theme.color.black,
-      flex: '1 0 25%',
+      flex: "1 0 25%",
       backgroundColor: theme.color.white,
-      boxSizing: 'border-box',
+      boxSizing: "border-box",
       margin: 25,
-      backgroundColor: '#fff',
-      boxShadow: '0 2px 4px 0 rgba(0,0,0,0.50)',
+      backgroundColor: "#fff",
+      boxShadow: "0 2px 4px 0 rgba(0,0,0,0.50)",
       borderRadius: 2,
       padding: 40,
       h4: {
-        textAlign: 'left',
+        textAlign: "left",
         fontWeight: theme.fontWeight.semiBold,
         fontSize: theme.fontSize.h4,
         marginTop: 0,
@@ -315,17 +313,17 @@ const Perks = styled ('div') (
       },
       p: {
         color: theme.color.black,
-        textAlign: 'left',
+        textAlign: "left",
         marginBottom: 0,
       },
     },
   },
-  mq ({
-    flexDirection: ['column', 'row'],
+  mq({
+    flexDirection: ["column", "row"],
   })
 );
 
-const ProfileCard = props => (
+const ProfileCard = (props) => (
   <Profile>
     <img src={props.img} alt={props.name} />
     <div>
@@ -333,61 +331,74 @@ const ProfileCard = props => (
       <ProfileTitle>{props.title}</ProfileTitle>
       {/*<ProfileDesc>{props.desc}</ProfileDesc>*/}
       <ProfileLinks>
-        <a href={'https://www.linkedin.com/in/' + props.linkedin}>LinkedIn</a>
-        ,
-        {' '}
-        {' '}
-        {props.twitter &&
-          <a href={'https://twitter.com/' + props.twitter}>Twitter, </a>}
-        <a href={'https://github.com/' + props.github}>GitHub</a>
+        <a href={"https://www.linkedin.com/in/" + props.linkedin}>LinkedIn</a>,{" "}
+        {props.twitter && (
+          <a href={"https://twitter.com/" + props.twitter}>Twitter, </a>
+        )}
+        <a href={"https://github.com/" + props.github}>GitHub</a>
       </ProfileLinks>
     </div>
   </Profile>
 );
 
-const Trait = props => (
+const Trait = (props) => (
   <TraitBullet>
     <span>{props.num}</span>
     <p>{props.children}</p>
   </TraitBullet>
 );
 
-export default ({children, ...props}) => (
+export default ({ children, ...props }) => (
   <section>
     <Hero {...props}>
       <ContentContainer>
         <Title>
-          Creating Tools and Solutions for the<br />Serverless Era
+          Creating Tools and Solutions for the
+          <br />
+          Serverless Era
         </Title>
-
       </ContentContainer>
     </Hero>
     <ContentContainer className={styleSet}>
-      <Grid className={'grid about'}>
+      <Grid className={"grid about"}>
         <Cell>
           <h2>Hello and welcome</h2>
           <p>
-            At Webiny we have a mission to empower developers. We do that by providing tools, processes and ready-made apps. As a result, developers can create serverless applications with ease.
+            At Webiny we have a mission to empower developers. We do that by
+            providing tools, processes and ready-made apps. As a result,
+            developers can create serverless applications with ease.
           </p>
-          <p><Bold>Our story</Bold></p>
-
           <p>
-            Many moons ago, Webiny was just another digital agency. We were building websites, fighting the technology and fixing bugs, many bugs.
-          </p>
-
-          <p>
-            Eventually, we saw that the way we build and manage web applications is changing. We saw that this “serverless” trend is actually here to stay. Even more than that, we now believe that in a few years time, serverless will be the way how most of the web is created.
+            <Bold>Our story</Bold>
           </p>
 
           <p>
-            With this belief, we decided to close down our service business and focus on a mission to built a serverless CMS. One this will become a foundation for all serverless applications. One that developers will see as a core part of their serverless stack.
+            Many moons ago, Webiny was just another digital agency. We were
+            building websites, fighting the technology and fixing bugs, many
+            bugs.
+          </p>
+
+          <p>
+            Eventually, we saw that the way we build and manage web applications
+            is changing. We saw that this “serverless” trend is actually here to
+            stay. Even more than that, we now believe that in a few years time,
+            serverless will be the way how most of the web is created.
+          </p>
+
+          <p>
+            With this belief, we decided to close down our service business and
+            focus on a mission to built a serverless CMS. One this will become a
+            foundation for all serverless applications. One that developers will
+            see as a core part of their serverless stack.
           </p>
           <p>
-            We want to do all that, but with a community in mind, one that will help us achieve this goal.  As a result, we released Webiny under the MIT open-source licence so everyone can use it completely free of charge.
+            We want to do all that, but with a community in mind, one that will
+            help us achieve this goal. As a result, we released Webiny under the
+            MIT open-source licence so everyone can use it completely free of
+            charge.
           </p>
         </Cell>
       </Grid>
-
     </ContentContainer>
 
     <Divider />
@@ -396,10 +407,10 @@ export default ({children, ...props}) => (
     <Divider />
 
     <ContentContainer className={styleSet}>
-      <Grid className={'grid traits'}>
+      <Grid className={"grid traits"}>
         <Cell>
           <h2>Traits We Value</h2>
-          <Grid className={'grid'}>
+          <Grid className={"grid"}>
             <Cell>
               <TraitPair>
                 <Trait num={1}>
@@ -412,56 +423,58 @@ export default ({children, ...props}) => (
 
               <TraitPair>
                 <Trait num={3}>
-                  We respect and treat others the same way we want to be treated.
+                  We respect and treat others the same way we want to be
+                  treated.
                 </Trait>
                 <Trait num={4}>
-                  Each one of us has a voice and is  not afraid to speak their mind.
+                  Each one of us has a voice and is not afraid to speak their
+                  mind.
                 </Trait>
               </TraitPair>
-
 
               <TraitPair>
                 <Trait num={5}>
-                  We are motivated by the problem we are solving and not just by money.
+                  We are motivated by the problem we are solving and not just by
+                  money.
                 </Trait>
                 <Trait num={6}>
-                  We strive to communicate as much and as clearly as possible as this is the lifestream of successful remote working.
+                  We strive to communicate as much and as clearly as possible as
+                  this is the lifestream of successful remote working.
                 </Trait>
               </TraitPair>
 
-
               <TraitPair>
                 <Trait num={7}>
-                  We value flexibility and freedom but also take on the responsibility and accountability for our work.
+                  We value flexibility and freedom but also take on the
+                  responsibility and accountability for our work.
                 </Trait>
                 <Trait num={8}>
                   We deeply care about the quality of our work.
                 </Trait>
               </TraitPair>
 
-
               <TraitPair>
                 <Trait num={9}>
-                  We truly believe that our work has impact and that Webiny will become the future of web development.
+                  We truly believe that our work has impact and that Webiny will
+                  become the future of web development.
                 </Trait>
                 <Trait num={10}>
-                  More than anything I'm happy to help out a community member and make their day.
+                  More than anything I'm happy to help out a community member
+                  and make their day.
                 </Trait>
               </TraitPair>
             </Cell>
           </Grid>
-
         </Cell>
       </Grid>
     </ContentContainer>
 
     <Divider />
     <ContentContainer className={benefits}>
-      <Grid className={'title'}>
+      <Grid className={"title"}>
         <Cell>
           <h2>
-            If you’ve identified yourself in our values,
-            we would love to talk
+            If you’ve identified yourself in our values, we would love to talk
           </h2>
           <Button
             className="careersBtn"
@@ -472,9 +485,8 @@ export default ({children, ...props}) => (
             View open positions &nbsp; ▶
           </Button>
           <p>
-            Don't see the right opening at the moment?
-            Don’t worry, just email your CV to
-            {' '}
+            Don't see the right opening at the moment? Don’t worry, just email
+            your CV to{" "}
             <a href="mailto:careers@webiny.com">careers@webiny.com</a>.
           </p>
           <hr />
@@ -483,60 +495,72 @@ export default ({children, ...props}) => (
       </Grid>
 
       <Perks>
-        <div className={'box'}>
+        <div className={"box"}>
           <h4>🌍 Flexible & remote work</h4>
           <p>
-            We are a remote team, you can work from home or any other location you choose. All you need is an internet connection.
+            We are a remote team, you can work from home or any other location
+            you choose. All you need is an internet connection.
           </p>
         </div>
 
-        <div className={'box'}>
+        <div className={"box"}>
           <h4>💵 Competitive salary</h4>
           <p>
-            We pay competitive market rates, based on your location and experience.
+            We pay competitive market rates, based on your location and
+            experience.
           </p>
         </div>
 
-        <div className={'box'}>
+        <div className={"box"}>
           <h4>📚 £1000 personal development budget</h4>
           <p>
-            Each year you get a £1000 budget to spend on any books, conferences or training you wish to attend.
+            Each year you get a £1000 budget to spend on any books, conferences
+            or training you wish to attend.
           </p>
         </div>
 
-        <div className={'box'}>
+        <div className={"box"}>
           <h4>🏝 Unlimited vacation</h4>
           <p>
-            We offer an unlimited paid time off and require you to take a minimum of 15 days off (paid) each year, alongside any public holidays.
+            We offer an unlimited paid time off and require you to take a
+            minimum of 15 days off (paid) each year, alongside any public
+            holidays.
           </p>
         </div>
 
-        <div className={'box'}>
+        <div className={"box"}>
           <h4>📈 Stock options</h4>
           <p>
-            We want our success to be your success. Each team member gets a certain number of stock options assigned that vest over a period of time.
+            We want our success to be your success. Each team member gets a
+            certain number of stock options assigned that vest over a period of
+            time.
           </p>
         </div>
 
-        <div className={'box'}>
+        <div className={"box"}>
           <h4>💻 Equipment</h4>
           <p>
             We pay for any equipment you need, be that software or hardware.
           </p>
         </div>
 
-        <div className={'box'}>
+        <div className={"box"}>
           <h4>🍼 Family leave</h4>
           <p>
-            Starting a family is an important step in everyone's life. We want our employees to enjoy those moments without worrying about their job. We are offering all new parents (includes maternity, paternity, and adoption) 12 weeks of fully paid leave. This is available if you've been with Webiny for 12 months or more.
-            {' '}
+            Starting a family is an important step in everyone's life. We want
+            our employees to enjoy those moments without worrying about their
+            job. We are offering all new parents (includes maternity, paternity,
+            and adoption) 12 weeks of fully paid leave. This is available if
+            you've been with Webiny for 12 months or more.{" "}
           </p>
         </div>
 
-        <div className={'box'}>
+        <div className={"box"}>
           <h4>🐥 Flexible workdays for new parents</h4>
           <p>
-            Besides the family leave, if you are a new parent (been a parent for less than 1 year), you can choose to work for 3 or 4 days a week, instead of full-time, for the next 6 months for a pro-rata salary.
+            Besides the family leave, if you are a new parent (been a parent for
+            less than 1 year), you can choose to work for 3 or 4 days a week,
+            instead of full-time, for the next 6 months for a pro-rata salary.
           </p>
         </div>
       </Perks>
@@ -549,16 +573,15 @@ export default ({children, ...props}) => (
       >
         View open positions &nbsp; ▶
       </Button>
-
     </ContentContainer>
 
     <Divider />
     <ContentContainer className={styleSet}>
-      <Grid className={'grid investors'}>
+      <Grid className={"grid investors"}>
         <Cell>
           <h2>Our Investors</h2>
           <p>We are proud to be backed by visionary investors</p>
-          <div className={'logos'}>
+          <div className={"logos"}>
             <img src={E1} alt="Episode 1" />
           </div>
         </Cell>
@@ -567,12 +590,12 @@ export default ({children, ...props}) => (
 
     <Divider />
     <ContentContainer className={styleSet}>
-      <Grid className={'title'}>
+      <Grid className={"title"}>
         <Cell>
           <h2>Media Kit</h2>
         </Cell>
       </Grid>
-      <Grid className={'grid media-kit'}>
+      <Grid className={"grid media-kit"}>
         <Cell>
           <a
             href="https://drive.google.com/drive/u/2/folders/19BiuDSOrJ_H0HshmtQhsDGeslB-lVpom"
