@@ -5,10 +5,10 @@ import mq from '../utils/breakpoints';
 import ContentContainer from '../ui/content-container';
 import Button from '../ui/button';
 import Link from 'gatsby-link';
-import {css} from 'emotion';
+import { css } from 'emotion';
 import GitHubButton from 'react-github-btn';
 import NewsBanner from '../ui/news-banner';
-import {trackGaConversion} from '../ui/functions';
+import { trackGaConversion } from '../ui/functions';
 
 import logo from './assets/webiny-logo-with-icon-left-white.svg';
 import logoOrange from './assets/webiny-logo-with-icon-left-orange.svg';
@@ -17,22 +17,22 @@ import menuIconBlack from './assets/round-menu-24px-black.svg';
 import downArrowWhite from './assets/down-arrow-white.svg';
 import downArrowBlack from './assets/down-arrow-black.svg';
 
-const WebinyLogo = styled ('div') ({
+const WebinyLogo = styled('div')({
   padding: 0,
   lineHeight: '100%',
   zIndex: 100,
 });
 
-const logoImage = css (
+const logoImage = css(
   {},
-  mq ({
+  mq({
     paddingLeft: [20, 0],
     height: [28, 32],
     marginTop: [5],
   })
 );
 
-const Menu = styled ('ul') (
+const Menu = styled('ul')(
   {
     listStyle: 'none',
     //display: 'flex',
@@ -41,12 +41,12 @@ const Menu = styled ('ul') (
     alignItems: 'center',
     justifyContent: 'center',
   },
-  mq ({
+  mq({
     display: ['none', 'flex'],
   })
 );
 
-const linkStyle = css ({
+const linkStyle = css({
   fontWeight: 600,
   textDecoration: 'none',
   color: '#fff',
@@ -56,7 +56,7 @@ const linkStyle = css ({
   },
 });
 
-const DropDown = styled ('div') (
+const DropDown = styled('div')(
   {
     textAlign: 'left',
     borderRadius: 2,
@@ -108,7 +108,7 @@ const DropDown = styled ('div') (
       },
     },
   },
-  mq ({
+  mq({
     position: ['relative', 'absolute'],
     display: ['none', 'block'],
     boxShadow: ['none', '0px 8px 16px 0px rgba(0,0,0,0.2)'],
@@ -134,7 +134,7 @@ const DropDown = styled ('div') (
   })
 );
 
-const DownArrow = styled ('div') (
+const DownArrow = styled('div')(
   {
     position: 'absolute',
     width: 24,
@@ -143,12 +143,12 @@ const DownArrow = styled ('div') (
     right: 0,
     color: 'white',
   },
-  mq ({
+  mq({
     top: [-1, 14],
   })
 );
 
-const MenuItem = styled ('li') (
+const MenuItem = styled('li')(
   {
     textAlign: 'left',
     cursor: 'pointer',
@@ -168,7 +168,7 @@ const MenuItem = styled ('li') (
       },
     },
   },
-  mq ({
+  mq({
     marginLeft: [0, 30],
     marginBottom: [15, 0],
     marginTop: [0, -15],
@@ -178,7 +178,7 @@ const MenuItem = styled ('li') (
   })
 );
 
-const parentMenu = css (
+const parentMenu = css(
   {
     paddingRight: 25,
     marginRight: -5,
@@ -186,7 +186,7 @@ const parentMenu = css (
       opacity: 1,
     },
   },
-  mq ({
+  mq({
     marginBottom: [15, 0],
     paddingBottom: [15, 15],
   })
@@ -225,7 +225,7 @@ const dropdownArrow = css`
     }
 `;
 
-const HeaderContainer = styled ('header') (
+const HeaderContainer = styled('header')(
   {
     left: 0,
     paddingTop: 15,
@@ -253,24 +253,24 @@ const HeaderContainer = styled ('header') (
       },
     },
   }),
-  mq ({
+  mq({
     height: ['auto', 45],
   })
 );
 
-const headerInnerContainer = css (
+const headerInnerContainer = css(
   {
     maxWidth: 1200,
     width: '100%',
     boxSizing: 'border-box',
   },
-  mq ({
+  mq({
     width: ['100%', '100%'],
     padding: [0, '0 5px', 0],
   })
 );
 
-const MobileMenu = styled ('ul') (
+const MobileMenu = styled('ul')(
   {
     paddingRight: 20,
     display: 'flex',
@@ -285,29 +285,29 @@ const MobileMenu = styled ('ul') (
     padding: 15,
     borderRadius: 5,
   },
-  mq ({
+  mq({
     display: ['block', 'none'],
   })
 );
 
-const MobileMenuIcon = styled ('img') (
+const MobileMenuIcon = styled('img')(
   {
     zIndex: 100,
     position: 'absolute',
     right: 20,
     top: 17,
   },
-  mq ({
+  mq({
     display: ['block', 'none'],
   })
 );
 
-const link = css ({
+const link = css({
   textDecoration: 'none',
   color: theme.color.black,
 });
 
-const NavBar = styled ('div') (
+const NavBar = styled('div')(
   {
     margin: '0 auto',
     display: 'flex',
@@ -326,16 +326,16 @@ const NavBar = styled ('div') (
       },
     },
   },
-  mq ({
+  mq({
     flexDirection: ['column', 'row'],
     marginTop: [-10, 0],
     paddingTop: [10, 0],
   })
 );
 
-const githubMenu = css (
+const githubMenu = css(
   {},
-  mq ({
+  mq({
     paddingTop: [5, 19],
   })
 );
@@ -345,7 +345,7 @@ const MenuItemList = props => (
     <MenuItem className={githubMenu}>
       <div
         onClick={() => {
-          trackGaConversion ();
+          trackGaConversion();
         }}
       >
         <GitHubButton
@@ -446,35 +446,35 @@ class Header extends React.Component {
   hasBanner = false;
   bannerListnerer = false;
   scrollListener = false;
-  state = {isSticky: false, mobileMenuOpen: false, hideBanner: false};
+  state = { isSticky: false, mobileMenuOpen: false, hideBanner: false };
 
-  componentDidMount () {
+  componentDidMount() {
     if (this.hasBanner) {
-      this.initBannerListener ();
+      this.initBannerListener();
     }
 
     if (this.props.trackScroll === false) {
-      this.setState ({isSticky: true});
+      this.setState({ isSticky: true });
       return;
     }
 
-    this.initScrollListener ();
+    this.initScrollListener();
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     if (this.hasBanner && this.bannerListnerer !== false) {
-      clearInterval (this.bannerListnerer);
+      clearInterval(this.bannerListnerer);
       this.bannerListnerer = false;
     }
 
     if (this.scrollListener !== false) {
-      clearInterval (this.scrollListener);
+      clearInterval(this.scrollListener);
       this.scrollListener = false;
     }
   }
 
   toggleMobileMenu = () => {
-    this.setState (
+    this.setState(
       {
         mobileMenuOpen: !this.state.mobileMenuOpen,
         isSticky: true, //this.state.mobileMenuOpen,
@@ -490,7 +490,7 @@ class Header extends React.Component {
       this.didScroll = true;
     };
 
-    this.scrollListener = setInterval (() => {
+    this.scrollListener = setInterval(() => {
       if (this.didScroll) {
         this.didScroll = false;
 
@@ -502,25 +502,25 @@ class Header extends React.Component {
           if (this.state.isSticky) {
             return;
           }
-          this.setState ({isSticky: true});
+          this.setState({ isSticky: true });
         } else if (window.scrollY < 1) {
-          this.setState ({isSticky: false});
+          this.setState({ isSticky: false });
         }
       }
     }, 500);
   };
 
   initBannerListener = () => {
-    this.bannerListnerer = setInterval (() => {
+    this.bannerListnerer = setInterval(() => {
       if (window.scrollY > 30 && this.state.hideBanner == false) {
-        this.setState ({hideBanner: true});
+        this.setState({ hideBanner: true });
       } else if (window.scrollY < 30 && this.state.hideBanner == true) {
-        this.setState ({hideBanner: false});
+        this.setState({ hideBanner: false });
       }
     }, 500);
   };
 
-  render () {
+  render() {
     return (
       <React.Fragment>
         {this.hasBanner &&
