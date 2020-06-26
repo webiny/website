@@ -67,7 +67,7 @@ const webinyVideosList = css(
       ".content": {
         outline: 0,
         h3: {
-          fontSize: 32,
+          fontSize: 28,
           fontWeight: theme.fontWeight.semiBold,
           color: theme.color.secondaryDark,
           marginBottom: 10,
@@ -88,8 +88,16 @@ const webinyVideosList = css(
         a: {
           display: "block-inline",   
           color: theme.color.primaryDark,
-          fontSize: theme.fontSize.h3,
+          fontSize: theme.fontSize.h4,
+          bottom: "20px",
+          position: 'absolute'
         },
+        span: {
+            color: theme.color.darkGray,
+            fontSize: theme.fontSize.h4,
+            fontWeight: theme.fontWeight.semiBold,
+            paddingRight: 20
+        }
       },
     },
     ".slick-current": {

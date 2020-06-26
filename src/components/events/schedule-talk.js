@@ -7,15 +7,18 @@ import Button from "../ui/button";
 import ContentContainer from "../ui/content-container";
 import PipeDriveForm from "./pd-form";
 
-import purpleBg from "./assets/purple-rectangle.svg";
+import pinkBg from "./assets/pink-rectangle.svg";
 // import dropDownIcon from "./assets/dropdown-icon.svg";
+
+// import pinkBg from "./assets/pinkBg.svg";
 
 const wrapperClass = css(
   {
     top: 0,
     left: 0,
     zIndex: 0,
-    backgroundImage: "url(" + purpleBg + ")",
+    backgroundImage: "url(" + pinkBg + ")",
+
     backgroundPosition: "top left",
     backgroundRepeat: "no-repeat",
   },
@@ -207,7 +210,7 @@ class ScheduleTalk extends React.Component {
       <section ref={refFromParent} {...restProps} className={wrapperClass}>
         <ContentContainer className={contentContainerClass}>
           <TextWrapper>
-            <Title>Schedule a 1:1 demo</Title>
+            <Title>Want to be a Speaker? Then register here!</Title>
           </TextWrapper>
 
           <PipeDriveForm formId={"39fae8006d4815450b9516dde1daa5697489402"} />
