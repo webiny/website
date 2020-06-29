@@ -8,11 +8,11 @@ import ScheduleTalk from "../components/events/schedule-talk";
 import QuickStart from "../components/ui/quick-start/quick-start";
 
 class IndexPage extends React.Component {  
-    scheduleATalkRef = React.createRef();
+  scheduleTalkRef = React.createRef();
     
 goToScheduleTalkSection = () => {
-    if (this.scheduleADemoRef && this.scheduleADemoRef.current) {
-      const { offsetTop } = this.scheduleADemoRef.current;
+    if (this.scheduleTalkRef && this.scheduleTalkRef.current) {
+      const { offsetTop } = this.scheduleTalkRef.current;
       window.scrollTo({
         top: offsetTop,
         left: 0,
@@ -28,7 +28,7 @@ goToScheduleTalkSection = () => {
         <Events />
         <Register handleTalkClick={this.goToScheduleTalkSection}  />
         <QuickStart />
-        <ScheduleTalk refFromParent={this.scheduleATalkRef} />
+        <ScheduleTalk refFromParent={this.scheduleTalkRef} />
       </BaseLayout>
     );
   }
