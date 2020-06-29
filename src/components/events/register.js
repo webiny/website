@@ -91,7 +91,7 @@ const ctaButton = css(
   })
 );
 
-const ScheduleDemoImage = styled("img")(
+const ScheduleTalkImage = styled("img")(
   {
     position: "relative",
     marginRight: 8,
@@ -104,7 +104,7 @@ const ScheduleDemoImage = styled("img")(
 
 class Register extends React.Component {
   render() {
-    const { handleDemoClick, ...restProps } = this.props;
+    const { handleTalkClick, ...restProps } = this.props;
     return (
       <section {...this.props} className={wrapperClass}>
         <SubTitle>Speak at a Webiny Online Meetup</SubTitle>
@@ -118,11 +118,11 @@ class Register extends React.Component {
         <ButtonWrapper>
             <FreeDemoImage src={freeArrowIcon} />
             <Button
-              onClick={handleDemoClick}
+              onClick={handleTalkClick}
               className={ctaButton}
               type="secondary"
             >
-              <ScheduleDemoImage src={demoIcon} />
+              <ScheduleTalkImage src={demoIcon} />
               Become a speaker
             </Button>
           </ButtonWrapper>

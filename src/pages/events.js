@@ -5,19 +5,30 @@ import Hero from "../components/events/hero";
 import Events from "../components/events/events";
 import Register from "../components/events/register";
 import ScheduleTalk from "../components/events/schedule-talk";
-// import ServerlessReasons from '../components/why-serverless/serverless-reasons';
-// import Challenges from '../components/why-serverless/challenges';
 import QuickStart from "../components/ui/quick-start/quick-start";
 
-class IndexPage extends React.Component {
+class IndexPage extends React.Component {  
+    scheduleATalkRef = React.createRef();
+    
+goToScheduleTalkSection = () => {
+    if (this.scheduleADemoRef && this.scheduleADemoRef.current) {
+      const { offsetTop } = this.scheduleADemoRef.current;
+      window.scrollTo({
+        top: offsetTop,
+        left: 0,
+        behavior: "smooth",
+      });
+    }
+  };
+
   render() {
     return (
       <BaseLayout title="Events" description="Webiny Online Meetups">
         <Hero />
         <Events />
-        <Register />
+        <Register handleTalkClick={this.goToScheduleTalkSection}  />
         <QuickStart />
-        <ScheduleTalk />
+        <ScheduleTalk refFromParent={this.scheduleATalkRef} />
       </BaseLayout>
     );
   }
