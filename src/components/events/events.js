@@ -5,24 +5,19 @@ import mq from "../utils/breakpoints";
 import { css } from "emotion";
 import Link from "gatsby-link";
 import Slider from "react-slick";
+import Button from "../ui/button";
 import ContentContainer from "../ui/content-container";
 
 import "./assets/slider.css";
-import { noConflict } from "js-cookie";
-// import background from './assets/components-bg.svg';
-// import fileManager from './assets/file-manager-video.gif';
-// import formBuilder from './assets/form-builder-video.gif';
-// import headlessCms from './assets/headless-cms.gif';
-// import pageBuilder from './assets/page-builder-video.gif';
 
 const wrapperClass = css(
   {
     // background: 'url(' + background + ') no-repeat left top',
-    backgroundSize: "cover",
+    // backgroundSize: "cover",
     // backgroundColor: '#F7F7F7',
   },
   mq({
-    marginTop: [0, -100],
+    marginTop: [0, -25],
     paddingBottom: [25, 100],
   })
 );
@@ -113,7 +108,7 @@ const webinyVideosList = css(
     ".slick-slide": {
       width: ["calc(100vw - 30px) !important", "350px !important"],
       margin: ["0 15px", "0 15px"],
-    //   height: ["260px !important"]
+      // height: ["260px !important"]
     },
     ".slick-list": {
       padding: [0, "46px 0 20px!important"],
@@ -138,7 +133,6 @@ const webinyVideosImage = css(
         boxShadow: "0 5px 10px 0 rgba(0,0,0,0.15)",
         height: "350px !important",
         margin: "0 auto",
-        outline: 0,
         borderRadius: 5,
         boxSizing: "border-box",
       },
@@ -157,9 +151,18 @@ const webinyVideosImage = css(
       padding: 10,
       margin: 0,
       img: {
-        width: ["calc(100vw - 20px)", "800px !important"],
+        width: ["calc(100vw - 20px)", "700px !important"],
       },
     },
+  })
+);
+
+const ctaButton = css(
+  {
+    position: "relative",
+  },
+  mq({
+    width: ["200px !important", "auto !important"],
   })
 );
 
@@ -195,10 +198,21 @@ class Events extends React.Component {
             centerPadding={25}
             fade={true}
           >
+            {/* <YTVideo img={tobeContinued} id={"wwXSn05GWmo"} /> */}
+
+            {/* <div>
+              <img src={tobeContinued} alt="To be Continued - Knowledge Sharing Session" />
+            </div>
+            <div>
+              <img src={tobeContinued} alt="To be Continued - Knowledge Sharing Session" />
+            </div>
+            <div>
+              <img src={tobeContinued} alt="To be Continued - Knowledge Sharing Session" />
+            </div> */}
             <div></div>
             <div></div>
             <div></div>
-            <div></div>
+            {/* <div></div> */}
           </Slider>
           <Slider
             asNavFor={this.state.nav1}
@@ -240,48 +254,52 @@ class Events extends React.Component {
             ]}
           >
             <div className="content">
+              <h3 className="event-card-title">Development Workflow</h3>
+              <span>18/06/2020</span>
+              <h4>Knowledge Sharing Session 1</h4>
+              <p>
+                In this session we'll explain how Webiny works so you can confidently start contributing.
+              </p>
+              <Button
+                  className={ctaButton}
+                  link="https://www.youtube.com/watch?v=3wlOrcdcxXs&t=50s"
+                  target="_blank"
+                >
+                  View Event
+              </Button>
+            </div>
+            <div className="content">
+              <h3 className="event-card-title">Guides</h3>
+              <span>28/06/2020</span>
+              <h4>Get Started - Prerequisites</h4>
+              <p>
+                This is a quick start guide that should help you setup Webiny as fast as possible.        
+              </p>
+              <Button
+                  className={ctaButton}
+                  link="https://www.youtube.com/watch?v=G_du-yE_DL4&list=PL9HlKSQaEuXScbySDD7QgITEA8RCHp-IS"
+                  target="_blank"
+                >
+                  View Event
+                </Button>
+            </div>
+            <div className="content">
               <h3 className="event-card-title">Commodo</h3>
               <span>02/07/2020</span>
-              <h4>Knowledge Sharing Session [0]</h4>
+              <h4></h4>
               <p>
-                GraphQL based headless CMS with powerful content modeling
-                features.
+                Commodo is a set of higher order functions (HOFs) that let you define and compose rich data model objects.
               </p>
-              <Link to="/events/event-0">View Event</Link>
-            </div>
-            <div className="content">
-              <h3 className="event-card-title">Webiny Setup</h3>
-              <span>09/07/2020</span>
-              <span>Remote</span>
-
-              <h4>Knowledge Sharing Session [1]</h4>
-              <p>
-                GraphQL based headless CMS with powerful content modeling
-                features.
-              </p>
-              <Link to="/events/event-1">View Event</Link>
-            </div>
-            <div className="content">
-              <h3 className="event-card-title">Commodo Getting Started</h3>
-              <span>16/07/2020</span>
-
-              <h4>Knowledge Sharing Session [2]</h4>
-              <p>
-                GraphQL based headless CMS with powerful content modeling
-                features.
-              </p>
-              <Link to="/events/event-2">View Event</Link>
-            </div>
-            <div className="content">
-              <h3 className="event-card-title">Commodo Getting Started</h3>
-              <span>23/07/2020</span>
-
-              <h4>Knowledge Sharing Session [3]</h4>
-              <p>
-                GraphQL based headless CMS with powerful content modeling
-                features.
-              </p>
-              <Link to="/events/event-3">View Event</Link>
+              <h5>
+                Upcoming Event
+              </h5>
+              <Button
+                  className={ctaButton}
+                  link="https://github.com/webiny/commodo"
+                  target="_blank"
+                >
+                View Commodo
+              </Button>
             </div>
           </Slider>
         </ContentContainer>

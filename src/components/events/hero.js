@@ -10,6 +10,7 @@ import headerBg from "./assets/hero-bg.svg";
 const heroStyle = css(
   {
     paddingBottom: "200px !important",
+    padding: ["130px 20px 25px"]
   },
   mq({
     minHeight: ["auto", "auto", 650],

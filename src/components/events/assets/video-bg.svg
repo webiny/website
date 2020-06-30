@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="848px" viewBox="0 0 1440 848" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Home-v1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-page" transform="translate(-72.000000, -1629.000000)" fill="#F7F7F7">
+            <g id="Components" transform="translate(72.000000, 1629.000000)">
+                <path d="M0,-2.27373675e-13 C87.327814,72.7637788 232.214533,120.25206 434.660156,142.464844 C580.516339,158.468508 841.168092,141.872155 1121.27734,173.066406 C1193.72874,181.134926 1299.96962,207.779457 1440,253 L1440,848 L0,848 L0,-2.27373675e-13 Z" id="Rectangle"></path>
+            </g>
+        </g>
+    </g>
+</svg>
