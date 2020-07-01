@@ -1,72 +1,72 @@
 import React from 'react';
 import styled from 'react-emotion';
-import {css} from 'emotion';
+import { css } from 'emotion';
 import theme from '../utils/theme';
 import mq from '../utils/breakpoints';
 import ContentContainer from '../ui/content-container';
 import Newsletter from './newsletter';
 import FooterMenu from './footerMenu';
-import {trackGaConversion} from '../ui/functions';
+import { trackGaConversion } from '../ui/functions';
 
 import webinyLogo from './assets/webiny-logo-with-icon-left-white.svg';
 
-const Wrapper = styled ('div') ({
+const Wrapper = styled('div')({
   backgroundColor: theme.color.footerBg,
   padding: '50px 0 5px',
   '--nl-text-color': 'white',
   '--nl-text-align': 'right',
 });
 
-const FlexDisplay = css (
+const FlexDisplay = css(
   {
     justifyContent: 'space-between',
   },
-  mq ({
+  mq({
     display: ['block', 'flex'],
   })
 );
 
-const Box = styled ('div') (
+const Box = styled('div')(
   {
     boxSizing: 'border-box',
   },
-  mq ({
+  mq({
     width: ['100%', '33%'],
     padding: [20, 0],
   })
 );
 
-const textRight = css (
+const textRight = css(
   {},
-  mq ({
+  mq({
     textAlign: ['center', 'right'],
   })
 );
 
-const Logo = styled ('img') (
+const Logo = styled('img')(
   {},
-  mq ({
+  mq({
     margin: ['0 auto 20px auto', '0 0 25px 0'],
     display: ['block', 'inline'],
     maxHeight: ['50px', '50px'],
   })
 );
 
-const Copy = styled ('p') (
+const Copy = styled('p')(
   {
     fontSize: theme.fontSize.footer,
     color: theme.color.darkGray,
   },
-  mq ({
+  mq({
     textAlign: ['center', 'initial'],
   })
 );
 
-const linkStyle = css ({
+const linkStyle = css({
   color: theme.color.darkGray,
 });
 
-const Bottom = styled ('div') (
+const Bottom = styled('div')(
   {
     width: '100%',
     clear: 'both',
@@ -74,7 +74,7 @@ const Bottom = styled ('div') (
     marginTop: 25,
     marginBottom: 25,
   },
-  mq ({
+  mq({
     borderTop: ['none', '1px solid #3B3E45'],
     paddingTop: [0, 25],
   })
@@ -94,7 +94,7 @@ const Footer = () => (
             <br />
             <a
               onClick={() => {
-                trackGaConversion ();
+                trackGaConversion();
               }}
               className={linkStyle}
               href="https://github.com/webiny/webiny-js"
