@@ -1,0 +1,264 @@
+import React from 'react';
+import styled from 'react-emotion';
+import {css} from 'emotion';
+import theme from '../../utils/theme';
+import mq from '../../utils/breakpoints';
+import ContentContainer from '../../ui/content-container';
+import Button from '../../ui/button';
+
+import heroBg from './assets/background-shape.svg';
+import webinyLogo from './assets/webiny-logo.svg';
+import vectorIcon from './assets/vector.svg';
+import githubIcon from './assets/github-mark.svg';
+import scrollDownImg from './assets/scroll-down.svg';
+import webinyEasyImg from './assets/easy-webiny.svg';
+import webinyGroup from './assets/webiny-group.svg';
+import circleIcon from './assets/circle.svg';
+
+const HeroSection = styled('section')(
+    {
+        width: '100%',
+        backgroundColor: '#F6F4F8',
+        position: 'relative',
+        zIndex: 0,
+        backgroundImage: 'url(' + heroBg + ')',
+        backgroundRepeat: 'no-repeat'
+    },
+    mq({
+        backgroundSize: ['auto', 'auto', '100%'],
+        backgroundPosition: ['top', 'top', 'top', 'center'],
+        '@media (min-width: 1460px)': {
+            backgroundPosition: 'top',
+            paddingTop: 0
+        }
+    })
+);
+
+const heroContainerClass = css(
+    {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        maxWidth: 1200,
+        position: 'relative',
+        '&::after': {
+            content: 'url(' + scrollDownImg + ')',
+            position: 'absolute',
+            bottom: 62,
+            '@media (min-width: 1460px)': {
+                bottom: 62
+            }
+        }
+    },
+    mq({
+        width: ['100%', '100%'],
+        height: ['100%', 560],
+        padding: ['85px 0px 0px', '85px 0px 0px']
+    })
+);
+
+const HeroSectionWrapper = styled('div')(
+    {
+        display: 'flex',
+        flexDirection: 'column',
+        backgroundImage: 'url(' + webinyEasyImg + ')',
+        backgroundPosition: 'top',
+        backgroundRepeat: 'no-repeat'
+    },
+    mq({
+        backgroundSize: ['0', 'auto'],
+        alignItems: ['center']
+    })
+);
+
+const Title = styled('h1')(
+    {
+        maxWidth: 768,
+        fontSize: 48,
+        fontWeight: theme.fontWeight.bold,
+        color: theme.color.white,
+        textAlign: 'center',
+        lineHeight: '48px',
+        marginBottom: 26
+    },
+    mq({
+        marginLeft: [0, 'auto'],
+        marginRight: [0, 'auto']
+    })
+);
+
+const TitleHighlight = styled('span')({
+    backgroundImage: 'url(' + vectorIcon + ')',
+    backgroundPositionX: 'right',
+    backgroundPositionY: 'bottom',
+    backgroundRepeat: 'no-repeat'
+});
+
+const SubTitle = styled('h3')(
+    {
+        fontSize: 20,
+        fontWeight: theme.fontWeight.regular,
+        lineHeight: '34px',
+        marginTop: 0,
+        marginBottom: 26,
+        color: theme.color.white,
+        textAlign: 'center'
+    },
+    mq({
+        maxWidth: [337, 887],
+        marginLeft: [0, 'auto'],
+        marginRight: [0, 'auto']
+    })
+);
+
+const ButtonWrapper = styled('div')(
+    {
+        position: 'relative',
+        display: 'flex',
+        justifyContent: 'center',
+        marginBottom: 50,
+        width: '100%'
+    },
+    mq({
+        flexDirection: ['column', 'row'],
+        alignItems: ['center', 'flex-start']
+    })
+);
+
+const getStartedButtonClass = css(
+    {
+        backgroundColor: `${theme.color.yellow} !important`,
+        textTransform: 'uppercase',
+        padding: '10px 12px !important'
+    },
+    mq({
+        width: ['90% !important', '150px !important'],
+        marginRight: ['0px !important', '22px !important'],
+        marginBottom: ['16px !important', '0px !important']
+    })
+);
+const githubButtonClass = css(
+    {
+        textTransform: 'uppercase',
+        padding: '10px 12px !important'
+    },
+    mq({
+        width: ['90% !important', '190px !important']
+    })
+);
+
+const ScheduleDemoImage = styled('img')(
+    {
+        position: 'relative',
+        width: 20,
+        height: 20,
+        marginRight: 8
+    },
+    mq({
+        display: ['block']
+    })
+);
+
+const WebinyLogoImage = styled('img')({
+    marginBottom: 12
+});
+
+const FeatureWrapper = styled('div')(
+    {
+        display: 'flex',
+        justifyContent: 'center',
+        marginBottom: 44
+    },
+    mq({
+        flexDirection: ['column', 'row']
+    })
+);
+
+const Feature = styled('div')({
+    display: 'flex',
+    alignItems: 'center',
+    marginRight: 50,
+    '&:last-child': {
+        marginRight: 0
+    },
+
+    '& .feature-icon': {
+        width: 20,
+        height: 20,
+        marginRight: 12
+    },
+
+    '& .feature-text': {
+        fontSize: 18,
+        color: theme.color.white
+    }
+});
+
+const WebinyHallMarkImage = styled('img')({
+    position: 'absolute',
+    zIndex: -1,
+    top: 0,
+    left: 0,
+    width: '100%',
+    maxHeight: 700
+});
+
+class HeroComponent extends React.Component {
+    render() {
+        const {handleDemoClick, ...restProps} = this.props;
+        return (
+            <HeroSection {...restProps}>
+                <ContentContainer className={heroContainerClass}>
+                    <WebinyHallMarkImage src={webinyGroup} alt={''}/>
+                    <HeroSectionWrapper>
+                        <WebinyLogoImage src={webinyLogo} alt={''}/>
+                        <Title>
+                            The Easiest Way To Adopt &nbsp;
+                            <TitleHighlight>Serverless</TitleHighlight>
+                        </Title>
+                        <SubTitle>
+                            The way we build, deploy and operate the web is evolving. Webiny is a
+                            developer-friendly platform for building websites, web applications, APIs and
+                            microservices inside the serverless environment.
+                        </SubTitle>
+                        <FeatureWrapper>
+                            <Feature>
+                                <img className={'feature-icon'} src={circleIcon} alt={''}/>
+                                <span className={'feature-text'}>Zero Infrastructure Management</span>
+                            </Feature>
+                            <Feature>
+                                <img className={'feature-icon'} src={circleIcon} alt={''}/>
+                                <span className={'feature-text'}>Open Source</span>
+                            </Feature>
+                            <Feature>
+                                <img className={'feature-icon'} src={circleIcon} alt={''}/>
+                                <span className={'feature-text'}>Self Hosted</span>
+                            </Feature>
+                            <Feature>
+                                <img className={'feature-icon'} src={circleIcon} alt={''}/>
+                                <span className={'feature-text'}>Infinite Scale</span>
+                            </Feature>
+                        </FeatureWrapper>
+                        <ButtonWrapper>
+                            <Button
+                                className={getStartedButtonClass}
+                                type='default'
+                            >
+                                Get started
+                            </Button>
+                            <Button
+                                className={githubButtonClass}
+                                type='default'
+                            >
+                                <ScheduleDemoImage src={githubIcon} alt={''}/>
+                                View on Github
+                            </Button>
+                        </ButtonWrapper>
+                    </HeroSectionWrapper>
+                </ContentContainer>
+            </HeroSection>
+        );
+    }
+}
+
+export default HeroComponent;
