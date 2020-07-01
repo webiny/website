@@ -185,7 +185,7 @@ class Events extends React.Component {
   render() {
     return (
       <section {...this.props} className={wrapperClass}>
-        <SubTitle>Check out our online knowledge-sharing sessions</SubTitle>
+        <SubTitle>Webiny Online Knowledge-Sharing (KS) Sessions</SubTitle>
 
         <ContentContainer>
           <Slider
@@ -256,7 +256,7 @@ class Events extends React.Component {
             <div className="content">
               <h3 className="event-card-title">Development Workflow</h3>
               <span>18/06/2020</span>
-              <h4>Knowledge Sharing Session 1</h4>
+              <h4>KS Session 1</h4>
               <p>
                 In this session we'll explain how Webiny works so you can confidently start contributing.
               </p>
@@ -269,9 +269,9 @@ class Events extends React.Component {
               </Button>
             </div>
             <div className="content">
-              <h3 className="event-card-title">Guides</h3>
+              <h3 className="event-card-title">Get Started Guides</h3>
               <span>28/06/2020</span>
-              <h4>Get Started - Prerequisites</h4>
+              <h4>Prerequisites</h4>
               <p>
                 This is a quick start guide that should help you setup Webiny as fast as possible.        
               </p>
@@ -280,7 +280,7 @@ class Events extends React.Component {
                   link="https://www.youtube.com/watch?v=G_du-yE_DL4&list=PL9HlKSQaEuXScbySDD7QgITEA8RCHp-IS"
                   target="_blank"
                 >
-                  View Event
+                  Get Started
                 </Button>
             </div>
             <div className="content">

@@ -22,8 +22,7 @@ const Hero = () => (
     <Header bg={headerBg} className={heroStyle}>
       <Title>Webiny Online Meetups</Title>
       <Subtitle>
-        Attend our online knowledge-sharing sessions every Thursday, or sign up
-        for the upcoming sessions. We are creating a knowledge database so our
+        Attend our online knowledge-sharing sessions every Thursday. We are creating a knowledge database so our
         community members get involved in Webiny
       </Subtitle>
     </Header>
