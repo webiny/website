@@ -83,6 +83,7 @@ const FooterMenu = () => (
       <a href="https://gitter.im/Webiny/webiny-js">Chat</a>
       <a href="https://blog.webiny.com/">Blog</a>
       <Link to="/swag">SWAG</Link>
+      <Link to="/events">Events</Link>
     </MenuBlock>
     <MenuBlock>
       <SectionTitle>Included Apps</SectionTitle>
