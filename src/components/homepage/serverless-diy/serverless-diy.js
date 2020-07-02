@@ -10,6 +10,7 @@ import circleCheckImg from './assets/circle-check.svg';
 import circleCrossImg from './assets/cricle-cross.svg';
 import webinyLogoImg from './assets/webiny.svg';
 import diyImg from './assets/diy.svg';
+import DIYBg from './assets/bgDIY.svg';
 
 const wrapperClass = css(
     {
@@ -26,12 +27,23 @@ const contentContainerClass = css(
         display: 'flex',
         flexDirection: 'column',
         maxWidth: 1200,
-        boxSizing: 'border-box'
+        boxSizing: 'border-box',
+        '&::before': {
+            position: 'absolute',
+            height: 800,
+            content: 'url(' + DIYBg + ')',
+            top: "-20%",
+            right:  "-10%",
+            zIndex: 0,
+        },
     },
     mq({
         width: ['100%', '100%'],
         height: ['100%', 'auto'],
-        padding: ['0px 0px 60px', '16px 0px 80px']
+        padding: ['0px 0px 60px', '16px 0px 80px'],
+        '&::before': {
+            display: ['none', 'block']
+        }
     })
 );
 

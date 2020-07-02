@@ -11,12 +11,16 @@ import whyWebinyBg from './assets/webiny-logo.svg';
 import whyServerlessBg from './assets/serverless.svg';
 import bgWebiny from './assets/bg-orange.svg';
 import bgServerless from './assets/bg-serverless.svg';
+import orangeCircleBg from './assets/orange-circle-bg.svg';
+import purpleCircleBg from './assets/purple-circle-bg.svg';
 
 const wrapperClass = css(
     {
         backgroundImage: 'url(' + sectionBg + ')',
         backgroundSize: '100%',
-        backgroundRepeat: 'no-repeat'
+        backgroundRepeat: 'no-repeat',
+        position: 'relative',
+        zIndex: 0
     },
     mq({
         padding: ['0 15px 25px 15px', '25px 0 25px 0']
@@ -61,10 +65,35 @@ const TitleHighlight = styled('span')(props => ({
 const CardsWrapper = styled('div')(
     {
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        position: 'relative',
+        '&::before': {
+            content: 'url(' + purpleCircleBg + ')',
+            position: 'absolute',
+            width: 182,
+            height: 182,
+            left: "30%",
+            bottom: "25%",
+            zIndex: -1
+        },
+        '&::after': {
+            content: 'url(' + orangeCircleBg + ')',
+            position: 'absolute',
+            width: 330,
+            height: 330,
+            right: "10%",
+            top: "0%",
+            zIndex: -1
+        }
     },
     mq({
-        alignItems: ['center', 'flex-start']
+        alignItems: ['center', 'flex-start'],
+        '&::before': {
+            display: ['none', 'block']
+        },
+        '&::after': {
+            display: ['none', 'block']
+        }
     })
 );
 
