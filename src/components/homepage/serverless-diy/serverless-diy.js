@@ -84,17 +84,23 @@ const DIYContent = styled('div')({
 
     '& .text-content': {
         fontSize: 16,
-        padding: 10,
-        color: theme.color.dark
+        lineHeight: 1,
+        padding: "7px 16px 7px 30px",
+        color: theme.color.dark,
+        backgroundColor: theme.color.lightGray,
+        borderBottomLeftRadius: 20,
+        borderTopLeftRadius: 20,
     },
     '& .icon': {
+        boxSizing: 'border-box',
         display: 'flex',
         alignItems: 'center',
         backgroundColor: theme.color.white,
-        padding: 10,
+        padding: "7px 10px",
+        height: 35,
         borderBottomRightRadius: '50%',
         borderTopRightRadius: '50%',
-        border: '1px solid #ECECEC',
+        border: `1px solid ${theme.color.grayBorder}`,
         borderLeft: 0
     }
 });
@@ -106,45 +112,32 @@ const WebinyContent = styled('div')({
 
     '& .text-content': {
         fontSize: 16,
-        padding: 10,
-        color: theme.color.white
+        lineHeight: 1,
+        padding: "7px 30px 7px 16px",
+        color: theme.color.white,
+        background: 'linear-gradient(90deg, #FA5A28, #FF8965)',
+        borderBottomRightRadius: 20,
+        borderTopRightRadius: 20,
     },
     '& .icon': {
         boxSizing: 'border-box',
         display: 'flex',
         alignItems: 'center',
         backgroundColor: theme.color.white,
-        padding: 10,
-        height: 43,
+        padding: "7px 10px",
+        height: 35,
         borderBottomLeftRadius: '50%',
         borderTopLeftRadius: '50%',
-        border: '1px solid #ECECEC',
+        border: `1px solid ${theme.color.grayBorder}`,
         borderRight: 0
     }
-});
-
-const BackgroundWrapper = styled('div')({
-    backgroundColor: theme.color.lightGray,
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
-    zIndex: -1,
-    marginLeft: -40
-});
-
-const WebinyBackgroundWrapper = styled('div')({
-    background: 'linear-gradient(90deg, #FA5A28, #FF8965)',
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
-    zIndex: -1,
-    marginLeft: 41
 });
 
 const DIYImg = styled('div')({
     display: 'flex',
     justifyContent: 'flex-end',
     marginRight: 40,
+    marginBottom: 40,
     '& img': {
         width: 64,
         height: 64
@@ -155,6 +148,7 @@ const WebinyImg = styled('div')({
     display: 'flex',
     justifyContent: 'flex-start',
     marginLeft: 40,
+    marginBottom: 40,
     '& img': {
         width: 64,
         height: 64
@@ -202,7 +196,6 @@ class ServerlessDIY extends React.Component {
                     </SubTitle>
                     <BenefitBox>
                         <div className={'content-wrapper'}>
-                            <BackgroundWrapper/>
                             <DIYImg>
                                 <img src={diyImg} alt={'do it yourself'}/>
                             </DIYImg>
@@ -217,9 +210,8 @@ class ServerlessDIY extends React.Component {
                         </div>
                         <p className={vsClass}>VS</p>
                         <div className={'content-wrapper'}>
-                            <WebinyBackgroundWrapper/>
                             <WebinyImg>
-                                <img src={webinyLogoImg} alt={''}/>
+                                <img src={webinyLogoImg} alt={'Webiny'}/>
                             </WebinyImg>
                             {WEBINY_CONTENT_TEXT.map((text, index) => (
                                 <WebinyContent key={index}>
