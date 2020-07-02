@@ -15,11 +15,11 @@ import bgServerless from './assets/bg-serverless.svg';
 const wrapperClass = css(
     {
         backgroundImage: 'url(' + sectionBg + ')',
-        backgroundSize: 'contain',
+        backgroundSize: '100%',
         backgroundRepeat: 'no-repeat'
     },
     mq({
-        padding: ['0 15px 25px 15px', '75px 0 25px 0']
+        padding: ['0 15px 25px 15px', '25px 0 25px 0']
     })
 );
 
@@ -33,7 +33,7 @@ const contentContainerClass = css(
     mq({
         width: ['100%', '100%'],
         height: ['100%', 'auto'],
-        padding: ['120px 0px', '16px 0px 80px']
+        padding: ['120px 0px', '0']
     })
 );
 
@@ -61,9 +61,11 @@ const TitleHighlight = styled('span')(props => ({
 const CardsWrapper = styled('div')(
     {
         display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center'
-    }
+        flexDirection: 'column'
+    },
+    mq({
+        alignItems: ['center', 'flex-start']
+    })
 );
 
 const Card = styled('div')(
@@ -123,20 +125,23 @@ const WhyServerlessImage = styled('img')({
     height: 61
 });
 
-const overlapStyle = css(
-    {
-        marginLeft: 450,
-        marginTop: -40
-    },
+const serverlessCardClass = css(
+    {},
     mq({
-        marginLeft: [0, 450],
-        marginTop: [0, -40],
-        flexDirection: ['column-reverse', 'row']
+        transform: ['none', 'translate(40%, 0%)', 'translate(50%, 0%)']
+    })
+);
+
+const webinyClass = css(
+    {},
+    mq({
+        flexDirection: ['column-reverse', 'row'],
+        transform: ['none', 'translate(80%, -20%)', 'translate(90%, -20%)']
     })
 );
 
 const ButtonWrapper = styled('div')({
-    margin: '80px auto 0px'
+    margin: '40px auto 0px'
 });
 
 const ctaButton = css(
@@ -155,7 +160,7 @@ class WhyWebinyWhyServerless extends React.Component {
             <section {...this.props} className={wrapperClass}>
                 <ContentContainer className={contentContainerClass}>
                     <CardsWrapper>
-                        <Card>
+                        <Card className={serverlessCardClass}>
                             <Banner backgroundColor={theme.color.purple} roundCornor={'left'}>
                                 <WhyServerlessImage src={whyServerlessBg} alt={'serverless stack'}/>
                             </Banner>
@@ -170,7 +175,7 @@ class WhyWebinyWhyServerless extends React.Component {
                             </Content>
                         </Card>
 
-                        <Card className={overlapStyle}>
+                        <Card className={webinyClass}>
                             <Content>
                                 <Title>
                                     Why <TitleHighlight imgUrl={bgWebiny}>Webiny?</TitleHighlight>
