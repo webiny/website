@@ -21,7 +21,8 @@ const wrapperClass = css(
     {
         backgroundImage: 'url(' + sectionBg + ')',
         backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat'
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'bottom'
     },
     mq({
         padding: [0, 0]
@@ -48,15 +49,18 @@ const LogosWrapper = styled('div')(
         flexWrap: 'wrap',
         alignItems: 'center',
         justifyContent: 'center',
-        maxWidth: 930
+        maxWidth: 930,
+        '& .logo': {
+            width: 180,
+            height: 80,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+        }
     },
     mq({
         flexDirection: ['column', 'row'],
         margin: ['0px 0px 50px', '0px auto 50px'],
-        '& img': {
-            marginRight: [0, 60],
-            marginBottom: [24, 24]
-        }
     })
 );
 
@@ -65,6 +69,7 @@ const SubTitle = styled('h4')({
     fontWeight: 700,
     color: theme.color.darkPurple,
     textAlign: 'center',
+    textTransform: 'uppercase',
     maxWidth: 360,
     margin: '0px auto 44px'
 });
@@ -75,19 +80,38 @@ class ClientsLogo extends React.Component {
             <section {...this.props} className={wrapperClass}>
                 <ContentContainer className={contentContainerClass}>
                     <SubTitle>Webiny is being used by developers from:</SubTitle>
-
                     <LogosWrapper>
-                        <img src={amazonLogo} alt={'amazon logo'}/>
-                        <img src={microsoftLogo} alt={'microsoft logo'}/>
-                        <img src={tencentLogo} alt={'tencent logo'}/>
-                        <img src={biaduLogo} alt={'baidu logo'}/>
-                        <img src={alibabaLogo} alt={'alibaba logo'}/>
+                        <div className={'logo'}>
+                            <img src={amazonLogo} alt={'amazon logo'}/>
+                        </div>
+                        <div className={'logo'}>
+                            <img src={microsoftLogo} alt={'microsoft logo'}/>
+                        </div>
+                        <div className={'logo'}>
+                            <img src={tencentLogo} alt={'tencent logo'}/>
+                        </div>
+                        <div className={'logo'}>
+                            <img src={biaduLogo} alt={'baidu logo'}/>
+                        </div>
+                        <div className={'logo'}>
+                            <img src={alibabaLogo} alt={'alibaba logo'}/>
+                        </div>
 
-                        <img src={salesforceLogo} alt={'salesforce logo'}/>
-                        <img src={IBMLogo} alt={'IBM logo'}/>
-                        <img src={intuitLogo} alt={'intuit logo'}/>
-                        <img src={accentureLogo} alt={'accenture logo'}/>
-                        <img src={teslaLogo} alt={'tesla logo'}/>
+                        <div className={'logo'}>
+                            <img src={salesforceLogo} alt={'salesforce logo'}/>
+                        </div>
+                        <div className={'logo'}>
+                            <img src={IBMLogo} alt={'IBM logo'}/>
+                        </div>
+                        <div className={'logo'}>
+                            <img src={intuitLogo} alt={'intuit logo'}/>
+                        </div>
+                        <div className={'logo'}>
+                            <img src={accentureLogo} alt={'accenture logo'}/>
+                        </div>
+                        <div className={'logo'}>
+                            <img src={teslaLogo} alt={'tesla logo'}/>
+                        </div>
                     </LogosWrapper>
                 </ContentContainer>
             </section>
