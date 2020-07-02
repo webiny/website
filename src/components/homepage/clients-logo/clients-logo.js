@@ -39,7 +39,7 @@ const contentContainerClass = css(
     mq({
         width: ['100%', '100%'],
         height: ['100%', 'auto'],
-        padding: ['60px 0px 120px', '16px 0px 80px']
+        padding: ['0px 0px 120px', '16px 0px 80px']
     })
 );
 

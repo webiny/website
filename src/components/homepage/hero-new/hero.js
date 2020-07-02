@@ -17,7 +17,6 @@ import circleIcon from './assets/circle.svg';
 
 const HeroSection = styled('section')(
     {
-        width: '100%',
         backgroundColor: '#F6F4F8',
         position: 'relative',
         zIndex: 0,
@@ -25,10 +24,11 @@ const HeroSection = styled('section')(
         backgroundRepeat: 'no-repeat'
     },
     mq({
-        backgroundSize: ['auto', 'auto', '100%'],
-        backgroundPosition: ['top', 'top', 'top', 'center'],
+        backgroundSize: ['cover', 'auto', '100%'],
+        backgroundPosition: ['center', 'top', 'top', 'center'],
+        padding: ['0px 0px 110px', '0'],
         '@media (min-width: 1460px)': {
-            backgroundPosition: 'top',
+            backgroundPosition: 'bottom',
             paddingTop: 0
         }
     })
@@ -43,17 +43,25 @@ const heroContainerClass = css(
         position: 'relative',
         '&::after': {
             content: 'url(' + scrollDownImg + ')',
-            position: 'absolute',
-            bottom: 62,
-            '@media (min-width: 1460px)': {
-                bottom: 62
-            }
+            position: 'absolute'
         }
     },
     mq({
         width: ['100%', '100%'],
         height: ['100%', 560],
-        padding: ['85px 0px 0px', '85px 0px 0px']
+        padding: ['75px 0px 0px', '85px 0px 0px'],
+        '@media (min-width: 2000px)': {
+            paddingBottom: 80,
+        },
+        '&::after': {
+            bottom: [-5, 62],
+            '@media (min-width: 1460px)': {
+                bottom: 90
+            },
+            '@media (min-width: 2000px)': {
+                bottom: 130,
+            },
+        }
     })
 );
 
@@ -66,6 +74,7 @@ const HeroSectionWrapper = styled('div')(
         backgroundRepeat: 'no-repeat'
     },
     mq({
+        width: ['100%', 1100],
         backgroundSize: ['0', 'auto'],
         alignItems: ['center']
     })
@@ -116,12 +125,12 @@ const ButtonWrapper = styled('div')(
         position: 'relative',
         display: 'flex',
         justifyContent: 'center',
-        marginBottom: 50,
         width: '100%'
     },
     mq({
         flexDirection: ['column', 'row'],
-        alignItems: ['center', 'flex-start']
+        alignItems: ['center', 'flex-start'],
+        marginBottom: [75, 50],
     })
 );
 
@@ -195,13 +204,17 @@ const Feature = styled('div')({
 });
 
 const WebinyHallMarkImage = styled('img')({
-    position: 'absolute',
-    zIndex: -1,
-    top: 0,
-    left: 0,
-    width: '100%',
-    maxHeight: 700
-});
+        position: 'absolute',
+        zIndex: -1,
+        top: 0,
+        left: 0
+    },
+    mq({
+        width: ['auto', '100%'],
+        maxHeight: ['unset', 700],
+        transform: ['translate(-35%, -8%)', 'none']
+    })
+);
 
 class HeroComponent extends React.Component {
     render() {
