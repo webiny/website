@@ -22,7 +22,7 @@ import typescriptLogo from './assets/typescript.svg';
 const wrapperClass = css(
     {},
     mq({
-        padding: ['0 15px 25px 15px', '75px 0 25px 0']
+        padding: ['0 15px 25px 15px', '50px 0 25px 0']
     })
 );
 
@@ -76,16 +76,19 @@ const LogosWrapper = styled('div')(
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        maxWidth: 560
+        maxWidth: 560,
+        '& .logo': {
+            width: 100,
+            height: 75,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+        }
     },
     mq({
         flexDirection: ['row', 'row'],
-        flexWrap: ['wrap', 'wrap'],
+        flexWrap: ['wrap', 'nowrap'],
         margin: [0, '0px auto 50px'],
-        '& img': {
-            marginRight: [40, 30],
-            marginBottom: [40, 0]
-        }
     })
 );
 
@@ -94,7 +97,6 @@ const Title = styled('h2')({
     fontWeight: 700,
     color: theme.color.black,
     textAlign: 'center',
-    paddingTop: 50,
     maxWidth: 600,
     margin: '0px auto 28px'
 });
@@ -168,13 +170,27 @@ class WhyIsWebiny extends React.Component {
                         Created with technology and tools you know and <span>Love!</span>
                     </SubTitle>
                     <LogosWrapper>
-                        <img src={gqlLogo} alt={'graphql logo'}/>
-                        <img src={awsLogo} alt={'aws logo'}/>
-                        <img src={typescriptLogo} alt={'typescript logo'}/>
-                        <img src={nodejsLogo} alt={'nodejs logo'}/>
-                        <img src={webpackLogo} alt={'webpack logo'}/>
-                        <img src={babelLogo} alt={'babel logo'}/>
-                        <img src={reactLogo} alt={'react logo'}/>
+                        <div className={"logo"}>
+                            <img src={gqlLogo} alt={'graphql logo'}/>
+                        </div>
+                        <div className={"logo"}>
+                            <img src={awsLogo} alt={'aws logo'}/>
+                        </div>
+                        <div className={"logo"}>
+                            <img src={typescriptLogo} alt={'typescript logo'}/>
+                        </div>
+                        <div className={"logo"}>
+                            <img src={nodejsLogo} alt={'nodejs logo'}/>
+                        </div>
+                        <div className={"logo"}>
+                            <img src={webpackLogo} alt={'webpack logo'}/>
+                        </div>
+                        <div className={"logo"}>
+                            <img src={babelLogo} alt={'babel logo'}/>
+                        </div>
+                        <div className={"logo"}>
+                            <img src={reactLogo} alt={'react logo'}/>
+                        </div>
                     </LogosWrapper>
                 </ContentContainer>
             </section>
