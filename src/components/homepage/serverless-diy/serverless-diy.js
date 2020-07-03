@@ -212,7 +212,7 @@ class ServerlessDIY extends React.Component {
                                 <img src={diyImg} alt={'do it yourself'}/>
                             </DIYImg>
                             {DIY_CONTENT_TEXT.map((text, index) => (
-                                <DIYContent key={index}>
+                                <DIYContent key={index} data-aos={'fade-right'} data-aos-delay={50 + (50 * index)}>
                                     <div className={'text-content'}>{text}</div>
                                     <div className={'icon'}>
                                         <CircleIcon src={circleCrossImg} alt={"red cross icon"}/>
@@ -226,7 +226,7 @@ class ServerlessDIY extends React.Component {
                                 <img src={webinyLogoImg} alt={'Webiny'}/>
                             </WebinyImg>
                             {WEBINY_CONTENT_TEXT.map((text, index) => (
-                                <WebinyContent key={index}>
+                                <WebinyContent key={index} data-aos={'fade-left'} data-aos-delay={50 + (50 * index)} >
                                     <div className={'icon'}>
                                         <CircleIcon src={circleCheckImg} alt={"green check icon"}/>
                                     </div>

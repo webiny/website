@@ -1,4 +1,6 @@
 import React from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import BaseLayout from '../layouts/base';
 import Hero from '../components/homepage/hero-new/hero';
@@ -12,6 +14,10 @@ import WhyIsWebiny from '../components/homepage/what-is-webiny/what-is-webiny';
 import ClientsLogo from '../components/homepage/clients-logo/clients-logo';
 
 class IndexPage extends React.Component {
+    componentDidMount() {
+        AOS.init();
+    }
+
     render() {
         return (
             <BaseLayout

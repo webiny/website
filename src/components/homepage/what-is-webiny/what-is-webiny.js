@@ -150,7 +150,7 @@ class WhyIsWebiny extends React.Component {
                 <ContentContainer className={contentContainerClass}>
                     <Title>
                         What is&nbsp;
-                        <TitleHighlight>Webiny?</TitleHighlight>
+                        <TitleHighlight >Webiny?</TitleHighlight>
                     </Title>
                     <Body>
                         Webiny is an <span>open-source serverless development framework and a CMS</span> that
@@ -159,8 +159,8 @@ class WhyIsWebiny extends React.Component {
                         technologies such as <span>NodeJs, React and GraphQL</span>.
                     </Body>
                     <ImageWrapper>
-                        <img className={infoImageClass} src={appStackImg} alt={'serverless stack'}/>
-                        <img className={infoImageClass} src={whatWebinyImg} alt={'webiny stack'}/>
+                        <img className={infoImageClass} src={appStackImg} alt={'serverless stack'} data-aos={'fade-right'} />
+                        <img className={infoImageClass} src={whatWebinyImg} alt={'webiny stack'} data-aos={'fade-left'} />
                     </ImageWrapper>
                     <Body className={secondaryBodyClass}>
                         It's designed for building websites, apps and APIs that scale to millions of users and
