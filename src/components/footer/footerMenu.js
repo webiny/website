@@ -29,7 +29,6 @@ const SectionTitle = styled ('span') ({
 
 const footerMenu = css (
   {
-    flexDirection: 'column',
     flexDirection: 'row',
     justifyContent: 'space-between',
     color: theme.color.white,
@@ -59,7 +58,7 @@ const FooterMenu = () => (
       >
         GitHub repository
       </a>
-      <a href="https://github.com/webiny/webiny-js/blob/master/CONTRIBUTING.md">
+      <a href="https://github.com/webiny/webiny-js/blob/master/docs/CONTRIBUTING.md">
         Contribute
       </a>
     </MenuBlock>
