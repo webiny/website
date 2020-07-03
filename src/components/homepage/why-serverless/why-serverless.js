@@ -219,7 +219,7 @@ class WhyWebinyWhyServerless extends React.Component {
                         </Card>
                     </CardsWrapper>
                     <ButtonWrapper>
-                        <Button className={ctaButton} type={'secondary'} link={'serverless-web-development-framework'}>
+                        <Button className={ctaButton} type={'secondary'} link={'why-serverless'}>
                             Learn more about serverless & how Webiny can help
                         </Button>
                     </ButtonWrapper>
