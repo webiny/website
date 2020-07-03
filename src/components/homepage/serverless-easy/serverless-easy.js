@@ -165,13 +165,13 @@ class ServerlessMadeEasy extends React.Component {
                             </div>
                             <p className='text'>
                                 Webiny is created and maintained by an amazing group of people. Being open source
-                                means Webiny grows and evolves much faster.
+                                means Webiny grows and evolves much faster.&nbsp;
                                 <a
                                     href='https://github.com/webiny/webiny-js/blob/master/docs/CONTRIBUTING.md'
                                     target={'_blank'}
                                     rel={'noopener noreferrer'}
                                 >
-                                    Contributor
+                                    Contributors
                                 </a>{' '}
                                 are welcome.
                             </p>
