@@ -204,7 +204,7 @@ class ScheduleDemo extends React.Component {
   render () {
     const {refFromParent, ...restProps} = this.props;
     return (
-      <section ref={refFromParent} {...restProps} className={wrapperClass}>
+      <section ref={refFromParent} {...restProps} className={wrapperClass} id={'schedule-demo'}>
         <ContentContainer className={contentContainerClass}>
           <TextWrapper>
             <Title>

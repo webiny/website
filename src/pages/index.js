@@ -24,7 +24,7 @@ class IndexPage extends React.Component {
                 <WhyIsWebiny/>
                 <WhyWebinyWhyServerless/>
                 <ServerlessDIY/>
-                <ReadyMadeApps/>
+                <ReadyMadeApps demoLink={'/agency#schedule-demo'} />
                 <ServerlessEasy/>
                 <GoServerless/>
             </BaseLayout>

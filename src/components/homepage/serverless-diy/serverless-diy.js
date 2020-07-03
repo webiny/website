@@ -34,7 +34,7 @@ const contentContainerClass = css(
             content: 'url(' + DIYBg + ')',
             top: "-20%",
             right:  "-10%",
-            zIndex: 0,
+            zIndex: -1,
         },
     },
     mq({

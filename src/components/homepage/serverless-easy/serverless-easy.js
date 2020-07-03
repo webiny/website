@@ -194,9 +194,8 @@ class ServerlessMadeEasy extends React.Component {
                     </Wrapper>
                     <ButtonWrapper>
                         <Button
-                            onClick={() =>
-                                window.open('https://github.com/webiny/webiny-js', '_blank', 'noopener')
-                            }
+                            link={'https://github.com/webiny/webiny-js'}
+                            target={'_blank'}
                             className={ctaButton}
                             type='secondary'
                         >

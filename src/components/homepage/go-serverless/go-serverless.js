@@ -92,21 +92,21 @@ class GoServerless extends React.Component {
                     <ReasonBox color={theme.color.dark}>
                         <img src={getStartedImg} alt='get started with tutorial'/>
                         <p className='text'>Get started with your next project in a few easy steps</p>
-                        <Button type={'dark'} className={ctaButton}>
+                        <Button link={'https://docs.webiny.com'} target={'_blank'} type={'dark'} className={ctaButton}>
                             Get started tutorial
                         </Button>
                     </ReasonBox>
                     <ReasonBox color={theme.color.primaryDark}>
                         <img src={featuresImg} alt='webiny features'/>
                         <p className='text'>Get to know Webiny and its features</p>
-                        <Button type={'primary'} className={ctaButton}>
+                        <Button link={'features'} type={'primary'} className={ctaButton}>
                             View features
                         </Button>
                     </ReasonBox>
                     <ReasonBox color={theme.color.secondaryDark}>
                         <img src={talkToUsImg} alt='talk to us'/>
                         <p className='text'>Want to talk to us about your next project</p>
-                        <Button type={'secondary'} className={ctaButton}>
+                        <Button link={'agency'} type={'secondary'} className={ctaButton}>
                             Book a call
                         </Button>
                     </ReasonBox>

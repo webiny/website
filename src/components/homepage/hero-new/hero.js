@@ -138,7 +138,8 @@ const getStartedButtonClass = css(
     {
         backgroundColor: `${theme.color.yellow} !important`,
         textTransform: 'uppercase',
-        padding: '10px 12px !important'
+        padding: '10px 12px !important',
+        height: '40px !important'
     },
     mq({
         width: ['90% !important', '150px !important'],
@@ -256,12 +257,16 @@ class HeroComponent extends React.Component {
                             <Button
                                 className={getStartedButtonClass}
                                 type='default'
+                                link="https://docs.webiny.com/"
+                                target="_blank"
                             >
                                 Get started
                             </Button>
                             <Button
                                 className={githubButtonClass}
                                 type='default'
+                                link="https://github.com/webiny/webiny-js"
+                                target="_blank"
                             >
                                 <ScheduleDemoImage src={githubIcon} alt={''}/>
                                 View on Github
