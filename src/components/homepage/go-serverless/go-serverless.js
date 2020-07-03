@@ -8,7 +8,7 @@ import ContentContainer from '../../ui/content-container';
 import Button from '../../ui/button';
 
 import goServerlessBg from './assets/bgwaves.svg';
-import getStartedImg from './assets/webiny-features.svg';
+import getStartedImg from './assets/next-project.svg';
 import featuresImg from './assets/webiny-features.svg';
 import talkToUsImg from './assets/webiny-talk.svg';
 
