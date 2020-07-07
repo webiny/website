@@ -368,10 +368,10 @@ class ReadyMadeApps extends React.Component {
 
     const buttonProps = {};
     if (demoLink) {
-        buttonProps.link = demoLink;
+      buttonProps.link = demoLink;
     }
     if (handleDemoClick) {
-        buttonProps.onClick = handleDemoClick;
+      buttonProps.onClick = handleDemoClick;
     }
 
     return (
@@ -383,14 +383,11 @@ class ReadyMadeApps extends React.Component {
                 Webiny comes with <HighlightedBg> several FREE </HighlightedBg>
                 ready-made apps you can use today:
               </Title>
-              <Button
-                className={ctaButton}
-                type="secondary"
-                {...buttonProps}
-              >
-                <DemoIcon src={demoIcon} />
-                Schedule a 1:1 Demo
-              </Button>
+              {this.props.cta == undefined &&
+                <Button className={ctaButton} type="secondary" {...buttonProps}>
+                  <DemoIcon src={demoIcon} />
+                  Schedule a 1:1 Demo
+                </Button>}
             </TextWrapper>
           </ContentContainer>
         </section>
