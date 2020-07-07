@@ -31,7 +31,7 @@ const contentContainerClass = css (
     '&::before': {
       position: 'absolute',
       height: 800,
-      content: 'url(' + DIYBg + ')',
+      // content: 'url(' + DIYBg + ')',
       top: '-20%',
       right: '-10%',
       zIndex: -1,
