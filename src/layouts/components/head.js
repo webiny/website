@@ -33,6 +33,11 @@ class Head extends React.Component {
               content: ogImage,
             },
             {
+              name: 'image',
+              property: 'og:image',
+              content: ogImage,
+            },
+            {
               name: 'og:description',
               content: this.props.description,
             },
