@@ -33,7 +33,7 @@ const contentContainerClass = css(
             height: 800,
             content: 'url(' + DIYBg + ')',
             top: "-20%",
-            right:  "-10%",
+            right: "-10%",
             zIndex: -1,
         },
     },
@@ -89,83 +89,105 @@ const CircleIcon = styled('img')({
     height: 20
 });
 
-const DIYContent = styled('div')({
-    display: 'flex',
-    justifyContent: 'flex-end',
-    marginBottom: 4,
-
-    '& .text-content': {
-        fontSize: 16,
-        lineHeight: 1,
-        padding: "7px 16px 7px 30px",
-        color: theme.color.dark,
-        backgroundColor: theme.color.lightGray,
-        borderBottomLeftRadius: 20,
-        borderTopLeftRadius: 20,
-    },
-    '& .icon': {
-        boxSizing: 'border-box',
+const DIYContent = styled('div')(
+    {
         display: 'flex',
-        alignItems: 'center',
-        backgroundColor: theme.color.white,
-        padding: "7px 10px",
-        height: 35,
-        borderBottomRightRadius: '50%',
-        borderTopRightRadius: '50%',
-        border: `1px solid ${theme.color.grayBorder}`,
-        borderLeft: 0
-    }
-});
+        justifyContent: 'flex-end',
+        marginBottom: 4,
 
-const WebinyContent = styled('div')({
-    display: 'flex',
-    justifyContent: 'flex-start',
-    marginBottom: 4,
-
-    '& .text-content': {
-        fontSize: 16,
-        lineHeight: 1,
-        padding: "7px 30px 7px 16px",
-        color: theme.color.white,
-        background: 'linear-gradient(90deg, #FA5A28, #FF8965)',
-        borderBottomRightRadius: 20,
-        borderTopRightRadius: 20,
+        '& .text-content': {
+            fontSize: 16,
+            lineHeight: 1,
+            padding: "7px 16px 7px 30px",
+            color: theme.color.dark,
+            backgroundColor: theme.color.lightGray,
+            borderBottomLeftRadius: 20,
+            borderTopLeftRadius: 20,
+        },
+        '& .icon': {
+            boxSizing: 'border-box',
+            display: 'flex',
+            alignItems: 'center',
+            backgroundColor: theme.color.white,
+            padding: "7px 10px",
+            height: 35,
+            borderBottomRightRadius: '50%',
+            borderTopRightRadius: '50%',
+            border: `1px solid ${theme.color.grayBorder}`,
+            borderLeft: 0
+        }
     },
-    '& .icon': {
-        boxSizing: 'border-box',
+    mq({
+        '& .text-content': {
+            width: ['100%', 'auto']
+        }
+    })
+);
+
+const WebinyContent = styled('div')(
+    {
         display: 'flex',
-        alignItems: 'center',
-        backgroundColor: theme.color.white,
-        padding: "7px 10px",
-        height: 35,
-        borderBottomLeftRadius: '50%',
-        borderTopLeftRadius: '50%',
-        border: `1px solid ${theme.color.grayBorder}`,
-        borderRight: 0
-    }
-});
+        justifyContent: 'flex-start',
+        marginBottom: 4,
 
-const DIYImg = styled('div')({
-    display: 'flex',
-    justifyContent: 'flex-end',
-    marginRight: 40,
-    marginBottom: 40,
-    '& img': {
-        width: 64,
-        height: 64
-    }
-});
+        '& .text-content': {
+            fontSize: 16,
+            lineHeight: 1,
+            padding: "7px 30px 7px 16px",
+            color: theme.color.white,
+            background: 'linear-gradient(90deg, #FA5A28, #FF8965)',
+            borderBottomRightRadius: 20,
+            borderTopRightRadius: 20,
+        },
+        '& .icon': {
+            boxSizing: 'border-box',
+            display: 'flex',
+            alignItems: 'center',
+            backgroundColor: theme.color.white,
+            padding: "7px 10px",
+            height: 35,
+            borderBottomLeftRadius: '50%',
+            borderTopLeftRadius: '50%',
+            border: `1px solid ${theme.color.grayBorder}`,
+            borderRight: 0
+        }
+    },
+    mq({
+        '& .text-content': {
+            width: ['100%', 'auto']
+        }
+    })
+);
 
-const WebinyImg = styled('div')({
-    display: 'flex',
-    justifyContent: 'flex-start',
-    marginLeft: 40,
-    marginBottom: 40,
-    '& img': {
-        width: 64,
-        height: 64
-    }
-});
+const DIYImg = styled('div')(
+    {
+        display: 'flex',
+        marginBottom: 40,
+        '& img': {
+            width: 64,
+            height: 64
+        }
+    },
+    mq({
+        justifyContent: ['center', 'flex-end'],
+        marginRight: [0, 40],
+    })
+);
+
+const WebinyImg = styled('div')(
+    {
+        display: 'flex',
+        marginBottom: 40,
+        '& img': {
+            width: 64,
+            height: 64
+        }
+    },
+    mq({
+        justifyContent: ['center', 'flex-start'],
+        marginLeft: [0, 40],
+    })
+);
 
 const DIY_CONTENT_TEXT = [
     'Time consuming',
@@ -226,7 +248,7 @@ class ServerlessDIY extends React.Component {
                                 <img src={webinyLogoImg} alt={'Webiny'}/>
                             </WebinyImg>
                             {WEBINY_CONTENT_TEXT.map((text, index) => (
-                                <WebinyContent key={index} data-aos={'fade-left'} data-aos-delay={50 + (50 * index)} >
+                                <WebinyContent key={index} data-aos={'fade-left'} data-aos-delay={50 + (50 * index)}>
                                     <div className={'icon'}>
                                         <CircleIcon src={circleCheckImg} alt={"green check icon"}/>
                                     </div>
