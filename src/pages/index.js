@@ -25,8 +25,8 @@ class IndexPage extends React.Component {
   render () {
     return (
       <BaseLayout
-        title="Webiny - Serverless CMS powered by GraphQL and React"
-        description="Webiny is a modern open source content management designed to run inside a serverless environment.  Webiny is powered by React, Node and GraphQL."
+        title="Easiest way to adopt serverless | Webiny"
+        description="Webiny is an open-source framework for building serverless applications. Webiny is powered by React, Node and GraphQL."
         fixedHeader={false}
       >
         <Hero />
