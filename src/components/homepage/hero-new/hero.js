@@ -218,7 +218,7 @@ class HeroComponent extends React.Component {
               <TitleHighlight>Serverless</TitleHighlight>
             </Title>
             <SubTitle>
-              Build full-stack serverless web applications
+              Build Full-Stack Serverless Web Applications
             </SubTitle>
             <FeatureWrapper>
               <Feature>
