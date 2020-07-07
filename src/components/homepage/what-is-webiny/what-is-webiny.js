@@ -167,13 +167,11 @@ class WhyIsWebiny extends React.Component {
               className={infoImageClass}
               src={appStackImg}
               alt={'serverless stack'}
-              data-aos={'fade-right'}
             />
             <img
               className={infoImageClass}
               src={whatWebinyImg}
               alt={'webiny stack'}
-              data-aos={'fade-left'}
             />
           </ImageWrapper>
           <Body className={secondaryBodyClass}>
