@@ -6,11 +6,10 @@ import mq from '../../utils/breakpoints';
 import ContentContainer from '../../ui/content-container';
 import Button from '../../ui/button';
 
-import heroBg from './assets/background-shape.svg';
+import heroBg from './assets/hero-bg-with-scroll.svg';
 import webinyLogo from './assets/webiny-logo.svg';
 import vectorIcon from './assets/vector.svg';
 import githubIcon from './assets/github-mark.svg';
-import scrollDownImg from './assets/scroll-down.svg';
 import webinyEasyImg from './assets/easy-webiny.svg';
 import webinyGroup from './assets/webiny-group.svg';
 import circleIcon from './assets/circle.svg';
@@ -40,11 +39,7 @@ const heroContainerClass = css(
         flexDirection: 'column',
         alignItems: 'center',
         maxWidth: 1200,
-        position: 'relative',
-        '&::after': {
-            content: 'url(' + scrollDownImg + ')',
-            position: 'absolute'
-        }
+        position: 'relative'
     },
     mq({
         width: ['100%', '100%'],
@@ -52,15 +47,6 @@ const heroContainerClass = css(
         padding: ['75px 0px 0px', '85px 0px 0px'],
         '@media (min-width: 2000px)': {
             paddingBottom: 80,
-        },
-        '&::after': {
-            bottom: [-5, 62],
-            '@media (min-width: 1460px)': {
-                bottom: 90
-            },
-            '@media (min-width: 2000px)': {
-                bottom: 130,
-            },
         }
     })
 );
