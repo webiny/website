@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import {withPrefix} from 'gatsby-link';
-import ogImage from '../assets/webiny-serverless-cms-og.jpg';
+import ogImage from '../assets/webiny-social-share.jpg';
 
 class Head extends React.Component {
   render () {
