@@ -297,7 +297,6 @@ const webinyAppsImage = css (
         boxShadow: '0 5px 10px 0 rgba(0,0,0,0.15)',
         //height: "350px !important",
         margin: '0 auto',
-        outline: 0,
         borderRadius: 5,
         boxSizing: 'border-box',
       },
@@ -365,7 +364,16 @@ class ReadyMadeApps extends React.Component {
   }
 
   render () {
-    const {handleDemoClick, ...restProps} = this.props;
+    const {handleDemoClick, demoLink, ...restProps} = this.props;
+
+    const buttonProps = {};
+    if (demoLink) {
+        buttonProps.link = demoLink;
+    }
+    if (handleDemoClick) {
+        buttonProps.onClick = handleDemoClick;
+    }
+
     return (
       <React.Fragment>
         <section {...restProps} className={wrapperClass}>
@@ -376,9 +384,9 @@ class ReadyMadeApps extends React.Component {
                 ready-made apps you can use today:
               </Title>
               <Button
-                onClick={handleDemoClick}
                 className={ctaButton}
                 type="secondary"
+                {...buttonProps}
               >
                 <DemoIcon src={demoIcon} />
                 Schedule a 1:1 Demo

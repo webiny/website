@@ -10,12 +10,16 @@ export default {
     codeBg: '#272823',
     footerBg: '#282C34',
     dark: '#282C34',
+    purple: '#7B39D9',
+    darkPurple: '#44486C',
+    yellow: '#DCD207',
+    grayBorder: '#EEEEEE'
   },
   fontWeight: {
     bold: 700,
     semiBold: 600,
     regular: 500,
-    light: 300,
+    light: 300
   },
   fontSize: {
     h1: 38,
@@ -27,7 +31,7 @@ export default {
     navMenuItem: 16,
     navMenuSubItem: 15,
     paragraph: 15,
-    footer: 14,
+    footer: 14
   },
-  contentWidth: 1200,
+  contentWidth: 1200
 };
