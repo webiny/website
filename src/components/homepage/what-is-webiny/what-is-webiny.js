@@ -155,7 +155,9 @@ class WhyIsWebiny extends React.Component {
           <Body>
             Webiny is an
             {' '}
-            <span>open-source serverless development framework. </span>
+            <span>
+              open-source framework for building serverless applications.{' '}
+            </span>
             {' '}
             It provides you with developer tools, libraries, ready-made apps and processes. It's built on top of AWS cloud and uses the latest
             technologies such as <span>NodeJs, React and GraphQL</span>.
