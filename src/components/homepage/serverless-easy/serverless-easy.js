@@ -116,8 +116,10 @@ const ButtonWrapper = styled ('div') ({
 
 const ctaButton = css (
   {
-    textTransform: 'uppercase',
-    padding: '10px 12px !important',
+    a: {
+      textTransform: 'uppercase',
+      padding: '10px 12px !important',
+    },
     zIndex: 1,
   },
   mq ({
@@ -198,6 +200,7 @@ class ServerlessMadeEasy extends React.Component {
           </Wrapper>
           <ButtonWrapper>
             <div
+              className={ctaButton}
               onClick={() => {
                 trackGaConversion ();
               }}
@@ -205,7 +208,6 @@ class ServerlessMadeEasy extends React.Component {
               <Button
                 link={'https://github.com/webiny/webiny-js'}
                 target={'_blank'}
-                className={ctaButton}
                 type="secondary"
               >
                 <DemoIcon src={githubImg} />

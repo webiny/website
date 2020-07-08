@@ -137,8 +137,10 @@ const getStartedButtonClass = css (
 );
 const githubButtonClass = css (
   {
-    textTransform: 'uppercase',
-    padding: '10px 12px !important',
+    a: {
+      textTransform: 'uppercase',
+      padding: '10px 12px !important',
+    },
   },
   mq ({
     width: ['90% !important', '190px !important'],
@@ -252,12 +254,12 @@ class HeroComponent extends React.Component {
                 Get started
               </Button>
               <div
+                className={githubButtonClass}
                 onClick={() => {
                   trackGaConversion ();
                 }}
               >
                 <Button
-                  className={githubButtonClass}
                   type="default"
                   link="https://github.com/webiny/webiny-js"
                   target="_blank"
