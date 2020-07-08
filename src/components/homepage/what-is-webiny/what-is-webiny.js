@@ -20,7 +20,9 @@ import awsLogo from './assets/aws.svg';
 import typescriptLogo from './assets/typescript.svg';
 
 const wrapperClass = css (
-  {},
+  {
+    overflow: 'hidden',
+  },
   mq ({
     padding: ['0 15px 25px 15px', '50px 0 25px 0'],
   })
