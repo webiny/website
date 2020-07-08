@@ -21,6 +21,7 @@ const HeroSection = styled ('section') (
     zIndex: 0,
     backgroundImage: 'url(' + heroBg + ')',
     backgroundRepeat: 'no-repeat',
+    overflow: 'hidden',
   },
   mq ({
     backgroundSize: ['cover', 'auto', '100%'],

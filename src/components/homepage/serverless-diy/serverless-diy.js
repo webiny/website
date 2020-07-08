@@ -16,6 +16,7 @@ const wrapperClass = css (
   {
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
+    overflow: 'hidden',
   },
   mq ({
     padding: ['0 15px 25px 15px', '75px 0 25px 0'],
