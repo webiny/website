@@ -182,7 +182,7 @@ export const SliderNav = styled('div')({
     marginLeft: -8,
     cursor: 'pointer',
 
-    backgroundColor: '#F3F3F3', // TODO: add it in the theme
+    backgroundColor: theme.color.gray100,
     color: theme.color.black,
     fontSize: theme.fontSize.lg,
     textAlign: 'right',
