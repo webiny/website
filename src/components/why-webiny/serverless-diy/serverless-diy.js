@@ -14,10 +14,13 @@ import DIYBg from './assets/bgDIY.svg';
 
 const wrapperClass = css(
     {
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat'
+        backgroundSize: 'auto',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'right',
+        overflowX: 'hidden'
     },
     mq({
+        backgroundImage: ['none', 'url(' + DIYBg + ')'],
         padding: ['0 15px 25px 15px', '75px 0 25px 0']
     })
 );
@@ -28,22 +31,11 @@ const contentContainerClass = css(
         flexDirection: 'column',
         maxWidth: 1200,
         boxSizing: 'border-box',
-        '&::before': {
-            position: 'absolute',
-            height: 800,
-            content: 'url(' + DIYBg + ')',
-            top: "-12%",
-            right: "-10%",
-            zIndex: -1,
-        },
     },
     mq({
         width: ['100%', '100%'],
         height: ['100%', 'auto'],
-        padding: ['60px 0px', '16px 0px 180px'],
-        '&::before': {
-            display: ['none', 'block']
-        }
+        padding: ['60px 0px', '16px 0px 180px']
     })
 );
 
