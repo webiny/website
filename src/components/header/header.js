@@ -424,6 +424,9 @@ const MenuItemList = props => (
         <a href="https://blog.webiny.com">
           Blog
         </a>
+        <a href="/events">
+          Events
+        </a>
       </DropDown>
     </MenuItem>
 

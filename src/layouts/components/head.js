@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import {withPrefix} from 'gatsby-link';
-import ogImage from '../assets/webiny-serverless-cms-og.jpg';
+import ogImage from '../assets/webiny-social-share.jpg';
 
 class Head extends React.Component {
   render () {
@@ -30,6 +30,11 @@ class Head extends React.Component {
             },
             {
               name: 'og:image',
+              content: ogImage,
+            },
+            {
+              name: 'image',
+              property: 'og:image',
               content: ogImage,
             },
             {
