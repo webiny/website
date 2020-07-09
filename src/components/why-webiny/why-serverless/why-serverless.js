@@ -23,7 +23,7 @@ const WhyServerlessSection = styled('section')(
     mq({
         backgroundSize: ['cover', 'auto', '100%'],
         backgroundPosition: ['center', 'top', 'top', 'center'],
-        padding: ['0px 0px 110px', '0'],
+        padding: ['0px 15px 110px', '0px 15px'],
         '@media (min-width: 1460px)': {
             backgroundPosition: 'bottom',
             paddingTop: 0
@@ -84,7 +84,7 @@ const SubTitle = styled('h3')(
         }
     },
     mq({
-        maxWidth: [337, 863],
+        maxWidth: ['100%', 863],
         marginLeft: [0, 'auto'],
         marginRight: [0, 'auto']
     })
@@ -146,8 +146,8 @@ const BenefitBox = styled('div')(
     },
     mq({
         flexDirection: ['column', 'row'],
-        transform: ['none', 'translateX(-15%)'],
-        width: ['90%', '100%'],
+        transform: ['none', 'translateX(-5%)', 'translateX(-15%)'],
+        width: ['100%', '100%'],
         height: ['auto', 275],
         marginBottom: [100, 60],
 
@@ -170,7 +170,7 @@ const rightToLeftClass = css(
     {},
     mq({
         flexDirection:  ['column', 'row-reverse'],
-        transform: ['none', 'translateX(15%)'],
+        transform: ['none', 'translateX(5%)', 'translateX(15%)'],
         '& .text-content': {
             width: ['100%', '75%'],
             padding: ['16px', '70px 60px 70px 0px'],
@@ -215,7 +215,7 @@ class WhyServerlessComponent extends React.Component {
                         </BenefitBox>
                         <BenefitBox className={rightToLeftClass}>
                             <div className={'text-content'}>
-                                <h2 className={'title'}><span>Stop paying</span> for stuff that you don't use</h2>
+                                <h2 className={'title'}><span>Stop paying</span> for stuff you don't use</h2>
                                 <p className={'body'}>
                                     Pay for each function execution. This means you don’t need to over-provision and thus over-pay for infrastructure.
                                     Especially for those periods of peak demand.
