@@ -12,8 +12,6 @@ import infographicBg from "./assets/bg-white-bubbles.svg";
 export const WhyServerlessSection = styled('section')(
     {
         backgroundColor: theme.color.white,
-        position: 'relative',
-        zIndex: 0,
         backgroundImage: 'url(' + comesWebinyBg + ')',
         backgroundRepeat: 'no-repeat'
     },
@@ -165,6 +163,7 @@ export const SliderWrapper = styled('div')({
     },
     mq({
         width: ['100%', '100%'],
+        display: ['none', 'flex'],
         flexDirection: ['column', 'row'],
     })
 );
@@ -197,6 +196,7 @@ export const LeftSliderWrapper = styled('div')({
     padding: '24px 36px',
 }, mq({
     flexDirection: ['column', 'row'],
+    padding: ['24px', '24px 36px'],
 }));
 
 export const RightSliderWrapper = styled('div')({
@@ -226,11 +226,17 @@ export const TextContent = styled('div')({
 });
 
 export const MediaContent = styled('div')({
-    '& img': {
-        maxWidth: 355,
-        maxHeight: 274,
-    }
-});
+        '& img': {
+            maxWidth: 254,
+            maxHeight: 254,
+        }
+    },
+    mq({
+        display: ['flex', 'block'],
+        justifyContent: ['center'],
+        marginTop: [24, 0]
+    })
+);
 
 export const SliderNav = styled('div')({
     boxSizing: 'border-box',
@@ -284,3 +290,29 @@ export const SliderNav = styled('div')({
         height: [62, 62]
     },
 }));
+
+export const ContentWrapper = styled('div')({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+});
+
+export const cardWrapperClass = css({
+        'position': 'relative',
+        width: '95%',
+        maxWidth: 820,
+        borderRadius: 6,
+        backgroundColor: theme.color.white,
+        boxShadow: 'rgba(100, 100, 100, 0.24) 2px 3px 15px'
+    },
+    mq({
+        display: ['block', 'none'],
+        marginBottom: [30, 0],
+        height: ['auto', 379],
+        borderRight: ['none', `8px solid ${theme.color.purple}`],
+        borderTop: [`8px solid ${theme.color.purple}`, 'none'],
+        '& .title': {
+            marginTop: [0, 'inherit']
+        }
+    })
+);

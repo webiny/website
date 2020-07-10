@@ -15,7 +15,9 @@ import {
     TextContent,
     MediaContent,
     RightSliderWrapper,
-    SliderNav
+    SliderNav,
+    ContentWrapper,
+    cardWrapperClass
 } from './serverless-challenges-styles';
 
 class ServerlessChallenges extends React.Component {
@@ -70,6 +72,19 @@ class ServerlessChallenges extends React.Component {
                             })}
                         </RightSliderWrapper>
                     </SliderWrapper>
+                    <ContentWrapper>
+                        {CONTENT_LIST.map(item => (
+                            <LeftSliderWrapper key={item.id} className={cardWrapperClass}>
+                                <TextContent>
+                                    <h4 className={'title'}>{item.title}</h4>
+                                    <p className={'body'}>{item.description}</p>
+                                </TextContent>
+                                <MediaContent>
+                                    <img src={item.imageSrc} alt={""}/>
+                                </MediaContent>
+                            </LeftSliderWrapper>
+                        ))}
+                    </ContentWrapper>
                 </ContentContainer>
             </WhyServerlessSection>
         );

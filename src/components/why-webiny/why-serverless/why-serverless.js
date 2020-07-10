@@ -15,8 +15,6 @@ import scalingImg from './assets/scaling.svg';
 const WhyServerlessSection = styled('section')(
     {
         backgroundColor: theme.color.white,
-        position: 'relative',
-        zIndex: 0,
         backgroundImage: 'url(' + whyServerlessBg + ')',
         backgroundRepeat: 'no-repeat'
     },

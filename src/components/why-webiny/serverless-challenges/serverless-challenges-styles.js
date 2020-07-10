@@ -8,8 +8,6 @@ import rectangleBg from "./assets/challenges-bg.svg";
 export const WhyServerlessSection = styled('section')(
     {
         backgroundColor: theme.color.white,
-        position: 'relative',
-        zIndex: 0,
     },
     mq({
         padding: ['0px 15px 110px', '0px 24px'],
@@ -105,6 +103,7 @@ export const SliderWrapper = styled('div')({
     },
     mq({
         width: ['100%', '100%'],
+        display: ['none', 'flex'],
         flexDirection: ['column-reverse', 'row'],
     })
 );
@@ -133,10 +132,10 @@ export const LeftSliderWrapper = styled('div')({
     zIndex: 1,
     boxSizing: 'border-box',
     width: '100%',
-    height: '100%',
-    padding: '24px 36px',
+    height: '100%'
 }, mq({
     flexDirection: ['column', 'row'],
+    padding: ['24px', '24px 36px'],
 }));
 
 export const RightSliderWrapper = styled('div')({
@@ -166,11 +165,17 @@ export const TextContent = styled('div')({
 });
 
 export const MediaContent = styled('div')({
-    '& img': {
-        maxWidth: 254,
-        maxHeight: 254,
-    }
-});
+        '& img': {
+            maxWidth: 254,
+            maxHeight: 254,
+        }
+    },
+    mq({
+        display: ['flex', 'block'],
+        justifyContent: ['center'],
+        marginTop: [24, 0]
+    })
+);
 
 export const SliderNav = styled('div')({
     boxSizing: 'border-box',
@@ -222,3 +227,30 @@ export const SliderNav = styled('div')({
         height: [50, 50]
     },
 }));
+
+
+export const ContentWrapper = styled('div')({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+});
+
+export const cardWrapperClass = css({
+        'position': 'relative',
+        width: '95%',
+        maxWidth: 820,
+        borderRadius: 6,
+        backgroundColor: theme.color.white,
+        boxShadow: 'rgba(100, 100, 100, 0.24) 2px 3px 15px'
+    },
+    mq({
+        display: ['block', 'none'],
+        marginBottom: [30, 0],
+        height: ['auto', 379],
+        borderRight: ['none', `8px solid ${theme.color.primaryDark}`],
+        borderTop: [`8px solid ${theme.color.primaryDark}`, 'none'],
+        '& .title': {
+            marginTop: [0, 'inherit']
+        }
+    })
+);

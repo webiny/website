@@ -14,16 +14,19 @@ import {
     infoImageClass,
     containerClass,
     LeftSliderWrapper,
-    MediaContent, RightSliderWrapper, SliderNav, SliderWrapper,
-    TextContent
+    MediaContent,
+    RightSliderWrapper,
+    SliderNav,
+    SliderWrapper,
+    TextContent,
+    cardWrapperClass,
+    ContentWrapper
 } from './here-comes-webiny-styles'
 
 import appStackImg from "./assets/stack-infographic.svg";
 import whatWebinyImg from "./assets/webiny-what.svg";
 
 import {CONTENT_LIST, NAV_LIST} from "./here-comes-webiny-data";
-
-
 
 
 class HereComesWebiny extends React.Component {
@@ -48,8 +51,8 @@ class HereComesWebiny extends React.Component {
                         so you can skip these steps and go straight to building your project.
                     </Text>
                     <ImageWrapper>
-                        <img className={infoImageClass} src={appStackImg} alt={'serverless stack'} />
-                        <img className={infoImageClass} src={whatWebinyImg} alt={'webiny stack'} />
+                        <img className={infoImageClass} src={appStackImg} alt={'serverless stack'}/>
+                        <img className={infoImageClass} src={whatWebinyImg} alt={'webiny stack'}/>
                     </ImageWrapper>
                     <SubTitle>Just a few, of many, benefits Webiny brings</SubTitle>
                     <SliderWrapper>
@@ -81,6 +84,19 @@ class HereComesWebiny extends React.Component {
                             </CSSTransition>
                         </TransitionGroup>
                     </SliderWrapper>
+                    <ContentWrapper>
+                        {CONTENT_LIST.map(item => (
+                            <LeftSliderWrapper key={item.id} className={cardWrapperClass}>
+                                <TextContent>
+                                    <h4 className={'title'}>{item.title}</h4>
+                                    <p className={'body'}>{item.description}</p>
+                                </TextContent>
+                                <MediaContent>
+                                    <img src={item.imageSrc} alt={""}/>
+                                </MediaContent>
+                            </LeftSliderWrapper>
+                        ))}
+                    </ContentWrapper>
                 </ContentContainer>
             </WhyServerlessSection>
         );
