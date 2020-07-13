@@ -13,7 +13,10 @@ export default {
     purple: '#7B39D9',
     darkPurple: '#44486C',
     yellow: '#DCD207',
-    grayBorder: '#EEEEEE'
+    grayBorder: '#EEEEEE',
+    gray300: '#4F4F4F',
+    gray100: '#F3F3F3',
+    softPink: '#F1E6FF'
   },
   fontWeight: {
     bold: 700,
@@ -31,7 +34,18 @@ export default {
     navMenuItem: 16,
     navMenuSubItem: 15,
     paragraph: 15,
-    footer: 14
+    footer: 14,
+    // From new design
+    xs: '.75rem',
+    sm: '.875rem',
+    base: '1rem',
+    lg: '1.125rem',
+    xl: '1.25rem',
+    '2xl': '1.5rem',
+    '3xl': '1.875rem',
+    '4xl': '2.25rem',
+    '5xl': '3rem',
+    '6xl': '4rem',
   },
   contentWidth: 1200
 };

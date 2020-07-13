@@ -64,7 +64,7 @@ const FooterMenu = () => (
     </MenuBlock>
     <MenuBlock>
       <SectionTitle>Webiny</SectionTitle>
-      <Link to="/why-serverless">Why Serverless?</Link>
+      <Link to="/why-webiny">Why Webiny?</Link>
       <Link to="/features">Features</Link>
       {/*<Link to="/features">Features</Link>*/}
       <a
