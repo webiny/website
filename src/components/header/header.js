@@ -359,8 +359,8 @@ const MenuItemList = props => (
       </div>
     </MenuItem>
     <MenuItem>
-      <Link className={linkStyle} rel="prerender" to="/why-serverless">
-        Why Serverless?
+      <Link className={linkStyle} rel="prerender" to="/why-webiny">
+        Why Webiny?
       </Link>
     </MenuItem>
 
