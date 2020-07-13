@@ -42,12 +42,12 @@ class HereComesWebiny extends React.Component {
       <WhyServerlessSection {...this.props}>
         <ContentContainer className={whyServerlessContainerClass}>
           <Title>
-            That is where Webiny <TitleHighlight>comes in!</TitleHighlight>
+            That's where Webiny <TitleHighlight>comes in!</TitleHighlight>
           </Title>
           <Text>
-            We like to say that Webiny is the easiest way to adopt serverless.
+            We like to say Webiny is the easiest way to adopt serverless.
             Webiny has already solved these and many more challenges for you,
-            so you can skip these steps and go straight to building your project.
+            so you can skip these pitfalls, save a ton of time, and go straight into building your project.
           </Text>
           <ImageWrapper>
             <img
