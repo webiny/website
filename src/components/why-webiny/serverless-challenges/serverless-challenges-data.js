@@ -7,7 +7,7 @@ import debugImg from './assets/hard-to-test-debug.svg';
 export const NAV_LIST = [
   {
     id: 0,
-    title: 'Fear of unknown',
+    title: 'Fear of the unknown',
   },
   {
     id: 1,
@@ -30,14 +30,14 @@ export const NAV_LIST = [
 export const CONTENT_LIST = [
   {
     id: 0,
-    title: 'Fear of unknown',
+    title: 'Fear of the unknown',
     description: `The rules of the game are different when it comes to serverless infrastructure. How you architect, code and deploy your applications changes and there are many new hidden challenges along the way which can derail your project.`,
     imageSrc: fearOfUnknownImg,
   },
   {
     id: 1,
     title: 'Security concerns',
-    description: "How do you secure something you don't understand? By not having a deterministic architecture from day one for your application, the security team will have a hard time in putting the proper measures in place.",
+    description: "How do you secure something you don't understand? By not having a deterministic architecture from day one for your application, the security team will have a hard time putting the proper measures in place.",
     imageSrc: securityConcernImg,
   },
   {
@@ -55,7 +55,7 @@ export const CONTENT_LIST = [
   {
     id: 4,
     title: "It's hard to test and debug",
-    description: ' Observability and testing inside serverless applications is a whole challenge of itself. Partily you can solve this with 3rd party tools, but getting them integrated in your processes and existing application can be hard. ',
+    description: ' Observability and testing inside serverless applications is a whole challenge in itself. Partially you can solve this with 3rd party tools, but getting them integrated in your processes and existing application can be hard. ',
     imageSrc: debugImg,
   },
 ];

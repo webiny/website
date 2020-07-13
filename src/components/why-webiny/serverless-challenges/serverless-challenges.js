@@ -40,7 +40,7 @@ class ServerlessChallenges extends React.Component {
             Transition to serverless unfortunately doesn’t come without a series of challenges you’ll
             need to overcome.
             A survey done on over 1500 companies, that were moving to serverless, has shown us what are the biggest
-            challenges on why an organisation hasn’t yet adopted serverless or the challenges they are facing after the adoption:
+            challenges why an organisation hasn’t yet adopted serverless or the challenges they are facing after the adoption:
 
           </SubTitle>
           <SliderWrapper>

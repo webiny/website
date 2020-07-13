@@ -257,6 +257,9 @@ export const SliderNav = styled ('div') (
     marginRight: -8,
     cursor: 'pointer',
 
+    display: 'flex',
+    alignItems: 'center',
+
     backgroundColor: theme.color.softPink,
     color: theme.color.black,
     fontSize: theme.fontSize.lg,
