@@ -9,7 +9,7 @@ import circleBg from "./assets/circles.svg";
 import dotsBg from "./assets/dots.svg";
 import Button from "../../ui/button";
 
-const SectionWithBg = styled("section")(
+const WCPMoreSection = styled("section")(
     {
         backgroundColor: theme.color.white,
         backgroundImage: "url(" + dotsBg + ")",
@@ -18,10 +18,10 @@ const SectionWithBg = styled("section")(
     mq({
         backgroundSize: ["cover", "auto", "100%"],
         backgroundPosition: ["center", "top", "top", "center"],
-        padding: ["0px 0px 0x", "0px 0px 110px"],
+        marginBottom: [60],
+        padding: ["0px 15px", 0],
         "@media (min-width: 1460px)": {
             backgroundPosition: "bottom",
-            paddingTop: 0
         }
     })
 );
@@ -37,16 +37,14 @@ const overviewContainerClass = css(
     },
     mq({
         width: ["100%", "100%"],
-        height: ["100%", 562],
-        // padding: ["75px 0px 0px", "85px 0px 0px"]
+        height: ["100%", 562]
     })
 );
 
 const OverviewSectionWrapper = styled("div")(
     {
         display: "flex",
-        justifyContent: "center",
-        // flexDirection: "column"
+        justifyContent: "center"
     },
     mq({
         width: ["100%"],
@@ -96,9 +94,10 @@ const ImageWrapper = styled("div")({
 
 const videoPreviewClass = css({
     position: "absolute",
+    zIndex: 0,
     "& img": {
-        width: "95%",
-        transform: "translate(2%, -10%)"
+        width: "100%",
+        transform: "translate(0%, -15%)"
     }
 });
 
@@ -106,8 +105,10 @@ const More = styled("div")({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-
-    width: 720,
+    zIndex: 1,
+    boxSizing: "border-box",
+    maxWidth: 708,
+    width: "100%",
     padding: "60px 30px",
     backgroundColor: theme.color.white,
     boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.0980392)",
@@ -120,7 +121,7 @@ const More = styled("div")({
 
 const WCPMore = props => {
     return (
-        <SectionWithBg {...props}>
+        <WCPMoreSection {...props}>
             <ContentContainer className={overviewContainerClass}>
                 <ImageWrapper>
                     <div className={videoPreviewClass}>
@@ -135,7 +136,7 @@ const WCPMore = props => {
                     </More>
                 </OverviewSectionWrapper>
             </ContentContainer>
-        </SectionWithBg>
+        </WCPMoreSection>
     );
 };
 
