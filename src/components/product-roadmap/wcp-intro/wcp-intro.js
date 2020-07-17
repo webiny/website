@@ -10,12 +10,12 @@ import { FEATURES } from "./wcp-intro-data";
 import ellipseBg from "./assets/ellipse.svg";
 import rectangleBg from "./assets/wcp-bg.svg";
 
-const HeroSection = styled("section")(
+const WCPIntroSection = styled("section")(
     {
         backgroundColor: theme.color.white
     },
     mq({
-        padding: ["0px 0px 110px", "0"],
+        padding: ["0px 15px 110px", "0"],
         "@media (min-width: 1460px)": {
             paddingTop: 0
         }
@@ -32,14 +32,14 @@ const heroContainerClass = css(
     },
     mq({
         width: ["100%", "100%"],
-        padding: ["75px 0px 75px", "85px 0px 85px"],
+        padding: ["75px 0px 75px", "0px 0px 85px"],
         "@media (min-width: 2000px)": {
             paddingBottom: 80
         }
     })
 );
 
-const HeroSectionWrapper = styled("div")(
+const IntroWrapper = styled("div")(
     {
         display: "flex",
         flexDirection: "column",
@@ -58,7 +58,6 @@ const Title = styled("h3")(
         fontWeight: theme.fontWeight.bold,
         color: theme.color.black,
         textAlign: "center",
-        // lineHeight: "34px",
         marginBottom: 40,
         marginTop: 0,
         "& a": {
@@ -102,58 +101,64 @@ const SubTitle = styled("h3")(
     })
 );
 
-const Grid = styled("div")({
-    display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
-    gridTemplateRows: "repeat(2, 1fr)",
-    gap: "40px 40px"
-    // grid-template-areas: ". . ." ". . ."
-});
+const Grid = styled("div")(
+    {
+        display: "grid",
+        gridTemplateRows: "repeat(2, 1fr)",
+        gap: "40px 40px"
+    },
+    mq({
+        gridTemplateColumns: ["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(3, 1fr)"]
+    })
+);
 
-const Card = styled("div")({
-    boxSizing: "border-box",
-    width: 352,
-    // height: 290,
-    backgroundColor: theme.color.white,
-    boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.0941176)",
-    borderRadius: 8,
-    padding: "24px 30px",
+const Card = styled("div")(
+    {
+        boxSizing: "border-box",
+        backgroundColor: theme.color.white,
+        boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.0941176)",
+        borderRadius: 8,
+        padding: "24px 30px",
 
-    "& .content": {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        textAlign: "center",
-
-        ".content__media": {
+        "& .content": {
             display: "flex",
+            flexDirection: "column",
             alignItems: "center",
-            marginBottom: 20,
+            textAlign: "center",
 
-            img: {
-                width: "100%",
-                height: 150,
-                maxWidth: 181
+            ".content__media": {
+                display: "flex",
+                alignItems: "center",
+                marginBottom: 20,
+
+                img: {
+                    width: "100%",
+                    height: 150,
+                    maxWidth: 181
+                }
+            },
+            ".content__title": {
+                margin: "0px 0px 10px",
+                fontSize: 22,
+                fontWeight: theme.fontWeight.bold
+            },
+            ".content__body": {
+                margin: 0,
+                fontSize: theme.fontSize["base"],
+                fontWeight: theme.fontWeight.regular
             }
-        },
-        ".content__title": {
-            margin: "0px 0px 10px",
-            fontSize: 22,
-            fontWeight: theme.fontWeight.bold
-        },
-        ".content__body": {
-            margin: 0,
-            fontSize: theme.fontSize["base"],
-            fontWeight: theme.fontWeight.regular
         }
-    }
-});
+    },
+    mq({
+        width: ["100%", 352]
+    })
+);
 
 const WCPIntroComponent = props => {
     return (
-        <HeroSection {...props}>
+        <WCPIntroSection {...props}>
             <ContentContainer className={heroContainerClass}>
-                <HeroSectionWrapper>
+                <IntroWrapper>
                     <Title>
                         Introducing <TitleHighlight>Webiny Control Panel</TitleHighlight>
                     </Title>
@@ -164,7 +169,7 @@ const WCPIntroComponent = props => {
                         commercial product and it will greatly complement our open-source offering.
                         Here are some of its features.
                     </SubTitle>
-                </HeroSectionWrapper>
+                </IntroWrapper>
                 <Grid>
                     {FEATURES.map(feature => (
                         <Card key={feature.id}>
@@ -179,7 +184,7 @@ const WCPIntroComponent = props => {
                     ))}
                 </Grid>
             </ContentContainer>
-        </HeroSection>
+        </WCPIntroSection>
     );
 };
 
