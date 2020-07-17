@@ -7,18 +7,18 @@ import ContentContainer from "../../ui/content-container";
 
 import heroBg from "./assets/bg-game-changer-bg.svg";
 
-const HeroSection = styled("section")(
+const GameChangerSection = styled("section")(
     {
         backgroundColor: theme.color.white,
         position: "relative",
         zIndex: 0,
         backgroundImage: "url(" + heroBg + ")",
-        backgroundRepeat: "no-repeat"
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "bottom",
+        backgroundSize: "cover"
     },
     mq({
-        backgroundSize: ["cover", "auto", "100%"],
-        backgroundPosition: ["left", "bottom", "bottom", "bottom"],
-        padding: ["0px 0px 110px", "0"],
+        padding: ["0px 15px 110px", "0px"],
         "@media (min-width: 1460px)": {
             backgroundPosition: "bottom",
             paddingTop: 0
@@ -37,15 +37,15 @@ const heroContainerClass = css(
     },
     mq({
         width: ["100%", "100%"],
-        height: ["100%", 550],
-        // padding: ["75px 0px 0px", "85px 0px 0px"],
+        height: ["100%", 697],
+        padding: ["100px 0px", 0],
         "@media (min-width: 2000px)": {
             paddingBottom: 80
         }
     })
 );
 
-const HeroSectionWrapper = styled("div")(
+const TitleWrapper = styled("div")(
     {
         display: "flex",
         flexDirection: "column"
@@ -63,11 +63,10 @@ const Title = styled("h1")(
         fontWeight: theme.fontWeight.bold,
         color: theme.color.white,
         textAlign: "center",
-        // lineHeight: "60px",
-        marginBottom: 100,
         marginTop: 0
     },
     mq({
+        marginBottom: [0, 100],
         marginLeft: [0, "auto"],
         marginRight: [0, "auto"]
     })
@@ -75,16 +74,16 @@ const Title = styled("h1")(
 
 const GameChangerComponent = props => {
     return (
-        <HeroSection {...props}>
+        <GameChangerSection {...props}>
             <ContentContainer className={heroContainerClass}>
-                <HeroSectionWrapper>
+                <TitleWrapper>
                     <Title>
                         Saving best for last!
                         <br />A complete game changer!
                     </Title>
-                </HeroSectionWrapper>
+                </TitleWrapper>
             </ContentContainer>
-        </HeroSection>
+        </GameChangerSection>
     );
 };
 
