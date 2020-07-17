@@ -1,0 +1,8 @@
+<svg width="965" height="443" viewBox="0 0 965 443" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="circles">
+<path id="pink" fill-rule="evenodd" clip-rule="evenodd" d="M214 423.5C214 417.149 219.149 412 225.5 412C231.851 412 237 417.149 237 423.5C237 429.851 231.851 435 225.5 435C219.149 435 214 429.851 214 423.5Z" fill="#E69AD2"/>
+<path id="purple" fill-rule="evenodd" clip-rule="evenodd" d="M96 59C96 26.4152 122.415 0 155 0C187.585 0 214 26.4152 214 59C214 91.5848 187.585 118 155 118C122.415 118 96 91.5848 96 59Z" fill="#7B39D9"/>
+<path id="orange" fill-rule="evenodd" clip-rule="evenodd" d="M0.000244141 314C0.000244141 259.876 43.8763 216 98.0002 216C152.124 216 196 259.876 196 314C196 368.124 152.124 412 98.0002 412C43.8763 412 0.000244141 368.124 0.000244141 314Z" fill="#FA5A28"/>
+<path id="green" fill-rule="evenodd" clip-rule="evenodd" d="M769 345C769 290.876 812.876 247 867 247C921.124 247 965 290.876 965 345C965 399.124 921.124 443 867 443C812.876 443 769 399.124 769 345Z" fill="#00CCB0"/>
+</g>
+</svg>

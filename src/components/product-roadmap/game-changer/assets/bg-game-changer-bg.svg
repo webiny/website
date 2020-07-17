@@ -1,0 +1,18 @@
+<svg width="1440" height="697" viewBox="0 0 1440 697" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="bg">
+<path id="Rectangle" fill-rule="evenodd" clip-rule="evenodd" d="M-70 -0.00012207H1548V697L1321.09 587H120.961L-70 697V-0.00012207Z" fill="url(#paint0_linear)"/>
+<g id="scroll down">
+<path id="path-1 path Copy" fill-rule="evenodd" clip-rule="evenodd" d="M671 596.881C671 592.814 673.187 589.056 676.738 587.022L714.257 565.533C717.808 563.499 722.182 563.499 725.733 565.533L763.251 587.022C766.802 589.056 768.989 592.814 768.989 596.881H671Z" fill="white"/>
+<g id="mouse">
+<rect id="Rectangle_2" x="709.998" y="576.006" width="19.9971" height="33.9941" rx="9.99857" stroke="#7B39D9"/>
+<rect id="Rectangle 2" x="717.997" y="580.005" width="3.99943" height="8.99845" rx="1.99971" stroke="#7B39D9"/>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear" x1="2357" y1="348.5" x2="1850.49" y2="-827.306" gradientUnits="userSpaceOnUse">
+<stop stop-color="#9033EA"/>
+<stop offset="1" stop-color="#483EB7"/>
+</linearGradient>
+</defs>
+</svg>
