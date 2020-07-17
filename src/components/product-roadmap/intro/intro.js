@@ -8,16 +8,14 @@ import ContentContainer from "../../ui/content-container";
 import Button from "../../ui/button";
 
 import { TASKS } from "./intro-data";
-
-// import { ReactComponent as ArrowLeftIcon } from "./assets/arrow.svg";
 import ArrowLeftIcon from "./assets/arrow.svg";
 
-const HeroSection = styled("section")(
+const ProductRoadmapIntroSection = styled("section")(
     {
-        backgroundColor: theme.color.background
+        backgroundColor: theme.color.white
     },
     mq({
-        padding: ["0px 0px 110px", "0"],
+        padding: ["0px 15px", "0"],
         "@media (min-width: 1460px)": {
             paddingTop: 0
         }
@@ -34,14 +32,14 @@ const heroContainerClass = css(
     },
     mq({
         width: ["100%", "100%"],
-        padding: ["75px 0px 75px", "85px 0px 85px"],
+        padding: ["75px 0px", "85px 0px"],
         "@media (min-width: 2000px)": {
             paddingBottom: 80
         }
     })
 );
 
-const HeroSectionWrapper = styled("div")(
+const IntroWrapper = styled("div")(
     {
         display: "flex",
         flexDirection: "column",
@@ -74,73 +72,81 @@ const Title = styled("h3")(
     })
 );
 
-const Grid = styled("div")({
-    display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
-    gridTemplateRows: "repeat(2, 1fr)",
-    gap: "40px 40px"
-    // grid-template-areas: ". . ." ". . ."
-});
-
-const Card = styled("div")(props => ({
-    boxSizing: "border-box",
-    width: 380,
-    height: 263,
-    backgroundColor: theme.color.white,
-    boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.0941176)",
-    borderRadius: 8,
-    padding: "24px 30px",
-
-    "& .tag": {
-        display: "flex",
-        marginBottom: 12,
-
-        "& .tag__content": {
-            backgroundColor: props.accent,
-
-            color: theme.color.white,
-            textTransform: "uppercase",
-            fontSize: 12,
-            fontWeight: theme.fontWeight.bold,
-
-            padding: "4px 14px",
-            borderRadius: 10
-        }
+const Grid = styled("div")(
+    {
+        display: "grid",
+        gridTemplateRows: ["repeat(2, 1fr)", "repeat(2, 1fr)"],
+        gap: "40px 40px"
     },
+    mq({
+        gridTemplateColumns: ["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(3, 1fr)"]
+    })
+);
 
-    "& .content": {
-        ".content__title": {
-            margin: "0px 0px 6px",
-            fontSize: theme.fontSize["2xl"],
-            fontWeight: theme.fontWeight.bold
-        },
-        ".content__body": {
-            margin: "0px 0px 20px",
-            fontSize: theme.fontSize["lg"],
-            fontWeight: theme.fontWeight.regular
-        },
-        ".content__action": {
+const Card = styled("div")(
+    props => ({
+        boxSizing: "border-box",
+
+        backgroundColor: theme.color.white,
+        boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.0941176)",
+        borderRadius: 8,
+        padding: "24px 30px",
+
+        "& .tag": {
             display: "flex",
-            alignItems: "center",
-            a: {
-                color: theme.color.purple,
-                fontSize: 14,
+            marginBottom: 12,
+
+            "& .tag__content": {
+                backgroundColor: props.accent,
+
+                color: theme.color.white,
                 textTransform: "uppercase",
-                marginRight: 4
+                fontSize: 12,
+                fontWeight: theme.fontWeight.bold,
+
+                padding: "4px 14px",
+                borderRadius: 10
+            }
+        },
+
+        "& .content": {
+            ".content__title": {
+                margin: "0px 0px 6px",
+                fontSize: theme.fontSize["2xl"],
+                fontWeight: theme.fontWeight.bold
+            },
+            ".content__body": {
+                margin: "0px 0px 20px",
+                fontSize: theme.fontSize["lg"],
+                fontWeight: theme.fontWeight.regular
+            },
+            ".content__action": {
+                display: "flex",
+                alignItems: "center",
+                a: {
+                    color: theme.color.purple,
+                    fontSize: 14,
+                    textTransform: "uppercase",
+                    marginRight: 4
+                }
             }
         }
-    }
-}));
+    }),
+    mq({
+        width: ["100%", 380],
+        height: ["263px", 263]
+    })
+);
 
 const ButtonWrapper = styled("div")({
-    margin: "50px 0px"
+    margin: "55px 0px"
 });
 
 const IntroComponent = props => {
     return (
-        <HeroSection {...props}>
+        <ProductRoadmapIntroSection {...props}>
             <ContentContainer className={heroContainerClass}>
-                <HeroSectionWrapper>
+                <IntroWrapper>
                     <Title>
                         Here at <Link to={"/"}>Webiny</Link>, we never stop upgrading our product
                         and we work with the community to identify what features they would like to
@@ -150,7 +156,7 @@ const IntroComponent = props => {
                         We identified the following features as priorities by our community and our
                         team is currently reviewing them.
                     </Title>
-                </HeroSectionWrapper>
+                </IntroWrapper>
                 <Grid>
                     {TASKS.map(task => (
                         <Card key={task.id} accent={task.tag.accent}>
@@ -175,7 +181,7 @@ const IntroComponent = props => {
                     </Button>
                 </ButtonWrapper>
             </ContentContainer>
-        </HeroSection>
+        </ProductRoadmapIntroSection>
     );
 };
 
