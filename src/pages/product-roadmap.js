@@ -1,6 +1,4 @@
 import React from "react";
-// import AOS from 'aos';
-// import 'aos/dist/aos.css';
 
 import BaseLayout from "../layouts/base";
 import GoServerless from "../components/homepage/go-serverless/go-serverless";
