@@ -10,15 +10,15 @@ import webinyBg from "./assets/webiny-bg.svg";
 
 const HeroSection = styled("section")(
     {
-        backgroundColor: theme.color.background,
+        backgroundColor: theme.color.white,
         position: "relative",
         zIndex: 0,
         backgroundImage: "url(" + heroBg + ")",
-        backgroundRepeat: "no-repeat"
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "top",
     },
     mq({
         backgroundSize: ["cover", "auto", "100%"],
-        backgroundPosition: ["left", "top", "top", "center"],
         padding: ["0px 0px 110px", "0"],
         "@media (min-width: 1460px)": {
             backgroundPosition: "bottom",
@@ -65,7 +65,7 @@ const Title = styled("h1")(
         textAlign: "center",
         lineHeight: "60px",
         marginBottom: 20,
-        marginTop: 20
+        marginTop: "10%"
     },
     mq({
         marginLeft: [0, "auto"],
@@ -78,12 +78,11 @@ const WebinyHallMarkImage = styled("img")(
         position: "absolute",
         zIndex: 1,
         top: 0,
-        left: 0,
-        height: "100%"
+        left: 0
     },
     mq({
         width: ["100%", "100%"],
-        maxHeight: ["unset", 856]
+        height: ["60vh", 856]
     })
 );
 
