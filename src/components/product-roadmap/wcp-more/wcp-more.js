@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 import styled from "react-emotion";
 import { css } from "emotion";
 import theme from "../../utils/theme";
@@ -21,7 +21,7 @@ const WCPMoreSection = styled("section")(
         marginBottom: [60],
         padding: ["0px 15px", 0],
         "@media (min-width: 1460px)": {
-            backgroundPosition: "bottom",
+            backgroundPosition: "bottom"
         }
     })
 );
@@ -60,7 +60,7 @@ const Title = styled("h1")(
         fontWeight: theme.fontWeight.bold,
         color: theme.color.black,
         textAlign: "center",
-        marginBottom: 0,
+        marginBottom: 0
     },
     mq({
         marginLeft: [0, "auto"],
@@ -132,7 +132,12 @@ const WCPMore = props => {
                     <More>
                         <Title>There is much more to WCP. </Title>
                         <Caption>We plan to have the first version out before the Q4 2020.</Caption>
-                        <Button type={"secondary"}>Get in touch if you'd like to know more</Button>
+                        <Button
+                            type={"secondary"}
+                            link={"mailto:sven@webiny.com"}
+                        >
+                            Get in touch if you'd like to know more
+                        </Button>
                     </More>
                 </OverviewSectionWrapper>
             </ContentContainer>
