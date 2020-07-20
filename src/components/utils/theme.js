@@ -16,7 +16,8 @@ export default {
     grayBorder: '#EEEEEE',
     gray300: '#4F4F4F',
     gray100: '#F3F3F3',
-    softPink: '#F1E6FF'
+    softPink: '#F1E6FF',
+    backgroundGray: '#F3F3F3'
   },
   fontWeight: {
     bold: 700,
