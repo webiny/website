@@ -8,7 +8,7 @@ export const TASKS = [
         body: "Add DynamoDB as one of the supported databases.",
         action: {
             label: "learn more",
-            link: "/"
+            link: "https://github.com/webiny/webiny-js/projects/8"
         }
     },
     {
@@ -18,7 +18,7 @@ export const TASKS = [
         body: "Add multi-language support to Webiny",
         action: {
             label: "learn more",
-            link: "/"
+            link: "https://github.com/webiny/webiny-js/issues/765"
         }
     },
     {
@@ -28,7 +28,7 @@ export const TASKS = [
         body: "Add support for GCP and Azure.",
         action: {
             label: "learn more",
-            link: "/"
+            link: "https://github.com/webiny/webiny-js/issues/1150"
         }
     },
     {
@@ -38,7 +38,7 @@ export const TASKS = [
         body: "Public searchable repository of Webiny plugins.",
         action: {
             label: "learn more",
-            link: "/"
+            link: "https://github.com/webiny/webiny-js/issues/1151"
         }
     },
     {
@@ -48,7 +48,7 @@ export const TASKS = [
         body: "Manage access to Webiny using 3rd party identity providers",
         action: {
             label: "learn more",
-            link: "/"
+            link: "https://github.com/webiny/webiny-js/issues/1152"
         }
     },
     {
@@ -58,8 +58,7 @@ export const TASKS = [
         body: "Run Webiny using an SQL database on Serverless Aurora",
         action: {
             label: "learn more",
-            link: "/"
+            link: "https://github.com/webiny/webiny-js/issues/1153"
         }
     }
 ];
-

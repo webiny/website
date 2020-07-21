@@ -167,7 +167,13 @@ const IntroComponent = props => {
                                 <h3 className="content__title">{task.title}</h3>
                                 <p className="content__body">{task.body}</p>
                                 <div className="content__action">
-                                    <a href={task.action.link}>{task.action.label}</a>
+                                    <a
+                                        href={task.action.link}
+                                        target={"_blank"}
+                                        rel={"noopener noreferrer"}
+                                    >
+                                        {task.action.label}
+                                    </a>
                                     <img src={ArrowLeftIcon} alt={""} />
                                 </div>
                             </div>
