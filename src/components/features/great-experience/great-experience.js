@@ -58,6 +58,7 @@ const LogosWrapper = styled("div")(
 
 const FeatureCard = styled(BaseFeatureCard)(
     props => ({
+        minHeight: 430,
         borderRadius: 0,
 
         borderLeft: props.borderLeft ? "1px solid #E2E2E2" : "",
@@ -73,7 +74,7 @@ const FeatureCard = styled(BaseFeatureCard)(
     }),
     mq({
         width: ["95%", "100%", 352],
-        height: ["auto", 430],
+        height: ["auto", "auto"],
         borderColor: ["white", "#E2E2E2"]
     })
 );
