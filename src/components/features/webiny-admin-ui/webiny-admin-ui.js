@@ -35,7 +35,7 @@ const Section = styled("section")(
     },
     mq({
         backgroundSize: ["cover", "auto", "100%"],
-        padding: ["0px 15px 0px", "0px 15px 110px"],
+        padding: ["0px 15px 0px", "110px 15px 180px"],
         "@media (min-width: 1460px)": {
             backgroundPosition: "bottom",
             paddingTop: 0

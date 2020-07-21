@@ -94,13 +94,12 @@ const WebinyHallMarkImage = styled("img")(
     {
         position: "absolute",
         zIndex: 1,
-        top: 0,
-        left: 0,
-        height: "100%"
+        top: 0
     },
     mq({
-        width: ["100%", "100%"],
-        maxHeight: ["unset", 856]
+        width: ["auto", "100%"],
+        height: ["100%", 756],
+        left: ["-45%", 0],
     })
 );
 
