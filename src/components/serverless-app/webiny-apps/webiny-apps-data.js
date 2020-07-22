@@ -16,7 +16,7 @@ import ddosProtectionImg from "./assets/icon-api-gateway.svg";
 export const FEATURES = [
     {
         id: 0,
-        title: "Serverless and  self-hosted",
+        title: "Serverless and self-hosted",
         body: "Run the apps in your own cloud on top of the serverless infrastructure.",
         imageSrc: selfHostedImg,
         imageAlt: "Serverless and self-hosted",

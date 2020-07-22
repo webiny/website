@@ -3,6 +3,7 @@ import styled from "react-emotion";
 import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 import { css } from "emotion";
+import videoBg from "./webiny-api/assets/video-bg.svg";
 
 export const overviewContainerClass = css(
     {
@@ -80,6 +81,13 @@ export const ImageWrapper = styled("div")({
 
 export const videoPreviewClass = css(
     {
+        background: "url(" + videoBg + ")",
+        backgroundRepeat: "no-repeat",
+        width: "100%",
+        height: "100%",
+        margin: "0 auto",
+        textAlign: "center",
+        backgroundPosition: "bottom",
         iframe: {
             borderRadius: 5,
             boxShadow: "0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3)",
@@ -89,9 +97,10 @@ export const videoPreviewClass = css(
         }
     },
     mq({
+        minHeight: ["auto", 570],
         iframe: {
-            width: ["100%", 800],
-            height: ["auto", , 450]
+            width: ["100%", 800, 800],
+            height: ["auto", 450, 450]
         }
     })
 );
