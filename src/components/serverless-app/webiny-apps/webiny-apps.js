@@ -82,6 +82,7 @@ const WebinyApps = props => {
                         <ServerlessApp
                             key={app.id}
                             className={index % 2 !== 0 ? serverlessAppsRTLClass : ""}
+                            imgSrc={app.imgSrc}
                         >
                             <div className="text-content">
                                 <h3 className="text-content__title">
@@ -100,9 +101,7 @@ const WebinyApps = props => {
                             </div>
                             <div className="media-content">
                                 <img src={ovalImg} alt="" className="media-content__img-bg" />
-                                <img
-                                    src={app.imgSrc}
-                                    alt={app.imgAlt}
+                                <div
                                     className="media-content__img"
                                     data-aos={index % 2 !== 0 ? "fade-right" : "fade-left"}
                                     data-aos-duration={600}

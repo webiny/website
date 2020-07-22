@@ -158,9 +158,10 @@ export const FeatureCard = styled("div")(props => ({
 }));
 
 export const ServerlessApp = styled("div")(
-    {
+    props => ({
         boxSizing: "border-box",
         display: "flex",
+        width: "100%",
 
         "& .text-content": {
             boxSizing: "border-box",
@@ -196,7 +197,11 @@ export const ServerlessApp = styled("div")(
             display: "flex",
 
             "& .media-content__img": {
-                width: "100%"
+                width: "100%",
+                backgroundImage: "url(" + props.imgSrc + ")",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.301961)"
             },
             "& .media-content__img-bg": {
                 position: "absolute",
@@ -205,7 +210,7 @@ export const ServerlessApp = styled("div")(
                 right: 0
             }
         }
-    },
+    }),
     mq({
         marginBottom: [120, 80, 120],
         flexDirection: ["column", "row"],
@@ -225,6 +230,10 @@ export const ServerlessApp = styled("div")(
         },
         "& .media-content": {
             width: ["100%", "60%"],
+            "& .media-content__img": {
+                height: [200, 400]
+            },
+
             "& .media-content__img-bg": {
                 width: ["80%", "auto"],
                 transform: ["translate(0%, -12%)", "translate(20%, -12%)"]
