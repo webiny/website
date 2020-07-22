@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="254px" height="164px" viewBox="0 0 254 164" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="31.0857124" height="38.1754456"></rect>
+        <filter x="-48.3%" y="-39.3%" width="196.5%" height="178.6%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.392156863   0 0 0 0 0.392156863   0 0 0 0 0.392156863  0 0 0 0.298039216 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-3" x="0" y="0" width="31.0857086" height="38.1754456"></rect>
+        <filter x="-48.3%" y="-39.3%" width="196.5%" height="178.6%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.392156863   0 0 0 0 0.392156863   0 0 0 0 0.392156863  0 0 0 0.298039216 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="11.8842565%" y1="37.660953%" x2="86.4124954%" y2="61.7880715%" id="linearGradient-5">
+            <stop stop-color="#8033EB" offset="0%"></stop>
+            <stop stop-color="#D4648E" offset="52.9999971%"></stop>
+            <stop stop-color="#EC7071" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-6" x="0" y="0" width="39.228569" height="48.175457"></rect>
+        <filter x="-38.2%" y="-31.1%" width="176.5%" height="162.3%" filterUnits="objectBoundingBox" id="filter-7">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.392156863   0 0 0 0 0.392156863   0 0 0 0 0.392156863  0 0 0 0.298039216 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-8" x="0" y="0" width="39.2285652" height="48.175457"></rect>
+        <filter x="-38.2%" y="-31.1%" width="176.5%" height="162.3%" filterUnits="objectBoundingBox" id="filter-9">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.392156863   0 0 0 0 0.392156863   0 0 0 0 0.392156863  0 0 0 0.298039216 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-10" x="0" y="0" width="56.9999924" height="70.0000153"></rect>
+        <filter x="-26.3%" y="-21.4%" width="152.6%" height="142.9%" filterUnits="objectBoundingBox" id="filter-11">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.392156863   0 0 0 0 0.392156863   0 0 0 0 0.392156863  0 0 0 0.298039216 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Landing-page-Webiny" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-601.000000, -3176.000000)">
+            <g id="Video-sections" transform="translate(-185.000000, -22.000000)">
+                <g id="2" transform="translate(140.054321, 1993.146118)">
+                    <g id="features" transform="translate(167.060547, 1184.961792)">
+                        <g id="2" transform="translate(427.154785, 0.000000)">
+                            <g id="icon" transform="translate(59.730343, 29.892342)">
+                                <path d="M213.999969,44.000248 C213.999969,59.4642289 201.463945,72.0002594 185.999985,72.0002594 C170.536008,72.0002594 157.999985,59.4642289 157.999985,44.000248 C157.999985,28.5362776 170.536008,16.000248 185.999985,16.000248 C193.426036,16.000248 200.547943,18.9502401 205.798963,24.2012601 C211.04998,29.4522792 213.999969,36.574191 213.999969,44.000248 Z" id="Path" fill="#F2F2F2"></path>
+                                <path d="M198.999985,128.496803 C199.001282,135.575082 194.738432,141.957111 188.199329,144.666751 C181.660225,147.376391 174.132746,145.879982 169.127189,140.875342 C164.121631,135.870701 162.623838,128.343496 165.332278,121.803894 C168.040717,115.264292 174.421963,111.000267 181.500241,111.000267 C191.163828,111.000267 198.998209,118.833213 198.999985,128.496803 L198.999985,128.496803 Z" id="Path" fill="#F2F2F2"></path>
+                                <path d="M245.999969,67.0002556 C245.999969,74.1799599 240.179671,80.0002556 232.999969,80.0002556 C225.820268,80.0002556 219.999969,74.1799599 219.999969,67.0002556 C219.999969,59.8205551 225.820268,54.0002556 232.999969,54.0002556 C236.448047,53.9993979 239.755147,55.3687615 242.193305,57.8069209 C244.631464,60.2450799 246.000828,63.5521802 245.999969,67.0002556 Z" id="Path" fill="#F2F2F2"></path>
+                                <rect id="Rectangle" fill="#F2F2F2" x="64.9999924" y="132.000275" width="58.9999924" height="14"></rect>
+                                <rect id="Rectangle" fill="#F2F2F2" x="0" y="94.000267" width="58.9999924" height="14.0000076"></rect>
+                                <g id="New-group-Copy-2" transform="translate(36.999996, 0.000000)">
+                                    <g id="Rectangle-2">
+                                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                                    </g>
+                                    <g id="Group" transform="translate(6.544311, 15.815434)" stroke="#FA5A28" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                        <polyline id="Path" points="3.54102564 0 0 3.54294407 3.54486203 7.08972645"></polyline>
+                                        <polyline id="Path-2" points="14.1794415 7.08972645 17.7243042 3.54678259 14.1794415 0"></polyline>
+                                        <path d="M7.08972168,0 L10.6345835,7.08972645" id="Path-3"></path>
+                                    </g>
+                                </g>
+                                <g id="New-group-Copy-3" transform="translate(153.914291, 0.000000)">
+                                    <g id="Rectangle-2">
+                                        <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                                    </g>
+                                    <g id="Group" transform="translate(6.544311, 15.815434)" stroke="#FA5A28" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                        <polyline id="Path" points="3.54102516 0 0 3.54294407 3.54486156 7.08972645"></polyline>
+                                        <polyline id="Path-2" points="14.1794395 7.08972645 17.7243004 3.54678259 14.1794395 0"></polyline>
+                                        <path d="M7.08971977,0 L10.6345806,7.08972645" id="Path-3"></path>
+                                    </g>
+                                </g>
+                                <g id="Group" transform="translate(33.999996, 35.000252)">
+                                    <path d="M91.3821123,88.0000229 L64.6178631,88.0000229 C64.6178631,88.0000229 67.5298352,110.502761 48.9999924,115.000023 L106.999992,115.000023 C88.4701436,110.496205 91.3821123,88.0000229 91.3821123,88.0000229 Z" id="Path" fill="#999999"></path>
+                                    <rect id="Rectangle" fill="#E5E5E5" x="48.9999924" y="115.000031" width="57.9999924" height="4"></rect>
+                                    <path d="M150.999985,87.0579096 C151.015177,88.6185515 150.406784,90.1213886 149.308378,91.2357669 C148.209973,92.3501453 146.71154,92.9847735 145.142751,93.0000229 L5.85720653,93.0000229 C2.5911145,92.966503 -0.0301873747,90.3070813 0,87.0579096 L0,5.93890378 C-0.0283954316,2.69097977 2.59238579,0.0335242436 5.85720653,0 L145.142751,0 C146.71154,0.0152502293 148.209973,0.649878498 149.308378,1.76425752 C150.406784,2.87863658 151.015177,4.38147036 150.999985,5.94211401 L150.999985,87.0579096 Z" id="Path" fill="#B3B3B3"></path>
+                                    <rect id="Rectangle" fill="url(#linearGradient-5)" x="0" y="8.00000191" width="150.999985" height="74.0000153"></rect>
+                                    <rect id="Rectangle" fill="#E5E5E5" style="mix-blend-mode: multiply;" x="0" y="8.00000191" width="150.999985" height="1"></rect>
+                                    <path d="M64.5820126,93.0000229 L91.4848935,93.0000229 C91.4848935,93.0000229 91.8129776,96.5358532 91.9999924,97.4506274 L61.9999924,104.000023 C61.9999924,104.000023 64.5820126,99.9094892 64.5820126,93.0000229 Z" id="Path" fill="#828282"></path>
+                                    <path d="M150.999985,82.0000114 L150.999985,51.5031353 C150.999985,51.5031353 129.501849,78.7668221 75.5,54.697492 C21.4981379,30.6281619 0,54.697492 0,54.697492 L0,82.0000114 L150.999985,82.0000114 Z" id="Path" fill="#E5E5E5" opacity="0.100000001" style="mix-blend-mode: screen;"></path>
+                                    <rect id="Rectangle" fill="#E5E5E5" style="mix-blend-mode: multiply;" x="0" y="81.0000229" width="150.999985" height="1"></rect>
+                                </g>
+                                <g id="New-group" transform="translate(177.771469, 30.824471)">
+                                    <g id="Rectangle-2">
+                                        <use fill="black" fill-opacity="1" filter="url(#filter-7)" xlink:href="#path-6"></use>
+                                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-6"></use>
+                                    </g>
+                                    <g id="Group" transform="translate(8.258667, 19.958260)" stroke="#FA5A28" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+                                        <polyline id="Path" points="4.46859264 0 0 4.47101449 4.47343397 8.94687271"></polyline>
+                                        <polyline id="Path-2" points="17.8936958 8.94687271 22.3671303 4.47585849 17.8936958 0"></polyline>
+                                        <path d="M8.94684792,0 L13.4202805,8.94687271" id="Path-3"></path>
+                                    </g>
+                                </g>
+                                <g id="New-group-Copy-4" transform="translate(2.000000, 30.824471)">
+                                    <g id="Rectangle-2">
+                                        <use fill="black" fill-opacity="1" filter="url(#filter-9)" xlink:href="#path-8"></use>
+                                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-8"></use>
+                                    </g>
+                                    <g id="Group" transform="translate(8.258666, 19.958260)" stroke="#FA5A28" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+                                        <polyline id="Path" points="4.46859216 0 0 4.47101449 4.47343349 8.94687271"></polyline>
+                                        <polyline id="Path-2" points="17.8936939 8.94687271 22.3671284 4.47585849 17.8936939 0"></polyline>
+                                        <path d="M8.94684792,0 L13.4202795,8.94687271" id="Path-3"></path>
+                                    </g>
+                                </g>
+                                <g id="New-group" transform="translate(82.999992, 16.000004)">
+                                    <g id="Rectangle-2">
+                                        <use fill="black" fill-opacity="1" filter="url(#filter-11)" xlink:href="#path-10"></use>
+                                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-10"></use>
+                                    </g>
+                                    <text id="010101110110010101100010011001" font-family="SourceSansPro-Regular, Source Sans Pro" font-size="9" font-weight="normal" letter-spacing="1" fill="#D2D2D2">
+                                        <tspan x="3.99987793" y="12">010101110</tspan>
+                                        <tspan x="3.99987793" y="24">110010101</tspan>
+                                        <tspan x="3.99987793" y="36">100010011</tspan>
+                                        <tspan x="3.99987793" y="48">001010111</tspan>
+                                        <tspan x="3.99987793" y="60">001101110</tspan>
+                                        <tspan x="3.99987793" y="72">100011011</tspan>
+                                        <tspan x="3.99987793" y="84">110110111</tspan>
+                                        <tspan x="3.99987793" y="96">101101100</tspan>
+                                        <tspan x="3.99987793" y="108">01110</tspan>
+                                        <tspan x="3.99987793" y="120">010101110</tspan>
+                                        <tspan x="3.99987793" y="132">110010101</tspan>
+                                        <tspan x="3.99987793" y="144">100010011</tspan>
+                                        <tspan x="3.99987793" y="156">001010111</tspan>
+                                        <tspan x="3.99987793" y="168">001101110</tspan>
+                                        <tspan x="3.99987793" y="180">100011011</tspan>
+                                        <tspan x="3.99987793" y="192">110110111</tspan>
+                                        <tspan x="3.99987793" y="204">101101100</tspan>
+                                        <tspan x="3.99987793" y="216">011100110</tspan>
+                                        <tspan x="3.99987793" y="228">101011101</tspan>
+                                        <tspan x="3.99987793" y="240">100101011</tspan>
+                                        <tspan x="3.99987793" y="252">000100110</tspan>
+                                        <tspan x="3.99987793" y="264">010101110</tspan>
+                                        <tspan x="3.99987793" y="276">011011101</tspan>
+                                        <tspan x="3.99987793" y="288">000110111</tspan>
+                                        <tspan x="3.99987793" y="300">101101111</tspan>
+                                        <tspan x="3.99987793" y="312">011011000</tspan>
+                                        <tspan x="3.99987793" y="324">1110011</tspan>
+                                    </text>
+                                    <g id="Group" transform="translate(8.999999, 26.000006)">
+                                        <rect id="Rectangle-3" fill="#FFFFFF" x="0" y="0" width="37.9999962" height="20.0000019"></rect>
+                                        <polyline id="Path" stroke="#FA5A28" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" points="9.492964 3 3 9.49648192 9.49999857 16.0000019"></polyline>
+                                        <polyline id="Path-2" stroke="#FA5A28" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" points="28.9999962 16.0000024 35.4999962 9.50352085 28.9999962 3.00000048"></polyline>
+                                        <path d="M15.9999981,3.00000048 L22.4999981,16.0000005" id="Path-3" stroke="#FA5A28" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
