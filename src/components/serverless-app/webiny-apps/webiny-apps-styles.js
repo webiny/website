@@ -366,7 +366,7 @@ export const BenefitBox = styled("div")(
         "& .benefit__img": {},
         "& .benefit__title": {
             textAlign: "center",
-            margin: "0px",
+            margin: "16px 0px 0px",
             fontWeight: theme.fontWeight.bold,
             fontSize: theme.fontSize["xl"]
         }

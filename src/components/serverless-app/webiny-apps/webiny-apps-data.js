@@ -6,12 +6,12 @@ import headlessCMSImg from "./assets/headlesscms.png";
 import pageBuilderImg from "./assets/pagebuilder.png";
 import formBuilderImg from "./assets/formbuilder.png";
 import fileManagerImg from "./assets/filemanager.png";
-import highAvailabilityImg from "./assets/high-availablity.svg";
-import durabilityImg from "./assets/durability.svg";
-import secureImg from "./assets/secure.svg";
-import lambdaImg from "./assets/lambda.svg";
-import cdnImg from "./assets/global-cdn.svg";
-import ddosProtectionImg from "./assets/ddos-protection.svg";
+import highAvailabilityImg from "./assets/icon-aws.svg";
+import durabilityImg from "./assets/icon-s3.svg";
+import secureImg from "./assets/icon-cognito.svg";
+import lambdaImg from "./assets/icon-lambda.svg";
+import cdnImg from "./assets/icon-cloudfront.svg";
+import ddosProtectionImg from "./assets/icon-api-gateway.svg";
 
 export const FEATURES = [
     {
