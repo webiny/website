@@ -1,10 +1,15 @@
-import React from 'react';
-
-import BaseLayout from '../../layouts/base';
-import GoServerless from '../../components/homepage/go-serverless/go-serverless';
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import BaseLayout from "../../layouts/base";
+import GoServerless from "../../components/homepage/go-serverless/go-serverless";
 import WebinyApps from "../../components/serverless-app/webiny-apps/webiny-apps";
 
 const WebinyAppsPage = () => {
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
     return (
         <BaseLayout
             title="The easiest way to adopt serverless | Webiny"
@@ -15,6 +20,6 @@ const WebinyAppsPage = () => {
             <GoServerless />
         </BaseLayout>
     );
-}
+};
 
 export default WebinyAppsPage;

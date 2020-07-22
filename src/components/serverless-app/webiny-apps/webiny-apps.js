@@ -104,6 +104,9 @@ const WebinyApps = props => {
                                     src={app.imgSrc}
                                     alt={app.imgAlt}
                                     className="media-content__img"
+                                    data-aos={index % 2 !== 0 ? "fade-right" : "fade-left"}
+                                    data-aos-duration={600}
+                                    data-aos-once="true"
                                 />
                             </div>
                         </ServerlessApp>
@@ -137,7 +140,12 @@ const WebinyApps = props => {
                     </Wrapper>
                     <ServerBenefitsWrapper>
                         {BENEFITS.map(benefit => (
-                            <BenefitBox key={benefit.id} {...benefit}>
+                            <BenefitBox
+                                key={benefit.id}
+                                {...benefit}
+                                data-aos={"zoom-in"}
+                                data-aos-once="true"
+                            >
                                 <img
                                     src={benefit.imgSrc}
                                     alt={benefit.imgAlt}

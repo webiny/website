@@ -255,7 +255,8 @@ export const serverlessAppsRTLClass = css(
 );
 
 export const ExploreAppsSection = styled(HeroSection)({
-    background: theme.color.white
+    background: theme.color.white,
+    overflow: "hidden"
 });
 
 export const ExploreAppsTitle = styled(Title)({
@@ -316,7 +317,8 @@ export const ContributeTitle = styled(Title)({
 
 export const ServerlessBenefitsSection = styled(HeroSection)(
     {
-        background: theme.color.white
+        background: theme.color.white,
+        overflow: "hidden"
     },
     mq({
         paddingBottom: [0]
