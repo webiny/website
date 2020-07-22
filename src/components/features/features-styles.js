@@ -99,8 +99,8 @@ export const videoPreviewClass = css(
     mq({
         minHeight: ["auto", 570],
         iframe: {
-            width: ["100%", 800, 800],
-            height: ["auto", 450, 450]
+            width: [350, 855, 855],
+            height: [196, 480, 480]
         }
     })
 );
