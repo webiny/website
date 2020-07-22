@@ -78,13 +78,23 @@ export const ImageWrapper = styled("div")({
     marginTop: 60
 });
 
-export const videoPreviewClass = css({
-    position: "absolute",
-    "& img": {
-        width: "95%",
-        transform: "translate(2%, -10%)"
-    }
-});
+export const videoPreviewClass = css(
+    {
+        iframe: {
+            borderRadius: 5,
+            boxShadow: "0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3)",
+            cursor: "pointer",
+            transition: "opacity 0.3s",
+            boxSizing: "border-box"
+        }
+    },
+    mq({
+        iframe: {
+            width: ["100%", 800],
+            height: ["auto", , 450]
+        }
+    })
+);
 
 export const FeaturesWrapper = styled("div")(
     {

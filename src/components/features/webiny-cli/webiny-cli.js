@@ -61,9 +61,13 @@ const WebinyCLI = props => {
                     </OverviewSectionWrapper>
                     <ImageWrapper>
                         <div className={videoPreviewClass}>
-                            <img src={videoPreviewBg} alt={""} />
+                            <iframe
+                                src="https://www.youtube.com/embed/t0cP1qkQAUg"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
                         </div>
-                        <YTVideoComponent img={PageBuilderDemoImg} id={"odotdrOOvJE"} />
                     </ImageWrapper>
                     <FeaturesWrapper>
                         {WEBINY_CLI_FEATURES.map(feature => (
