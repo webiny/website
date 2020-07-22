@@ -122,7 +122,10 @@ class Button extends React.Component {
     }
 
     if (this.props.hasOwnProperty ('link')) {
-      if (this.props.link.startsWith ('http')) {
+      if (
+          this.props.link.startsWith ('http') ||
+          this.props.link.startsWith("mailto:")
+      ) {
         return (
           <a
             href={this.props.link}
