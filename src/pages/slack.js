@@ -6,7 +6,7 @@ class SlackPage extends React.Component {
     const _w = typeof window !== 'undefined' ? window : false;
     if (_w !== false) {
       window.location =
-        'https://join.slack.com/t/webiny-community/shared_invite/zt-fbd7an44-FroBp7xLjIY~9eVluWsPoQ';
+        'https://join.slack.com/t/webiny-community/shared_invite/zt-g919qoy9-K42S9t~BCcs3M_sTX8nfew';
     }
   }
   render() {
