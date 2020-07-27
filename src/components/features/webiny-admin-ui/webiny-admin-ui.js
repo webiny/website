@@ -7,11 +7,7 @@ import ContentContainer from "../../ui/content-container";
 
 import webinyAdminBg from "./assets/webiny-admin-ui-bg.svg";
 import rectangleBg from "./assets/admin-ui-rectangle.svg";
-import videoPreviewBg from "./assets/video-bg.svg";
 import connectorImg from "./assets/connectors.svg";
-
-import YTVideoComponent from "../../ui/layout/yt-video";
-import PageBuilderDemoImg from "../../why-webiny/overview/assets/why-webiny-video-cover.png";
 
 import { WEBINY_ADMIN_UI_FEATURES } from "./webiny-ui-data";
 import {

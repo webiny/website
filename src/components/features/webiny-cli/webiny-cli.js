@@ -6,11 +6,7 @@ import mq from "../../utils/breakpoints";
 import ContentContainer from "../../ui/content-container";
 
 import rectangleBg from "./assets/cli-rectangle.svg";
-import videoPreviewBg from "./assets/video-bg.svg";
 import connectorImg from "./assets/connectors.svg";
-
-import YTVideoComponent from "../../ui/layout/yt-video";
-import PageBuilderDemoImg from "../../why-webiny/overview/assets/why-webiny-video-cover.png";
 
 import { WEBINY_CLI_FEATURES } from "./webiny-cli-data";
 import {

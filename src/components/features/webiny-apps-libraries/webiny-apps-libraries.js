@@ -6,11 +6,7 @@ import mq from "../../utils/breakpoints";
 import ContentContainer from "../../ui/content-container";
 
 import rectangleBg from "./assets/apps-rectangle.svg";
-import videoPreviewBg from "./assets/video-bg.svg";
 import connectorImg from "./assets/connectors.svg";
-
-import YTVideoComponent from "../../ui/layout/yt-video";
-import PageBuilderDemoImg from "../../why-webiny/overview/assets/why-webiny-video-cover.png";
 
 import { WEBINY_APPS_LIBRARIES_FEATURES } from "./webiny-apps-libraries-data";
 import {
@@ -64,7 +60,8 @@ const WebinyAppsLibraries = props => {
                             Webiny <CLIHighlight>Apps and Libraries</CLIHighlight>
                         </Title>
                         <SubTitle>
-                            Several additional items which are included with Webiny that will drive your serverless project to completion even faster.
+                            Several additional items which are included with Webiny that will drive
+                            your serverless project to completion even faster.
                         </SubTitle>
                     </OverviewSectionWrapper>
                     <ImageWrapper>
