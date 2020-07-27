@@ -58,9 +58,8 @@ const WebinyAPI = props => {
                             Webiny <APIHighlight>API</APIHighlight>
                         </Title>
                         <SubTitle>
-                            All Webiny feature a secure GraphQL API layer powered by Apollo
-                            Federation with a microservices architecture. work together, so you can
-                            focus on the parts that matter to your business the most.
+                            A secure GraphQL API layer powered by Apollo Federation with a
+                            microservices architecture.
                         </SubTitle>
                     </OverviewSectionWrapper>
                     <ImageWrapper>

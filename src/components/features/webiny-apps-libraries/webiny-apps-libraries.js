@@ -64,7 +64,7 @@ const WebinyAppsLibraries = props => {
                             Webiny <CLIHighlight>Apps and Libraries</CLIHighlight>
                         </Title>
                         <SubTitle>
-                            A user interface with a set of reusable React components.
+                            Several additional items which are included with Webiny that will drive your serverless project to completion even faster.
                         </SubTitle>
                     </OverviewSectionWrapper>
                     <ImageWrapper>
