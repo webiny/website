@@ -6,11 +6,7 @@ import mq from "../../utils/breakpoints";
 import ContentContainer from "../../ui/content-container";
 
 import rectangleBg from "./assets/cli-rectangle.svg";
-import videoPreviewBg from "./assets/video-bg.svg";
 import connectorImg from "./assets/connectors.svg";
-
-import YTVideoComponent from "../../ui/layout/yt-video";
-import PageBuilderDemoImg from "../../why-webiny/overview/assets/why-webiny-video-cover.png";
 
 import { WEBINY_CLI_FEATURES } from "./webiny-cli-data";
 import {
@@ -63,10 +59,10 @@ const WebinyCLI = props => {
                         <div className={videoPreviewClass}>
                             <iframe
                                 src="https://www.youtube.com/embed/t0cP1qkQAUg"
-                                frameborder="0"
+                                frameBorder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen
-                            ></iframe>
+                                allowFullScreen={true}
+                            />
                         </div>
                     </ImageWrapper>
                     <FeaturesWrapper>

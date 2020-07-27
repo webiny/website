@@ -6,11 +6,7 @@ import mq from "../../utils/breakpoints";
 import ContentContainer from "../../ui/content-container";
 
 import rectangleBg from "./assets/apps-rectangle.svg";
-import videoPreviewBg from "./assets/video-bg.svg";
 import connectorImg from "./assets/connectors.svg";
-
-import YTVideoComponent from "../../ui/layout/yt-video";
-import PageBuilderDemoImg from "../../why-webiny/overview/assets/why-webiny-video-cover.png";
 
 import { WEBINY_APPS_LIBRARIES_FEATURES } from "./webiny-apps-libraries-data";
 import {
@@ -64,17 +60,18 @@ const WebinyAppsLibraries = props => {
                             Webiny <CLIHighlight>Apps and Libraries</CLIHighlight>
                         </Title>
                         <SubTitle>
-                            A user interface with a set of reusable React components.
+                            Several additional items which are included with Webiny that will drive
+                            your serverless project to completion even faster.
                         </SubTitle>
                     </OverviewSectionWrapper>
                     <ImageWrapper>
                         <div className={videoPreviewClass}>
                             <iframe
                                 src="https://www.youtube.com/embed/sF4HRS9nE3s"
-                                frameborder="0"
+                                frameBorder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen
-                            ></iframe>
+                                allowFullScreen={true}
+                            />
                         </div>
                     </ImageWrapper>
                     <FeaturesWrapper>

@@ -7,11 +7,7 @@ import ContentContainer from "../../ui/content-container";
 
 import webinyAPIBg from "./assets/webiny-api-bg.svg";
 import rectangleBg from "./assets/api-rectangle.svg";
-import videoPreviewBg from "./assets/video-bg.svg";
 import connectorImg from "./assets/connectors.svg";
-
-import YTVideoComponent from "../../ui/layout/yt-video";
-import PageBuilderDemoImg from "../../why-webiny/overview/assets/why-webiny-video-cover.png";
 
 import { WEBINY_API_FEATURES } from "./webiny-api-data";
 
@@ -58,19 +54,18 @@ const WebinyAPI = props => {
                             Webiny <APIHighlight>API</APIHighlight>
                         </Title>
                         <SubTitle>
-                            All Webiny feature a secure GraphQL API layer powered by Apollo
-                            Federation with a microservices architecture. work together, so you can
-                            focus on the parts that matter to your business the most.
+                            A secure GraphQL API layer powered by Apollo Federation with a
+                            microservices architecture.
                         </SubTitle>
                     </OverviewSectionWrapper>
                     <ImageWrapper>
                         <div className={videoPreviewClass}>
                             <iframe
                                 src="https://www.youtube.com/embed/x5lf5xqvOQ4"
-                                frameborder="0"
+                                frameBorder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen
-                            ></iframe>
+                                allowFullScreen={true}
+                            />
                         </div>
                     </ImageWrapper>
                     <FeaturesWrapper>

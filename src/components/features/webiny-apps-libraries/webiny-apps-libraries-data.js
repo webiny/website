@@ -11,7 +11,7 @@ export const WEBINY_APPS_LIBRARIES_FEATURES = [
             <p className={"feature-card__body"}>
                 When you install Webiny, you will find{" "}
                 <a
-                    href={"http://docs.webiny.com/docs/webiny-apps/admin/introduction"}
+                    href={"/serverless-apps"}
                     target={"_blank"}
                 >
                     several apps
