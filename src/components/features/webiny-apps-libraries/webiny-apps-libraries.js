@@ -71,10 +71,10 @@ const WebinyAppsLibraries = props => {
                         <div className={videoPreviewClass}>
                             <iframe
                                 src="https://www.youtube.com/embed/sF4HRS9nE3s"
-                                frameborder="0"
+                                frameBorder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen
-                            ></iframe>
+                                allowFullScreen={true}
+                            />
                         </div>
                     </ImageWrapper>
                     <FeaturesWrapper>
