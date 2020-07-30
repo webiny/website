@@ -186,11 +186,13 @@ const FeaturesSection = ({ features }) => (
                             {typeof feature.renderTitle === "function" && feature.renderTitle()}
                             {typeof feature.renderBody === "function" && feature.renderBody()}
 
-                            <div className={"buttonWrapper"}>
-                                <Button type={"secondary"} link={feature.actionLink}>
-                                    {feature.actionLabel}
-                                </Button>
-                            </div>
+                            {feature.actionLabel && (
+                                <div className={"buttonWrapper"}>
+                                    <Button type={"secondary"} link={feature.actionLink}>
+                                        {feature.actionLabel}
+                                    </Button>
+                                </div>
+                            )}
                         </div>
                     </FeatureWrapper>
                 </ContentContainer>

@@ -95,9 +95,6 @@ export const FEATURES = [
                 </p>
             </Fragment>
         ),
-        actionLabel: "Learn more",
-        actionLink:
-            "https://docs.webiny.com/docs/webiny-apps/headless-cms/features/content-modeling",
         background: grayRectImg,
         imageOnLeft: false
     },
@@ -119,8 +116,6 @@ export const FEATURES = [
                 </p>
             </Fragment>
         ),
-        actionLabel: "Learn more",
-        actionLink: "https://docs.webiny.com/docs/webiny-apps/headless-cms/features/localization",
         background: false,
         imageOnLeft: true
     },
@@ -141,9 +136,6 @@ export const FEATURES = [
                 </p>
             </Fragment>
         ),
-        actionLabel: "Learn more",
-        actionLink:
-            "https://docs.webiny.com/docs/webiny-apps/headless-cms/features/graphql-playground",
         background: grayRectInvertedImg,
         imageOnLeft: false
     },
@@ -164,8 +156,6 @@ export const FEATURES = [
                 </p>
             </Fragment>
         ),
-        actionLabel: "Learn more",
-        actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens",
         background: false,
         imageOnLeft: true
     },
@@ -174,7 +164,7 @@ export const FEATURES = [
         videoFile: LazyLoadVideo,
         renderTitle: () => (
             <h3>
-                <span>Don't worry</span> about about how many files you have
+                <span>Don't worry</span> about how many files you have
             </h3>
         ),
         renderBody: () => (
@@ -182,14 +172,15 @@ export const FEATURES = [
                 <p>
                     In some cases, when you have a big number of images, they can slow down the load
                     time it takes to display all that content on your screen. Often systems
-                    introduce pagination to avoid that, but that's clumsy to use. Webiny File
-                    Manager uses an infinitive scroll and lazy loading mechanism. This way the
-                    content is displayed right away, and there is no need to click through pages.
+                    introduce pagination to avoid that, but that's clumsy to use.
+                </p>
+                <p>
+                    Webiny File Manager uses an infinitive scroll and lazy loading mechanism. This
+                    way the content is displayed right away, and there is no need to click through
+                    pages.
                 </p>
             </Fragment>
         ),
-        actionLabel: "Learn more",
-        actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/environments",
         background: grayRectImg,
         imageOnLeft: false
     }
