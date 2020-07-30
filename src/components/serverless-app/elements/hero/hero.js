@@ -16,7 +16,8 @@ const HeroSection = styled("section")(
         boxSizing: "border-box",
         textAlign: "center",
         position: "relative",
-        zIndex: 0
+        zIndex: 0,
+        // overflowX: "hidden"
     },
     mq({
         padding: ["0px 15px 0px", "0px 15px"],
@@ -178,12 +179,12 @@ const WebinyHallMarkImage = styled("img")(
     {
         position: "absolute",
         zIndex: 1,
-        top: 0
+        top: 0,
+        left: 0,
+        width: "100%"
     },
     mq({
-        width: ["200%", "100%"],
-        height: ["70%", 756],
-        left: ["-45%", 0]
+        height: ["35%", 756],
     })
 );
 
