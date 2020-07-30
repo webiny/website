@@ -103,20 +103,21 @@ const Section = styled("section")(
 );
 
 const SectionWithBg = styled("section")(
-    props => ({
+    {
         backgroundColor: theme.color.white,
         position: "relative",
         zIndex: 0,
-        backgroundImage: props.background ? "url(" + props.background + ")" : "",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "bottom"
-    }),
+        "& .bg": {
+            position: "absolute",
+            left: 0,
+            width: "100%"
+        }
+    },
     mq({
-        backgroundSize: ["cover", "auto", "100%"],
         padding: ["0px 15px 110px", "0px 15px"],
-        "@media (min-width: 1460px)": {
-            backgroundPosition: "bottom",
-            paddingTop: 0
+        "& .bg": {
+            top: ["-10%", 0],
+            height: ["140%", "100%"]
         }
     })
 );
@@ -176,6 +177,7 @@ const FeaturesSection = ({ features }) => (
     <Fragment>
         {features.map(feature => (
             <SectionWithBg background={feature.background}>
+                {feature.background && <img src={feature.background} alt="" className="bg" />}
                 <ContentContainer className={containerClass + " fixed"}>
                     <FeatureWrapper className={feature.imageOnLeft ? "img-left" : "img-right"}>
                         <div className={"media-content"}>
