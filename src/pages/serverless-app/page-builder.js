@@ -1,14 +1,22 @@
-import React from 'react';
-import BaseLayout from '../../layouts/base';
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-import PageBuilder
-  from '../../components/serverless-app/page-builder/page-builder';
+import BaseLayout from "../../layouts/base";
 
-export default ({children, ...props}) => (
-  <BaseLayout
-    title="Serverless Drag&Drop Page Builder - Open Source"
-    description="Build stunning landing pages with an easy to use drag&drop editor. Deploy using serverless framework."
-  >
-    <PageBuilder />
-  </BaseLayout>
-);
+import PageBuilder from "../../components/serverless-app/page-builder/page-builder";
+
+export default () => {
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
+    return (
+        <BaseLayout
+            title="Serverless Drag&Drop Page Builder - Open Source"
+            description="Build stunning landing pages with an easy to use drag&drop editor. Deploy using serverless framework."
+        >
+            <PageBuilder />
+        </BaseLayout>
+    );
+};

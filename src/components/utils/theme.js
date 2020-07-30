@@ -19,7 +19,8 @@ export default {
     softPink: '#F1E6FF',
     background: '#F9FBFF',
     darkWine: '#C5426E',
-    backgroundGray: '#F3F3F3'
+    backgroundGray: '#F3F3F3',
+    yetAnotherGray: '#F3F1F5'
   },
   fontWeight: {
     bold: 700,
