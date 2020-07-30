@@ -21,6 +21,8 @@ import orangeRectImg from "./assets/orange-rect.svg";
 import multiChannelImg from "./assets/multi-channel.svg";
 import secureIconImg from "./assets/secure-icon.svg";
 import serverlessImg from "./assets/self-hosted-serverless.svg";
+import grayRectImg from "./assets/gray-rect.svg";
+import grayRectInvertedImg from "./assets/grey-rectangle-inverted.svg";
 
 export const HERO_FEATURES = [
     {
@@ -115,7 +117,7 @@ export const FEATURES = [
         actionLabel: "Learn more",
         actionLink:
             "https://docs.webiny.com/docs/webiny-apps/headless-cms/features/content-modeling",
-        background: true,
+        background: grayRectImg,
         imageOnLeft: false
     },
     {
@@ -163,7 +165,7 @@ export const FEATURES = [
         actionLabel: "Learn more",
         actionLink:
             "https://docs.webiny.com/docs/webiny-apps/headless-cms/features/graphql-playground",
-        background: true,
+        background: grayRectInvertedImg,
         imageOnLeft: false
     },
     {
@@ -185,7 +187,7 @@ export const FEATURES = [
         ),
         actionLabel: "Learn more",
         actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens",
-        background: true,
+        background: grayRectImg,
         imageOnLeft: false
     },
     {
@@ -235,7 +237,7 @@ export const FEATURES = [
         ),
         actionLabel: "Learn more",
         actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/aliases",
-        background: true,
+        background: grayRectInvertedImg,
         imageOnLeft: false
     },
     {
@@ -261,7 +263,7 @@ export const FEATURES = [
         ),
         actionLabel: "Learn more",
         actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-token",
-        background: true,
+        background: grayRectImg,
         imageOnLeft: false
     },
     {
@@ -308,7 +310,7 @@ export const FEATURES = [
         ),
         actionLabel: "Learn more",
         actionLink: "https://docs.webiny.com/docs/guides/headless-gatsby-tutorial",
-        background: true,
+        background: grayRectInvertedImg,
         imageOnLeft: false
     }
 ];

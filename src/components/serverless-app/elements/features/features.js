@@ -10,7 +10,6 @@ import Button from "../../../ui/button";
 
 // assets
 import TitleBg from "./assets/features-rect-bg.svg";
-import bg from "./assets/gray-rect.svg";
 
 const FeatureWrapper = styled("div")(
     {
@@ -75,7 +74,6 @@ const FeatureWrapper = styled("div")(
 
         marginLeft: [0, 0],
         marginRight: [0, 0],
-        padding: [0, "85px 0"],
 
         "& .text-content": {
             width: ["100%", "50%"],
@@ -87,7 +85,8 @@ const FeatureWrapper = styled("div")(
         "& .media-content": {
             width: ["100%", "50%"],
             "& .img": {
-                width: ["100%"]
+                width: ["100%"],
+                maxWidth: 560
             }
         }
     })
@@ -108,7 +107,7 @@ const SectionWithBg = styled("section")(
         backgroundColor: theme.color.white,
         position: "relative",
         zIndex: 0,
-        backgroundImage: props.background ? "url(" + bg + ")" : "",
+        backgroundImage: props.background ? "url(" + props.background + ")" : "",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "bottom"
     }),
@@ -149,13 +148,17 @@ export const TitleHighlight = styled("span")({
 const containerClass = css(
     {
         flexDirection: "column",
+        justifyContent: "center",
         maxWidth: "1200"
     },
     mq({
         width: ["100%", "100%"],
         display: ["block", "flex"],
-        justifyContent: ["center", "space-between"],
-        padding: ["100px 0px 0px", "0px 0px 0px"]
+        padding: ["100px 0px 0px", "0px 0px 0px"],
+
+        "&.fixed": {
+            height: ["auto", 618]
+        }
     })
 );
 
@@ -173,7 +176,7 @@ const FeaturesSection = ({ features }) => (
     <Fragment>
         {features.map(feature => (
             <SectionWithBg background={feature.background}>
-                <ContentContainer className={containerClass}>
+                <ContentContainer className={containerClass + " fixed"}>
                     <FeatureWrapper className={feature.imageOnLeft ? "img-left" : "img-right"}>
                         <div className={"media-content"}>
                             {feature.videoFile && <VideoBox file={feature.videoFile} />}
