@@ -381,6 +381,6 @@ export const BenefitBox = styled("div")(
         }
     }),
     mq({
-        borderColor: [theme.color.white, "#E2E2E2"]
+        borderColor: [theme.color.white, theme.color.white, "#E2E2E2"]
     })
 );

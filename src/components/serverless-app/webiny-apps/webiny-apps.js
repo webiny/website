@@ -36,6 +36,35 @@ import ovalImg from "./assets/oval.svg";
 // data
 import { FEATURES, APPS, BENEFITS } from "./webiny-apps-data";
 
+export const WebinyAppsServerlessBenefits = () => (
+    <ServerlessBenefitsSection>
+        <ContentContainer className={containerClass}>
+            <Wrapper>
+                <ServerlessBenefitTitle>
+                    All Webiny Apps Get the Full Spectrum of{" "}
+                    <ServerlessBenefitTitleHighlight>
+                        Serverless Benefits
+                    </ServerlessBenefitTitleHighlight>{" "}
+                    Out of the Box
+                </ServerlessBenefitTitle>
+            </Wrapper>
+            <ServerBenefitsWrapper>
+                {BENEFITS.map(benefit => (
+                    <BenefitBox
+                        key={benefit.id}
+                        {...benefit}
+                        data-aos={"zoom-in"}
+                        data-aos-once="true"
+                    >
+                        <img src={benefit.imgSrc} alt={benefit.imgAlt} className="benefit__img" />
+                        <h3 className="benefit__title">{benefit.title}</h3>
+                    </BenefitBox>
+                ))}
+            </ServerBenefitsWrapper>
+        </ContentContainer>
+    </ServerlessBenefitsSection>
+);
+
 const WebinyApps = props => {
     return (
         <Fragment>
@@ -126,36 +155,7 @@ const WebinyApps = props => {
                     </ContributeTitleWrapper>
                 </ContentContainer>
             </ContributeSection>
-            <ServerlessBenefitsSection>
-                <ContentContainer className={containerClass}>
-                    <Wrapper>
-                        <ServerlessBenefitTitle>
-                            All Webiny Apps Get the Full Spectrum of{" "}
-                            <ServerlessBenefitTitleHighlight>
-                                Serverless Benefits
-                            </ServerlessBenefitTitleHighlight>{" "}
-                            Out of the Box
-                        </ServerlessBenefitTitle>
-                    </Wrapper>
-                    <ServerBenefitsWrapper>
-                        {BENEFITS.map(benefit => (
-                            <BenefitBox
-                                key={benefit.id}
-                                {...benefit}
-                                data-aos={"zoom-in"}
-                                data-aos-once="true"
-                            >
-                                <img
-                                    src={benefit.imgSrc}
-                                    alt={benefit.imgAlt}
-                                    className="benefit__img"
-                                />
-                                <h3 className="benefit__title">{benefit.title}</h3>
-                            </BenefitBox>
-                        ))}
-                    </ServerBenefitsWrapper>
-                </ContentContainer>
-            </ServerlessBenefitsSection>
+            <WebinyAppsServerlessBenefits />
         </Fragment>
     );
 };
