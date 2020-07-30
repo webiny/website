@@ -1,6 +1,6 @@
 import React from "react";
 
-import WhyChooseWebiny from "../../agency/why-choose-webiny/why-choose-webiny";
+import WhyChooseWebiny from "../elements/why-choose-webiny/why-choose-webiny";
 // assets
 import HeadlessCMSDemoImg from "./assets/youtube-headless-cms.png";
 import HeroBg from "./assets/headless-cms-hero-bg.svg";
