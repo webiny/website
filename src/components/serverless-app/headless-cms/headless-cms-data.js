@@ -318,10 +318,9 @@ export const FEATURES = [
 export const FACTS = [
     {
         id: 0,
-        title: "Made for Developers",
         renderTitle: () => (
             <Title>
-                Made for <TitleHighlight bg={purpleRectImg}>Developers</TitleHighlight>
+                Made for <TitleHighlight bg={purpleRectImg}>developers</TitleHighlight>
             </Title>
         ),
         body:
@@ -334,10 +333,9 @@ export const FACTS = [
 
     {
         id: 1,
-        title: "Full Customizable",
         renderTitle: () => (
             <Title>
-                <TitleHighlight bg={greenRectImg}>Full </TitleHighlight>&nbsp;Customizable
+                <TitleHighlight bg={greenRectImg}>Full</TitleHighlight>&nbsp;customizable
             </Title>
         ),
         body:
@@ -349,7 +347,6 @@ export const FACTS = [
     },
     {
         id: 2,
-        title: "Microservices architecture",
         renderTitle: () => (
             <Title>
                 Microservices <TitleHighlight bg={orangeRectImg}>architecture</TitleHighlight>
