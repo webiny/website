@@ -25,13 +25,13 @@ const wrapperClass = css(
         "@media (min-width: 1920px)": {
             backgroundPosition: "0 270px !important",
             backgroundSize: "cover"
-        },
-        backgroundSize: "auto"
+        }
     },
     mq({
         paddingTop: [40, 0],
         paddingBottom: [40, 100],
-        backgroundPosition: ["center", "bottom"]
+        backgroundPosition: ["center", "bottom"],
+        backgroundSize: ["auto", "cover"]
     })
 );
 
