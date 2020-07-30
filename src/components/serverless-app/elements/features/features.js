@@ -49,7 +49,8 @@ const FeatureWrapper = styled("div")(
         },
 
         "& .media-content": {
-            boxSizing: "border-box"
+            boxSizing: "border-box",
+            maxWidth: 583
         }
     },
     mq({
