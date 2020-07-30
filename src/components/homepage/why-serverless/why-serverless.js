@@ -211,22 +211,22 @@ class WhyWebinyWhyServerless extends React.Component {
               </Content>
             </Card>
 
-            <Card className={webinyClass}>
-              <Content>
-                <Title>
-                  Why <TitleHighlight imgUrl={bgWebiny}>Webiny?</TitleHighlight>
-                </Title>
-                <Body>
-                  Get around serverless challenges and save over $300k in development costs.
-                </Body>
-              </Content>
-              <Banner
-                backgroundColor={theme.color.primaryDark}
-                roundCornor={'right'}
-              >
-                <WhyWebinyImage src={whyWebinyBg} alt={''} />
-              </Banner>
-            </Card>
+                <Card className={webinyClass}>
+                  <Content>
+                    <Title>
+                      Why <TitleHighlight imgUrl={bgWebiny}>Webiny?</TitleHighlight>
+                    </Title>
+                    <Body>
+                      Get around serverless challenges and save over $300k in development costs.
+                    </Body>
+                  </Content>
+                  <Banner
+                    backgroundColor={theme.color.primaryDark}
+                    roundCornor={'right'}
+                  >
+                    <WhyWebinyImage src={whyWebinyBg} alt={''} />
+                  </Banner>
+                </Card>
           </CardsWrapper>
           <ButtonWrapper>
             <Button
