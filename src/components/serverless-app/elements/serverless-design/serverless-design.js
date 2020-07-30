@@ -45,7 +45,7 @@ const ServerlessByDesignSection = styled("section")(
     },
     mq({
         padding: ["0px 15px 50px", "280px 15px 50px"],
-        marginBottom: [50, 100]
+        marginBottom: [50, 0]
     })
 );
 
