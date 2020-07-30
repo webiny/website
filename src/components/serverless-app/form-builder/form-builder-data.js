@@ -100,9 +100,6 @@ export const FEATURES = [
                 </p>
             </Fragment>
         ),
-        actionLabel: "Learn more",
-        actionLink:
-            "https://docs.webiny.com/docs/webiny-apps/headless-cms/features/content-modeling",
         background: grayRectImg,
         imageOnLeft: false
     },
@@ -127,8 +124,6 @@ export const FEATURES = [
                 </p>
             </Fragment>
         ),
-        actionLabel: "Learn more",
-        actionLink: "https://docs.webiny.com/docs/webiny-apps/headless-cms/features/localization",
         background: false,
         imageOnLeft: true
     },
@@ -153,9 +148,6 @@ export const FEATURES = [
                 </p>
             </Fragment>
         ),
-        actionLabel: "Learn more",
-        actionLink:
-            "https://docs.webiny.com/docs/webiny-apps/headless-cms/features/graphql-playground",
         background: grayRectInvertedImg,
         imageOnLeft: false
     },
@@ -177,8 +169,6 @@ export const FEATURES = [
                 </p>
             </Fragment>
         ),
-        actionLabel: "Learn more",
-        actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens",
         background: false,
         imageOnLeft: true
     },
@@ -200,8 +190,6 @@ export const FEATURES = [
                 </p>
             </Fragment>
         ),
-        actionLabel: "Learn more",
-        actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/environments",
         background: grayRectImg,
         imageOnLeft: false
     },
@@ -223,8 +211,6 @@ export const FEATURES = [
                 </p>
             </Fragment>
         ),
-        actionLabel: "Learn more",
-        actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/aliases",
         background: false,
         imageOnLeft: true
     },
@@ -245,8 +231,6 @@ export const FEATURES = [
                 </p>
             </Fragment>
         ),
-        actionLabel: "Learn more",
-        actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-token",
         background: grayRectInvertedImg,
         imageOnLeft: false
     },
@@ -269,8 +253,6 @@ export const FEATURES = [
                 </p>
             </Fragment>
         ),
-        actionLabel: "Learn more",
-        actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-token",
         background: false,
         imageOnLeft: true
     },
@@ -292,8 +274,6 @@ export const FEATURES = [
                 </p>
             </Fragment>
         ),
-        actionLabel: "Learn more",
-        actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-token",
         background: grayRectImg,
         imageOnLeft: false
     }

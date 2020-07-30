@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 
-
 // assets
 import dragDropVideo from "./assets/01-page-builder.mp4";
 import buildingBlocksVideo from "./assets/02-building-blocks.mp4";
@@ -102,9 +101,6 @@ export const FEATURES = [
                 </p>
             </Fragment>
         ),
-        actionLabel: "Learn more",
-        actionLink:
-            "https://docs.webiny.com/docs/webiny-apps/headless-cms/features/content-modeling",
         background: grayRectImg,
         imageOnLeft: false
     },
@@ -130,8 +126,6 @@ export const FEATURES = [
                 </p>
             </Fragment>
         ),
-        actionLabel: "Learn more",
-        actionLink: "https://docs.webiny.com/docs/webiny-apps/headless-cms/features/localization",
         background: false,
         imageOnLeft: true
     },
@@ -152,9 +146,6 @@ export const FEATURES = [
                 </p>
             </Fragment>
         ),
-        actionLabel: "Learn more",
-        actionLink:
-            "https://docs.webiny.com/docs/webiny-apps/headless-cms/features/graphql-playground",
         background: grayRectInvertedImg,
         imageOnLeft: false
     },
@@ -176,8 +167,6 @@ export const FEATURES = [
                 </p>
             </Fragment>
         ),
-        actionLabel: "Learn more",
-        actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens",
         background: false,
         imageOnLeft: true
     },
@@ -186,7 +175,7 @@ export const FEATURES = [
         videoFile: seoVideo,
         renderTitle: () => (
             <h3>
-                <span>SEO & social media</span>
+                <span>SEO & social</span> media
             </h3>
         ),
         renderBody: () => (
@@ -199,8 +188,6 @@ export const FEATURES = [
                 </p>
             </Fragment>
         ),
-        actionLabel: "Learn more",
-        actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/environments",
         background: grayRectInvertedImg,
         imageOnLeft: false
     },
@@ -222,8 +209,6 @@ export const FEATURES = [
                 </p>
             </Fragment>
         ),
-        actionLabel: "Learn more",
-        actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/aliases",
         background: false,
         imageOnLeft: true
     },
@@ -245,8 +230,6 @@ export const FEATURES = [
                 </p>
             </Fragment>
         ),
-        actionLabel: "Learn more",
-        actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-token",
         background: grayRectImg,
         imageOnLeft: false
     }
