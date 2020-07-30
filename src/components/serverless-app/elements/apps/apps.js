@@ -145,7 +145,7 @@ const WebinyAppsComponent = ({ className }) => (
         <ContentContainer className={containerClass}>
             <WebinyAppsWrapper>
                 {WEBINY_APPS.map(app => (
-                    <WebinyApp color={app.color}>
+                    <WebinyApp key={app.id} color={app.color}>
                         <img className={"app__img"} src={app.imgSrc} alt={app.imgAlt} />
                         <h3 className="app__title">{app.title}</h3>
                         <p className="app__body">{app.body}</p>

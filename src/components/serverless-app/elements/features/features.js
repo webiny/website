@@ -130,7 +130,7 @@ export const Title = styled("h1")(
         fontWeight: theme.fontWeight.bold,
         color: theme.color.black,
         textAlign: "center",
-        lineHeight: "48px",
+        lineHeight: "48px"
     },
     mq({
         margin: ["0px auto 100px", "100px auto 40px"]
@@ -174,7 +174,7 @@ const FeaturesSectionTitle = () => (
 const FeaturesSection = ({ features }) => (
     <Fragment>
         {features.map(feature => (
-            <SectionWithBg background={feature.background}>
+            <SectionWithBg key={feature.id} background={feature.background}>
                 {feature.background && <img src={feature.background} alt="" className="bg" />}
                 <ContentContainer className={containerClass + " fixed"}>
                     <FeatureWrapper className={feature.imageOnLeft ? "img-left" : "img-right"}>
