@@ -1,14 +1,21 @@
-import React from 'react';
-import BaseLayout from '../../layouts/base';
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-import HeadlessCMS
-  from '../../components/serverless-app/headless-cms/headless-cms';
+import BaseLayout from "../../layouts/base";
 
-export default ({children, ...props}) => (
-  <BaseLayout
-    title="Serverless Headless CMS - Open Source"
-    description="GraphQL based headless CMS with powerful content modeling features."
-  >
-    <HeadlessCMS />
-  </BaseLayout>
-);
+import HeadlessCMS from "../../components/serverless-app/headless-cms/headless-cms";
+
+export default () => {
+    useEffect(() => {
+        AOS.init();
+    }, []);
+    return (
+        <BaseLayout
+            title="Serverless Headless CMS - Open Source"
+            description="GraphQL based headless CMS with powerful content modeling features."
+        >
+            <HeadlessCMS />
+        </BaseLayout>
+    );
+};
