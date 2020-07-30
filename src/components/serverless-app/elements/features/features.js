@@ -131,11 +131,9 @@ export const Title = styled("h1")(
         color: theme.color.black,
         textAlign: "center",
         lineHeight: "48px",
-        marginBottom: 70
     },
     mq({
-        marginLeft: [0, "auto"],
-        marginRight: [0, "auto"]
+        margin: ["0px auto 100px", "100px auto 40px"]
     })
 );
 
