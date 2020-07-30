@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "react-emotion";
-import theme from "../../../utils/theme";
 import { css } from "emotion";
+import { navigate } from "gatsby-link";
+
+import theme from "../../../utils/theme";
 import mq from "../../../utils/breakpoints";
 import Button from "../../../ui/button";
 import ContentContainer from "../../../ui/content-container";
-
+// assets
 import sectionBg from "./assets/bgwaves.svg";
 import headlessCMSIcon from "./assets/headless-cms-icon.svg";
 import pageBuilderIcon from "./assets/page-builder-icon.svg";
@@ -64,7 +66,13 @@ const WebinyApp = styled("div")(
 
         "& .app__img": {
             marginBottom: 20,
-            height: 140
+            height: 140,
+            cursor: "pointer",
+            transition: "transform 300ms ease-in",
+
+            "&:hover": {
+                transform: "translateY(-5px) scale(1.05)"
+            }
         },
 
         "& .app__title": {
@@ -146,7 +154,12 @@ const WebinyAppsComponent = ({ className }) => (
             <WebinyAppsWrapper>
                 {WEBINY_APPS.map(app => (
                     <WebinyApp key={app.id} color={app.color}>
-                        <img className={"app__img"} src={app.imgSrc} alt={app.imgAlt} />
+                        <img
+                            className={"app__img"}
+                            src={app.imgSrc}
+                            alt={app.imgAlt}
+                            onClick={() => navigate(app.actionLink)}
+                        />
                         <h3 className="app__title">{app.title}</h3>
                         <p className="app__body">{app.body}</p>
                         <Button
