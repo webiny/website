@@ -14,29 +14,26 @@ const KeynoteSection = styled("section")(
         position: "relative",
         zIndex: 0,
         backgroundImage: "url(" + keynotesBg + ")",
-        backgroundRepeat: "no-repeat"
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "top",
+        backgroundSize: "cover",
     },
     mq({
-        backgroundSize: ["cover", "auto", "100%"],
-        backgroundPosition: ["left", "top", "top", "center"],
-        padding: ["0px 0px 110px", "0"],
-        "@media (min-width: 1460px)": {
-            backgroundPosition: "bottom",
-            paddingTop: 0
-        }
+        padding: ["0px 0px 110px", "0"]
     })
 );
 
 const containerClass = css(
     {
         flexDirection: "column",
-        maxWidth: "1200"
+        justifyContent: "center",
+        maxWidth: "1200",
     },
     mq({
         width: ["100%", "100%"],
+        height: ["auto", 610],
         display: ["block", "flex"],
-        justifyContent: ["center", "space-between"],
-        padding: ["100px 0px 150px", "100px 0px 100px"]
+        padding: ["100px 0px 150px", 0]
     })
 );
 
