@@ -26,8 +26,6 @@ const Section = styled("section")(
 const SectionWithBg = styled("section")(
     {
         backgroundColor: theme.color.white,
-        position: "relative",
-        zIndex: 0,
         backgroundImage: "url(" + DotsBg + ")",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "bottom"
