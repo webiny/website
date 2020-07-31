@@ -12,6 +12,7 @@ export default {
     dark: '#282C34',
     purple: '#7B39D9',
     darkPurple: '#44486C',
+    superDarkPurple: '#2C006B',
     yellow: '#DCD207',
     grayBorder: '#EEEEEE',
     gray300: '#4F4F4F',

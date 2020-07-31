@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Head from './components/head';
 
-import Header from '../components/header/header';
+import Header from '../components/header/new-header';
 import Footer from '../components/footer/footer';
 import CookieNotice from '../components/ui/cookie-notice';
 
@@ -48,7 +48,7 @@ class BaseLayout extends React.Component {
         </Helmet>
 
         <div>
-          <Header trackScroll={this.props.fixedHeader ? false : true} />
+          <Header trackScroll={!this.props.fixedHeader} />
           {this.props.children}
           <Footer />
           <CookieNotice />
