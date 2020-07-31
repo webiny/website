@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 import { css } from "emotion";
 import styled from "react-emotion";
 
@@ -184,7 +184,7 @@ export const FactsSection = ({ facts }) => (
         <ContentContainer className={containerClass}>
             <CardWrapper>
                 {facts.map((fact, index) => (
-                    <Card className={fact.className}>
+                    <Card key={fact.id} className={fact.className}>
                         <Content>
                             {typeof fact.renderTitle === "function" && fact.renderTitle()}
                             <Body>{fact.body}</Body>
