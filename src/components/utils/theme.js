@@ -21,7 +21,8 @@ export default {
     background: '#F9FBFF',
     darkWine: '#C5426E',
     backgroundGray: '#F3F3F3',
-    yetAnotherGray: '#F3F1F5'
+    yetAnotherGray: '#F3F1F5',
+    gray700: "#7D7D7D"
   },
   fontWeight: {
     bold: 700,
