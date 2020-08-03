@@ -46,8 +46,8 @@ class BaseLayout extends React.Component {
         })();`}
           </script>
         </Helmet>
-
-        <div>
+        {/* We need this style here, so that page content won't get hide under `Header` */}
+        <div style={{ paddingTop: 65 }}>
           <Header trackScroll={!this.props.fixedHeader} />
           {this.props.children}
           <Footer />
