@@ -22,6 +22,7 @@
     "gatsby-plugin-hotjar-tracking": "^1.0.0",
     "gatsby-plugin-offline": "^2.2.7",
     "gatsby-plugin-react-helmet": "^3",
+    "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-typography": "^1.7.18",
     "js-cookie": "^2.2.0",
     "react": "^16.9.0",
