@@ -262,14 +262,14 @@ export const linkStyle = css({
     fontSize: theme.fontSize.sm,
     fontWeight: theme.fontWeight.bold,
     textDecoration: "none",
-    color: theme.color.grayText,
+    color: theme.color.black,
 
     transition: "150ms color",
     "&:hover": {
-        color: theme.color.black
+        color: theme.color.grayText
     },
     "&:hover .arrow-icon path": {
-        fill: theme.color.black
+        fill: theme.color.grayText
     }
 });
 
@@ -294,7 +294,7 @@ export const downArrowClass = css(
         width: 24,
         height: 24,
         "& path": {
-            fill: theme.color.gray700
+            fill: theme.color.black
         }
     },
     mq({
