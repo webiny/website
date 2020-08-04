@@ -55,6 +55,7 @@ export const Menu = styled("div")(
         },
         "& .menu--left": {},
         "& .menu--right": {
+            marginTop: -5,
             "& li:last-child": {
                 marginLeft: 16
             }
@@ -244,6 +245,7 @@ export const parentMenu = css(
     {
         paddingRight: 25,
         marginRight: -5,
+        marginTop: "-3px !important",
         a: {
             color: "inherit",
             textDecoration: "none"
@@ -254,7 +256,7 @@ export const parentMenu = css(
     },
     mq({
         marginBottom: [15, 0],
-        paddingBottom: [15, 15]
+        paddingBottom: [15, 35]
     })
 );
 
@@ -378,7 +380,7 @@ export const MobileMenuIcon = styled("img")(
 export const githubMenu = css(
     {},
     mq({
-        paddingTop: [5, 19]
+        paddingTop: [5, 10]
     })
 );
 
