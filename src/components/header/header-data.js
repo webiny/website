@@ -22,7 +22,7 @@ export const RESOURCES_CARDS = [
 
 export const PRODUCTS_MENU = {
     id: 0,
-    label: "Products",
+    label: "Product",
     link: null,
     primarySection: {
         menuItems: [
