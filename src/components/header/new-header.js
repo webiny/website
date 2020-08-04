@@ -121,7 +121,7 @@ const MenuItemList = props => (
     </React.Fragment>
 );
 
-const Header = ({ hasBanner = true }) => {
+const Header = ({ hasBanner = false }) => {
     // TODO: We'll see what to do with them
     const [sticky, setSticky] = useState(true);
     const [hideBanner, setHideBanner] = useState(false);
