@@ -93,9 +93,9 @@ const MenuItemList = props => (
                                         className="card__img"
                                     />
                                     <h4 className="card__title">{item.title}</h4>
-                                    <Link className="card__link" to={item.actionLink}>
+                                    <p className="card__link">
                                         {item.actionLabel} <RightArrowIcon className={"icon"} />{" "}
-                                    </Link>
+                                    </p>
                                 </Card>
                             ))}
                         </div>
