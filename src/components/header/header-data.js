@@ -1,5 +1,4 @@
 import React from "react";
-import cardPlaceholder from "./assets/nav-card-placeholder.png";
 
 // resources
 import imgWebinyPlugins from "./resource-cards/yt-webiny-plugins.jpg";
@@ -161,7 +160,7 @@ export const SOLUTIONS_MENU = {
             {
                 id: 1,
                 label: "Build Serverless Apps",
-                link: "/use-case/serverless-applications"
+                link: "/use-case/serverless-web-applications"
             },
             {
                 id: 2,
