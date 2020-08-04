@@ -1,12 +1,12 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useContext, useState } from "react";
 import Link, { navigate } from "gatsby-link";
 import GitHubButton from "react-github-btn";
 
 import ContentContainer from "../ui/content-container";
 import Button from "../ui/button";
-
 import Banner from "./banner";
 import { trackGaConversion } from "../ui/functions";
+import { ModalContext } from "../ui/layout/video-modal";
 // assets
 import logo from "./assets/webiny-logo-with-icon-left-white.svg";
 import logoOrange from "./assets/webiny-logo-with-icon-left-orange.svg";
@@ -36,6 +36,21 @@ import {
     MobileMenuIcon,
     downArrowClass
 } from "./header-styles";
+
+const handleClick = (item, playVideo) => {
+    if (typeof item.videoId === "string" && item.videoId.length > 0) {
+        playVideo(item.videoId);
+        return;
+    }
+    const fullLink = typeof item.actionLink === "string" && item.actionLink.startsWith("http");
+    // We assume that a full link is an external link,
+    // So, we open it in a new tab
+    if (fullLink) {
+        window.open(item.actionLink, "_blank", "noopener noreferrer");
+    } else {
+        navigate(item.actionLink);
+    }
+};
 
 const MenuItemList = props => (
     <React.Fragment>
@@ -68,7 +83,10 @@ const MenuItemList = props => (
                         </div>
                         <div className="section--secondary">
                             {menu.secondarySection.cards.map(item => (
-                                <Card key={item.id} onClick={() => navigate(item.actionLink)}>
+                                <Card
+                                    key={item.id}
+                                    onClick={() => handleClick(item, props.handleVideoPlay)}
+                                >
                                     <img
                                         src={item.imgSrc}
                                         alt={item.imgAlt}
@@ -132,6 +150,8 @@ const Header = ({ hasBanner = false }) => {
         setMobileMenuOpen(!mobileMenuOpen);
     };
 
+    const { setVideoId, setModalOpen } = useContext(ModalContext);
+
     return (
         <Fragment>
             {hasBanner && (
@@ -157,7 +177,13 @@ const Header = ({ hasBanner = false }) => {
                         </WebinyLogo>
 
                         <Menu>
-                            <MenuItemList sticky={sticky} />
+                            <MenuItemList
+                                sticky={sticky}
+                                handleVideoPlay={videoId => {
+                                    setModalOpen(true);
+                                    setVideoId(videoId);
+                                }}
+                            />
                         </Menu>
 
                         <MobileMenuIcon
