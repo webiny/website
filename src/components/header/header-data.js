@@ -1,22 +1,93 @@
 import React from "react";
 import cardPlaceholder from "./assets/nav-card-placeholder.png";
 
+// resources
+import imgWebinyPlugins from "./resource-cards/yt-webiny-plugins.jpg";
+import imgApiDevelopment from "./resource-cards/yt-api-development.jpg";
+// community
+import imgContributingOverview from "./resource-cards/yt-contributing-overview.jpg";
+import imgSwag from "./resource-cards/swag.jpg";
+// solutions
+import imgWebinyApps from "./resource-cards/yt-webiny-apps.jpg";
+import imgWebinyApi from "./resource-cards/yt-webiny-api.jpg";
+// product
+import imgGetSTarted from "./resource-cards/yt-get-started.jpg";
+import imgWhyWebiny from "./resource-cards/yt-why-webiny.jpg";
+
 export const RESOURCES_CARDS = [
     {
         id: 0,
-        title: "weekly updates july 24",
-        imgSrc: cardPlaceholder,
-        imgAlt: "",
+        title: "Webiny Plugins",
+        imgSrc: imgWebinyPlugins,
+        imgAlt: "Webiny Plugins",
         actionLabel: "read more",
-        actionLink: "https://blog.webiny.com"
+        actionLink: "https://www.youtube.com/watch?v=4qcDLzu8kVM"
     },
     {
         id: 1,
-        title: "weekly updates july 24",
-        imgSrc: cardPlaceholder,
-        imgAlt: "",
+        title: "API Development",
+        imgSrc: imgApiDevelopment,
+        imgAlt: "Webiny API Development",
         actionLabel: "read more",
-        actionLink: "https://blog.webiny.com"
+        actionLink: "https://www.youtube.com/watch?v=8aJ_Ja1aTy0"
+    }
+];
+
+export const COMMUNITY_CARDS = [
+    {
+        id: 0,
+        title: "Contributor's overview",
+        imgSrc: imgContributingOverview,
+        imgAlt: "Development overview for contributors",
+        actionLabel: "read more",
+        actionLink: "https://www.youtube.com/watch?v=3wlOrcdcxXs"
+    },
+    {
+        id: 1,
+        title: "Get Webiny SWAG",
+        imgSrc: imgSwag,
+        imgAlt: "Webiny SWAG",
+        actionLabel: "read more",
+        actionLink: "/swag"
+    }
+];
+
+export const SOLUTIONS_CARDS = [
+    {
+        id: 0,
+        title: "Webiny Serverless Apps",
+        imgSrc: imgWebinyApps,
+        imgAlt: "Webiny Serverless Apps",
+        actionLabel: "read more",
+        actionLink: "https://www.youtube.com/watch?v=sF4HRS9nE3s"
+    },
+    {
+        id: 1,
+        title: "Serverless GraphQL API",
+        imgSrc: imgWebinyApi,
+        imgAlt: "Webiny Serverless GraphQL API",
+        actionLabel: "read more",
+        actionLink: "https://www.youtube.com/watch?v=x5lf5xqvOQ4"
+    }
+];
+
+export const PRODUCT_CARDS = [
+    {
+        id: 0,
+        title: "Get started",
+        imgSrc: imgGetSTarted,
+        imgAlt: "Webiny Get Started",
+        actionLabel: "read more",
+        actionLink:
+            "https://www.youtube.com/watch?v=G_du-yE_DL4&list=PL9HlKSQaEuXScbySDD7QgITEA8RCHp-IS"
+    },
+    {
+        id: 1,
+        title: "Why Webiny",
+        imgSrc: imgWhyWebiny,
+        imgAlt: "Why Webiny",
+        actionLabel: "read more",
+        actionLink: "https://www.youtube.com/watch?v=odotdrOOvJE"
     }
 ];
 
@@ -68,7 +139,7 @@ export const PRODUCTS_MENU = {
         ]
     },
     secondarySection: {
-        cards: RESOURCES_CARDS
+        cards: PRODUCT_CARDS
     }
 };
 
@@ -101,7 +172,7 @@ export const SOLUTIONS_MENU = {
         ]
     },
     secondarySection: {
-        cards: RESOURCES_CARDS
+        cards: SOLUTIONS_CARDS
     }
 };
 
@@ -127,11 +198,6 @@ export const COMMUNITY_MENU = {
                 link: "https://www.webiny.com/slack"
             },
             {
-                id: 3,
-                label: "Blog",
-                link: "https://blog.webiny.com"
-            },
-            {
                 id: 4,
                 label: "Events",
                 link: "/events"
@@ -139,7 +205,7 @@ export const COMMUNITY_MENU = {
         ]
     },
     secondarySection: {
-        cards: RESOURCES_CARDS
+        cards: COMMUNITY_CARDS
     }
 };
 
@@ -150,11 +216,6 @@ export const RESOURCES_MENU = {
     primarySection: {
         menuItems: [
             {
-                id: 0,
-                label: "Tutorials",
-                link: "https://www.youtube.com/webiny"
-            },
-            {
                 id: 1,
                 label: "Guides",
                 link: "https://docs.webiny.com/docs/guides/headless-react-tutorial"
@@ -163,6 +224,11 @@ export const RESOURCES_MENU = {
                 id: 2,
                 label: "Blog",
                 link: "https://blog.webiny.com/"
+            },
+            {
+                id: 3,
+                label: "YouTube",
+                link: "https://youtube.com/c/webiny"
             },
             {
                 id: 0,
