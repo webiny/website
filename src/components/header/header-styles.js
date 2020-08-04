@@ -79,7 +79,6 @@ export const DropDown = styled("div")(
         visibility: "hidden",
         boxSizing: "border-box",
         opacity: 0,
-        left: -40,
         transform: "translateY(2em) translateX(0%)",
         zIndex: "-1",
         transition: "all 0.1s ease-in-out 0s, visibility 0s linear 0.1s, z-index 0s linear 0.01s",
@@ -138,7 +137,7 @@ export const DropDown = styled("div")(
         display: ["none", "flex"],
         boxShadow: ["none", "0px 4px 16px rgba(0, 0, 0, 0.2)"],
         width: ["100%", 785],
-
+        left: [0, -40],
         padding: ["0 25px 10px 25px", 30],
         top: [25, 56],
         // TODO: Need to check what is this for?
