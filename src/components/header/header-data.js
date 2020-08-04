@@ -116,11 +116,13 @@ export const PRODUCTS_MENU = {
                 label: "Webiny Apps",
                 link: "/serverless-apps"
             },
+            /*
             {
                 id: 3,
                 label: "Webiny Plugins",
                 link: "plugins"
             },
+            */
             {
                 id: 4,
                 label: "Product Roadmap",
@@ -130,12 +132,14 @@ export const PRODUCTS_MENU = {
                 id: 5,
                 label: "For Agencies",
                 link: "/agency"
-            },
+            }
+            /*
             {
                 id: 6,
                 label: "For Enterprises",
                 link: "/enterprise"
             }
+            */
         ]
     },
     secondarySection: {
