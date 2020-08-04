@@ -20,7 +20,8 @@ export const RESOURCES_CARDS = [
         imgSrc: imgWebinyPlugins,
         imgAlt: "Webiny Plugins",
         actionLabel: "learn more",
-        actionLink: "https://www.youtube.com/watch?v=4qcDLzu8kVM"
+        actionLink: "https://www.youtube.com/watch?v=4qcDLzu8kVM",
+        videoId: "4qcDLzu8kVM"
     },
     {
         id: 1,
@@ -28,7 +29,8 @@ export const RESOURCES_CARDS = [
         imgSrc: imgApiDevelopment,
         imgAlt: "Webiny API Development",
         actionLabel: "learn more",
-        actionLink: "https://www.youtube.com/watch?v=8aJ_Ja1aTy0"
+        actionLink: "https://www.youtube.com/watch?v=8aJ_Ja1aTy0",
+        videoId: "8aJ_Ja1aTy0"
     }
 ];
 
@@ -39,7 +41,8 @@ export const COMMUNITY_CARDS = [
         imgSrc: imgContributingOverview,
         imgAlt: "Development overview for contributors",
         actionLabel: "learn more",
-        actionLink: "https://www.youtube.com/watch?v=3wlOrcdcxXs"
+        actionLink: "https://www.youtube.com/watch?v=3wlOrcdcxXs",
+        videoId: "3wlOrcdcxXs"
     },
     {
         id: 1,
@@ -58,7 +61,8 @@ export const SOLUTIONS_CARDS = [
         imgSrc: imgWebinyApps,
         imgAlt: "Webiny Serverless Apps",
         actionLabel: "learn more",
-        actionLink: "https://www.youtube.com/watch?v=sF4HRS9nE3s"
+        actionLink: "https://www.youtube.com/watch?v=sF4HRS9nE3s",
+        videoId: "sF4HRS9nE3s"
     },
     {
         id: 1,
@@ -66,7 +70,8 @@ export const SOLUTIONS_CARDS = [
         imgSrc: imgWebinyApi,
         imgAlt: "Webiny Serverless GraphQL API",
         actionLabel: "learn more",
-        actionLink: "https://www.youtube.com/watch?v=x5lf5xqvOQ4"
+        actionLink: "https://www.youtube.com/watch?v=x5lf5xqvOQ4",
+        videoId: "x5lf5xqvOQ4"
     }
 ];
 
@@ -78,7 +83,8 @@ export const PRODUCT_CARDS = [
         imgAlt: "Webiny Get Started",
         actionLabel: "learn more",
         actionLink:
-            "https://www.youtube.com/watch?v=G_du-yE_DL4&list=PL9HlKSQaEuXScbySDD7QgITEA8RCHp-IS"
+            "https://www.youtube.com/watch?v=G_du-yE_DL4&list=PL9HlKSQaEuXScbySDD7QgITEA8RCHp-IS",
+        videoId: "G_du-yE_DL4"
     },
     {
         id: 1,
@@ -86,7 +92,8 @@ export const PRODUCT_CARDS = [
         imgSrc: imgWhyWebiny,
         imgAlt: "Why Webiny",
         actionLabel: "learn more",
-        actionLink: "https://www.youtube.com/watch?v=odotdrOOvJE"
+        actionLink: "https://www.youtube.com/watch?v=odotdrOOvJE",
+        videoId: "odotdrOOvJE"
     }
 ];
 
