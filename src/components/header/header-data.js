@@ -19,7 +19,7 @@ export const RESOURCES_CARDS = [
         title: "Webiny Plugins",
         imgSrc: imgWebinyPlugins,
         imgAlt: "Webiny Plugins",
-        actionLabel: "read more",
+        actionLabel: "learn more",
         actionLink: "https://www.youtube.com/watch?v=4qcDLzu8kVM"
     },
     {
@@ -27,7 +27,7 @@ export const RESOURCES_CARDS = [
         title: "API Development",
         imgSrc: imgApiDevelopment,
         imgAlt: "Webiny API Development",
-        actionLabel: "read more",
+        actionLabel: "learn more",
         actionLink: "https://www.youtube.com/watch?v=8aJ_Ja1aTy0"
     }
 ];
@@ -38,7 +38,7 @@ export const COMMUNITY_CARDS = [
         title: "Contributor's overview",
         imgSrc: imgContributingOverview,
         imgAlt: "Development overview for contributors",
-        actionLabel: "read more",
+        actionLabel: "learn more",
         actionLink: "https://www.youtube.com/watch?v=3wlOrcdcxXs"
     },
     {
@@ -46,7 +46,7 @@ export const COMMUNITY_CARDS = [
         title: "Get Webiny SWAG",
         imgSrc: imgSwag,
         imgAlt: "Webiny SWAG",
-        actionLabel: "read more",
+        actionLabel: "learn more",
         actionLink: "/swag"
     }
 ];
@@ -57,7 +57,7 @@ export const SOLUTIONS_CARDS = [
         title: "Webiny Serverless Apps",
         imgSrc: imgWebinyApps,
         imgAlt: "Webiny Serverless Apps",
-        actionLabel: "read more",
+        actionLabel: "learn more",
         actionLink: "https://www.youtube.com/watch?v=sF4HRS9nE3s"
     },
     {
@@ -65,7 +65,7 @@ export const SOLUTIONS_CARDS = [
         title: "Serverless GraphQL API",
         imgSrc: imgWebinyApi,
         imgAlt: "Webiny Serverless GraphQL API",
-        actionLabel: "read more",
+        actionLabel: "learn more",
         actionLink: "https://www.youtube.com/watch?v=x5lf5xqvOQ4"
     }
 ];
@@ -76,7 +76,7 @@ export const PRODUCT_CARDS = [
         title: "Get started",
         imgSrc: imgGetSTarted,
         imgAlt: "Webiny Get Started",
-        actionLabel: "read more",
+        actionLabel: "learn more",
         actionLink:
             "https://www.youtube.com/watch?v=G_du-yE_DL4&list=PL9HlKSQaEuXScbySDD7QgITEA8RCHp-IS"
     },
@@ -85,7 +85,7 @@ export const PRODUCT_CARDS = [
         title: "Why Webiny",
         imgSrc: imgWhyWebiny,
         imgAlt: "Why Webiny",
-        actionLabel: "read more",
+        actionLabel: "learn more",
         actionLink: "https://www.youtube.com/watch?v=odotdrOOvJE"
     }
 ];
