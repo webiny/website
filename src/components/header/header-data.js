@@ -156,7 +156,7 @@ export const PRODUCTS_MENU = {
 export const SOLUTIONS_MENU = {
     id: 1,
     label: "Solutions",
-    link: "",
+    link: null,
     primarySection: {
         menuItems: [
             {
@@ -189,7 +189,7 @@ export const SOLUTIONS_MENU = {
 export const COMMUNITY_MENU = {
     id: 2,
     label: "Community",
-    link: "",
+    link: null,
     primarySection: {
         menuItems: [
             {
@@ -222,7 +222,7 @@ export const COMMUNITY_MENU = {
 export const RESOURCES_MENU = {
     id: 3,
     label: "Resources",
-    link: "",
+    link: null,
     primarySection: {
         menuItems: [
             {
