@@ -5,6 +5,7 @@ import Head from './components/head';
 import Header from '../components/header/new-header';
 import Footer from '../components/footer/footer';
 import CookieNotice from '../components/ui/cookie-notice';
+import { ModalProvider } from '../components/ui/layout/video-modal';
 
 import './reset.css';
 import './index.css';
@@ -46,13 +47,15 @@ class BaseLayout extends React.Component {
         })();`}
           </script>
         </Helmet>
-        {/* We need this style here, so that page content won't get hide under `Header` */}
-        <div style={{ paddingTop: 65 }}>
-          <Header trackScroll={!this.props.fixedHeader} />
-          {this.props.children}
-          <Footer />
-          <CookieNotice />
-        </div>
+          <ModalProvider>
+            {/* We need this style here, so that page content won't get hide under `Header` */}
+            <div style={{ paddingTop: 65 }}>
+              <Header trackScroll={!this.props.fixedHeader} />
+              {this.props.children}
+              <Footer />
+              <CookieNotice />
+            </div>
+          </ModalProvider>
       </React.Fragment>
     );
   }
