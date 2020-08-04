@@ -12,6 +12,7 @@ export default {
     dark: '#282C34',
     purple: '#7B39D9',
     darkPurple: '#44486C',
+    superDarkPurple: '#2C006B',
     yellow: '#DCD207',
     grayBorder: '#EEEEEE',
     gray300: '#4F4F4F',
@@ -20,7 +21,8 @@ export default {
     background: '#F9FBFF',
     darkWine: '#C5426E',
     backgroundGray: '#F3F3F3',
-    yetAnotherGray: '#F3F1F5'
+    yetAnotherGray: '#F3F1F5',
+    gray700: "#7D7D7D"
   },
   fontWeight: {
     bold: 700,

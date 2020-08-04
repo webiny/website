@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Head from './components/head';
 
-import Header from '../components/header/header';
+import Header from '../components/header/new-header';
 import Footer from '../components/footer/footer';
 import CookieNotice from '../components/ui/cookie-notice';
 
@@ -46,9 +46,9 @@ class BaseLayout extends React.Component {
         })();`}
           </script>
         </Helmet>
-
-        <div>
-          <Header trackScroll={this.props.fixedHeader ? false : true} />
+        {/* We need this style here, so that page content won't get hide under `Header` */}
+        <div style={{ paddingTop: 65 }}>
+          <Header trackScroll={!this.props.fixedHeader} />
           {this.props.children}
           <Footer />
           <CookieNotice />
