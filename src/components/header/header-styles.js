@@ -193,19 +193,19 @@ export const NavBar = styled("div")(
         [MobileMenu]: {
             display: "none"
         },
-        "&.mobile-opened": {
-            backgroundColor: theme.color.darkGray,
-            height: "100vh",
-            justifyContent: "flex-start",
-            [MobileMenu]: {
-                display: "block"
-            }
-        }
     },
     mq({
         flexDirection: ["column", "row"],
         marginTop: [-10, 0],
-        paddingTop: [10, 0]
+        paddingTop: [10, 0],
+        "&.mobile-opened": {
+            backgroundColor: [theme.color.darkGray, "inherit"],
+            height: ["100vh", "inherit"],
+            justifyContent: ["flex-start", "space-between"],
+            [MobileMenu]: {
+                display: ["block", "none"]
+            }
+        }
     })
 );
 

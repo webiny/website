@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useState } from "react";
+import React, {Fragment, useContext, useState} from "react";
 import Link, { navigate } from "gatsby-link";
 import GitHubButton from "react-github-btn";
 
@@ -145,7 +145,6 @@ const Header = ({ hasBanner = false }) => {
     const [hideBanner, setHideBanner] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-    // TODO: add implementation
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
     };
