@@ -1,47 +1,16 @@
+import React from "react";
 import styled from "react-emotion";
 import { css } from "emotion";
+// Utils
 import mq from "../utils/breakpoints";
 import theme from "../utils/theme";
+// assets
 import rightArrow from "./assets/arrow-right.svg";
 import downArrowWhite from "./assets/down-arrow-white.svg";
 import { BANNER_HEIGHT } from "./banner";
 import downArrowBlack from "./assets/down-arrow-black.svg";
 
-export const HeaderContainer = styled("header")(
-    {
-        left: 0,
-        paddingTop: 15,
-        paddingBottom: 15,
-        width: "100%",
-        transition: "all 500ms"
-    },
-    props => ({
-        position: props.isSticky ? "fixed" : "absolute",
-        // TODO: We'll discuss about having transparent header
-        // backgroundColor: props.isSticky ? "#fff" : "transparent",
-        // boxShadow: props.isSticky && "0 0 1px 1px rgba(34,45,57,.15)",
-        backgroundColor: theme.color.white,
-        boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.297995)",
-        paddingTop: props.isSticky ? 10 : 20,
-        paddingBottom: props.isSticky ? 10 : 20,
-        top: props.hasBanner ? (props.hideBanner ? 0 : BANNER_HEIGHT) : 0,
-        zIndex: props.hasBanner ? (props.hideBanner ? 102 : 100) : 100,
-        [MenuItem]: {
-            // TODO: see how to handle sticky if necessary
-            // color: props.isSticky ? "#000" : "#fff",
-            // ["a." + linkStyle]: {
-            //     color: props.isSticky ? "#000" : "#fff"
-            // },
-            [DownArrow]: {
-                background:
-                    "url(" + (props.isSticky ? downArrowBlack : downArrowWhite) + ") no-repeat"
-            }
-        }
-    }),
-    mq({
-        height: ["auto", 45]
-    })
-);
+export const DROPDOWN_LINK_HEIGHT = 18;
 
 export const headerInnerContainer = css(
     {
@@ -333,7 +302,33 @@ export const downArrowClass = css(
     })
 );
 
-export const DROPDOWN_LINK_HEIGHT = 18;
+export const HeaderContainer = styled("header")(
+    {
+        left: 0,
+        paddingTop: 15,
+        paddingBottom: 15,
+        width: "100%",
+        transition: "all 500ms"
+    },
+    props => ({
+        position: props.isSticky ? "fixed" : "absolute",
+        backgroundColor: theme.color.white,
+        boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.297995)",
+        paddingTop: props.isSticky ? 10 : 20,
+        paddingBottom: props.isSticky ? 10 : 20,
+        top: props.hasBanner ? (props.hideBanner ? 0 : BANNER_HEIGHT) : 0,
+        zIndex: props.hasBanner ? (props.hideBanner ? 102 : 100) : 100,
+        [MenuItem]: {
+            [DownArrow]: {
+                background:
+                    "url(" + (props.isSticky ? downArrowBlack : downArrowWhite) + ") no-repeat"
+            }
+        }
+    }),
+    mq({
+        height: ["auto", 45]
+    })
+);
 
 export const dropdownArrow = css`
     position: absolute;
