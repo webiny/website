@@ -332,7 +332,7 @@ export default () => (
                     would love to talk.
                 </TraitsText>
                 <ButtonWrapper>
-                    <Button type={"dark"} link={"https://github.com/webiny/webiny-js"}>
+                    <Button type={"dark"} link={"https://careers.webiny.com/"}>
                         view open positions <img src={arrowIcon} alt="" className="icon" />
                     </Button>
                 </ButtonWrapper>
