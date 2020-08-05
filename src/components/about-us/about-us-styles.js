@@ -268,10 +268,11 @@ export const ProfileCard = styled("div")(
 
         textAlign: "center",
         "& .profile__img": {
-            height: "100%",
-            width: "100%",
-            marginBottom: 8,
-            objectFit: "cover"
+            //height: "100%",
+            //width: "100%",
+            height: 160,
+            marginBottom: 8
+            //objectFit: "cover"
         },
         "& .profile__name": {
             marginBottom: 0,
