@@ -1,606 +1,379 @@
-import React from 'react';
-import styled from 'react-emotion';
-import theme from '../utils/theme';
-import mq from '../utils/breakpoints';
-import {css} from 'emotion';
-import ContentContainer from '../ui/content-container';
-import {Grid, Cell} from '../ui/layout/layout';
-import Button from '../ui/button';
+import React, { Fragment, useEffect, useState } from "react";
+import styled from "react-emotion";
+import theme from "../utils/theme";
+import mq from "../utils/breakpoints";
 
-import heroBg from './assets/hero-bg.svg';
-import Team from './team';
+import videoPreviewBg from "./assets/video-preview-bg.svg";
+import YTVideoComponent from "../ui/layout/yt-video";
+import PageBuilderDemoImg from "../why-webiny/overview/assets/why-webiny-video-cover.png";
+import ContentContainer from "../ui/content-container";
+import Button from "../ui/button";
 
-import E1 from './assets/e1-logo.png';
-import MkLogo from './assets/mk-logo.svg';
-import MkFounders from './assets/mk-founders.png';
-import MkProduct from './assets/mk-product.png';
-import benefitsBg from './assets/webiny-about-us-benefits-bg.svg';
+// assets
+import webinyBg from "./assets/webiny-bg.svg";
+import welcomeRectImg from "./assets/about-welcome-rect.svg";
+import storyRectImg from "./assets/about-stroy-rect.svg";
+import teamRectImg from "./assets/about-team-rect.svg";
+import teamPathImg from "./assets/about-team-path.svg";
+import arrowIcon from "./assets/about-arrow.svg";
+import valueRectImg from "./assets/about-value-rect.svg";
+import investorImg from "./assets/e1-logo.png";
+import circleBgImg from "./assets/about-circle-bg.svg";
 
-const Hero = styled ('section') (
-  {
-    width: '100%',
-    background: 'url(' + heroBg + ') no-repeat center top',
-    color: '#fff',
-    boxSizing: 'border-box',
-    textAlign: 'center',
-  },
-  mq ({
-    padding: ['100px 20px 25px', '150px 0 25px'],
-    //height: ['auto', 'calc(100vh - 150px)'],
-    minHeight: ['auto', '360px'],
-    //maxHeight: ['auto'],
-    marginBottom: [50, 0],
-    backgroundSize: ['cover'],
-    backgroundPosition: ['top', 'top', 'bottom'],
-  })
-);
+// data
+import { TEAM_MEMBERS, LINKS, TRAITS, MEDIA_KIT } from "./about-us-data";
+// styles
+import {
+    Section,
+    SectionWithBackground,
+    heroContainerClass,
+    WebinyHallMarkImage,
+    HeroSectionWrapper,
+    Title,
+    welcomeContainerClass,
+    TitleHighlight,
+    Text,
+    ImageWrapper,
+    videoPreviewClass,
+    SectionWithDots,
+    ProfileCard,
+    TeamWrapper,
+    TeamPath,
+    SectionWithGrayRectangle,
+    contributorsContainerClass,
+    ContributorsWrapper,
+    ContributorCard,
+    ButtonWrapper,
+    TraitsWrapper,
+    TraitCard,
+    More,
+    investorContainerClass,
+    SectionWithWaves,
+    mediaKitContainerClass,
+    MediaKitCard,
+    MediaCardWrapper,
+    TeamSection
+} from "./about-us-styles";
 
-const Title = styled ('h1') ({
-  fontSize: theme.fontSize.h1,
-  fontWeight: theme.fontWeight.semiBold,
-  marginBottom: 25,
-  maxWidth: 600,
-  margin: '0 auto',
+const Contributors = () => {
+    const [contributors, setContributors] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
+
+    useEffect(() => {
+        fetch("https://api.github.com/repos/webiny/webiny-js/contributors")
+            .then(response => response.json())
+            .then(result => {
+                setLoading(false);
+                setContributors(result);
+            })
+            .catch(error => {
+                console.error(error);
+                setError(true);
+            });
+    }, []);
+
+    if (error) {
+        return <p>Something went wrong!</p>;
+    }
+
+    if (loading) {
+        return <p>Loading contributors...</p>;
+    }
+
+    return contributors
+        .filter(filterWebinyTeam)
+        .slice(0, 15)
+        .map(contributor => (
+            <ContributorCard key={contributor.id}>
+                <img src={contributor.avatar_url} alt={contributor.login} className="card__img" />
+                <h5 className="card__name">{contributor.login}</h5>
+            </ContributorCard>
+        ));
+};
+
+const filterWebinyTeam = item =>
+    !TEAM_MEMBERS.some(m => {
+        return m.github && m.github.toLowerCase() === item.html_url.toLowerCase();
+    });
+
+const WelcomeTitle = styled(Title)({
+    color: theme.color.black
 });
 
-const styleSet = css (
-  {
-    h2: {
-      paddingTop: 0,
-      marginTop: 0,
-      fontSize: 48,
-    },
-    p: {
-      fontSize: 24,
-    },
-    '.grid': {
-      alignItems: 'flex-start',
-      '&.team': {
-        paddingTop: 15,
-        paddingBottom: 15,
-      },
-      '&.investors, &.media-kit, &.traits': {
-        padding: '25px 0',
-        margin: '50px 0',
-        h2: {
-          textAlign: 'center',
-          marginBottom: 0,
-        },
-        p: {
-          textAlign: 'center',
-        },
-        '.logos': {
-          textAlign: 'center',
-          img: {
-            height: 80,
-            width: 'auto',
-          },
-        },
-      },
-      '&.media-kit': {
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        div: {
-          '&:last-child': {
-            margin: '0 !important',
-          },
-        },
-        img: {
-          width: 350,
-          outline: '0',
-          boxShadow: '0 1px 5px 0 rgba(0,0,0,0.15)',
-          borderRadius: 5,
-          display: 'block',
-        },
-      },
-    },
-  },
-  mq ({
-    width: ['100%', '100%', 1200],
-    '.title': {
-      marginTop: [45, 0],
-      marginBottom: [0, 0],
-      padding: [0, '85px 0 0 0'],
-      h2: {
-        textAlign: 'center',
-      },
-    },
-    '.grid': {
-      flexDirection: ['column', 'row'],
-      '&.about div:first-child': {
-        marginRight: [0, 100],
-      },
-      h2: {
-        textAlign: ['center', 'left'],
-      },
-      '&.media-kit': {
-        margin: [0, '50px 0'],
-        div: {
-          flexBasis: ['100%', 350],
-          marginBottom: [25, 0],
-        },
-        img: {
-          margin: ['0 auto', 0],
-        },
-      },
-    },
-  })
-);
-
-const Bold = styled ('span') ({
-  fontWeight: theme.fontWeight.semiBold,
+const WelcomeTitleHighlight = styled(TitleHighlight)({
+    backgroundImage: "url(" + welcomeRectImg + ")"
 });
 
-const Profile = styled ('div') (
-  {
-    display: 'flex',
-    marginBottom: 50,
-    flexDirection: 'column',
-    alignItems: 'center',
-    textAlign: 'center',
-    img: {
-      height: '100%',
-      width: '150px !important',
-      boxShadow: '0 10px 5px rgba(91,107,174,.05)',
-      borderRadius: '50%',
-    },
-    h3: {
-      marginBottom: 0,
-      fontSize: 24,
-      fontWeight: theme.fontWeight.semiBold,
-      justifyContent: 'center',
-    },
-    a: {
-      color: theme.color.grayText,
-      textDecoration: 'underline',
-      '&:hover': {
-        color: theme.color.primaryDark,
-      },
-    },
-  },
-  mq ({
-    img: {
-      margin: ['0 auto 15px auto', 25],
-    },
-  })
-);
-
-const ProfileTitle = styled ('div') ({
-  marginBottom: 15,
-});
-const ProfileDesc = styled ('div') ({
-  fontSize: 14,
-  color: theme.color.grayText,
-  marginBottom: 15,
-});
-const ProfileLinks = styled ('div') (
-  {
-    //display: 'flex',
-    //justifyContent: 'space-between',
-  }
-);
-
-const Divider = styled ('div') ({
-  width: '100%',
-  height: 20,
-  backgroundColor: '#F4F6F8',
-  borderTop: '1px solid #E5E5E5',
-  borderBottom: '1px solid #E5E5E5',
-});
-
-const TraitPair = styled ('div') (
-  {
-    display: 'flex'
-  },
-  mq ({
-    flexDirection: ['column', 'row'],
-  })
-);
-
-const TraitBullet = styled ('div') (
-  {
-    display: 'flex',
-    alignItems: 'center',
-    height: 150,
-    span: {
-      color: theme.color.primaryDark,
-      backgroundColor: '#FEC4B2',
-      borderRadius: '50%',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: 50,
-      height: 50,
-      fontSize: 32,
-      fontWeight: theme.fontWeight.bold,
-    },
-    p: {
-      fontSize: 20,
-      paddingLeft: 20,
-      textAlign: 'left !important',
-      width: '100%',
-      margin: '0',
-    },
-  },
-  mq({
-    width: ['100%', '48%'],
-    ':nth-child(2)' : {
-      marginLeft: [0, 16]
-    },
-  })
-);
-
-const benefits = css (
-  {
-    background: 'url(' + benefitsBg + ') no-repeat center top',
-    backgroundSize: 'cover',
-    color: theme.color.white,
-    textAlign: 'center',
-    paddingBottom: 50,
-    '.title': {
-      maxWidth: 750,
-      margin: '0 auto',
-      h2: {
-        textAlign: 'center',
-      },
-    },
-    '.careersBtn': {
-      maxWidth: 250,
-      color: theme.color.white,
-      margin: '50px auto',
-      '&:hover': {
-        textDecoration: 'none',
-      },
-    },
-    p: {
-      textAlign: 'center',
-      color: theme.color.white,
-      marginBottom: 50,
-      a: {
-        color: theme.color.white,
-        textDecoration: 'underline',
-      },
-    },
-    hr: {
-      borderColor: '#979797',
-      boxShadow: 'none',
-      borderTop: 'none',
-      borderLeft: 'none',
-      borderRight: 'none',
-    },
-    h3: {
-      fontSize: theme.fontSize.h3,
-      fontWeight: theme.fontWeight.semiBold,
-      textAlign: 'center',
-      color: theme.color.white,
-      margin: '50px auto',
-      justifyContent: 'center',
-    },
-  },
-  mq ({
-    width: ['100%', '100%'],
-    '.title': {
-      padding: ['0 15px', 0],
-      h2: {
-        fontSize: [28, 36],
-      },
-    },
-  })
-);
-
-const Perks = styled ('div') (
-  {
-    display: 'flex',
-    justifyContent: 'space-between',
-    flexWrap: 'wrap',
-    maxWidth: 1100,
-    margin: '0 auto',
-    '.box': {
-      display: 'block',
-      color: theme.color.black,
-      flex: '1 0 25%',
-      backgroundColor: theme.color.white,
-      boxSizing: 'border-box',
-      margin: 25,
-      backgroundColor: '#fff',
-      boxShadow: '0 2px 4px 0 rgba(0,0,0,0.50)',
-      borderRadius: 2,
-      padding: 40,
-      h4: {
-        textAlign: 'left',
-        fontWeight: theme.fontWeight.semiBold,
-        fontSize: theme.fontSize.h4,
-        marginTop: 0,
-        marginBottom: 25,
-      },
-      p: {
+const WelcomeText = styled(Text)(
+    {
         color: theme.color.black,
-        textAlign: 'left',
-        marginBottom: 0,
-      },
+        marginTop: 20
     },
-  },
-  mq ({
-    flexDirection: ['column', 'row'],
-  })
+    mq({
+        maxWidth: ["100%", 888]
+    })
 );
 
-const ProfileCard = props => (
-  <Profile>
-    <img src={props.img} alt={props.name} />
-    <div>
-      <h3>{props.name}</h3>
-      <ProfileTitle>{props.title}</ProfileTitle>
-      {/*<ProfileDesc>{props.desc}</ProfileDesc>*/}
-      <ProfileLinks>
-        <a href={'https://www.linkedin.com/in/' + props.linkedin}>LinkedIn</a>
-        ,
-        {' '}
-        {' '}
-        {props.twitter &&
-          <a href={'https://twitter.com/' + props.twitter}>Twitter, </a>}
-        <a href={'https://github.com/' + props.github}>GitHub</a>
-      </ProfileLinks>
-    </div>
-  </Profile>
+const StoryTitle = styled(Title)(
+    {
+        color: theme.color.black
+    },
+    mq({
+        margin: ["0px auto 50px", "50px auto"]
+    })
 );
 
-const Trait = props => (
-  <TraitBullet>
-    <span>{props.num}</span>
-    <p>{props.children}</p>
-  </TraitBullet>
+const StoryTitleHighlight = styled(TitleHighlight)({
+    backgroundImage: "url(" + storyRectImg + ")"
+});
+
+const StoryText = styled(Text)(
+    {
+        color: theme.color.black,
+        textAlign: "left"
+    },
+    mq({
+        maxWidth: ["100%", 1110]
+    })
 );
 
-export default ({children, ...props}) => (
-  <section>
-    <Hero {...props}>
-      <ContentContainer>
-        <Title>
-          Creating Tools and Solutions for the<br />Serverless Era
-        </Title>
+const TeamTitle = styled(Title)(
+    {
+        color: theme.color.black
+    },
+    mq({
+        margin: ["50px auto", "60px auto 50px"]
+    })
+);
 
-      </ContentContainer>
-    </Hero>
-    <ContentContainer className={styleSet}>
-      <Grid className={'grid about'}>
-        <Cell>
-          <h2>Hello and welcome</h2>
-          <p>
-            At Webiny we have a mission to empower developers. We do that by providing tools, processes and ready-made apps. As a result, developers can create serverless applications with ease.
-          </p>
-          <p><Bold>Our story</Bold></p>
+const TeamTitleHighlight = styled(TitleHighlight)({
+    backgroundImage: "url(" + teamRectImg + ")"
+});
 
-          <p>
-            Many moons ago, Webiny was just another digital agency. We were building websites, fighting the technology and fixing bugs, many bugs.
-          </p>
+const ContributorsText = styled(Text)(
+    {
+        color: theme.color.black,
+        fontWeight: theme.fontWeight.bold,
+        "& span": {
+            color: theme.color.primaryDark
+        }
+    },
+    mq({
+        margin: ["0px auto 50px", "0px auto 60px"]
+    })
+);
 
-          <p>
-            Eventually, we saw that the way we build and manage web applications is changing. We saw that this “serverless” trend is actually here to stay. Even more than that, we now believe that in a few years time, serverless will be the way how most of the web is created.
-          </p>
+const TraitsTitleHighlight = styled(TitleHighlight)({
+    backgroundImage: "url(" + valueRectImg + ")"
+});
 
-          <p>
-            With this belief, we decided to close down our service business and focus on a mission to built a serverless CMS. One this will become a foundation for all serverless applications. One that developers will see as a core part of their serverless stack.
-          </p>
-          <p>
-            We want to do all that, but with a community in mind, one that will help us achieve this goal.  As a result, we released Webiny under the MIT open-source licence so everyone can use it completely free of charge.
-          </p>
-        </Cell>
-      </Grid>
+const TraitsText = styled(Text)(
+    {
+        color: theme.color.black
+    },
+    mq({
+        margin: ["50px auto 0px", "70px auto 0px"],
+        maxWidth: ["100%", 888]
+    })
+);
 
-    </ContentContainer>
+const InvestorTitle = styled(Title)(
+    {
+        color: theme.color.black
+    },
+    mq({
+        margin: ["0px auto 0px", "0px auto"]
+    })
+);
 
-    <Divider />
-    <Team />
+const InvestorText = styled(Text)(
+    {
+        color: theme.color.black
+    },
+    mq({
+        margin: ["0px auto 0px", "0px auto 24px"],
+        maxWidth: ["100%", 888]
+    })
+);
 
-    <Divider />
+export default () => (
+    <Fragment>
+        <SectionWithBackground>
+            <ContentContainer className={heroContainerClass}>
+                <WebinyHallMarkImage src={webinyBg} alt={""} />
+                <HeroSectionWrapper>
+                    <Title>Creating Tools and Solutions for the Serverless Era</Title>
+                </HeroSectionWrapper>
+            </ContentContainer>
+        </SectionWithBackground>
+        <Section>
+            <ContentContainer className={welcomeContainerClass}>
+                <WelcomeTitle>
+                    Hello and <WelcomeTitleHighlight>welcome</WelcomeTitleHighlight>
+                </WelcomeTitle>
+                <WelcomeText>
+                    At Webiny we have a mission to empower every developer to create serverless
+                    applications and websites. We do that by providing tools, processes and
+                    ready-made apps, and as a result, developers can create serverless applications
+                    with ease.
+                </WelcomeText>
+            </ContentContainer>
+        </Section>
+        <SectionWithDots>
+            <ImageWrapper>
+                <div className={videoPreviewClass}>
+                    <img src={videoPreviewBg} alt={""} />
+                </div>
+                <YTVideoComponent img={PageBuilderDemoImg} id={"odotdrOOvJE"} />
+            </ImageWrapper>
+        </SectionWithDots>
+        <Section>
+            <ContentContainer className={welcomeContainerClass}>
+                <StoryTitle>
+                    Our <StoryTitleHighlight>story</StoryTitleHighlight>
+                </StoryTitle>
+                <StoryText>
+                    Many moons ago, Webiny was just another digital agency. We were building
+                    websites, fighting the technology and fixing bugs. Many bugs.
+                </StoryText>
+                <StoryText>
+                    Eventually, we saw that the way we build and manage web applications is
+                    changing. We saw that this “serverless trend" is actually not a trend, and is
+                    here to stay. Even more than that, we now believe that in a few years time,
+                    serverless will be the way most of the web is created.
+                </StoryText>
+                <StoryText>
+                    With this belief, we decided to close down our service business and focus on a
+                    mission to build an open-source framework for building serverless applications.
+                    One that will become a foundation for all future serverless applications. One
+                    that developers will see as a core part of their serverless stack.
+                </StoryText>
+                <StoryText>
+                    Throughout the whole process we had one big North Star in our mind to guide us -
+                    a community. A community of developers that we could support with Webiny and
+                    that would join us on our mission, and help us achieve our goals. As a result,
+                    we have released Webiny under the MIT open-source licence so everyone can use it
+                    completely free of charge.
+                </StoryText>
+            </ContentContainer>
+        </Section>
+        <TeamSection>
+            <ContentContainer className={welcomeContainerClass}>
+                <TeamPath src={teamPathImg} alt={""} />
+                <TeamTitle>
+                    <TeamTitleHighlight>Team</TeamTitleHighlight>
+                </TeamTitle>
+                <TeamWrapper>
+                    {TEAM_MEMBERS.map(member => (
+                        <ProfileCard key={member.id}>
+                            <img src={member.imgSrc} alt={member.name} className="profile__img" />
+                            <h5 className="profile__name">{member.name}</h5>
+                            <p className="profile__title">{member.jobTitle}</p>
+                            <ul className="profile__links">
+                                {LINKS.map(link => {
+                                    if (
+                                        typeof member[link.name] === "string" &&
+                                        member[link.name].length > 0
+                                    ) {
+                                        return (
+                                            <li key={link.id} className="profile__link">
+                                                <a
+                                                    href={member[link.name]}
+                                                    target={"_blank"}
+                                                    rel={"noopener noreferrer"}
+                                                >
+                                                    <img src={link.icon} alt="" />
+                                                </a>
+                                            </li>
+                                        );
+                                    }
+                                    return null;
+                                })}
+                            </ul>
+                        </ProfileCard>
+                    ))}
+                </TeamWrapper>
+            </ContentContainer>
+        </TeamSection>
+        <SectionWithGrayRectangle>
+            <ContentContainer className={contributorsContainerClass}>
+                <ContributorsText>
+                    Assisted by our <span>Webiny community</span> and <span>contributors</span>
+                </ContributorsText>
+                <ContributorsWrapper>
+                    <Contributors />
+                </ContributorsWrapper>
+                <ButtonWrapper>
+                    <Button type={"primary"} link={"https://github.com/webiny/webiny-js"}>
+                        And many more <img src={arrowIcon} alt="" className="icon" />
+                    </Button>
+                </ButtonWrapper>
+            </ContentContainer>
+        </SectionWithGrayRectangle>
+        <Section>
+            <ContentContainer className={welcomeContainerClass}>
+                <TeamTitle>
+                    Traits we <TraitsTitleHighlight>value</TraitsTitleHighlight>
+                </TeamTitle>
+                <TraitsWrapper>
+                    {TRAITS.map(trait => (
+                        <TraitCard
+                            key={trait.id}
+                            className={trait.spanTwoRows ? "spanTwoRows" : ""}
+                        >
+                            <img src={trait.icon} alt={""} className="card__img" />
+                            <p className="card__title">{trait.text}</p>
+                        </TraitCard>
+                    ))}
+                </TraitsWrapper>
+                <TraitsText>
+                    Our team is ever expanding, so if you have identified yourself in our values, we
+                    would love to talk.
+                </TraitsText>
+                <ButtonWrapper>
+                    <Button type={"dark"} link={"https://github.com/webiny/webiny-js"}>
+                        view open positions <img src={arrowIcon} alt="" className="icon" />
+                    </Button>
+                </ButtonWrapper>
+            </ContentContainer>
+        </Section>
+        <SectionWithDots>
+            <ContentContainer className={investorContainerClass}>
+                <ImageWrapper>
+                    <div className={videoPreviewClass}>
+                        <img src={circleBgImg} alt={""} />
+                    </div>
+                    <More>
+                        <InvestorTitle>Our Investors</InvestorTitle>
+                        <InvestorText>
+                            We plan to have the first version out before the Q4 2020.
+                        </InvestorText>
+                        <img src={investorImg} alt="" className="img" />
+                    </More>
+                </ImageWrapper>
+            </ContentContainer>
+        </SectionWithDots>
+        <SectionWithWaves>
+            <ContentContainer className={mediaKitContainerClass}>
+                <MediaCardWrapper>
+                    {MEDIA_KIT.map(media => (
+                        <MediaKitCard
+                            key={media.id}
+                            onClick={event => {
+                                event.preventDefault();
 
-    <ContentContainer className={styleSet}>
-      <Grid className={'grid traits'}>
-        <Cell>
-          <h2>Traits We Value</h2>
-          <Grid className={'grid'}>
-            <Cell>
-              <TraitPair>
-                <Trait num={1}>
-                  We are curious and will never stop learning.
-                </Trait>
-                <Trait num={2}>
-                  We always find time to help our fellow peers.
-                </Trait>
-              </TraitPair>
-
-              <TraitPair>
-                <Trait num={3}>
-                  We respect and treat others the same way we want to be treated.
-                </Trait>
-                <Trait num={4}>
-                  Each one of us has a voice and is  not afraid to speak their mind.
-                </Trait>
-              </TraitPair>
-
-
-              <TraitPair>
-                <Trait num={5}>
-                  We are motivated by the problem we are solving and not just by money.
-                </Trait>
-                <Trait num={6}>
-                  We strive to communicate as much and as clearly as possible as this is the lifestream of successful remote working.
-                </Trait>
-              </TraitPair>
-
-
-              <TraitPair>
-                <Trait num={7}>
-                  We value flexibility and freedom but also take on the responsibility and accountability for our work.
-                </Trait>
-                <Trait num={8}>
-                  We deeply care about the quality of our work.
-                </Trait>
-              </TraitPair>
-
-
-              <TraitPair>
-                <Trait num={9}>
-                  We truly believe that our work has impact and that Webiny will become the future of web development.
-                </Trait>
-                <Trait num={10}>
-                  More than anything I'm happy to help out a community member and make their day.
-                </Trait>
-              </TraitPair>
-            </Cell>
-          </Grid>
-
-        </Cell>
-      </Grid>
-    </ContentContainer>
-
-    <Divider />
-    <ContentContainer className={benefits}>
-      <Grid className={'title'}>
-        <Cell>
-          <h2>
-            If you’ve identified yourself in our values,
-            we would love to talk
-          </h2>
-          <Button
-            className="careersBtn"
-            link="https://careers.webiny.com"
-            type="dark"
-            target="_blank"
-          >
-            View open positions &nbsp; ▶
-          </Button>
-          <p>
-            Don't see the right opening at the moment?
-            Don’t worry, just email your CV to
-            {' '}
-            <a href="mailto:careers@webiny.com">careers@webiny.com</a>.
-          </p>
-          <hr />
-          <h3>Our Perks & Benefits</h3>
-        </Cell>
-      </Grid>
-
-      <Perks>
-        <div className={'box'}>
-          <h4>🌍 Flexible & remote work</h4>
-          <p>
-            We are a remote team, you can work from home or any other location you choose. All you need is an internet connection.
-          </p>
-        </div>
-
-        <div className={'box'}>
-          <h4>💵 Competitive salary</h4>
-          <p>
-            We pay competitive market rates, based on your location and experience.
-          </p>
-        </div>
-
-        <div className={'box'}>
-          <h4>📚 £1000 personal development budget</h4>
-          <p>
-            Each year you get a £1000 budget to spend on any books, conferences or training you wish to attend.
-          </p>
-        </div>
-
-        <div className={'box'}>
-          <h4>🏝 Unlimited vacation</h4>
-          <p>
-            We offer an unlimited paid time off and require you to take a minimum of 15 days off (paid) each year, alongside any public holidays.
-          </p>
-        </div>
-
-        <div className={'box'}>
-          <h4>📈 Stock options</h4>
-          <p>
-            We want our success to be your success. Each team member gets a certain number of stock options assigned that vest over a period of time.
-          </p>
-        </div>
-
-        <div className={'box'}>
-          <h4>💻 Equipment</h4>
-          <p>
-            We pay for any equipment you need, be that software or hardware.
-          </p>
-        </div>
-
-        <div className={'box'}>
-          <h4>🍼 Family leave</h4>
-          <p>
-            Starting a family is an important step in everyone's life. We want our employees to enjoy those moments without worrying about their job. We are offering all new parents (includes maternity, paternity, and adoption) 12 weeks of fully paid leave. This is available if you've been with Webiny for 12 months or more.
-            {' '}
-          </p>
-        </div>
-
-        <div className={'box'}>
-          <h4>🐥 Flexible workdays for new parents</h4>
-          <p>
-            Besides the family leave, if you are a new parent (been a parent for less than 1 year), you can choose to work for 3 or 4 days a week, instead of full-time, for the next 6 months for a pro-rata salary.
-          </p>
-        </div>
-      </Perks>
-
-      <Button
-        className="careersBtn"
-        link="https://careers.webiny.com"
-        type="dark"
-        target="_blank"
-      >
-        View open positions &nbsp; ▶
-      </Button>
-
-    </ContentContainer>
-
-    <Divider />
-    <ContentContainer className={styleSet}>
-      <Grid className={'grid investors'}>
-        <Cell>
-          <h2>Our Investors</h2>
-          <p>We are proud to be backed by visionary investors</p>
-          <div className={'logos'}>
-            <img src={E1} alt="Episode 1" />
-          </div>
-        </Cell>
-      </Grid>
-    </ContentContainer>
-
-    <Divider />
-    <ContentContainer className={styleSet}>
-      <Grid className={'title'}>
-        <Cell>
-          <h2>Media Kit</h2>
-        </Cell>
-      </Grid>
-      <Grid className={'grid media-kit'}>
-        <Cell>
-          <a
-            href="https://drive.google.com/drive/u/2/folders/19BiuDSOrJ_H0HshmtQhsDGeslB-lVpom"
-            target="_blank"
-          >
-            <img src={MkLogo} alt="Webiny Logo" />
-            Download Webiny Logo
-          </a>
-        </Cell>
-        <Cell>
-          <a
-            href="https://drive.google.com/drive/u/2/folders/17ujXOoBMFwpyV4HtPUebeWs9_dZYF3u7"
-            target="_blank"
-          >
-            <img src={MkFounders} alt="Webiny Founders" />
-            Download Founders Photo
-          </a>
-        </Cell>
-        <Cell>
-          <a
-            href="https://drive.google.com/drive/u/2/folders/1CThk-B2_hl2Tg_5vLTPHSSv6zyYLsnTz"
-            target="_blank"
-          >
-            <img src={MkProduct} alt="Webiny Product Screenshot" />
-            Download Product Screenshots
-          </a>
-        </Cell>
-      </Grid>
-    </ContentContainer>
-  </section>
+                                window.open(media.actionLink, "_blank", "noopener noreferrer");
+                            }}
+                        >
+                            <img src={media.imgSrc} alt={media.imgAlt} className="img" />
+                            <a className={"link"} href={media.actionLink}>
+                                {typeof media.actionLabel === "function" && media.actionLabel()}
+                            </a>
+                        </MediaKitCard>
+                    ))}
+                </MediaCardWrapper>
+            </ContentContainer>
+        </SectionWithWaves>
+    </Fragment>
 );
