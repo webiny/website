@@ -270,7 +270,8 @@ export const ProfileCard = styled("div")(
         "& .profile__img": {
             height: "100%",
             width: "100%",
-            marginBottom: 8
+            marginBottom: 8,
+            objectFit: "cover"
         },
         "& .profile__name": {
             marginBottom: 0,

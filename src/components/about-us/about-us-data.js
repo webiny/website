@@ -3,7 +3,6 @@ import React from "react";
 import profileSven from "./assets/Sven.png";
 import profilePavel from "./assets/Pavel.png";
 import profileAdrian from "./assets/Adrian.png";
-import profileAndrei from "./assets/Andrei.png";
 import profileEmil from "./assets/Emil.png";
 import profileAshutosh from "./assets/Ashutosh.png";
 import profileAlbiona from "./assets/Albiona.png";
@@ -55,14 +54,6 @@ export const TEAM_MEMBERS = [
         imgSrc: profileAdrian
     },
     {
-        id: 3,
-        name: "Andrei Puiu",
-        jobTitle: "Full-stack developer",
-        github: "https://github.com/Fsalker",
-        linkedIn: "https://www.linkedin.com/in/antonio-andrei-p-a51b42116",
-        imgSrc: profileAndrei
-    },
-    {
         id: 4,
         name: "Emil Kais",
         jobTitle: "Full-stack developer",
@@ -85,6 +76,7 @@ export const TEAM_MEMBERS = [
         jobTitle: "Developer relations",
         github: "https://github.com/albionahoti",
         twitter: "https://twitter.com/albionaitoh",
+        linkedIn: "https://www.linkedin.com/in/albionahoti/",
         imgSrc: profileAlbiona
     },
     {
