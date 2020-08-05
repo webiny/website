@@ -5,7 +5,7 @@ import mq from "../utils/breakpoints";
 
 import videoPreviewBg from "./assets/video-preview-bg.svg";
 import YTVideoComponent from "../ui/layout/yt-video";
-import PageBuilderDemoImg from "../why-webiny/overview/assets/why-webiny-video-cover.png";
+import VideoCover from "./assets/hi-from-founders-cover.png";
 import ContentContainer from "../ui/content-container";
 import Button from "../ui/button";
 
@@ -39,6 +39,7 @@ import {
     ProfileCard,
     TeamWrapper,
     TeamPath,
+    FoundersVideoTitle,
     SectionWithGrayRectangle,
     contributorsContainerClass,
     ContributorsWrapper,
@@ -221,11 +222,12 @@ export default () => (
             </ContentContainer>
         </Section>
         <SectionWithDots>
+            <FoundersVideoTitle>Message from the founders (1min)</FoundersVideoTitle>
             <ImageWrapper>
                 <div className={videoPreviewClass}>
                     <img src={videoPreviewBg} alt={""} />
                 </div>
-                <YTVideoComponent img={PageBuilderDemoImg} id={"odotdrOOvJE"} />
+                <YTVideoComponent img={VideoCover} id={"iYyLS9r3uiQ"} />
             </ImageWrapper>
         </SectionWithDots>
         <Section>
@@ -347,7 +349,7 @@ export default () => (
                     <More>
                         <InvestorTitle>Our Investors</InvestorTitle>
                         <InvestorText>
-                            We plan to have the first version out before the Q4 2020.
+                            We are proud to be backed by visionary investors
                         </InvestorText>
                         <img src={investorImg} alt="" className="img" />
                     </More>

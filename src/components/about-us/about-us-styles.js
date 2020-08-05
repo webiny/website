@@ -479,3 +479,12 @@ export const MediaKitCard = styled("div")(
         margin: ["0 auto"]
     })
 );
+
+export const FoundersVideoTitle = styled("h3")({
+    width: "100%",
+    textAlign: "center",
+    paddingTop: 25,
+    fontWeight: 700,
+    fontSize: "1.125rem",
+    marginBottom: 30
+});
