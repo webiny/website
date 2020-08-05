@@ -331,6 +331,12 @@ export const ContributorCard = styled("div")(
         margin: "0px auto",
         width: "100%",
         maxWidth: 140,
+        transition: "transform 250ms ease-out",
+        cursor: "pointer",
+
+        "&:hover": {
+            transform: "translateY(-5px) scale(1.05)"
+        },
 
         textAlign: "center",
         "& .card__img": {

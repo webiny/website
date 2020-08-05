@@ -85,7 +85,12 @@ const Contributors = () => {
         .filter(filterWebinyTeam)
         .slice(0, 15)
         .map(contributor => (
-            <ContributorCard key={contributor.id}>
+            <ContributorCard
+                key={contributor.id}
+                onClick={() => {
+                    window.open(contributor.html_url, "_blank", "noopener noreferrer");
+                }}
+            >
                 <img src={contributor.avatar_url} alt={contributor.login} className="card__img" />
                 <h5 className="card__name">{contributor.login}</h5>
             </ContributorCard>
