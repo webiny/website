@@ -143,6 +143,7 @@ export const FEATURES = [
             </Fragment>
         ),
         background: null,
-        imageOnLeft: true
+        imageOnLeft: true,
+        className: "item--last"
     }
 ];

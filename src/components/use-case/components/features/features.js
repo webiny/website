@@ -90,6 +90,10 @@ const FeatureWrapper = styled("div")(
         marginRight: [0, 0],
         marginBottom: [80, 150],
 
+        "&.item--last": {
+            marginBottom: [0]
+        },
+
         "& .text-content": {
             width: ["100%", "50%"],
 
@@ -192,7 +196,9 @@ const FeaturesSection = ({ features }) => (
                 {features.map(feature => (
                     <FeatureWrapper
                         key={feature.id}
-                        className={feature.imageOnLeft ? "img-left" : "img-right"}
+                        className={`${feature.imageOnLeft ? "img-left" : "img-right"} ${
+                            feature.className
+                        }`}
                     >
                         <div className={"media-content"}>
                             {feature.imgSrc && <img src={feature.imgSrc} alt={feature.imgAlt} />}
