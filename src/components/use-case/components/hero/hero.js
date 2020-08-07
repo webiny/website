@@ -20,9 +20,10 @@ const HeroSection = styled("section")(
         position: "relative",
         zIndex: 0,
         padding: "0px 15px",
+        height: "100%"
     },
     mq({
-        height: ["auto", 425]
+        minHeight: ["auto", 425]
     })
 );
 
