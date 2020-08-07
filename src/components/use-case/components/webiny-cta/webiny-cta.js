@@ -94,11 +94,11 @@ export const WebinyCTACard = styled("div")(
             textAlign: "center"
         },
         "& .app__body": {
-            fontSize: theme.fontSize["2xl"],
+            fontSize: theme.fontSize.xl,
             fontWeight: theme.fontWeight.regular,
             textAlign: "center",
             margin: "0px 0px 24px",
-            maxWidth: 440
+            maxWidth: 370
         },
         "& .app__button": {
             backgroundColor: props.color ? props.color : "inherit",
@@ -124,7 +124,7 @@ export const WebinyCTACard = styled("div")(
 
 const defaultCTA = {
     title: "Ready to try it out?",
-    body: "Get started with our step-by-step tutorial.\n" + "It's only gonna take a minute.",
+    body: "Get started with our step-by-step tutorial. It's only gonna take a minute.",
     color: theme.color.primaryDark,
     actionType: "dark",
     actionLabel: "quick start",
