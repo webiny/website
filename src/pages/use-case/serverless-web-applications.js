@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import BaseLayout from "../../layouts/base";
-import Apps from "../../components/use-case/applications";
+import Applications from "../../components/use-case/applications/applications";
 
-class Components extends React.Component {
-    render() {
-        return (
-            <BaseLayout title="Build serverless web applications">
-                <Apps />
-            </BaseLayout>
-        );
-    }
-}
+const ServerlessWebApplications = () => {
+    useEffect(() => {
+        AOS.init();
+    }, []);
 
-export default Components;
+    return (
+        <BaseLayout title="Build serverless web applications">
+            <Applications />
+        </BaseLayout>
+    );
+};
+
+export default ServerlessWebApplications;
