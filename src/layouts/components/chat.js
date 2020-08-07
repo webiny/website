@@ -72,8 +72,8 @@ const Chat = styled("a")({
 
 export default () => (
     <Chat href="/slack" target="_blank">
-        <img class="chat-icon" src={chatIcon} alt="Webiny Chat" />
-        <div class="join-slack">
+        <img className="chat-icon" src={chatIcon} alt="Webiny Chat" />
+        <div className="join-slack">
             <h4>Find us on Slack</h4>
             <img src={slackIcon} alt="Webiny Community Slack" />
         </div>
