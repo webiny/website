@@ -38,7 +38,7 @@ const FeatureWrapper = styled("div")(
             "& p": {
                 width: "100%",
                 maxWidth: 550,
-                fontSize: theme.fontSize.xl,
+                fontSize: theme.fontSize.lg,
                 fontWeight: theme.fontWeight.regular,
                 color: theme.color.black,
                 lineHeight: "32px",
