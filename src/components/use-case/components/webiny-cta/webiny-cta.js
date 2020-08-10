@@ -132,13 +132,13 @@ const defaultCTA = {
 };
 
 const primaryCTA = {
-    title: "Lorem ipsum dolor sit amet nullelarum",
+    title: "Have a project you want to discuss? Let's talk.",
     body:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere maximus metus sed suscipit. Maecenas vitae ex in eros sagittis ultrices. ",
+        "We understand that no project is the same. If you want to ensure that Webiny is the right platform for you, book a call with us and we'll happily answer any questions you have.",
     color: theme.color.purple,
     actionType: "dark",
-    actionLabel: "quick start",
-    actionLink: "https://docs.webiny.com/docs/get-started/quick-start/"
+    actionLabel: "book a call",
+    actionLink: "https://calendly.com/webiny/30min"
 };
 
 const WebinyCTAComponent = ({ className, cta = defaultCTA }) => (

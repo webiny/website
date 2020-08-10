@@ -7,7 +7,6 @@ import mq from "../../../utils/breakpoints";
 import ContentContainer from "../../../ui/content-container";
 import Button from "../../../ui/button";
 // assets
-import heroBg from "./assets/solutions-page-hero-bg.svg";
 import webinyBg from "./assets/webiny-hallmark.svg";
 
 const HeroSection = styled("section")(
@@ -134,13 +133,13 @@ const defaultSecondaryCTA = {
 
 const HeroComponent = ({
     className,
-    backgroundImg = heroBg,
+    heroImage,
     title,
     subtitle,
     primaryCTA = defaultPrimaryCTA,
     secondaryCTA = defaultSecondaryCTA
 }) => (
-    <HeroSection className={className} style={{ backgroundImage: "url(" + backgroundImg + ")" }}>
+    <HeroSection className={className} style={{ backgroundImage: "url(" + heroImage + ")" }}>
         <ContentContainer className={heroContainerClass}>
             <WebinyHallMarkImage src={webinyBg} alt={""} />
             <HeroContentWrapper className={"hero-left"}>

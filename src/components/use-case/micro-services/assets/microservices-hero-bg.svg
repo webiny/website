@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="425px" viewBox="0 0 1440 425" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>New shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="54.3348341%" x2="0%" y2="45.6651659%" id="linearGradient-1">
+            <stop stop-color="#16A085" offset="0%"></stop>
+            <stop stop-color="#2B86C5" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Landing-page-Webiny" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(0.000000, -62.000000)" fill="url(#linearGradient-1)">
+            <g id="Header" transform="translate(-97.000000, -374.000000)">
+                <g id="bg">
+                    <path d="M1537,840.072105 L1537,436.072083 L97,436.072083 L97,840.072105 L517.216193,840.072105 C617.830903,853.40404 718.062193,860.070007 817.910063,860.070007 C917.757875,860.070007 1017.22231,853.40404 1116.30337,840.072105 L1537,840.072105 Z" id="New-shape" transform="translate(817.000000, 648.071045) scale(-1, 1) translate(-817.000000, -648.071045) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

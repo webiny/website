@@ -5,15 +5,17 @@ import { FeaturesSectionTitle, FeaturesSection } from "../components/features/fe
 import { FEATURES } from "./apis-data";
 import { WebinyAppsServerlessBenefits } from "../../serverless-app/webiny-apps/webiny-apps";
 import { WebinyCTAComponent, WebinyPrimaryCTAComponent } from "../components/webiny-cta/webiny-cta";
+import heroBg from "./assets/api-hero-bg.svg";
 
 export default () => {
     return (
         <Fragment>
             <HeroSection
-                title={"Create GraphQL APIs for Your Mobile and Web Apps and Run Them Inside a Serverless Function"}
-                subtitle={
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere maximus metus sed suscipit. Maecenas vitae ex in eros sagittis ultrices. "
+                heroImage={heroBg}
+                title={
+                    "Create GraphQL APIs for Your Mobile and Web Apps and Run Them on Top of a Serverless Infrastructure"
                 }
+                subtitle={""}
             />
             <FeaturesSectionTitle />
             <FeaturesSection features={FEATURES.slice(0, 3)} />

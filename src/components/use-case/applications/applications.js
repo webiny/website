@@ -5,15 +5,15 @@ import { FeaturesSectionTitle, FeaturesSection } from "../components/features/fe
 import { FEATURES } from "./applications-data";
 import { WebinyAppsServerlessBenefits } from "../../serverless-app/webiny-apps/webiny-apps";
 import { WebinyCTAComponent, WebinyPrimaryCTAComponent } from "../components/webiny-cta/webiny-cta";
+import heroBg from "./assets/apps-hero-bg.svg";
 
 export default () => {
     return (
         <Fragment>
             <HeroSection
+                heroImage={heroBg}
                 title={"Build Scalable Serverless Web Application in Less Time"}
-                subtitle={
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere maximus metus sed suscipit. Maecenas vitae ex in eros sagittis ultrices. "
-                }
+                subtitle={""}
             />
             <FeaturesSectionTitle />
             <FeaturesSection features={FEATURES.slice(0, 3)} />
