@@ -13,6 +13,11 @@ const Card = styled("div")(
         margin: "0px auto",
         padding: 8,
         transition: "transform 250ms ease-in-out",
+        cursor: "pointer",
+
+        "&:hover": {
+            transform: "translateY(-10px) scale(1.05)"
+        },
 
         "& .banner-wrapper": {
             "& .banner": {
@@ -87,9 +92,23 @@ const Card = styled("div")(
     })
 );
 
-const ContentCard = ({ bannerText, imgSrc, imgAlt, authorImgSrc, authorName, title, tags }) => {
+const ContentCard = ({
+    bannerText,
+    imgSrc,
+    imgAlt,
+    authorImgSrc,
+    authorName,
+    title,
+    tags,
+    link
+}) => {
     return (
-        <Card className={"card"}>
+        <Card
+            className={"card"}
+            onClick={() => {
+                window.open(link, "_blank", "noopener noreferrer");
+            }}
+        >
             {bannerText && (
                 <div className="banner-wrapper">
                     <span className="banner">{bannerText}</span>

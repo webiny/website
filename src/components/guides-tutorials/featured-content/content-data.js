@@ -19,7 +19,8 @@ export const TUTORIALS = [
         authorName: "Sophia Albert",
         title: "Webiny: Easiest way to adopt serverless",
         tags: ["graphql", "aws", "nodejs"],
-        bannerText: "Official tutorial"
+        bannerText: "Official tutorial",
+        link: "https://github.com/webiny/webiny-examples"
     },
     {
         id: 1,
@@ -28,7 +29,9 @@ export const TUTORIALS = [
         authorImgSrc: authorHim,
         authorName: "Dan Abramov",
         title: "Build serverless with easy",
-        tags: ["reactjs", "aws", "s3"]
+        tags: ["reactjs", "aws", "s3"],
+        link: "https://github.com/webiny/webiny-examples"
+
     }
 ];
 
