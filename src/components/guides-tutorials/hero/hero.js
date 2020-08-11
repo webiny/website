@@ -121,7 +121,7 @@ const WebinyHallMarkImage = styled("img")(
         width: "100%"
     },
     mq({
-        height: ["35%", 756]
+        height: ["75%", 756]
     })
 );
 
