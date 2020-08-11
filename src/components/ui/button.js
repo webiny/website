@@ -14,6 +14,7 @@ const buttonDefault = css (
     padding: '14px 20px',
     verticalAlign: 'top',
     textAlign: 'center',
+    fontFamily: "Source Sans Pro",
     fontSize: 14,
     lineHeight: 1,
     borderRadius: 4,
