@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { DelayInput } from "react-delay-input";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 // utils
 import ContentContainer from "../../ui/content-container";
 import ContentCard from "./card";
@@ -19,7 +20,7 @@ import {
     ButtonWrapper,
     SearchBar,
     ResultInfo,
-    MediaWrapper,
+    mediaWrapperClass,
     SearchAndFilterWrapper,
     TextContentWrapper,
     TitleHighlight,
@@ -121,11 +122,15 @@ const FeaturedContent = props => {
                         )}
                     </SearchBar>
                 </SearchAndFilterWrapper>
-                <MediaWrapper>
+
+                <TransitionGroup className={mediaWrapperClass}>
                     {list.map(tutorial => (
-                        <ContentCard key={tutorial.id} {...tutorial} />
+                        <CSSTransition key={tutorial.id} timeout={250} classNames={"fade"}>
+                            <ContentCard {...tutorial} />
+                        </CSSTransition>
                     ))}
-                </MediaWrapper>
+                </TransitionGroup>
+
                 {list.length <= 0 && (
                     <NotFound>
                         <p className={"not-found__text"}>No tutorials found.</p>

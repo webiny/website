@@ -67,10 +67,28 @@ export const TextContentWrapper = styled("div")(
     mq({})
 );
 
-export const MediaWrapper = styled("div")(
+export const mediaWrapperClass = css(
     {
         display: "grid",
-        width: "100%"
+        width: "100%",
+
+        ".fade-enter": {
+            opacity: 0
+        },
+        ".fade-enter.fade-enter-active": {
+            opacity: 1,
+            transition: "opacity 250ms ease-in"
+        },
+        ".fade-exit": {
+            opacity: 1
+        },
+        ".fade-exit.fade-exit-active": {
+            opacity: 0,
+            transition: "opacity 250ms ease-in"
+        },
+        ".fade-exit-done": {
+            opacity: 0
+        }
     },
     mq({
         gridTemplateColumns: ["repeat(1, 1fr)", "repeat(3, 1fr)", "repeat(4, 1fr)"],
@@ -156,7 +174,7 @@ export const ResultInfo = styled("div")(
             color: theme.color.dark,
 
             "& span": {
-                fontWeight: theme.fontWeight.bold,
+                fontWeight: theme.fontWeight.bold
             }
         }
     },
@@ -236,9 +254,7 @@ export const NotFound = styled("div")(
             maxWidth: 128,
             marginBottom: 40
         },
-        "& .not-found__button": {
-
-        }
+        "& .not-found__button": {}
     },
     mq({
         minHeight: ["auto", 350]
