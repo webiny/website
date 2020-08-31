@@ -71,6 +71,12 @@ const Card = styled("div")(
                 color: "#004A89",
                 marginBottom: 12
             },
+            "& .description": {
+                fontSize: theme.fontSize.sm,
+                fontWeight: theme.fontWeight.light,
+                color: "#004A89",
+                marginBottom: 10
+            },
             "& .tags-wrapper": {
                 "& .tag": {
                     boxSizing: "border-box",
@@ -88,7 +94,7 @@ const Card = styled("div")(
     },
     mq({
         width: ["90%", 256],
-        height: ["auto", 279]
+        height: ["auto", 310]
     })
 );
 
@@ -99,6 +105,7 @@ const ContentCard = ({
     authorImgSrc,
     authorName,
     title,
+    description,
     tags,
     link
 }) => {
@@ -123,6 +130,7 @@ const ContentCard = ({
                     <span className="author-wrapper__name">{authorName}</span>
                 </div>
                 <p className="title">{title}</p>
+                <p className="description">{description}</p>
                 <div className="tags-wrapper">
                     {tags.map((tag, index) => (
                         <span key={index} className="tag">

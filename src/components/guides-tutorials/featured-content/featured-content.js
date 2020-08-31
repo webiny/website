@@ -32,7 +32,7 @@ import {
 // data
 import { REQUEST_TUTORIAL_LINK, TUTORIALS } from "./content-data";
 
-const DATA = new Array(15).fill(0).map((_, index) => ({ ...TUTORIALS[index % 2], id: index }));
+const DATA = new Array(TUTORIALS.length).fill(0).map((_, index) => ({ ...TUTORIALS[index % TUTORIALS.length], id: index }));
 const CARDS_PER_PAGE = 8;
 
 const FeaturedContent = props => {
