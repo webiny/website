@@ -56,7 +56,7 @@ class Tracking {
       // save user into cookie
       this.saveUserCookie ();
 
-      return this.userIp;
+      return this.user.ip;
     } catch (e) {
       return false;
     }
