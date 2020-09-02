@@ -11,6 +11,11 @@ class Tracking {
      * Activates Posthog tracking utility.
      */
   async activateTracking () {
+    // skip tracking for gatsby builds
+    if (typeof document === `undefined`) {
+      return false;
+    }
+
     posthog.init (PH_API, {
       api_host: PH_HOST,
       loaded: async posthog => {
