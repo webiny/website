@@ -1,50 +1,53 @@
-import React from "react";
-import Helmet from "react-helmet";
-import styled from "react-emotion";
-import mq from "../components/utils/breakpoints";
-import Head from "./components/head";
-import Header from "../components/header/new-header";
-import Footer from "../components/footer/footer";
-import CookieNotice from "../components/ui/cookie-notice";
-import { ModalProvider } from "../components/ui/layout/video-modal";
+import React from 'react';
+import Helmet from 'react-helmet';
+import styled from 'react-emotion';
+import activateTracking from '../components/utils/ph-tracking';
+import mq from '../components/utils/breakpoints';
+import Head from './components/head';
+import Header from '../components/header/new-header';
+import Footer from '../components/footer/footer';
+import CookieNotice from '../components/ui/cookie-notice';
+import {ModalProvider} from '../components/ui/layout/video-modal';
 
-import Chat from "./components/chat";
+import Chat from './components/chat';
 
-import "./reset.css";
-import "./index.css";
+import './reset.css';
+import './index.css';
 
-const Wrapper = styled("div")(
-    {},
-    mq({
-        paddingTop: [55, 65]
-    })
+const Wrapper = styled ('div') (
+  {},
+  mq ({
+    paddingTop: [55, 65],
+  })
 );
 
 class BaseLayout extends React.Component {
-    render() {
-        return (
-            <React.Fragment>
-                <Head title={this.props.title} description={this.props.description} />
+  render () {
+    activateTracking ();
 
-                <Helmet>
-                    <style>
-                        {`
+    return (
+      <React.Fragment>
+        <Head title={this.props.title} description={this.props.description} />
+
+        <Helmet>
+          <style>
+            {`
             .async-hide { opacity: 0 !important}
             `}
-                    </style>
-                </Helmet>
-                <Helmet>
-                    <script type="text/javascript">
-                        {`
+          </style>
+        </Helmet>
+        <Helmet>
+          <script type="text/javascript">
+            {`
             (function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
             h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
             })(window,document.documentElement,'async-hide','dataLayer',1000,
             {'GTM-NJG8KQL':true});
           `}
-                    </script>
-                </Helmet>
-                {/*
+          </script>
+        </Helmet>
+        {/*
                 <Helmet>
                     <script type="text/javascript">
                         {`
@@ -59,18 +62,18 @@ class BaseLayout extends React.Component {
                     </script>
                 </Helmet>
       */}
-                <ModalProvider>
-                    <Wrapper>
-                        <Header trackScroll={!this.props.fixedHeader} />
-                        {this.props.children}
-                        <Footer />
-                        <CookieNotice />
-                        <Chat />
-                    </Wrapper>
-                </ModalProvider>
-            </React.Fragment>
-        );
-    }
+        <ModalProvider>
+          <Wrapper>
+            <Header trackScroll={!this.props.fixedHeader} />
+            {this.props.children}
+            <Footer />
+            <CookieNotice />
+            <Chat />
+          </Wrapper>
+        </ModalProvider>
+      </React.Fragment>
+    );
+  }
 }
 
 export default BaseLayout;
