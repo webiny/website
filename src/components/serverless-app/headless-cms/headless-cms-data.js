@@ -262,7 +262,7 @@ export const FEATURES = [
             </Fragment>
         ),
         actionLabel: "Learn more",
-        actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-token",
+        actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens",
         background: grayRectImg,
         imageOnLeft: false
     },
@@ -285,7 +285,7 @@ export const FEATURES = [
             </Fragment>
         ),
         actionLabel: "Learn more",
-        actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-token",
+        actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens",
         background: false,
         imageOnLeft: true
     },
