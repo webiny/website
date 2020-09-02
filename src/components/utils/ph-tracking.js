@@ -278,6 +278,16 @@ class Tracking {
       network = 'google-mail';
     }
 
+    // github
+    if (referrer.indexOf ('github.com') !== -1) {
+      network = 'github';
+    }
+
+    // npm
+    if (referrer.indexOf ('npmjs.com') !== -1) {
+      network = 'npm';
+    }
+
     return {
       source: network, // network is null if we haven't matched it
       domain: referrer,
