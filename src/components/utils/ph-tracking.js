@@ -7,6 +7,8 @@ const PH_COOKIE = 'ph_webiny';
 
 class Tracking {
   user = {};
+  debugFlag = true;
+
   /**
      * Activates Posthog tracking utility.
      */
@@ -16,11 +18,16 @@ class Tracking {
       return false;
     }
 
+    // introduce a state for debug option
+    window['w_ph_debug'] = [];
+
+    // activate posthog
     posthog.init (PH_API, {
       api_host: PH_HOST,
       loaded: async posthog => {
         // get user ip
         const userIp = await this.getUserIp ();
+        this.debug ('Posthog loaded, user id set to:' + userIp);
         if (userIp !== false) {
           posthog.identify (userIp);
         }
@@ -38,6 +45,7 @@ class Tracking {
     // retrieve user IP from the cookie
     this.user = this.getUserFromCookie ();
     if (this.user.hasOwnProperty ('ip')) {
+      this.debug ('User IP retrieved from the cookie.');
       return this.user.ip;
     }
 
@@ -56,8 +64,11 @@ class Tracking {
       // save user into cookie
       this.saveUserCookie ();
 
+      this.debug ('User IP retrieved from the IP-API.');
+
       return this.user.ip;
     } catch (e) {
+      this.debug ('Unable to retrieve the user IP.');
       return false;
     }
   }
@@ -98,6 +109,7 @@ class Tracking {
 
     // parse the UTM
     const utm = this.parseUtmData ();
+    this.debug ('UTM data:' + JSON.stringify (utm));
     if (utm !== null) {
       for (const tag in utm) {
         data['last-touch-' + tag] = utm[tag];
@@ -113,6 +125,7 @@ class Tracking {
 
     // get the referrer data
     const referrer = this.parseReferrerData ();
+    this.debug ('Referrer data:' + JSON.stringify (referrer));
     if (referrer !== null) {
       // for the referrers we always set the first touch and last touch data separately
       // last touch is updated on every new visit if a referrer can be parsed
@@ -130,9 +143,11 @@ class Tracking {
       }
     }
 
+    this.debug ('PH data to be saved:' + JSON.stringify (data));
     // only set data when we have something to set
     if (Object.keys (data).length > 0) {
       posthog.people.set (data);
+      this.debug ('PH data saved.');
       if (firstTouchSet) {
         this.user['first-touch'] = 1;
       }
@@ -274,6 +289,12 @@ class Tracking {
       source: network, // network is null if we haven't matched it
       domain: referrer,
     };
+  }
+
+  debug (msg) {
+    if (this.debugFlag) {
+      window['w_ph_debug'].push (msg);
+    }
   }
 }
 
