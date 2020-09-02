@@ -248,26 +248,14 @@ class Tracking {
       network = 'hackernoon';
     }
 
-    // google ads
-    if (
-      referrer &&
-      referrer.path &&
-      referrer.path.indexOf ('/aclk') !== -1 &&
-      (referrer.indexOf ('google') !== -1 ||
-        referrer.indexOf ('googleadservices.com') !== -1)
-    ) {
-      network = 'google-ads';
+    // google search (has to be before the google ad service)
+    if (referrer.indexOf ('google') !== -1) {
+      network = 'google-search';
     }
 
-    // google search
-    if (
-      referrer &&
-      referrer.href &&
-      referrer.indexOf ('google') !== -1 &&
-      (referrer.href.indexOf ('/url?') !== -1 ||
-        referrer.href.indexOf ('/search?') !== -1)
-    ) {
-      network = 'google-search';
+    // google ad service
+    if (referrer.indexOf ('googleadservices.com') !== -1) {
+      network = 'google-ads';
     }
 
     // baidu
