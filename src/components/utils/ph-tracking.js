@@ -7,7 +7,7 @@ const PH_COOKIE = 'ph_webiny';
 
 class Tracking {
   user = {};
-  debugFlag = true;
+  debugFlag = false;
 
   /**
      * Activates Posthog tracking utility.
@@ -191,6 +191,7 @@ class Tracking {
   parseReferrerData () {
     // referrer domain
     const referrer = document.referrer;
+    this.debug ('Referrer domain set to:' + referrer);
 
     // https://github.com/segmentio/inbound
 
@@ -204,7 +205,11 @@ class Tracking {
     }
 
     // before doing any analysis of the referrer, let's check if ref is another internal page
-    if (referrer.indexOf ('webiny.com') || referrer.indexOf ('localhost')) {
+    if (
+      referrer === 'https://www.webiny.com/' ||
+      referrer === 'https://docs.webiny.com/' ||
+      referrer.indexOf ('localhost') !== -1
+    ) {
       return null;
     }
 
