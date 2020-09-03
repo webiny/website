@@ -1,4 +1,4 @@
-import {trackGithubClick} from '../utils/ph-tracking';
+import {trackGithubClick} from 'wts';
 
 function trackGaConversion () {
   trackGithubClick ();
