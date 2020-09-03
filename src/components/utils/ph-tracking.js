@@ -4,6 +4,7 @@ import Cookies from 'js-cookie';
 const PH_API = 'ZdDZgkeOt4Z_m-UWmqFsE1d6-kcCK3BH0ypYTUIFty4';
 const PH_HOST = 'https://t.webiny.com';
 const PH_COOKIE = 'ph_webiny';
+var ph_instance = null;
 
 class Tracking {
   user = {};
@@ -21,7 +22,24 @@ class Tracking {
     // introduce a state for debug option
     window['w_ph_debug'] = [];
 
-    // activate posthog
+    console.log (ph_instance);
+    this.initializePosthogTracking (posthog => {
+      // populate the user details
+      this.gatherUserDetails (posthog);
+    });
+  }
+
+  /**
+   * Initializes posthog and identifies the current user.
+   * 
+   * @param {*} callback 
+   */
+  initializePosthogTracking (callback) {
+    if (ph_instance !== null) {
+      callback (ph_instance);
+      return ph_instance;
+    }
+
     posthog.init (PH_API, {
       api_host: PH_HOST,
       loaded: async posthog => {
@@ -32,8 +50,8 @@ class Tracking {
           posthog.identify (userIp);
         }
 
-        // populate the user details
-        this.gatherUserDetails (posthog);
+        ph_instance = posthog;
+        callback (posthog);
       },
     });
   }
@@ -294,6 +312,15 @@ class Tracking {
     };
   }
 
+  /**
+   * Tracks github clicks.
+   */
+  trackGithubClick () {
+    this.initializePosthogTracking (posthog => {
+      posthog.capture ('gh-click');
+    });
+  }
+
   debug (msg) {
     if (this.debugFlag) {
       window['w_ph_debug'].push (msg);
@@ -301,7 +328,14 @@ class Tracking {
   }
 }
 
-export default () => {
+export const activateTracking = () => {
   const t = new Tracking ();
   t.activateTracking ();
+  return t;
+};
+
+export const trackGithubClick = () => {
+  const t = new Tracking ();
+  t.trackGithubClick ();
+  return t;
 };
