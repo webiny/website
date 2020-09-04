@@ -13937,7 +13937,7 @@ ws@~6.1.0:
 
 "wts@https://github.com/webiny/wts.git":
   version "1.0.0"
-  resolved "https://github.com/webiny/wts.git#d8ed286fb12c3c201df218b58d58888061c25ca4"
+  resolved "https://github.com/webiny/wts.git#0c2740148c2af6436909d716825a812f3f0a50ee"
   dependencies:
     js-cookie "^2.2.1"
 

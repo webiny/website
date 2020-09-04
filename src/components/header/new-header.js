@@ -1,6 +1,7 @@
 import React, {Fragment, useContext, useState} from 'react';
 import Link, {navigate} from 'gatsby-link';
 import GitHubButton from 'react-github-btn';
+import {trackBookADemo} from '../ui/functions';
 
 import ContentContainer from '../ui/content-container';
 import Button from '../ui/button';
@@ -77,7 +78,16 @@ const MenuItemList = props => (
                     rel="prerender"
                     to={menuItem.link}
                   >
-                    {menuItem.label}
+                    {menuItem.action
+                      ? <span
+                          onClick={() => {
+                            menuItem.action ();
+                          }}
+                        >
+                          {menuItem.label}
+                        </span>
+                      : menuItem.label}
+
                   </Link>
                 );
               })}
@@ -126,13 +136,19 @@ const MenuItemList = props => (
     </ul>
     <ul className="menu--right">
       <MenuItem>
-        <Button
-          className={buttonOutlinePrimary}
-          link="https://calendly.com/webiny/30min"
-          type={props.sticky && 'outline'}
+        <div
+          onClick={() => {
+            trackBookADemo ({placement: 'header'});
+          }}
         >
-          Book a demo
-        </Button>
+          <Button
+            className={buttonOutlinePrimary}
+            link="https://calendly.com/webiny/30min"
+            type={props.sticky && 'outline'}
+          >
+            Book a demo
+          </Button>
+        </div>
       </MenuItem>
       <MenuItem>
         <Button

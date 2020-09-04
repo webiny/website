@@ -6,7 +6,7 @@ import mq from '../utils/breakpoints';
 import ContentContainer from '../ui/content-container';
 import Newsletter from './newsletter';
 import FooterMenu from './footerMenu';
-import {trackGoToGithub} from '../ui/functions';
+import {trackGoToGithub, trackJoinSlack} from '../ui/functions';
 
 import webinyLogo from './assets/webiny-logo-with-icon-left-white.svg';
 
@@ -110,7 +110,13 @@ const Footer = () => (
               YouTube
             </a>
             {' '}/{' '}
-            <a className={linkStyle} href="https://www.webiny.com/slack">
+            <a
+              onClick={() => {
+                trackJoinSlack ({placement: 'footer'});
+              }}
+              className={linkStyle}
+              href="https://www.webiny.com/slack"
+            >
               Slack
             </a>
             {' '}/{' '}

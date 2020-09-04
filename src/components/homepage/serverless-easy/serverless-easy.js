@@ -5,7 +5,7 @@ import theme from '../../utils/theme';
 import mq from '../../utils/breakpoints';
 import ContentContainer from '../../ui/content-container';
 import Button from '../../ui/button';
-import {trackGoToGithub} from '../../ui/functions';
+import {trackGoToGithub, trackJoinSlack} from '../../ui/functions';
 
 import webinyBg from './assets/easy-serverless-bg.svg';
 import developerImg from './assets/developer.svg';
@@ -190,7 +190,14 @@ class ServerlessMadeEasy extends React.Component {
               </div>
               <p className="text">
                 We have an active community on{' '}
-                <a href="/slack" target={'_blank'} rel={'noopener noreferrer'}>
+                <a
+                  onClick={() => {
+                    trackJoinSlack ({placement: 'serverless-easy'});
+                  }}
+                  href="/slack"
+                  target={'_blank'}
+                  rel={'noopener noreferrer'}
+                >
                   slack
                 </a>
                 . Talk to the core-team, and get help. Webiny team is always there for any

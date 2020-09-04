@@ -46,8 +46,15 @@ const FooterMenu = () => (
       <a href="https://docs.webiny.com/docs/get-started/quick-start">
         Getting Started
       </a>
-      <a href="https://docs.webiny.com/">Documentation</a>
-      <a href="https://github.com/webiny/webiny-js/blob/master/LICENSE">
+      <a href="https://docs.webiny.com/">
+        Documentation
+      </a>
+      <a
+        onClick={() => {
+          trackGoToGithub ();
+        }}
+        href="https://github.com/webiny/webiny-js/blob/master/LICENSE"
+      >
         License
       </a>
       <a
@@ -58,7 +65,12 @@ const FooterMenu = () => (
       >
         GitHub repository
       </a>
-      <a href="https://github.com/webiny/webiny-js/blob/master/docs/CONTRIBUTING.md">
+      <a
+        onClick={() => {
+          trackGoToGithub ();
+        }}
+        href="https://github.com/webiny/webiny-js/blob/master/docs/CONTRIBUTING.md"
+      >
         Contribute
       </a>
     </MenuBlock>

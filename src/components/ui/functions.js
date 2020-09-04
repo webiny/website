@@ -8,4 +8,12 @@ function trackGoToGithub () {
   });
 }
 
-export {trackGoToGithub};
+function trackBookADemo (params) {
+  trackAction ('book-a-demo-click', params);
+}
+
+function trackJoinSlack (params) {
+  trackAction ('slack-click', params);
+}
+
+export {trackGoToGithub, trackBookADemo, trackJoinSlack};
