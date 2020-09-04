@@ -5,7 +5,7 @@ import theme from '../../utils/theme';
 import mq from '../../utils/breakpoints';
 import ContentContainer from '../../ui/content-container';
 import Button from '../../ui/button';
-import {trackGaConversion} from '../../ui/functions';
+import {trackGoToGithub} from '../../ui/functions';
 
 import heroBg from './assets/hero-bg-with-scroll.svg';
 import webinyLogo from './assets/webiny-logo.svg';
@@ -256,7 +256,7 @@ class HeroComponent extends React.Component {
               <div
                 className={githubButtonClass}
                 onClick={() => {
-                  trackGaConversion ();
+                  trackGoToGithub ();
                 }}
               >
                 <Button

@@ -5,7 +5,7 @@ import theme from '../../utils/theme';
 import mq from '../../utils/breakpoints';
 import ContentContainer from '../../ui/content-container';
 import Button from '../../ui/button';
-import {trackGaConversion} from '../../ui/functions';
+import {trackGoToGithub} from '../../ui/functions';
 
 import background from './assets/platform-bg.svg';
 import imgLearn from './assets/learn.svg';
