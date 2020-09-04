@@ -5,7 +5,7 @@ import theme from '../../utils/theme';
 import mq from '../../utils/breakpoints';
 import ContentContainer from '../../ui/content-container';
 import Button from '../../ui/button';
-import {trackGaConversion} from '../../ui/functions';
+import {trackGoToGithub} from '../../ui/functions';
 
 import heroBg from './assets/hero-bg.svg';
 import gitHubLogo from './assets/github-logo.svg';
@@ -274,7 +274,7 @@ class HeroComponent extends React.Component {
               </Button>
               <div
                 onClick={() => {
-                  trackGaConversion ();
+                  trackGoToGithub ();
                 }}
               >
                 <Button

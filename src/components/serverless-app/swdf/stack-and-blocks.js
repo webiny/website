@@ -6,7 +6,7 @@ import mq from '../../utils/breakpoints';
 import {SubTitle} from '../components/typography';
 import ContentContainer from '../../ui/content-container';
 import Button from '../../ui/button';
-import {trackGaConversion} from '../../ui/functions';
+import {trackGoToGithub} from '../../ui/functions';
 
 import webinyStack from './assets/webiny-stack.png';
 import githubIcon from './assets/github-icon.svg';
@@ -141,7 +141,7 @@ const Blocks = () => (
         </h3>
         <div
           onClick={() => {
-            trackGaConversion ();
+            trackGoToGithub ();
           }}
         >
           <Button
