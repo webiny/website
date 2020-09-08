@@ -200,7 +200,7 @@ export const COMMUNITY_MENU = {
         label: 'GitHub',
         link: 'https://github.com/webiny/webiny-js',
         action: () => {
-          trackGoToGithub ();
+          trackGoToGithub ({placement: 'main-menu'});
         },
       },
       {

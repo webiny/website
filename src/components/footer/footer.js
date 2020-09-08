@@ -94,7 +94,7 @@ const Footer = () => (
             <br />
             <a
               onClick={() => {
-                trackGoToGithub ();
+                trackGoToGithub ({placement: 'footer'});
               }}
               className={linkStyle}
               href="https://github.com/webiny/webiny-js"
