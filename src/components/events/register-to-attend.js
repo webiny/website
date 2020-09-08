@@ -4,9 +4,25 @@ import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 import { css } from "emotion";
 import ContentContainer from "../ui/content-container";
-import PipeDriveForm from "./pd-form";
 
+import Button from "../ui/button";
 import pinkBg from "./assets/pink-rectangle.svg";
+
+const ButtonWrapper = styled("div")({
+  position: "relative",
+  display: "flex",
+  justifyContent: "center",
+});
+
+const ctaButton = css(
+  {
+    textTransform: "uppercase",
+    padding: "20px 12px !important",
+  },
+  mq({
+    width: ["230px !important"],
+  })
+);
 
 const wrapperClass = css(
   {
@@ -67,25 +83,46 @@ const Title = styled("h2")({
   paddingTop: 0,
   margin: 0,
 });
+const ScheduleTalkImage = styled("img")(
+  {
+    position: "relative",
+    marginRight: 8,
+  },
+  mq({
+    display: ["block"],
+  })
+);
 
-class ScheduleTalk extends React.Component {
+class RegisterToAttend extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     const { refFromParent, ...restProps } = this.props;
+    const openForm = () => {
+      return window.open("https://forms.gle/12xXgy7vPXugUpS7A", "_self", "", "")
+    }
     return (
       <section ref={refFromParent} {...restProps} className={wrapperClass}>
         <ContentContainer className={contentContainerClass}>
           <TextWrapper>
-            <Title>Want to be a Speaker? Then register here!</Title>
+            <Title>Do you Want to attend our Online Meetups? </Title>
           </TextWrapper>
-          <PipeDriveForm formId={"f3bf9e8b525fdf5af948b0c54288c94f7489402"} />
+          <ButtonWrapper>
+            <Button
+              onClick={openForm}
+              className={ctaButton}
+              type="secondary"
+            >
+              REGISTER HERE
+          </Button>
+          </ButtonWrapper>
+
         </ContentContainer>
-      </section>
+      </section >
     );
   }
 }
 
-export default ScheduleTalk;
+export default RegisterToAttend;

@@ -109,25 +109,25 @@ class Register extends React.Component {
     const { handleTalkClick, ...restProps } = this.props;
     return (
       <section {...this.props} className={wrapperClass}>
-        <SubTitle>Speak at a Webiny Online Meetup</SubTitle>
+        <SubTitle>Attend Webiny Online Meetups</SubTitle>
         <SubTitleText>
           Build Websites, Apps and APIs With Webiny
           <br />
-          Speak at a Webiny Online Meetup and share your ideas
+          Join our Webiny Community and share your ideas
         </SubTitleText>
 
         <FeatureList></FeatureList>
         <ButtonWrapper>
-            <FreeDemoImage src={freeArrowIcon} />
-            <Button
-              onClick={handleTalkClick}
-              className={ctaButton}
-              type="secondary"
-            >
-              <ScheduleTalkImage src={demoIcon} />
-              Become a speaker
-            </Button>
-          </ButtonWrapper>
+          <FreeDemoImage src={freeArrowIcon} />
+          <Button
+            onClick={handleTalkClick}
+            className={ctaButton}
+            type="secondary"
+          >
+            <ScheduleTalkImage src={demoIcon} />
+            Take your place
+          </Button>
+        </ButtonWrapper>
 
         <ContentContainer />
       </section>
