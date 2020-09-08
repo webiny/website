@@ -93,8 +93,8 @@ const Card = styled("div")(
         }
     },
     mq({
-        width: ["90%", 256],
-        height: ["auto", 310]
+        width: ["90%", 300],
+        height: ["auto", 350]
     })
 );
 

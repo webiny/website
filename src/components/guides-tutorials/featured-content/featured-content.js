@@ -88,9 +88,9 @@ const FeaturedContent = props => {
                     </Title>
                 </TextContentWrapper>
                 <CardSlider
-                    data={new Array(4)
+                    data={new Array(TUTORIALS.length)
                         .fill(0)
-                        .map((_, index) => ({ ...TUTORIALS[index % 2], id: index }))}
+                        .map((_, index) => ({ ...TUTORIALS[index % TUTORIALS.length], id: index }))}
                 />
                 <SearchAndFilterWrapper>
                     <ResultInfo>
@@ -118,8 +118,8 @@ const FeaturedContent = props => {
                         {search.length ? (
                             <CloseIcon className={"icon--close"} onClick={() => setSearch("")} />
                         ) : (
-                            <SearchIcon className={"icon"} />
-                        )}
+                                <SearchIcon className={"icon"} />
+                            )}
                     </SearchBar>
                 </SearchAndFilterWrapper>
 
