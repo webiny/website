@@ -141,7 +141,7 @@ const Blocks = () => (
         </h3>
         <div
           onClick={() => {
-            trackGoToGithub ();
+            trackGoToGithub ({placement: 'serverless-apps'});
           }}
         >
           <Button

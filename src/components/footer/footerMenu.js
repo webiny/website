@@ -51,7 +51,7 @@ const FooterMenu = () => (
       </a>
       <a
         onClick={() => {
-          trackGoToGithub ();
+          trackGoToGithub ({placement: 'footer-menu'});
         }}
         href="https://github.com/webiny/webiny-js/blob/master/LICENSE"
       >
@@ -59,7 +59,7 @@ const FooterMenu = () => (
       </a>
       <a
         onClick={() => {
-          trackGoToGithub ();
+          trackGoToGithub ({placement: 'footer-menu'});
         }}
         href="https://github.com/webiny/webiny-js"
       >
@@ -67,7 +67,7 @@ const FooterMenu = () => (
       </a>
       <a
         onClick={() => {
-          trackGoToGithub ();
+          trackGoToGithub ({placement: 'footer-menu'});
         }}
         href="https://github.com/webiny/webiny-js/blob/master/docs/CONTRIBUTING.md"
       >

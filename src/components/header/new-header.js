@@ -120,7 +120,7 @@ const MenuItemList = props => (
       <MenuItem className={githubMenu}>
         <div
           onClick={() => {
-            trackGoToGithub ();
+            trackGoToGithub ({placement: 'header-github-star'});
           }}
         >
           <GitHubButton

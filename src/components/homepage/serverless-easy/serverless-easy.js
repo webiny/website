@@ -171,7 +171,7 @@ class ServerlessMadeEasy extends React.Component {
                 means Webiny grows and evolves much faster.&nbsp;
                 <a
                   onClick={() => {
-                    trackGoToGithub ();
+                    trackGoToGithub ({placement: 'serverless-easy'});
                   }}
                   href="https://github.com/webiny/webiny-js/blob/master/docs/CONTRIBUTING.md"
                   target={'_blank'}
@@ -209,7 +209,7 @@ class ServerlessMadeEasy extends React.Component {
             <div
               className={ctaButton}
               onClick={() => {
-                trackGoToGithub ();
+                trackGoToGithub ({placement: 'serverless-easy-cta'});
               }}
             >
               <Button

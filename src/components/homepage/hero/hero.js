@@ -274,7 +274,7 @@ class HeroComponent extends React.Component {
               </Button>
               <div
                 onClick={() => {
-                  trackGoToGithub ();
+                  trackGoToGithub ({placement: 'homepage-hero'});
                 }}
               >
                 <Button
