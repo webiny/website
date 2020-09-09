@@ -3,6 +3,7 @@ import Emil from "./assets/authors/emilkais.png"
 import Adrian from "./assets/authors/adrian.png"
 import Pavel from "./assets/authors/pavel.png"
 import Albiona from "./assets/authors/albiona.png"
+import Ashu from "./assets/authors/ashu.png"
 
 // assets - cover images
 // import awsCredentials from "./assets/covers/aws-credentials.jpg"
@@ -178,7 +179,7 @@ export const TUTORIALS = [
         id: 4,
         imgSrc: headlessGatsby,
         imgAlt: "Creating a blog with Headless CMS + Gatsby",
-        // authorImgSrc: Ashu,
+        authorImgSrc: Ashu,
         authorName: AUTHOR_NAMES.Ashu,
         title: "Creating a blog with Headless CMS + Gatsby",
         tags: ["Headless CMS", "Gatsby"],
@@ -190,7 +191,7 @@ export const TUTORIALS = [
         id: 4,
         imgSrc: headlessNextjs,
         imgAlt: "Creating a blog with Headless CMS + Next.js",
-        // authorImgSrc: Ashu,
+        authorImgSrc: Ashu,
         authorName: AUTHOR_NAMES.Ashu,
         title: "Creating a blog with Headless CMS + Next.js",
         tags: ["Headless CMS", "Next.js"],
@@ -214,7 +215,7 @@ export const TUTORIALS = [
         id: 5,
         imgSrc: headlessReactNative,
         imgAlt: "Headless React Native",
-        // authorImgSrc: Ashu,
+        authorImgSrc: Ashu,
         authorName: AUTHOR_NAMES.Ashu,
         title: "Creating a React Native app with Headless CMS",
         tags: ["Headless CMS", "React Native"],
@@ -226,7 +227,7 @@ export const TUTORIALS = [
         id: 5,
         imgSrc: headlessVue,
         imgAlt: "Creating a blog with Headless CMS + Vue.js",
-        // authorImgSrc: Ashu,
+        authorImgSrc: Ashu,
         authorName: AUTHOR_NAMES.Ashu,
         title: "Creating a blog with Headless CMS + Vue.js",
         tags: ["Headless CMS", "Vue.js"],
