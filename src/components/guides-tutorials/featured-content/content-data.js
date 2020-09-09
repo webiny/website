@@ -39,7 +39,7 @@ export const AUTHOR_NAMES = {
     Pavel: "Pavel Denisjuk",
     Albiona: "Albiona Hoti",
     Emil: "Emil Kais",
-    Ashu: "Ashutosh",
+    Ashu: "Ashutosh Bhardwaj",
     Sven: "Sven Al Hamad"
 }
 export const TUTORIALS = [
