@@ -113,7 +113,7 @@ export const TUTORIALS = [
         tags: ["Webiny", "SPAs"],
         description: "Learn how Webiny enables us to create two main types of Single Page Applications (SPAs): full CSR and (SSR)",
         // bannerText: "Official tutorial",
-        link: "https://youtu.be/NGoZ3TDTYus"
+        link: "https://youtu.be/Mi0YO7eZZ5M"
     },
     {
         id: 3,
@@ -125,7 +125,7 @@ export const TUTORIALS = [
         tags: ["Webiny", "Apps"],
         description: "The mechanics of app development with Webiny",
         // bannerText: "Official tutorial",
-        link: "https://youtu.be/NGoZ3TDTYus"
+        link: "https://youtu.be/EQxNsDSdpsQ"
     },
     {
         id: 3,
@@ -149,7 +149,7 @@ export const TUTORIALS = [
         tags: ["Webiny", "APIs"],
         description: "API development with Webiny.",
         // bannerText: "Official tutorial",
-        link: "https://youtu.be/NGoZ3TDTYus"
+        link: "https://youtu.be/8aJ_Ja1aTy0"
     },
     {
         id: 2,
@@ -162,18 +162,6 @@ export const TUTORIALS = [
         tags: ["Commodo", "ODM"],
         // bannerText: "Official tutorial",
         link: "https://youtu.be/i9xRDdqCzjk"
-    },
-    {
-        id: 3,
-        imgSrc: spaWebiny,
-        imgAlt: "Single Page Applications with Webiny",
-        authorImgSrc: Adrian,
-        authorName: AUTHOR_NAMES.Adrian,
-        title: "Single Page Applications with Webiny",
-        tags: ["Webiny", "SPAs"],
-        description: "Learn how Webiny enables us to create two main types of Single Page Applications (SPAs): full CSR and (SSR)",
-        // bannerText: "Official tutorial",
-        link: "https://youtu.be/NGoZ3TDTYus"
     },
     {
         id: 4,
@@ -209,7 +197,7 @@ export const TUTORIALS = [
         tags: ["Headless CMS", "Next.js"],
         description: "Learn how to integrate React and Apollo Client with our Headless CMS to create an e-library.",
         // bannerText: "Official tutorial",
-        link: "http://localhost:3000/docs/guides/headless-react-tutorial"
+        link: "http://docs.webiny.com/docs/guides/headless-react-tutorial"
     },
     {
         id: 5,
@@ -245,7 +233,7 @@ export const TUTORIALS = [
         tags: ["Headless CMS", "Angular"],
         description: "Learn how to use the popular Angular with the Webiny Headless CMS.",
         // bannerText: "Official tutorial",
-        link: "http://localhost:3000/docs/guides/headless-angular-tutorial"
+        link: "http://docs.webiny.com/docs/guides/headless-angular-tutorial"
     },
 ];
 
