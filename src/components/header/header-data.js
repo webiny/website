@@ -227,8 +227,8 @@ export const RESOURCES_MENU = {
         menuItems: [
             {
                 id: 1,
-                label: "Guides",
-                link: "https://docs.webiny.com/docs/guides/headless-react-tutorial"
+                label: "Guides & Tutorials",
+                link: "/guides-and-tutorials"
             },
             {
                 id: 2,
