@@ -88,7 +88,7 @@ const FeaturedContent = props => {
                     </Title>
                 </TextContentWrapper>
                 <CardSlider
-                    data={new Array(TUTORIALS.length)
+                    data={new Array(4)
                         .fill(0)
                         .map((_, index) => ({ ...TUTORIALS[index % TUTORIALS.length], id: index }))}
                 />

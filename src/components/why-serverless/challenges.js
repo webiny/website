@@ -1,12 +1,12 @@
 import React from 'react';
-import {css} from 'emotion';
+import { css } from 'emotion';
 import styled from 'react-emotion';
 import theme from '../utils/theme';
 import mq from '../utils/breakpoints';
 import ContentContainer from '../ui/content-container';
-import {Grid, Cell} from '../ui/layout/layout';
+import { Grid, Cell } from '../ui/layout/layout';
 
-import sectionBg from './assets/light-gray-bg.svg';
+// import sectionBg from './assets/light-gray-bg.svg';
 import imgRightTool from './assets/right-tool.svg';
 import imgWhereToStart from './assets/where-to-start.svg';
 import imgArchitecture from './assets/architecture.svg';
@@ -14,20 +14,20 @@ import imgAcl from './assets/acl.svg';
 import imgLocalEnv from './assets/local-env.svg';
 import imgSsr from './assets/ssr.svg';
 
-const wrapperClass = css (
+const wrapperClass = css(
   {
     //background: 'url(' + sectionBg + ') no-repeat left top',
     backgroundSize: 'contain',
     backgroundColor: 'transparent',
   },
-  mq ({
+  mq({
     marginTop: [0, -200],
     paddingTop: [0, 200],
     paddingBottom: [25, 100],
   })
 );
 
-const SubTitle = styled ('h2') (
+const SubTitle = styled('h2')(
   {
     fontSize: theme.fontSize.h2,
     fontWeight: theme.fontWeight.semiBold,
@@ -36,12 +36,12 @@ const SubTitle = styled ('h2') (
     paddingTop: 50,
     margin: '25px auto 40px auto',
   },
-  mq ({
+  mq({
     width: ['100%', 675],
   })
 );
 
-const Bold = styled ('span') ({
+const Bold = styled('span')({
   fontWeight: theme.fontWeight.bold,
 });
 

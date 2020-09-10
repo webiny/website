@@ -75,9 +75,14 @@ const Card = styled("div")(
                 fontSize: theme.fontSize.sm,
                 fontWeight: theme.fontWeight.light,
                 color: "#004A89",
-                marginBottom: 10
+                marginBottom: 35
             },
             "& .tags-wrapper": {
+
+                position: "absolute",
+                bottom: "20px",
+                // top: 0,
+                // left: 0,
                 "& .tag": {
                     boxSizing: "border-box",
                     padding: "2px 10px",
@@ -87,14 +92,14 @@ const Card = styled("div")(
                     fontSize: 9,
                     fontWeight: theme.fontWeight.semiBold,
                     color: "#313097",
-                    marginRight: 8
+                    marginRight: 8,
                 }
             }
         }
     },
     mq({
-        width: ["90%", 300],
-        height: ["auto", 350]
+        width: ["90%", 256],
+        height: ["auto", 345],
     })
 );
 
