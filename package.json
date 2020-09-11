@@ -25,6 +25,7 @@
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-typography": "^1.7.18",
     "gatsby-source-filesystem": "^2.3.29",
+    "gatsby-transformer-remark": "^2.8.34",
     "js-cookie": "^2.2.1",
     "posthog-js": "^1.4.4",
     "react": "^16.9.0",
