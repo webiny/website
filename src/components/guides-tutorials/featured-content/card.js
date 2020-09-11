@@ -37,7 +37,8 @@ const Card = styled("div")(
 
         "& .media-wrapper": {
             "& .media": {
-                width: "100%"
+                width: "100%",
+                objectFit: "cover"
             }
         },
         "& .text-wrapper": {
@@ -81,8 +82,6 @@ const Card = styled("div")(
 
                 position: "absolute",
                 bottom: "20px",
-                // top: 0,
-                // left: 0,
                 "& .tag": {
                     boxSizing: "border-box",
                     padding: "2px 10px",
