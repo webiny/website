@@ -5,6 +5,7 @@ import theme from '../../utils/theme';
 import mq from '../../utils/breakpoints';
 import ContentContainer from '../../ui/content-container';
 import Button from '../../ui/button';
+import {trackJoinSlack} from '../../ui/functions';
 
 import buttonArrow from './assets/button-arrow.svg';
 
@@ -96,9 +97,15 @@ class Footer extends React.Component {
               Join our community of developers and fellow Webiny users. Share your
               experiences and ask questions.
             </Text>
-            <Button type="dark" link="https://www.webiny.com/slack">
-              Join the community
-            </Button>
+            <div
+              onClick={() => {
+                trackJoinSlack ({placement: 'have-a-question'});
+              }}
+            >
+              <Button type="dark" link="https://www.webiny.com/slack">
+                Join the community
+              </Button>
+            </div>
           </Wrapper>
         </ContentContainer>
       </Section>

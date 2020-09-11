@@ -3,10 +3,10 @@ import React from "react";
 import profileSven from "./assets/Sven.png";
 import profilePavel from "./assets/Pavel.png";
 import profileAdrian from "./assets/Adrian.png";
-import profileEmil from "./assets/Emil.png";
 import profileAshutosh from "./assets/Ashutosh.png";
 import profileAlbiona from "./assets/Albiona.png";
 import profileMislav from "./assets/Mislav.png";
+
 import githubIcon from "./assets/github.svg";
 import twitterIcon from "./assets/twitter.svg";
 import linkedInIcon from "./assets/linkedin.svg";
@@ -52,14 +52,6 @@ export const TEAM_MEMBERS = [
         twitter: "https://twitter.com/doitadrian",
         linkedIn: "https://www.linkedin.com/in/adriansmijulj",
         imgSrc: profileAdrian
-    },
-    {
-        id: 4,
-        name: "Emil Kais",
-        jobTitle: "Full-stack developer",
-        github: "https://github.com/EmilK15",
-
-        imgSrc: profileEmil
     },
     {
         id: 5,

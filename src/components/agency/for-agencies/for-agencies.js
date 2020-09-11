@@ -3,6 +3,8 @@ import styled from 'react-emotion';
 import theme from '../../utils/theme';
 import mq from '../../utils/breakpoints';
 import {css} from 'emotion';
+import Button from '../../ui/button';
+import demoIcon from './assets/demo-icon.svg';
 import ContentContainer from '../../ui/content-container';
 
 import forAgenciesBg from './assets/agencies-bg.svg';
@@ -155,8 +157,31 @@ const HighlightedBg = styled ('span') ({
   backgroundRepeat: 'no-repeat',
 });
 
+const ctaButton = css (
+  {
+    textTransform: 'uppercase',
+    padding: '10px 12px !important',
+    marginTop: 20,
+    zIndex: 1,
+  },
+  mq ({
+    width: ['230px !important'],
+  })
+);
+
+const DemoIcon = styled ('img') (
+  {
+    position: 'relative',
+    marginRight: 5,
+  },
+  mq ({
+    display: ['block'],
+  })
+);
+
 class ForAgencies extends React.Component {
   render () {
+    const {handleDemoClick, ...restProps} = this.props;
     return (
       <section {...this.props} className={wrapperClass}>
         <ContentContainer className={contentContainerClass}>
@@ -209,6 +234,14 @@ class ForAgencies extends React.Component {
               in your infrastructure cost.
             </SubText>
           </TextWrapper>
+          <Button
+            onClick={this.props.handleDemoClick}
+            className={ctaButton}
+            type="secondary"
+          >
+            <DemoIcon src={demoIcon} />
+            Schedule a 1:1 Demo
+          </Button>
         </ContentContainer>
       </section>
     );

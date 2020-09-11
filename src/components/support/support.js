@@ -238,9 +238,9 @@ export default ({children, ...props}) => (
               Talk directly to the people that built Webiny. Get your problem
               resolved quickly.
               <br />
-              <Link to="/contact-us">
+              <a href="mailto:sven@webiny.com">
                 <strong>Contact us for more info.</strong>
-              </Link>
+              </a>
             </p>
           </PremiumBox>
         </Cell>

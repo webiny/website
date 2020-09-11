@@ -4,13 +4,13 @@ import BaseLayout from "../layouts/base";
 import Hero from "../components/events/hero";
 import Events from "../components/events/events";
 import Register from "../components/events/register";
-import ScheduleTalk from "../components/events/schedule-talk";
+import RegisterToAttend from "../components/events/register-to-attend";
 import QuickStart from "../components/ui/quick-start/quick-start";
 
-class IndexPage extends React.Component {  
+class IndexPage extends React.Component {
   scheduleTalkRef = React.createRef();
-    
-goToScheduleTalkSection = () => {
+
+  goToScheduleTalkSection = () => {
     if (this.scheduleTalkRef && this.scheduleTalkRef.current) {
       const { offsetTop } = this.scheduleTalkRef.current;
       window.scrollTo({
@@ -26,9 +26,9 @@ goToScheduleTalkSection = () => {
       <BaseLayout title="Events" description="Webiny Online Meetups">
         <Hero />
         <Events />
-        <Register handleTalkClick={this.goToScheduleTalkSection}  />
+        <Register handleTalkClick={this.goToScheduleTalkSection} />
         <QuickStart />
-        <ScheduleTalk refFromParent={this.scheduleTalkRef} />
+        <RegisterToAttend refFromParent={this.scheduleTalkRef} />
       </BaseLayout>
     );
   }
