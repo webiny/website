@@ -229,36 +229,36 @@ export const COMMUNITY_MENU = {
 };
 
 export const RESOURCES_MENU = {
-  id: 3,
-  label: 'Resources',
-  link: null,
-  primarySection: {
-    menuItems: [
-      {
-        id: 1,
-        label: 'Guides',
-        link: 'https://docs.webiny.com/docs/guides/headless-react-tutorial',
-      },
-      {
-        id: 2,
-        label: 'Blog',
-        link: 'https://blog.webiny.com/',
-      },
-      {
-        id: 3,
-        label: 'YouTube',
-        link: 'https://youtube.com/c/webiny',
-      },
-      {
-        id: 0,
-        label: 'Documentation',
-        link: 'https://docs.webiny.com/docs/webiny/introduction/',
-      },
-    ],
-  },
-  secondarySection: {
-    cards: RESOURCES_CARDS,
-  },
+    id: 3,
+    label: "Resources",
+    link: null,
+    primarySection: {
+        menuItems: [
+            {
+                id: 1,
+                label: "Guides & Tutorials",
+                link: "/guides-and-tutorials"
+            },
+            {
+                id: 2,
+                label: "Blog",
+                link: "https://blog.webiny.com/"
+            },
+            {
+                id: 3,
+                label: "YouTube",
+                link: "https://youtube.com/c/webiny"
+            },
+            {
+                id: 0,
+                label: "Documentation",
+                link: "https://docs.webiny.com/docs/webiny/introduction/"
+            }
+        ]
+    },
+    secondarySection: {
+        cards: RESOURCES_CARDS
+    }
 };
 
 export const DROPDOWN_MENUS = [
