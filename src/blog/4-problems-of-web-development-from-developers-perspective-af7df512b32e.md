@@ -1,10 +1,10 @@
 ---
-slug: 4-problems-of-web-development-from-developers-perspective-af7df512b32e
-title: 4 Problems of Web Development — from Developer’s perspective
-description: pending
-tags: pending
-featureImage: ./assets/4-problems-of-web-development-from-developers-perspective-af7df512b32e/max-2048-1*7g2IovkDmP05jCinPLVJlw.jpeg
-author: pending
+slug: "/4-problems-of-web-development-from-developers-perspective-af7df512b32e"
+title: "4 Problems of Web Development — from Developer’s perspective"
+description: "pending"
+tags: "pending"
+featureImage: "./assets/4-problems-of-web-development-from-developers-perspective-af7df512b32e/max-2048-1*7g2IovkDmP05jCinPLVJlw.jpeg"
+author: "pending"
 ---
 
 # 4 Problems of Web Development — from Developer’s perspective
