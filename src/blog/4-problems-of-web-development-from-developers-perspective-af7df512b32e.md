@@ -7,8 +7,7 @@ featureImage: "./assets/4-problems-of-web-development-from-developers-perspectiv
 author: "pending"
 ---
 
-# 4 Problems of Web Development — from Developer’s perspective
-# td;dr
+## td;dr
 
 Before you’re scared off with the long text below, here’s a summary for you:
 
@@ -16,13 +15,13 @@ Before you’re scared off with the long text below, here’s a summary for you:
 
 However if you disagree — you’re welcome to comment on the text below.
 
-# Let’s talk about the problem
+## Let’s talk about the problem
 
 Yes, there is a problem in how we build websites, and it’s a problem that we web developers face every day while sitting at our desk and slowly typing away our code on the Darcula themed text editor, so our monitors don’t glow too bright once the sun sets.
 
 ![](./assets/4-problems-of-web-development-from-developers-perspective-af7df512b32e/max-2048-1*7g2IovkDmP05jCinPLVJlw.jpeg)
 
-## Problem 1: I’m bored
+### Problem 1: I’m bored
 
 Many of you probably spent years, building three basic things over and over again. A form, a grid and a modal dialog. And then this hot new technology comes in, and now you can build the same three things, again. Same, but different, but still the same….how exciting (for you Sheldon's out there, please notice the sarcasm).
 
@@ -38,7 +37,7 @@ Don’t mistake this *boredom* I’m talking about, for hating your job, this is
 
 ![](./assets/4-problems-of-web-development-from-developers-perspective-af7df512b32e/max-1900-1*_SNYCJqp0vxYC6tDlanb5Q.png)
 
-## Problem 2: Current solutions
+### Problem 2: Current solutions
 
 Say you want to build a web application, after you’ve done all the spec work and that stuff, you now need to decide which technology you will use to for development. Where do you start, sure, you first decide on your language of preference, but then, you don’t want to start from scratch and write everything ground up. That would be like starting to dig for clay so you can make bricks, because you want to build a house. Having said that, this reminded me of this cool video I linked below (notice the title):
 
@@ -58,7 +57,7 @@ Sure, you can build custom modules, but often than not you will spend more time 
 
 ![](./assets/4-problems-of-web-development-from-developers-perspective-af7df512b32e/max-726-1*kgT8ageSnHbPhfBlqTSfEg.gif)
 
-## Problem 3: Device agnostic
+### Problem 3: Device agnostic
 
 This one’s about the data layer. Most of us either take a framework, then stick in HTML editors so users can create pages. And most of the CMS’s have HTML editor already built-in as their purpose is to render a page in a browser, and that works. But when you need to display this on a mobile app, or a TV or a console app, you have to build special APIs for that, as well as use web-views to display the content because of the HTML in there.
 
@@ -66,7 +65,7 @@ The problem is that the data is not managed in a device agnostic way. The system
 
 ![](./assets/4-problems-of-web-development-from-developers-perspective-af7df512b32e/max-1200-1*rWK2YoedB8SO2QITR2z_uw.png)
 
-## Problem 4: Web development is stuck in stone age
+### Problem 4: Web development is stuck in stone age
 
 When you think about it, we have cars that drive themselves, AI that is on the path becoming more powerful than a human brain, robots can walk and interact with the environment, but in web development we still struggle to build a working dropdown and to vertically align an image in css.
 
