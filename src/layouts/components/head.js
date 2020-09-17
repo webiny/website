@@ -1,10 +1,12 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import {withPrefix} from 'gatsby-link';
-import ogImage from '../assets/webiny-social-share.jpg';
+import ogImageDefault from '../assets/webiny-social-share.jpg';
 
 class Head extends React.Component {
   render () {
+    const ogImage = this.props.image ? this.props.image : ogImageDefault;
+
     return (
       <React.Fragment>
         <Helmet

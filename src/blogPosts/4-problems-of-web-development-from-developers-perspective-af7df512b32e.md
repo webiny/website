@@ -1,25 +1,24 @@
 ---
-slug: "/4-problems-of-web-development-from-developers-perspective-af7df512b32e"
-title: "4 Problems of Web Development — from Developer’s perspective"
-description: "pending"
-tags: "pending"
-featureImage: "./assets/4-problems-of-web-development-from-developers-perspective-af7df512b32e/max-2048-1*7g2IovkDmP05jCinPLVJlw.jpeg"
-author: "pending"
+slug: blog/4-problems-of-web-development-from-developers-perspective-af7df512b32e
+title: 4 Problems of Web Development — from Developer’s perspective
+description: pending
+tags: pending
+featureImage: ./assets/4-problems-of-web-development-from-developers-perspective-af7df512b32e/max-2048-1*7g2IovkDmP05jCinPLVJlw.jpeg
+author: pending
 ---
+
 
 ## td;dr
 
 Before you’re scared off with the long text below, here’s a summary for you:
 
-**We are bored to death with repetitive tasks. Current technology is outdated and missing innovation. We still think browser-first when it comes to displaying our data. Development tools need to get smarter, way way smarter.**
+> We are bored to death with repetitive tasks. Current technology is outdated and missing innovation. We still think browser-first when it comes to displaying our data. Development tools need to get smarter, way way smarter.
 
 However if you disagree — you’re welcome to comment on the text below.
 
 ## Let’s talk about the problem
 
 Yes, there is a problem in how we build websites, and it’s a problem that we web developers face every day while sitting at our desk and slowly typing away our code on the Darcula themed text editor, so our monitors don’t glow too bright once the sun sets.
-
-![](./assets/4-problems-of-web-development-from-developers-perspective-af7df512b32e/max-2048-1*7g2IovkDmP05jCinPLVJlw.jpeg)
 
 ### Problem 1: I’m bored
 
@@ -41,13 +40,15 @@ Don’t mistake this *boredom* I’m talking about, for hating your job, this is
 
 Say you want to build a web application, after you’ve done all the spec work and that stuff, you now need to decide which technology you will use to for development. Where do you start, sure, you first decide on your language of preference, but then, you don’t want to start from scratch and write everything ground up. That would be like starting to dig for clay so you can make bricks, because you want to build a house. Having said that, this reminded me of this cool video I linked below (notice the title):
 
-**But I use a framework**
+<iframe width="560" height="315" src="https://www.youtube.com/embed/P73REgj-3UE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+#### But I use a framework
 
 So, you don’t want to use “primitive” approach, you’re smarter than that, you want a framework, or a set of libraries. That is a big step forward, you get a lot of things included, you *just* need to connect your server-side framework so it works together with your fancy UI library, then just create an auth layer on top of that, connect all the services, code the API layer , define a structure for your files, modules, apps, configure your webpack, optimize the code so it runs faster, make the builds smaller because you were missing few components so you had to add several jQuery libraries which just bloated the load time of your site … well you see where I’m going with this. It’s not as simple as it might seem.
 
 ![](./assets/4-problems-of-web-development-from-developers-perspective-af7df512b32e/max-1200-1*wY8Q6NEMmkQc0htXz3PEUA.gif)
 
-**A CMS is so much better than a framework**
+#### A CMS is so much better than a framework
 
 But say you’ve already tried using a framework before and you know that this approach is just so time consuming, and if you are on a fixed fee project, so that time spent on optimising, debugging and finding all the missing pieces, it just eats away your margins.
 
