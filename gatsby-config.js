@@ -47,6 +47,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-twitter-pixel`,
+      options: {
+        pixelId: 'o4gd9',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-hotjar-tracking',
       options: {
         includeInDevelopment: false,
@@ -72,16 +78,17 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          /*
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 800,
             },
-          },
+          },*/
           {
             resolve: `gatsby-remark-copy-linked-files`,
             options: {
-              ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
+              //ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
             },
           },
         ],

@@ -1,5 +1,5 @@
 import React from 'react';
-import {graphql} from 'gatsby';
+import {graphql, Link} from 'gatsby';
 import BaseLayout from '../layouts/base';
 import styled from 'react-emotion';
 import {css} from 'emotion';
@@ -128,19 +128,17 @@ export default function Template({
 }) {
   const {markdownRemark} = data; // data.markdownRemark holds your post data
   const {frontmatter, html} = markdownRemark;
-  const featuredImgFluid = frontmatter.featureImage.childImageSharp.fluid;
-  console.log (featuredImgFluid);
+  const featuredImgFluid = frontmatter.featureImage.publicURL;
   return (
     <BaseLayout
       title={frontmatter.title}
       description={frontmatter.description}
-      image={featuredImgFluid.src}
       fixedHeader={false}
     >
       <div className={blogStyles}>
         <BlogHeader>
           <div className="blog-header-inner">
-            <a href="/blog">← blog</a>
+            <Link to="/blog">← blog</Link>
           </div>
           <h1>{frontmatter.title}</h1>
           <AuthorCard />
@@ -168,13 +166,17 @@ export const pageQuery = graphql`
         slug
         title
         featureImage{
-          childImageSharp {
-            fluid(maxWidth: 800) {
-              ...GatsbyImageSharpFluid
-            }
-          }
+          publicURL
         }
       }
     }
   }
 `;
+
+/*
+childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+          */

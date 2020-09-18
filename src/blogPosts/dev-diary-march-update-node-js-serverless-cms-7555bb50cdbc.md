@@ -1,0 +1,65 @@
+---
+slug: "blog/dev-diary-march-update-node-js-serverless-cms-7555bb50cdbc"
+title: "Dev Diary: March Update — Node.js Serverless CMS"
+description: "pending"
+tags: pending
+featureImage: "./assets/dev-diary-march-update-node-js-serverless-cms-7555bb50cdbc/max-3840-1v7VcyqUeiJVAeIX-7Qop4A.jpeg"
+author: pending
+---
+
+
+In our previous blog post we announced that we’re moving 100% to JavaScript, Node.js and Serverless architecture. With this post, we want to provide few updates on how we are progressing with our quest.
+
+### Update #1: Repository organisation — monorepo
+
+Organising the source code is a challenging task, especially when you have multiple packages that feed into the core package.
+
+Having a repository per package might seem like a good idea, but we tried that in the past and this creates an overhead and introduces pain when you are working on multiple packages at the same time and even more work when you decide you need another repo because you just found a new package candidate.
+
+To avoid this pain this time we decided to organise all our packages inside a single repository, but still publish each package individually to NPM. To achieve that we started with [Lerna](https://lernajs.io/) and added [Yarn workspaces](https://yarnpkg.com/blog/2017/08/02/introducing-workspaces/) to it.
+
+### Update #2: Publishing and managing packages
+
+Lerna and Yarn workspaces allowed us to have many packages grouped by topic (api, client, utils) in a single repository, but the next challenge was managing and publishing those packages to NPM in an automated way.
+
+Introducing `semantic-release`, an automated version and package publishing. The idea is simple: write standardized commit messages via `commitizen` which are then parsed by `semantic-release` and the next release type is identified (major/breaking, minor/feature or patch version). Once you have the release type - a new version for your package is generated.
+
+Another cool feature is that `semantic-release` will also generate the full change log for your release notes.
+
+Although `semantic-release` had many of the features required, it had one major drawback for our case, it didn’t support monorepo project structure. In order to work around that, we had no choice but to eventually write our own release and version management library — `webiny-semantic-release`. If you run a monorepo of your own, we highly encourage you to check it out. It works with all kinds of project organization, both single package and multi-package and allows easy customization of the entire process or just parts of it.
+
+### Update #3: Travis CI
+
+With the focus on DevOps and Continuous Deployment we aim to have as many tests and as complete test coverage as possible. Using [Travis](https://travis-ci.org/) and setting our minimum coverage test threshold to 95% we are building the test foundation that will define our code quality and confidence once we start doing CD.
+
+We are using [Mocha](https://mochajs.org/) as the test runner and [Chai](http://chaijs.com/) as the assertion library. However, we are planning to migrate to [Jest](https://facebook.github.io/jest/) at some point as it is a much more versatile and a more all-in-one solution for tests and coverage.
+
+### Update #4: AWS Aurora Serverless, switching from MongoDB
+
+In our previous version of Webiny we used MongoDB as the document database, although having our Entity layer sitting in front of your database you never actually interacted with MongoDB directly and in a way never cared about the actual database in the background.
+
+Once AWS announced the serverless version of their Aurora, we knew that this was the right next step. Although MongoDB Atlas is a managed database, it still relies on web servers, and we wanted to get away from that concept.
+
+Replacing MongoDB with Aurora meant designing a new Entity layer and building an SQL query engine, unlike the one we had previously for MongoDB. This was a challenging task, but I’m happy to announce we successfully delivered on that front and are already migrating the existing business logic to our beloved Entities :)
+
+Our new [Entity](https://github.com/Webiny/webiny-js/tree/master/packages-utils/webiny-entity) layer supports database drivers as plugins, and the first driver we have created was, of course, a [MySQL driver](https://github.com/Webiny/webiny-js/tree/master/packages-utils/webiny-entity-mysql).
+
+### Update #5: Security
+
+With the next Webiny release, client authentication will rely on JWT by default, meaning we use what most of the community does. No surprises here. However, if you don’t like JWT or have your own reasons not to use it, implementing a custom token is a matter of implementing a simple interface.
+
+The security layer, like pretty much any other part of Webiny is a very flexible system. It allows multiple identities with different authentication strategies, your custom user classes, custom authentication and authorization middleware, etc. Of course, you will only need to bother with all that if the default implementation is not good enough for you. You can easily replace parts of it or even the entire security app.
+
+### Update #6: Flow
+
+As soon as we started using Flow, we realized how easy it is to read the code with type annotations and how easy it is to iterate, change, refactor, etc. even dive into the code written by another developer.
+
+By the end of this migration to node, our code will be entirely covered by Flow because it really helps to stay sane without typing tons of inline comments and it makes spotting even the tiniest errors a breeze.
+
+### Outro
+
+Overall, we have been quite busy these last few months, and there are a few more months of hard work ahead of us before the first official release.
+
+In the next few months we will primarily focus on writing documentation for some of the packages, as well as slowly progressing into the CMS part of Webiny, more work on the UI as well as implementing tools for testing the new UI components. We’ll talk more about that in our next dev update, so make sure you follow us on Medium and [GitHub](https://github.com/Webiny/webiny-js) (★).
+
+As before, Webiny will be released under MIT licence, making it accessible and free to anybody who decides to use it.
