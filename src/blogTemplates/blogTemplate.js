@@ -128,12 +128,19 @@ export default function Template({
 }) {
   const {markdownRemark} = data; // data.markdownRemark holds your post data
   const {frontmatter, html} = markdownRemark;
-  const featuredImgFluid = frontmatter.featureImage.publicURL;
+
+  // handle image transformation exceptions
+  let featureImage = frontmatter.featureImage.publicURL;
+  if (frontmatter.featureImage.childImageSharp !== null) {
+    featureImage = frontmatter.featureImage.childImageSharp.fluid.src;
+  }
+
   return (
     <BaseLayout
       title={frontmatter.title}
       description={frontmatter.description}
       fixedHeader={false}
+      image={featureImage}
     >
       <div className={blogStyles}>
         <BlogHeader>
@@ -165,18 +172,15 @@ export const pageQuery = graphql`
         author
         slug
         title
-        featureImage{
+        featureImage {
           publicURL
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
       }
     }
   }
 `;
-
-/*
-childImageSharp {
-            fluid(maxWidth: 800) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-          */
