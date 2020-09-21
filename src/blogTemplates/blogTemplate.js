@@ -62,11 +62,11 @@ const blogStyles = css (
       lineHeight: '1em',
     },
     h2: {
-      fontSize: '3em',
+      fontSize: '2.3em',
       fontWeight: theme.fontWeight.semiBold,
     },
     h3: {
-      fontSize: '2.5em',
+      fontSize: '2em',
       fontWeight: theme.fontWeight.semiBold,
     },
     h4: {
@@ -91,6 +91,21 @@ const blogStyles = css (
     iframe: {
       margin: '0 auto',
       display: 'block',
+    },
+    hr: {
+      display: 'block',
+      unicodeBidi: 'isolate',
+      marginBlockStart: '0.5em',
+      marginBlockEnd: '0.5em',
+      marginInlineStart: 'auto',
+      marginInlineEnd: 'auto',
+      overflow: 'hidden',
+      borderStyle: 'inset',
+      borderWidth: '1px',
+      margin: '50px auto',
+      width: '90%',
+      borderTop: 'none',
+      boxShadow: 'none',
     },
     blockquote: {
       fontSize: '1.2em',
@@ -148,7 +163,10 @@ export default function Template({
             <Link to="/blog">← blog</Link>
           </div>
           <h1>{frontmatter.title}</h1>
-          <AuthorCard />
+          <AuthorCard
+            author={frontmatter.author}
+            publishedDate={frontmatter.date}
+          />
         </BlogHeader>
         <BlogContainer>
           <div className="blog-post">
@@ -172,6 +190,8 @@ export const pageQuery = graphql`
         author
         slug
         title
+        description
+        date(formatString: "MMMM DD, YYYY")
         featureImage {
           publicURL
           childImageSharp {

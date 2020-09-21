@@ -64,19 +64,19 @@ class Author extends React.Component {
   render () {
     return (
       <AuthorContainer>
-        <AuthorImage src={authors.sven.avatar} />
+        <AuthorImage src={authors[this.props.author].avatar} />
         <AuthorMeta>
           <Divider />
           <AuthorName>
-            {authors.sven.name}
+            {authors[this.props.author].name}
             <a
-              href={'https://twitter.com/' + authors.sven.twitter}
+              href={'https://twitter.com/' + authors[this.props.author].twitter}
               target="_blank"
             >
               <img src={twitterIcon} alt="Twitter" />
             </a>
           </AuthorName>
-          <DatePublished>17th Sep, 2020</DatePublished>
+          <DatePublished>{this.props.publishedDate}</DatePublished>
         </AuthorMeta>
       </AuthorContainer>
     );

@@ -121,6 +121,8 @@ const BlogCard = ({
   bannerText, // TODO: We'll see
   tags,
 }) => {
+  console.log ('TAGS');
+  console.log (tags);
   return (
     <BlogCardWrapper
       className={'card'}
