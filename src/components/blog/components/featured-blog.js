@@ -18,6 +18,7 @@ export default ({data}) => {
         <Img fluid={data.featureImage.childImageSharp.fluid} />
       </div>
       <div className={'text-container'}>
+        <span className={'featured-tag'}>featured post</span>
         <h2 className={'title'}>{data.title}</h2>
         <p className={'description'}>{data.description}</p>
         <div className={'author-wrapper'}>
