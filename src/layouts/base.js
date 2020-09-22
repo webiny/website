@@ -27,7 +27,11 @@ class BaseLayout extends React.Component {
 
     return (
       <React.Fragment>
-        <Head title={this.props.title} description={this.props.description} />
+        <Head
+          title={this.props.title}
+          description={this.props.description}
+          image={this.props.image}
+        />
 
         <Helmet>
           <style>

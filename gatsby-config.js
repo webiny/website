@@ -4,6 +4,8 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
@@ -45,6 +47,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-twitter-pixel`,
+      options: {
+        pixelId: 'o4gd9',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-hotjar-tracking',
       options: {
         includeInDevelopment: false,
@@ -56,9 +64,40 @@ module.exports = {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: /\.inline\.svg$/
-        }
-      }
-    }
+          include: /\.inline\.svg$/,
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/blogPosts`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+            },
+          },
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+            options: {
+              ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
+            },
+          },
+          {
+            resolve: 'gatsby-remark-embed-gist',
+          },
+          {
+            resolve: '@weknow/gatsby-remark-twitter',
+          },
+        ],
+      },
+    },
   ],
 };
