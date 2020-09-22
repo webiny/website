@@ -82,6 +82,10 @@ const blogStyles = css (
       margin: '0 auto',
       display: 'block',
       backgroundColor: 'white', //fixes the issue with transparent PNGs
+      border: '1px solid rgb(230, 230, 230)',
+      boxShadow: 'rgba(230, 230, 230, 0.5) 0px 2px 4px 0px !important',
+      padding: 10,
+      borderRadius: 2,
     },
     iframe: {
       margin: '0 auto',
