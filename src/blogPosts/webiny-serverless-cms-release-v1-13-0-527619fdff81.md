@@ -1,10 +1,11 @@
 ---
-slug: "blog/webiny-serverless-cms-release-v1-13-0-%EF%B8%8F-527619fdff81"
+slug: "blog/webiny-serverless-cms-release-v1-13-0-527619fdff81"
 title: "Webiny Serverless CMS — Release V1.13.0 ⚡️"
-description: "pending"
-tags: pending
+description: "It’s been just over a week since we launched Webiny, and in this short period we have prepared a handful of updates for you."
+tags: ["Serverless", "Web development", "Javascript", "Software Development", "GraphQL"]
 featureImage: "./assets/webiny-serverless-cms-release-v1-13-0-%EF%B8%8F-527619fdff81/max-2524-1tFFXo3VmyFGy0iH92aF-Ow.png"
-author: pending
+author: sven
+date: 2019-03-29
 ---
 
 

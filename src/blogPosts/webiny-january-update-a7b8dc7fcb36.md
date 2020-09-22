@@ -1,10 +1,11 @@
 ---
-slug: "blog/webiny-january-update-%EF%B8%8F-a7b8dc7fcb36"
+slug: "blog/webiny-january-update-a7b8dc7fcb36"
 title: "January Update ☃️"
 description: "Faster performance and improved developer experience."
-tags: pending
+tags: ["Javascript", "Web development", "Programming", "Serverless", "Reactjs"]
 featureImage: "./assets/webiny-january-update-%EF%B8%8F-a7b8dc7fcb36/max-4800-10roi1cCEolRPmWQYtYhCaA.png"
-author: pending
+author: sven
+date: 2020-01-28
 ---
 
 
@@ -14,13 +15,13 @@ author: pending
 
 Let’s start the update by giving a shout out to our new contributors 👏
 
-[Roman](https://github.com/roman-vabishchevych) and his team have been successfully using Webiny in production for a while now. He provided us with great feedback and also several contributions in terms of plugins for Webiny page builder. The plugins will be available on a newly launched plugin repository page in the upcoming weeks.
+**[Roman](https://github.com/roman-vabishchevych)** and his team have been successfully using Webiny in production for a while now. He provided us with great feedback and also several contributions in terms of plugins for Webiny page builder. The plugins will be available on a newly launched plugin repository page in the upcoming weeks.
 
-[fodurrr](https://github.com/fodurrr)** **helped us trace a few bugs and also actively engaged in several discussions on our GitHub.
+**[fodurrr](https://github.com/fodurrr)**helped us trace a few bugs and also actively engaged in several discussions on our GitHub.
 
-[jamesgeorge007](https://github.com/jamesgeorge007)** **from [Mad.Hacks](https://github.com/madlabsinc) contributed several PRs improving the DX of our webiny CLI.
+**[jamesgeorge007](https://github.com/jamesgeorge007)** from [Mad.Hacks](https://github.com/madlabsinc) contributed several PRs improving the DX of our webiny CLI.
 
-[jbampton](https://github.com/jbampton) reviewed several of our readmes and helped to polish it out.
+**[jbampton](https://github.com/jbampton)** reviewed several of our readmes and helped to polish it out.
 
 ### 🤝 Get Involved
 
@@ -71,7 +72,13 @@ The following diagram shows how the DB Proxy Lambda function operates:
 By implementing this way of handling database connections, we’ve noticed a significant reduction in the number of active and *zombie* database connections. Additionally, this also enables us to limit the maximum number of connections by adjusting the DB Proxy Lambda function’s concurrency limit. We’ve set this limit to 15, meaning a maximum of 15 DB Proxy Lambda function instances may be present at the same time. But you can adjust it for your needs, via your `/api/serverless.yml` and `/apps/serverless.yml `files, by changing the `concurrencyLimit` param:
 
 ```
-dbProxy:  component: "@webiny/serverless-db-proxy"  inputs:    concurrencyLimit: 15    env:      MONGODB_SERVER: ${vars.mongodb.server}      MONGODB_NAME: ${vars.mongodb.name}
+dbProxy:
+  component: "@webiny/serverless-db-proxy"
+  inputs:
+    concurrencyLimit: 15
+    env:
+      MONGODB_SERVER: ${vars.mongodb.server}
+      MONGODB_NAME: ${vars.mongodb.name}
 ```
 
 ### ✅ DX: Improved error reporting
@@ -105,7 +112,3 @@ In case you want to migrate an existing project to the latest release, there sho
 Yes, we are hiring! Check out the open positions on our job portal => [careers.webiny.com](https://careers.webiny.com)
 
 Finally, help us spread the word about this release by applauding 👏 the post and spreading the word on twitter.
-
-To get notified and stay up to date with all our news, make sure you are subscribed to our mailing list:
-
-[https://landing.mailerlite.com/webforms/landing/g9f1i1](https://landing.mailerlite.com/webforms/landing/g9f1i1)

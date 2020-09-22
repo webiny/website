@@ -1,16 +1,17 @@
 ---
 slug: "blog/webiny-serverless-cms-free-beta-launch-52a73ed8297b"
 title: "Webiny — Serverless CMS > FREE Beta Launch"
-description: "pending"
-tags: pending
+description: "For those that have been following our journey to this moment, I’m super excited to announce that we are now LIVE 🎉🚀."
+tags: ["Open Source", "Serverless", "GraphQL", "React", "Javascript"]
 featureImage: "./assets/webiny-serverless-cms-free-beta-launch-52a73ed8297b/max-2400-1xdKnii9pyjQFn-jFXWTHFQ.jpeg"
-author: pending
+author: sven
+date: 2019-03-18
 ---
 
 
 For those that have been following our journey to this moment, I’m super excited to announce that we are now LIVE 🎉🚀.
 
-#### Head over to our new shiny page, **[www.webiny.com](http://www.webiny.com)**, and register your free beta account.
+**Head over to our new shiny page, **[www.webiny.com](http://www.webiny.com)**, and register your free beta account.**
 
 During the beta, you can use the fully managed serverless environment **completely for free **and create as many websites as you want.
 

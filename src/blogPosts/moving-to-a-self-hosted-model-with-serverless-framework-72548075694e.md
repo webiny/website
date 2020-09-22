@@ -1,10 +1,11 @@
 ---
 slug: "blog/moving-to-a-self-hosted-model-with-serverless-framework-72548075694e"
-title: ""
-description: "pending"
-tags: pending
+title: "Moving to a Self-Hosted Model With Serverless Framework"
+description: "When we started Webiny, we wanted to make it as easy as possible to create and run a serverless website. While we were exploring how to"
+tags: ["Javascript", "Nodejs", "Serverless", "PHP", "AWS"]
 featureImage: "./assets/moving-to-a-self-hosted-model-with-serverless-framework-72548075694e/max-4800-1ZvZV3mE-NcMoAJkmRQHh1A.jpeg"
-author: pending
+author: sven
+date: 2019-19-30
 ---
 
 
@@ -36,10 +37,4 @@ We understand that the move to a self-hosted platform might cause inconvenience 
 
 ## Feedback & Questions
 
-In case you have any other questions or would like to share your feedback, we encourage you to post those on our community forum. We monitor the activity there on a regular basis and will respond to your queries.
-
-### Webiny Community
-
-### Discussions about Webiny and related topics
-
-#### community.webiny.com
+In case you have any other questions or would like to share your feedback, we encourage you to post those on our [community forum](https://www.webiny.com/slack). We monitor the activity there on a regular basis and will respond to your queries.

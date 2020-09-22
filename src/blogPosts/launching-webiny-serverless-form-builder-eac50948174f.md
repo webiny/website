@@ -2,11 +2,13 @@
 slug: "blog/launching-webiny-serverless-form-builder-eac50948174f"
 title: "Launching Webiny Serverless Form Builder"
 description: "New Webiny Serverless CMS App — Build and host your forms the serverless way. Open-source, GraphQL API, available today!"
-tags: pending
+tags: ["Serverless", "Cloud computing", "Headless CMS", "Open source", "Javascript"]
 featureImage: "./assets/launching-webiny-serverless-form-builder-eac50948174f/max-4800-1UKZm2Sm-3PV6cDVgsj_2fw.png"
-author: pending
+author: sven
+date: 2019-12-05
 ---
 
+![Webiny Form Builder](./assets/launching-webiny-serverless-form-builder-eac50948174f/max-4800-1UKZm2Sm-3PV6cDVgsj_2fw.png)
 
 A crucial part of most websites are forms, be that simple contact forms or more complex lead generation ones. Businesses rely on these forms to generate revenue, grow their user base, and even handle payments. Forms are everywhere.
 
@@ -20,7 +22,7 @@ With Webiny, we want to empower developers to create serverless applications by 
 
 Like all other Webiny CMS apps, Form Builder is designed to be deployed into a serverless environment. At the moment, Webiny supports AWS, but the support for other cloud vendors is coming in 2020.
 
-### Get started with Webiny Form Builder → [https://www.webiny.com/serverless-app/form-builder](https://www.webiny.com/serverless-app/form-builder)
+**Get started with Webiny Form Builder → [https://www.webiny.com/serverless-app/form-builder](https://www.webiny.com/serverless-app/form-builder)**
 
 [We launched Webiny Form Builder on Product Hunt today — we would appreciate it if you would support us there](https://www.producthunt.com/posts/webiny-serverless-cms-form-builder).
 

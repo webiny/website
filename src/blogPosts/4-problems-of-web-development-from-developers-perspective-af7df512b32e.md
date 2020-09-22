@@ -1,18 +1,19 @@
 ---
 slug: "blog/4-problems-of-web-development-from-developers-perspective-af7df512b32e"
 title: "4 Problems of Web Development — from Developer’s perspective"
-description: "pending"
-tags: pending
+description: "tl;dr"
+tags: ["Web development", "Framework", "CMS", "React", "Javascript"]
 featureImage: "./assets/4-problems-of-web-development-from-developers-perspective-af7df512b32e/max-2048-17g2IovkDmP05jCinPLVJlw.jpeg"
-author: pending
+author: sven
+date: 2017-09-29
 ---
 
 
-## td;dr
+## tl;dr
 
 Before you’re scared off with the long text below, here’s a summary for you:
 
-#### We are bored to death with repetitive tasks. Current technology is outdated and missing innovation. We still think browser-first when it comes to displaying our data. Development tools need to get smarter, way way smarter.
+**We are bored to death with repetitive tasks. Current technology is outdated and missing innovation. We still think browser-first when it comes to displaying our data. Development tools need to get smarter, way way smarter.**
 
 However if you disagree — you’re welcome to comment on the text below.
 
@@ -40,6 +41,8 @@ Don’t mistake this *boredom* I’m talking about, for hating your job, this is
 
 Say you want to build a web application, after you’ve done all the spec work and that stuff, you now need to decide which technology you will use to for development. Where do you start, sure, you first decide on your language of preference, but then, you don’t want to start from scratch and write everything ground up. That would be like starting to dig for clay so you can make bricks, because you want to build a house. Having said that, this reminded me of this cool video I linked below (notice the title):
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/P73REgj-3UE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 #### But I use a framework
 
 So, you don’t want to use “primitive” approach, you’re smarter than that, you want a framework, or a set of libraries. That is a big step forward, you get a lot of things included, you *just* need to connect your server-side framework so it works together with your fancy UI library, then just create an auth layer on top of that, connect all the services, code the API layer , define a structure for your files, modules, apps, configure your webpack, optimize the code so it runs faster, make the builds smaller because you were missing few components so you had to add several jQuery libraries which just bloated the load time of your site … well you see where I’m going with this. It’s not as simple as it might seem.
@@ -60,7 +63,7 @@ Sure, you can build custom modules, but often than not you will spend more time 
 
 This one’s about the data layer. Most of us either take a framework, then stick in HTML editors so users can create pages. And most of the CMS’s have HTML editor already built-in as their purpose is to render a page in a browser, and that works. But when you need to display this on a mobile app, or a TV or a console app, you have to build special APIs for that, as well as use web-views to display the content because of the HTML in there.
 
-The problem is that the data is not managed in a device agnostic way. The system through which you manage your data, shouldn’t account that there will always be a web browser to display it and a direct connection to your database to pull that data in the first place. All systems today must have 100% API coverage for in order to properly integrate with mobile apps and other devices as well. The data needs to be “componentized”. Say you have a product description which contains a paragraph of text and an image. That paragraph and that image need to be components, not HTML tags. This way other devices get back a notion of what that is and you can use a native controller on the device to display it. In a browser it would be a <p> tag and <img> tag, on an iOS it might be UILabel and UIImage class . You don’t want to “dongle” your way to make things compatible.
+The problem is that the data is not managed in a device agnostic way. The system through which you manage your data, shouldn’t account that there will always be a web browser to display it and a direct connection to your database to pull that data in the first place. All systems today must have 100% API coverage for in order to properly integrate with mobile apps and other devices as well. The data needs to be “componentized”. Say you have a product description which contains a paragraph of text and an image. That paragraph and that image need to be components, not HTML tags. This way other devices get back a notion of what that is and you can use a native controller on the device to display it. In a browser it would be a `<p>` tag and `<img>` tag, on an iOS it might be UILabel and UIImage class . You don’t want to “dongle” your way to make things compatible.
 
 ![](./assets/4-problems-of-web-development-from-developers-perspective-af7df512b32e/max-1200-1rWK2YoedB8SO2QITR2z_uw.png)
 

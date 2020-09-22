@@ -2,9 +2,10 @@
 slug: "blog/crossing-the-serverless-chasm-58604df45690"
 title: "Crossing the Serverless Chasm"
 description: "The serverless market is growing fast, but will it successfully tackle all the challenges along the way to achieve its full potential?"
-tags: pending
+tags: ["Serverless", "Web development", "Software development", "Software engineering", "Software architecture"]
 featureImage: "./assets/crossing-the-serverless-chasm-58604df45690/max-4800-14luyCyf1R5KdxSzi-yQwWA.png"
-author: pending
+author: sven
+date: 2020-02-25
 ---
 
 

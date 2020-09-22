@@ -2,25 +2,22 @@
 slug: "blog/the-serverless-supremacy-204fbf5add75"
 title: "The Serverless Supremacy"
 description: "The Fall of the Monolith"
-tags: pending
+tags: ["Serverless", "Web development", "Software development", "Software engineering", "Software architecture"]
 featureImage: "./assets/the-serverless-supremacy-204fbf5add75/max-4800-1wA9YNhv6PPLP36j8bYCFDw.png"
-author: pending
+author: sven
+date: 2020-02-12
 ---
 
 
 The inspiration for this blog post came from the tweet below by David Heinemeier Hansson. David is the creator of Ruby on Rails and the CTO at Basecamp.
 
+https://twitter.com/dhh/status/1225117740962181120
+
 In the past, I’ve followed David and read several of his blog posts. I’ve got nothing but respect for what he has built and achieved so far — but on this particular topic I don’t agree with his views, and here is why.
 
 ## The Majestic Monolith
 
-This is the blog post that David wrote a while back, in 2016 actually.
-
-### The Majestic Monolith
-
-### Monolith by Rene Aigner Some patterns are just about the code. If your code looks like this, and you need it to do…
-
-#### m.signalvnoise.com
+[This is the blog post that David wrote a while back, in 2016 actually.](https://m.signalvnoise.com/the-majestic-monolith/)
 
 The blog post is a great read, but I feel a bit out of date for 2020. It focuses on the aspect that microservices are hard and complex and only reserved for bigger organizations that have the manpower to manage that type of infrastructure.
 
@@ -40,13 +37,7 @@ TBH I’m not sure this is a microservices problem. You could have the same thin
 
 ## Integrated Systems for Integrated Programmers
 
-This is I feel a more refreshed version of the previously mentioned 2016 article.
-
-### Integrated systems for integrated programmers
-
-### One of the great tragedies of modern web development over the last five years or so has been the irrational exuberance…
-
-#### m.signalvnoise.com
+This is I feel a more refreshed version of the previously mentioned 2016 article. [link](https://m.signalvnoise.com/integrated-systems-for-integrated-programmers/)
 
 Here the focus is on the imposter syndrome. Those cool developers from large organizations are telling you that you are architecting your applications in the wrong way (i.e monolith) and in fact, you should use a different approach (microservices).
 

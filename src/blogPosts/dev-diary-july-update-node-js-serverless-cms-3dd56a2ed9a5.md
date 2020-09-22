@@ -1,10 +1,11 @@
 ---
 slug: "blog/dev-diary-july-update-node-js-serverless-cms-3dd56a2ed9a5"
 title: "Dev Diary: July Update — Node.js Serverless CMS"
-description: "pending"
-tags: pending
+description: "Update on our development progress."
+tags: ["Serverless", "GraphQL", "Javascript", "Reactjs", "Nodejs"]
 featureImage: "./assets/dev-diary-july-update-node-js-serverless-cms-3dd56a2ed9a5/max-3200-1nZgdD1rNXE4A_xSpTbZYgg.jpeg"
-author: pending
+author: sven
+date: 2018-07-30
 ---
 
 

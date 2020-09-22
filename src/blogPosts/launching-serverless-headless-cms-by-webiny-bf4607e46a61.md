@@ -1,17 +1,16 @@
 ---
 slug: "blog/launching-serverless-headless-cms-by-webiny-bf4607e46a61"
-title: "#**Does a Serverless Headless CMS exist? It does now!**"
-description: "pending"
-tags: pending
+title: "Does a Serverless Headless CMS exist? It does now!"
+description: "After several months of development, testing and iterations we are thrilled to announce the availability of Webiny Serverless Headless CMS"
+tags: ["Serverless", "Cloud computing", "Headless CMS", "Open source", "Javascript"]
 featureImage: "./assets/launching-serverless-headless-cms-by-webiny-bf4607e46a61/max-5080-1iyJC2t8_0RXLR4dTVUDr_A.png"
-author: pending
+author: sven
+date: 2020-06-05
 ---
 
-### **Does a Serverless Headless CMS exist? It does now!**
+![Webiny Serverless Headless CMS](./assets/launching-serverless-headless-cms-by-webiny-bf4607e46a61/max-5080-1iyJC2t8_0RXLR4dTVUDr_A.png)
 
-## Launching Serverless Headless CMS by Webiny
-
-### After several months of development, testing and iterations we are thrilled to announce the availability of Webiny Serverless Headless CMS (beta). It’s the first serverless headless CMS on the market that’s also open-source and self-hosted.
+**After several months of development, testing and iterations we are thrilled to announce the availability of Webiny Serverless Headless CMS (beta). It’s the first serverless headless CMS on the market that’s also open-source and self-hosted.**
 
 Have a look below on what’s included and how you can start using it today.
 
@@ -43,9 +42,9 @@ We wanted to build something that scales to handle huge amounts of traffic out o
 
 ![](./assets/launching-serverless-headless-cms-by-webiny-bf4607e46a61/max-5600-15h2TUYFNF5OML30_Kh7HXQ.png)
 
-**✅ Environments and aliases **— With a single click copy your existing data into a new environment. Modify it and update it without affecting your production site. Finally, remap the alias to switch the new environment into production. With this approach, you get instant rollback feature as well as there is no need to update and redeploy your code to any of your devices when you make changes.
+**✅ Environments and aliases** — With a single click copy your existing data into a new environment. Modify it and update it without affecting your production site. Finally, remap the alias to switch the new environment into production. With this approach, you get instant rollback feature as well as there is no need to update and redeploy your code to any of your devices when you make changes.
 
-**✅ Customizable and extendable platform with a microservices architecture **— Having a headless** **CMS is great, but what if it only gets you halfway? What if you need to build custom code, add logic with specific rules that are outside the scope of the headless CMS. This is where Webiny shines. Using the [Serverless Web Development Framework](https://www.webiny.com/serverless-web-development-framework) you can build any type of logic your project requires and deploy it alongside the headless CMS as a separate microservice.
+**✅ Customizable and extendable platform with a microservices architecture** — Having a headless CMS is great, but what if it only gets you halfway? What if you need to build custom code, add logic with specific rules that are outside the scope of the headless CMS. This is where Webiny shines. Using the [Serverless Web Development Framework](https://www.webiny.com/serverless-web-development-framework) you can build any type of logic your project requires and deploy it alongside the headless CMS as a separate microservice.
 
 ..and much more. For a full set of features check out the [product landing page](https://www.webiny.com/serverless-app/headless-cms).
 

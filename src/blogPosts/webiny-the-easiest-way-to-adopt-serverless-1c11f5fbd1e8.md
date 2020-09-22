@@ -2,9 +2,10 @@
 slug: "blog/webiny-the-easiest-way-to-adopt-serverless-1c11f5fbd1e8"
 title: "Webiny — The Easiest Way to Adopt Serverless"
 description: "Learn about our transition from a serverless CMS into a framework for building serverless applications. P.S. We’ve also updated our website."
-tags: pending
+tags: ["Serverless", "Cloud computing", "Headless CMS", "Open source", "Javascript"]
 featureImage: "./assets/webiny-the-easiest-way-to-adopt-serverless-1c11f5fbd1e8/max-4800-1pBWn6Syod5AVZUkpB1DCaQ.png"
-author: pending
+author: sven
+date: 2020-04-04
 ---
 
 
@@ -48,6 +49,10 @@ However, jumping into a serverless project can be painful. Serverless masks many
 Webiny gets around these pitfalls and provides you with a scalable foundation for all your serverless projects.
 
 If you want to learn more about it, check out this video:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/odotdrOOvJE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
 
 ## 👉 Get started with Webiny
 

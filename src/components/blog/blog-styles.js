@@ -163,7 +163,7 @@ export const FeaturedBlogWrapper = styled ('div') (
     },
     '& .text-container': {
       width: ['100%', '50%'],
-      padding: ['24px', '0px 60px'],
+      padding: ['24px', '15px 60px'],
       '& .title': {
         fontSize: [theme.fontSize['3xl'], theme.fontSize['5xl']],
       },

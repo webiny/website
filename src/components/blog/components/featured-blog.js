@@ -3,10 +3,18 @@ import Img from 'gatsby-image';
 import React from 'react';
 import {navigate} from 'gatsby';
 // assets
-import AUTHOR_IMAGE from '../../../blogTemplates/assets/adrian.png';
+import authors from './blogAuthors';
 import CircleIcon from '../assets/circle.inline.svg';
 
 export default ({data}) => {
+  // handle image transformation exceptions
+  let FeatureImage = <img src={data.featureImage.publicURL} alt={data.title} />;
+  if (data.featureImage.childImageSharp !== null) {
+    FeatureImage = (
+      <Img fluid={data.featureImage.childImageSharp.fluid} alt={data.title} />
+    );
+  }
+
   return (
     <FeaturedBlogWrapper
       onClick={() => {
@@ -15,7 +23,7 @@ export default ({data}) => {
       }}
     >
       <div className={'media-container'}>
-        <Img fluid={data.featureImage.childImageSharp.fluid} />
+        {FeatureImage}
       </div>
       <div className={'text-container'}>
         <span className={'featured-tag'}>featured post</span>
@@ -23,12 +31,18 @@ export default ({data}) => {
         <p className={'description'}>{data.description}</p>
         <div className={'author-wrapper'}>
           <div className={'author__profile'}>
-            <img className={'media'} src={AUTHOR_IMAGE} alt={data.author} />
+            <img
+              className={'media'}
+              src={authors[data.author].avatar}
+              alt={authors[data.author].name}
+            />
             <CircleIcon className={'icon'} />
           </div>
           <div className={'author__details'}>
             <div>
-              <span className={'author__name'}>{data.author}</span>
+              <span className={'author__name'}>
+                {authors[data.author].name}
+              </span>
             </div>
             <div>
               <span className={'published'}>4 Aug. 2018 </span>

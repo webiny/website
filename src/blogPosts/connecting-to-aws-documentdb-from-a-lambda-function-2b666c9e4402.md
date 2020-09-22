@@ -1,16 +1,19 @@
 ---
 slug: "blog/connecting-to-aws-documentdb-from-a-lambda-function-2b666c9e4402"
 title: "Connecting to AWS DocumentDB from a Lambda function"
-description: "pending"
-tags: pending
+description: "Start your AWS DocumentDB journey by learning how to establish a connection from a Lambda function and a local machine."
+tags: ["AWS", "Serverless", "DocumentDB", "MongoDB", "NodeJS"]
 featureImage: "./assets/connecting-to-aws-documentdb-from-a-lambda-function-2b666c9e4402/max-5376-1XG1Ww6K4VTmhiGY0qNQ-Bw.png"
-author: pending
+author: adrian
+date: 2019-01-24
 ---
 
 
 Few weeks ago, AWS announced their own NoSQL, MongoDB-compatible database called [DocumentDB](https://aws.amazon.com/documentdb/).
 
 I must say, as a fan of MongoDB, I was immediately pumped! 🤗
+
+https://twitter.com/doitadrian/status/1083368723250139137
 
 Okay, maybe that statement was a bit exaggerated 🤪. But yeah, I’ve always wanted to have a “natively supported” MongoDB in the AWS cloud. I was actually secretly hoping this would happen when I saw that MongoDB was a platinum sponsor of the AWS re:Invent 2018, but at the time that did not happen.
 
@@ -46,12 +49,6 @@ Alright, now we have everything we need to know. Let’s see how to connect to D
 
 Code-wise, the cool thing about DocumentDB is that you don’t have to install any additional JS libraries or SDKs. You use it like you would use a regular MongoDB, via the [official NodeJS mongodb package](https://www.npmjs.com/package/mongodb).
 
-### oauth2orize
-
-### OAuth 2.0 authorization server toolkit for Node.js.
-
-#### www.npmjs.com
-
 So, setting up a connection shouldn’t be much of a problem if you’ve already done it before. You only have to make sure to pass the connection URI and the public key correctly into the `MongoClient.connect` method.
 
 You can find the connection URI in the AWS DocumentDB Console:
@@ -69,7 +66,29 @@ And of course, don’t forget to replace `<insertYourPassword>` with your actual
 Alright, now, let’s see how to use the connection URI and downloaded certificate in our code:
 
 ```
-import { MongoClient } from "mongodb";import caBundle from "raw-loader!./path/to/rds-combined-ca-bundle.pem";let cachedDb = null;function connectToDatabase() {    if (cachedDb) {        return Promise.resolve(cachedDb);    }    return MongoClient.connect(        process.env.MONGODB_URI,        { ssl: true, sslCA: caBundle }    ).then(db => {        cachedDb = db;        return cachedDb;    });}export const handler = async (event, context) => {    const db = await connectToDatabase();    // Do something with it...};
+import { MongoClient } from "mongodb";
+import caBundle from "raw-loader!./path/to/rds-combined-ca-bundle.pem";
+
+let cachedDb = null;
+
+function connectToDatabase() {
+    if (cachedDb) {
+        return Promise.resolve(cachedDb);
+    }
+
+    return MongoClient.connect(
+        process.env.MONGODB_URI,
+        { ssl: true, sslCA: caBundle }
+    ).then(db => {
+        cachedDb = db;
+        return cachedDb;
+    });
+}
+
+export const handler = async (event, context) => {
+    const db = await connectToDatabase();
+    // Do something with it...
+};
 ```
 
 Please note that, in my development flow, my code is compiled with [Babel](https://babeljs.io/) so there are things like `async`, `await`, and `import`. I’m also using [Webpack](https://webpack.js.org/), which enables me to use [raw-loader](https://github.com/webpack-contrib/raw-loader). With it, I can conveniently import the `.pem` file the same way I would any other `.js` file. But, if you don’t use Webpack in your development flow, you can just copy/paste the whole content of the downloaded `.pem` file into a single `.js` file, like so:
@@ -107,7 +126,14 @@ If you’ve noticed, in our Lambda function, we actually never ended the establi
 You can check the current state of connections by executing the following command inside of your DocumentDB cluster:
 
 ```
-db.serverStatus().connections// Outputs the following:{  "current" : 16,  "available" : 1143,  "totalCreated" : 511}
+db.serverStatus().connections
+
+// Outputs the following:
+{
+  "current" : 16,
+  "available" : 1143,
+  "totalCreated" : 511
+}
 ```
 
 The same problem can also be found in the RDS world, where there are some solutions to mitigate this, like e.g., the [serverless-mysql](https://www.npmjs.com/package/serverless-mysql) lib that actually has a built-in connection manager which handles this for you. Additionally, Serverless Aurora also received the [Data API](https://aws.amazon.com/about-aws/whats-new/2018/11/aurora-serverless-data-api-beta/), which abstracts connection management from us and let us interact with the database over an HTTP API.
@@ -140,8 +166,12 @@ With everything entered correctly, you should be able to connect successfully to
 
 Except the mentioned connection management issue, everything else seems to be working pretty well. I could write about our initial experiences, but I think I might save that for another post.
 
+https://twitter.com/doitadrian/status/1085253232966987776
+
 Here at Webiny, we are certainly excited about the newest AWS addition and we’ll be using it to power our serverless CMS, which you will be able to check out [here](https://www.webiny.com) in a couple of weeks from now. In the meantime, you can follow us via [Twitter](https://twitter.com/WebinyPlatform) if you want to know more.
 
 I hope this article has helped you to successfully overcome these initial steps in your Lambda / DocumentDB journey. If you have any questions or you feel I’ve maybe forgotten to mention something, feel free to let me know!
+
+---
 
 Thanks for reading! My name is Adrian and I work as a full stack developer at [Webiny](https://www.webiny.com). In my spare time, I like to write about my experiences with some of the modern frontend and backend web development tools, hoping it might help other developers. If you have any questions, comments or just wanna say hi, feel free to reach out to me via [Twitter](https://www.twitter.com/doitadrian).

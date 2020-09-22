@@ -2,9 +2,10 @@
 slug: "blog/weekly-updates-july-31st-2e80cd36b0cf"
 title: "Weekly Updates July 31st"
 description: "What’s New In Webiny 4.7.0?"
-tags: pending
+tags: ["Serverless", "Web development", "Javascript", "Software Development", "GraphQL"]
 featureImage: "./assets/weekly-updates-july-31st-2e80cd36b0cf/max-4480-1Ai44qMLu51qgCi5MsAgJfg.png"
-author: pending
+author: albiona
+date: 2020-07-31
 ---
 
 
@@ -14,7 +15,9 @@ In this week’s release, we introduce a couple of improvements and fixes in a c
 
 ### 🚀Features
 
-* **Enable attributes config in Cognito **([#1160](https://github.com/webiny/webiny-js/issues/1160))****Added support for username attributes and schema.
+**Enable attributes config in Cognito** ([#1160](https://github.com/webiny/webiny-js/issues/1160))
+
+Added support for username attributes and schema.
 
 ### 🐞 Bug Fixes
 
@@ -56,11 +59,17 @@ We’ll first learn how the`@webiny/plugins` package works outside of Webiny, us
 
 Check out our knowledge-sharing session below.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4qcDLzu8kVM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 **Webiny Plugins — Practical Examples**In the above knowledge-sharing session, we learn about different groups of plugins. Now we will go through practical examples.
 
 Webiny’s top contributor, Adrian, will demonstrate how plugins are used in your everyday development: in the Admin app, where we’ll show how we can use plugins to add new routes, menus, and even how we can replace the logo in the top header bar.
 
 Also, on the API side, we’ll learn what context plugins are and what they are used for, and finally, how we can use plugins to expand our GraphQL schema with additional GraphQL types and resolvers.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NGoZ3TDTYus" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
 
 ## 🤝 Get Involved
 
@@ -71,6 +80,6 @@ Our development team is on standby to help your in-house team to learn and adopt
 ## 🚀 We are hiring
 
 We are looking for a member to join our team.
-If you are interested? Apply for the [Full-Stack JavaScript Engineer](https://careers.webiny.com/full-stack-javascript-engineer/en)** role**.
+If you are interested? Apply for the [Full-Stack JavaScript Engineer](https://careers.webiny.com/full-stack-javascript-engineer/en) role.
 
 Since we are a small team, in this role, you’ll have a significant opportunity to directly influence the technical and product design choices we will make.

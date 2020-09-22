@@ -1,26 +1,20 @@
 import React from 'react';
 import {graphql, Link} from 'gatsby';
-import BaseLayout from '../layouts/base';
+import BaseLayout from '../../layouts/base';
 import styled from 'react-emotion';
 import {css} from 'emotion';
-import theme from '../components/utils/theme';
-import mq from '../components/utils/breakpoints';
+import theme from '../utils/theme';
+import mq from '../utils/breakpoints';
 
 import AuthorCard from './components/AuthorCard';
 import NewsletterFooter from './components/NewsletterFooter';
-
-/*
-TODO:
-- add social media tags [done]
-
-*/
 
 const BlogContainer = styled ('div') (
   {
     maxWidth: 960,
   },
   mq ({
-    margin: [25, '0 auto 100px auto'],
+    margin: [25, '25px auto 100px auto'],
     width: ['auto', '100%'],
     img: {
       width: ['100%', 'auto'],
@@ -87,6 +81,7 @@ const blogStyles = css (
     img: {
       margin: '0 auto',
       display: 'block',
+      backgroundColor: 'white', //fixes the issue with transparent PNGs
     },
     iframe: {
       margin: '0 auto',
@@ -106,6 +101,14 @@ const blogStyles = css (
       width: '90%',
       borderTop: 'none',
       boxShadow: 'none',
+    },
+    'ol, ul': {
+      li: {
+        lineHeight: '165%',
+        fontSize: '1.2em',
+        marginBottom: 15,
+        marginLeft: 30,
+      },
     },
     blockquote: {
       fontSize: '1.2em',
@@ -127,16 +130,48 @@ const blogStyles = css (
       },
     },
     code: {
-      fontSize: '1em',
+      fontSize: '0.9em',
       background: 'rgba(0,0,0,.05)',
       borderRadius: '2px',
       padding: '3px 5px',
+      whiteSpace: 'pre-wrap',
+    },
+    pre: {
+      fontSize: '0.9em',
+      display: 'block',
+      whiteSpace: 'pre',
+      wordBreak: 'break-word',
+      background: 'rgba(0,0,0,.05)',
+      padding: 15,
+      marginBottom: 25,
+      code: {
+        backgroundColor: 'transparent',
+      },
+    },
+    '.twitter-tweet': {
+      margin: '0 auto',
     },
   },
   mq ({
     fontSize: [14, 18],
   })
 );
+
+const TagList = styled ('div') ({
+  '& .tag': {
+    boxSizing: 'border-box',
+    padding: '2px 10px',
+    border: '1px solid #EAEAEA',
+    backgroundColor: '#FAFAFC',
+    textTransform: 'uppercase',
+    fontSize: 9,
+    fontWeight: theme.fontWeight.semiBold,
+    color: '#313097',
+    marginRight: 8,
+    marginBottom: 5,
+    display: 'inline-block',
+  },
+});
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -175,6 +210,15 @@ export default function Template({
               dangerouslySetInnerHTML={{__html: html}}
             />
           </div>
+          <TagList>
+            {Array.isArray (frontmatter.tags) &&
+              frontmatter.tags.map ((tag, index) => (
+                <span key={index} className="tag">
+                  {tag}
+                </span>
+              ))}
+          </TagList>
+
         </BlogContainer>
         <NewsletterFooter />
       </div>
@@ -191,6 +235,7 @@ export const pageQuery = graphql`
         slug
         title
         description
+        tags
         date(formatString: "MMMM DD, YYYY")
         featureImage {
           publicURL

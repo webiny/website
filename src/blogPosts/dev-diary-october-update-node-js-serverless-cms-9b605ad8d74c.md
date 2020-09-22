@@ -1,10 +1,11 @@
 ---
 slug: "blog/dev-diary-october-update-node-js-serverless-cms-9b605ad8d74c"
 title: "Dev Diary: October Update — Node.js Serverless CMS"
-description: "pending"
-tags: pending
+description: "Update on our development progress."
+tags: ["Serverless", "GraphQL", "Javascript", "Reactjs", "Nodejs"]
 featureImage: "./assets/dev-diary-october-update-node-js-serverless-cms-9b605ad8d74c/max-1280-1nsMlXoVy1NUyLkmEXP3Www.gif"
-author: pending
+author: sven
+date: 2018-10-11
 ---
 
 

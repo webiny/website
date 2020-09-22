@@ -2,9 +2,10 @@
 slug: "blog/using-aws-lambda-to-create-a-mongodb-connection-proxy-2bb53c4a0af4"
 title: "Using AWS Lambda to Create a MongoDB Connection Proxy"
 description: "How we’ve used AWS Lambda to create a MongoDB connection proxy."
-tags: pending
+tags: ["Serverless", "MongoDB", "Database", "AWS", "Lambda"]
 featureImage: "./assets/using-aws-lambda-to-create-a-mongodb-connection-proxy-2bb53c4a0af4/max-4800-1DRs_MFApsc_P04Cj_9s9QA.png"
-author: pending
+author: adrian
+date: 2020-02-17
 ---
 
 
@@ -147,7 +148,13 @@ For example, if we were to set the reserved concurrency to 100, this means we ca
 In every Webiny installation, by default, we’ve set the reserved concurrency to 15, but you can adjust it to your needs, via your `/api/serverless.yml` file, via the `concurrencyLimit` param:
 
 ```
-dbProxy:  component: "@webiny/serverless-db-proxy"  inputs:    concurrencyLimit: 15    env:      MONGODB_SERVER: ${vars.mongodb.server}      MONGODB_NAME: ${vars.mongodb.name}
+dbProxy:
+  component: "@webiny/serverless-db-proxy"
+  inputs:
+    concurrencyLimit: 15
+    env:
+      MONGODB_SERVER: ${vars.mongodb.server}
+      MONGODB_NAME: ${vars.mongodb.name}
 ```
 
 But still, as mentioned, do note that the DB Proxy Lambda function instances will be destroyed at some point in time, which will again leave zombie connections behind. So the actual number of total open connections to the database server may be a bit higher than the one set as the function’s reserved concurrency.
@@ -204,32 +211,6 @@ We will definitely keep a close eye on this issue, and keep monitoring the serve
 
 I hope I’ve managed to convey some of our experiences, and that you’ve received some value out of this article. If you have any additional questions or just wanna share your thoughts, we all at Webiny would definitely like to hear them!
 
+---
+
 Thanks for reading! My name is Adrian and I work as a full-stack developer at [Webiny](https://www.webiny.com/). In my spare time, I like to write about my / our experiences with some of the modern frontend and backend (serverless) web development tools, hoping it might help other developers in their everyday work. If you have any questions, comments or just wanna say hi, feel free to reach out to me via [Twitter](https://www.twitter.com/doitadrian).
-
-#### If you liked this article, here are some other articles you may enjoy:
-
-### Serverless Side Rendering — The Ultimate Guide
-
-### Learn how we’ve achieved great SEO support for every Webiny website and made them run super-fast, using SSR in a…
-
-#### blog.webiny.com
-### Upload files to AWS S3 using pre-signed POST data and a Lambda function
-
-### Start your serverless journey by learning how to upload files directly to S3 using pre-signed POST data and a simple…
-
-#### blog.webiny.com
-### Connecting to AWS DocumentDB from a Lambda function
-
-### Start your AWS DocumentDB journey by learning how to establish a connection from a Lambda function and a local machine.
-
-#### blog.webiny.com
-### Testing protected app sections the right way with Cypress custom commands!
-
-### With Cypress, testing web apps has finally become super easy! It is precisely what I was looking and hoping for back in…
-
-#### blog.webiny.com
-### Create custom ESLint rules in 2 minutes
-
-### ESLint is a great tool when it comes to code standardization. Maintained by the open source community, and with a rich…
-
-#### blog.webiny.com

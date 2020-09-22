@@ -2,9 +2,10 @@
 slug: "blog/serverless-side-rendering-e1c0924b8da1"
 title: "Serverless Side Rendering — The Ultimate Guide"
 description: "Learn how we’ve achieved great SEO support for every Webiny website and made them run super-fast, using SSR in a serverless environment."
-tags: pending
+tags: ["Serverless", "Single Page Applications", "AWS", "SEO", "CMS"]
 featureImage: "./assets/serverless-side-rendering-e1c0924b8da1/max-4800-1wJmWlW5rkKTBJm2qMZqvcg.png"
-author: pending
+author: adrian
+date: 2020-02-05
 ---
 
 
@@ -28,6 +29,8 @@ I do realize this turned out to be a very long article and trust me, that wasn�
 * the good news is that, with [Webiny](https://www.webiny.com/), this is all handled and maintained for you, feel free to check us out if this sounds interesting 🚀 🙂
 
 So, this was the TLDR, but still, if you want to dive deeper into the topic, or maybe you just want to check out the serverless approaches and implementations we’ve tried, I encourage you to continue reading.
+
+---
 
 ## Serverless Side Rendering
 
@@ -107,9 +110,13 @@ But social media web crawlers are not the only issue here… more importantly, w
 
 Although search engines are working on solutions that might do a better job of interpreting SPAs, to this day, we still cannot completely rely on these solutions. I’ve actually seen a couple of examples where introducing SPA’s significantly reduced SEO quality results, for example:
 
+https://twitter.com/mxstbr/status/985188986414161921
+
 Oh, man… Imagine yourself working on a project for three months, and right before the launch, you realize you have no SEO support at all.
 
 ![](./assets/serverless-side-rendering-e1c0924b8da1/max-1384-1wbnk2fdAGmNE-tavETSxgw.png)
+
+https://twitter.com/doitadrian/status/1103366565746167809?
 
 ## How to deal with this?
 
@@ -301,7 +308,18 @@ The diagram is almost the same as the one we’ve seen in the previous section, 
 So, every time the `Web Server Lambda` receives the SSR HTML from the `SSR Lambda`, before returning it back to the API Gateway, we also store it in the database. A simple database entry might look something like this:
 
 ```
-{  "_id" : ObjectId("5e144526b5705a00089efb95"),  "path" : "/",  "lastRefresh" : {    "startedOn" : ISODate("2020-01-07T13:13:48.898Z"),    "endedOn" : ISODate("2020-01-07T13:13:52.373Z"),    "duration" : 3475  },  "content" : "<!doctype html><html lang=\"en\">...</html>",  "expiresOn" : ISODate("2020-01-26T16:46:16.876Z"),  "refreshedOn" : ISODate("2020-01-07T13:13:52.373Z")}
+{
+  "_id" : ObjectId("5e144526b5705a00089efb95"),
+  "path" : "/",
+  "lastRefresh" : {
+    "startedOn" : ISODate("2020-01-07T13:13:48.898Z"),
+    "endedOn" : ISODate("2020-01-07T13:13:52.373Z"),
+    "duration" : 3475
+  },
+  "content" : "<!doctype html><html lang=\"en\">...</html>",
+  "expiresOn" : ISODate("2020-01-26T16:46:16.876Z"),
+  "refreshedOn" : ISODate("2020-01-07T13:13:52.373Z")
+}
 ```
 
 So once the SSR HTML (along with some other data shown in above snippet) has been stored in the database, we just send it back to the API Gateway, along with the `Cache-Control: public, max-age=MAX_AGE` header, which will instruct the CloudFront CDN to cache the result for `MAX_AGE` seconds.
@@ -389,7 +407,31 @@ For example, if you are using the`Menu`[ React component](https://github.com/web
 A page can have multiple different tags like this (you can also introduce your own), and all of them will be stored in the database when doing SSR HTML generation. Let’s take a look at an updated database entry:
 
 ```
-{  "_id": ObjectId("5e2eb625e2e7c80007834cdf"),  "path": "/",  "cacheTags": [    {      "class": "pb-menu",      "id": secondary-menu"    },    {      "class": "pb-menu",      "id": "main-menu"    },    {      "class": "pb-pages-list"    }  ],  "lastRefresh": {    "startedOn": ISODate("2020-01-27T10:06:29.982Z"),    "endedOn": ISODate("2020-01-27T10:06:36.607Z"),    "duration": 6625  },  "content": "<!doctype html><html lang=\"en\">...</html>",  "expiresOn": ISODate("2020-02-26T10:06:36.607Z"),  "refreshedOn": ISODate("2020-01-27T10:06:36.607Z")}
+{
+  "_id": ObjectId("5e2eb625e2e7c80007834cdf"),
+  "path": "/",
+  "cacheTags": [
+    {
+      "class": "pb-menu",
+      "id": secondary-menu"
+    },
+    {
+      "class": "pb-menu",
+      "id": "main-menu"
+    },
+    {
+      "class": "pb-pages-list"
+    }
+  ],
+  "lastRefresh": {
+    "startedOn": ISODate("2020-01-27T10:06:29.982Z"),
+    "endedOn": ISODate("2020-01-27T10:06:36.607Z"),
+    "duration": 6625
+  },
+  "content": "<!doctype html><html lang=\"en\">...</html>",
+  "expiresOn": ISODate("2020-02-26T10:06:36.607Z"),
+  "refreshedOn": ISODate("2020-01-27T10:06:36.607Z")
+}
 ```
 
 All of the `ssr-cache` HTML tags that are contained in the received SSR HTML are extracted and saved in the `cacheTags` array. This enables us to query the data more easily later down the road.
@@ -403,13 +445,17 @@ So now that we understand the purpose of these tags, how do we utilize them? Pre
 For example, when a menu has changed, we execute the following ([full code](https://github.com/webiny/webiny-js/blob/master/packages/api-page-builder/src/plugins/useSsrCacheTags.ts#L91)):
 
 ```
-await ssrApiClient.invalidateSsrCacheByTags({    tags: [{ class: "pb-menu", id: this.slug }]});
+await ssrApiClient.invalidateSsrCacheByTags({
+    tags: [{ class: "pb-menu", id: this.slug }]
+});
 ```
 
 And when a new page was published (or existing one deleted), all pages that contain the `pb-pages-list` page element need to be invalidated ([full code](https://github.com/webiny/webiny-js/blob/master/packages/api-page-builder/src/plugins/useSsrCacheTags.ts#L47)):
 
 ```
-await ssrApiClient.invalidateSsrCacheByTags({    tags: [{ class: "pb-pages-list" }]});
+await ssrApiClient.invalidateSsrCacheByTags({
+    tags: [{ class: "pb-pages-list" }]
+});
 ```
 
 Base Webiny apps, like Page Builder or Form Builder, are already utilizing both `ssr-cache` tags in the React components and the `SsrCacheClient` client on the backend, so you don’t have to worry much about this. And if you’re doing custom development, in the end, it basically comes down to recognizing the events that must trigger the SSR HTML invalidation, placing the `ssr-cache` tags in your components and using the `SsrCacheClient` client appropriately.
@@ -444,31 +490,12 @@ As always, there is no silver bullet for any problem and the topic we covered to
 
 Oh, and by the way, the good news is that, if you don’t want to torture yourself and want to avoid implementing everything from scratch, you can give Webiny a try! You can even choose between the two different SSR HTML caching approaches we’ve shown, by applying a specific set of plugins. We like to keep it flexible. 🙂
 
-Feel free to check it out if you’re interested! And do catch us on [Gitter](https://gitter.im/Webiny/webiny-js) if you have any questions, we would be glad to answer them!
+Feel free to check it out if you’re interested! And do catch us on [Slack](https://www.webiny.com/slack) if you have any questions, we would be glad to answer them!
+
+---
 
 Again, I hope I’ve managed to explain the approaches we’ve tried at Webiny, but if you have a question about anything, feel free to ask! I would also like to hear your opinion on the topic, so if you have something to share, please do!
 
+---
+
 Thanks for reading! My name is Adrian and I work as a full-stack developer at [Webiny](https://www.webiny.com/). In my spare time, I like to write about my / our experiences with some of the modern frontend and backend (serverless) web development tools, hoping it might help other developers in their everyday work. If you have any questions, comments or just wanna say hi, feel free to reach out to me via [Twitter](https://www.twitter.com/doitadrian).
-
-#### If you liked this article, here are some other articles you may enjoy:
-
-### Upload files to AWS S3 using pre-signed POST data and a Lambda function
-
-### Start your serverless journey by learning how to upload files directly to S3 using pre-signed POST data and a simple…
-
-#### blog.webiny.com
-### Connecting to AWS DocumentDB from a Lambda function
-
-### Start your AWS DocumentDB journey by learning how to establish a connection from a Lambda function and a local machine.
-
-#### blog.webiny.com
-### Testing protected app sections the right way with Cypress custom commands!
-
-### With Cypress, testing web apps has finally become super easy! It is precisely what I was looking and hoping for back in…
-
-#### blog.webiny.com
-### Create custom ESLint rules in 2 minutes
-
-### ESLint is a great tool when it comes to code standardization. Maintained by the open source community, and with a rich…
-
-#### blog.webiny.com

@@ -90,6 +90,12 @@ module.exports = {
               ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
             },
           },
+          {
+            resolve: 'gatsby-remark-embed-gist',
+          },
+          {
+            resolve: '@weknow/gatsby-remark-twitter',
+          },
         ],
       },
     },

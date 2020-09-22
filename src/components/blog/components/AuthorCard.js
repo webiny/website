@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'react-emotion';
-import theme from '../../components/utils/theme';
-import mq from '../../components/utils/breakpoints';
+import theme from '../../utils/theme';
+import mq from '../../utils/breakpoints';
 import twitterIcon from '../assets/twitter-icon.svg';
-import authors from '../blogAuthors';
+import authors from './blogAuthors';
 
 const AuthorContainer = styled ('div') ({
   width: '100%',

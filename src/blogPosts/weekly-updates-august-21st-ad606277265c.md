@@ -1,10 +1,11 @@
 ---
 slug: "blog/weekly-updates-august-21st-ad606277265c"
 title: "Weekly Updates August 21st"
-description: "pending"
-tags: pending
+description: "🆕 What’s New In Webiny 4.9.0?"
+tags: ["Serverless", "Web development", "Javascript", "Software Development", "GraphQL"]
 featureImage: "./assets/weekly-updates-august-21st-ad606277265c/max-4480-1o0E0_LullVFxa7P7NDJxVA.png"
-author: pending
+author: albiona
+date: 2020-08-21
 ---
 
 
@@ -34,11 +35,13 @@ Give Webiny a try by following our [Quick Start](https://docs.webiny.com/docs/ge
 
 If you have an existing Webiny project, you can upgrade your project by running `yarn upgrade`.
 
-And, just in case you’ve missed it, check out [the full changelog](https://github.com/webiny/webiny-js/releases/tag/v4.9.0)**.**
+And, just in case you’ve missed it, check out [the full changelog](https://github.com/webiny/webiny-js/releases/tag/v4.9.0).
+
+---
 
 ## 🙌 Community Updates
 
-### 🔮 Webiny Applications
+#### 🔮 Webiny Applications
 
 We are offering to you, our community, the [ready-made](https://www.webiny.com/serverless-apps/) serverless applications *out of the box!*
 
@@ -46,9 +49,11 @@ Check out the [Headless CMS](https://www.webiny.com/serverless-app/headless-cms/
 
 Start [building](https://docs.webiny.com/docs/get-started/quick-start) your serverless applications today 🚀
 
-### 📚Knowledge sharing
+#### 📚Knowledge sharing
 
-#### Commodo**This week we have additional videos on [Commodo](https://github.com/webiny/commodo). As you may already know, [Commodo](https://github.com/webiny/commodo) is a library of higher-order functions (HOFs) that lets you create and compose rich data models.
+**Commodo**
+
+This week we have additional videos on [Commodo](https://github.com/webiny/commodo). As you may already know, [Commodo](https://github.com/webiny/commodo) is a library of higher-order functions (HOFs) that lets you create and compose rich data models.
 
 Check out our YouTube videos on:
 
@@ -62,21 +67,23 @@ Check out our YouTube videos on:
 
 [11. Hooks](https://www.youtube.com/watch?v=b0AtujYkLuU)
 
-**Webiny Plugins**Webiny framework supports a very simple system of plugins that powers both the React apps and the API services. As soon as you begin developing something with Webiny, you’ll be working with plugins.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZgVWbkJl6FY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br/>
+
+**Webiny Plugins**
+
+Webiny framework supports a very simple system of plugins that powers both the React apps and the API services. As soon as you begin developing something with Webiny, you’ll be working with plugins.
 
 Learn about Webiny Plugins below 🔬
 
-### 💡**Build Your Serverless GraphQL API with Webiny
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4qcDLzu8kVM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### 💡 Build Your Serverless GraphQL API with Webiny
 
 In this tutorial, Webiny’s DevRel Albiona, guides you on building a Habits Tracker API service using the GraphQL Apollo Service scaffold, which will consist of the `Habit`model. By accessing the `/graphql`** URL **you will read (query) and write (mutations) new data for your habits.
 
-Check out the tutorial below.
+[Check out the tutorial](http://docs.webiny.com/docs/tutorials/build-your-serverless-graphql-api-webiny).
 
-### Build Your Serverless GraphQL API with Webiny | Webiny Documentation
-
-### In this tutorial, you will create a Habits Tracker API service, which will consist of the Habit model. By accessing the…
-
-#### docs.webiny.com
+---
 
 ## 🤝 Get Involved
 
@@ -84,9 +91,11 @@ We encourage everyone to get involved and contribute, regardless of their experi
 
 Our development team is on standby to help your in-house team to learn and adopt Webiny — all free of cost!
 
+---
+
 ## 🚀 We are hiring
 
 We are looking for a member to join our team.
-If you are interested? Apply for the [Full-Stack JavaScript Engineer](https://careers.webiny.com/full-stack-javascript-engineer/en)** role**.
+If you are interested? Apply for the [Full-Stack JavaScript Engineer](https://careers.webiny.com/full-stack-javascript-engineer/en) role.
 
 Since we are a small team, in this role, you’ll have a significant opportunity to directly influence the technical and product design choices we will make.

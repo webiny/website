@@ -1,10 +1,11 @@
 ---
 slug: "blog/weve-closed-our-seed-round-84a572c56e2"
-title: ""
-description: "pending"
-tags: pending
+title: "We’ve Closed Our Seed Round!"
+description: "Webiny closes its first investment, to further advance the adoption of serverless technology."
+tags: ["Serverless", "Software development", "Open source", "Javascript", "Web development"]
 featureImage: "./assets/weve-closed-our-seed-round-84a572c56e2/max-4800-1y5sI3Crxz-3e5VpJCKSDeg.jpeg"
-author: pending
+author: sven
+date: 2019-10-30
 ---
 
 
@@ -14,11 +15,11 @@ It’s been a great day at [Webiny](https://www.webiny.com/). We’ve closed an 
 
 Episode 1 understood our mission and the importance of serverless technology as well as the strength of our team and dedication to our goal. This marks the beginning of a great relationship.
 
-## Webiny Mission: Empower Developers to Build Serverless Applications
+**Webiny Mission: Empower Developers to Build Serverless Applications**
 
 ## What’s Next?
 
-Webiny is and will remain an **open-source project **(you can track our work on GitHub under [webiny/webiny-js](https://github.com/Webiny/webiny-js)).
+Webiny is and will remain an **open-source project** (you can track our work on GitHub under [webiny/webiny-js](https://github.com/Webiny/webiny-js)).
 
 With this investment, we are making one significant change in our business model: no more paid tiers or Webiny Serverless Cloud. Webiny is moving to a **100% free and** **self-hosted **model. [Read more about the self-hosted version and suitable migration steps here.](/blog/moving-to-a-self-hosted-model-with-serverless-framework-72548075694e)
 

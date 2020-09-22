@@ -2,9 +2,10 @@
 slug: "blog/november-update-5aa276b4e934"
 title: "November Update 🍁"
 description: "A summary of the highlights and new things we launched in the last few weeks."
-tags: pending
+tags: ["Serverless", "Web development", "Javascript", "Software Development", "GraphQL"]
 featureImage: "./assets/november-update-5aa276b4e934/max-4800-1rYxiwKmcirDqq4lc5TsONg.jpeg"
-author: pending
+author: sven
+date: 2019-11-29
 ---
 
 
@@ -30,9 +31,15 @@ Reach out to Furkan on GitHub: [https://github.com/enmesarru](https://github.com
 
 We also would like to extend our thanks to [Tyler](https://github.com/12vanblart), [Adam](https://github.com/llwp), and [Dan](https://github.com/danruss) for their support in improving Webiny documentation.
 
-#### Want to become a Webiny contributor?*** We welcome all new members that want to support our project. In case you feel you might need a bit of extra guidance or help with your first issue — we are there for you. Just give us a ping on our *[chat](https://spectrum.chat/webiny)*.*
+---
+
+**Want to become a Webiny contributor?** 
+
+We welcome all new members that want to support our project. In case you feel you might need a bit of extra guidance or help with your first issue — we are there for you. Just give us a ping on our *[chat](https://spectrum.chat/webiny)*.
 
 *Since we’ve started this Spectrum community, we’ve received a lot of valuable feedback, bug reports, etc. So do join us there for a chat :)*
+
+---
 
 ## Product improvements
 
@@ -74,8 +81,8 @@ Since all the content is served via lambda functions, including the requests for
 
 As a way around this problem, we’ve added a condition inside the lambda function which checks the size of the file it needs to serve. If the file is smaller than 6MB, it’s served via the lambda, but if it’s larger, then the lambda returns a 301 redirect with a location to S3 from where that file can be served.
 
-**Have a feature request or an idea? ***Great, open a new issue on our *[GitHub](https://github.com/webiny/webiny-js)* and let’s discuss it.*
+**Have a feature request or an idea?** Great, open a new issue on our [GitHub](https://github.com/webiny/webiny-js) and let’s discuss it.
 
-**Stay tuned for more news — two big announcements coming in the upcoming days.
+Stay tuned for more news — two big announcements coming in the upcoming days.
 
 **In the meantime, want some FREE SWAG?** Head over to https://www.webiny.com/swag/

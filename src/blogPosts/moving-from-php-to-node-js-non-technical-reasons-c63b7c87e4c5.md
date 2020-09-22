@@ -1,16 +1,17 @@
 ---
 slug: "blog/moving-from-php-to-node-js-non-technical-reasons-c63b7c87e4c5"
 title: "Moving from PHP to Node.js (non-technical reasons)"
-description: "pending"
-tags: pending
+description: "I must admit, I was a very hard advocate of PHP and would never have thought of moving to Node.js or any other language, but ..."
+tags: ["Javascript", "Nodejs", "Serverless", "PHP", "AWS"]
 featureImage: "./assets/moving-from-php-to-node-js-non-technical-reasons-c63b7c87e4c5/max-2048-1TC9ewZLEL9ngFG2MXDBktw.jpeg"
-author: pending
+author: sven
+date: 2018-02-01
 ---
 
 
 I must admit, I was a very hard advocate of PHP and would never have thought of moving to Node.js or any other language to write server side code. But as the saying goes, never say never, because life slaps you around, and before you know it, you’re neck-deep in Node.Js.
 
-With this blog post I want to announce that **the** **next** **release of Webiny will be 100% written in Javascript **and in the sections below I’ll try and give our insight into why and how we’ve reached this decision.
+With this blog post I want to announce that **the next release of Webiny will be 100% written in Javascript** and in the sections below I’ll try and give our insight into why and how we’ve reached this decision.
 
 ## Node.Js vs PHP
 
@@ -54,20 +55,16 @@ Data from the past 5 years is hard evidence that the future of PHP is not a brig
 
 Will PHP die in next 5 years? I would say this is unlikely. There are many BIG companies that are using PHP today and will continue to use it in the future. On that topic, this was shared with me:
 
-> Before PHP “dies”,Facebook and Wordpress have to die.Wikipedia has to die.Yahoo has to die.Tesla’s website, Cloudflare, Slack have to die.Flickr has to die. Tumblr has to die. Photobucket too.Magento and many major world class e-commerce solutions have to die.SourceForge has to die.MailChimp (millions of commercial mailing lists managed by it) has to die.via — https://www.quora.com/Will-PHP-die-in-2018
-
-Before PHP “dies”,
-
-Facebook and Wordpress have to die.
-Wikipedia has to die.
-Yahoo has to die.
-Tesla’s website, Cloudflare, Slack have to die.
-Flickr has to die. Tumblr has to die. Photobucket too.
-Magento and many major world class e-commerce solutions have to die.
-SourceForge has to die.
-MailChimp (millions of commercial mailing lists managed by it) has to die.
-
-via — [https://www.quora.com/Will-PHP-die-in-2018](https://www.quora.com/Will-PHP-die-in-2018)
+> Before PHP “dies”,
+> Facebook and Wordpress have to die.
+> Wikipedia has to die.
+> Yahoo has to die.
+> Tesla’s website, Cloudflare, Slack have to die.
+> Flickr has to die. Tumblr has to die. Photobucket too.
+> Magento and many major world class e-commerce solutions have to die.
+> SourceForge has to die.
+> MailChimp (millions of commercial mailing lists managed by it) has to die.
+> via — https://www.quora.com/Will-PHP-die-in-2018
 
 But, will PHP’s market decrease? Most likely.
 
@@ -93,11 +90,7 @@ You might, or might not, agree with what I’ve written here. We at Webiny have 
 
 Last 2 months were spent on working hard on the new Javascript repo, and in the next several weeks we’ll be ready to deploy the first version. As with the previous version, Webiny will be free, open source and licensed under MIT. You can explore our new repo on our GitHub page:
 
-### Webiny/webiny-js
-
-### webiny-js - Build APIs and web apps using a single JS platform.
-
-#### github.com
+`https://github.com/webiny/webiny-js`
 
 ..and before we go, once we’ve added the [Flow](https://flow.org/) type checker, all of a sudden our experience with server-side Javascript has become something like this:
 

@@ -242,7 +242,7 @@ export const RESOURCES_MENU = {
       {
         id: 2,
         label: 'Blog',
-        link: 'https://blog.webiny.com/',
+        link: '/blog',
       },
       {
         id: 3,

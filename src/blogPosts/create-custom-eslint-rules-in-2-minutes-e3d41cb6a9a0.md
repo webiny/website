@@ -1,10 +1,11 @@
 ---
 slug: "blog/create-custom-eslint-rules-in-2-minutes-e3d41cb6a9a0"
 title: "Create custom ESLint rules in 2 minutes"
-description: "pending"
-tags: pending
+description: "ESLint is a great tool when it comes to code standardization. Maintained by the open source community, and with a rich plugin-based ecosystem."
+tags: ["Javascript", "Eslint"]
 featureImage: "./assets/create-custom-eslint-rules-in-2-minutes-e3d41cb6a9a0/max-1776-1adPg-Z859DytSea5oLARGg.png"
-author: pending
+author: adrian
+date: 2018-06-21
 ---
 
 
@@ -25,7 +26,12 @@ So here we go!
 2. Inside the folder, we create a`package.json` file with following content:
 
 ```
-// eslint/package.json{  "name": "eslint-plugin-my-project",  "version": "1.0.0",  "main": "index.js"}
+// eslint/package.json
+{
+  "name": "eslint-plugin-my-project",
+  "version": "1.0.0",
+  "main": "index.js"
+}
 ```
 
 Please note that that the package name must start with `eslint-plugin-` prefix, as it is an ESLint requirement.
@@ -35,7 +41,20 @@ Please note that that the package name must start with `eslint-plugin-` prefix, 
 The following example was copied from the AST explorer website, and it just prevents developers from using [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals). Not very useful maybe, but for demonstration purposes of this guide, it will suffice.
 
 ```
-// eslint/index.jsmodule.exports = {    rules: {        "no-template-literals": {            create: function(context) {                return {                    TemplateLiteral(node) {                        context.report(node, 'Do not use template literals');                    }                };            }        }    }};
+// eslint/index.js
+module.exports = {
+    rules: {
+        "no-template-literals": {
+            create: function(context) {
+                return {
+                    TemplateLiteral(node) {
+                        context.report(node, 'Do not use template literals');
+                    }
+                };
+            }
+        }
+    }
+};
 ```
 
 4. Once you’re done, in your project root, add the plugin as a dependency using `yarn`(or `npm`):
@@ -51,7 +70,17 @@ After executing, inside the `node_modules` folder, you should have the `eslint-p
 5. Finally, add the plugin and rule in your `eslintrc` file. You can do that like so:
 
 ```
-// eslintrc.jsmodule.exports = {        (...)    plugins: ["my-project"],    rules: {        "flowtype/define-flow-type": 1,        "my-project/no-template-literals": 1    }    (...)};
+// eslintrc.js
+module.exports = {
+    
+    (...)
+    plugins: ["my-project"],
+    rules: {
+        "flowtype/define-flow-type": 1,
+        "my-project/no-template-literals": 1
+    }
+    (...)
+};
 ```
 
 ## We’re done!
@@ -59,5 +88,7 @@ After executing, inside the `node_modules` folder, you should have the `eslint-p
 That wasn’t too bad, right? 😊
 
 Try adding a simple template literal in your code. If you’ve done everything correctly, you should get an ESLint warning. Now continue with the files we’ve just created and start defining your own custom rules!
+
+---
 
 Thanks for reading! My name is Adrian and I work as a full stack developer at Webiny. If you have any questions or comments, feel free to reach out to me via [Twitter](https://twitter.com/1358Adrian).

@@ -1,10 +1,11 @@
 ---
 slug: "blog/oops-ive-just-emailed-a-real-customer-pains-of-testing-transactional-emails-6247f302ad35"
 title: "Oops…I’ve just emailed a real customer — pains of testing transactional emails"
-description: "pending"
-tags: pending
+description: "Be honest, how many times have you found yourself in this situation? You either accidentally emailed a real customer or had a mistyped…"
+tags: ["Email marketing", "Web development", "Javascript", "React", "PHP"]
 featureImage: "./assets/oops-ive-just-emailed-a-real-customer-pains-of-testing-transactional-emails-6247f302ad35/max-3840-1bKdWY1gPSuUkWrAsS-IvRA.jpeg"
-author: pending
+author: sven
+date: 2017-11-14
 ---
 
 

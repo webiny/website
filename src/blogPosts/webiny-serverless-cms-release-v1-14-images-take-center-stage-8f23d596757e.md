@@ -1,24 +1,23 @@
 ---
 slug: "blog/webiny-serverless-cms-release-v1-14-images-take-center-stage-8f23d596757e"
-title: "[Webiny Serverless CMS — Release V1.14](/webiny-serverless-cms-release-v1-13-0-️-527619fdff81?source=collection_home---4------1---------------------) — Images take center stage 🖼"
-description: "pending"
-tags: pending
+title: "Webiny Serverless CMS — Release V1.14 - Images take center stage 🖼"
+description: "We’ve got some cool new features to show you."
+tags: ["Serverless", "Web development", "Javascript", "Software Development", "GraphQL"]
 featureImage: "./assets/webiny-serverless-cms-release-v1-14-images-take-center-stage-8f23d596757e/max-5712-1DQEnipTgfiWsbJkJXeGTkA.png"
-author: pending
+author: sven
+date: 2019-05-08
 ---
-
-## [Webiny Serverless CMS — Release V1.14](/blog/webiny-serverless-cms-release-v1-13-0-️-527619fdff81?source=collection_home---4------1---------------------) — Images take center stage 🖼
 
 ## We’ve got some cool new features to show you.
 
-Since our last update we have received even more feedback and we have several surprises in store for you 🎁. Starting with **v1.14** release where we focused on a new component called **File Manager. **So, let’s take a deeper dive.
+Since our last update we have received even more feedback and we have several surprises in store for you 🎁. Starting with **v1.14** release where we focused on a new component called **File Manager.** So, let’s take a deeper dive.
 
 Still don’t have a Webiny Website — It’s free while beta lasts. 
 [-> Create one now!](https://www.webiny.com/)
 
 ## 🚀 New features
 
-#### File Manager **— Organise, search, upload and amend your files through this new UI. The File Manager component has been integrated throughout Webiny CMS.
+**File Manager** — Organise, search, upload and amend your files through this new UI. The File Manager component has been integrated throughout Webiny CMS.
 
 ![](./assets/webiny-serverless-cms-release-v1-14-images-take-center-stage-8f23d596757e/max-1200-1J2LSXMpuS0IKyD2xwqkjDA.gif)
 
@@ -26,7 +25,7 @@ Still don’t have a Webiny Website — It’s free while beta lasts.
 
 ## 💅Enhancements
 
-**Mailchimp **— We have revamped the experience of configuring and embedding a Mailchimp subscribe form. It’s simple as inserting an API key, which you only need to do once, and then your subscribe form will become active.
+**Mailchimp** — We have revamped the experience of configuring and embedding a Mailchimp subscribe form. It’s simple as inserting an API key, which you only need to do once, and then your subscribe form will become active.
 
 ![](./assets/webiny-serverless-cms-release-v1-14-images-take-center-stage-8f23d596757e/max-1200-1Ib0Lci6lAd5YOC5rO14Alg.gif)
 
@@ -47,9 +46,3 @@ To find out more information on how to install and use it, please visit our docu
 **SoundCloud** — There was a bug where if you inserted a SoundCloud element into the page, the editor would crash 😵. Luckily that’s now fixed 👍
 
 ![](./assets/webiny-serverless-cms-release-v1-14-images-take-center-stage-8f23d596757e/max-1920-1LcVxvK0iZVS-vBYqMZ1AZg.gif)
-
-![](./assets/webiny-serverless-cms-release-v1-14-images-take-center-stage-8f23d596757e/max-1646-1uTKSMzuxRuRqyInjXBNQdg.png)
-
-**Are you a web development agency, and are thinking of using Webiny for your next project?
-
-[If so, let us know, we can probably help you out.](https://www.webiny.com/contact-us)

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'react-emotion';
 import {css} from 'emotion';
+import {Link} from 'gatsby';
 import theme from '../utils/theme';
 import mq from '../utils/breakpoints';
 import ContentContainer from '../ui/content-container';
@@ -120,9 +121,9 @@ const Footer = () => (
               Slack
             </a>
             {' '}/{' '}
-            <a className={linkStyle} href="https://blog.webiny.com">
+            <Link className={linkStyle} to="/blog">
               Blog
-            </a>
+            </Link>
             <br />
             Webiny Ltd © {new Date ().getFullYear ()}
           </Copy>

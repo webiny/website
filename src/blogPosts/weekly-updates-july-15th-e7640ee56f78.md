@@ -1,10 +1,11 @@
 ---
 slug: "blog/weekly-updates-july-15th-e7640ee56f78"
 title: "Weekly Updates July 15th"
-description: "pending"
-tags: pending
+description: "🆕 What’s New In Webiny 4.5.0?"
+tags: ["Serverless", "Web development", "Javascript", "Software Development", "GraphQL"]
 featureImage: "./assets/weekly-updates-july-15th-e7640ee56f78/max-4480-1fF2aXYMeizWSKJWTlEtcHA.jpeg"
-author: pending
+author: albiona
+date: 2020-07-15
 ---
 
 
@@ -14,7 +15,9 @@ Our weekly release is here! This week we introduced a couple of improvements and
 
 ### 🚀 Features
 
-#### Add API URL view for environments (**[#1053](https://github.com/webiny/webiny-js/pull/1053)**)**We added an API Documentation tab to the Footer Menu to easily find your API links.
+**Add API URL view for environments** ([#1053](https://github.com/webiny/webiny-js/pull/1053))
+
+We added an API Documentation tab to the Footer Menu to easily find your API links.
 
 ![](./assets/weekly-updates-july-15th-e7640ee56f78/max-2612-1dq101pscL8cGa3ObUsbmxQ.png)
 
@@ -24,7 +27,11 @@ We also added information buttons next to environment aliases and environments t
 
 ### 🐞 Bugs
 
-**Sync environment with environment aliases (**[#1121](https://github.com/webiny/webiny-js/pull/1121)**)**Changes in environment aliases will reflect in the environment section immediately. For example, newly created environment alias now show under linked environment entry immediately.
+**Sync environment with environment aliases** ([#1121](https://github.com/webiny/webiny-js/pull/1121))
+
+Changes in environment aliases will reflect in the environment section immediately. For example, newly created environment alias now show under linked environment entry immediately.
+
+---
 
 ### ⬇️ Try the Latest Release
 
@@ -32,11 +39,15 @@ If you’d like to give Webiny a try, feel free to check our [Quick Start](https
 
 And, just in case you’ve missed it, if you’d like to check out the full changelog, you can do that [here](https://github.com/webiny/webiny-js/releases/tag/v4.5.0).
 
+--
+
 ## 🙌 Community Updates
 
 ### 👥 Conf42 Open Source Showcase — Webiny
 
 Listen to the Webiny CEO, [Sven Al Hamad](https://medium.com/u/5f6a95bef26f?source=post_page-----e7640ee56f78--------------------------------), talk about Webiny. The open-source foundation for building serverless full-stack applications.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/odotdrOOvJE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### 🎙 Serverless Chats With Webiny (Podcast)
 
@@ -50,15 +61,21 @@ Listen to the podcast [here](https://www.serverlesschats.com/57/).
 
 In this session, we go through the mechanics of app development with Webiny. We’ll get to know the structure of the app, how it is bundled, and how to make reusable app templates. Check our YouTube video below:
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EQxNsDSdpsQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+
 ## 🤝 Get Involved
 
 We encourage everyone to get involved and contribute, regardless of their experience level. Read the [contributing guide](https://github.com/webiny/webiny-js/blob/master/CONTRIBUTING.md), and if you still run into problems, just give us a ping on [Slack](https://www.webiny.com/slack), we will help you out.
 
 Our development team is on standby to help your in-house team to learn and adopt Webiny — all free of cost!
 
-## 🚀** We are hiring
+---
+
+## 🚀 We are hiring
 
 We are looking for a member to join our team. 
-If you are interested? Apply for the [Full-Stack JavaScript Engineer](https://careers.webiny.com/full-stack-javascript-engineer/en)** role**.
+If you are interested? Apply for the [Full-Stack JavaScript Engineer](https://careers.webiny.com/full-stack-javascript-engineer/en) role.
 
 Since we are a small team, in this role, you’ll have a significant opportunity to directly influence the technical and product design choices we will make.

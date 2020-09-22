@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'react-emotion';
 import Img from 'gatsby-image';
-import {navigate} from 'gatsby';
+import {navigate, Link} from 'gatsby';
 // utils
 import theme from '../../utils/theme';
 import mq from '../../utils/breakpoints';
-import AUTHOR_IMAGE from '../../../blogTemplates/assets/adrian.png';
+import authors from './blogAuthors';
 
 const BlogCardWrapper = styled ('div') (
   {
@@ -53,7 +53,7 @@ const BlogCardWrapper = styled ('div') (
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'flex-start',
-      padding: '0px 12px 12px',
+      padding: '0px 12px 40px',
 
       '& .author-wrapper': {
         position: 'relative',
@@ -91,7 +91,7 @@ const BlogCardWrapper = styled ('div') (
       },
       '& .tags-wrapper': {
         position: 'absolute',
-        bottom: '20px',
+        bottom: '15px',
         '& .tag': {
           boxSizing: 'border-box',
           padding: '2px 10px',
@@ -102,13 +102,15 @@ const BlogCardWrapper = styled ('div') (
           fontWeight: theme.fontWeight.semiBold,
           color: '#313097',
           marginRight: 8,
+          marginBottom: 5,
+          display: 'inline-block',
         },
       },
     },
   },
   mq ({
     width: ['90%', 326],
-    height: ['auto', 345],
+    minHeight: ['auto', 345],
   })
 );
 
@@ -146,13 +148,13 @@ const BlogCard = ({
       <div className="text-wrapper">
         <div className="author-wrapper">
           <img
-            src={AUTHOR_IMAGE}
-            alt={author}
+            src={authors[author].avatar}
+            alt={authors[author].name}
             className="author-wrapper__img"
           />
-          <span className="author-wrapper__name">{author}</span>
+          <span className="author-wrapper__name">{authors[author].name}</span>
         </div>
-        <p className="title">{title}</p>
+        <Link to={'/' + slug} className="title">{title}</Link>
         <p className="description">{description}</p>
         <div className="tags-wrapper">
           {Array.isArray (tags) &&

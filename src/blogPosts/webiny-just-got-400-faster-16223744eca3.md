@@ -1,12 +1,14 @@
 ---
 slug: "blog/webiny-just-got-400-faster-16223744eca3"
 title: "Webiny just got 400% faster 🏎"
-description: "pending"
-tags: pending
+description: "We made significant improvements to the Webiny Cloud platform, which in return cut down the load time of Webiny websites by ~80%"
+tags: ["Javascript", "Serverless", "React", "Nodejs", "AWS"]
 featureImage: "./assets/webiny-just-got-400-faster-16223744eca3/proxy-1ZB9u_IEwlq-gUiF7AdZKPQ.png"
-author: pending
+author: sven
+date: 2019-05-30
 ---
 
+![](./assets/webiny-just-got-400-faster-16223744eca3/proxy-1ZB9u_IEwlq-gUiF7AdZKPQ.png)
 
 In short, we made significant improvements to the Webiny Cloud platform, which in return cut down the load time of Webiny websites by ~80%. To put this into perspective, previously the load time averaged at around 3.3 seconds, and now is around 800ms.
 

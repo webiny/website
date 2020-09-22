@@ -1,10 +1,11 @@
 ---
 slug: "blog/testing-protected-app-sections-the-right-way-with-cypress-custom-commands-c6bac254d861"
 title: "Testing protected app sections the right way with Cypress custom commands!"
-description: "pending"
-tags: pending
+description: "With Cypress, testing web apps has finally become super easy! It is precisely what I was looking and hoping for back in the day when I was"
+tags: ["Javascript", "Cypress", "Testing", "E2E testing", "Frontend development"]
 featureImage: "./assets/testing-protected-app-sections-the-right-way-with-cypress-custom-commands-c6bac254d861/max-1868-1r86P54goZarROMQLp_znSg.png"
-author: pending
+author: adrian
+date: 2018-12-19
 ---
 
 
@@ -19,8 +20,6 @@ For my first experiment, I decided I would start with signup and login flows of 
 Satisfied with my progress, I decided to move onto the sections that are protected or, in other words, sections which cannot be accessed without an authenticated user. At that point, the question that immediately popped up in my head was:
 
 > Is it possible to have an already logged-in user before a test is initiated? This is a “must” if I want to be able to open any protected part of the app.
-
-Is it possible to have an already logged-in user before a test is initiated? This is a “must” if I want to be able to open any protected part of the app.
 
 I had a few initial ideas; however, they weren’t good enough.
 
@@ -49,10 +48,16 @@ So, instead of going through the signup / login flows again and again, we could 
 
 Did I mention that Cypress offers everything you’ll need out of the box? Well, it certainly does! 🎁 😊
 
-Cypress comes with a lot of built-in commands.** **E.g. to send a simple HTTP request to your backend API, you can utilize the [cy.request](https://docs.cypress.io/api/commands/request.html#Syntax) command like so:
+Cypress comes with a lot of built-in commands. E.g. to send a simple HTTP request to your backend API, you can utilize the [cy.request](https://docs.cypress.io/api/commands/request.html#Syntax) command like so:
 
 ```
-cy.request({    url: "/api/users",    method: "POST",    body: {something: "xyz"}}).then(({ body }) => {    // Do something.});
+cy.request({
+    url: "/api/users",
+    method: "POST",
+    body: {something: "xyz"}
+}).then(({ body }) => {
+    // Do something.
+});
 ```
 
 But that’s not all! On top of built-in commands, Cypress also lets you define [custom ones](https://docs.cypress.io/api/cypress-api/custom-commands.html), with which you can easily execute a frequently used series of commands. Exactly what we need!
@@ -60,7 +65,9 @@ But that’s not all! On top of built-in commands, Cypress also lets you define 
 New custom commands can simply be registered via `cypress/support/commands.js` file, like the following:
 
 ```
-Cypress.Commands.add("doSomething", () => {    // Do something});
+Cypress.Commands.add("doSomething", () => {
+    // Do something
+});
 ```
 
 Once you’ve done that, you’ll be able to call `cy.doSomething()` anywhere in your tests. Cool, huh? 😎 Just make sure to give descriptive names to your commands so that the code is more readable at later stages.
@@ -77,7 +84,33 @@ So, in our case, we want to register the`cy.signupUserAndLogin` custom command, 
 These steps are represented by the following code:
 
 ```
-Cypress.Commands.add("signupUserAndLogin", () => {    // 1. Create a random data for our new user.    const user = generateRandomNewUser();    // 2. Send sign up API call    return cy        .request({            url: "/api/users/signup",            method: "POST",            body: user        })        .then(({ body }) => {            // 3. Send log in API call            cy.request({                url: "/api/users/login",                method: "POST",                body: {                    email: user.email,                    password: user.password                }            }).then(({ body }) => {                // Save received auth token to local storage                window.localStorage.setItem("authToken", body.authToken);                return body.data;            });        });});
+Cypress.Commands.add("signupUserAndLogin", () => {
+    // 1. Create a random data for our new user.
+    const user = generateRandomNewUser();
+
+    // 2. Send sign up API call
+    return cy
+        .request({
+            url: "/api/users/signup",
+            method: "POST",
+            body: user
+        })
+        .then(({ body }) => {
+            // 3. Send log in API call
+            cy.request({
+                url: "/api/users/login",
+                method: "POST",
+                body: {
+                    email: user.email,
+                    password: user.password
+                }
+            }).then(({ body }) => {
+                // Save received auth token to local storage
+                window.localStorage.setItem("authToken", body.authToken);
+                return body.data;
+            });
+        });
+});
 ```
 
 Note that we’ve put both the signup and login functionality into one command. If necessary, you might want to create separate `logInUser` and `signUpUser` commands first in order to trigger only a specific action when needed.
@@ -85,7 +118,19 @@ Note that we’ve put both the signup and login functionality into one command. 
 With the custom command registered, you can now execute it in any test where an authenticated user is required. E.g., if we were to test the user profile form, we may end up with something like this:
 
 ```
-describe("user profile", () => {    it("displays the user profile form", () => {        cy.signupUserAndLogin().then(user => {            // We have user ready at this point.            // Now redirect to desired URL, and make the necessary assertions.            cy.visit("/user-area/my-profile")                .get(".someFormElement")                .should("exist");            // ...        });    });});
+describe("user profile", () => {
+    it("displays the user profile form", () => {
+        cy.signupUserAndLogin().then(user => {
+            // We have user ready at this point.
+            // Now redirect to desired URL, and make the necessary assertions.
+
+            cy.visit("/user-area/my-profile")
+                .get(".someFormElement")
+                .should("exist");
+            // ...
+        });
+    });
+});
 ```
 
 As you can see, we called the custom command at the beginning of our test and, as soon as it was done, we redirected the browser to the user profile form page and made the necessary assertions. And, that’s it! You can also repeat the same steps in other tests where an authenticated user is required.
@@ -95,5 +140,7 @@ As you can see, we called the custom command at the beginning of our test and, a
 ## Conclusion
 
 With custom commands, testing protected app sections has certainly become a lot easier! We’ve eliminated the need to repeat the same signup / login steps and, with that, our tests have not only become easier to read (because of fewer lines of code) but also take less time to execute.
+
+---
 
 Thanks for reading! My name is Adrian and I work as a full stack developer at [Webiny](https://www.webiny.com). If you have any questions or comments, feel free to reach out to me via [Twitter](https://www.twitter.com/doitadrian).

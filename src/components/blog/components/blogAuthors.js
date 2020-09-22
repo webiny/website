@@ -1,10 +1,10 @@
-import svenImg from './assets/sven.png';
-import pavelImg from './assets/pavel.png';
-import adrianImg from './assets/adrian.png';
-import ashuImg from './assets/ashu.png';
-import albionaImg from './assets/albiona.png';
-import mislavImg from './assets/mislav.png';
-import brunoImg from './assets/bruno.png';
+import svenImg from '../assets/sven.png';
+import pavelImg from '../assets/pavel.png';
+import adrianImg from '../assets/adrian.png';
+import ashuImg from '../assets/ashu.png';
+import albionaImg from '../assets/albiona.png';
+import mislavImg from '../assets/mislav.png';
+import brunoImg from '../assets/bruno.png';
 
 export default {
   sven: {

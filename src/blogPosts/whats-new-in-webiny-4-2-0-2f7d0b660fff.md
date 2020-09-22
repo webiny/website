@@ -1,10 +1,11 @@
 ---
 slug: "blog/whats-new-in-webiny-4-2-0-2f7d0b660fff"
 title: "What’s New In Webiny 4.2.0"
-description: "pending"
-tags: pending
+description: "Our Tuesday Release is here — Webiny 4.2.0 🎉"
+tags: ["Serverless", "Web development", "Javascript", "Software Development", "GraphQL"]
 featureImage: "./assets/whats-new-in-webiny-4-2-0-2f7d0b660fff/max-6720-1BqfeXX3BN3n6i21-xtKhMg.png"
-author: pending
+author: albiona
+date: 2020-06-25
 ---
 
 

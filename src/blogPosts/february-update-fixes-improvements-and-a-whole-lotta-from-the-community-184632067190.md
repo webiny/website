@@ -1,10 +1,11 @@
 ---
 slug: "blog/february-update-fixes-improvements-and-a-whole-lotta-from-the-community-184632067190"
 title: "February Update — Fixes, Improvements and a Whole Lotta 😍 from the Community"
-description: "pending"
-tags: pending
+description: "Webiny is growing and getting better each day. Checkout our latest release."
+tags: ["Serverless", "GraphQL", "Javascript", "Reactjs", "Nodejs"]
 featureImage: "./assets/february-update-fixes-improvements-and-a-whole-lotta-from-the-community-184632067190/max-2956-1_AevoIUFtREcNwzlq5escA.png"
-author: pending
+author: adrian
+date: 2020-02-27
 ---
 
 
@@ -12,13 +13,13 @@ author: pending
 
 As always, let’s start the update by giving a shout out to our new contributors 👏
 
-[Valentyn](https://github.com/val-fom)** **submitted two new admirable PRs that fixed important issues related to the SSR caching.
+**[Valentyn](https://github.com/val-fom)** submitted two new admirable PRs that fixed important issues related to the SSR caching.
 
-[tjrexer](https://github.com/tjrexer) squashed a sneaky little bug he detected while using the Page Builder app. Creating links that point to external domains now work as expected!
+**[tjrexer](https://github.com/tjrexer)** squashed a sneaky little bug he detected while using the Page Builder app. Creating links that point to external domains now work as expected!
 
-[Fsalker](https://github.com/Fsalker) also helped us by implementing smarter handling of errors that might occur while the user is designing a page with the Page Builder editor.
+**[Fsalker](https://github.com/Fsalker)** also helped us by implementing smarter handling of errors that might occur while the user is designing a page with the Page Builder editor.
 
-[Naion](https://github.com/Naion) also reported a couple of really annoying bugs, which are now taken care of!
+**[Naion](https://github.com/Naion)** also reported a couple of really annoying bugs, which are now taken care of!
 
 Last but not least, we also wanted to thank [Piotr](https://github.com/bigb123) for his contributions to the [Webiny community](https://community.webiny.com/). The dedicated assistance he provided to other Webiny users simply blew our minds!
 
@@ -27,6 +28,8 @@ Last but not least, we also wanted to thank [Piotr](https://github.com/bigb123) 
 We encourage everyone to get involved and contribute, regardless of their experience level. Take a look at our [contributing guide](https://github.com/webiny/webiny-js/blob/master/CONTRIBUTING.md) and if you still run into problems, just give us a ping on [Gitter](https://gitter.im/Webiny/webiny-js), we are here to help you!
 
 Moving on, let’s take a look at this month’s changelog!
+
+---
 
 ## 📦 Features
 

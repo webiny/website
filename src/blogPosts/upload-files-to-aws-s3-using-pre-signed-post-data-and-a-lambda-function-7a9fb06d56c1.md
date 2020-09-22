@@ -1,10 +1,11 @@
 ---
 slug: "blog/upload-files-to-aws-s3-using-pre-signed-post-data-and-a-lambda-function-7a9fb06d56c1"
 title: "Upload files to AWS S3 using pre-signed POST data and a Lambda function"
-description: "pending"
-tags: pending
+description: "Start your serverless journey by learning how to upload files directly to S3 using pre-signed POST data and a simple Lambda function."
+tags: ["AWS", "S3", "Serverless", "File upload", "Lambda"]
 featureImage: "./assets/upload-files-to-aws-s3-using-pre-signed-post-data-and-a-lambda-function-7a9fb06d56c1/max-11520-077fY-3AU-ePf8vz-.jpeg"
-author: pending
+author: adrian
+date: 2019-04-11
 ---
 
 
@@ -53,7 +54,19 @@ It also contains information about the file upload request itself, for example, 
 To check it out, let’s take a look at a sample result of the`createPresignedPost` method call, which is part of the [Node.js AWS SDK](https://aws.amazon.com/sdk-for-node-js/) and which we’ll later use in the implementation section of this post. The pre-signed POST data is contained in the “fields” key:
 
 ```
-{  "url": "https://s3.us-east-2.amazonaws.com/webiny-cloud-z1",  "fields": {    "key": "uploads/1jt1ya02x_sample.jpeg",    "bucket": "webiny-cloud-z1",    "X-Amz-Algorithm": "AWS4-HMAC-SHA256",    "X-Amz-Credential": "A..../us-east-2/s3/aws4_request",    "X-Amz-Date": "20190309T203725Z",    "X-Amz-Security-Token": "FQoGZXIvYXdzEMb//////////...i9kOQF",    "Policy": "eyJleHBpcmF0a...UYifV19",    "X-Amz-Signature": "05ed426704d359c1c68b1....6caf2f3492e"  }}
+{  
+    "url": "https://s3.us-east-2.amazonaws.com/webiny-cloud-z1", 
+    "fields": {    
+        "key": "uploads/1jt1ya02x_sample.jpeg",    
+        "bucket": "webiny-cloud-z1",    
+        "X-Amz-Algorithm": "AWS4-HMAC-SHA256",    
+        "X-Amz-Credential": "A..../us-east-2/s3/aws4_request",    
+        "X-Amz-Date": "20190309T203725Z",    
+        "X-Amz-Security-Token": "FQoGZXIvYXdzEMb//////////...i9kOQF",    
+        "Policy": "eyJleHBpcmF0a...UYifV19",    
+        "X-Amz-Signature": "05ed426704d359c1c68b1....6caf2f3492e"  
+    }
+}
 ```
 
 As developers, we don’t really need to concern ourselves too much with the values of some of these fields (once we’re sure the user is actually authorized to request this information). It’s important to note that all of the fields and values must be included when doing the actual upload, otherwise the S3 will respond with an error.
@@ -65,6 +78,8 @@ Now that we know the basics, we’re ready to move onto the actual implementatio
 As we’ve mentioned at the beginning of this post, we’re going to use React on the client side, so what we have here is a simple React component that renders a button, which enables the user to select any type of file from his local system. Once selected, we immediately start the file upload process.
 
 Let’s take a look:
+
+`gist:doitadrian/e93dc8b06d5e30ca0ce89f2f0e71c717`
 
 For an easier file selection and cleaner code, we’ve utilized a small package called [react-butterfiles](https://github.com/doitadrian/react-butterfiles). The author of the package is actually me, so if you have any questions or suggestions, feel free to let me know! 😉
 
@@ -95,7 +110,15 @@ Looking at the default policy in the above screenshot, we just need to append th
 The complete policy would then be the following:
 
 ```
-<CORSConfiguration>    <CORSRule>        <AllowedOrigin>*</AllowedOrigin>        <AllowedMethod>GET</AllowedMethod>        <AllowedMethod>POST</AllowedMethod>        <MaxAgeSeconds>3000</MaxAgeSeconds>        <AllowedHeader>Authorization</AllowedHeader>    </CORSRule></CORSConfiguration>
+<CORSConfiguration>
+    <CORSRule>
+        <AllowedOrigin>*</AllowedOrigin>
+        <AllowedMethod>GET</AllowedMethod>
+        <AllowedMethod>POST</AllowedMethod>
+        <MaxAgeSeconds>3000</MaxAgeSeconds>
+        <AllowedHeader>Authorization</AllowedHeader>
+    </CORSRule>
+</CORSConfiguration>
 ```
 
 Alright, let’s move to the last piece of the puzzle and that’s the Lambda function.
@@ -107,18 +130,31 @@ Since it is a bit out of the scope of this post, I’ll assume you already know 
 To generate pre-signed POST data, we will utilize the AWS SDK, which is [by default](https://docs.aws.amazon.com/lambda/latest/dg/current-supported-versions.html) available in every Lambda function. This is great, but we must be aware that it can only execute actions that were allowed by the role that is currently assigned to the Lambda function. This is important because, in our case, if the role didn’t have the permission for creating objects in our S3 bucket, upon uploading the file from the client, S3 would respond with the `Access Denied` error:
 
 ```
-<?xml version="1.0" encoding="UTF-8"?><Error><Code>AccessDenied</Code><Message>Access Denied</Message><RequestId>DA6A3371B16D0E39</RequestId><HostId>DMetGYguMQ+e+HXmNShxcG0/lMg8keg4kj/YqnGOi3Ax60=</HostId></Error>
+<?xml version="1.0" encoding="UTF-8"?>
+<Error><Code>AccessDenied</Code><Message>Access Denied</Message><RequestId>DA6A3371B16D0E39</RequestId><HostId>DMetGYguMQ+e+HXmNShxcG0/lMg8keg4kj/YqnGOi3Ax60=</HostId></Error>
 ```
 
 So, before continuing, make sure your Lambda function has an adequate role. For this, we can create a new role, and attach the following policy to it:
 
 ```
-{    "Version": "2012-10-17",    "Statement": [        {            "Sid": "VisualEditor0",            "Effect": "Allow",            "Action": "s3:PutObject",            "Resource": "arn:aws:s3:::presigned-post-data/*"        }    ]}
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "s3:PutObject",
+            "Resource": "arn:aws:s3:::presigned-post-data/*"
+        }
+    ]
+}
 ```
 
 A quick tip here: for security reasons, when creating roles and defining permissions, make sure to follow the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege), or in other words, assign only permissions that are actually needed by the function. No more, no less. In our case, we specifically allowed `s3:PutObject` action on the `presigned-post-data` bucket. Avoid assigning default `AmazonS3FullAccess` at all costs.
 
 Alright, if your role is ready, let’s take a look at our Lambda function:
+
+`gist:doitadrian/bdb9a4b42bf9fd7df7d8dde4e41142b6`
 
 Besides passing the basic`key` and `Content-Type` fields (line 18), we also appended the `content-length-range` condition (line 17), which limits the file size to a value from 100B to 10MB. This is very important, because without the condition, users would basically be able to upload a 1TB file if they decided to do it.
 
@@ -131,13 +167,19 @@ One final note regarding the “naive” `ContentType` detection you might’ve 
 If you’ve managed to execute all of the steps correctly, everything should be working fine. To try it out, let’s first try to upload files that don’t comply with the file size condition. So, if the file is smaller than 100B, we should receive the following error message:
 
 ```
-POST https://s3.us-east-2.amazonaws.com/webiny-cloud-z1 400 (Bad Request)Uncaught (in promise) <?xml version="1.0" encoding="UTF-8"?><Error><Code>EntityTooSmall</Code><Message>Your proposed upload is smaller than the minimum allowed size</Message><ProposedSize>19449</ProposedSize><MinSizeAllowed>100000</MinSizeAllowed><RequestId>AB7CE8CC00BAA851</RequestId><HostId>mua824oABTuCfxYr04fintcP2zN7Bsw1V+jgdc8Y5ZESYN9/QL8454lm4++C/gYqzS3iN/ZTGBE=</HostId></Error>
+POST https://s3.us-east-2.amazonaws.com/webiny-cloud-z1 400 (Bad Request)
+
+Uncaught (in promise) <?xml version="1.0" encoding="UTF-8"?>
+<Error><Code>EntityTooSmall</Code><Message>Your proposed upload is smaller than the minimum allowed size</Message><ProposedSize>19449</ProposedSize><MinSizeAllowed>100000</MinSizeAllowed><RequestId>AB7CE8CC00BAA851</RequestId><HostId>mua824oABTuCfxYr04fintcP2zN7Bsw1V+jgdc8Y5ZESYN9/QL8454lm4++C/gYqzS3iN/ZTGBE=</HostId></Error>
 ```
 
 On the other hand, if it’s larger than 10MB, we should also receive the following:
 
 ```
-POST https://s3.us-east-2.amazonaws.com/webiny-cloud-z1 400 (Bad Request)Uncaught (in promise) <?xml version="1.0" encoding="UTF-8"?><Error><Code>EntityTooLarge</Code><Message>Your proposed upload exceeds the maximum allowed size</Message><ProposedSize>10003917</ProposedSize><MaxSizeAllowed>10000000</MaxSizeAllowed><RequestId>50BB30B533520F40</RequestId><HostId>j7BSBJ8Egt6G4ifqUZXeOG4AmLYN1xWkM4/YGwzurL4ENIkyuU5Ql4FbIkDtsgzcXkRciVMhA64=</HostId></Error>
+POST https://s3.us-east-2.amazonaws.com/webiny-cloud-z1 400 (Bad Request)
+
+Uncaught (in promise) <?xml version="1.0" encoding="UTF-8"?>
+<Error><Code>EntityTooLarge</Code><Message>Your proposed upload exceeds the maximum allowed size</Message><ProposedSize>10003917</ProposedSize><MaxSizeAllowed>10000000</MaxSizeAllowed><RequestId>50BB30B533520F40</RequestId><HostId>j7BSBJ8Egt6G4ifqUZXeOG4AmLYN1xWkM4/YGwzurL4ENIkyuU5Ql4FbIkDtsgzcXkRciVMhA64=</HostId></Error>
 ```
 
 Finally, if we tried to upload a file that’s in the allowed range, we should receive the `204 No content` HTTP response and we should be able to see the file in our S3 bucket.
@@ -152,9 +194,7 @@ For example, [AWS Amplify client framework](https://aws.amazon.com/amplify/) mig
 
 You might’ve also heard about the [pre-signed URL approach](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#getSignedUrl-property). If you were wondering what is the difference between the two, on a high level, it is similar to the pre-signed POST data approach, but it is less [customizable](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#getSignedUrl-property):
 
-> Note: Not all operation parameters are supported when using pre-signed URLs. Certain parameters, such as SSECustomerKey, ACL, Expires, ContentLength, or Tagging must be provided as headers when sending a request. If you are using pre-signed URLs to upload from a browser and need to use these fields, see createPresignedPost().
-
-**Note: **Not all operation parameters are supported when using pre-signed URLs. Certain parameters, such as `SSECustomerKey`, `ACL`, `Expires`, `ContentLength`, or `Tagging` must be provided as headers when sending a request. If you are using pre-signed URLs to upload from a browser and need to use these fields, see [createPresignedPost()](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#createPresignedPost-property).
+> **Note:** Not all operation parameters are supported when using pre-signed URLs. Certain parameters, such as `SSECustomerKey`, `ACL`, `Expires`, `ContentLength`, or `Tagging` must be provided as headers when sending a request. If you are using pre-signed URLs to upload from a browser and need to use these fields, see [createPresignedPost()](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#createPresignedPost-property).
 
 One notable feature that it lacks is specifying the minimum and maximum file size, which in this post we’ve accomplished with the `content-length-range `condition. Since this is a must-have if you ask me, the approach we’ve covered in this post would definitely be my go-to choice.
 
@@ -169,5 +209,7 @@ If you’ll be working with image or video files, you will also want to optimize
 Serverless is a really hot topic these days and it’s not surprising since so much work is abstracted away from us, making our lives easier as software developers. When comparing to “traditional serverful” architectures, both S3 and Lambda that we’ve used in this post basically require no or very little system maintenance and monitoring. This gives us more time to focus on what really matters, and ultimately that is the actual product we’re creating.
 
 Thanks for sticking until the very end of this article. Feel free to let me know if you have any questions or corrections, I would be glad to check them out!
+
+---
 
 Thanks for reading! My name is Adrian and I work as a full stack developer at [Webiny](https://www.webiny.com). In my spare time, I like to write about my experiences with some of the modern frontend and backend web development tools, hoping it might help other developers. If you have any questions, comments or just wanna say hi, feel free to reach out to me via [Twitter](https://www.twitter.com/doitadrian).

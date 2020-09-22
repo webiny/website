@@ -1,10 +1,11 @@
 ---
 slug: "blog/dev-diary-1-000-commits-milestone-b450718ee415"
 title: "Dev Diary: 1,000 commits milestone"
-description: "pending"
-tags: pending
+description: "Update on our development progress."
+tags: ["Serverless", "GraphQL", "Javascript", "Reactjs", "Nodejs"]
 featureImage: "./assets/dev-diary-1-000-commits-milestone-b450718ee415/max-4048-1bl1I_dYydaUNHrrBievCHw.png"
-author: pending
+author: sven
+date: 2018-12-19
 ---
 
 
