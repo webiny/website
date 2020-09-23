@@ -179,7 +179,7 @@ class NewsletterFooter extends React.Component {
                 target="_blank"
                 link={'https://www.webiny.com/'}
               >
-                Lean More
+                Learn More
               </Button>
             </Wrapper>
             <Wrapper>

@@ -46,7 +46,7 @@ export default {
   bruno: {
     name: 'Bruno Zoric',
     description: 'Full-stack Developer @ Webiny',
-    twitter: false,
+    twitter: 'snyder_hr',
     avatar: brunoImg,
   },
 };
