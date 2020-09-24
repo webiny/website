@@ -33,7 +33,7 @@ export const TEAM_MEMBERS = [
         github: "https://github.com/SvenAlHamad",
         twitter: "https://twitter.com/SvenAlHamad",
         linkedIn: "https://www.linkedin.com/in/svenalhamad",
-        imgSrc: profileSven
+        imgSrc: profileSven,
     },
     {
         id: 1,
@@ -42,7 +42,7 @@ export const TEAM_MEMBERS = [
         github: "https://github.com/Pavel910",
         twitter: "https://twitter.com/paveldenisjuk",
         linkedIn: "https://www.linkedin.com/in/paveldenisjuk",
-        imgSrc: profilePavel
+        imgSrc: profilePavel,
     },
     {
         id: 2,
@@ -51,7 +51,7 @@ export const TEAM_MEMBERS = [
         github: "https://github.com/doitadrian",
         twitter: "https://twitter.com/doitadrian",
         linkedIn: "https://www.linkedin.com/in/adriansmijulj",
-        imgSrc: profileAdrian
+        imgSrc: profileAdrian,
     },
     {
         id: 5,
@@ -60,7 +60,7 @@ export const TEAM_MEMBERS = [
         github: "https://github.com/Ashu96",
         twitter: "https://twitter.com/BhardwajAshu96",
         linkedIn: "https://www.linkedin.com/in/iamashutoshbhardwaj",
-        imgSrc: profileAshutosh
+        imgSrc: profileAshutosh,
     },
     {
         id: 6,
@@ -69,95 +69,95 @@ export const TEAM_MEMBERS = [
         github: "https://github.com/albionahoti",
         twitter: "https://twitter.com/albionaitoh",
         linkedIn: "https://www.linkedin.com/in/albionahoti/",
-        imgSrc: profileAlbiona
+        imgSrc: profileAlbiona,
     },
     {
         id: 7,
         name: "Mislav Streicher",
         jobTitle: "Business development",
         linkedIn: "https://www.linkedin.com/in/mislavstreicher",
-        imgSrc: profileMislav
-    }
+        imgSrc: profileMislav,
+    },
 ];
 
 export const LINKS = [
     {
         id: 0,
         name: "github",
-        icon: githubIcon
+        icon: githubIcon,
     },
     {
         id: 1,
         name: "linkedIn",
-        icon: linkedInIcon
+        icon: linkedInIcon,
     },
     {
         id: 2,
         name: "twitter",
-        icon: twitterIcon
-    }
+        icon: twitterIcon,
+    },
 ];
 
 export const TRAITS = [
     {
         id: 0,
         text: "We are curious and will never stop learning.",
-        icon: learningIcon
+        icon: learningIcon,
     },
     {
         id: 1,
         text: "We always find time to help our fellow peers.",
-        icon: findTimeIcon
+        icon: findTimeIcon,
     },
     {
         id: 2,
         text: "We respect and treat others the same way we want to be treated.",
-        icon: loveAndRespectIcon
+        icon: loveAndRespectIcon,
     },
     {
         id: 3,
         text: "Each one of us has a voice and is not afraid to speak their mind.",
-        icon: speakMindIcon
+        icon: speakMindIcon,
     },
     {
         id: 99,
         text: "",
         icon: webinyIcon,
-        spanTwoRows: true
+        spanTwoRows: true,
     },
     {
         id: 4,
         text: "We are motivated by the problem we are solving and not just by money.",
-        icon: motivatedIcon
+        icon: motivatedIcon,
     },
     {
         id: 5,
         text:
             "We strive to communicate as much and as clearly as possible as this is the lifestream of successful remote working.",
-        icon: communicateIcon
+        icon: communicateIcon,
     },
     {
         id: 6,
         text:
             "We value flexibility and freedom but also take on the responsibility and accountability for our work.",
-        icon: freedomIcon
+        icon: freedomIcon,
     },
     {
         id: 7,
         text: "We deeply care about the quality of our work.",
-        icon: qualityWorkIcon
+        icon: qualityWorkIcon,
     },
     {
         id: 8,
         text:
             "We truly believe that our work has impact and that Webiny will become the future of web development.",
-        icon: impactIcon
+        icon: impactIcon,
     },
     {
         id: 9,
         text: "More than anything we are happy to help out a community member and make their day.",
-        icon: helpCommunityIcon
-    }
+        icon: helpCommunityIcon,
+    },
 ];
 
 export const MEDIA_KIT = [
@@ -170,7 +170,7 @@ export const MEDIA_KIT = [
                 Download <br /> webiny logo
             </span>
         ),
-        actionLink: "https://drive.google.com/drive/u/2/folders/19BiuDSOrJ_H0HshmtQhsDGeslB-lVpom"
+        actionLink: "https://drive.google.com/drive/u/2/folders/19BiuDSOrJ_H0HshmtQhsDGeslB-lVpom",
     },
     {
         id: 1,
@@ -181,7 +181,7 @@ export const MEDIA_KIT = [
                 Download <br /> Founders Photo
             </span>
         ),
-        actionLink: "https://drive.google.com/drive/u/2/folders/17ujXOoBMFwpyV4HtPUebeWs9_dZYF3u7"
+        actionLink: "https://drive.google.com/drive/u/2/folders/17ujXOoBMFwpyV4HtPUebeWs9_dZYF3u7",
     },
     {
         id: 2,
@@ -192,6 +192,6 @@ export const MEDIA_KIT = [
                 Download <br /> Product Screenshots
             </span>
         ),
-        actionLink: "https://drive.google.com/drive/u/2/folders/1CThk-B2_hl2Tg_5vLTPHSSv6zyYLsnTz"
-    }
+        actionLink: "https://drive.google.com/drive/u/2/folders/1CThk-B2_hl2Tg_5vLTPHSSv6zyYLsnTz",
+    },
 ];

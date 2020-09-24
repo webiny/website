@@ -26,21 +26,21 @@ const HeroSection = styled("section")(
         maxHeight: ["auto", 768],
         marginBottom: [0, 100],
         backgroundSize: ["cover"],
-        backgroundPosition: ["top", "top", "bottom"]
-    })
+        backgroundPosition: ["top", "top", "bottom"],
+    }),
 );
 
 const containerClass = css(
     {
         flexDirection: "column",
-        maxWidth: 1200
+        maxWidth: 1200,
     },
     mq({
-        width: ['100%', '100%'],
+        width: ["100%", "100%"],
         display: ["block", "flex"],
         justifyContent: ["center", "space-between"],
-        padding: ["100px 0px 25px", "100px 0px 25px"]
-    })
+        padding: ["100px 0px 25px", "100px 0px 25px"],
+    }),
 );
 
 const TopTitle = styled("h4")(
@@ -51,9 +51,9 @@ const TopTitle = styled("h4")(
         fontWeight: theme.fontWeight.bold,
         lineHeight: "26px",
         textAlign: "center",
-        textTransform: "uppercase"
+        textTransform: "uppercase",
     },
-    mq({})
+    mq({}),
 );
 
 const AppName = styled("h3")(
@@ -64,11 +64,11 @@ const AppName = styled("h3")(
         fontWeight: theme.fontWeight.regular,
         lineHeight: "26px",
         textAlign: "center",
-        textTransform: "uppercase"
+        textTransform: "uppercase",
     },
     mq({
-        marginBottom: [20]
-    })
+        marginBottom: [20],
+    }),
 );
 
 const Title = styled("h1")(
@@ -79,22 +79,22 @@ const Title = styled("h1")(
 
         fontSize: theme.fontSize["5xl"],
         fontWeight: theme.fontWeight.semiBold,
-        textAlign: "center"
+        textAlign: "center",
     },
     mq({
-        width: ["100%"]
-    })
+        width: ["100%"],
+    }),
 );
 
 const HeroContentWrapper = styled("div")(
     {
         a: {
-            color: theme.color.white
-        }
+            color: theme.color.white,
+        },
     },
     mq({
-        width: ["100%"]
-    })
+        width: ["100%"],
+    }),
 );
 
 const float = keyframes`
@@ -116,14 +116,14 @@ const MediaContentWrapper = styled("div")(
             borderRadius: 5,
             overflow: "hidden",
             border: "1px solid #E6E6E6",
-            animation: float + " 8s ease-in-out infinite"
-        }
+            animation: float + " 8s ease-in-out infinite",
+        },
     },
     mq({
         img: {
-            maxWidth: ["100%", 1000]
-        }
-    })
+            maxWidth: ["100%", 1000],
+        },
+    }),
 );
 
 const HeroFeaturesWrapper = styled("div")(
@@ -143,21 +143,21 @@ const HeroFeaturesWrapper = styled("div")(
                 margin: 0,
                 fontSize: theme.fontSize.lg,
                 fontWeight: theme.fontWeight.bold,
-                color: theme.color.white
+                color: theme.color.white,
             },
             "& .feature-box__body": {
                 margin: 0,
                 fontSize: theme.fontSize.base,
                 fontWeight: theme.fontWeight.regular,
-                color: theme.color.white
-            }
+                color: theme.color.white,
+            },
         },
 
         "& .features__funnel": {
             position: "absolute",
             left: "10%",
-            bottom: -90
-        }
+            bottom: -90,
+        },
     },
     mq({
         flexDirection: ["column", "row"],
@@ -166,13 +166,13 @@ const HeroFeaturesWrapper = styled("div")(
 
         "& .feature-box": {
             width: ["80%", 236],
-            marginBottom: [40, 0]
+            marginBottom: [40, 0],
         },
 
         "& .features__funnel": {
-            display: ["none", "block"]
-        }
-    })
+            display: ["none", "block"],
+        },
+    }),
 );
 
 const WebinyHallMarkImage = styled("img")(
@@ -181,11 +181,11 @@ const WebinyHallMarkImage = styled("img")(
         zIndex: 1,
         top: 0,
         left: 0,
-        width: "100%"
+        width: "100%",
     },
     mq({
         height: ["35%", 756],
-    })
+    }),
 );
 
 const HeroComponent = ({ className, backgroundImg, appName, title, features, media }) => (

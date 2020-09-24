@@ -9,13 +9,13 @@ const Hero = styled("section")(
         boxSizing: "border-box",
         textAlign: "center",
         backgroundSize: "cover !important",
-        backgroundRepeat: "no-repeat"
+        backgroundRepeat: "no-repeat",
     },
     mq({
         padding: ["100px 20px 25px", "150px 0 75px"],
         marginBottom: [50, 100],
-        backgroundPosition: ["center top", "center bottom", "center bottom"]
-    })
+        backgroundPosition: ["center top", "center bottom", "center bottom"],
+    }),
 );
 
 const Header = props => (

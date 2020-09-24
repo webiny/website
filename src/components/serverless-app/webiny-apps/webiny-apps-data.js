@@ -20,7 +20,7 @@ export const FEATURES = [
         body: "Run the apps in your own cloud on top of the serverless infrastructure.",
         imageSrc: selfHostedImg,
         imageAlt: "Serverless and self-hosted",
-        extraPadding: true
+        extraPadding: true,
     },
     {
         id: 1,
@@ -28,7 +28,7 @@ export const FEATURES = [
         body:
             "Using Webiny CLI each app takes a single command to create and configure all of its serverless services.",
         imageSrc: easyDeploymentImg,
-        imageAlt: "Quick and easy deployment"
+        imageAlt: "Quick and easy deployment",
     },
     {
         id: 2,
@@ -36,7 +36,7 @@ export const FEATURES = [
         body:
             "Serverless infrastructure means zero maintenance and you can also forget about all the scalability headaches.",
         imageSrc: zeroMaintenanceImg,
-        imageAlt: "Requires zero maintenance"
+        imageAlt: "Requires zero maintenance",
     },
     {
         id: 3,
@@ -44,8 +44,8 @@ export const FEATURES = [
         body:
             "Because with serverless infrastructure you only pay for what you use, you'll have a very efficient way of controlling the cost of your infrastructure.",
         imageSrc: costImg,
-        imageAlt: "Efficient infrastructure cost"
-    }
+        imageAlt: "Efficient infrastructure cost",
+    },
 ];
 
 export const APPS = [
@@ -57,7 +57,7 @@ export const APPS = [
         imgSrc: headlessCMSImg,
         imgAlt: "Webiny headless cms app",
         actionLabel: "learn more",
-        actionLink: "/serverless-app/headless-cms"
+        actionLink: "/serverless-app/headless-cms",
     },
     {
         id: 1,
@@ -67,7 +67,7 @@ export const APPS = [
         imgSrc: pageBuilderImg,
         imgAlt: "Webiny page builder app",
         actionLabel: "learn more",
-        actionLink: "/serverless-app/page-builder"
+        actionLink: "/serverless-app/page-builder",
     },
     {
         id: 2,
@@ -77,7 +77,7 @@ export const APPS = [
         imgSrc: formBuilderImg,
         imgAlt: "Webiny form builder app",
         actionLabel: "learn more",
-        actionLink: "/serverless-app/form-builder"
+        actionLink: "/serverless-app/form-builder",
     },
     {
         id: 3,
@@ -87,8 +87,8 @@ export const APPS = [
         imgSrc: fileManagerImg,
         imgAlt: "Webiny file manager app",
         actionLabel: "learn more",
-        actionLink: "/serverless-app/file-manager"
-    }
+        actionLink: "/serverless-app/file-manager",
+    },
 ];
 
 export const BENEFITS = [
@@ -97,7 +97,7 @@ export const BENEFITS = [
         title: "High-availability and fault tolerance built in",
         imgSrc: highAvailabilityImg,
         imgAlt: "High-availability and fault tolerance built in",
-        borderBottom: true
+        borderBottom: true,
     },
     {
         id: 1,
@@ -106,20 +106,20 @@ export const BENEFITS = [
         imgAlt: "99.999999999% (11 9’s) of data durability",
         borderLeft: true,
         borderRight: true,
-        borderBottom: true
+        borderBottom: true,
     },
     {
         id: 2,
         title: "Enterprise-grade secure and scalable ACL",
         imgSrc: secureImg,
         imgAlt: "Enterprise-grade secure and scalable ACL",
-        borderBottom: true
+        borderBottom: true,
     },
     {
         id: 3,
         title: "Event-driven scalability - pay for what you use",
         imgSrc: lambdaImg,
-        imgAlt: "Event-driven scalability - pay for what you use"
+        imgAlt: "Event-driven scalability - pay for what you use",
     },
     {
         id: 4,
@@ -127,12 +127,12 @@ export const BENEFITS = [
         imgSrc: cdnImg,
         imgAlt: "Great performance using a global CDN",
         borderLeft: true,
-        borderRight: true
+        borderRight: true,
     },
     {
         id: 5,
         title: "DDoS Protection of your APIs",
         imgSrc: ddosProtectionImg,
-        imgAlt: "DDoS Protection of your APIs"
-    }
+        imgAlt: "DDoS Protection of your APIs",
+    },
 ];

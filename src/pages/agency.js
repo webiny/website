@@ -1,25 +1,22 @@
-import React from 'react';
+import React from "react";
 
-import BaseLayout from '../layouts/base';
-import Hero from '../components/agency/hero/hero';
-import WhatIsWebiny from '../components/agency/what-is-webiny/what-is-webiny';
-import WhyServerless from '../components/agency/why-serverless/why-serverless';
-import ReadyMadeApps
-  from '../components/agency/ready-made-apps/ready-made-apps';
-import WebinyFeatures
-  from '../components/agency/webiny-features/webiny-features';
-import DidYouKnow from '../components/agency/did-you-know/did-you-know';
-import Plugins from '../components/agency/plugins/plugins';
-import ForAgencies from '../components/agency/for-agencies/for-agencies';
-import ScheduleDemo from '../components/agency/schedule-demo/schedule-demo';
-import WhyChooseWebiny
-  from '../components/agency/why-choose-webiny/why-choose-webiny';
-import {trackBookADemo} from '../components/ui/functions';
+import BaseLayout from "../layouts/base";
+import Hero from "../components/agency/hero/hero";
+import WhatIsWebiny from "../components/agency/what-is-webiny/what-is-webiny";
+import WhyServerless from "../components/agency/why-serverless/why-serverless";
+import ReadyMadeApps from "../components/agency/ready-made-apps/ready-made-apps";
+import WebinyFeatures from "../components/agency/webiny-features/webiny-features";
+import DidYouKnow from "../components/agency/did-you-know/did-you-know";
+import Plugins from "../components/agency/plugins/plugins";
+import ForAgencies from "../components/agency/for-agencies/for-agencies";
+// import ScheduleDemo from "../components/agency/schedule-demo/schedule-demo";
+import WhyChooseWebiny from "../components/agency/why-choose-webiny/why-choose-webiny";
+import { trackBookADemo } from "../components/ui/functions";
 
 class AgencyPage extends React.Component {
-  scheduleADemoRef = React.createRef ();
+    scheduleADemoRef = React.createRef();
 
-  /*
+    /*
   goToScheduleDemoSection = () => {
     if (this.scheduleADemoRef && this.scheduleADemoRef.current) {
       const {offsetTop} = this.scheduleADemoRef.current
@@ -32,31 +29,31 @@ class AgencyPage extends React.Component {
   }
   */
 
-  bookADemo = () => {
-    trackBookADemo ({placement: 'agency'});
+    bookADemo = () => {
+        trackBookADemo({ placement: "agency" });
 
-    if (window) {
-      const win = window.open ('https://calendly.com/webiny/30min', '_blank');
-      win.focus ();
+        if (window) {
+            const win = window.open("https://calendly.com/webiny/30min", "_blank");
+            win.focus();
+        }
+    };
+
+    render() {
+        return (
+            <BaseLayout title="Webiny - How Agencies can benefit">
+                <Hero handleDemoClick={this.bookADemo} />
+                <WhatIsWebiny />
+                <WhyServerless />
+                <WhyChooseWebiny />
+                <ReadyMadeApps handleDemoClick={this.bookADemo} />
+                <WebinyFeatures />
+                <DidYouKnow />
+                <Plugins handleDemoClick={this.bookADemo} />
+                <ForAgencies handleDemoClick={this.bookADemo} />
+                {/*<ScheduleDemo refFromParent={this.scheduleADemoRef} />*/}
+            </BaseLayout>
+        );
     }
-  };
-
-  render () {
-    return (
-      <BaseLayout title="Webiny - How Agencies can benefit">
-        <Hero handleDemoClick={this.bookADemo} />
-        <WhatIsWebiny />
-        <WhyServerless />
-        <WhyChooseWebiny />
-        <ReadyMadeApps handleDemoClick={this.bookADemo} />
-        <WebinyFeatures />
-        <DidYouKnow />
-        <Plugins handleDemoClick={this.bookADemo} />
-        <ForAgencies handleDemoClick={this.bookADemo} />
-        {/*<ScheduleDemo refFromParent={this.scheduleADemoRef} />*/}
-      </BaseLayout>
-    );
-  }
 }
 
 export default AgencyPage;

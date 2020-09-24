@@ -1,0 +1,62 @@
+---
+slug: "blog/the-serverless-supremacy-204fbf5add75"
+title: "The Serverless Supremacy"
+description: "The Fall of the Monolith"
+tags:
+  [
+    "Serverless",
+    "Web development",
+    "Software development",
+    "Software engineering",
+    "Software architecture",
+  ]
+featureImage: "./assets/the-serverless-supremacy-204fbf5add75/max-4800-1wA9YNhv6PPLP36j8bYCFDw.png"
+author: sven
+date: 2020-02-12
+---
+
+The inspiration for this blog post came from the tweet below by David Heinemeier Hansson. David is the creator of Ruby on Rails and the CTO at Basecamp.
+
+https://twitter.com/dhh/status/1225117740962181120
+
+In the past, I’ve followed David and read several of his blog posts. I’ve got nothing but respect for what he has built and achieved so far — but on this particular topic I don’t agree with his views, and here is why.
+
+## The Majestic Monolith
+
+[This is the blog post that David wrote a while back, in 2016 actually.](https://m.signalvnoise.com/the-majestic-monolith/)
+
+The blog post is a great read, but I feel a bit out of date for 2020. It focuses on the aspect that microservices are hard and complex and only reserved for bigger organizations that have the manpower to manage that type of infrastructure.
+
+That might have been true in 2016, but in 2020 the [tooling](https://serverless.com/cli/) has evolved and it’s no longer the case you need to have a whole team to manage the application infrastructure. You don’t even need a dedicated person. Each developer can easily deploy a service. I would even counter-argue that it’s easier to manage a microservices architecture than a monolithic one.
+
+A microservice architecture allows you to deploy an update to a much smaller part of your application. This reduces the risk and makes the deployment, as well as the rollback, much faster.
+
+One other point that’s mentioned is the rule of **not distributing your compute if you can avoid it**. I feel again that this was a rule before [serverless compute](https://aws.amazon.com/lambda/) was a thing.
+
+Serverless compute and microservices architecture fit so well together and don’t come with a big overhead. If not even, they bring way more benefit than time and complexities they add to your application and your team.
+
+Serverless compute allows far greater elasticity of your compute power with a more [optimal cost](https://www.bbva.com/en/economics-of-serverless/). Not to mention the fact that you only scale the compute on the services that need to scale, and not on the whole monolith, which when it scales comes with a bit baseline cost.
+
+The last thing that David mentions as a “negative” side of the microservices is that the knowledge becomes “siloed”. Only people working on a particular service, know that services — the knowledge is not spread amongst the team.
+
+TBH I’m not sure this is a microservices problem. You could have the same thing in a monolith. This is part of your company culture and how your developers work in teams and how their responsibilities are organized.
+
+## Integrated Systems for Integrated Programmers
+
+This is I feel a more refreshed version of the previously mentioned 2016 article. [link](https://m.signalvnoise.com/integrated-systems-for-integrated-programmers/)
+
+Here the focus is on the imposter syndrome. Those cool developers from large organizations are telling you that you are architecting your applications in the wrong way (i.e monolith) and in fact, you should use a different approach (microservices).
+
+I’ve seen this happen with other technologies and architectures. Many times I had the same opinion as David — feeling that I’m the one doing things the wrong way, that I’m the one who needs to change. Or in the case of David’s current opinion on serverless, that this new thing is actually bullshit and that I know better.
+
+With every new thing on the market, this state of mind surfaces. Sometimes we’re right, but sometimes we’re also wrong. I remember way back watching one of the first-ever presentations on MongoDB. The audience was basically super sceptical and couldn’t wrap their heads around why you would need a NoSQL database — today MongoDB is worth \$9.3B. Similar things you’ll find with almost any technology we use today— but only time will tell which ones are good and which ones we’ll want to forget.
+
+## Final Word
+
+Serverless is still proving itself and it’s early days to say for sure that it’s the best thing ever that has happened to development. But I tend to believe that serverless is the future of development, it has to, especially because of the small companies. Literally quite opposite from what David was saying in his blog post.
+
+Development is getting more and more complex. Small companies can’t compete with big organizations in terms of the talent they hire. They don’t have the budget to hire 10 machine learning experts to build a search engine for their site or to hire security experts to audit their payment system integrations with banks. They can’t afford large devops teams to manage their scalability without breaking the bank on overprovisioning the compute power. Due to serverless, they can use different services such as [Algolia](https://www.algolia.com/), [Stripe](https://stripe.com/), [Lambda](https://aws.amazon.com/lambda/) and others to get that power and those features and integrations.
+
+Things over time will get even more demanding, there will be a greater need for faster websites with even more personalization and advanced hard-to-code features. If your company can’t reach that bar, you will not survive on the market. Serverless is the way how you can compete with the big guys and level the playing field.
+
+Serverless if for one is making things simpler, cheaper and more efficient.

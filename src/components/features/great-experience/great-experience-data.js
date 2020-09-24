@@ -22,7 +22,7 @@ export const FEATURES = [
             "Security is a crucial layer in any application. Webiny includes a full-featured security module that's connected to the built-in GraphQL API.",
         imageSrc: usersRolesScopeImg,
         imageAlt: "Users, groups, roles & scopes",
-        borderBottom: true
+        borderBottom: true,
     },
     {
         id: 1,
@@ -33,7 +33,7 @@ export const FEATURES = [
         imageAlt: "Scaffolding",
         borderLeft: true,
         borderRight: true,
-        borderBottom: true
+        borderBottom: true,
     },
     {
         id: 2,
@@ -42,7 +42,7 @@ export const FEATURES = [
             "Use the default AWS Cognito, or replace with 3rd party identity providers like Okta, Auth0, etc. Using plugins you can make Webiny work with any identity provider.",
         imageSrc: customSecurityImg,
         imageAlt: "Customizable security",
-        borderBottom: true
+        borderBottom: true,
     },
     {
         id: 3,
@@ -51,7 +51,7 @@ export const FEATURES = [
             "No code change goes directly into a production environment. Webiny CLI makes it easy to manage and create multiple environments for your project.",
         imageSrc: environmentsImg,
         imageAlt: "Multiple environments",
-        borderBottom: true
+        borderBottom: true,
     },
     {
         id: 4,
@@ -62,7 +62,7 @@ export const FEATURES = [
         imageAlt: "React components",
         borderLeft: true,
         borderRight: true,
-        borderBottom: true
+        borderBottom: true,
     },
     {
         id: 5,
@@ -71,7 +71,7 @@ export const FEATURES = [
             "Easily modify the way your React app is being built or use your own bundling process.",
         imageSrc: appBundlingImg,
         imageAlt: "Customizable app bundling",
-        borderBottom: true
+        borderBottom: true,
     },
     {
         id: 6,
@@ -80,7 +80,7 @@ export const FEATURES = [
             "You're not limited to the default project setup. You can add as many stacks as necessary, and shape the project to your needs.",
         imageSrc: infrastructureImg,
         imageAlt: "Infrastructure stacks",
-        borderBottom: true
+        borderBottom: true,
     },
     {
         id: 7,
@@ -91,7 +91,7 @@ export const FEATURES = [
         imageAlt: "GraphQL playground",
         borderLeft: true,
         borderRight: true,
-        borderBottom: true
+        borderBottom: true,
     },
     {
         id: 8,
@@ -100,7 +100,7 @@ export const FEATURES = [
             "They say that there are no two eyes alike. Some prefer white, some black. Webiny Admin UI features a light and a dark mode, make your pick.",
         imageSrc: darkModeImg,
         imageAlt: "Dark mode",
-        borderBottom: true
+        borderBottom: true,
     },
     {
         id: 9,
@@ -109,7 +109,7 @@ export const FEATURES = [
             "Webiny comes with a built-in File Manager app and an image editor. Upload, categorize, search and edit your files with ease.",
         imageSrc: fileManagementImg,
         imageAlt: "File management",
-        borderBottom: true
+        borderBottom: true,
     },
     {
         id: 10,
@@ -120,7 +120,7 @@ export const FEATURES = [
         imageAlt: "100% Javascript",
         borderLeft: true,
         borderRight: true,
-        borderBottom: true
+        borderBottom: true,
     },
     {
         id: 11,
@@ -129,7 +129,7 @@ export const FEATURES = [
             "Webiny is deployed to highly-available and scalable services within your AWS cloud. There is also DDoS protection, 11 9’s of data durability and a CDN that’s included.",
         imageSrc: availabilityScalabilityImg,
         imageAlt: "High-availability & scalability",
-        borderBottom: true
+        borderBottom: true,
     },
     {
         id: 12,
@@ -138,7 +138,7 @@ export const FEATURES = [
             "Serverless is hard because it changes most of the things we know about building and architecting web applications. Webiny makes serverless easy by providing documentation, guides and tutorials. You have all the knowledge you need at your fingertip. Webiny will save you many hours of research and trial and error.",
         imageSrc: learningCurve,
         imageAlt: "Flatten your learning curve",
-        borderBottom: false
+        borderBottom: false,
     },
     {
         id: 13,
@@ -149,7 +149,7 @@ export const FEATURES = [
         imageAlt: "Libraries made for serverless environment",
         borderLeft: true,
         borderRight: true,
-        borderBottom: false
+        borderBottom: false,
     },
     {
         id: 14,
@@ -158,6 +158,6 @@ export const FEATURES = [
             "Organising a project is often an underestimated task. However getting it wrong can be quite expensive. Webiny provides you with a project organisation that grows with your need and it works great for both small and large projects. ",
         imageSrc: organiseProject,
         imageAlt: "Organise your project",
-        borderBottom: false
-    }
+        borderBottom: false,
+    },
 ];

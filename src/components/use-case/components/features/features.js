@@ -32,8 +32,8 @@ const FeatureWrapper = styled("div")(
                 fontWeight: theme.fontWeight.bold,
 
                 "& span": {
-                    color: theme.color.purple
-                }
+                    color: theme.color.purple,
+                },
             },
             "& p": {
                 width: "100%",
@@ -42,12 +42,12 @@ const FeatureWrapper = styled("div")(
                 fontWeight: theme.fontWeight.regular,
                 color: theme.color.black,
                 lineHeight: "32px",
-                marginBottom: 16
+                marginBottom: 16,
             },
             "& .buttonWrapper": {
                 width: "100%",
-                marginTop: 24
-            }
+                marginTop: 24,
+            },
         },
 
         "& .media-content": {
@@ -55,35 +55,35 @@ const FeatureWrapper = styled("div")(
             maxWidth: 583,
 
             "& img": {
-                width: "100%"
+                width: "100%",
                 // maxWidth: 494
-            }
+            },
         },
 
         "& .feature__separator": {
             position: "absolute",
             bottom: "-30%",
-            left: "15%"
-        }
+            left: "15%",
+        },
     },
     mq({
         "&.img-left": {
             flexDirection: ["column", "row"],
             width: "100%",
             "& .text-content": {
-                paddingLeft: [0, 60]
+                paddingLeft: [0, 60],
             },
             "& .media-content": {
-                marginBottom: [60, 0]
-            }
+                marginBottom: [60, 0],
+            },
         },
         "&.img-right": {
             flexDirection: ["column", "row-reverse"],
             width: "100%",
 
             "& .media-content": {
-                marginTop: [60, 0]
-            }
+                marginTop: [60, 0],
+            },
         },
         height: ["auto", 360],
         marginLeft: [0, 0],
@@ -91,27 +91,27 @@ const FeatureWrapper = styled("div")(
         marginBottom: [80, 150],
 
         "&.item--last": {
-            marginBottom: [0]
+            marginBottom: [0],
         },
 
         "& .text-content": {
             width: ["100%", "50%"],
 
             "& .buttonWrapper": {
-                maxWidth: ["100%", 217]
-            }
+                maxWidth: ["100%", 217],
+            },
         },
         "& .media-content": {
             width: ["100%", "50%"],
             "& .img": {
                 width: ["100%"],
-                maxWidth: 560
-            }
+                maxWidth: 560,
+            },
         },
         "& .feature__separator": {
-            display: ["none", "block"]
-        }
-    })
+            display: ["none", "block"],
+        },
+    }),
 );
 
 const Section = styled("section")(
@@ -119,9 +119,9 @@ const Section = styled("section")(
         backgroundColor: theme.color.white,
         position: "relative",
         zIndex: 0,
-        padding: 0
+        padding: 0,
     },
-    mq({})
+    mq({}),
 );
 
 const SectionWithBg = styled("section")(
@@ -132,16 +132,16 @@ const SectionWithBg = styled("section")(
         "& .bg": {
             position: "absolute",
             left: 0,
-            width: "100%"
-        }
+            width: "100%",
+        },
     },
     mq({
         padding: ["0px 15px 110px", "0px 15px"],
         "& .bg": {
             top: ["-10%", 0],
-            height: ["140%", "100%"]
-        }
-    })
+            height: ["140%", "100%"],
+        },
+    }),
 );
 
 export const Title = styled("h1")(
@@ -152,31 +152,31 @@ export const Title = styled("h1")(
         fontWeight: theme.fontWeight.bold,
         color: theme.color.black,
         textAlign: "center",
-        lineHeight: "48px"
+        lineHeight: "48px",
     },
     mq({
-        margin: ["0px auto", "0px auto 40px"]
-    })
+        margin: ["0px auto", "0px auto 40px"],
+    }),
 );
 
 export const TitleHighlight = styled("span")({
     backgroundImage: "url(" + TitleBg + ")",
     backgroundPositionX: "right",
     backgroundPositionY: "bottom",
-    backgroundRepeat: "no-repeat"
+    backgroundRepeat: "no-repeat",
 });
 
 const containerClass = css(
     {
         flexDirection: "column",
         justifyContent: "center",
-        maxWidth: "1200"
+        maxWidth: "1200",
     },
     mq({
         width: ["100%", "100%"],
         display: ["block", "flex"],
-        padding: ["100px 0px 0px", "80px 0px 0px"]
-    })
+        padding: ["100px 0px 0px", "80px 0px 0px"],
+    }),
 );
 
 const FeaturesSectionTitle = () => (

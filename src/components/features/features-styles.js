@@ -11,23 +11,23 @@ export const overviewContainerClass = css(
         flexDirection: "column",
         alignItems: "center",
         maxWidth: 1200,
-        position: "relative"
+        position: "relative",
     },
     mq({
         width: ["100%", "100%"],
-        padding: ["75px 0px 0px", "85px 0px 0px"]
-    })
+        padding: ["75px 0px 0px", "85px 0px 0px"],
+    }),
 );
 
 export const OverviewSectionWrapper = styled("div")(
     {
         display: "flex",
-        flexDirection: "column"
+        flexDirection: "column",
     },
     mq({
         width: ["100%", 1100],
-        alignItems: ["center"]
-    })
+        alignItems: ["center"],
+    }),
 );
 
 export const Title = styled("h1")(
@@ -39,18 +39,18 @@ export const Title = styled("h1")(
         color: theme.color.black,
         textAlign: "center",
         lineHeight: "48px",
-        marginBottom: 10
+        marginBottom: 10,
     },
     mq({
         marginLeft: [0, "auto"],
-        marginRight: [0, "auto"]
-    })
+        marginRight: [0, "auto"],
+    }),
 );
 
 export const TitleHighlight = styled("span")({
     backgroundPositionX: "right",
     backgroundPositionY: "bottom",
-    backgroundRepeat: "no-repeat"
+    backgroundRepeat: "no-repeat",
 });
 
 export const SubTitle = styled("h3")(
@@ -61,13 +61,13 @@ export const SubTitle = styled("h3")(
         marginTop: 0,
         marginBottom: 30,
         color: theme.color.black,
-        textAlign: "center"
+        textAlign: "center",
     },
     mq({
         maxWidth: [337, 870],
         marginLeft: [0, "auto"],
-        marginRight: [0, "auto"]
-    })
+        marginRight: [0, "auto"],
+    }),
 );
 
 export const ImageWrapper = styled("div")({
@@ -76,7 +76,7 @@ export const ImageWrapper = styled("div")({
     alignItems: "center",
     width: "100%",
     position: "relative",
-    marginTop: 60
+    marginTop: 60,
 });
 
 export const videoPreviewClass = css(
@@ -93,16 +93,16 @@ export const videoPreviewClass = css(
             boxShadow: "0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3)",
             cursor: "pointer",
             transition: "opacity 0.3s",
-            boxSizing: "border-box"
-        }
+            boxSizing: "border-box",
+        },
     },
     mq({
         minHeight: ["auto", 570],
         iframe: {
             width: [350, 855, 855],
-            height: [196, 480, 480]
-        }
-    })
+            height: [196, 480, 480],
+        },
+    }),
 );
 
 export const FeaturesWrapper = styled("div")(
@@ -112,12 +112,12 @@ export const FeaturesWrapper = styled("div")(
 
         width: "100%",
         position: "relative",
-        margin: "150px 0px"
+        margin: "150px 0px",
     },
     mq({
         gridTemplateColumns: ["repeat(1, 1fr)", "repeat(3, 1fr)"],
-        gap: ["40px 75px", "40px", "40px 75px"]
-    })
+        gap: ["40px 75px", "40px", "40px 75px"],
+    }),
 );
 
 export const FeatureCard = styled("div")(
@@ -135,7 +135,7 @@ export const FeatureCard = styled("div")(
         "& .feature-card__img": {
             width: "100%",
             height: 160,
-            maxWidth: 261
+            maxWidth: 261,
         },
 
         "& .feature-card__title": {
@@ -143,7 +143,7 @@ export const FeatureCard = styled("div")(
             maxWidth: 285,
             color: theme.color.black,
             fontSize: theme.fontSize.xl,
-            fontWeight: theme.fontWeight.bold
+            fontWeight: theme.fontWeight.bold,
         },
         "& .feature-card__body": {
             margin: 0,
@@ -151,14 +151,14 @@ export const FeatureCard = styled("div")(
             fontSize: theme.fontSize.base,
             fontWeight: theme.fontWeight.regular,
             "& a": {
-                color: theme.color.primaryDark
-            }
+                color: theme.color.primaryDark,
+            },
         },
         "& .feature-card__connector": {
             position: "absolute",
             top: "-13%",
-            zIndex: 1
-        }
+            zIndex: 1,
+        },
     },
     mq({
         width: ["95%", "100%", 352],
@@ -167,7 +167,7 @@ export const FeatureCard = styled("div")(
 
         "& .feature-card__connector": {
             display: ["none", "block"],
-            width: ["auto", 400, "auto"]
-        }
-    })
+            width: ["auto", 400, "auto"],
+        },
+    }),
 );

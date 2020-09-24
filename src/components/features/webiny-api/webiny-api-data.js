@@ -9,7 +9,7 @@ export const WEBINY_API_FEATURES = [
         body:
             "Create new GraphQL schemas, register new microservices and let the built-in Apollo Federation connect it all together. Webiny includes security utilities so you can easily control who can access what. Each microservice runs in its own function and is ready to scale when you need it the most.",
         imageURL: graphqlImg,
-        imageAltText: "GraphQL API layer you can expand"
+        imageAltText: "GraphQL API layer you can expand",
     },
     {
         id: 1,
@@ -18,7 +18,7 @@ export const WEBINY_API_FEATURES = [
             "Each microservice you create registers its queries and mutations with the central Apollo Gateway and exposes a unified GraphQL schema to the rest of the system. Our scaffolding templates make it quick and easy to create new services and expand your schema.",
         imageURL: apolloAPIGatewayImg,
         imageAltText: "Unified GraphQL schema with Apollo Gateway",
-        includeConnectors: true
+        includeConnectors: true,
     },
     {
         id: 2,
@@ -26,6 +26,6 @@ export const WEBINY_API_FEATURES = [
         body:
             "Security is a crucial layer in any application. Webiny includes a customizable security module you can use in your schemas. There is also a built-in UI to manage users, groups, roles and scopes.",
         imageURL: securedImg,
-        imageAltText: "Secured out of the box"
-    }
+        imageAltText: "Secured out of the box",
+    },
 ];

@@ -32,7 +32,7 @@ export const FEATURES = [
             </Fragment>
         ),
         background: BG_VARIANT_UP,
-        imageOnLeft: false
+        imageOnLeft: false,
     },
     {
         id: 1,
@@ -55,7 +55,7 @@ export const FEATURES = [
             </Fragment>
         ),
         background: BG_VARIANT_DOWN,
-        imageOnLeft: true
+        imageOnLeft: true,
     },
     {
         id: 2,
@@ -76,7 +76,7 @@ export const FEATURES = [
             </Fragment>
         ),
         background: null,
-        imageOnLeft: false
+        imageOnLeft: false,
     },
     {
         id: 3,
@@ -98,7 +98,7 @@ export const FEATURES = [
             </Fragment>
         ),
         background: BG_VARIANT_DOWN,
-        imageOnLeft: true
+        imageOnLeft: true,
     },
     {
         id: 4,
@@ -120,7 +120,7 @@ export const FEATURES = [
             </Fragment>
         ),
         background: BG_VARIANT_UP,
-        imageOnLeft: false
+        imageOnLeft: false,
     },
     {
         id: 5,
@@ -144,6 +144,6 @@ export const FEATURES = [
         ),
         background: null,
         imageOnLeft: true,
-        className: "item--last"
-    }
+        className: "item--last",
+    },
 ];

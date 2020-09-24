@@ -53,7 +53,7 @@ import {
     mediaKitContainerClass,
     MediaKitCard,
     MediaCardWrapper,
-    TeamSection
+    TeamSection,
 } from "./about-us-styles";
 
 const Contributors = () => {
@@ -104,57 +104,57 @@ const filterWebinyTeam = item =>
     });
 
 const WelcomeTitle = styled(Title)({
-    color: theme.color.black
+    color: theme.color.black,
 });
 
 const WelcomeTitleHighlight = styled(TitleHighlight)({
-    backgroundImage: "url(" + welcomeRectImg + ")"
+    backgroundImage: "url(" + welcomeRectImg + ")",
 });
 
 const WelcomeText = styled(Text)(
     {
         color: theme.color.black,
-        marginTop: 20
+        marginTop: 20,
     },
     mq({
-        maxWidth: ["100%", 888]
-    })
+        maxWidth: ["100%", 888],
+    }),
 );
 
 const StoryTitle = styled(Title)(
     {
-        color: theme.color.black
+        color: theme.color.black,
     },
     mq({
-        margin: ["0px auto 50px", "50px auto"]
-    })
+        margin: ["0px auto 50px", "50px auto"],
+    }),
 );
 
 const StoryTitleHighlight = styled(TitleHighlight)({
-    backgroundImage: "url(" + storyRectImg + ")"
+    backgroundImage: "url(" + storyRectImg + ")",
 });
 
 const StoryText = styled(Text)(
     {
         color: theme.color.black,
-        textAlign: "left"
+        textAlign: "left",
     },
     mq({
-        maxWidth: ["100%", 1110]
-    })
+        maxWidth: ["100%", 1110],
+    }),
 );
 
 const TeamTitle = styled(Title)(
     {
-        color: theme.color.black
+        color: theme.color.black,
     },
     mq({
-        margin: ["50px auto", "60px auto 50px"]
-    })
+        margin: ["50px auto", "60px auto 50px"],
+    }),
 );
 
 const TeamTitleHighlight = styled(TitleHighlight)({
-    backgroundImage: "url(" + teamRectImg + ")"
+    backgroundImage: "url(" + teamRectImg + ")",
 });
 
 const ContributorsText = styled(Text)(
@@ -162,45 +162,45 @@ const ContributorsText = styled(Text)(
         color: theme.color.black,
         fontWeight: theme.fontWeight.bold,
         "& span": {
-            color: theme.color.primaryDark
-        }
+            color: theme.color.primaryDark,
+        },
     },
     mq({
-        margin: ["0px auto 50px", "0px auto 60px"]
-    })
+        margin: ["0px auto 50px", "0px auto 60px"],
+    }),
 );
 
 const TraitsTitleHighlight = styled(TitleHighlight)({
-    backgroundImage: "url(" + valueRectImg + ")"
+    backgroundImage: "url(" + valueRectImg + ")",
 });
 
 const TraitsText = styled(Text)(
     {
-        color: theme.color.black
+        color: theme.color.black,
     },
     mq({
         margin: ["50px auto 0px", "70px auto 0px"],
-        maxWidth: ["100%", 888]
-    })
+        maxWidth: ["100%", 888],
+    }),
 );
 
 const InvestorTitle = styled(Title)(
     {
-        color: theme.color.black
+        color: theme.color.black,
     },
     mq({
-        margin: ["0px auto 0px", "0px auto"]
-    })
+        margin: ["0px auto 0px", "0px auto"],
+    }),
 );
 
 const InvestorText = styled(Text)(
     {
-        color: theme.color.black
+        color: theme.color.black,
     },
     mq({
         margin: ["0px auto 0px", "0px auto 24px"],
-        maxWidth: ["100%", 888]
-    })
+        maxWidth: ["100%", 888],
+    }),
 );
 
 export default () => (

@@ -1,40 +1,39 @@
 // assets - author profiles
-import Emil from "./assets/authors/emilkais.png"
-import Adrian from "./assets/authors/adrian.png"
-import Pavel from "./assets/authors/pavel.png"
-import Albiona from "./assets/authors/albiona.png"
-import Ashu from "./assets/authors/ashu.jpg"
+import Emil from "./assets/authors/emilkais.png";
+import Adrian from "./assets/authors/adrian.png";
+import Pavel from "./assets/authors/pavel.png";
+import Albiona from "./assets/authors/albiona.png";
+import Ashu from "./assets/authors/ashu.jpg";
 
 // assets - cover images
 // import awsCredentials from "./assets/covers/aws-credentials.jpg"
-import deploymentMechanism from "./assets/covers/deploymentMechanism.jpg"
-import getStarted from "./assets/covers/get-started.jpg"
-import commodo from "./assets/covers/commodo.jpg"
-import practicalExamplesPlugins from "./assets/covers/practical-examples-plugins.png"
-import webinyPlugins from "./assets/covers/webiny-plugins.png"
-import spaWebiny from "./assets/covers/spa-webiny.png"
-import appDevelopment from "./assets/covers/app-development.png"
-import apiDev from "./assets/covers/api-dev.png"
-import scaffolding from "./assets/covers/scaffolding.png"
-import development from "./assets/covers/development.png"
-import arch from "./assets/covers/arch.png"
-import pluginsCrashcourse from "./assets/covers/plugins-crashcourse.png"
-import cliPlugin from "./assets/covers/cli-plugin.png"
-import scaffolding2 from "./assets/covers/scaffolding2.png"
+import deploymentMechanism from "./assets/covers/deploymentMechanism.jpg";
+import getStarted from "./assets/covers/get-started.jpg";
+import commodo from "./assets/covers/commodo.jpg";
+import practicalExamplesPlugins from "./assets/covers/practical-examples-plugins.png";
+import webinyPlugins from "./assets/covers/webiny-plugins.png";
+import spaWebiny from "./assets/covers/spa-webiny.png";
+import appDevelopment from "./assets/covers/app-development.png";
+import apiDev from "./assets/covers/api-dev.png";
+import scaffolding from "./assets/covers/scaffolding.png";
+import development from "./assets/covers/development.png";
+import arch from "./assets/covers/arch.png";
+import pluginsCrashcourse from "./assets/covers/plugins-crashcourse.png";
+import cliPlugin from "./assets/covers/cli-plugin.png";
+import scaffolding2 from "./assets/covers/scaffolding2.png";
 
 // assets - cover images - guides
-import headlessGatsby from './assets/covers/headless-gatsby.png'
+import headlessGatsby from "./assets/covers/headless-gatsby.png";
 // import headlessNextjs from './assets/covers/headless-next.png'
 // import headlessReact from './assets/covers/headless-react.png'
-import headlessReactNative from './assets/covers/headless-reactnative.png'
+import headlessReactNative from "./assets/covers/headless-reactnative.png";
 // import headlessAngular from './assets/covers/headless-angular.png'
-import customPageElements from './assets/covers/custom-page-elements.png'
+import customPageElements from "./assets/covers/custom-page-elements.png";
 // import headlessVue from './assets/covers/headless-vue.png'
 
 // assets - cover - tutorials
-import reactStarter from './assets/covers/tutorial-react.png'
-import serverlessApi from './assets/covers/serverless-api.png'
-
+import reactStarter from "./assets/covers/tutorial-react.png";
+import serverlessApi from "./assets/covers/serverless-api.png";
 
 export const REQUEST_TUTORIAL_LINK =
     "https://github.com/webiny/community/issues/new?assignees=&labels=&template=submit-a-request-for-a-tutorial-guide.md&title=%5BTOPIC%5D";
@@ -48,8 +47,8 @@ export const AUTHOR_NAMES = {
     Albiona: "Albiona Hoti",
     Emil: "Emil Kais",
     Ashu: "Ashutosh Bhardwaj",
-    Sven: "Sven Al Hamad"
-}
+    Sven: "Sven Al Hamad",
+};
 export const TUTORIALS = [
     {
         id: 0,
@@ -60,8 +59,9 @@ export const TUTORIALS = [
         title: "Get Started With Webiny",
         tags: ["YouTube", "Serverless"],
         // bannerText: "Official Tutorial",
-        description: "This is a quick start guide that should help you setup Webiny as fast as possible.",
-        link: "https://youtu.be/G_du-yE_DL4"
+        description:
+            "This is a quick start guide that should help you setup Webiny as fast as possible.",
+        link: "https://youtu.be/G_du-yE_DL4",
     },
     {
         id: 3,
@@ -71,9 +71,10 @@ export const TUTORIALS = [
         authorName: AUTHOR_NAMES.Adrian,
         title: "API Development With Webiny",
         tags: ["YouTube", "APIs"],
-        description: "A secure GraphQL API layer powered by Apollo Federation with a microservices architecture.",
+        description:
+            "A secure GraphQL API layer powered by Apollo Federation with a microservices architecture.",
         // bannerText: "Official tutorial",
-        link: "https://youtu.be/8aJ_Ja1aTy0"
+        link: "https://youtu.be/8aJ_Ja1aTy0",
     },
     {
         id: 5,
@@ -85,7 +86,7 @@ export const TUTORIALS = [
         tags: ["Headless CMS", "React Native"],
         description: "Learn how to use the popular React Native with the Webiny Headless CMS.",
         // bannerText: "Official tutorial",
-        link: "http://docs.webiny.com/docs/guides/headless-react-native-tutorial"
+        link: "http://docs.webiny.com/docs/guides/headless-react-native-tutorial",
     },
     {
         id: 3,
@@ -95,9 +96,10 @@ export const TUTORIALS = [
         authorName: AUTHOR_NAMES.Pavel,
         title: "Webiny Plugins",
         tags: ["YouTube", "Plugins"],
-        description: "We'll look at three main groups of plugins: CLI plugins, API plugins, App plugins",
+        description:
+            "We'll look at three main groups of plugins: CLI plugins, API plugins, App plugins",
         // bannerText: "Official tutorial",
-        link: "https://youtu.be/NGoZ3TDTYus"
+        link: "https://youtu.be/NGoZ3TDTYus",
     },
     {
         id: 3,
@@ -109,7 +111,7 @@ export const TUTORIALS = [
         tags: ["YouTube", "Apps"],
         description: "The mechanics of app development with Webiny",
         // bannerText: "Official tutorial",
-        link: "https://youtu.be/EQxNsDSdpsQ"
+        link: "https://youtu.be/EQxNsDSdpsQ",
     },
     {
         id: 4,
@@ -121,7 +123,7 @@ export const TUTORIALS = [
         tags: ["Headless CMS", "Gatsby"],
         description: "Learn how to use Gatsby with the Webiny Headless CMS.",
         // bannerText: "Official tutorial",
-        link: "http://docs.webiny.com/docs/guides/headless-gatsby-tutorial"
+        link: "http://docs.webiny.com/docs/guides/headless-gatsby-tutorial",
     },
     {
         id: 1,
@@ -132,8 +134,9 @@ export const TUTORIALS = [
         title: "Webiny Deployment Mechanism",
         tags: ["Deployment", "YouTube"],
         // bannerText: "Official tutorial",
-        description: "Learn how the default deployment process works and what plugins take part in it.",
-        link: "https://youtu.be/A7nGeJe6kPo"
+        description:
+            "Learn how the default deployment process works and what plugins take part in it.",
+        link: "https://youtu.be/A7nGeJe6kPo",
     },
     {
         id: 3,
@@ -145,7 +148,7 @@ export const TUTORIALS = [
         tags: ["Plugins", "Examples"],
         description: "Demonstration of how plugins are actually used in your everyday development.",
         // bannerText: "Official tutorial",
-        link: "https://youtu.be/NGoZ3TDTYus"
+        link: "https://youtu.be/NGoZ3TDTYus",
     },
     {
         id: 2,
@@ -157,7 +160,7 @@ export const TUTORIALS = [
         description: "You will learn how to create a plugin which generates a folder for you.",
         tags: ["Scaffolding", "Plugin"],
         // bannerText: "Official tutorial",
-        link: "http://docs.webiny.com/docs/deep-dive/cli/creating-a-scaffold-plugin/"
+        link: "http://docs.webiny.com/docs/deep-dive/cli/creating-a-scaffold-plugin/",
     },
     {
         id: 3,
@@ -169,7 +172,7 @@ export const TUTORIALS = [
         tags: ["Page Builder", "Plugins"],
         description: "Create a custom page element for the Page Builder app.",
         // bannerText: "Official tutorial",
-        link: "http://docs.webiny.com/docs/guides/creating-iframe-element-plugin"
+        link: "http://docs.webiny.com/docs/guides/creating-iframe-element-plugin",
     },
     {
         id: 3,
@@ -181,7 +184,7 @@ export const TUTORIALS = [
         tags: ["YouTube", "SPAs"],
         description: "Learn how Webiny enables us to create Single Page Applications (SPAs).",
         // bannerText: "Official tutorial",
-        link: "https://youtu.be/Mi0YO7eZZ5M"
+        link: "https://youtu.be/Mi0YO7eZZ5M",
     },
     {
         id: 3,
@@ -193,7 +196,8 @@ export const TUTORIALS = [
         tags: ["React", "Starter", "Tutorial"],
         description: "Build a portfolio website to showcase your projects and your blogs.",
         // bannerText: "Official tutorial",
-        link: "http://docs.webiny.com/docs/tutorials/build-a-portfolio-website-with-react-webiny-apollo"
+        link:
+            "http://docs.webiny.com/docs/tutorials/build-a-portfolio-website-with-react-webiny-apollo",
     },
     {
         id: 2,
@@ -202,10 +206,11 @@ export const TUTORIALS = [
         authorImgSrc: Adrian,
         authorName: AUTHOR_NAMES.Adrian,
         title: "Commodo Series",
-        description: "Commodo is a library of higher-order functions that let you define and compose rich data models.",
+        description:
+            "Commodo is a library of higher-order functions that let you define and compose rich data models.",
         tags: ["Commodo", "ODM"],
         // bannerText: "Official tutorial",
-        link: "https://youtu.be/i9xRDdqCzjk"
+        link: "https://youtu.be/i9xRDdqCzjk",
     },
     {
         id: 2,
@@ -214,10 +219,11 @@ export const TUTORIALS = [
         authorImgSrc: Pavel,
         authorName: AUTHOR_NAMES.Pavel,
         title: "Creating a CLI Plugin",
-        description: "You will learn how to create a very basic CLI plugin to become familiar with how the CLI works.",
+        description:
+            "You will learn how to create a very basic CLI plugin to become familiar with how the CLI works.",
         tags: ["CLI", "Plugin"],
         // bannerText: "Official tutorial",
-        link: "http://docs.webiny.com/docs/deep-dive/cli/creating-a-cli-plugin/"
+        link: "http://docs.webiny.com/docs/deep-dive/cli/creating-a-cli-plugin/",
     },
     {
         id: 2,
@@ -229,7 +235,7 @@ export const TUTORIALS = [
         description: "You will use the GraphQL Apollo service scaffold to create your API service.",
         tags: ["Serverless", "API", "Tutorial"],
         // bannerText: "Official tutorial",
-        link: "http://docs.webiny.com/docs/tutorials/build-your-serverless-graphql-api-webiny"
+        link: "http://docs.webiny.com/docs/tutorials/build-your-serverless-graphql-api-webiny",
     },
     {
         id: 2,
@@ -241,7 +247,7 @@ export const TUTORIALS = [
         description: "With Webiny scaffolds you can significantly speed up your development.",
         tags: ["Scaffolding", "YouTube"],
         // bannerText: "Official tutorial",
-        link: "https://www.youtube.com/watch?v=SgfWQG8YirU&t=3s"
+        link: "https://www.youtube.com/watch?v=SgfWQG8YirU&t=3s",
     },
     {
         id: 2,
@@ -250,10 +256,11 @@ export const TUTORIALS = [
         authorImgSrc: Pavel,
         authorName: AUTHOR_NAMES.Pavel,
         title: "Development Principles",
-        description: "Webiny is built using a simple system of plugins. This applies to both React apps and the API. ",
+        description:
+            "Webiny is built using a simple system of plugins. This applies to both React apps and the API. ",
         tags: ["Plugins", "Tutorial"],
         // bannerText: "Official tutorial",
-        link: "http://docs.webiny.com/docs/get-started/development-principles/"
+        link: "http://docs.webiny.com/docs/get-started/development-principles/",
     },
     {
         id: 2,
@@ -262,10 +269,11 @@ export const TUTORIALS = [
         authorImgSrc: Adrian,
         authorName: AUTHOR_NAMES.Adrian,
         title: "Webiny Architecture",
-        description: "In this section you will learn the basic flows and components involved in Webiny Architecture",
+        description:
+            "In this section you will learn the basic flows and components involved in Webiny Architecture",
         tags: ["Architecture", "Tutorial"],
         // bannerText: "Official tutorial",
-        link: "http://docs.webiny.com/docs/deep-dive/architecture/overview"
+        link: "http://docs.webiny.com/docs/deep-dive/architecture/overview",
     },
     {
         id: 2,
@@ -277,7 +285,7 @@ export const TUTORIALS = [
         description: "Learn how everything in Webiny is built using plugins.",
         tags: ["Plugins", "Tutorial"],
         // bannerText: "Official tutorial",
-        link: "http://docs.webiny.com/docs/deep-dive/plugins-crash-course/"
+        link: "http://docs.webiny.com/docs/deep-dive/plugins-crash-course/",
     },
     // {
     //     id: 4,
@@ -333,16 +341,16 @@ export const SORT_OPTIONS = [
     {
         id: -1,
         label: "Sort by",
-        value: ""
+        value: "",
     },
     {
         id: 0,
         label: "Latest tutorials",
-        value: "latest"
+        value: "latest",
     },
     {
         id: 1,
         label: "Most requested",
-        value: "most_requested"
-    }
+        value: "most_requested",
+    },
 ];

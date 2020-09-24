@@ -12,14 +12,14 @@ import rectangleBg from "./assets/wcp-bg.svg";
 
 const WCPIntroSection = styled("section")(
     {
-        backgroundColor: theme.color.white
+        backgroundColor: theme.color.white,
     },
     mq({
         padding: ["0px 15px 110px", "0"],
         "@media (min-width: 1460px)": {
-            paddingTop: 0
-        }
-    })
+            paddingTop: 0,
+        },
+    }),
 );
 
 const heroContainerClass = css(
@@ -28,27 +28,27 @@ const heroContainerClass = css(
         flexDirection: "column",
         alignItems: "center",
         maxWidth: 1200,
-        position: "relative"
+        position: "relative",
     },
     mq({
         width: ["100%", "100%"],
         padding: ["75px 0px 75px", "0px 0px 85px"],
         "@media (min-width: 2000px)": {
-            paddingBottom: 80
-        }
-    })
+            paddingBottom: 80,
+        },
+    }),
 );
 
 const IntroWrapper = styled("div")(
     {
         display: "flex",
         flexDirection: "column",
-        marginBottom: 120
+        marginBottom: 120,
     },
     mq({
         width: ["100%", 1100],
-        alignItems: ["center"]
-    })
+        alignItems: ["center"],
+    }),
 );
 
 const Title = styled("h3")(
@@ -62,26 +62,26 @@ const Title = styled("h3")(
         marginTop: 0,
         "& a": {
             color: theme.color.primaryDark,
-            textDecoration: "none"
+            textDecoration: "none",
         },
         "&::after": {
             content: "url(" + ellipseBg + ")",
             position: "absolute",
             top: -50,
-            right: "14%"
-        }
+            right: "14%",
+        },
     },
     mq({
         marginLeft: [0, "auto"],
-        marginRight: [0, "auto"]
-    })
+        marginRight: [0, "auto"],
+    }),
 );
 
 const TitleHighlight = styled("span")({
     backgroundImage: "url(" + rectangleBg + ")",
     backgroundPositionX: "right",
     backgroundPositionY: "bottom",
-    backgroundRepeat: "no-repeat"
+    backgroundRepeat: "no-repeat",
 });
 
 const SubTitle = styled("h3")(
@@ -93,23 +93,23 @@ const SubTitle = styled("h3")(
         textAlign: "center",
         lineHeight: "34px",
         marginBottom: 20,
-        marginTop: 0
+        marginTop: 0,
     },
     mq({
         marginLeft: [0, "auto"],
-        marginRight: [0, "auto"]
-    })
+        marginRight: [0, "auto"],
+    }),
 );
 
 const Grid = styled("div")(
     {
         display: "grid",
         gridTemplateRows: "repeat(2, 1fr)",
-        gap: "40px 40px"
+        gap: "40px 40px",
     },
     mq({
-        gridTemplateColumns: ["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(3, 1fr)"]
-    })
+        gridTemplateColumns: ["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(3, 1fr)"],
+    }),
 );
 
 const Card = styled("div")(
@@ -134,24 +134,24 @@ const Card = styled("div")(
                 img: {
                     width: "100%",
                     height: 150,
-                    maxWidth: 181
-                }
+                    maxWidth: 181,
+                },
             },
             ".content__title": {
                 margin: "0px 0px 10px",
                 fontSize: 22,
-                fontWeight: theme.fontWeight.bold
+                fontWeight: theme.fontWeight.bold,
             },
             ".content__body": {
                 margin: 0,
                 fontSize: theme.fontSize["base"],
-                fontWeight: theme.fontWeight.regular
-            }
-        }
+                fontWeight: theme.fontWeight.regular,
+            },
+        },
     },
     mq({
-        width: ["100%", 352]
-    })
+        width: ["100%", 352],
+    }),
 );
 
 const WCPIntroComponent = props => {

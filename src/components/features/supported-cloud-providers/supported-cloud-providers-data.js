@@ -10,36 +10,36 @@ export const LOGOS = [
     {
         id: 0,
         src: gqlLogo,
-        alt: "GraphQL logo"
+        alt: "GraphQL logo",
     },
     {
         id: 1,
         src: awsLogo,
-        alt: "AWS logo"
+        alt: "AWS logo",
     },
     {
         id: 2,
         src: typescriptLogo,
-        alt: "Typescript logo"
+        alt: "Typescript logo",
     },
     {
         id: 3,
         src: nodejsLogo,
-        alt: "Nodejs logo"
+        alt: "Nodejs logo",
     },
     {
         id: 4,
         src: webpackLogo,
-        alt: "Webpack logo"
+        alt: "Webpack logo",
     },
     {
         id: 5,
         src: babelLogo,
-        alt: "Babel logo"
+        alt: "Babel logo",
     },
     {
         id: 6,
         src: reactLogo,
-        alt: "Reactjs logo"
-    }
+        alt: "Reactjs logo",
+    },
 ];

@@ -16,7 +16,7 @@ const Card = styled("div")(
         cursor: "pointer",
 
         "&:hover": {
-            transform: "translateY(-10px) scale(1.05)"
+            transform: "translateY(-10px) scale(1.05)",
         },
 
         "& .banner-wrapper": {
@@ -31,15 +31,15 @@ const Card = styled("div")(
                 textTransform: "uppercase",
                 fontSize: 10,
                 color: theme.color.black,
-                fontWeight: theme.fontWeight.semiBold
-            }
+                fontWeight: theme.fontWeight.semiBold,
+            },
         },
 
         "& .media-wrapper": {
             "& .media": {
                 width: "100%",
-                objectFit: "cover"
-            }
+                objectFit: "cover",
+            },
         },
         "& .text-wrapper": {
             display: "flex",
@@ -59,27 +59,26 @@ const Card = styled("div")(
 
                 "& .author-wrapper__img": {
                     width: 73,
-                    height: 73
+                    height: 73,
                 },
                 "& .author-wrapper__name": {
                     marginLeft: 8,
-                    textTransform: "capitalize"
-                }
+                    textTransform: "capitalize",
+                },
             },
             "& .title": {
                 fontSize: theme.fontSize.sm,
                 fontWeight: theme.fontWeight.semiBold,
                 color: "#004A89",
-                marginBottom: 12
+                marginBottom: 12,
             },
             "& .description": {
                 fontSize: theme.fontSize.sm,
                 fontWeight: theme.fontWeight.light,
                 color: "#004A89",
-                marginBottom: 35
+                marginBottom: 35,
             },
             "& .tags-wrapper": {
-
                 position: "absolute",
                 bottom: "20px",
                 "& .tag": {
@@ -92,14 +91,14 @@ const Card = styled("div")(
                     fontWeight: theme.fontWeight.semiBold,
                     color: "#313097",
                     marginRight: 8,
-                }
-            }
-        }
+                },
+            },
+        },
     },
     mq({
         width: ["90%", 256],
         height: ["auto", 345],
-    })
+    }),
 );
 
 const ContentCard = ({
@@ -111,7 +110,7 @@ const ContentCard = ({
     title,
     description,
     tags,
-    link
+    link,
 }) => {
     return (
         <Card

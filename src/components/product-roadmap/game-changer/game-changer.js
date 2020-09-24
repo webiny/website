@@ -15,15 +15,15 @@ const GameChangerSection = styled("section")(
         backgroundImage: "url(" + heroBg + ")",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "bottom",
-        backgroundSize: "cover"
+        backgroundSize: "cover",
     },
     mq({
         padding: ["0px 15px 110px", "0px"],
         "@media (min-width: 1460px)": {
             backgroundPosition: "bottom",
-            paddingTop: 0
-        }
-    })
+            paddingTop: 0,
+        },
+    }),
 );
 
 const heroContainerClass = css(
@@ -33,27 +33,27 @@ const heroContainerClass = css(
         alignItems: "center",
         justifyContent: "center",
         maxWidth: 1200,
-        position: "relative"
+        position: "relative",
     },
     mq({
         width: ["100%", "100%"],
         height: ["100%", 697],
         padding: ["100px 0px", 0],
         "@media (min-width: 2000px)": {
-            paddingBottom: 80
-        }
-    })
+            paddingBottom: 80,
+        },
+    }),
 );
 
 const TitleWrapper = styled("div")(
     {
         display: "flex",
-        flexDirection: "column"
+        flexDirection: "column",
     },
     mq({
         width: ["100%", 1100],
-        alignItems: ["center"]
-    })
+        alignItems: ["center"],
+    }),
 );
 
 const Title = styled("h1")(
@@ -63,13 +63,13 @@ const Title = styled("h1")(
         fontWeight: theme.fontWeight.bold,
         color: theme.color.white,
         textAlign: "center",
-        marginTop: 0
+        marginTop: 0,
     },
     mq({
         marginBottom: [0, 100],
         marginLeft: [0, "auto"],
-        marginRight: [0, "auto"]
-    })
+        marginRight: [0, "auto"],
+    }),
 );
 
 const GameChangerComponent = props => {

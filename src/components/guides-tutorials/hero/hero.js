@@ -23,24 +23,24 @@ const HeroSection = styled("section")(
         position: "relative",
         zIndex: 0,
         padding: "0px 15px",
-        height: "100%"
+        height: "100%",
     },
     mq({
-        minHeight: ["auto", 404]
-    })
+        minHeight: ["auto", 404],
+    }),
 );
 
 const heroContainerClass = css(
     {
         flexDirection: "column",
-        maxWidth: 1200
+        maxWidth: 1200,
     },
     mq({
         width: ["100%", "100%"],
         display: ["block", "flex"],
         justifyContent: ["center", "space-between"],
-        padding: ["100px 0px 40px", "125px 0px 0px"]
-    })
+        padding: ["100px 0px 40px", "125px 0px 0px"],
+    }),
 );
 
 const Title = styled("h1")(
@@ -51,11 +51,11 @@ const Title = styled("h1")(
         color: theme.color.white,
         fontSize: theme.fontSize["5xl"],
         fontWeight: theme.fontWeight.semiBold,
-        textAlign: "center"
+        textAlign: "center",
     },
     mq({
-        width: ["100%"]
-    })
+        width: ["100%"],
+    }),
 );
 
 const SubTitle = styled("h3")({
@@ -67,18 +67,18 @@ const SubTitle = styled("h3")({
     color: theme.color.white,
     fontSize: theme.fontSize.xl,
     fontWeight: theme.fontWeight.regular,
-    lineHeight: "34px"
+    lineHeight: "34px",
 });
 
 const HeroContentWrapper = styled("div")(
     {
         display: "flex",
         flexDirection: "column",
-        alignItems: "center"
+        alignItems: "center",
     },
     mq({
-        width: ["100%"]
-    })
+        width: ["100%"],
+    }),
 );
 
 const HeroCTAWrapper = styled("div")(
@@ -91,11 +91,11 @@ const HeroCTAWrapper = styled("div")(
         margin: "0px auto",
 
         "& .button": {
-            minWidth: 150
+            minWidth: 150,
         },
         "& .button--yellow-bg": {
-            backgroundColor: theme.color.yellow
-        }
+            backgroundColor: theme.color.yellow,
+        },
     },
     mq({
         flexDirection: ["column", "row"],
@@ -103,13 +103,13 @@ const HeroCTAWrapper = styled("div")(
         marginBottom: [0, 100],
 
         "& .button": {
-            width: ["80%", "auto"]
+            width: ["80%", "auto"],
         },
         "& .button:last-child": {
             marginLeft: [0, 24],
-            marginTop: [24, 0]
-        }
-    })
+            marginTop: [24, 0],
+        },
+    }),
 );
 
 const WebinyHallMarkImage = styled("img")(
@@ -118,21 +118,21 @@ const WebinyHallMarkImage = styled("img")(
         zIndex: -1,
         top: 0,
         left: 0,
-        width: "100%"
+        width: "100%",
     },
     mq({
-        height: ["75%", 756]
-    })
+        height: ["75%", 756],
+    }),
 );
 
 const defaultPrimaryCTA = {
     label: "Submit a tutorial",
-    link: SUBMIT_TUTORIAL_LINK
+    link: SUBMIT_TUTORIAL_LINK,
 };
 
 const defaultSecondaryCTA = {
     label: "Request a tutorial",
-    link: REQUEST_TUTORIAL_LINK
+    link: REQUEST_TUTORIAL_LINK,
 };
 
 const Hero = props => {

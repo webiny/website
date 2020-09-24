@@ -12,18 +12,18 @@ import rightArrowIcon from "./assets/right-arrow.svg";
 
 const SlideWrapper = styled("div")(
     {
-        width: "100%"
+        width: "100%",
     },
     mq({
-        marginBottom: [60, 80]
-    })
+        marginBottom: [60, 80],
+    }),
 );
 const LeftArrowImage = styled("img")({
-    width: "100%"
+    width: "100%",
 });
 
 const RightArrowImage = styled("img")({
-    width: "100%"
+    width: "100%",
 });
 
 const leftArrowClass = css(
@@ -35,13 +35,13 @@ const leftArrowClass = css(
         backgroundColor: "transparent !important",
         zIndex: 5,
         "&:hover": {
-            boxShadow: "none !important"
-        }
+            boxShadow: "none !important",
+        },
     },
     mq({
         display: ["none !important", "block !important"],
-        width: ["30px !important", "50px !important"]
-    })
+        width: ["30px !important", "50px !important"],
+    }),
 );
 
 const rightArrowClass = css(
@@ -53,13 +53,13 @@ const rightArrowClass = css(
         backgroundColor: "transparent !important",
         zIndex: 5,
         "&:hover": {
-            boxShadow: "none !important"
-        }
+            boxShadow: "none !important",
+        },
     },
     mq({
         display: ["none !important", "block !important"],
-        width: ["30px !important", "50px !important"]
-    })
+        width: ["30px !important", "50px !important"],
+    }),
 );
 
 function PrevArrow(props) {
@@ -87,23 +87,23 @@ const webinyAppsImage = css(
         paddingBottom: 40,
         margin: "0 auto",
         ".slick-slide .card": {
-            margin: "40px auto"
+            margin: "40px auto",
         },
         ".slick-center .card": {
-            transform: "scale(1.1)"
+            transform: "scale(1.1)",
         },
         ".slick-dots": {
             zIndex: 10,
             "li button:before": {
-                fontSize: 30
-            }
-        }
+                fontSize: 30,
+            },
+        },
     },
     mq({
         ".slick-dots": {
-            bottom: [0]
-        }
-    })
+            bottom: [0],
+        },
+    }),
 );
 
 const sliderSettings = {
@@ -119,24 +119,24 @@ const sliderSettings = {
             breakpoint: 1024,
             settings: {
                 slidesToShow: 3,
-                slidesToScroll: 3
-            }
+                slidesToScroll: 3,
+            },
         },
         {
             breakpoint: 900,
             settings: {
                 slidesToShow: 2,
-                slidesToScroll: 2
-            }
+                slidesToScroll: 2,
+            },
         },
         {
             breakpoint: 680,
             settings: {
                 slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        }
-    ]
+                slidesToScroll: 1,
+            },
+        },
+    ],
 };
 
 const CardSlider = ({ data }) => {

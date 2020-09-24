@@ -8,30 +8,30 @@ import RegisterToAttend from "../components/events/register-to-attend";
 import QuickStart from "../components/ui/quick-start/quick-start";
 
 class IndexPage extends React.Component {
-  scheduleTalkRef = React.createRef();
+    scheduleTalkRef = React.createRef();
 
-  goToScheduleTalkSection = () => {
-    if (this.scheduleTalkRef && this.scheduleTalkRef.current) {
-      const { offsetTop } = this.scheduleTalkRef.current;
-      window.scrollTo({
-        top: offsetTop,
-        left: 0,
-        behavior: "smooth",
-      });
+    goToScheduleTalkSection = () => {
+        if (this.scheduleTalkRef && this.scheduleTalkRef.current) {
+            const { offsetTop } = this.scheduleTalkRef.current;
+            window.scrollTo({
+                top: offsetTop,
+                left: 0,
+                behavior: "smooth",
+            });
+        }
+    };
+
+    render() {
+        return (
+            <BaseLayout title="Events" description="Webiny Online Meetups">
+                <Hero />
+                <Events />
+                <Register handleTalkClick={this.goToScheduleTalkSection} />
+                <QuickStart />
+                <RegisterToAttend refFromParent={this.scheduleTalkRef} />
+            </BaseLayout>
+        );
     }
-  };
-
-  render() {
-    return (
-      <BaseLayout title="Events" description="Webiny Online Meetups">
-        <Hero />
-        <Events />
-        <Register handleTalkClick={this.goToScheduleTalkSection} />
-        <QuickStart />
-        <RegisterToAttend refFromParent={this.scheduleTalkRef} />
-      </BaseLayout>
-    );
-  }
 }
 
 export default IndexPage;

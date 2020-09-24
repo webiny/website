@@ -23,14 +23,14 @@ const Wrapper = styled("div")(
     {
         position: "fixed",
         zIndex: 1000,
-        textAlign: "center"
+        textAlign: "center",
     },
     mq({
         display: ["none", "block"],
         left: [0, 25],
         padding: [15, 0],
-        bottom: [40, 25]
-    })
+        bottom: [40, 25],
+    }),
 );
 
 const Box = styled("div")(
@@ -54,12 +54,12 @@ const Box = styled("div")(
         visibility: "hidden",
         boxSizing: "border-box",
         ".ph-button": {
-            width: 220
-        }
+            width: 220,
+        },
     },
     mq({
-        width: ["100%", "260px"]
-    })
+        width: ["100%", "260px"],
+    }),
 );
 
 const CloseBtn = styled("img")({
@@ -71,8 +71,8 @@ const CloseBtn = styled("img")({
     right: 5,
     top: 5,
     "&:hover": {
-        opacity: "0.75"
-    }
+        opacity: "0.75",
+    },
 });
 
 class ProductHunt extends React.Component {

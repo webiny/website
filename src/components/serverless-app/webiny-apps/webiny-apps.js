@@ -26,7 +26,7 @@ import {
     ServerlessBenefitTitleHighlight,
     ServerBenefitsWrapper,
     BenefitBox,
-    serverlessAppsRTLClass
+    serverlessAppsRTLClass,
 } from "./webiny-apps-styles";
 
 // assets

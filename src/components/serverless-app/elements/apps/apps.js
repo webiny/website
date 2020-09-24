@@ -21,36 +21,36 @@ const Section = styled("section")(
         backgroundRepeat: "no-repeat",
         position: "relative",
         zIndex: 0,
-        backgroundPosition: "top"
+        backgroundPosition: "top",
     },
     mq({
-        padding: ["0px 15px 15px", "100px 15px 0"]
-    })
+        padding: ["0px 15px 15px", "100px 15px 0"],
+    }),
 );
 
 const containerClass = css(
     {
         flexDirection: "column",
-        maxWidth: "1200px"
+        maxWidth: "1200px",
     },
     mq({
         width: ["100%", "100%"],
         display: ["block", "flex"],
         justifyContent: ["center", "space-between"],
-        padding: ["100px 0px 25px", "100px 0px 25px"]
-    })
+        padding: ["100px 0px 25px", "100px 0px 25px"],
+    }),
 );
 
 const WebinyAppsWrapper = styled("div")(
     {
         display: "grid",
-        position: "relative"
+        position: "relative",
     },
     mq({
         gridTemplateColumns: ["repeat(1, 1fr)", "repeat(3, 1fr)", "repeat(4, 1fr)"],
         gap: ["40px 0px", "40px 24px", "0px 18px"],
-        marginBottom: [0, 100]
-    })
+        marginBottom: [0, 100],
+    }),
 );
 
 const WebinyApp = styled("div")(
@@ -71,34 +71,34 @@ const WebinyApp = styled("div")(
             transition: "transform 300ms ease-in",
 
             "&:hover": {
-                transform: "translateY(-5px) scale(1.05)"
-            }
+                transform: "translateY(-5px) scale(1.05)",
+            },
         },
 
         "& .app__title": {
             margin: "0px 0px 20px",
             fontSize: theme.fontSize["2xl"],
             fontWeight: theme.fontWeight.bold,
-            textAlign: "center"
+            textAlign: "center",
         },
         "& .app__body": {
             fontSize: 22,
             fontWeight: theme.fontWeight.regular,
             textAlign: "center",
-            margin: "0px 0px 35px"
+            margin: "0px 0px 35px",
         },
         "& .app__button": {
             backgroundColor: props.color ? props.color : "inherit",
             width: "100%",
-            maxWidth: 217
-        }
+            maxWidth: 217,
+        },
     }),
     mq({
         width: [283],
         height: ["100%"],
         padding: ["10px 12px 24px"],
-        margin: ["0px auto", 0]
-    })
+        margin: ["0px auto", 0],
+    }),
 );
 
 const WEBINY_APPS = [
@@ -111,7 +111,7 @@ const WEBINY_APPS = [
         actionLabel: "learn more",
         actionLink: "/serverless-app/headless-cms",
         imgSrc: headlessCMSIcon,
-        imgAlt: "webiny app: headless cms"
+        imgAlt: "webiny app: headless cms",
     },
     {
         id: 1,
@@ -122,7 +122,7 @@ const WEBINY_APPS = [
         actionLabel: "learn more",
         actionLink: "/serverless-app/page-builder",
         imgSrc: pageBuilderIcon,
-        imgAlt: "webiny app: page builder"
+        imgAlt: "webiny app: page builder",
     },
     {
         id: 2,
@@ -133,7 +133,7 @@ const WEBINY_APPS = [
         actionLabel: "learn more",
         actionLink: "/serverless-app/form-builder",
         imgSrc: formBuilderIcon,
-        imgAlt: "webiny app: Form builder"
+        imgAlt: "webiny app: Form builder",
     },
     {
         id: 3,
@@ -144,8 +144,8 @@ const WEBINY_APPS = [
         actionLabel: "learn more",
         actionLink: "/serverless-app/file-manager",
         imgSrc: fileManagerIcon,
-        imgAlt: "webiny app: file manager"
-    }
+        imgAlt: "webiny app: file manager",
+    },
 ];
 
 const WebinyAppsComponent = ({ className }) => (

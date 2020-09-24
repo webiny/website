@@ -13,18 +13,18 @@ export const HERO_FEATURES = [
     {
         id: 0,
         title: "Serverless & Self-hosted",
-        body: "Quick and easy deployment using Webiny CLI."
+        body: "Quick and easy deployment using Webiny CLI.",
     },
     {
         id: 1,
         title: "Cloud Native",
-        body: "Designed to work with a cloud storage service like AWS S3."
+        body: "Designed to work with a cloud storage service like AWS S3.",
     },
     {
         id: 2,
         title: "Data Optimized",
-        body: "Handle large amounts of files and images in an optimal way."
-    }
+        body: "Handle large amounts of files and images in an optimal way.",
+    },
 ];
 
 export const KEYNOTES = [
@@ -34,7 +34,7 @@ export const KEYNOTES = [
             <p className={className}>
                 Integrated throughout all <span>Webiny apps</span>
             </p>
-        )
+        ),
     },
     {
         id: 1,
@@ -42,7 +42,7 @@ export const KEYNOTES = [
             <p className={className}>
                 Built-in <span>image editor</span>
             </p>
-        )
+        ),
     },
     {
         id: 2,
@@ -50,7 +50,7 @@ export const KEYNOTES = [
             <p className={className}>
                 Select and upload a <span>single</span>, or <span>multiple</span> files in one go
             </p>
-        )
+        ),
     },
     {
         id: 3,
@@ -58,7 +58,7 @@ export const KEYNOTES = [
             <p className={className}>
                 <span>Tag files</span> for better search results
             </p>
-        )
+        ),
     },
     {
         id: 4,
@@ -66,7 +66,7 @@ export const KEYNOTES = [
             <p className={className}>
                 A component you can <span>integrate</span> into your own apps
             </p>
-        )
+        ),
     },
     {
         id: 5,
@@ -74,8 +74,8 @@ export const KEYNOTES = [
             <p className={className}>
                 It can work with any <span>3rd party storage</span> service
             </p>
-        )
-    }
+        ),
+    },
 ];
 
 export const FEATURES = [
@@ -96,7 +96,7 @@ export const FEATURES = [
             </Fragment>
         ),
         background: grayRectImg,
-        imageOnLeft: false
+        imageOnLeft: false,
     },
     {
         id: 1,
@@ -117,7 +117,7 @@ export const FEATURES = [
             </Fragment>
         ),
         background: false,
-        imageOnLeft: true
+        imageOnLeft: true,
     },
     {
         id: 2,
@@ -137,7 +137,7 @@ export const FEATURES = [
             </Fragment>
         ),
         background: grayRectInvertedImg,
-        imageOnLeft: false
+        imageOnLeft: false,
     },
     {
         id: 3,
@@ -157,7 +157,7 @@ export const FEATURES = [
             </Fragment>
         ),
         background: false,
-        imageOnLeft: true
+        imageOnLeft: true,
     },
     {
         id: 4,
@@ -182,6 +182,6 @@ export const FEATURES = [
             </Fragment>
         ),
         background: grayRectImg,
-        imageOnLeft: false
-    }
+        imageOnLeft: false,
+    },
 ];

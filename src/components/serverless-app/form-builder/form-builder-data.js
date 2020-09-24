@@ -17,18 +17,18 @@ export const HERO_FEATURES = [
     {
         id: 0,
         title: "Serverless & Self-hosted",
-        body: "Quick and easy deployment using Webiny CLI."
+        body: "Quick and easy deployment using Webiny CLI.",
     },
     {
         id: 1,
         title: "Complete package",
-        body: "Build forms, define terms and conditions, setup a captcha and view submissions."
+        body: "Build forms, define terms and conditions, setup a captcha and view submissions.",
     },
     {
         id: 2,
         title: "Theme",
-        body: "Have a full control over how your form will look like, including on mobile devices."
-    }
+        body: "Have a full control over how your form will look like, including on mobile devices.",
+    },
 ];
 
 export const KEYNOTES = [
@@ -38,7 +38,7 @@ export const KEYNOTES = [
             <p className={className}>
                 Build both <span>simple</span> and <span>complex</span> forms pages
             </p>
-        )
+        ),
     },
     {
         id: 1,
@@ -46,7 +46,7 @@ export const KEYNOTES = [
             <p className={className}>
                 Create custom <span>fields</span> and <span>validators</span>
             </p>
-        )
+        ),
     },
     {
         id: 2,
@@ -54,7 +54,7 @@ export const KEYNOTES = [
             <p className={className}>
                 Forms have <span>revisions</span>, so you never lose track of changes
             </p>
-        )
+        ),
     },
     {
         id: 3,
@@ -62,7 +62,7 @@ export const KEYNOTES = [
             <p className={className}>
                 Integrated <span>ReCAPTCHA</span>
             </p>
-        )
+        ),
     },
     {
         id: 4,
@@ -70,7 +70,7 @@ export const KEYNOTES = [
             <p className={className}>
                 Ability to add 3rd party services via <span>webhooks</span>
             </p>
-        )
+        ),
     },
     {
         id: 5,
@@ -78,8 +78,8 @@ export const KEYNOTES = [
             <p className={className}>
                 View, filter and export <span>submissions</span>
             </p>
-        )
-    }
+        ),
+    },
 ];
 
 export const FEATURES = [
@@ -101,7 +101,7 @@ export const FEATURES = [
             </Fragment>
         ),
         background: grayRectImg,
-        imageOnLeft: false
+        imageOnLeft: false,
     },
     {
         id: 1,
@@ -125,7 +125,7 @@ export const FEATURES = [
             </Fragment>
         ),
         background: false,
-        imageOnLeft: true
+        imageOnLeft: true,
     },
     {
         id: 2,
@@ -149,7 +149,7 @@ export const FEATURES = [
             </Fragment>
         ),
         background: grayRectInvertedImg,
-        imageOnLeft: false
+        imageOnLeft: false,
     },
     {
         id: 3,
@@ -170,7 +170,7 @@ export const FEATURES = [
             </Fragment>
         ),
         background: false,
-        imageOnLeft: true
+        imageOnLeft: true,
     },
     {
         id: 4,
@@ -191,7 +191,7 @@ export const FEATURES = [
             </Fragment>
         ),
         background: grayRectImg,
-        imageOnLeft: false
+        imageOnLeft: false,
     },
     {
         id: 5,
@@ -212,7 +212,7 @@ export const FEATURES = [
             </Fragment>
         ),
         background: false,
-        imageOnLeft: true
+        imageOnLeft: true,
     },
     {
         id: 6,
@@ -232,7 +232,7 @@ export const FEATURES = [
             </Fragment>
         ),
         background: grayRectInvertedImg,
-        imageOnLeft: false
+        imageOnLeft: false,
     },
     {
         id: 7,
@@ -254,7 +254,7 @@ export const FEATURES = [
             </Fragment>
         ),
         background: false,
-        imageOnLeft: true
+        imageOnLeft: true,
     },
     {
         id: 8,
@@ -275,6 +275,6 @@ export const FEATURES = [
             </Fragment>
         ),
         background: grayRectImg,
-        imageOnLeft: false
-    }
+        imageOnLeft: false,
+    },
 ];

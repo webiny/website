@@ -8,11 +8,11 @@ const Subtitle = styled("p")(
         fontSize: 24,
         fontWeight: theme.fontWeight.regular,
         textAlign: "center",
-        margin: "0 auto 25px auto"
+        margin: "0 auto 25px auto",
     },
     mq({
-        width: ["100%", "650px"]
-    })
+        width: ["100%", "650px"],
+    }),
 );
 
 const SubtitleComponent = props => <Subtitle>{props.children}</Subtitle>;
