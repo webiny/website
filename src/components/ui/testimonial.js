@@ -175,7 +175,6 @@ class Testimonial extends React.Component {
                 } else if (index < 0) {
                     index = this.state.items.length - 1;
                 }
-                console.log("showing index:" + index);
                 this.setActiveItem(index);
             });
         }

@@ -33,7 +33,6 @@ const CARDS_PER_PAGE = 9;
 
 const Blogs = props => {
     const { data } = props;
-    console.log(data);
     const [filteredContent, setFilteredContent] = useState(data);
     const [search, setSearch] = useState("");
 
