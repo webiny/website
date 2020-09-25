@@ -1,7 +1,7 @@
 ---
 slug: "blog/create-github-contributors-plugin-for-gatsby"
 title: "How to Create Github Contributors Plugin for Gatsby"
-description: "Something"
+description: "Learn how to create a Gatsby source plugin that will display a list of contributors to a Github repository."
 tags: ["Web development", "Gatsby", "Github", "React", "Open source"]
 featureImage: "./assets/create-github-contributors-plugin-for-gatsby/cover-image.png"
 author: ashu
