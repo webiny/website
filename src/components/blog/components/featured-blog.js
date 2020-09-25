@@ -45,7 +45,7 @@ export default ({data}) => {
               </span>
             </div>
             <div>
-              <span className={'published'}>4 Aug. 2018 </span>
+              <span className={'published'}>{data.date}</span>
             </div>
           </div>
         </div>
