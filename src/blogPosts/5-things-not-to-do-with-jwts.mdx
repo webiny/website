@@ -1,7 +1,7 @@
 ---
-slug: "blog/5-things-not-to-do-with-jwts"
-title: "5 Things Not To Do With JWTs"
-description: ""
+slug: "blog/5-key-learnings-from-working-with-jwts"
+title: "5 Key Learnings From Working With JWTs"
+description: "Learn important things about JWTs you want to avoid in your projects.  to save time, money and a few headaches."
 tags:
   [
     "jwt",
@@ -12,7 +12,7 @@ tags:
     "authentication",
     "authorization",
   ]
-featureImage: "./assets/webinys-top-10-favorite-npm-packages-e9dc560e56ff/max-3840-1epGtKm7B1cAzl1DR8YngsQ.png"
+featureImage: "./assets/5-key-learnings-from-working-with-jwts/featureImage.png"
 author: pavel
 date: 2020-09-24
 ---
@@ -59,4 +59,20 @@ It's all easily doable if you make a simple abstraction between your business lo
 
 Just don't. It's simply not worth the time and effort. Simply use a third party service that fits your project the most, and call it a day. There are companies dedicated to providing enterprise-grade identity services that are feature-packed (user signup, login, MFA, account recovery, permissions, etc.), battle-tested, and just work.
 
-If you're not a fan of third party providers or you don't trust AWS with your users, there are open-source alternatives, like <ExternalLink href="https://www.ory.sh/">Ory</ExternalLink>. If you don't have a _really_ good reason for rolling a custom authentication (and 9 times out of 10 you don't), do yourself a favor and use a specialized service. All of those services provide libraries for integration with most popular frontend frameworks and you'll be up and running in minutes. Those service also have huge communities using them, so you won't be alone if a problem arises.
+If you're not a fan of third party providers or you don't trust them with your users, there are open-source alternatives. If you don't have a _really_ good reason for rolling a custom authentication (and 9 times out of 10 you don't), do yourself a favor and use a specialized service. All of those services provide libraries for integration with most popular frontend frameworks and you'll be up and running in minutes. Those service also have huge communities using them, so you won't be alone if a problem arises.
+
+Here's a list of some of the popular identity providers:
+- https://www.ory.sh/ (open-source)
+- https://www.okta.com/ 
+- https://auth0.com/
+- https://aws.amazon.com/cognito/
+
+## Final thoughts
+
+I hope these learnings are helpful and will save you some time. If you have a simple project with not too many requirements for access control, some of these things are not relevant to you. However, if you do expect your project to grow, and you know you'll have different types of fine-grained permissions, take some time and plan your security strategy. 
+
+At Webiny, we used to roll our own authentication in the past, but since we've moved to Cognito (and will soon support other providers), we offloaded so much maintenance and freed up so much time for other things, it's not even funny. I strongly recommend taking that path. Let specialized services handle authentication, so you can focus on your business logic.
+
+If you have questions or comments, please reach out via <ExternalLink href="https://twitter.com/paveldenisjuk">Twitter</ExternalLink> or <ExternalLink href="https://www.webiny.com/slack/">Webiny Community Slack</ExternalLink>.
+
+Until next time! 🍻
