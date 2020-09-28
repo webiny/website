@@ -14,11 +14,11 @@ This week we have lots of community updates, partnership on the state of the ser
 
 ## 🙌 Community Updates
 
-### 📉 The State of Serverless Report
+### 📉 State of The Serverless Report 2020
 
-[Coding Sans](https://codingsans.com/) published a report with the latest serverless trends for this year. Partnering with 9 other companies, including [Webiny](https://www.webiny.com/?utm_source=Webiny-blog&utm_medium=webiny-website&utm_campaign=weekly-blog-sep-28&utm_content=weekly-updates&utm_term=W00074) having one thing in common: **Serverless** 🚀
+[Coding Sans](https://codingsans.com/) released their State of the serverless report. Learn about the serverless market and its trends. [Webiny](https://www.webiny.com/?utm_source=Webiny-blog&utm_medium=webiny-website&utm_campaign=weekly-blog-sep-28&utm_content=weekly-updates&utm_term=W00074) was one of the partners in helping to produce this report.
 
-Learn about Serverless trends in 2020 [here](https://codingsans.com/blog/serverless-trends).
+[Check out the report here 🚀](https://codingsans.com/blog/serverless-trends)
 
 ### 📺 Webiny Blog
 
