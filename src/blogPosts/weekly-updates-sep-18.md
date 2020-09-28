@@ -1,7 +1,7 @@
 ---
 slug: "blog/weekly-updates-september-28"
 title: "Weekly Updates September 28"
-description: "What's Up? 🚀"
+description: "This week we have lots of community updates, partnership on the state of the serverless report, and the Webiny blog. Let's start 🚀"
 tags: ["Serverless", "Web development", "Javascript", "Software Development", "GraphQL"]
 featureImage: "./assets/weekly-updates-sep-18/weekly-updates-sep-18.png"
 author: albiona
@@ -10,11 +10,11 @@ date: 2020-09-28
 
 ## ⚡️ What's Up from Webiny?
 
-This week we have lots of community updates, partnership on the first state of the serverless report, and the Webiny blog. Let's start ⚡️🙌
+This week we have lots of community updates, partnership on the state of the serverless report, and the Webiny blog. Let's start ⚡️🙌
 
 ## 🙌 Community Updates
 
-### 📉 The First State of Serverless Report
+### 📉 The State of Serverless Report
 
 [Coding Sans](https://codingsans.com/) published a report with the latest serverless trends for this year. Partnering with 9 other companies, including [Webiny](https://www.webiny.com/?utm_source=Webiny-blog&utm_medium=webiny-website&utm_campaign=weekly-blog-sep-28&utm_content=weekly-updates&utm_term=W00074) having one thing in common: **Serverless** 🚀
 
