@@ -29,11 +29,11 @@ Our team is here for **you**; **our community**. Start today to build your serve
 
 ### 💡 How to Create Github Contributors Plugin for Gatsby.js
 
-In this tutorial, Webiny's Software Developer [Ashu](https://twitter.com/BhardwajAshu96), will guide you through the steps to create a Gatsby source plugin, which will fetch all contributors to a given GitHub repository.
+In this tutorial, Webiny's Software Developer [Ashu](https://twitter.com/BhardwajAshu96), will guide you through the process of creating a Gatsby source plugin.
 
-You will learn how to use the plugin in a Gatsby site to render a list of contributors. 🎉 💡
+You'll learn how to fetch a list of contributors from a GitHub repository and display it on your Gatsby site and pack it all up as a source plugin.
 
-Check out the [tutorial](https://www.webiny.com/blog/create-github-contributors-plugin-for-gatsby?utm_source=Webiny-blog&utm_medium=webiny-tech-content&utm_campaign=weekly-blog-sep-28&utm_content=github-contributors-gatsby-plugin&utm_term=W00078) today. 🚀
+[Create your Contributor's plugin today 👉🏻](https://www.webiny.com/blog/create-github-contributors-plugin-for-gatsby?utm_source=Webiny-blog&utm_medium=webiny-tech-content&utm_campaign=weekly-blog-sep-28&utm_content=github-contributors-gatsby-plugin&utm_term=W00078)
 
 ![Gatsby Source Plugin Github](/assets/weekly-updates-sep-18/gatsby-source-plugin-github.png)
 
