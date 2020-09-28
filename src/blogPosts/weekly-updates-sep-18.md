@@ -27,9 +27,9 @@ This week we moved our blog from medium publication to our website 🎉 You can 
 
 Our team is here for **you**; **our community**. Start today to build your serverless applications, with the easiest way to adopt Serverless: [Webiny](https://www.webiny.com/?utm_source=Webiny-blog&utm_medium=webiny-website&utm_campaign=weekly-blog-sep-28&utm_content=weekly-updates&utm_term=W00074)!
 
-### 💡 How to Create Github Contributors Plugin for Gatsby.js
+### 💡 [TUTORIAL] List contributors from your GitHub repo to your Gatsby site
 
-In this tutorial, Webiny's Software Developer [Ashu](https://twitter.com/BhardwajAshu96), will guide you through the process of creating a Gatsby source plugin.
+In this tutorial, Webiny's Software Developer [Ashutosh](https://twitter.com/BhardwajAshu96), will guide you through the process of creating a Gatsby source plugin.
 
 You'll learn how to fetch a list of contributors from a GitHub repository and display it on your Gatsby site and pack it all up as a source plugin.
 
