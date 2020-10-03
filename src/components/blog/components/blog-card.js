@@ -137,10 +137,14 @@ const BlogCard = ({
                 </div>
             )}
             <div className="media-wrapper">
-                <Img
-                    fluid={featureImage.childImageSharp && featureImage.childImageSharp.fluid}
-                    alt={featureImage.name}
-                />
+                {featureImage.childImageSharp && featureImage.childImageSharp.fluid ? (
+                    <Img
+                        fluid={featureImage.childImageSharp && featureImage.childImageSharp.fluid}
+                        alt={featureImage.name}
+                    />
+                ) : (
+                    <img className="media" src={featureImage.publicURL} alt={featureImage.name} />
+                )}
             </div>
             <div className="text-wrapper">
                 <div className="author-wrapper">
