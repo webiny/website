@@ -71,19 +71,14 @@ module.exports = {
         {
             resolve: "gatsby-source-filesystem",
             options: {
-                path: `${__dirname}/src/blogPosts`
+                path: `${__dirname}/src/blogPosts`,
             },
         },
         {
             resolve: `gatsby-plugin-mdx`,
             options: {
-                extensions: [`.mdx`]
-            },
-        },
-        {
-            resolve: `gatsby-transformer-remark`,
-            options: {
-                plugins: [
+                extensions: [`.mdx`],
+                gatsbyRemarkPlugins: [
                     {
                         resolve: `gatsby-remark-images`,
                         options: {
@@ -96,6 +91,19 @@ module.exports = {
                             ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
                         },
                     },
+                    {
+                        resolve: "gatsby-remark-embed-gist",
+                    },
+                    {
+                        resolve: "@weknow/gatsby-remark-twitter",
+                    },
+                ],
+            },
+        },
+        {
+            resolve: `gatsby-transformer-remark`,
+            options: {
+                plugins: [
                     {
                         resolve: "gatsby-remark-embed-gist",
                     },
