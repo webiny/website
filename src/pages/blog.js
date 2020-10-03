@@ -19,7 +19,7 @@ export const listBlogsQuery = graphql`
             nodes {
                 id
                 frontmatter {
-                    date
+                    date(formatString: "MMMM DD, YYYY")
                     author
                     description
                     slug

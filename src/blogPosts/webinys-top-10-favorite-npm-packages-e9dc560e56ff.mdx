@@ -13,7 +13,7 @@ At Webiny we do have the `package-of-the-day` slack channel where we post our fa
 
 Below, we listed our top 10 favorite NPM packages. 🚀
 
-## 1. Contreebutos
+## 1. Contreebutors
 
 [`Contreebutors`](https://github.com/doitadrian/contreebutors) — A small library that makes it easy to keep a list of all people that contributed to a project (most often an open-source project). It’s really easy to use — just run the `contreebutors add --username {GITHUB_USERNAME}` command and the tool will add the given contributor to the `contreebutors.json` file, and more importantly, update the list of all contributors at the end of your project's `README.md` file.
 

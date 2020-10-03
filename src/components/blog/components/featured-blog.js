@@ -39,7 +39,7 @@ export default ({ data }) => {
                             <span className={"author__name"}>{authors[data.author].name}</span>
                         </div>
                         <div>
-                            <span className={"published"}>4 Aug. 2018 </span>
+                            <span className={"published"}>{data.date}</span>
                         </div>
                     </div>
                 </div>
