@@ -35,7 +35,7 @@ The idea behind token exchange goes like this. A user logs into your identity pr
 
 Why would you do that?
 
-Well, business logic permissions can be very complex and, often, they go beyond simple strings like "ADMIN" or "MODERATOR". If you have a decent sized app with fine grained access control, your permissions can become quite complex. Simple string roles are simply not enough (see <ExternalLink href="https://github.com/webiny/webiny-js/issues/1194">this issue</ExternalLink>, where we discuss the next version of Webiny Security layer, to find an example of fine-grained access control).
+Well, business logic permissions can be very complex and, often, they go beyond simple strings like "ADMIN" or "MODERATOR". If you have a decent sized app with fine grained access control, your permissions can become quite complex. Simple string roles are simply not enough (see <ExternalLink href="https://github.com/webiny/webiny-js/issues/1194?utm_source=Webiny-blog&utm_medium=webiny-github-security-layer&utm_campaign=webiny-hub-content-oct-5&utm_content=webiny-security-layer-upgrade&utm_term=W00138">this issue</ExternalLink>, where we discuss the next version of Webiny Security layer, to find an example of fine-grained access control).
 
 Another reason to do this is to have a normalized structure of data within the token. Different identity providers provide different ways of specifying permissions/scopes, and they store them in different keys within the token. Cognito, for example, makes it impossible to assign custom attributes if you're using custom UI with <ExternalLink href="https://docs.amplify.aws/lib/auth/overview/q/platform/js">Amplify Auth</ExternalLink> (which we use in Webiny).
 
@@ -53,7 +53,7 @@ We decided to solve this problem by introducing a Lambda function, which simply 
 
 This has more to do with how you structure authentication/authorization logic within your app than with the actual JWT, but it's still very important. System requirements change. They change fast, and often unexpectedly. Your manager/client can decide that the project you're working on is moving from Cognito to Auth0 overnight. Or, even better, your API now has to support multiple user pools and multiple identity providers _at the same time_.
 
-It's all easily doable if you make a simple abstraction between your business logic and authentication/authorization data. Don't ever access token data directly in your business logic. Simply expose a utility function, like `hasPermission` that will perform authorization based on the type of JWT you've received in the request (again, there are conceptual code examples in <ExternalLink href="https://github.com/webiny/webiny-js/issues/1194">this Webiny issue</ExternalLink>). For REST APIs, you'll most likely attach such a helper to `req` object. For GraphQL, you'll most likely have it in your resolver `context`.
+It's all easily doable if you make a simple abstraction between your business logic and authentication/authorization data. Don't ever access token data directly in your business logic. Simply expose a utility function, like `hasPermission` that will perform authorization based on the type of JWT you've received in the request (again, there are conceptual code examples in <ExternalLink href="https://github.com/webiny/webiny-js/issues/1194?utm_source=Webiny-blog&utm_medium=webiny-github-security-layer&utm_campaign=webiny-hub-content-oct-5&utm_content=webiny-security-layer-upgrade&utm_term=W00138">this Webiny issue</ExternalLink>). For REST APIs, you'll most likely attach such a helper to `req` object. For GraphQL, you'll most likely have it in your resolver `context`.
 
 ## 5) Don't roll your own authentication
 
@@ -73,6 +73,6 @@ I hope these learnings are helpful and will save you some time. If you have a si
 
 At Webiny, we used to roll our own authentication in the past, but since we've moved to Cognito (and will soon support other providers), we offloaded so much maintenance and freed up so much time for other things, it's not even funny. I strongly recommend taking that path. Let specialized services handle authentication, so you can focus on your business logic.
 
-If you have questions or comments, please reach out via <ExternalLink href="https://twitter.com/paveldenisjuk">Twitter</ExternalLink> or <ExternalLink href="https://www.webiny.com/slack/">Webiny Community Slack</ExternalLink>.
+If you have questions or comments, please reach out via <ExternalLink href="https://twitter.com/paveldenisjuk">Twitter</ExternalLink> or <ExternalLink href="https://www.webiny.com/slack?utm_source=Webiny-blog&utm_medium=webiny-slack-community&utm_campaign=webiny-hub-content-oct-5&utm_content=webiny-security-layer-upgrade&utm_term=W00139">Webiny Community Slack</ExternalLink>.
 
 Until next time! 🍻
