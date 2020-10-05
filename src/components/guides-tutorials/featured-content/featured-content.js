@@ -27,12 +27,14 @@ import {
     Title,
     containerClass,
     FeaturedContentSection,
-    NotFound
+    NotFound,
 } from "./featured-content-styles";
 // data
 import { REQUEST_TUTORIAL_LINK, TUTORIALS } from "./content-data";
 
-const DATA = new Array(TUTORIALS.length).fill(0).map((_, index) => ({ ...TUTORIALS[index % TUTORIALS.length], id: index }));
+const DATA = new Array(TUTORIALS.length)
+    .fill(0)
+    .map((_, index) => ({ ...TUTORIALS[index % TUTORIALS.length], id: index }));
 const CARDS_PER_PAGE = 8;
 
 const FeaturedContent = props => {
@@ -118,8 +120,8 @@ const FeaturedContent = props => {
                         {search.length ? (
                             <CloseIcon className={"icon--close"} onClick={() => setSearch("")} />
                         ) : (
-                                <SearchIcon className={"icon"} />
-                            )}
+                            <SearchIcon className={"icon"} />
+                        )}
                     </SearchBar>
                 </SearchAndFilterWrapper>
 

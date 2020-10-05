@@ -19,8 +19,8 @@ const KeynoteSection = styled("section")(
         backgroundSize: "cover",
     },
     mq({
-        padding: ["0px 0px 110px", "0"]
-    })
+        padding: ["0px 0px 110px", "0"],
+    }),
 );
 
 const containerClass = css(
@@ -33,19 +33,19 @@ const containerClass = css(
         width: ["100%", "100%"],
         height: ["auto", 610],
         display: ["block", "flex"],
-        padding: ["100px 0px 150px", 0]
-    })
+        padding: ["100px 0px 150px", 0],
+    }),
 );
 
 const HeroContentWrapper = styled("div")(
     {
         a: {
-            color: theme.color.white
-        }
+            color: theme.color.white,
+        },
     },
     mq({
-        width: ["100%"]
-    })
+        width: ["100%"],
+    }),
 );
 
 const KeynotesWrapper = styled("div")(
@@ -72,10 +72,10 @@ const KeynotesWrapper = styled("div")(
                 textAlign: "center",
 
                 "& span": {
-                    color: theme.color.primaryDark
-                }
-            }
-        }
+                    color: theme.color.primaryDark,
+                },
+            },
+        },
     },
     mq({
         marginBottom: [0, 0],
@@ -84,9 +84,9 @@ const KeynotesWrapper = styled("div")(
 
         "& .box": {
             width: ["80%", 290],
-            height: ["auto", 123]
-        }
-    })
+            height: ["auto", 123],
+        },
+    }),
 );
 
 const KeynotesComponent = ({ className, keynotes }) => (

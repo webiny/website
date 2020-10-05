@@ -17,7 +17,7 @@ const Section = styled("section")(
     {
         backgroundColor: theme.color.white,
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "bottom"
+        backgroundPosition: "bottom",
     },
     mq({
         backgroundImage: "url(" + cloudsBg + ")",
@@ -25,9 +25,9 @@ const Section = styled("section")(
         padding: ["0px 15px 110px", "0px 15px 110px"],
         "@media (min-width: 1460px)": {
             backgroundPosition: "bottom",
-            paddingTop: 0
-        }
-    })
+            paddingTop: 0,
+        },
+    }),
 );
 
 export const overviewContainerClass = css({
@@ -37,21 +37,21 @@ export const overviewContainerClass = css({
     width: "100%",
     maxWidth: 1200,
     padding: 0,
-    position: "relative"
+    position: "relative",
 });
 
 const Title = styled(BaseTitle)({
     color: theme.color.white,
-    marginBottom: 60
+    marginBottom: 60,
 });
 
 const CLIHighlight = styled(TitleHighlight)({
-    backgroundImage: "url(" + rectangleBg + ")"
+    backgroundImage: "url(" + rectangleBg + ")",
 });
 
 const SupportedCloudProvidersImg = styled("img")({
     marginBottom: 200,
-    maxWidth: "100%"
+    maxWidth: "100%",
 });
 
 const TechnologyCard = styled("div")(
@@ -63,12 +63,12 @@ const TechnologyCard = styled("div")(
 
         backgroundColor: theme.color.white,
         boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.0980392)",
-        borderRadius: 8
+        borderRadius: 8,
     },
     mq({
         width: ["100%", 896],
-        height: ["auto", 298]
-    })
+        height: ["auto", 298],
+    }),
 );
 
 const SubTitle = styled("h4")({
@@ -88,9 +88,9 @@ const SubTitle = styled("h4")({
             content: "url(" + heartImg + ")",
             position: "absolute",
             top: -15,
-            right: "30%"
-        }
-    }
+            right: "30%",
+        },
+    },
 });
 
 const LogosWrapper = styled("div")(
@@ -105,13 +105,13 @@ const LogosWrapper = styled("div")(
             height: 75,
             display: "flex",
             justifyContent: "center",
-            alignItems: "center"
-        }
+            alignItems: "center",
+        },
     },
     mq({
         flexDirection: ["row", "row"],
-        flexWrap: ["wrap", "nowrap"]
-    })
+        flexWrap: ["wrap", "nowrap"],
+    }),
 );
 
 const SupportedCloudProviders = props => {

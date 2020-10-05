@@ -6,8 +6,8 @@
 
 // You can delete this file if you're not using it
 
-exports.onRouteUpdate = ({location, prevLocation}) => {
-  if (window.posthog) {
-    window.posthog.capture ('$pageview');
-  }
+exports.onRouteUpdate = ({ location, prevLocation }) => {
+    if (window.posthog) {
+        window.posthog.capture("$pageview");
+    }
 };

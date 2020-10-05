@@ -13,7 +13,7 @@ const WCPMoreSection = styled("section")(
     {
         backgroundColor: theme.color.white,
         backgroundImage: "url(" + dotsBg + ")",
-        backgroundRepeat: "no-repeat"
+        backgroundRepeat: "no-repeat",
     },
     mq({
         backgroundSize: ["cover", "auto", "100%"],
@@ -21,9 +21,9 @@ const WCPMoreSection = styled("section")(
         marginBottom: [60],
         padding: ["0px 15px", 0],
         "@media (min-width: 1460px)": {
-            backgroundPosition: "bottom"
-        }
-    })
+            backgroundPosition: "bottom",
+        },
+    }),
 );
 
 const overviewContainerClass = css(
@@ -33,23 +33,23 @@ const overviewContainerClass = css(
         alignItems: "center",
         justifyContent: "center",
         maxWidth: 1200,
-        position: "relative"
+        position: "relative",
     },
     mq({
         width: ["100%", "100%"],
-        height: ["100%", 562]
-    })
+        height: ["100%", 562],
+    }),
 );
 
 const OverviewSectionWrapper = styled("div")(
     {
         display: "flex",
-        justifyContent: "center"
+        justifyContent: "center",
     },
     mq({
         width: ["100%"],
-        alignItems: ["center"]
-    })
+        alignItems: ["center"],
+    }),
 );
 
 const Title = styled("h1")(
@@ -60,12 +60,12 @@ const Title = styled("h1")(
         fontWeight: theme.fontWeight.bold,
         color: theme.color.black,
         textAlign: "center",
-        marginBottom: 0
+        marginBottom: 0,
     },
     mq({
         marginLeft: [0, "auto"],
-        marginRight: [0, "auto"]
-    })
+        marginRight: [0, "auto"],
+    }),
 );
 
 const Caption = styled("h3")(
@@ -75,13 +75,13 @@ const Caption = styled("h3")(
         marginTop: 0,
         marginBottom: 30,
         color: theme.color.dark,
-        textAlign: "center"
+        textAlign: "center",
     },
     mq({
         maxWidth: [337, 670],
         marginLeft: [0, "auto"],
-        marginRight: [0, "auto"]
-    })
+        marginRight: [0, "auto"],
+    }),
 );
 
 const ImageWrapper = styled("div")({
@@ -89,7 +89,7 @@ const ImageWrapper = styled("div")({
     flexDirection: "column",
     alignItems: "center",
     width: "100%",
-    position: "relative"
+    position: "relative",
 });
 
 const videoPreviewClass = css({
@@ -97,8 +97,8 @@ const videoPreviewClass = css({
     zIndex: 0,
     "& img": {
         width: "100%",
-        transform: "translate(0%, -15%)"
-    }
+        transform: "translate(0%, -15%)",
+    },
 });
 
 const More = styled("div")({
@@ -115,8 +115,8 @@ const More = styled("div")({
     borderRadius: 12,
 
     "& button": {
-        maxWidth: 438
-    }
+        maxWidth: 438,
+    },
 });
 
 const WCPMore = props => {
@@ -132,10 +132,7 @@ const WCPMore = props => {
                     <More>
                         <Title>There is much more to WCP. </Title>
                         <Caption>We plan to have the first version out before the Q4 2020.</Caption>
-                        <Button
-                            type={"secondary"}
-                            link={"mailto:sven@webiny.com"}
-                        >
+                        <Button type={"secondary"} link={"mailto:sven@webiny.com"}>
                             Get in touch if you'd like to know more
                         </Button>
                     </More>

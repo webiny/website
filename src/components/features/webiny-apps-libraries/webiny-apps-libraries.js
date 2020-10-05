@@ -18,27 +18,27 @@ import {
     TitleHighlight,
     Title,
     SubTitle,
-    OverviewSectionWrapper
+    OverviewSectionWrapper,
 } from "../features-styles";
 
 const Section = styled("section")(
     {
         backgroundColor: theme.color.white,
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "bottom"
+        backgroundPosition: "bottom",
     },
     mq({
         backgroundSize: ["cover", "auto", "100%"],
         padding: ["0px 15px 0px", "0px 15px 110px"],
         "@media (min-width: 1460px)": {
             backgroundPosition: "bottom",
-            paddingTop: 0
-        }
-    })
+            paddingTop: 0,
+        },
+    }),
 );
 
 const CLIHighlight = styled(TitleHighlight)({
-    backgroundImage: "url(" + rectangleBg + ")"
+    backgroundImage: "url(" + rectangleBg + ")",
 });
 
 const FeatureCard = styled(BaseFeatureCard)({
@@ -46,8 +46,8 @@ const FeatureCard = styled(BaseFeatureCard)({
         textTransform: "uppercase",
         fontSize: theme.fontSize.sm,
         fontWeight: theme.fontWeight.bold,
-        color: theme.color.purple
-    }
+        color: theme.color.purple,
+    },
 });
 
 const WebinyAppsLibraries = props => {

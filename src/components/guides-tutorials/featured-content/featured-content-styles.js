@@ -16,11 +16,11 @@ export const FeaturedContentSection = styled("section")(
         position: "relative",
         zIndex: 0,
         padding: "0px 15px",
-        height: "100%"
+        height: "100%",
     },
     mq({
-        minHeight: ["auto", 404]
-    })
+        minHeight: ["auto", 404],
+    }),
 );
 
 export const containerClass = css(
@@ -28,12 +28,12 @@ export const containerClass = css(
         display: "flex",
         flexDirection: "column",
         maxWidth: 1200,
-        padding: "100px 0px"
+        padding: "100px 0px",
     },
     mq({
         width: ["100%", "100%"],
-        justifyContent: ["center", "space-between"]
-    })
+        justifyContent: ["center", "space-between"],
+    }),
 );
 
 export const Title = styled("h1")(
@@ -43,16 +43,16 @@ export const Title = styled("h1")(
         color: theme.color.black,
         fontSize: theme.fontSize["4xl"],
         fontWeight: theme.fontWeight.semiBold,
-        textAlign: "left"
+        textAlign: "left",
     },
-    mq({})
+    mq({}),
 );
 
 export const TitleHighlight = styled("span")({
     backgroundImage: "url(" + rectImg + ")",
     backgroundPositionX: "right",
     backgroundPositionY: "bottom",
-    backgroundRepeat: "no-repeat"
+    backgroundRepeat: "no-repeat",
 });
 
 export const TextContentWrapper = styled("div")(
@@ -62,9 +62,9 @@ export const TextContentWrapper = styled("div")(
         display: "flex",
         justifyContent: "center",
         alignItems: "flex-start",
-        marginBottom: 40
+        marginBottom: 40,
     },
-    mq({})
+    mq({}),
 );
 
 export const mediaWrapperClass = css(
@@ -73,27 +73,27 @@ export const mediaWrapperClass = css(
         width: "100%",
 
         ".fade-enter": {
-            opacity: 0
+            opacity: 0,
         },
         ".fade-enter.fade-enter-active": {
             opacity: 1,
-            transition: "opacity 250ms ease-in"
+            transition: "opacity 250ms ease-in",
         },
         ".fade-exit": {
-            opacity: 1
+            opacity: 1,
         },
         ".fade-exit.fade-exit-active": {
             opacity: 0,
-            transition: "opacity 250ms ease-in"
+            transition: "opacity 250ms ease-in",
         },
         ".fade-exit-done": {
-            opacity: 0
-        }
+            opacity: 0,
+        },
     },
     mq({
         gridTemplateColumns: ["repeat(1, 1fr)", "repeat(3, 1fr)", "repeat(4, 1fr)"],
-        gridGap: ["40px 0px", "40px 44px", "40px 44px"]
-    })
+        gridGap: ["40px 0px", "40px 44px", "40px 44px"],
+    }),
 );
 
 export const SearchAndFilterWrapper = styled("div")(
@@ -104,13 +104,13 @@ export const SearchAndFilterWrapper = styled("div")(
         display: "flex",
 
         padding: 10,
-        backgroundColor: theme.color.gray100
+        backgroundColor: theme.color.gray100,
     },
     mq({
         flexDirection: ["column", "row"],
         justifyContent: ["flex-start", "space-between"],
-        marginBottom: [60]
-    })
+        marginBottom: [60],
+    }),
 );
 
 export const SortBar = styled("div")(
@@ -140,26 +140,26 @@ export const SortBar = styled("div")(
             backgroundImage: "url(" + chevron + ")",
             backgroundRepeat: "no-repeat, repeat",
             backgroundPosition: "right .7em top 50%, 0 0",
-            backgroundSize: "1rem auto, 100%"
+            backgroundSize: "1rem auto, 100%",
         },
 
         "& .select-css::-ms-expand": {
-            display: "none"
+            display: "none",
         },
 
         "& .select-css:focus": {
             color: theme.color.dark,
-            outline: "none"
+            outline: "none",
         },
 
         "& .select-css option": {
-            fontWeight: "normal"
-        }
+            fontWeight: "normal",
+        },
     },
     mq({
         width: ["100%", 287],
-        marginBottom: [16, 0]
-    })
+        marginBottom: [16, 0],
+    }),
 );
 
 export const ResultInfo = styled("div")(
@@ -174,14 +174,14 @@ export const ResultInfo = styled("div")(
             color: theme.color.dark,
 
             "& span": {
-                fontWeight: theme.fontWeight.bold
-            }
-        }
+                fontWeight: theme.fontWeight.bold,
+            },
+        },
     },
     mq({
         width: ["100%", 287],
-        marginBottom: [16, 0]
-    })
+        marginBottom: [16, 0],
+    }),
 );
 
 export const SearchBar = styled("div")(
@@ -200,26 +200,26 @@ export const SearchBar = styled("div")(
             color: theme.color.black,
             border: "none",
             outline: "none",
-            width: "100%"
+            width: "100%",
         },
 
         "& input:focus~.icon": {
             "& path": {
-                fill: theme.color.purple
-            }
+                fill: theme.color.purple,
+            },
         },
         "& .icon": {
             "& path": {
-                fill: theme.color.black
-            }
+                fill: theme.color.black,
+            },
         },
         "& .icon--close": {
-            cursor: "pointer"
-        }
+            cursor: "pointer",
+        },
     },
     mq({
-        width: ["100%", 287]
-    })
+        width: ["100%", 287],
+    }),
 );
 
 export const ButtonWrapper = styled("div")({
@@ -233,9 +233,9 @@ export const ButtonWrapper = styled("div")({
         border: "1px solid #EAEAEA",
 
         "& .icon": {
-            marginLeft: 8
-        }
-    }
+            marginLeft: 8,
+        },
+    },
 });
 
 export const NotFound = styled("div")(
@@ -247,16 +247,16 @@ export const NotFound = styled("div")(
         "& .not-found__text": {
             fontSize: theme.fontSize.lg,
             fontWeight: theme.fontWeight.semiBold,
-            marginBottom: 24
+            marginBottom: 24,
         },
         "& .not-found__img": {
             width: "100%",
             maxWidth: 128,
-            marginBottom: 40
+            marginBottom: 40,
         },
-        "& .not-found__button": {}
+        "& .not-found__button": {},
     },
     mq({
-        minHeight: ["auto", 350]
-    })
+        minHeight: ["auto", 350],
+    }),
 );

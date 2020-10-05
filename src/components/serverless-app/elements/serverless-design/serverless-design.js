@@ -19,20 +19,20 @@ const SERVERLESS_BY_DESIGN = [
         id: 0,
         text: "use a single command to deploy and configure serverless infrastructure",
         imgSrc: singleCommandImg,
-        imgAlt: "use a single command to deploy and configure serverless infrastructure"
+        imgAlt: "use a single command to deploy and configure serverless infrastructure",
     },
     {
         id: 1,
         text: "forget about maintenance and scalability headaches",
         imgSrc: forgetAboutScalingImg,
-        imgAlt: "forget about maintenance and scalability headaches"
+        imgAlt: "forget about maintenance and scalability headaches",
     },
     {
         id: 2,
         text: "don't overpay your cloud provider, pay exactly what you've used",
         imgSrc: costImg,
-        imgAlt: "don't overpay your cloud provider, pay exactly what you've used"
-    }
+        imgAlt: "don't overpay your cloud provider, pay exactly what you've used",
+    },
 ];
 
 const ServerlessByDesignSection = styled("section")(
@@ -41,12 +41,12 @@ const ServerlessByDesignSection = styled("section")(
         width: "100%",
         overflow: "hidden",
         boxSizing: "border-box",
-        backgroundColor: theme.color.white
+        backgroundColor: theme.color.white,
     },
     mq({
         padding: ["0px 15px 50px", "280px 15px 50px"],
-        marginBottom: [50, 0]
-    })
+        marginBottom: [50, 0],
+    }),
 );
 
 const BoxList = styled("div")(
@@ -66,35 +66,35 @@ const BoxList = styled("div")(
             "& .box__img": {
                 marginBottom: 15,
                 width: "100%",
-                height: 230
+                height: 230,
             },
             "& .box__title": {
                 color: theme.color.black,
                 fontSize: theme.fontSize.xl,
                 fontWeight: theme.fontWeight.bold,
                 textAlign: "center",
-                textTransform: "uppercase"
-            }
+                textTransform: "uppercase",
+            },
         },
 
         "& .features__funnel": {
             position: "absolute",
             left: "14%",
-            bottom: -80
-        }
+            bottom: -80,
+        },
     },
     mq({
         flexDirection: ["column", "row"],
         marginBottom: [0, 100],
         "& .box": {
             width: ["100%", 300],
-            marginBottom: [60, 0]
+            marginBottom: [60, 0],
         },
         "& .features__funnel": {
             display: ["none", "block"],
-            width: ["auto", "70%", "auto"]
-        }
-    })
+            width: ["auto", "70%", "auto"],
+        },
+    }),
 );
 
 const containerClass = css(
@@ -103,15 +103,15 @@ const containerClass = css(
         flexDirection: "column",
         alignItems: "center",
         maxWidth: 1200,
-        position: "relative"
+        position: "relative",
     },
     mq({
         width: ["100%", "100%"],
         padding: ["75px 0px 0px", "85px 0px 0px"],
         "@media (min-width: 2000px)": {
-            paddingBottom: 80
-        }
-    })
+            paddingBottom: 80,
+        },
+    }),
 );
 
 export const Title = styled("h1")(
@@ -123,19 +123,19 @@ export const Title = styled("h1")(
         color: theme.color.black,
         textAlign: "center",
         lineHeight: "48px",
-        marginBottom: 90
+        marginBottom: 90,
     },
     mq({
         marginLeft: [0, "auto"],
-        marginRight: [0, "auto"]
-    })
+        marginRight: [0, "auto"],
+    }),
 );
 
 export const TitleHighlight = styled("span")({
     backgroundImage: "url(" + designBg + ")",
     backgroundPositionX: "right",
     backgroundPositionY: "bottom",
-    backgroundRepeat: "no-repeat"
+    backgroundRepeat: "no-repeat",
 });
 
 const ButtonWrapper = styled("div")({
@@ -149,15 +149,15 @@ const ButtonWrapper = styled("div")({
         color: theme.color.black,
         fontSize: theme.fontSize.sm,
         fontWeight: theme.fontWeight.bold,
-        textTransform: "uppercase"
+        textTransform: "uppercase",
     },
     "& .button": {
         width: "100%",
         maxWidth: 261,
         "& .icon": {
-            marginLeft: 16
-        }
-    }
+            marginLeft: 16,
+        },
+    },
 });
 
 export default () => (

@@ -15,18 +15,18 @@ export const HERO_FEATURES = [
     {
         id: 0,
         title: "Serverless & Self-hosted",
-        body: "Quick and easy deployment using Webiny CLI."
+        body: "Quick and easy deployment using Webiny CLI.",
     },
     {
         id: 1,
         title: "Easy Theming",
-        body: "Themes are created using JavaScript and SCSS."
+        body: "Themes are created using JavaScript and SCSS.",
     },
     {
         id: 2,
         title: "Mobile responsive",
-        body: "All the generated pages will look great on any device and screen size."
-    }
+        body: "All the generated pages will look great on any device and screen size.",
+    },
 ];
 
 export const KEYNOTES = [
@@ -36,7 +36,7 @@ export const KEYNOTES = [
             <p className={className}>
                 Great for building <span>landing</span> pages and <span>marketing</span> sites
             </p>
-        )
+        ),
     },
     {
         id: 1,
@@ -44,7 +44,7 @@ export const KEYNOTES = [
             <p className={className}>
                 Simple and <span>intuitive UI</span> that anyone can use
             </p>
-        )
+        ),
     },
     {
         id: 2,
@@ -52,7 +52,7 @@ export const KEYNOTES = [
             <p className={className}>
                 Expand the <span>capabilities</span> by developing <span>plugins</span>
             </p>
-        )
+        ),
     },
     {
         id: 3,
@@ -60,7 +60,7 @@ export const KEYNOTES = [
             <p className={className}>
                 Build your <span>own theme</span>
             </p>
-        )
+        ),
     },
     {
         id: 4,
@@ -68,7 +68,7 @@ export const KEYNOTES = [
             <p className={className}>
                 All pages are <span>mobile responsive</span>
             </p>
-        )
+        ),
     },
     {
         id: 5,
@@ -76,8 +76,8 @@ export const KEYNOTES = [
             <p className={className}>
                 <span>SEO</span> and <span>Social media</span> friendly
             </p>
-        )
-    }
+        ),
+    },
 ];
 
 export const FEATURES = [
@@ -102,7 +102,7 @@ export const FEATURES = [
             </Fragment>
         ),
         background: grayRectImg,
-        imageOnLeft: false
+        imageOnLeft: false,
     },
     {
         id: 1,
@@ -127,7 +127,7 @@ export const FEATURES = [
             </Fragment>
         ),
         background: false,
-        imageOnLeft: true
+        imageOnLeft: true,
     },
     {
         id: 2,
@@ -147,7 +147,7 @@ export const FEATURES = [
             </Fragment>
         ),
         background: grayRectInvertedImg,
-        imageOnLeft: false
+        imageOnLeft: false,
     },
     {
         id: 3,
@@ -168,7 +168,7 @@ export const FEATURES = [
             </Fragment>
         ),
         background: false,
-        imageOnLeft: true
+        imageOnLeft: true,
     },
     {
         id: 4,
@@ -189,7 +189,7 @@ export const FEATURES = [
             </Fragment>
         ),
         background: grayRectInvertedImg,
-        imageOnLeft: false
+        imageOnLeft: false,
     },
     {
         id: 5,
@@ -210,7 +210,7 @@ export const FEATURES = [
             </Fragment>
         ),
         background: false,
-        imageOnLeft: true
+        imageOnLeft: true,
     },
     {
         id: 6,
@@ -231,6 +231,6 @@ export const FEATURES = [
             </Fragment>
         ),
         background: grayRectImg,
-        imageOnLeft: false
-    }
+        imageOnLeft: false,
+    },
 ];

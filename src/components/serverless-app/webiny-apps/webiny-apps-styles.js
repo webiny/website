@@ -17,11 +17,11 @@ export const HeroSection = styled("section")(
         backgroundImage: "url(" + heroBg + ")",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "bottom",
-        backgroundSize: "cover"
+        backgroundSize: "cover",
     },
     mq({
-        padding: ["0px 15px 110px", "0px 15px"]
-    })
+        padding: ["0px 15px 110px", "0px 15px"],
+    }),
 );
 
 export const containerClass = css(
@@ -30,27 +30,27 @@ export const containerClass = css(
         flexDirection: "column",
         alignItems: "center",
         maxWidth: 1200,
-        position: "relative"
+        position: "relative",
     },
     mq({
         width: ["100%", "100%"],
         padding: ["75px 0px 0px", "85px 0px 110px"],
         "@media (min-width: 2000px)": {
-            paddingBottom: 80
-        }
-    })
+            paddingBottom: 80,
+        },
+    }),
 );
 
 export const Wrapper = styled("div")(
     {
         display: "flex",
-        flexDirection: "column"
+        flexDirection: "column",
     },
     mq({
         width: ["100%", 1100],
         alignItems: ["center"],
-        marginBottom: [60]
-    })
+        marginBottom: [60],
+    }),
 );
 
 export const Title = styled("h1")(
@@ -62,18 +62,18 @@ export const Title = styled("h1")(
         textAlign: "center",
         lineHeight: "48px",
         marginBottom: 20,
-        marginTop: 90
+        marginTop: 90,
     },
     mq({
         marginLeft: [0, "auto"],
-        marginRight: [0, "auto"]
-    })
+        marginRight: [0, "auto"],
+    }),
 );
 
 export const TitleHighlight = styled("span")({
     backgroundPositionX: "right",
     backgroundPositionY: "bottom",
-    backgroundRepeat: "no-repeat"
+    backgroundRepeat: "no-repeat",
 });
 
 export const SubTitle = styled("h3")(
@@ -84,13 +84,13 @@ export const SubTitle = styled("h3")(
         marginTop: 0,
         marginBottom: 26,
         color: theme.color.white,
-        textAlign: "center"
+        textAlign: "center",
     },
     mq({
         maxWidth: [337, 590],
         marginLeft: [0, "auto"],
-        marginRight: [0, "auto"]
-    })
+        marginRight: [0, "auto"],
+    }),
 );
 
 export const WebinyHallMarkImage = styled("img")(
@@ -99,23 +99,23 @@ export const WebinyHallMarkImage = styled("img")(
         zIndex: -1,
         top: 0,
         left: 0,
-        height: "100%"
+        height: "100%",
     },
     mq({
         width: ["100%", "100%"],
-        maxHeight: ["unset", 856]
-    })
+        maxHeight: ["unset", 856],
+    }),
 );
 
 export const FeatureWrapper = styled("div")(
     {
         display: "grid",
-        columnGap: 30
+        columnGap: 30,
     },
     mq({
         gridTemplateColumns: ["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(4, 1fr)"],
-        rowGap: [40, 40, 0]
-    })
+        rowGap: [40, 40, 0],
+    }),
 );
 
 export const FeatureCard = styled("div")(props => ({
@@ -134,7 +134,7 @@ export const FeatureCard = styled("div")(props => ({
         width: "100%",
         height: 100,
         maxWidth: 120,
-        margin: "0px auto"
+        margin: "0px auto",
     },
 
     "& .card__title": {
@@ -143,7 +143,7 @@ export const FeatureCard = styled("div")(props => ({
         maxWidth: 250,
         color: theme.color.white,
         fontSize: theme.fontSize.xl,
-        fontWeight: theme.fontWeight.bold
+        fontWeight: theme.fontWeight.bold,
     },
     "& .card__body": {
         margin: 0,
@@ -152,9 +152,9 @@ export const FeatureCard = styled("div")(props => ({
         fontSize: theme.fontSize.base,
         fontWeight: theme.fontWeight.regular,
         "& a": {
-            color: theme.color.primaryDark
-        }
-    }
+            color: theme.color.primaryDark,
+        },
+    },
 }));
 
 export const ServerlessApp = styled("div")(
@@ -177,19 +177,19 @@ export const ServerlessApp = styled("div")(
                 fontWeight: theme.fontWeight.bold,
                 color: theme.color.black,
                 span: {
-                    color: theme.color.purple
-                }
+                    color: theme.color.purple,
+                },
             },
             "& .text-content__body": {
                 maxWidth: 388,
                 margin: "0px 0px 40px",
                 fontSize: theme.fontSize["2xl"],
                 fontWeight: theme.fontWeight.regular,
-                color: theme.color.black
+                color: theme.color.black,
             },
             "& .text-content__action": {
-                width: "100%"
-            }
+                width: "100%",
+            },
         },
         "& .media-content": {
             boxSizing: "border-box",
@@ -201,15 +201,15 @@ export const ServerlessApp = styled("div")(
                 backgroundImage: "url(" + props.imgSrc + ")",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
-                boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.301961)"
+                boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.301961)",
             },
             "& .media-content__img-bg": {
                 position: "absolute",
                 zIndex: -1,
                 top: 0,
-                right: 0
-            }
-        }
+                right: 0,
+            },
+        },
     }),
     mq({
         marginBottom: [120, 80, 120],
@@ -219,88 +219,88 @@ export const ServerlessApp = styled("div")(
             padding: [0, "0px 60px 0px 0px"],
             marginBottom: [80, 0],
             "& .text-content__title": {
-                margin: ["0px 0px 8px", "0px 0px 30px"]
+                margin: ["0px 0px 8px", "0px 0px 30px"],
             },
             "& .text-content__body": {
-                margin: ["0px 0px 30px", "0px 0px 40px"]
+                margin: ["0px 0px 30px", "0px 0px 40px"],
             },
             "& .text-content__action .button": {
-                width: ["100%", 217]
-            }
+                width: ["100%", 217],
+            },
         },
         "& .media-content": {
             width: ["100%", "60%"],
             "& .media-content__img": {
-                height: [200, 400]
+                height: [200, 400],
             },
 
             "& .media-content__img-bg": {
                 width: ["80%", "auto"],
-                transform: ["translate(0%, -12%)", "translate(20%, -12%)"]
-            }
-        }
-    })
+                transform: ["translate(0%, -12%)", "translate(20%, -12%)"],
+            },
+        },
+    }),
 );
 
 export const serverlessAppsRTLClass = css(
     {
         "& .media-content": {
             "& .media-content__img-bg": {
-                left: 0
-            }
-        }
+                left: 0,
+            },
+        },
     },
     mq({
         flexDirection: ["column", "row-reverse"],
         "& .text-content": {
-            padding: [0, "0px 0px 0px 60px"]
+            padding: [0, "0px 0px 0px 60px"],
         },
         "& .media-content": {
             "& .media-content__img-bg": {
-                transform: ["translate(0%, -12%)", "translate(-20%, -12%)"]
-            }
-        }
-    })
+                transform: ["translate(0%, -12%)", "translate(-20%, -12%)"],
+            },
+        },
+    }),
 );
 
 export const ExploreAppsSection = styled(HeroSection)({
     background: theme.color.white,
-    overflow: "hidden"
+    overflow: "hidden",
 });
 
 export const ExploreAppsTitle = styled(Title)({
-    color: theme.color.black
+    color: theme.color.black,
 });
 
 export const ExploreAppsTitleHighlight = styled(TitleHighlight)({
-    backgroundImage: "url(" + rectangleBg + ")"
+    backgroundImage: "url(" + rectangleBg + ")",
 });
 
 export const ExploreAppsSubTitle = styled(SubTitle)(
     {
         color: theme.color.black,
-        marginBottom: 100
+        marginBottom: 100,
     },
     mq({
-        maxWidth: [337, 890]
-    })
+        maxWidth: [337, 890],
+    }),
 );
 
 export const ContributeSection = styled(HeroSection)(
     {
         backgroundImage: "url(" + contributeBg + ")",
-        backgroundPosition: "top"
+        backgroundPosition: "top",
     },
     mq({
-        paddingTop: [110]
-    })
+        paddingTop: [110],
+    }),
 );
 
 export const contributeClass = css(
     {},
     mq({
-        height: ["100%", 460]
-    })
+        height: ["100%", 460],
+    }),
 );
 
 export const ContributeTitleWrapper = styled(Wrapper)(
@@ -311,53 +311,53 @@ export const ContributeTitleWrapper = styled(Wrapper)(
         justifyContent: "center",
         "& .button": {
             width: 321,
-            marginTop: 30
-        }
+            marginTop: 30,
+        },
     },
     mq({
-        width: ["100%", "100%"]
-    })
+        width: ["100%", "100%"],
+    }),
 );
 
 export const ContributeTitle = styled(Title)({
     maxWidth: 600,
-    marginTop: 0
+    marginTop: 0,
 });
 
 export const ServerlessBenefitsSection = styled(HeroSection)(
     {
         background: theme.color.white,
-        overflow: "hidden"
+        overflow: "hidden",
     },
     mq({
-        paddingBottom: [0]
-    })
+        paddingBottom: [0],
+    }),
 );
 
 export const ServerlessBenefitTitle = styled(Title)(
     {
         color: theme.color.black,
         maxWidth: 950,
-        margin: "60px 0px 0px"
+        margin: "60px 0px 0px",
     },
     mq({
-        fontSize: [40, theme.fontSize["5xl"]]
-    })
+        fontSize: [40, theme.fontSize["5xl"]],
+    }),
 );
 
 export const ServerlessBenefitTitleHighlight = styled(TitleHighlight)({
-    backgroundImage: "url(" + benefitsBg + ")"
+    backgroundImage: "url(" + benefitsBg + ")",
 });
 
 export const ServerBenefitsWrapper = styled("div")(
     {
-        display: "grid"
+        display: "grid",
     },
     mq({
         gridTemplateColumns: ["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(3, 1fr)"],
         rowGap: [40, 40, 0],
-        margin: [0, "100px 0px"]
-    })
+        margin: [0, "100px 0px"],
+    }),
 );
 
 export const BenefitBox = styled("div")(
@@ -377,10 +377,10 @@ export const BenefitBox = styled("div")(
             textAlign: "center",
             margin: "16px 0px 0px",
             fontWeight: theme.fontWeight.bold,
-            fontSize: theme.fontSize["xl"]
-        }
+            fontSize: theme.fontSize["xl"],
+        },
     }),
     mq({
-        borderColor: [theme.color.white, theme.color.white, "#E2E2E2"]
-    })
+        borderColor: [theme.color.white, theme.color.white, "#E2E2E2"],
+    }),
 );

@@ -1,9 +1,9 @@
-import React from 'react';
-import {css, keyframes} from 'emotion';
+import React from "react";
+import { css, keyframes } from "emotion";
 
-import waveBg from './assets/wave.svg';
+import waveBg from "./assets/wave.svg";
 
-const animSpeed = '60s';
+const animSpeed = "60s";
 
 const ocean = css`
     height: 5%;
@@ -46,11 +46,11 @@ const wave = css`
     }
 `;
 
-export default ({children, ...props}) => (
-  <React.Fragment>
-    <div className={ocean + ' ' + props.className}>
-      <div className={wave} />
-      <div className={wave} />
-    </div>
-  </React.Fragment>
+export default ({ children, ...props }) => (
+    <React.Fragment>
+        <div className={ocean + " " + props.className}>
+            <div className={wave} />
+            <div className={wave} />
+        </div>
+    </React.Fragment>
 );

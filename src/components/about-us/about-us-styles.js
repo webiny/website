@@ -18,9 +18,9 @@ export const SectionWithBackground = styled("section")(
         backgroundRepeat: "no-repeat",
         padding: "0px 15px",
         backgroundPosition: "bottom",
-        backgroundSize: "cover"
+        backgroundSize: "cover",
     },
-    mq({})
+    mq({}),
 );
 
 export const SectionWithWaves = styled("section")(
@@ -32,9 +32,9 @@ export const SectionWithWaves = styled("section")(
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "top",
-        padding: "0px 15px"
+        padding: "0px 15px",
     },
-    mq({})
+    mq({}),
 );
 
 export const SectionWithDots = styled("section")(
@@ -46,11 +46,11 @@ export const SectionWithDots = styled("section")(
         backgroundRepeatX: "repeat",
         backgroundRepeatY: "no-repeat",
         backgroundPosition: "bottom",
-        padding: "0px 15px"
+        padding: "0px 15px",
     },
     mq({
-        backgroundSize: ["cover", "contain"]
-    })
+        backgroundSize: ["cover", "contain"],
+    }),
 );
 
 export const SectionWithGrayRectangle = styled("section")(
@@ -61,29 +61,29 @@ export const SectionWithGrayRectangle = styled("section")(
         backgroundImage: "url(" + contributorsBg + ")",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "top",
-        padding: "0px 15px"
+        padding: "0px 15px",
     },
     mq({
-        backgroundSize: ["cover"]
-    })
+        backgroundSize: ["cover"],
+    }),
 );
 
 export const Section = styled("section")(
     {
-        backgroundColor: theme.color.white
+        backgroundColor: theme.color.white,
     },
     mq({
-        padding: ["100px 15px", "80px 15px"]
-    })
+        padding: ["100px 15px", "80px 15px"],
+    }),
 );
 
 export const TeamSection = styled("section")(
     {
-        backgroundColor: theme.color.white
+        backgroundColor: theme.color.white,
     },
     mq({
-        padding: ["0px 15px 100px", "0px 15px 80px"]
-    })
+        padding: ["0px 15px 100px", "0px 15px 80px"],
+    }),
 );
 
 export const heroContainerClass = css(
@@ -94,16 +94,16 @@ export const heroContainerClass = css(
         maxWidth: 1200,
         position: "relative",
         // For "WebinyHallMarkImage"
-        overflow: "hidden"
+        overflow: "hidden",
     },
     mq({
         width: ["100%", "100%"],
         height: ["50vh", 404],
         padding: ["0px 0px", "0px 0px 0px"],
         "@media (min-width: 2000px)": {
-            paddingBottom: 80
-        }
-    })
+            paddingBottom: 80,
+        },
+    }),
 );
 
 export const contributorsContainerClass = css(
@@ -112,12 +112,12 @@ export const contributorsContainerClass = css(
         flexDirection: "column",
         alignItems: "center",
         maxWidth: 1200,
-        position: "relative"
+        position: "relative",
     },
     mq({
         width: ["100%", "100%"],
-        padding: ["80px 0px", "120px 0px 80px"]
-    })
+        padding: ["80px 0px", "120px 0px 80px"],
+    }),
 );
 
 export const welcomeContainerClass = css(
@@ -126,12 +126,12 @@ export const welcomeContainerClass = css(
         flexDirection: "column",
         alignItems: "center",
         maxWidth: 1200,
-        position: "relative"
+        position: "relative",
     },
     mq({
         width: ["100%", "100%"],
-        padding: ["0px 0px", "0px 0px 0px"]
-    })
+        padding: ["0px 0px", "0px 0px 0px"],
+    }),
 );
 
 export const investorContainerClass = css(
@@ -140,13 +140,13 @@ export const investorContainerClass = css(
         flexDirection: "column",
         alignItems: "center",
         maxWidth: 1200,
-        position: "relative"
+        position: "relative",
     },
     mq({
         width: ["100%", "100%"],
         height: ["50vh", 525],
-        padding: ["0px 0px", "80px 0px 0px"]
-    })
+        padding: ["0px 0px", "80px 0px 0px"],
+    }),
 );
 
 export const mediaKitContainerClass = css(
@@ -156,13 +156,13 @@ export const mediaKitContainerClass = css(
         alignItems: "center",
         justifyContent: "center",
         maxWidth: 1200,
-        position: "relative"
+        position: "relative",
     },
     mq({
         width: ["100%", "100%"],
         height: ["auto", 600],
-        padding: ["80px 0px", "80px 0px 0px"]
-    })
+        padding: ["80px 0px", "80px 0px 0px"],
+    }),
 );
 
 export const HeroSectionWrapper = styled("div")(
@@ -170,12 +170,12 @@ export const HeroSectionWrapper = styled("div")(
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        height: "100%"
+        height: "100%",
     },
     mq({
         width: ["100%", 1100],
-        alignItems: ["center"]
-    })
+        alignItems: ["center"],
+    }),
 );
 
 export const WebinyHallMarkImage = styled("img")(
@@ -183,13 +183,13 @@ export const WebinyHallMarkImage = styled("img")(
         position: "absolute",
         zIndex: 1,
         top: 0,
-        left: 0
+        left: 0,
     },
     mq({
         width: ["100%", "100%"],
         height: ["100%", "auto"],
-        maxHeight: ["unset", 700]
-    })
+        maxHeight: ["unset", 700],
+    }),
 );
 
 export const Title = styled("h1")(
@@ -199,17 +199,17 @@ export const Title = styled("h1")(
         fontWeight: theme.fontWeight.bold,
         color: theme.color.white,
         textAlign: "center",
-        lineHeight: "48px"
+        lineHeight: "48px",
     },
     mq({
-        margin: [0, "0px auto"]
-    })
+        margin: [0, "0px auto"],
+    }),
 );
 
 export const TitleHighlight = styled("span")({
     backgroundPositionX: "right",
     backgroundPositionY: "bottom",
-    backgroundRepeat: "no-repeat"
+    backgroundRepeat: "no-repeat",
 });
 
 export const Text = styled("p")(
@@ -220,13 +220,13 @@ export const Text = styled("p")(
         marginTop: 0,
         marginBottom: 26,
         color: theme.color.white,
-        textAlign: "center"
+        textAlign: "center",
     },
     mq({
         maxWidth: [337, 590],
         marginLeft: [0, "auto"],
-        marginRight: [0, "auto"]
-    })
+        marginRight: [0, "auto"],
+    }),
 );
 
 export const ImageWrapper = styled("div")({
@@ -234,27 +234,27 @@ export const ImageWrapper = styled("div")({
     flexDirection: "column",
     alignItems: "center",
     width: "100%",
-    position: "relative"
+    position: "relative",
 });
 
 export const videoPreviewClass = css({
     position: "absolute",
     "& img": {
         width: "95%",
-        transform: "translate(2%, -10%)"
-    }
+        transform: "translate(2%, -10%)",
+    },
 });
 
 export const TeamWrapper = styled("div")(
     {
         width: "100%",
         maxWidth: 1000,
-        display: "grid"
+        display: "grid",
     },
     mq({
         gridTemplateColumns: ["repeat(1, 1fr)", "repeat(4, 1fr)"],
-        gridGap: ["80px 0px", "50px 70px"]
-    })
+        gridGap: ["80px 0px", "50px 70px"],
+    }),
 );
 
 export const ProfileCard = styled("div")(
@@ -271,7 +271,7 @@ export const ProfileCard = styled("div")(
             //height: "100%",
             //width: "100%",
             height: 160,
-            marginBottom: 8
+            marginBottom: 8,
             //objectFit: "cover"
         },
         "& .profile__name": {
@@ -279,10 +279,10 @@ export const ProfileCard = styled("div")(
             color: theme.color.black,
             fontSize: theme.fontSize["2xl"],
             fontWeight: theme.fontWeight.bold,
-            justifyContent: "center"
+            justifyContent: "center",
         },
         "& .profile__title": {
-            margin: "0px 0px 10px"
+            margin: "0px 0px 10px",
         },
         "& .profile__links": {
             listStyle: "none",
@@ -293,35 +293,35 @@ export const ProfileCard = styled("div")(
 
                 "& img": {
                     width: 20,
-                    height: 20
-                }
-            }
+                    height: 20,
+                },
+            },
         },
         a: {
             color: theme.color.grayText,
             textDecoration: "underline",
             "&:hover": {
-                color: theme.color.primaryDark
-            }
-        }
+                color: theme.color.primaryDark,
+            },
+        },
     },
-    mq({})
+    mq({}),
 );
 
 export const TeamPath = styled("img")({
-    width: "100%"
+    width: "100%",
 });
 
 export const ContributorsWrapper = styled("div")(
     {
         width: "100%",
         maxWidth: 1000,
-        display: "grid"
+        display: "grid",
     },
     mq({
         gridTemplateColumns: ["repeat(2, 1fr)", "repeat(4, 1fr)", "repeat(5, 1fr)"],
-        gridGap: ["80px 0px", "60px 70px"]
-    })
+        gridGap: ["80px 0px", "60px 70px"],
+    }),
 );
 
 export const ContributorCard = styled("div")(
@@ -336,7 +336,7 @@ export const ContributorCard = styled("div")(
         cursor: "pointer",
 
         "&:hover": {
-            transform: "translateY(-5px) scale(1.05)"
+            transform: "translateY(-5px) scale(1.05)",
         },
 
         textAlign: "center",
@@ -344,17 +344,17 @@ export const ContributorCard = styled("div")(
             height: 140,
             width: 140,
             marginBottom: 20,
-            borderRadius: 8
+            borderRadius: 8,
         },
         "& .card__name": {
             marginBottom: 0,
             color: theme.color.black,
             fontSize: theme.fontSize.sm,
             fontWeight: theme.fontWeight.bold,
-            justifyContent: "center"
-        }
+            justifyContent: "center",
+        },
     },
-    mq({})
+    mq({}),
 );
 
 export const ButtonWrapper = styled("div")({
@@ -363,20 +363,20 @@ export const ButtonWrapper = styled("div")({
     marginTop: 50,
 
     "& .icon": {
-        marginLeft: 16
-    }
+        marginLeft: 16,
+    },
 });
 
 export const TraitsWrapper = styled("div")(
     {
         width: "100%",
         maxWidth: 963,
-        display: "grid"
+        display: "grid",
     },
     mq({
         gridTemplateColumns: ["repeat(1, 1fr)", "repeat(3, 1fr)"],
-        gridGap: ["40px 0px", "0px"]
-    })
+        gridGap: ["40px 0px", "0px"],
+    }),
 );
 
 export const TraitCard = styled("div")(
@@ -396,15 +396,15 @@ export const TraitCard = styled("div")(
         "& .card__img": {
             height: "auto",
             width: "auto",
-            marginBottom: 20
+            marginBottom: 20,
         },
         "& .card__title": {
             marginBottom: 0,
             color: theme.color.black,
             fontSize: theme.fontSize.lg,
             fontWeight: theme.fontWeight.bold,
-            justifyContent: "center"
-        }
+            justifyContent: "center",
+        },
     },
     mq({
         "&.spanTwoRows": {
@@ -416,10 +416,10 @@ export const TraitCard = styled("div")(
                 width: ["100%"],
                 height: ["100%", "auto"],
                 marginBottom: [0, 20],
-                objectFit: ["cover"]
-            }
-        }
-    })
+                objectFit: ["cover"],
+            },
+        },
+    }),
 );
 
 export const More = styled("div")({
@@ -436,20 +436,20 @@ export const More = styled("div")({
     borderRadius: 12,
 
     "& .img": {
-        maxWidth: 208
-    }
+        maxWidth: 208,
+    },
 });
 
 export const MediaCardWrapper = styled("div")(
     {
         width: "100%",
         maxWidth: 963,
-        display: "grid"
+        display: "grid",
     },
     mq({
         gridTemplateColumns: ["repeat(1, 1fr)", "repeat(3, 1fr)"],
-        gridGap: ["40px 0px", "0px 30px"]
-    })
+        gridGap: ["40px 0px", "0px 30px"],
+    }),
 );
 
 export const MediaKitCard = styled("div")(
@@ -466,25 +466,25 @@ export const MediaKitCard = styled("div")(
         cursor: "pointer",
 
         "&:hover": {
-            transform: "translateY(-10px) scale(1.05)"
+            transform: "translateY(-10px) scale(1.05)",
         },
 
         "& .img": {
             width: "100%",
             borderTopLeftRadius: 8,
-            borderTopRightRadius: 8
+            borderTopRightRadius: 8,
         },
 
         "& .link": {
             fontSize: theme.fontSize.lg,
             textAlign: "center",
             padding: 24,
-            color: theme.color.primaryDark
-        }
+            color: theme.color.primaryDark,
+        },
     },
     mq({
-        margin: ["0 auto"]
-    })
+        margin: ["0 auto"],
+    }),
 );
 
 export const FoundersVideoTitle = styled("h3")({
@@ -493,5 +493,5 @@ export const FoundersVideoTitle = styled("h3")({
     paddingTop: 25,
     fontWeight: 700,
     fontSize: "1.125rem",
-    marginBottom: 30
+    marginBottom: 30,
 });

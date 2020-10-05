@@ -10,10 +10,7 @@ export const WEBINY_APPS_LIBRARIES_FEATURES = [
         body: () => (
             <p className={"feature-card__body"}>
                 When you install Webiny, you will find{" "}
-                <a
-                    href={"/serverless-apps"}
-                    target={"_blank"}
-                >
+                <a href={"/serverless-apps"} target={"_blank"}>
                     several apps
                 </a>{" "}
                 pre-installed. Apps like Page Builder, Form Builder, File Manager and a Headless CMS
@@ -21,7 +18,7 @@ export const WEBINY_APPS_LIBRARIES_FEATURES = [
             </p>
         ),
         imageURL: appsImg,
-        imageAltText: "Webiny Apps"
+        imageAltText: "Webiny Apps",
     },
     {
         id: 1,
@@ -32,7 +29,7 @@ export const WEBINY_APPS_LIBRARIES_FEATURES = [
         imageAltText: "Server(less) side rendering",
         includeConnectors: true,
         actionLabel: "read more about it",
-        actionLink: "https://blog.webiny.com/serverless-side-rendering-e1c0924b8da1"
+        actionLink: "https://blog.webiny.com/serverless-side-rendering-e1c0924b8da1",
     },
     {
         id: 2,
@@ -52,6 +49,6 @@ export const WEBINY_APPS_LIBRARIES_FEATURES = [
         imageAltText: "DB Proxy",
         actionLabel: "read more about it",
         actionLink:
-            "https://blog.webiny.com/using-aws-lambda-to-create-a-mongodb-connection-proxy-2bb53c4a0af4"
-    }
+            "https://blog.webiny.com/using-aws-lambda-to-create-a-mongodb-connection-proxy-2bb53c4a0af4",
+    },
 ];

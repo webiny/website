@@ -15,7 +15,7 @@ const wrapperClass = css(
         left: 0,
         zIndex: 0,
         backgroundImage: "url(" + whatIsWebinyBg + ")",
-        backgroundRepeat: "no-repeat"
+        backgroundRepeat: "no-repeat",
     },
     mq({
         paddingTop: [0, 0],
@@ -23,9 +23,9 @@ const wrapperClass = css(
         backgroundPosition: ["top", "bottom"],
         backgroundSize: ["cover", "cover"],
         "@media (min-width: 1460px)": {
-            marginTop: -150
-        }
-    })
+            marginTop: -150,
+        },
+    }),
 );
 
 const contentContainerClass = css(
@@ -38,15 +38,15 @@ const contentContainerClass = css(
         backgroundRepeat: "no-repeat",
         display: "flex",
         alignItems: "center",
-        maxWidth: 1200
+        maxWidth: 1200,
     },
     mq({
         width: ["100%", "100%"],
         height: ["100%", "100%"],
         paddingTop: [0, 0],
         paddingBottom: [80, 160],
-        backgroundSize: [0, "100%"]
-    })
+        backgroundSize: [0, "100%"],
+    }),
 );
 
 const TextWrapper = styled("div")({
@@ -54,7 +54,7 @@ const TextWrapper = styled("div")({
     margin: "0 auto",
     display: "flex",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
 });
 
 const Title = styled("h2")(
@@ -65,36 +65,36 @@ const Title = styled("h2")(
         textAlign: "center",
         paddingTop: 0,
         marginTop: 0,
-        marginBottom: 36
+        marginBottom: 36,
     },
     mq({
-        paddingTop: [50, 50]
-    })
+        paddingTop: [50, 50],
+    }),
 );
 
 const Description = styled("p")(
     {
         fontSize: theme.fontSize.h5,
         textAlign: "center",
-        marginBottom: 42
+        marginBottom: 42,
     },
     mq({
-        padding: ["0px 16px", "0px"]
-    })
+        padding: ["0px 16px", "0px"],
+    }),
 );
 
 const HighlightedText = styled("span")({
-    color: theme.color.primaryDark
+    color: theme.color.primaryDark,
 });
 
 const ctaButton = css(
     {
         position: "relative",
-        textTransform: "uppercase"
+        textTransform: "uppercase",
     },
     mq({
-        width: ["217px !important"]
-    })
+        width: ["217px !important"],
+    }),
 );
 
 class WhatIsWebiny extends React.Component {

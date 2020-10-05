@@ -11,12 +11,12 @@ const Wrapper = styled("div")(
         position: "fixed",
         zIndex: 1000,
         left: 0,
-        right: 0
+        right: 0,
     },
     mq({
         bottom: [15, 10],
-        textAlign: ["left", "center"]
-    })
+        textAlign: ["left", "center"],
+    }),
 );
 
 const Box = styled("div")(
@@ -36,14 +36,14 @@ const Box = styled("div")(
             transition: "225ms all",
             margin: "0 5px",
             "&:hover": {
-                opacity: "0.75"
-            }
-        }
+                opacity: "0.75",
+            },
+        },
     },
     mq({
         width: ["250px", "400px"],
-        margin: ["0 15px", "0 auto"]
-    })
+        margin: ["0 15px", "0 auto"],
+    }),
 );
 
 const CloseBtn = styled("img")({
@@ -52,8 +52,8 @@ const CloseBtn = styled("img")({
     height: 20,
     transition: "225ms all",
     "&:hover": {
-        opacity: "0.75"
-    }
+        opacity: "0.75",
+    },
 });
 
 class CookieNotice extends React.Component {

@@ -19,7 +19,7 @@ import {
     TitleHighlight,
     Title,
     SubTitle,
-    OverviewSectionWrapper
+    OverviewSectionWrapper,
 } from "../features-styles";
 
 const Section = styled("section")(
@@ -27,20 +27,20 @@ const Section = styled("section")(
         backgroundColor: theme.color.white,
         backgroundImage: "url(" + webinyAdminBg + ")",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "bottom"
+        backgroundPosition: "bottom",
     },
     mq({
         backgroundSize: ["cover", "auto", "100%"],
         padding: ["0px 15px 0px", "110px 15px 180px"],
         "@media (min-width: 1460px)": {
             backgroundPosition: "bottom",
-            paddingTop: 0
-        }
-    })
+            paddingTop: 0,
+        },
+    }),
 );
 
 const CLIHighlight = styled(TitleHighlight)({
-    backgroundImage: "url(" + rectangleBg + ")"
+    backgroundImage: "url(" + rectangleBg + ")",
 });
 
 const WebinyAdminUI = props => {

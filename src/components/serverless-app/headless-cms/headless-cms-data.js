@@ -28,18 +28,18 @@ export const HERO_FEATURES = [
     {
         id: 0,
         title: "Serverless & Self-hosted",
-        body: "Quick and easy deployment using Webiny CLI."
+        body: "Quick and easy deployment using Webiny CLI.",
     },
     {
         id: 1,
         title: "GraphQL APIs",
-        body: "There are 2 APIs, one for content management and one for content delivery."
+        body: "There are 2 APIs, one for content management and one for content delivery.",
     },
     {
         id: 2,
         title: "Content Modeling",
-        body: "Use the simple and intuitive drag&drop editor to model your content."
-    }
+        body: "Use the simple and intuitive drag&drop editor to model your content.",
+    },
 ];
 
 export const KEYNOTES = [
@@ -49,7 +49,7 @@ export const KEYNOTES = [
             <p className={className}>
                 A true <span>headless CMS</span>, that's also serverless
             </p>
-        )
+        ),
     },
     {
         id: 1,
@@ -57,7 +57,7 @@ export const KEYNOTES = [
             <p className={className}>
                 Save <span>60-80% </span> on your cloud hosting bill
             </p>
-        )
+        ),
     },
     {
         id: 2,
@@ -65,7 +65,7 @@ export const KEYNOTES = [
             <p className={className}>
                 <span>Stop paying</span> for stuff you don't use
             </p>
-        )
+        ),
     },
     {
         id: 3,
@@ -73,7 +73,7 @@ export const KEYNOTES = [
             <p className={className}>
                 Control <span>roles</span> & <span>permissions</span> ensuring your content is safe
             </p>
-        )
+        ),
     },
     {
         id: 4,
@@ -81,7 +81,7 @@ export const KEYNOTES = [
             <p className={className}>
                 <span>Multi-language</span> support out-of-the-box
             </p>
-        )
+        ),
     },
     {
         id: 5,
@@ -89,8 +89,8 @@ export const KEYNOTES = [
             <p className={className}>
                 Manage your <span>files</span> and <span>media</span> assets
             </p>
-        )
-    }
+        ),
+    },
 ];
 
 export const FEATURES = [
@@ -118,7 +118,7 @@ export const FEATURES = [
         actionLink:
             "https://docs.webiny.com/docs/webiny-apps/headless-cms/features/content-modeling",
         background: grayRectImg,
-        imageOnLeft: false
+        imageOnLeft: false,
     },
     {
         id: 1,
@@ -143,7 +143,7 @@ export const FEATURES = [
         actionLabel: "Learn more",
         actionLink: "https://docs.webiny.com/docs/webiny-apps/headless-cms/features/localization",
         background: false,
-        imageOnLeft: true
+        imageOnLeft: true,
     },
     {
         id: 2,
@@ -166,7 +166,7 @@ export const FEATURES = [
         actionLink:
             "https://docs.webiny.com/docs/webiny-apps/headless-cms/features/graphql-playground",
         background: grayRectInvertedImg,
-        imageOnLeft: false
+        imageOnLeft: false,
     },
     {
         id: 3,
@@ -188,7 +188,7 @@ export const FEATURES = [
         actionLabel: "Learn more",
         actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens",
         background: grayRectImg,
-        imageOnLeft: false
+        imageOnLeft: false,
     },
     {
         id: 4,
@@ -211,7 +211,7 @@ export const FEATURES = [
         actionLabel: "Learn more",
         actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/environments",
         background: false,
-        imageOnLeft: true
+        imageOnLeft: true,
     },
     {
         id: 5,
@@ -238,7 +238,7 @@ export const FEATURES = [
         actionLabel: "Learn more",
         actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/aliases",
         background: grayRectInvertedImg,
-        imageOnLeft: false
+        imageOnLeft: false,
     },
     {
         id: 6,
@@ -264,7 +264,7 @@ export const FEATURES = [
         actionLabel: "Learn more",
         actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens",
         background: grayRectImg,
-        imageOnLeft: false
+        imageOnLeft: false,
     },
     {
         id: 7,
@@ -287,7 +287,7 @@ export const FEATURES = [
         actionLabel: "Learn more",
         actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens",
         background: false,
-        imageOnLeft: true
+        imageOnLeft: true,
     },
     {
         id: 8,
@@ -311,8 +311,8 @@ export const FEATURES = [
         actionLabel: "Learn more",
         actionLink: "https://docs.webiny.com/docs/guides/headless-gatsby-tutorial",
         background: grayRectInvertedImg,
-        imageOnLeft: false
-    }
+        imageOnLeft: false,
+    },
 ];
 
 export const FACTS = [
@@ -328,7 +328,7 @@ export const FACTS = [
         imgSrc: madeForDevelopersImg,
         imgAlt: "made for developers",
         backgroundColor: theme.color.purple,
-        className: "card--first"
+        className: "card--first",
     },
 
     {
@@ -343,7 +343,7 @@ export const FACTS = [
         imgSrc: fullyCustomImg,
         imgAlt: "Full Customizable",
         backgroundColor: theme.color.secondaryDark,
-        className: "card--second"
+        className: "card--second",
     },
     {
         id: 2,
@@ -357,7 +357,7 @@ export const FACTS = [
         imgSrc: microserviceImg,
         imgAlt: "Microservices architecture",
         backgroundColor: theme.color.primaryDark,
-        className: "card--third"
+        className: "card--third",
     },
     {
         id: 3,
@@ -371,7 +371,7 @@ export const FACTS = [
         imgSrc: multiChannelImg,
         imgAlt: "Multi-channel distribution",
         backgroundColor: theme.color.purple,
-        className: "card--first"
+        className: "card--first",
     },
 
     {
@@ -385,7 +385,7 @@ export const FACTS = [
         imgSrc: secureIconImg,
         imgAlt: "secure",
         backgroundColor: theme.color.secondaryDark,
-        className: "card--second"
+        className: "card--second",
     },
     {
         id: 5,
@@ -399,6 +399,6 @@ export const FACTS = [
         imgSrc: serverlessImg,
         imgAlt: "self-hosted serverless",
         backgroundColor: theme.color.primaryDark,
-        className: "card--third"
-    }
+        className: "card--third",
+    },
 ];

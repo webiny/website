@@ -16,18 +16,18 @@ export const headerInnerContainer = css(
     {
         maxWidth: 1200,
         width: "100%",
-        boxSizing: "border-box"
+        boxSizing: "border-box",
     },
     mq({
         width: ["100%", "100%"],
-        padding: [0, "0 5px", 0]
-    })
+        padding: [0, "0 5px", 0],
+    }),
 );
 
 export const WebinyLogo = styled("div")({
     padding: 0,
     lineHeight: "100%",
-    zIndex: 100
+    zIndex: 100,
 });
 
 export const logoImage = css(
@@ -35,8 +35,8 @@ export const logoImage = css(
     mq({
         paddingLeft: [20, 0],
         height: [28, 32],
-        marginTop: [5]
-    })
+        marginTop: [5],
+    }),
 );
 
 export const Menu = styled("div")(
@@ -51,22 +51,22 @@ export const Menu = styled("div")(
             flexDirection: "row",
             flexWrap: "wrap",
             alignItems: "center",
-            justifyContent: "center"
+            justifyContent: "center",
         },
         "& .menu--left": {},
         "& .menu--right": {
             marginTop: -5,
             "& li:last-child": {
-                marginLeft: 16
-            }
-        }
+                marginLeft: 16,
+            },
+        },
     },
     mq({
         display: ["none", "flex"],
         "& ul": {
-            display: ["none", "flex"]
-        }
-    })
+            display: ["none", "flex"],
+        },
+    }),
 );
 
 export const DropDown = styled("div")(
@@ -106,20 +106,20 @@ export const DropDown = styled("div")(
                     position: "absolute",
                     right: -20,
                     opacity: 0,
-                    transition: "opacity 150ms ease-in, transform 200ms linear 150ms"
+                    transition: "opacity 150ms ease-in, transform 200ms linear 150ms",
                 },
                 "&:hover": {
                     color: theme.color.purple,
                     "&::after": {
                         opacity: 1,
-                        transform: "translateX(5px)"
-                    }
-                }
+                        transform: "translateX(5px)",
+                    },
+                },
             },
 
             "& .spacer": {
-                height: DROPDOWN_LINK_HEIGHT
-            }
+                height: DROPDOWN_LINK_HEIGHT,
+            },
         },
         "& .section--secondary": {
             boxSizing: "border-box",
@@ -129,8 +129,8 @@ export const DropDown = styled("div")(
             flexDirection: "row",
             justifyContent: "space-between",
             borderLeft: "1px solid #E3E3E3",
-            paddingLeft: 26
-        }
+            paddingLeft: 26,
+        },
     },
     mq({
         position: ["relative", "absolute"],
@@ -142,12 +142,12 @@ export const DropDown = styled("div")(
         top: [25, 56],
         // TODO: Need to check what is this for?
         ".open": {
-            display: "block"
+            display: "block",
         },
         "& .section--secondary": {
-            display: ["none", "flex"]
-        }
-    })
+            display: ["none", "flex"],
+        },
+    }),
 );
 
 export const MobileMenu = styled("div")(
@@ -166,7 +166,7 @@ export const MobileMenu = styled("div")(
         borderRadius: 5,
 
         "& ul": {
-            listStyle: "none"
+            listStyle: "none",
         },
         [DropDown]: {
             transform: "translateY(0) translateX(0)",
@@ -175,13 +175,13 @@ export const MobileMenu = styled("div")(
             top: 0,
             "& .section--primary": {
                 width: "100%",
-                padding: 0
-            }
-        }
+                padding: 0,
+            },
+        },
     },
     mq({
-        display: ["block", "none"]
-    })
+        display: ["block", "none"],
+    }),
 );
 
 export const NavBar = styled("div")(
@@ -191,7 +191,7 @@ export const NavBar = styled("div")(
         alignContent: "flex-end",
         justifyContent: "space-between",
         [MobileMenu]: {
-            display: "none"
+            display: "none",
         },
     },
     mq({
@@ -203,10 +203,10 @@ export const NavBar = styled("div")(
             height: ["100vh", "inherit"],
             justifyContent: ["flex-start", "space-between"],
             [MobileMenu]: {
-                display: ["block", "none"]
-            }
-        }
-    })
+                display: ["block", "none"],
+            },
+        },
+    }),
 );
 
 export const MenuItem = styled("li")(
@@ -225,9 +225,9 @@ export const MenuItem = styled("li")(
                 zIndex: 1,
                 // left: 'calc(-50% - 25px)',
                 transform: "translateY(1em) translateX(0%)",
-                transitionDelay: "0s, 0s, 0.1s"
-            }
-        }
+                transitionDelay: "0s, 0s, 0.1s",
+            },
+        },
     },
     mq({
         marginLeft: [0, 30],
@@ -235,8 +235,8 @@ export const MenuItem = styled("li")(
         marginTop: [0, -15],
         paddingBottom: [15, 15],
         paddingTop: [0, 15],
-        borderBottom: ["1px solid " + theme.color.lightGray, "none"]
-    })
+        borderBottom: ["1px solid " + theme.color.lightGray, "none"],
+    }),
 );
 
 export const parentMenu = css(
@@ -246,16 +246,16 @@ export const parentMenu = css(
         marginTop: "-3px !important",
         a: {
             color: "inherit",
-            textDecoration: "none"
+            textDecoration: "none",
         },
         "&:hover": {
-            opacity: 1
-        }
+            opacity: 1,
+        },
     },
     mq({
         marginBottom: [15, 0],
-        paddingBottom: [15, 35]
-    })
+        paddingBottom: [15, 35],
+    }),
 );
 
 export const linkStyle = css({
@@ -266,11 +266,11 @@ export const linkStyle = css({
 
     transition: "150ms color",
     "&:hover": {
-        color: theme.color.grayText
+        color: theme.color.grayText,
     },
     "&:hover .arrow-icon path": {
-        fill: theme.color.grayText
-    }
+        fill: theme.color.grayText,
+    },
 });
 
 export const DownArrow = styled("div")(
@@ -280,11 +280,11 @@ export const DownArrow = styled("div")(
         height: 24,
         background: "url(" + downArrowWhite + ") no-repeat",
         right: 0,
-        color: "white"
+        color: "white",
     },
     mq({
-        top: [-1, 14]
-    })
+        top: [-1, 14],
+    }),
 );
 
 export const downArrowClass = css(
@@ -294,12 +294,12 @@ export const downArrowClass = css(
         width: 24,
         height: 24,
         "& path": {
-            fill: theme.color.black
-        }
+            fill: theme.color.black,
+        },
     },
     mq({
-        top: [-1, 14]
-    })
+        top: [-1, 14],
+    }),
 );
 
 export const HeaderContainer = styled("header")(
@@ -308,7 +308,7 @@ export const HeaderContainer = styled("header")(
         paddingTop: 15,
         paddingBottom: 15,
         width: "100%",
-        transition: "all 500ms"
+        transition: "all 500ms",
     },
     props => ({
         position: props.isSticky ? "fixed" : "absolute",
@@ -321,13 +321,13 @@ export const HeaderContainer = styled("header")(
         [MenuItem]: {
             [DownArrow]: {
                 background:
-                    "url(" + (props.isSticky ? downArrowBlack : downArrowWhite) + ") no-repeat"
-            }
-        }
+                    "url(" + (props.isSticky ? downArrowBlack : downArrowWhite) + ") no-repeat",
+            },
+        },
     }),
     mq({
-        height: ["auto", 45]
-    })
+        height: ["auto", 45],
+    }),
 );
 
 export const dropdownArrow = css`
@@ -369,25 +369,25 @@ export const MobileMenuIcon = styled("img")(
         zIndex: 100,
         position: "absolute",
         right: 20,
-        top: 17
+        top: 17,
     },
     mq({
-        display: ["block", "none"]
-    })
+        display: ["block", "none"],
+    }),
 );
 
 export const githubMenu = css(
     {},
     mq({
-        paddingTop: [5, 10]
-    })
+        paddingTop: [5, 10],
+    }),
 );
 
 export const buttonOutlinePrimary = css({
     backgroundColor: `${theme.color.white} !important`,
     color: `${theme.color.primaryDark} !important`,
     border: `solid 2px ${theme.color.primaryDark} !important`,
-    padding: "12px 20px !important"
+    padding: "12px 20px !important",
 });
 
 export const Card = styled("div")({
@@ -398,14 +398,14 @@ export const Card = styled("div")({
     backgroundColor: "white",
 
     "& .card__img": {
-        width: "100%"
+        width: "100%",
     },
     "& .card__title": {
         color: theme.color.black,
         fontSize: theme.fontSize.sm,
         fontWeight: theme.fontWeight.bold,
         margin: "10px 0px",
-        textTransform: "capitalize"
+        textTransform: "capitalize",
     },
     "& .card__link": {
         color: theme.color.purple,
@@ -417,13 +417,13 @@ export const Card = styled("div")({
         "& .icon": {
             width: 18,
             marginLeft: 6,
-            transition: "transform 150ms ease-in"
-        }
+            transition: "transform 150ms ease-in",
+        },
     },
 
     "&:hover": {
         "& .card__link .icon": {
-            transform: "translateX(6px)"
-        }
-    }
+            transform: "translateX(6px)",
+        },
+    },
 });

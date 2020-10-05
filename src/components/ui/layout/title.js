@@ -8,11 +8,11 @@ const Title = styled("h1")(
         fontSize: 48,
         fontWeight: theme.fontWeight.semiBold,
         textAlign: "center",
-        margin: "0 auto 25px auto"
+        margin: "0 auto 25px auto",
     },
     mq({
-        width: ["100%", "650px"]
-    })
+        width: ["100%", "650px"],
+    }),
 );
 
 const TitleComponent = props => <Title>{props.children}</Title>;

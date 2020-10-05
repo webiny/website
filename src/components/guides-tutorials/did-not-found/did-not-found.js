@@ -21,24 +21,24 @@ const DidNotFoundSection = styled("section")(
         position: "relative",
         zIndex: 0,
         padding: "0px 15px",
-        height: "100%"
+        height: "100%",
     },
     mq({
-        minHeight: ["auto", 404]
-    })
+        minHeight: ["auto", 404],
+    }),
 );
 
 const containerClass = css(
     {
         display: "flex",
         maxWidth: 1200,
-        padding: "100px 0px"
+        padding: "100px 0px",
     },
     mq({
         width: ["100%", "100%"],
         flexDirection: ["column", "row"],
-        justifyContent: ["center", "space-between"]
-    })
+        justifyContent: ["center", "space-between"],
+    }),
 );
 
 const Title = styled("h1")(
@@ -49,18 +49,18 @@ const Title = styled("h1")(
         color: theme.color.black,
         fontSize: theme.fontSize["4xl"],
         fontWeight: theme.fontWeight.semiBold,
-        textAlign: "left"
+        textAlign: "left",
     },
     mq({
-        width: ["100%"]
-    })
+        width: ["100%"],
+    }),
 );
 
 const TitleHighlight = styled("span")({
     backgroundImage: "url(" + lookingForRectImg + ")",
     backgroundPositionX: "right",
     backgroundPositionY: "bottom",
-    backgroundRepeat: "no-repeat"
+    backgroundRepeat: "no-repeat",
 });
 
 const SubTitle = styled("p")({
@@ -72,7 +72,7 @@ const SubTitle = styled("p")({
     color: theme.color.black,
     fontSize: theme.fontSize.lg,
     fontWeight: theme.fontWeight.regular,
-    lineHeight: "26px"
+    lineHeight: "26px",
 });
 
 const TextContentWrapper = styled("div")(
@@ -81,12 +81,12 @@ const TextContentWrapper = styled("div")(
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        alignItems: "flex-start"
+        alignItems: "flex-start",
     },
     mq({
         width: ["100%", "50%"],
-        marginBottom: [60, 0]
-    })
+        marginBottom: [60, 0],
+    }),
 );
 
 const HeroCTAWrapper = styled("div")(
@@ -98,14 +98,14 @@ const HeroCTAWrapper = styled("div")(
         margin: "0px auto",
 
         "& .button": {
-            minWidth: 150
-        }
+            minWidth: 150,
+        },
     },
     mq({
         "& .button": {
-            width: ["100%", "auto"]
-        }
-    })
+            width: ["100%", "auto"],
+        },
+    }),
 );
 
 const MediaWrapper = styled("div")(
@@ -115,12 +115,12 @@ const MediaWrapper = styled("div")(
 
         "& .media": {
             width: "100%",
-            maxWidth: 447
-        }
+            maxWidth: 447,
+        },
     },
     mq({
-        width: ["100%", "50%"]
-    })
+        width: ["100%", "50%"],
+    }),
 );
 
 const DidNotFound = props => {

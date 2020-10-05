@@ -1,0 +1,78 @@
+---
+slug: "blog/5-key-learnings-from-working-with-jwts"
+title: "5 Key Learnings From Working With JWTs"
+description: "Learn important things about JWTs you want to avoid in your projects. To save time, money and a few headaches."
+tags:
+  [
+    "jwt",
+    "json-web-token",
+    "identity",
+    "security",
+    "permissions",
+    "authentication",
+    "authorization",
+  ]
+featureImage: "./assets/5-key-learnings-from-working-with-jwts/featureImage.png"
+author: pavel
+date: 2020-10-05
+---
+
+Nowadays, JSON Web Tokens are the most common way of proving identity information to APIs. The concepts behind JWTs are also quite easy to understand, and it takes only a couple of minutes to have the most basic authentication running. You'll find hundreds of articles about JWTs and its use by simply googling <ExternalLink href="https://www.google.com/search?q=how+to+use+jwt">how to use jwt</ExternalLink>.
+
+However, the basics of JWTs are not why we're here today. Instead, what I want to share with you are some of the experiences we've had at Webiny - some not-so-simple problems we've encountered and what we've learned in the process.
+
+## 1) Don't forget to support refresh tokens
+
+Creating a JWT on user login is simple. That's where 99% of articles end. Unfortunately, the percentage of apps that run on these basic "hello world" implementations is pretty much the same. Make sure you provide your API clients with a way to refresh the JWT when it has expired.
+
+If you've ever used any of the identity providers like Okta, Cognito, Auth0, or others, I'm sure you've noticed that, upon a successful login, they provide an **idToken** and a **refreshToken.** There's a reason for that. Once an idToken has expired, you don't want to ask your user to login again.
+
+Some companies' security policies require a very short lifetime for idTokens (sometimes an hour or so). That's where you need a refreshToken to automate token regeneration. Otherwise, your users will have to re-login every hour. Annoying, right?
+
+## 2) Don't exchange third party tokens
+
+The idea behind token exchange goes like this. A user logs into your identity provider (in our case, it was Cognito) and then you send that idToken to your own API to exchange it for a new idToken, issued by _you,_ based on an already verified identity.
+
+Why would you do that?
+
+Well, business logic permissions can be very complex and, often, they go beyond simple strings like "ADMIN" or "MODERATOR". If you have a decent sized app with fine grained access control, your permissions can become quite complex. Simple string roles are simply not enough (see <ExternalLink href="https://github.com/webiny/webiny-js/issues/1194?utm_source=Webiny-blog&utm_medium=webiny-github-security-layer&utm_campaign=webiny-hub-content-oct-5&utm_content=webiny-security-layer-upgrade&utm_term=W00138">this issue</ExternalLink>, where we discuss the next version of Webiny Security layer, to find an example of fine-grained access control).
+
+Another reason to do this is to have a normalized structure of data within the token. Different identity providers provide different ways of specifying permissions/scopes, and they store them in different keys within the token. Cognito, for example, makes it impossible to assign custom attributes if you're using custom UI with <ExternalLink href="https://docs.amplify.aws/lib/auth/overview/q/platform/js">Amplify Auth</ExternalLink> (which we use in Webiny).
+
+Going with token exchange sounded like a great way to solve all of these problems. Also, storing permissions into a JWT is an efficient way to optimize authorization in a service-oriented architecture, where services communicate with each other. It's fast and easy to validate a JWT, and you don't need to issue additional DB or API calls to authorize a user. But then...
+
+## 3) Don't store huge data objects into JWT
+
+...the size of your token starts to grow. The more fine-grained your permissions are, the more it grows. That means that the size of the token string itself grows. Each HTTP request you make to your API will also have to send that token over the wire. In case of Webiny, where we have many apps (and more will come in the future), each app has its own set of permissions. It means that the more apps we add, the larger the JWTs will be, purely because more data has to be stored within the token.
+
+A great resource on the topic: <ExternalLink href="https://sdoxsee.github.io/blog/2020/01/06/stop-overloading-jwts-with-permission-claims">https://sdoxsee.github.io/blog/2020/01/06/stop-overloading-jwts-with-permission-claims</ExternalLink> by <ExternalLink href="https://twitter.com/doxsees">@doxsees</ExternalLink>.
+
+We decided to solve this problem by introducing a Lambda function, which simply loads a user's permissions based on the ID from the JWT token. You can cache it on different levels, not cache at all - it's up to you. If using DynamoDB, those DB calls are <10ms, so the latency is negligible. However, your HTTP requests will thank you for not stuffing them with huge payloads.
+
+## 4) Don't lock your app into a single identity provider
+
+This has more to do with how you structure authentication/authorization logic within your app than with the actual JWT, but it's still very important. System requirements change. They change fast, and often unexpectedly. Your manager/client can decide that the project you're working on is moving from Cognito to Auth0 overnight. Or, even better, your API now has to support multiple user pools and multiple identity providers _at the same time_.
+
+It's all easily doable if you make a simple abstraction between your business logic and authentication/authorization data. Don't ever access token data directly in your business logic. Simply expose a utility function, like `hasPermission` that will perform authorization based on the type of JWT you've received in the request (again, there are conceptual code examples in <ExternalLink href="https://github.com/webiny/webiny-js/issues/1194?utm_source=Webiny-blog&utm_medium=webiny-github-security-layer&utm_campaign=webiny-hub-content-oct-5&utm_content=webiny-security-layer-upgrade&utm_term=W00138">this Webiny issue</ExternalLink>). For REST APIs, you'll most likely attach such a helper to `req` object. For GraphQL, you'll most likely have it in your resolver `context`.
+
+## 5) Don't roll your own authentication
+
+Just don't. It's simply not worth the time and effort. Simply use a third party service that fits your project the most, and call it a day. There are companies dedicated to providing enterprise-grade identity services that are feature-packed (user signup, login, MFA, account recovery, permissions, etc.), battle-tested, and just work.
+
+If you're not a fan of third party providers or you don't trust them with your users, there are open-source alternatives. If you don't have a _really_ good reason for rolling a custom authentication (and 9 times out of 10 you don't), do yourself a favor and use a specialized service. All of those services provide libraries for integration with most popular frontend frameworks and you'll be up and running in minutes. Those service also have huge communities using them, so you won't be alone if a problem arises.
+
+Here's a list of some of the popular identity providers:
+- https://www.ory.sh/ (open-source)
+- https://www.okta.com/
+- https://auth0.com/
+- https://aws.amazon.com/cognito/
+
+## Final thoughts
+
+I hope these learnings are helpful and will save you some time. If you have a simple project with not too many requirements for access control, some of these things are not relevant to you. However, if you do expect your project to grow, and you know you'll have different types of fine-grained permissions, take some time and plan your security strategy.
+
+At Webiny, we used to roll our own authentication in the past, but since we've moved to Cognito (and will soon support other providers), we offloaded so much maintenance and freed up so much time for other things, it's not even funny. I strongly recommend taking that path. Let specialized services handle authentication, so you can focus on your business logic.
+
+If you have questions or comments, please reach out via <ExternalLink href="https://twitter.com/paveldenisjuk">Twitter</ExternalLink> or <ExternalLink href="https://www.webiny.com/slack?utm_source=Webiny-blog&utm_medium=webiny-slack-community&utm_campaign=webiny-hub-content-oct-5&utm_content=webiny-security-layer-upgrade&utm_term=W00139">Webiny Community Slack</ExternalLink>.
+
+Until next time! 🍻

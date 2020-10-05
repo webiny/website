@@ -16,11 +16,10 @@ const Section = styled("section")(
         backgroundColor: theme.color.white,
         position: "relative",
         zIndex: 0,
-
     },
     mq({
-        padding: ["0px 15px", 0]
-    })
+        padding: ["0px 15px", 0],
+    }),
 );
 
 const SectionWithBg = styled("section")(
@@ -28,28 +27,28 @@ const SectionWithBg = styled("section")(
         backgroundColor: theme.color.white,
         backgroundImage: "url(" + DotsBg + ")",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "bottom"
+        backgroundPosition: "bottom",
     },
     mq({
         backgroundSize: ["cover", "auto", "100%"],
         padding: ["0px 0px 85px", "0"],
         "@media (min-width: 1460px)": {
             backgroundPosition: "bottom",
-            paddingTop: 0
-        }
-    })
+            paddingTop: 0,
+        },
+    }),
 );
 
 const containerClass = css(
     {
         flexDirection: "column",
-        maxWidth: "1200"
+        maxWidth: "1200",
     },
     mq({
         display: ["block", "flex"],
         justifyContent: ["center", "space-between"],
-        padding: ["0px 0px 0px", "100px 0px 0px"]
-    })
+        padding: ["0px 0px 0px", "100px 0px 0px"],
+    }),
 );
 
 const MediaContentWrapper = styled("div")(
@@ -62,20 +61,19 @@ const MediaContentWrapper = styled("div")(
             position: "absolute",
             top: "-7%",
             left: "-9%",
-            zIndex: -1
-        }
+            zIndex: -1,
+        },
     },
     mq({
         paddingBottom: [0, 100],
         "& > div > img": {
-
             width: ["85%", "100%"],
-            maxWidth: 880
+            maxWidth: 880,
         },
         "& .bg": {
-            display: ["none", "block"]
-        }
-    })
+            display: ["none", "block"],
+        },
+    }),
 );
 
 export const Title = styled("h1")(
@@ -87,19 +85,19 @@ export const Title = styled("h1")(
         color: theme.color.black,
         textAlign: "center",
         lineHeight: "48px",
-        marginBottom: 70
+        marginBottom: 70,
     },
     mq({
         marginLeft: [0, "auto"],
-        marginRight: [0, "auto"]
-    })
+        marginRight: [0, "auto"],
+    }),
 );
 
 export const TitleHighlight = styled("span")({
     backgroundImage: "url(" + TitleBg + ")",
     backgroundPositionX: "right",
     backgroundPositionY: "bottom",
-    backgroundRepeat: "no-repeat"
+    backgroundRepeat: "no-repeat",
 });
 
 const SeeActionComponent = ({ className, videoPreviewImg, videoId }) => (
@@ -114,7 +112,7 @@ const SeeActionComponent = ({ className, videoPreviewImg, videoId }) => (
         <SectionWithBg className={className}>
             <MediaContentWrapper>
                 <YTVideoComponent className={"video"} img={videoPreviewImg} id={videoId} />
-                <img src={bg} alt="" className="bg"/>
+                <img src={bg} alt="" className="bg" />
             </MediaContentWrapper>
         </SectionWithBg>
     </Fragment>

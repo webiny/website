@@ -14,9 +14,9 @@ const Section = styled("section")(
         backgroundColor: theme.color.white,
         position: "relative",
         zIndex: 0,
-        padding: "0px 15px"
+        padding: "0px 15px",
     },
-    mq({})
+    mq({}),
 );
 
 export const Title = styled("h1")(
@@ -27,32 +27,32 @@ export const Title = styled("h1")(
         fontWeight: theme.fontWeight.bold,
         color: theme.color.black,
         textAlign: "left",
-        marginBottom: 30
+        marginBottom: 30,
     },
     mq({
         marginLeft: [0],
-        marginRight: [0]
-    })
+        marginRight: [0],
+    }),
 );
 
 export const TitleHighlight = styled("span")(props => ({
     backgroundImage: "url(" + props.bg + ")",
     backgroundPositionX: "right",
     backgroundPositionY: "bottom",
-    backgroundRepeat: "no-repeat"
+    backgroundRepeat: "no-repeat",
 }));
 
 const containerClass = css(
     {
         flexDirection: "column",
-        maxWidth: "1200"
+        maxWidth: "1200",
     },
     mq({
         width: ["100%", "100%"],
         display: ["block", "flex"],
         justifyContent: ["center", "space-between"],
-        padding: ["100px 0px 0px", "100px 0px 100px"]
-    })
+        padding: ["100px 0px 0px", "100px 0px 100px"],
+    }),
 );
 
 const CardWrapper = styled("div")(
@@ -65,12 +65,12 @@ const CardWrapper = styled("div")(
         position: "relative",
 
         "& .card--first": {
-            flexDirection: "row-reverse"
+            flexDirection: "row-reverse",
         },
 
         "& .card--second": {},
         "& .card--third": {
-            marginTop: -30
+            marginTop: -30,
         },
 
         "&::before": {
@@ -80,7 +80,7 @@ const CardWrapper = styled("div")(
             height: 182,
             left: "15%",
             bottom: "25%",
-            zIndex: -1
+            zIndex: -1,
         },
         "&::after": {
             content: "url(" + orangeCircleBg + ")",
@@ -89,27 +89,27 @@ const CardWrapper = styled("div")(
             height: 330,
             right: "10%",
             top: "20%",
-            zIndex: -1
-        }
+            zIndex: -1,
+        },
     },
     mq({
         "& .card--first": {
             marginRight: [0, 30],
-            flexDirection: ["column-reverse", "row-reverse"]
+            flexDirection: ["column-reverse", "row-reverse"],
         },
         "& .card--second": {
-            marginBottom: [30, 0]
+            marginBottom: [30, 0],
         },
         "& .card--third": {
-            marginTop: [0, -30]
+            marginTop: [0, -30],
         },
         "&::before": {
-            display: ["none", "block"]
+            display: ["none", "block"],
         },
         "&::after": {
-            display: ["none", "block"]
-        }
-    })
+            display: ["none", "block"],
+        },
+    }),
 );
 
 const Card = styled("div")(
@@ -118,14 +118,14 @@ const Card = styled("div")(
         justifyContent: "flex-start",
         backgroundColor: theme.color.white,
         boxShadow: "2px 3px 15px rgba(100, 100, 100, 0.239216)",
-        borderRadius: 6
+        borderRadius: 6,
     },
     mq({
         width: ["90%", 540],
         height: ["auto", 220],
         flexDirection: ["column-reverse", "row"],
-        marginBottom: [40, 0]
-    })
+        marginBottom: [40, 0],
+    }),
 );
 
 const Content = styled("div")(
@@ -133,12 +133,12 @@ const Content = styled("div")(
         boxSizing: "border-box",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "flex-start"
+        justifyContent: "flex-start",
     },
     mq({
         width: ["100%", "66%"],
-        padding: ["24px", "26px 24px"]
-    })
+        padding: ["24px", "26px 24px"],
+    }),
 );
 
 const Banner = styled("div")(
@@ -147,7 +147,7 @@ const Banner = styled("div")(
         backgroundColor: props.backgroundColor,
         display: "flex",
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
     }),
     mq({
         width: ["100%", "34%"],
@@ -157,26 +157,26 @@ const Banner = styled("div")(
             borderBottomLeftRadius: [0, 6],
             borderBottomRightRadius: [0, 0],
             borderTopLeftRadius: [6, 6],
-            borderTopRightRadius: [6, 0]
+            borderTopRightRadius: [6, 0],
         },
         "&.round-right": {
             borderBottomLeftRadius: [0, 0],
             borderBottomRightRadius: [0, 6],
             borderTopLeftRadius: [6, 0],
-            borderTopRightRadius: [6, 6]
-        }
-    })
+            borderTopRightRadius: [6, 6],
+        },
+    }),
 );
 
 const WhyServerlessImage = styled("img")({
     width: 140,
-    height: 144
+    height: 144,
 });
 
 const Body = styled("h2")({
     fontSize: 18,
     color: theme.color.black,
-    margin: 0
+    margin: 0,
 });
 
 export const FactsSection = ({ facts }) => (
