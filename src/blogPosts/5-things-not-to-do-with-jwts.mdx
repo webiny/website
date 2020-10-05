@@ -45,7 +45,7 @@ Going with token exchange sounded like a great way to solve all of these problem
 
 ...the size of your token starts to grow. The more fine-grained your permissions are, the more it grows. That means that the size of the token string itself grows. Each HTTP request you make to your API will also have to send that token over the wire. In case of Webiny, where we have many apps (and more will come in the future), each app has its own set of permissions. It means that the more apps we add, the larger the JWTs will be, purely because more data has to be stored within the token.
 
-A great resource on the topic: <ExternalLink href="https://sdoxsee.github.io/blog/2020/01/06/stop-overloading-jwts-with-permission-claims">https://sdoxsee.github.io/blog/2020/01/06/stop-overloading-jwts-with-permission-claims</ExternalLink> by <ExternalLink href="https://twitter.com/doxsees">@doxsees</ExternalLink>.
+A great resource on the topic: <ExternalLink href="https://sdoxsee.github.io/blog/2020/01/06/stop-overloading-jwts-with-permission-claims">Stop overloading jwts with permission claims</ExternalLink> by <ExternalLink href="https://twitter.com/doxsees">@doxsees</ExternalLink>.
 
 We decided to solve this problem by introducing a Lambda function, which simply loads a user's permissions based on the ID from the JWT token. You can cache it on different levels, not cache at all - it's up to you. If using DynamoDB, those DB calls are <10ms, so the latency is negligible. However, your HTTP requests will thank you for not stuffing them with huge payloads.
 
@@ -62,6 +62,7 @@ Just don't. It's simply not worth the time and effort. Simply use a third party 
 If you're not a fan of third party providers or you don't trust them with your users, there are open-source alternatives. If you don't have a _really_ good reason for rolling a custom authentication (and 9 times out of 10 you don't), do yourself a favor and use a specialized service. All of those services provide libraries for integration with most popular frontend frameworks and you'll be up and running in minutes. Those service also have huge communities using them, so you won't be alone if a problem arises.
 
 Here's a list of some of the popular identity providers:
+
 - https://www.ory.sh/ (open-source)
 - https://www.okta.com/
 - https://auth0.com/
