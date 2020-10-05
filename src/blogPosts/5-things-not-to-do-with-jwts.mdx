@@ -1,7 +1,7 @@
 ---
 slug: "blog/5-key-learnings-from-working-with-jwts"
 title: "5 Key Learnings From Working With JWTs"
-description: "Learn important things about JWTs you want to avoid in your projects.  to save time, money and a few headaches."
+description: "Learn important things about JWTs you want to avoid in your projects. To save time, money and a few headaches."
 tags:
   [
     "jwt",
@@ -63,13 +63,13 @@ If you're not a fan of third party providers or you don't trust them with your u
 
 Here's a list of some of the popular identity providers:
 - https://www.ory.sh/ (open-source)
-- https://www.okta.com/ 
+- https://www.okta.com/
 - https://auth0.com/
 - https://aws.amazon.com/cognito/
 
 ## Final thoughts
 
-I hope these learnings are helpful and will save you some time. If you have a simple project with not too many requirements for access control, some of these things are not relevant to you. However, if you do expect your project to grow, and you know you'll have different types of fine-grained permissions, take some time and plan your security strategy. 
+I hope these learnings are helpful and will save you some time. If you have a simple project with not too many requirements for access control, some of these things are not relevant to you. However, if you do expect your project to grow, and you know you'll have different types of fine-grained permissions, take some time and plan your security strategy.
 
 At Webiny, we used to roll our own authentication in the past, but since we've moved to Cognito (and will soon support other providers), we offloaded so much maintenance and freed up so much time for other things, it's not even funny. I strongly recommend taking that path. Let specialized services handle authentication, so you can focus on your business logic.
 
