@@ -86,6 +86,7 @@ const WebinyApp = styled("div")(
             fontWeight: theme.fontWeight.regular,
             textAlign: "center",
             margin: "0px 0px 35px",
+            minHeight: 93,
         },
         "& .app__button": {
             backgroundColor: props.color ? props.color : "inherit",
@@ -138,7 +139,7 @@ const WEBINY_APPS = [
     {
         id: 3,
         title: "File Manager",
-        body: "Create forms using a drag&drop interface and track how they convert.",
+        body: "Upload, categorise, search and edit your files.",
         color: theme.color.purple,
         actionType: "dark",
         actionLabel: "learn more",
