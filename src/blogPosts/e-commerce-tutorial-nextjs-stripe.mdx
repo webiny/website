@@ -9,12 +9,12 @@ author: albiona
 date: 2020-10-19
 ---
 
-In this starter tutorial we will uses the <ExternalLink href="http://docs.webiny.com/docs/webiny-apps/headless-cms/features/content-modeling?utm_source=Webiny-blog&utm_medium=webiny-headless-cms-features-docs&utm_campaign=webiny-blog-e-commerce-tutorial-oct-19&utm_content=webiny-headless-cms-features-docs&utm_term=W00180">Webiny Headless CMS</ExternalLink> and <ExternalLink href=""> Next.js </ExternalLink>
+In this starter tutorial we will uses the <ExternalLink href="http://docs.webiny.com/docs/webiny-apps/headless-cms/features/content-modeling?utm_source=Webiny-blog&utm_medium=webiny-headless-cms-features-docs&utm_campaign=webiny-blog-e-commerce-tutorial-oct-19&utm_content=webiny-headless-cms-features-docs&utm_term=W00180">Webiny Headless CMS</ExternalLink> and <ExternalLink href="https://nextjs.org/"> Next.js </ExternalLink>
 to create a simple e-commerce website, where you can buy Swag from Open Source Projects such as Webiny, Next.js, Gatsby, etc, with an integrated
 shopping cart by <ExternalLink href="https://checkout.stripe.dev/preview">Stripe Payment Intents</ExternalLink>.
 
 While working on this starter, I shared my progress on Twitter and <ExternalLink href="https://twitter.com/joshuaackerman">Josh</ExternalLink> from Stripe <ExternalLink href="https://twitter.com/joshuaackerman/status/1305857426059653122?s=20">reached out</ExternalLink> for being available for any feedback regarding improvements, developer experience and documentation,
-thank you Josh!
+thank you, Josh!
 
 Without further ado let's get started.
 
@@ -26,13 +26,13 @@ TLDR; <ExternalLink href="http://www.github.com/webiny/webiny-examples">Get the 
 
 In this tutorial, we will go through the main functionalities of the e-commerce starter
 project with Webiny + Next.js + Stripe. You will learn how to create a Webiny Headless CMS
-back-end project and your content models, how to set up the front-end with Next.js and Ant Design
+back-end project and your content models, how to set up the front-end with Next.js, and Ant Design
 UI framework, how to set up Next.js with Apollo GraphQL to query the content models data into the
 front-end, and how to integrate Next.js with Stripe Checkout to add the payment service.
 
 TLDR; <ExternalLink href="http://www.github.com/webiny/webiny-examples">Get the code here</ExternalLink>.
 
-> For the sake of the time saving, we will link here the project GitHub links, for you to go through
+> For the sake of the time-saving, we will link all the component files with the GitHub links for you to go through
 > the Next.js `pages` and `components` you will create, so we can focus more on the main features
 > such as:
 >
@@ -44,7 +44,7 @@ TLDR; <ExternalLink href="http://www.github.com/webiny/webiny-examples">Get the 
 ## 1. Webiny Headless CMS for the back-end
 
 Webiny provides several serverless websites such as the Headless CMS, Page Builder,
-Form Builder and File Manager. In this starter we are going to use the Headless CMS only.
+Form Builder and File Manager. In this starter, we are going to use the Headless CMS only.
 
 > To create a Webiny Headless CMS project, run the following command:
 >
@@ -98,9 +98,9 @@ We toggle the `Use as a list of references` for the category can have multiple P
 
 ## 2. Next.js + Ant Design to create the frontend
 
-When building a website, you have to decide how you are going to build your frontend, what library are you going to use? Do you need to build it from scratch?
+When building a website, you have to decide how you are going to create your frontend, what library are you going to use? Do you need to start building it from scratch?
 Which UI framework is the fastest to set up and learn how to use? etc.
-If you are in a hurry for your project idea, well, there are a numerous of UI frameworks 🚀
+If you are in a hurry for your project idea, well, there are numerous of UI frameworks 🚀
 
 We decided to build the front-end using <ExternalLink href="https://nextjs.org/">Next.js</ExternalLink> React framework with the <ExternalLink href="https://ant.design/components/overview/">Ant Design</ExternalLink> React UI library.
 
@@ -114,7 +114,7 @@ We decided to build the front-end using <ExternalLink href="https://nextjs.org/"
 
 Now, that we picked the tools, let's start building a simple e-commerce website 🚀
 
-### Next.js + Ant Design Set Up
+### Next.js + Ant Design Set-Up
 
 Next.js provides plenty of examples on their <ExternalLink href="https://github.com/vercel/next.js/tree/canary/examples"> GitHub repo</ExternalLink>.
 They provide an Ant Design UI library example too, depending on your requirements, you can choose between the `with-ant-design-less`, `with-ant-design-pro-layout-less`, and `with-ant-design`.
@@ -143,53 +143,69 @@ Now we are good to continue building our pages and components 🙂
 
 We will create pages such as `Home`, `Checkout`, and **?**`Product` pages. The `Checkout` page is one of the most important pages, we will learn why shortly!
 
-- <ExternalLink href="">Home page</ExternalLink>
+- <ExternalLink href="https://github.com/webiny/webiny-examples/blob/master/webiny-starter-e-commerce-nextjs-stripe/frontend/pages/index.js">
+    Home page
+  </ExternalLink>
 
 ![Home page](/assets/e-commerce-tutorial-nextjs-stripe/home_page.png)
 
 The home page will look as in the image above. To build the home page, we used different Ant Design components, such as `Grid`, `Menu`, `Header`, etc.
 
-- <ExternalLink href="">Checkout page</ExternalLink>
+- <ExternalLink href="https://github.com/webiny/webiny-examples/blob/master/webiny-starter-e-commerce-nextjs-stripe/frontend/pages/checkout.js">
+    Checkout page
+  </ExternalLink>
 
 ![Checkout page](/assets/e-commerce-tutorial-nextjs-stripe/checkout_page.png)
 
-We mentioned that the `checkout` page is one of the most important ones, because here we will use the Next.js `getServerSideProps` lifecycle method, to perform server side only behavior. With this lifecycle method, we don't need to create an API to handle the intent creation (for the Stripe integration). We will handle it directly inside our checkout page.
+We mentioned that the `checkout` page is one of the most important ones because, at the `checkout` page, we will use the Next.js `getServerSideProps` lifecycle method to perform server-side only behavior. With this lifecycle method, we don't need to create an API to handle the intent creation (for the Stripe integration) that will be handled directly inside our checkout page.
 
 - **?**<ExternalLink href="">Product page</ExternalLink> - `hacktoberfest` issue
-
-This year Webiny is participating in the <ExternalLink href="https://www.webiny.com/blog/webiny-hacktoberfest-2020?utm_source=Webiny-blog&utm_medium=webiny-hacktoberfest-blog&utm_campaign=webiny-blog-e-commerce-tutorial-oct-19&utm_content=webiny-hacktoberfest-2020&utm_term=W00181">Hacktoberfest challenge</ExternalLink>.
-For now, the e-commerce starter project doesn't have a `product` page. This is an open issue and if you are interested to contribute to the project,
-check out the issue <ExternalLink href="http://www.github.com/webiny">here</ExternalLink>.
+  This year Webiny is participating in the <ExternalLink href="https://www.webiny.com/blog/webiny-hacktoberfest-2020?utm_source=Webiny-blog&utm_medium=webiny-hacktoberfest-blog&utm_campaign=webiny-blog-e-commerce-tutorial-oct-19&utm_content=webiny-hacktoberfest-2020&utm_term=W00181">Hacktoberfest challenge</ExternalLink>.
+  For now, the e-commerce starter project doesn't have a `product` page. If you are interested to contribute you can go through the GitHub issue <ExternalLink href="http://www.github.com/webiny">here</ExternalLink>.
 
 ### ANTD Components
 
-The <ExternalLink href="">antd</ExternalLink> provides plenty of UI components to enrich your web applications, for this project we will use several Ant design react components, such as: `Grid`, `Menu`, `Layout`, `List`, `Cart`, `Modal`, etc.
+The <ExternalLink href="https://ant.design/">antd</ExternalLink> provides plenty of UI components to enrich your web applications, for this project we will use several Ant design react components, such as: `Grid`, `Menu`, `Layout`, `List`, `Cart`, `Modal`, etc.
 
-- <ExternalLink href="">Product Card</ExternalLink>
+- <ExternalLink href="https://github.com/webiny/webiny-examples/blob/master/webiny-starter-e-commerce-nextjs-stripe/frontend/components/ProductCard.js">
+    Product Card
+  </ExternalLink>
 
 The card as shown below
 
 ![Card component](/assets/e-commerce-tutorial-nextjs-stripe/card_component.png)
 
-- <ExternalLink href="">Product List</ExternalLink>
+- <ExternalLink href="https://github.com/webiny/webiny-examples/blob/master/webiny-starter-e-commerce-nextjs-stripe/frontend/components/ProductList/index.js">
+    Product List
+  </ExternalLink>
 
 ![Product List](/assets/e-commerce-tutorial-nextjs-stripe/product_list.png)
 
-- <ExternalLink href="">Layout Component</ExternalLink>
+- <ExternalLink href="https://github.com/webiny/webiny-examples/blob/master/webiny-starter-e-commerce-nextjs-stripe/frontend/components/LayoutContent.js">
+    Layout Component
+  </ExternalLink>
 
-- <ExternalLink href="">Header Component</ExternalLink>
+- <ExternalLink href="https://github.com/webiny/webiny-examples/blob/master/webiny-starter-e-commerce-nextjs-stripe/frontend/components/HeaderComponent.js">
+    Header Component
+  </ExternalLink>
 
 ![Header component](/assets/e-commerce-tutorial-nextjs-stripe/header_component.png)
 
-- <ExternalLink href="">Categories Component</ExternalLink> - Menu
+- <ExternalLink href="https://github.com/webiny/webiny-examples/blob/master/webiny-starter-e-commerce-nextjs-stripe/frontend/components/CategoriesMenu.js">
+    Categories Component
+  </ExternalLink> - Menu
 
 ![Categories component](/assets/e-commerce-tutorial-nextjs-stripe/categories_component.png)
 
-- <ExternalLink href="">Products Cart</ExternalLink>
+- <ExternalLink href="https://github.com/webiny/webiny-examples/blob/master/webiny-starter-e-commerce-nextjs-stripe/frontend/components/Cart.js">
+    Products Cart
+  </ExternalLink>
 
-![Products cart](/assets/e-commerce-tutorial-nextjs-stripe/categories_component.png)
+![Products cart](/assets/e-commerce-tutorial-nextjs-stripe/products_cart.png)
 
-- <ExternalLink href="">Search products</ExternalLink>
+- <ExternalLink href="https://github.com/webiny/webiny-examples/blob/master/webiny-starter-e-commerce-nextjs-stripe/frontend/pages/index.js">
+    Search products
+  </ExternalLink>
 
 ![Search component](/assets/e-commerce-tutorial-nextjs-stripe/search_component.png)
 
@@ -232,7 +248,7 @@ We mentioned earlier that Next.js provides plenty of examples 🎉 Well, they pr
 
 In the root of your project, create a folder/file - `lib/apolloClient.js`, and paste the below snippet in it:
 
-`gist:AlbionaHoti/54c3a3186606e4f21905d1a10b26e078
+`gist:AlbionaHoti/54c3a3186606e4f21905d1a10b26e078`
 
 Now, let's integrate the `apolloClient` to our Next.js app, find the `_app.js` file in the `pages` folder, and paste the below code:
 
@@ -242,7 +258,7 @@ As a last step for this integration, we will now use the `getStaticProps` lifecy
 
 Now go at the `pages/index.js` file, and paste the below snippet:
 
-:gist:AlbionaHoti/6bb59c708db0556cf2b2c4cff756975a`
+`gist:AlbionaHoti/6bb59c708db0556cf2b2c4cff756975a`
 
 Now that we have access to our content models and the data, we can render our products and categories on the home page.
 
