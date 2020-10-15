@@ -1,60 +1,89 @@
 ---
 slug: "blog/e-commerce-tutorial-nextjs-stripe"
-title: "Webiny Starter E-commerce with Next.js + Stripe"
-description: "This starter allows you to test Webiny Headless CMS and Next.js with a simple e-commerce website, integrating
-shopping cart by Stripe Payment Intents"
+title: "Build an E-commerce Website with Webiny Serverless Headless CMS, Next.js, and Stripe"
+description: "In this tutorial, we'll create an e-commerce website using Webiny Serverless Headless CMS, Next.js, and Stripe."
 tags: ["Serverless", "Web development", "Javascript", "Software Development", "GraphQL"]
 featureImage: "./assets/e-commerce-tutorial-nextjs-stripe/e-commerce-tutorial-nextjs-stripe-cover.png"
 author: albiona
 date: 2020-10-19
 ---
 
-In this starter tutorial we will uses the <ExternalLink href="http://docs.webiny.com/docs/webiny-apps/headless-cms/features/content-modeling?utm_source=Webiny-blog&utm_medium=webiny-headless-cms-features-docs&utm_campaign=webiny-blog-e-commerce-tutorial-oct-19&utm_content=webiny-headless-cms-features-docs&utm_term=W00180">Webiny Headless CMS</ExternalLink> and <ExternalLink href="https://nextjs.org/"> Next.js </ExternalLink>
-to create a simple e-commerce website, where you can buy Swag from Open Source Projects such as Webiny, Next.js, Gatsby, etc, with an integrated
-shopping cart by <ExternalLink href="https://checkout.stripe.dev/preview">Stripe Payment Intents</ExternalLink>.
+In this tutorial we will create a simple e-commerce website, where you can buy Swag from the best Open Source Projects such as Webiny, Next.js, React, etc.
+
+Before we continue, let's go through what you'll learn on building this website.
+
+You will learn how to create the back-end with <ExternalLink href="http://docs.webiny.com/docs/webiny-apps/headless-cms/features/content-modeling?utm_source=Webiny-blog&utm_medium=webiny-headless-cms-features-docs&utm_campaign=webiny-blog-e-commerce-tutorial-oct-19&utm_content=webiny-headless-cms-features-docs&utm_term=W00180">Webiny Headless CMS</ExternalLink>
+with two content models, the products, and the categories.
+Then, fetching the data from the headless CMS to the Next.js project using Apollo GraphQL.
+Last but not least, integrating Stripe to implement a shopping cart for our products.
 
 While working on this starter, I shared my progress on Twitter and <ExternalLink href="https://twitter.com/joshuaackerman">Josh</ExternalLink> from Stripe <ExternalLink href="https://twitter.com/joshuaackerman/status/1305857426059653122?s=20">reached out</ExternalLink> for being available for any feedback regarding improvements, developer experience and documentation,
 thank you, Josh!
 
 Without further ado let's get started.
 
+// New gif will come here
 ![e-commerce gif](./assets/e-commerce-tutorial-nextjs-stripe/e-commerce-2.gif)
 
-TLDR; <ExternalLink href="http://www.github.com/webiny/webiny-examples">Get the code here</ExternalLink>
+TLDR; <ExternalLink href="http://www.github.com/webiny/webiny-examples/new_link_zhere">Get the code here</ExternalLink>
 
-## Main Features
+## 1. The e-commerce-starter
 
-In this tutorial, we will go through the main functionalities of the e-commerce starter
-project with Webiny + Next.js + Stripe. You will learn how to create a Webiny Headless CMS
-back-end project and your content models, how to set up the front-end with Next.js, and Ant Design
-UI framework, how to set up Next.js with Apollo GraphQL to query the content models data into the
-front-end, and how to integrate Next.js with Stripe Checkout to add the payment service.
+To get started, we'll clone the `e-commerce-starter` git repository.
+The starter will have a ready-made Next.js application, and the Ant Design UI Library set up
+that looks like in the image below.
 
-TLDR; <ExternalLink href="http://www.github.com/webiny/webiny-examples">Get the code here</ExternalLink>.
+![E commerce starter](/assets/e-commerce-tutorial-nextjs-stripe/e-commerce-starter.png)
 
-> For the sake of the time-saving, we will link all the component files with the GitHub links for you to go through
-> the Next.js `pages` and `components` you will create, so we can focus more on the main features
-> such as:
->
-> - Webiny Headless CMS for the back-end project
-> - Next.js + Ant Design React UI Library to create the front-end project
-> - Next.js + Apollo GraphQL to query the content model data
-> - Next.js + Stripe to create the payment intents
+We already have some components and functionalities ready, such as the `Header`, `Search`, `Product List`, the `Product` card, and the `Cart` component.
 
-## 1. Webiny Headless CMS for the back-end
+Clone the `e-commerce-starter` project by running the following commands to have the project set up and running.
 
-Webiny provides several serverless websites such as the Headless CMS, Page Builder,
-Form Builder and File Manager. In this starter, we are going to use the Headless CMS only.
+```
+  git clone https://github.com/AlbionaHoti/e-commerce-start // will update the link
+  cd e-commerce-start
+  npm install
+  npm run dev
 
-> To create a Webiny Headless CMS project, run the following command:
->
-> ```powershell
-> yarn create-webiny-project backend --template=cms
-> ```
->
-> And continue with the <ExternalLink href="http://docs.webiny.com/docs/get-started/quick-start?utm_source=Webiny-blog&utm_medium=webiny-h3-tutorial&utm_campaign=webiny-blog-e-commerce-tutorial-oct-19&utm_content=webiny-quick-start-guide&utm_term=W00214">Webiny quick start</ExternalLink> steps to set up the Webiny project.
+  // head over to localhost:3000
+```
 
-Now, let's go and create the content models we need for the e-commerce project.
+Now that we have the starter project, we can focus on creating the back-end with Webiny headless CMS and fetching the data to our front-end.
+
+## 2. Webiny Headless CMS
+
+Webiny provides several serverless websites such as the Headless CMS, Page Builder, Form Builder and File Manager.
+In this tutorial, we are going to use the Headless CMS only.
+
+### Prerequisites
+
+- A Webiny Headless CMS Project
+
+  First of all, make sure you have a working <ExternalLink href="http://docs.webiny.com/docs/get-started/quick-start">Webiny project</ExternalLink> set up.
+
+> When setting up a new project, currently, there are two project templates you
+> can choose from: `full` and `cms`. Both include the Headless CMS app by default.
+
+- Content Delivery API URL
+
+  The Headless CMS app exposes data via the `Content Delivery API`,
+  which is a simple GraphQL API that dynamically updates its schema on
+  content model changes that you make. Once you have deployed your API stack
+  (using the `yarn webiny deploy api --env=local` command), you should be able to
+  find the Content Delivery API URL in the `API Information` menu item, in your admin app.
+
+- Content Delivery API Access Token
+
+  In order to access the data via the Content Delivery API, we'll need a valid Access Token.
+
+  1.  Follow the <ExternalLink href="http://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens/">link</ExternalLink> here to create an access token for a specific environment.
+  2.  Use this access token as a HTTP header to your GraphQL Playground in `/cms/read/{alias}` endpoints.
+      ![Access token auth](/assets/e-commerce-tutorial-nextjs-stripe/access-tokens-graphql.png)
+
+  > In the root of the `e-commerce-starter` app that you set up,
+  > you will find the `.env` file, that's the place where we need to save the Content Delivery API, and the Content Delivery API Access Token
+
+Now that we have all of the prerequisites out of the way, it's time to create our first content model for the e-commerce website.
 
 We are going to create two content models, the `products` and `category`
 
@@ -62,9 +91,6 @@ We are going to create two content models, the `products` and `category`
   - 6 Created Products
 - Category
   - 3 Created Categories
-
-> If you are new to <ExternalLink href="https://www.webiny.com/serverless-app/headless-cms?utm_source=Webiny-blog&utm_medium=webiny-website-headless-cms&utm_campaign=webiny-blog-e-commerce-oct-19&utm_content=webiny-blog-e-commerce-nextjs&utm_term=W00177">Webiny Headless CMS</ExternalLink>,
-> learn more about its features <ExternalLink href="http://docs.webiny.com/docs/webiny-apps/headless-cms/features/content-modeling?utm_source=Webiny-blog&utm_medium=webiny-headless-cms-features-docs&utm_campaign=webiny-blog-e-commerce-tutorial-oct-19&utm_content=webiny-headless-cms-features-docs&utm_term=W00180">here</ExternalLink>. 🚀
 
 Let's go through the images below and create the content models for products and categories.
 
@@ -96,171 +122,96 @@ The `Category` content model will contain the fields such as:
 
 We toggle the `Use as a list of references` for the category can have multiple Products.
 
-## 2. Next.js + Ant Design to create the frontend
-
-When building a website, you have to decide how you are going to create your frontend, what library are you going to use? Do you need to start building it from scratch?
-Which UI framework is the fastest to set up and learn how to use? etc.
-If you are in a hurry for your project idea, well, there are numerous of UI frameworks 🚀
-
-We decided to build the front-end using <ExternalLink href="https://nextjs.org/">Next.js</ExternalLink> React framework with the <ExternalLink href="https://ant.design/components/overview/">Ant Design</ExternalLink> React UI library.
-
-> <ExternalLink href="https://nextjs.org/">
->   Next.js
-> </ExternalLink> is a React Framework, that gives you the best developer experience with all the features you need for production: hybrid static & server rendering ⚡, Typescript support, smart bundling, route pre-fetching, and more.
-
-> <ExternalLink href="https://ant.design/components/overview/">
->   Ant Design{" "}
-> </ExternalLink> React UI library provides plenty of UI components to enrich your web applications.
-
-Now, that we picked the tools, let's start building a simple e-commerce website 🚀
-
-### Next.js + Ant Design Set-Up
-
-Next.js provides plenty of examples on their <ExternalLink href="https://github.com/vercel/next.js/tree/canary/examples"> GitHub repo</ExternalLink>.
-They provide an Ant Design UI library example too, depending on your requirements, you can choose between the `with-ant-design-less`, `with-ant-design-pro-layout-less`, and `with-ant-design`.
-We will use the <ExternalLink href="https://github.com/vercel/next.js/tree/canary/examples/with-ant-design-less">`with-ant-design-less`</ExternalLink>.
-
-Create the `webiny-starter-e-commerce-nextjs-stripe` folder, and inside this folder create a `next.js` project with
-`npx create-next-app frontend` command . By following the example of `next.js` with ant design less, we need to add these 3 files to our `next.js` project:
-
-- `next-config.js`
-
-`gist:AlbionaHoti/9f019ba783ac516b4c25cc6d58638946`
-
-- `.babelrc`
-
-`gist:AlbionaHoti/b9069135eb3810a2b8c5e6a46737d3e6`
-
-- `/assets/antd-custom.less`
-
-`gist:AlbionaHoti/463e4769b881cb732e9362f95d656933`
-
-Now we are good to continue building our pages and components 🙂
-
-### Next.js Pages
-
-> In Next.js, a page is a React Component exported from a .js, .jsx, .ts, or .tsx file in the pages directory. Each page is associated with a route based on its file name. Example: If you create `pages/about.js` that exports a React component, it will be accessible at `/about`.
-
-We will create pages such as `Home`, `Checkout`, and **?**`Product` pages. The `Checkout` page is one of the most important pages, we will learn why shortly!
-
-- <ExternalLink href="https://github.com/webiny/webiny-examples/blob/master/webiny-starter-e-commerce-nextjs-stripe/frontend/pages/index.js">
-    Home page
-  </ExternalLink>
-
-![Home page](/assets/e-commerce-tutorial-nextjs-stripe/home_page.png)
-
-The home page will look as in the image above. To build the home page, we used different Ant Design components, such as `Grid`, `Menu`, `Header`, etc.
-
-- <ExternalLink href="https://github.com/webiny/webiny-examples/blob/master/webiny-starter-e-commerce-nextjs-stripe/frontend/pages/checkout.js">
-    Checkout page
-  </ExternalLink>
-
-![Checkout page](/assets/e-commerce-tutorial-nextjs-stripe/checkout_page.png)
-
-We mentioned that the `checkout` page is one of the most important ones because, at the `checkout` page, we will use the Next.js `getServerSideProps` lifecycle method to perform server-side only behavior. With this lifecycle method, we don't need to create an API to handle the intent creation (for the Stripe integration) that will be handled directly inside our checkout page.
-
-- **?**<ExternalLink href="">Product page</ExternalLink> - `hacktoberfest` issue
-  This year Webiny is participating in the <ExternalLink href="https://www.webiny.com/blog/webiny-hacktoberfest-2020?utm_source=Webiny-blog&utm_medium=webiny-hacktoberfest-blog&utm_campaign=webiny-blog-e-commerce-tutorial-oct-19&utm_content=webiny-hacktoberfest-2020&utm_term=W00181">Hacktoberfest challenge</ExternalLink>.
-  For now, the e-commerce starter project doesn't have a `product` page. If you are interested to contribute you can go through the GitHub issue <ExternalLink href="http://www.github.com/webiny">here</ExternalLink>.
-
-### ANTD Components
-
-The <ExternalLink href="https://ant.design/">antd</ExternalLink> provides plenty of UI components to enrich your web applications, for this project we will use several Ant design react components, such as: `Grid`, `Menu`, `Layout`, `List`, `Cart`, `Modal`, etc.
-
-- <ExternalLink href="https://github.com/webiny/webiny-examples/blob/master/webiny-starter-e-commerce-nextjs-stripe/frontend/components/ProductCard.js">
-    Product Card
-  </ExternalLink>
-
-The card as shown below
-
-![Card component](/assets/e-commerce-tutorial-nextjs-stripe/card_component.png)
-
-- <ExternalLink href="https://github.com/webiny/webiny-examples/blob/master/webiny-starter-e-commerce-nextjs-stripe/frontend/components/ProductList/index.js">
-    Product List
-  </ExternalLink>
-
-![Product List](/assets/e-commerce-tutorial-nextjs-stripe/product_list.png)
-
-- <ExternalLink href="https://github.com/webiny/webiny-examples/blob/master/webiny-starter-e-commerce-nextjs-stripe/frontend/components/LayoutContent.js">
-    Layout Component
-  </ExternalLink>
-
-- <ExternalLink href="https://github.com/webiny/webiny-examples/blob/master/webiny-starter-e-commerce-nextjs-stripe/frontend/components/HeaderComponent.js">
-    Header Component
-  </ExternalLink>
-
-![Header component](/assets/e-commerce-tutorial-nextjs-stripe/header_component.png)
-
-- <ExternalLink href="https://github.com/webiny/webiny-examples/blob/master/webiny-starter-e-commerce-nextjs-stripe/frontend/components/CategoriesMenu.js">
-    Categories Component
-  </ExternalLink> - Menu
-
-![Categories component](/assets/e-commerce-tutorial-nextjs-stripe/categories_component.png)
-
-- <ExternalLink href="https://github.com/webiny/webiny-examples/blob/master/webiny-starter-e-commerce-nextjs-stripe/frontend/components/Cart.js">
-    Products Cart
-  </ExternalLink>
-
-![Products cart](/assets/e-commerce-tutorial-nextjs-stripe/products_cart.png)
-
-- <ExternalLink href="https://github.com/webiny/webiny-examples/blob/master/webiny-starter-e-commerce-nextjs-stripe/frontend/pages/index.js">
-    Search products
-  </ExternalLink>
-
-![Search component](/assets/e-commerce-tutorial-nextjs-stripe/search_component.png)
-
-- **?**Filter products by Category
-  - <ExternalLink href="">hacktoberfest issue</ExternalLink>
-
-![Filter per category](/assets/e-commerce-tutorial-nextjs-stripe/categories_component.png)
+Now that we have created the content models, click on View Content and start creating your Swag products and the categories 🎉
 
 ## 3. Next.js + Apollo GraphQL to fetch data from the backend
 
-We created the back-end project with Webiny Headless CMS, in case you didn't go through our features page, let's have a quick look at the powerful features of [Webiny Headless CMS](https://www.webiny.com/serverless-app/headless-cms) 🙂
+We are going to start off by installing a few NPM packages:
 
-- <ExternalLink href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/content-modeling/?utm_source=Webiny-blog&utm_medium=webiny-headless-cms-content-modeling&utm_campaign=webiny-blog-e-commerce-tutorial-oct-19&utm_content=webiny-headless-cms-content-modeling&utm_term=W00182">
-    Content Modeling
-  </ExternalLink>
-- <ExternalLink href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/localization?utm_source=Webiny-blog&utm_medium=webiny-headless-cms-content-modeling&utm_campaign=webiny-blog-e-commerce-tutorial-oct-19&utm_content=webiny-headless-cms-content-localization&utm_term=W00183">
-    Content Localization{" "}
-  </ExternalLink>
-- <ExternalLink href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/graphql-playground?utm_source=Webiny-blog&utm_medium=webiny-headless-cms-graphql-api&utm_campaign=webiny-blog-e-commerce-tutorial-oct-19&utm_content=webiny-headless-cms-graphql-api&utm_term=W00184">
-    GraphQL API + Playground
-  </ExternalLink> - Both our management and our distribution API are powered by GraphQL. On top of that, Webiny exposes a GraphQL Playground you can use to easily test and debug your API calls.
-- <ExternalLink href="https://docs.webiny.com/docs/webiny-apps/file-manager/getting-started/?utm_source=Webiny-blog&utm_medium=webiny-headless-cms-file-manager&utm_campaign=webiny-blog-e-commerce-tutorial-oct-19&utm_content=webiny-headless-cms-file-manager&utm_term=W00189">
-    Asset Management
-  </ExternalLink>
-- <ExternalLink href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/environments?utm_source=Webiny-blog&utm_medium=webiny-headless-cms-environments&utm_campaign=webiny-blog-e-commerce-tutorial-oct-19&utm_content=webiny-headless-cms-environments&utm_term=W00185">
-    Environments
-  </ExternalLink> Creating a new environment copies all the data and all the models from the current environment. This allows you to make changes and prepare new content in the background, while still serving production content without interruption.
-- <ExternalLink href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/aliases?utm_source=Webiny-blog&utm_medium=webiny-headless-cms-aliases&utm_campaign=webiny-blog-e-commerce-tutorial-oct-19&utm_content=webiny-headless-cms-aliases&utm_term=W00186">
-    Aliases
-  </ExternalLink>
-- <ExternalLink href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens?utm_source=Webiny-blog&utm_medium=webiny-headless-cms-access-tokens&utm_campaign=webiny-blog-e-commerce-tutorial-oct-19&utm_content=webiny-headless-cms-access-tokens&utm_term=W00187">
-    Access Tokens
-  </ExternalLink> - The authentication and permissions are part of the Webiny core package and they also pass on to the Headless CMS. Create users, user groups, roles and permissions to control who and how they access the system.
-- <ExternalLink href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/content-modeling-groups?utm_source=Webiny-blog&utm_medium=webiny-headless-cms-content-modeling-groups&utm_campaign=webiny-blog-e-commerce-tutorial-oct-19&utm_content=webiny-headless-cms-content-modeling&utm_term=W00188">
-    Content Model Groups
-  </ExternalLink>
-- Device & Frontend Agnostic
+- `@apollo/client` - This single package contains virtually everything we need to set up Apollo Client. It includes the in-memory cache, local state management, error handling, and a React-based view layer.
 
-We mentioned earlier that Next.js provides plenty of examples 🎉 Well, they provide an example of Next.js with Apollo too! Our goal is to fetch the `products`, and `categories` in the front-end from our headless cms back-end project. To do that, we will set up Next.js with Apollo GraphQL.
+- `graphql` - This package provides logic for parsing GraphQL queries.
 
-In the root of your project, create a folder/file - `lib/apolloClient.js`, and paste the below snippet in it:
+```
+npm i @apollo/client graphql --save
+```
 
-`gist:AlbionaHoti/54c3a3186606e4f21905d1a10b26e078`
+Now that we installed the necessary packages, lets check the e-commerce-starter website structure in the image below:
 
-Now, let's integrate the `apolloClient` to our Next.js app, find the `_app.js` file in the `pages` folder, and paste the below code:
+![E commerce starter structure](/assets/e-commerce-tutorial-nextjs-stripe/e-commerce-starter-structure.png)
 
-`gist:AlbionaHoti/d8d1c489eb027bb11a62d5037b82db34`
+- `/components` folder contains the react antd starter components, as seen in the image above.
+- `/context/context.js` contains the React context that holds the state of the `Cart`, `Favorite` products, `Modal` of Products Cart, and `Total` price of the cart.
+- `/pages/_app.js` component file is provided by Next.js, and serves as a wrapper of every single Next.js page of your front-end.
+  The `_app.js` file allows us to wrap the `Apollo Provider` around the function component so that we can have it available in every single page.
 
-As a last step for this integration, we will now use the `getStaticProps` lifecycle method of Next.js to pre-render the page at build time and return the props with data from our GraphQL API.
+Now, you may ask What is Apollo Provider⁉️ Good point ‼️
 
-Now go at the `pages/index.js` file, and paste the below snippet:
+---
 
-`gist:AlbionaHoti/6bb59c708db0556cf2b2c4cff756975a`
+Now that we have covered the packages used and the folder structure of our `e-commerce-starter` app, let's jump on the code.
 
-Now that we have access to our content models and the data, we can render our products and categories on the home page.
+Open the `_app.js` file and paste the following snippet:
+
+`gist:AlbionaHoti/22688a0c4fac917a17f3ddaec13fc9b5`
+
+Now that we've seen what the `_app.js` is made of, lets dig into the actual GraphQL client file.
+
+Go ahead in the root of the project, and create the `lib/apolloClient.js` file, and paste the following snippet:
+
+`gist:AlbionaHoti/3d251625b1665f06c05cc7d6d643764b`
+
+The one important bit of the above snippet is the new instance of `ApolloClient`
+which has some options such as the `link` → this is the part where we
+tell the Apollo how to go and fetch the data, and we do that by calling a new instance of `HttpLink`,
+and pass the options to this, which is the `uri` → That means: `Where on the internet does your GraphQL URL exists?` 🚀
+This is where the Webinys Content Delivery API Url comes into play.
+
+We noted on the Webiny Headless CMS section: `In order to access the data via the Content Delivery API, we'll need a valid` <ExternalLink href="http://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens/">Access Token</ExternalLink>
+
+So, in the headers, we pass the `authorization` with our Access Token.
+
+Now, finally we are going to start fetching the actual content from our headless CMS back-end project. 🚀🚀
+
+With this set-up, now we have the `apolloClient` that is passed to the `ApolloProvider` in
+the `_app.js` file, for the `ApolloProvider` wraps every single page within our application,
+we can actually go into a page, and import a hook called `useQuery` and the `gql`.
+With these two, we can perform queries against our GraphQL API. Let's do that!
+
+Navigate to the `components/ProductList.js` file, and paste the below snippet:
+
+`gist:AlbionaHoti/6de0c012c0041e883f34be3a40db50b9`
+
+We've defined our `QUERY`, now we will use the query with the `useQuery` hook, which will return the `data`, the `error`, and a boolean `loading`,
+for whether it's still loading the data.
+
+When we get the data from the headless CMS, we are implementing a simple `search` functionality for the products.
+We receive the `search` value through the `props` of the `ProductList` component.
+
+Before jumping on the `localhost:3000/` to see the actual data, we need to add one more detail!
+
+> Next.js provides different methods for fetching data, one of them is `getStaticProps` - this method allows you to update existing pages by re-rendering them in the background as traffic comes in.
+
+Navigate to the `pages/index.js` file, and paste the following snippet:
+
+`gist:AlbionaHoti/d1941660f432658116dfc87d330c8d61`
+
+The `getStaticProps` function gets called at build time on server-side.
+It won't be called on client-side, so you can even do direct database queries.
+
+Inside this function, we are querying our GraphQL API, and cashing the data in the background. Now, you can freely update your content on the Webiny headless CMS 🎉
+
+Now that we have the data, let's go and check the `ProductCard` component that came
+with the `e-commerce-starter` pack 🚀 Navigate to the `components/Product.js` file,
+there you'll find the product cart functionalities such as `addToCart`,
+`removeFromCart`, and `addToFavorites`. One functionality is missing though,
+and that is the `goToProduct` that should open a modal, and show the product details⁉️
+
+> <ExternalLink href="https://www.webiny.com/blog/webiny-hacktoberfest-2020">
+>   Webiny Hacktoberfest 2020{" "}
+> </ExternalLink>
+
+You can freely open a PR for the `goToProduct` function and make it your first PR @ <ExternalLink href="https://www.webiny.com/">Webiny</ExternalLink>. 👩🏻‍🚀
 
 ## 4. Next.js + Stripe to create the payment intents
 
