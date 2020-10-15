@@ -18,7 +18,7 @@ author: adrian
 date: 2020-10-19
 ---
 
-AWS Lambda is awesome! The service allows us to easily deploy and run our own code, without worrying too much about the underlying infrastructure (when compared to pre-serverless). It essentially scales infinitely (with great power comes great responsibility), and can be connected with a bunch of services, like API Gateway, S3, AppSync, DynamoDB, etc.
+The AWS Lambda service allows us to easily deploy and run our own code, without worrying too much about the underlying infrastructure (when compared to pre-serverless). It essentially scales infinitely (with great power comes great responsibility), and can be connected with a bunch of services, like API Gateway, S3, AppSync, DynamoDB, etc.
 
 And usually, the thing people first start creating with the service are good-old HTTP APIs, like for example REST or even GraphQL. In those situations, since the actual users (potential customers) are the ones who will be invoking your Lambda functions, it's important that they are responding as fast as possible - meaning, we want to have function cold starts as short as possible, and afterward, make our code execute necessary logic in the most efficient way.
 
@@ -31,7 +31,7 @@ Consider these two [512MB RAM](https://user-images.githubusercontent.com/5121148
 
 ![Comparing function invocation duration - 512MB RAM vs 1024MB RAM.](./assets/5-tips-to-make-your-lambda-functions-run-faster-and-cheaper/lambda512vs1024.png)
 
-So, what we can see here is that with the 512MB of RAM Lambda function (blue), the billed duration is often 200ms. But, with 1024MB of RAM (red), which is 2x more, the billed duration gets reduced to 100ms, which is 2x less. Even the initial invocation's duration (the cold start one's) got reduced from 1400ms to 700ms. 
+So, what we can see here is that with the 512MB of RAM Lambda function (blue), the billed duration is most of the times 200ms. But, with 1024MB of RAM (red), which is 2x more, the billed duration gets reduced to 100ms, which is 2x less. Even the initial invocation's duration (the cold start one's) got reduced from 1400ms to 700ms. 
 
 Effectively, this means we're getting faster functions, for the same price!
 
