@@ -18,7 +18,7 @@ author: adrian
 date: 2020-10-19
 ---
 
-The AWS Lambda service allows us to easily deploy and run our own code, without worrying too much about the underlying infrastructure (when compared to pre-serverless). It essentially scales infinitely (with great power comes great responsibility), and can be connected with a bunch of services, like API Gateway, S3, AppSync, DynamoDB, etc.
+The AWS Lambda service allows us to easily deploy and run our own code, without worrying too much about the underlying infrastructure (when compared to non-serverless technologies). It essentially scales infinitely (with great power comes great responsibility), and can be connected with a bunch of other services, like API Gateway, S3, AppSync, DynamoDB, etc.
 
 And usually, the thing people first start creating with the service are good-old HTTP APIs, like for example REST or even GraphQL. In those situations, since the actual users (potential customers) are the ones who will be invoking your Lambda functions, it's important that they are responding as fast as possible - meaning, we want to have function cold starts as short as possible, and afterward, make our code execute necessary logic in the most efficient way.
 
