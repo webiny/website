@@ -22,10 +22,9 @@ thank you, Josh!
 
 Without further ado let's get started.
 
-// New gif will come here
 ![e-commerce gif](./assets/e-commerce-tutorial-nextjs-stripe/e-commerce-2.gif)
 
-TLDR; <ExternalLink href="http://www.github.com/webiny/webiny-examples/new_link_zhere">Get the code here</ExternalLink>
+TLDR; <ExternalLink href="http://www.github.com/webiny/webiny-examples">Get the code here</ExternalLink>
 
 ## 1. The e-commerce-starter
 
@@ -109,7 +108,7 @@ The `Products` content model, will contain the fields as shown in the image:
 
 When adding a `Reference field`, you can toggle the `Use as a list of references` switch in field settings, to do a multi-select. In this case, a product can have multiple categories.
 
-![](/assets/e-commerce-tutorial-nextjs-stripe/products_ref_field.png)
+![Products Ref Field](/assets/e-commerce-tutorial-nextjs-stripe/products_ref_field.png)
 
 The `Category` content model.
 
@@ -215,51 +214,214 @@ You can freely open a PR for the `goToProduct` function and make it your first P
 
 ## 4. Next.js + Stripe to create the payment intents
 
-In this starter we will use the <ExternalLink href="https://stripe.com/docs/payments/payment-intents">Stripe </ExternalLink> Payment intents API with Next.js and follow best practices as set out by Stripe and the industry.
+In this tutorial we will use the <ExternalLink href="https://stripe.com/docs/payments/payment-intents">Stripe Payment Intents</ExternalLink> API with Next.js and follow best practices as set out by Stripe and the industry.
 
-To set up the Next.js project using Stripe, we have to create a <ExternalLink href="https://stripe.com/">Stripe account</ExternalLink>, and get the `Secret key`, and the `Publishable key` from <ExternalLink href="https://dashboard.stripe.com/test/apikeys">Stripe Developer API Keys Dashboard</ExternalLink>.
+We already have pre-build components such as the `CheckoutForm.js` in our `e-commerce-starter` app,
+the two components that aren't finished and we will be finishing them in this tutorial, are the
+`CheckoutForm.js` and the `Layout.js` components.
 
-Again, follow up the project here, to get all the necessary code files for the project, we will focus only on the main parts of setting up the Stripe with Next.js.
+The `CheckoutForm.js` component has the `billingDetails` and an empty spot for the `CardElement`
+we are going to add together, it has a submit button and a spot to display some errors. Check out the `CheckoutForm.js` below:
 
-### Server and Client Side
+`gist:AlbionaHoti/b3efdb52196d42113b130dace41159f2`
 
-As mentioned early that on the `checkout` page we will use the `getServerSideProps` life cycle method of Next.js, where we will create the Payment intent.
+The `Layout.js` component, you can think of this component as a wrapper around all of our pages in the site. In here we will going to load the `stripe.js`.
 
-Create the `checkout.js` file in the `pages` folder, and paste the following snippet:
+Check out the `Layout.js` component below:
 
-`gist:AlbionaHoti/a2355927e3a79f2db0bd6c78c47a929d`
+`gist:AlbionaHoti/c4233096fe3eee54833ddbd73578d96e`
 
-Let's go through the code and explain what are we doing here.
+---
 
-For the server side, in the `getServerSideProps` life cycle method we are storing a cookie where we check, if a payment intent was created or not, and for that we are using the `nookies` library. Make sure to update the `STRIPE_SECRET_KEY_HERE`, and the `STRIPE_PUBLISHABLE_KEY_HER`with your keys.
+One last check regarding the stripe integration before we can start coding,
+is that we need to go at the root of `e-commerce-starter` project and add two variables on `.env`file:
 
-Now, from the client side, we are using the client side Stripe libraries: `@stripe/stripe-js` and `@stripe/react-stripe-js` to create a secure `paymentMethod` which contains our card information that is passed onto Stripe.
+```
+PUBLISHABLE_KEY=pk_test_1234
+SECRET_KEY=sk_test_1234
+```
 
-We created `stripePromise` to pass the `Elements` provider, and with the `stripePromise` and the `Elements` provider we are going to wrap the `CheckoutForm` component where we pass the `paymentIntent` from props to CheckoutForm.
+The publishable and the secret key can be found in the Stripe dashboard,
+make sure to sign up for a Stripe account if you didn't already, and navigate to the <ExternalLink href="https://dashboard.stripe.com/test/apikeys">Stripe Dashboard</ExternalLink> - make
+sure that you are `Viewing test data`, if not, toggle it `on`. Click on `Developers` and on the `API keys` as shown in the image below.
 
-### Checkout Form
+![Stripe Dashboard](/assets/e-commerce-tutorial-nextjs-stripe/stripe-dashboard.png)
 
-Regarding the `CheckoutForm` component, create a file in the `components/CheckoutForm.js` and paste the following snippet:
+Now, copy the `keys` to the `.env` file, and run the `e-commerce-starter` project by running the `npm run dev` command,
+and the project will be served in the `localhost:3000`:
 
-`gist:AlbionaHoti/e4b6d3c0c8b283c397245559c0edb63b`
+![Checkout form page](/assets/e-commerce-tutorial-nextjs-stripe/checkout-page.png)
 
-Let's go through the code and understand what are we doing here. `@stripe/react-stripe-js` exposes hooks and components that we can use, such as:
+When clicking on the cart, and proceed to do the payment, this is the view we will get in `/checkout` page.
+Here we have the checkout view, to proceed with the payment 🚀
 
-- `CardElement`
-- `useStripe`
-- `useElements`
+Let's go and add the `Pay` functionality!
 
-The two stripe hooks, we will be using inside the `handleSubmit` function to have a reference to `stripe` and `elements`.
+---
 
-Now, regarding the stripe intent confirmation, Stripe provides the `confirmCardPayment` which accepts 3 arguments: the `client_secret`, and the optional `data`, and `options`.
+Install the packages listed below:
 
-From the props of `paymentIntent`, we have access to the `client_secret`, and on line 94, we update the handleSubmit function to send a request to Stripe to confirm the Payment intent.
+```jsx
+npm install stripe @stripe/stripe-js @stripe/react-stripe-js axios --save
+```
 
-The other important bits, are the `request` to `/api/payment_intents` and the `CardElement` where Stripe provides a fully secure and baked credit card input with expiry, CVV and zip/post code. For the `/api/payment_intents` we update the payment intent with the newly cart amount from the React context as shown at the line `82`.
+Now, head back to the code editor and open the `component/Layout.js` file and add these changes:
 
-Paste the following snippet in your `api/payment_intents.js` file:
+```jsx
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 
-`gist:AlbionaHoti/f3a8fb683ca6f0adbae83361a77db6e0`
+const stripePromise = loadStripe(`${process.env.PUBLISHABLE_KEY}`);
+```
+
+Now, we have a stripe promise which resolves to stripe.js, we have to find a way to
+inject that stripe.js object into the rest of our Next.js components.
+
+To do that, we will use the `Elements` provider from `react-stripe-js` library, and wrap the
+`{props.children}` of each of our pages in the Elements provider:
+
+```jsx
+<Elements stripe={stripePromise}>{props.children}</Elements>
+```
+
+Lets do a quick check if it's everything working on `localhost:3000`!
+
+The project should compile without any errors.
+
+Here is the full view of the `components/Layout.js` file:
+
+`gist:AlbionaHoti/5c07c415d6bedfd6bc910bcd0ec64f3a`
+
+One thing is still missing, and that is the Card Input, lets add it right now 🙂
+
+Navigate to the `components/CheckoutForm.js` file and import the Card Element like so:
+
+```jsx
+import { CardElement } from "@stripe/react-stripe-js";
+```
+
+Now, add the `CardElement` to the `CardElementContainer`
+
+```jsx
+<CardElementContainer>
+  <CardElement />
+</CardElementContainer>
+```
+
+You should see now a Card input! Lets go and change the styles of the Card
+input by adding the `options` prop to the `CardElement` and passing there
+the `cardElementOpts` variable that was pre-build with the `e-commerce-starter`.
+
+Whoa! 🚀Now that we have the Card input set-up, one thing is missing and
+that is the payment, we are not able to accept payments yet.
+
+Head over to `components/CheckoutForm.js` to continue adding the payment functionality.
+
+**The steps we will do are:**
+
+- 1. Create a payment intent on the server
+  - One call to the stripe node library, to get the client_secret of that payment intent
+- 2. Create a payment method
+  - To create a payment method, we will need a reference of stripe.js object which has the function to create the `payment method`
+  - When we create the `payment method` we will need a reference to the CardElement that we defined earlier.
+- 3. Confirm the card payment
+
+  - We will combine the `payment method` id, and use the `client_secret` that we'll get in the first step.
+
+- 1. Create a payment intent on the server
+
+Now, we will use `axios` to make a `post` request to our backend.
+
+```jsx
+const { data: clientSecret } = await axios.post("/payment_intents", {
+  amount: totalPrice * 100,
+});
+
+console.log("clientSecret:", clientSecret);
+```
+
+The `totalPrice` we are getting is from the `total` context, that holds the total
+price of all the products that are on the `Cart`. Whenever the price changes,
+it will end up into the `total` context and triple down into our component `CheckoutForm.js`.
+
+Now, lets check what is happening on the server side, navigate to `pages/api/payment_intents.js`,
+and see what's happening. Check out the code snipped below:
+
+`gist:AlbionaHoti/40a44f90354b16380515360ffd1c5b1b`
+
+As you can see, for the `/payment_intents` endpoint, we have a simple handler.
+We extract the `amount` from the request body, we make a request to `stripe.paymentIntents.create`
+sending the `amount` and the `currency`, and we return back the payment intents client secret.
+
+Now, go back to Chrome and see what happens when we have the credit card number in the input 🚀
+In the console tab of developer tools, if there are no errors, you'll see the `clientSecret` logged.
+
+We will be using the `clientSecret` to confirm the card payment once we create the payment method!
+
+- 2. Create a payment method
+
+To create the payment method, we will add another function under the axios request, as seen in the snippet below:
+
+```jsx
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+
+// Add the reference to the elements object, using the useElements() hook
+// and the reference to the stripe object, using the useStripe() hook
+
+const CheckoutForm = () => {
+  const stripe = useStripe();
+  const elements = useElements();
+
+  const handleSubmit = async e => {
+    //...
+    const cardElement = elements.getElement(CardElement);
+
+    // create the payment method:
+    const paymentMethodReq = await stripe.createPaymentMethod({
+      type: "card",
+      card: cardElement,
+      billing_details: billingDetails,
+    });
+
+    console.log("paymentMethodReq: ", paymentMethodReq);
+    //...
+  };
+};
+```
+
+What we are doing here is that we provide the `billingDetails`, we have from our checkout form, the `cardElement` and the
+type of method which in this case its `card`.
+
+Now lets head over to chrome and test 🙂
+
+![Payment method req](/assets/e-commerce-tutorial-nextjs-stripe/payment_method_req.png)
+
+This is what we'll get from the `paymentMethodReq`, it resolved to a paymentMethod object which
+has a `paymentMethod` `id` which we'll be going to use to confirm the card payment 🎉
+
+- 3. Confirm the card payment
+
+Now, we'll confirm the card payment by using the `confirmCardPayment` stripe method, add the following snippet on `CheckoutForm.js` file:
+
+```jsx
+const confirmCardPayment = await stripe.confirmCardPayment(clientSecret, {
+  payment_method: paymentMethodReq.paymentMethod.id,
+});
+
+console.log("confirmCardPayment: ", confirmCardPayment);
+```
+
+Now, go ahead at `localhost:3000` and add some products to the cart, and hit pay, check on the console log to find the below result:
+
+![Payment intent](/assets/e-commerce-tutorial-nextjs-stripe/payment_intent.png)
+
+We got the `paymentIntent` id, and the `status` which is `succeeded`.
+
+So far, we successfully created a functional payments integration with Stripe 🎉
+
+Check out the below snippet, to get the full code for the `CheckoutForm.js` file:
+
+`gist:/AlbionaHoti/1c3a724ce96a1e63177a2e8cbbc490e2`
 
 # Conclusion
 
