@@ -52,7 +52,7 @@ Now that we have the starter project, we can focus on creating the back-end with
 
 ## 2. Webiny Headless CMS
 
-Webiny provides several serverless websites such as the `Headless CMS`, `Page Builder`, `Form Builder` and `File Manager`.
+Webiny provides several serverless apps such as the `Headless CMS`, `Page Builder`, `Form Builder` and `File Manager`.
 In this tutorial, we are going to use the Headless CMS only.
 
 ### Prerequisites
@@ -69,7 +69,7 @@ In this tutorial, we are going to use the Headless CMS only.
   The Headless CMS app exposes data via the `Content Delivery API`,
   which is a simple GraphQL API that dynamically updates its schema on
   content model changes that you make. Once you have deployed your API stack
-  (using the `yarn webiny deploy api --env=local` command), you should be able to
+  (using the `npx webiny deploy api --env=local` command), you should be able to
   find the Content Delivery API URL in the `API Information` menu item, in your admin app.
 
 - Content Delivery API Access Token
@@ -214,6 +214,7 @@ and that is the `goToProduct` that should open a modal, and show the product det
 > </ExternalLink>
 
 You can freely open a PR for the `goToProduct` function and make it your first PR @ <ExternalLink href="https://www.webiny.com/">Webiny</ExternalLink>. 👩🏻‍🚀
+Head over to our <ExternalLink href="https://github.com/webiny/community">Community repository </ExternalLink> to open the PR 🚀
 
 ## 4. Next.js + Stripe to create the payment intents
 
