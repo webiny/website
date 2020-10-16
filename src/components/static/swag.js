@@ -338,7 +338,7 @@ export default ({children, ...props}) => (
           your package.
         </ClaimNote>
         <ClaimNote>
-          ** We reserve the right to decide it your contribution if valuable to our project and make the final decision on the swag requests.
+          ** We reserve the right to decide if your contribution is valuable to our project and make the final decision on the swag requests.
         </ClaimNote>
       </ContentContainer>
     </section>
