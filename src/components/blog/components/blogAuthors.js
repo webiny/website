@@ -40,7 +40,7 @@ export default {
     mislav: {
         name: "Mislav Streicher",
         description: "Business Development @ Webiny",
-        twitter: false,
+        twitter: "mislavstreicher",
         avatar: mislavImg,
     },
     bruno: {
