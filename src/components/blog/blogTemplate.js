@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, Link, navigate } from "gatsby";
+import { graphql, Link } from "gatsby";
 import styled from "react-emotion";
 import { css } from "emotion";
 import theme from "../utils/theme";
@@ -253,13 +253,14 @@ export default function Template({
                         <span className={"text"}>Find more articles on the topic of:</span>
                         {Array.isArray(frontmatter.tags) &&
                             frontmatter.tags.map((tag, index) => (
-                                <span
+                                <Link
                                     key={index}
                                     className="tag"
-                                    onClick={() => navigate("/blog", { state: { query: tag } })}
+                                    to={"/blog"}
+                                    state={{ query: tag }}
                                 >
                                     {tag}
-                                </span>
+                                </Link>
                             ))}
                     </TagList>
                 </BlogContainer>
