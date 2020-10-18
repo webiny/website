@@ -253,12 +253,7 @@ export default function Template({
                         <span className={"text"}>Find more articles on the topic of:</span>
                         {Array.isArray(frontmatter.tags) &&
                             frontmatter.tags.map((tag, index) => (
-                                <Link
-                                    key={index}
-                                    className="tag"
-                                    to={"/blog"}
-                                    state={{ query: tag }}
-                                >
+                                <Link key={index} className="tag" to={`/blog/?query=${tag}`}>
                                     {tag}
                                 </Link>
                             ))}

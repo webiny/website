@@ -1,6 +1,8 @@
-import React, { Fragment, useState, useEffect, useRef } from "react";
+import React, { Fragment, useState, useEffect, useRef, useCallback } from "react";
 import { DelayInput } from "react-delay-input";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import queryString from "query-string";
+import { navigate } from "gatsby-link";
 // utils
 import ContentContainer from "../ui/content-container";
 import BlogCard from "./components/blog-card";
@@ -45,7 +47,8 @@ const Blogs = props => {
 
     // Set "search" from query
     useEffect(() => {
-        const query = location?.state?.query;
+        const searchJSON = queryString.parse(location.search);
+        const { query } = searchJSON;
 
         if (!search && query) {
             setSearch(query.toLowerCase());
@@ -96,6 +99,16 @@ const Blogs = props => {
         setShowMore(list.length < filteredContent.length);
     }, [list]);
 
+    const clearSearch = useCallback(() => {
+        setSearch("");
+        // Remove "search" query if exists
+        const searchJSON = queryString.parse(location.search);
+        const { query } = searchJSON;
+        if (query) {
+            navigate("/blog/");
+        }
+    }, [location]);
+
     return (
         <Fragment>
             <FeaturedContentSection {...props}>
@@ -131,10 +144,7 @@ const Blogs = props => {
                                 }}
                             />
                             {search.length ? (
-                                <CloseIcon
-                                    className={"icon icon--close"}
-                                    onClick={() => setSearch("")}
-                                />
+                                <CloseIcon className={"icon icon--close"} onClick={clearSearch} />
                             ) : (
                                 <SearchIcon className={"icon"} />
                             )}
