@@ -295,7 +295,7 @@ export default ({ children, ...props }) => (
                         <Bold>2. Claim details:</Bold>
                         <ul>
                             <li>Your GitHub username</li>
-                            <li>Any URLs that are relevant</li>
+                            <li>Any URLs that are relevant (link to a PR, article...)</li>
                             <li>Any other information you think is important</li>
                         </ul>
                     </div>
@@ -320,6 +320,10 @@ export default ({ children, ...props }) => (
                     </Bold>{" "}
                     be shared with any 3rd parties. We just need the details to know where to send
                     your package.
+                </ClaimNote>
+                <ClaimNote>
+                    ** We reserve the right to decide if your contribution is valuable to our
+                    project and make the final decision on the swag requests.
                 </ClaimNote>
             </ContentContainer>
         </section>

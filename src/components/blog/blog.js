@@ -1,6 +1,8 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect, useRef, useCallback } from "react";
 import { DelayInput } from "react-delay-input";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import queryString from "query-string";
+import { navigate } from "gatsby-link";
 // utils
 import ContentContainer from "../ui/content-container";
 import BlogCard from "./components/blog-card";
@@ -30,16 +32,36 @@ import {
 } from "./blog-styles";
 
 const CARDS_PER_PAGE = 9;
+const VERTICAL_OFFSET = 200;
 
 const Blogs = props => {
-    const { data } = props;
+    const { data, location } = props;
     const [filteredContent, setFilteredContent] = useState(data);
     const [search, setSearch] = useState("");
+    const searchBarRef = useRef();
 
     const [showMore, setShowMore] = useState(true);
     const [list, setList] = useState([]);
     const [cursor, setCursor] = useState(0);
     const prevCursor = usePrevious(cursor);
+
+    // Set "search" from query
+    useEffect(() => {
+        const searchJSON = queryString.parse(location.search);
+        const { query } = searchJSON;
+
+        if (!search && query) {
+            setSearch(query.toLowerCase());
+            if (searchBarRef && searchBarRef.current) {
+                const top = searchBarRef.current?.getClientRects()?.[0]?.y;
+
+                window.scrollTo({
+                    top: top - VERTICAL_OFFSET,
+                    behavior: "smooth",
+                });
+            }
+        }
+    }, [location]);
 
     // Filter result based on "search"
     useEffect(() => {
@@ -77,6 +99,16 @@ const Blogs = props => {
         setShowMore(list.length < filteredContent.length);
     }, [list]);
 
+    const clearSearch = useCallback(() => {
+        setSearch("");
+        // Remove "search" query if exists
+        const searchJSON = queryString.parse(location.search);
+        const { query } = searchJSON;
+        if (query) {
+            navigate("/blog/");
+        }
+    }, [location]);
+
     return (
         <Fragment>
             <FeaturedContentSection {...props}>
@@ -90,7 +122,7 @@ const Blogs = props => {
                     <FeaturedBlog data={data[0].frontmatter} />
                     <SearchAndFilterWrapper>
                         <ResultInfo>
-                            <p className="text">
+                            <p className="text" ref={searchBarRef}>
                                 Showing {list.length} of {data.length}
                                 <span> Blogs </span>
                             </p>
@@ -112,10 +144,7 @@ const Blogs = props => {
                                 }}
                             />
                             {search.length ? (
-                                <CloseIcon
-                                    className={"icon icon--close"}
-                                    onClick={() => setSearch("")}
-                                />
+                                <CloseIcon className={"icon icon--close"} onClick={clearSearch} />
                             ) : (
                                 <SearchIcon className={"icon"} />
                             )}
