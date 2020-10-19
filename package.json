@@ -40,6 +40,7 @@
     "gatsby-transformer-sharp": "^2.5.15",
     "js-cookie": "^2.2.1",
     "posthog-js": "^1.4.4",
+    "query-string": "^6.13.6",
     "react": "^16.9.0",
     "react-addons-css-transition-group": "^15.6.2",
     "react-delay-input": "^4.1.0",
