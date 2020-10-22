@@ -13,7 +13,7 @@ from the best Open Source Projects such as Webiny, Next.js, React, etc.
 
 Before we continue, let's go through what you'll learn about building this website.
 
-You will learn how to create the back-end with <ExternalLink href="http://docs.webiny.com/docs/webiny-apps/headless-cms/features/content-modeling?utm_source=Webiny-blog&utm_medium=webiny-headless-cms-features-docs&utm_campaign=webiny-blog-e-commerce-tutorial-oct-19&utm_content=webiny-headless-cms-features-docs&utm_term=W00180">Webiny Headless CMS</ExternalLink>
+You will learn how to create the back-end with <ExternalLink href="http://docs.webiny.com/docs/webiny-apps/headless-cms/features/content-modeling?utm_source=Webiny-blog&utm_medium=webiny-h3-tutorial&utm_campaign=webiny-blog-e-commerce-tutorial-oct-19&utm_content=webiny-headless-cms-features-docs&utm_term=W00180">Webiny Headless CMS</ExternalLink>
 and set up two content models, the products, and the categories. Then, fetching the data from the headless CMS to the Next.js project using Apollo GraphQL.
 Last but not least, integrating Stripe to implement a shopping cart for our products.
 
@@ -24,8 +24,6 @@ Without further ado, let's get started.
 First, let's take a look at what we'll build in the below. ⬇️
 
 ![e-commerce gif](./assets/e-commerce-tutorial-nextjs-stripe/demo-e-commerce-starter.gif)
-
-TLDR; <ExternalLink href="https://github.com/webiny/e-commerce-starter">Get the code here</ExternalLink>
 
 Without further ado let's get started.
 
@@ -43,7 +41,7 @@ Note that the data shown in the starter is static.
 Clone the `e-commerce-starter` project by running the following commands to have the project set up and running.
 
 ```
-git clone https://github.com/AlbionaHoti/e-commerce-start // will update the link
+git clone https://github.com/webiny/e-commerce-starter
 cd e-commerce-start
 npm install
 npm run dev
@@ -79,7 +77,7 @@ In this tutorial, we are going to use the Headless CMS only.
 
   In order to access the data via the Content Delivery API, we'll need a valid `Access Token`.
 
-  1.  Follow the <ExternalLink href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens?utm_source=Webiny-blog&utm_medium=webiny-headless-cms-access-tokens&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-headless-cms-access-tokens&utm_term=W00187">link</ExternalLink> here to create an access token
+  1.  Follow the <ExternalLink href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens?utm_source=Webiny-blog&utm_medium=webiny-h3-tutorial&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-headless-cms-access-tokens&utm_term=W00187">link</ExternalLink> here to create an access token
       for a specific environment.
   2.  Use this access token as a HTTP header to your GraphQL Playground in `/cms/read/{alias}` endpoints.
       ![Access token auth](/assets/e-commerce-tutorial-nextjs-stripe/access-tokens-graphql.png)
@@ -87,7 +85,7 @@ In this tutorial, we are going to use the Headless CMS only.
 > In the root of the `e-commerce-starter` app that you set up,
 > you will find the `.env` file, that's the place where we need to save the Content Delivery API, and the Content Delivery API Access Token
 
-Now that we have all of the prerequisites out of the way, it's time to create our first <ExternalLink href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/content-modeling/?utm_source=Webiny-blog&utm_medium=webiny-headless-cms-content-modeling&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-headless-cms-content-modeling&utm_term=W00182">content model</ExternalLink> for the e-commerce website.
+Now that we have all of the prerequisites out of the way, it's time to create our first <ExternalLink href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/content-modeling/?utm_source=Webiny-blog&utm_medium=webiny-h3-tutorial&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-headless-cms-content-modeling&utm_term=W00182">content model</ExternalLink> for the e-commerce website.
 
 We are going to create two content models, the `products` and `category`
 
@@ -166,13 +164,19 @@ Now that we installed the necessary packages, let's check the `e-commerce-starte
 
 ---
 
-Now that we have covered the packages used and the folder structure of our `e-commerce-starter` app, let's jump on the code.
+We've covered the packages used and the folder structure of our `e-commerce-starter` app, let's jump on the code.
 
 Open the `_app.js` file and paste the following snippet:
 
 `gist:AlbionaHoti/22688a0c4fac917a17f3ddaec13fc9b5`
 
-Now that we've seen what the `_app.js` includes, of let's dig into the actual GraphQL client file.
+As we can see, the `_app.js` has different external components that act as wrappers to our Next.js app.
+
+- `LayoutComponent` - Holds the base layout for our app.
+- `CartProvider` - Is the React context for state management, in this case for the products cart data.
+- `ApolloProvider` - We'll explain the `ApolloProvider` below.
+
+Let's go into the actual GraphQL client file.
 
 Go ahead in the root of the project, and create the `lib/apolloClient.js` file, and paste the following snippet:
 
@@ -184,7 +188,7 @@ tell the Apollo how to go and fetch the data, and we do that by calling a new in
 and pass the options to this, which is the `URI` → That means: `Where on the internet does your GraphQL URL exist?` 🚀
 This is where the Webiny's `Content Delivery API` URL comes into play.
 
-We noted a small and very important detail on the Webiny Headless CMS section, and that is: `To access the data via the Content Delivery API, we'll need a valid` <ExternalLink href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens?utm_source=Webiny-blog&utm_medium=webiny-headless-cms-access-tokens&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-headless-cms-access-tokens&utm_term=W00187">Access Token</ExternalLink>
+We noted a small and very important detail on the Webiny Headless CMS section, and that is: `To access the data via the Content Delivery API, we'll need a valid` <ExternalLink href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens?utm_source=Webiny-blog&utm_medium=webiny-h3-tutorial&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-headless-cms-access-tokens&utm_term=W00187">Access Token</ExternalLink>
 
 So, in the headers, we pass the `authorization` with our Access Token.
 
@@ -231,7 +235,7 @@ there you'll find the product cart functionalities such as `addToCart`,
 `removeFromCart`, and `addToFavorites`. One functionality is missing though,
 and that is the `goToProduct` that should open a modal, and show the product details⁉️
 
-> This year Webiny is participating in the <ExternalLink href="https://www.webiny.com/blog/webiny-hacktoberfest-2020"> Hacktoberfest 2020 </ExternalLink> - Join us on developing the leading serverless framework ⚡️
+> This year Webiny is participating in the <ExternalLink href="https://www.webiny.com/blog/webiny-hacktoberfest-2020?utm_source=Webiny-blog&utm_medium=webiny-h3-tutorial&utm_campaign=webiny-blog-e-commerce-tutorial-oct-19&utm_content=webiny-hacktoberfest-2020&utm_term=W00181"> Hacktoberfest 2020 </ExternalLink> - Join us on developing the leading serverless framework ⚡️
 
 You can freely open a PR for the `goToProduct` function and make it your first PR @ <ExternalLink href="https://www.webiny.com/?utm_source=Webiny-blog&utm_medium=webiny-website&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-website&utm_term=W00258">Webiny</ExternalLink>. 👩🏻‍🚀
 Head over to our <ExternalLink href="https://github.com/webiny/community?utm_source=Webiny-blog&utm_medium=webiny-github-community&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-github-community-repo&utm_term=W00259">Community repository </ExternalLink> to open the PR 🚀
@@ -247,6 +251,8 @@ Before we continue, let's get ready for the section by following the two prerequ
 
 1. Create a <ExternalLink href="https://stripe.com/">Stripe account</ExternalLink>
 2. We need the `Publishable` and `Secret` Key from the <ExternalLink href="http://dashboard.stripe.com">dashboard.stripe.com</ExternalLink>
+
+---
 
 We already have pre-build components such as the `CheckoutForm.js`, and the `Layout.js` component in our
 `e-commerce-starter` app, but these two are not complete! We'll be
@@ -523,6 +529,6 @@ You're welcome to check out the complete source code for example-site and source
 
 If you like the post please share it on <ExternalLink href="https://twitter.com/WebinyPlatform">Twitter </ExternalLink>.
 Webiny has a very welcoming Community! If you have any questions,
-please <ExternalLink href="webiny.com/slack">join us on slack </ExternalLink>.
+please <ExternalLink href="http://webiny.com/slack?utm_source=Webiny-blog&utm_medium=webiny-h3-tutorial&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-slack-community&utm_term=W00260">join us on slack </ExternalLink>.
 
-You can also follow us on Twitter <ExternalLink href="https://twitter.com/WebinyPlatform">@WebinyPlatform</ExternalLink>.
+You can also follow us on Twitter <ExternalLink href="http://webiny.com/slack?utm_source=Webiny-blog&utm_medium=webiny-h3-tutorial&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-slack-community&utm_term=W00260">@WebinyPlatform</ExternalLink>.
