@@ -23,9 +23,9 @@ Without further ado, let's get started.
 
 First, let's take a look at what we'll build in the below. ⬇️
 
-![e-commerce gif](./assets/e-commerce-tutorial-nextjs-stripe/e-commerce-2.gif)
+![e-commerce gif](./assets/e-commerce-tutorial-nextjs-stripe/demo-e-commerce-starter.gif)
 
-TLDR; <ExternalLink href="http://www.github.com/webiny/webiny-examples">Get the code here</ExternalLink>
+TLDR; <ExternalLink href="https://github.com/webiny/e-commerce-starter">Get the code here</ExternalLink>
 
 Without further ado let's get started.
 
@@ -150,7 +150,7 @@ We are going to start off by installing a few NPM packages:
 npm i @apollo/client graphql --save
 ```
 
-Now that we installed the necessary packages, lets check the `e-commerce-starter` website structure in the image below:
+Now that we installed the necessary packages, let's check the `e-commerce-starter` website structure in the image below:
 -Note: update the below image with the new structure
 -Note: updated image
 
@@ -172,7 +172,7 @@ Open the `_app.js` file and paste the following snippet:
 
 `gist:AlbionaHoti/22688a0c4fac917a17f3ddaec13fc9b5`
 
-Now that we've seen what the `_app.js` is made of, lets dig into the actual GraphQL client file.
+Now that we've seen what the `_app.js` includes, of let's dig into the actual GraphQL client file.
 
 Go ahead in the root of the project, and create the `lib/apolloClient.js` file, and paste the following snippet:
 
@@ -181,14 +181,14 @@ Go ahead in the root of the project, and create the `lib/apolloClient.js` file, 
 The important bit of the above snippet is the new instance of `ApolloClient`
 which has some options such as the `link` → this is the part where we
 tell the Apollo how to go and fetch the data, and we do that by calling a new instance of `HttpLink`,
-and pass the options to this, which is the `uri` → That means: `Where on the internet does your GraphQL URL exists?` 🚀
+and pass the options to this, which is the `URI` → That means: `Where on the internet does your GraphQL URL exist?` 🚀
 This is where the Webiny's `Content Delivery API` URL comes into play.
 
-We noted a small and very important detail on the Webiny Headless CMS section, and that is: `In order to access the data via the Content Delivery API, we'll need a valid` <ExternalLink href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens?utm_source=Webiny-blog&utm_medium=webiny-headless-cms-access-tokens&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-headless-cms-access-tokens&utm_term=W00187">Access Token</ExternalLink>
+We noted a small and very important detail on the Webiny Headless CMS section, and that is: `To access the data via the Content Delivery API, we'll need a valid` <ExternalLink href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens?utm_source=Webiny-blog&utm_medium=webiny-headless-cms-access-tokens&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-headless-cms-access-tokens&utm_term=W00187">Access Token</ExternalLink>
 
 So, in the headers, we pass the `authorization` with our Access Token.
 
-Now, finally we are going to start fetching the actual content from our headless CMS back-end project. 🚀🚀
+Now, finally, we are going to start fetching the actual content from our headless CMS back-end project. 🚀🚀
 
 With this set-up, now we have the `apolloClient` that is passed to the `ApolloProvider` in
 the `_app.js` file, for the `ApolloProvider` wraps every single page within our application,
@@ -258,14 +258,12 @@ spot to display some errors. Check out the `CheckoutForm.js` below:
 
 `gist:AlbionaHoti/b3efdb52196d42113b130dace41159f2`
 
-The `Layout.js` component, you can think of this component as a wrapper around
+For the `Layout.js` component, you can think of it as a wrapper component around
 all of our pages in the site. In here we will going to load the `stripe.js`.
 
 Check out the `Layout.js` component below:
 
 `gist:AlbionaHoti/dce28e953da3c7c8f8c3a62e3bb0dc4c`
-
----
 
 One last check regarding the stripe integration before we can start coding,
 is that we need to save the two Stripe keys in a `sticky desktop note` or anywhere it's easier for you to grab the data later:
@@ -325,9 +323,9 @@ library, and wrap the `{props.children}` of each of our pages in the `Elements` 
 <Elements stripe={stripePromise}>{props.children}</Elements>
 ```
 
-Lets do a quick check if it's everything working/compiling on `http://localhost:3000`!
+Let's do a quick check if it's everything working/compiling on `http://localhost:3000`!
 
-One thing is still missing, and that is the Card Input, lets add it right now 🙂
+One thing is still missing, and that is the Card Input, let's add it right now 🙂
 
 Navigate to the `components/CheckoutForm.js` file and import the Card Element like so:
 
@@ -347,7 +345,7 @@ You should see now a Card input in the `/checkout` page, check out the image bel
 
 ![Card input](./assets/e-commerce-tutorial-nextjs-stripe/card_input.png)
 
-Lets go and change the styles of the Card input by adding
+Let's go and change the styles of the Card input by adding
 the `options` prop to the `CardElement` and passing there the
 `cardElementOpts` variable that was pre-build with the `e-commerce-starter`.
 
@@ -404,7 +402,7 @@ that holds the total price of all the products that are on the `Cart`.
 Whenever the price changes, it will end up into the `total` context and
 triple down into our component `CheckoutForm.js`
 
-Now, lets check what is happening on the server side,
+Now, let's check what is happening on the server side,
 navigate to `pages/api/payment_intents.js`, and see what's happening.
 Check out the code snipped below:
 
@@ -415,7 +413,7 @@ Check out the code snipped below:
 As you can see, for the `/payment_intents` endpoint, we have a simple handler.
 We extract the `amount` from the request body,
 we make a request to `stripe.paymentIntents.create`
-sending the `amount` and the `currency`, and we return back the payment intents `client secret`.
+sending the `amount` and the `currency`, and we return the payment intents `client secret`.
 
 Now, go back to Chrome and see what happens when we have the credit card number in the input 🚀
 
@@ -469,7 +467,7 @@ const CheckoutForm = () => {
 };
 ```
 
-Now lets head over to the console on the developer tools of chrome and test 🙂
+Now let's head over to the console on the developer tools of chrome and test 🙂
 
 ![Payment method Request](/assets/e-commerce-tutorial-nextjs-stripe/payment_method_req.png)
 
@@ -493,18 +491,20 @@ console.log("confirmCardPayment: ", confirmCardPayment);
 ```
 
 Now, go ahead at `localhost:3000` and add
-some products to the cart, and hit `pay` , check on the console
+some products to the cart, and hit `pay`, check on the console
 log to find the below result:
 
 ![Confirm Payment Method](/assets/e-commerce-tutorial-nextjs-stripe/payment_intent.png)
 
 We got the `paymentIntent` id, and the `status` which is `succeeded`.
 
-So far, we successfully created a functional payments integration with Stripe 🎉
-
 Check out the below snippet, to get the full code for the `CheckoutForm.js` file:
 
 `gist:AlbionaHoti/e417c1374d7539e729c06f8bcd42e3bb`
+
+So far, we successfully created a functional payment integration with Stripe. 🎉 We started by
+adding the card input with Stripe javascript libraries, and continued with the set-up of
+payment intent, the payment method, and lastly, confirm the card payment.
 
 ## Summary
 
