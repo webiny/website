@@ -214,14 +214,12 @@ Before jumping on the `localhost:3000/` to see the actual data, we need to add o
 
 Navigate to the `pages/index.js` file, and paste the following snippet:
 
-`gist:AlbionaHoti/3248bb31ba4192d2fe7076d3ca24c285`
+`gist:AlbionaHoti/ff8a1b41a945b8b2e82bba8209fbac24`
 
 The `getStaticProps` function gets called at build time on server-side.
 It won't be called on client-side, so you can even do direct database queries.
 
 Inside this function, we are querying our GraphQL API, and cashing the data in the background. Now, you can freely update your content on the Webiny headless CMS 🎉
-
-Navigate to the `localhost:3000` and check your products rendering on the product cards 🚀 🚀
 
 ![Fetching products](./assets/e-commerce-tutorial-nextjs-stripe/fetching-data.png)
 
@@ -265,7 +263,7 @@ all of our pages in the site. In here we will going to load the `stripe.js`.
 
 Check out the `Layout.js` component below:
 
-`gist:AlbionaHoti/2ed7c2e78cae3c5da365ce82cf437fca`
+`gist:AlbionaHoti/dce28e953da3c7c8f8c3a62e3bb0dc4c`
 
 ---
 
@@ -412,7 +410,7 @@ Check out the code snipped below:
 
 `gist:AlbionaHoti/757544d7953962842bfac5a50f9a6010`
 
-> Note: Provide your Stripe `secret key` on the 3rd line
+> Note: Provide your Stripe `secret key` on the 3rd line on `pages/api/payment_intents.js`
 
 As you can see, for the `/payment_intents` endpoint, we have a simple handler.
 We extract the `amount` from the request body,
@@ -506,7 +504,7 @@ So far, we successfully created a functional payments integration with Stripe �
 
 Check out the below snippet, to get the full code for the `CheckoutForm.js` file:
 
-`gist:AlbionaHoti/1c3a724ce96a1e63177a2e8cbbc490e2`
+`gist:AlbionaHoti/e417c1374d7539e729c06f8bcd42e3bb`
 
 ## Summary
 
