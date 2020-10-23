@@ -167,21 +167,50 @@ const blogStyles = css(
     }),
 );
 
-const TagList = styled("div")({
-    "& .tag": {
-        boxSizing: "border-box",
-        padding: "2px 10px",
-        border: "1px solid #EAEAEA",
-        backgroundColor: "#FAFAFC",
-        textTransform: "uppercase",
-        fontSize: 9,
-        fontWeight: theme.fontWeight.semiBold,
-        color: "#313097",
-        marginRight: 8,
-        marginBottom: 5,
-        display: "inline-block",
-    },
+const HorizontalLine = styled("div")({
+    width: "100%",
+    height: 1,
+    marginTop: 32,
+    marginBottom: 24,
+    backgroundColor: theme.color.darkGray,
 });
+
+const TagList = styled("div")(
+    {
+        "& .tag": {
+            boxSizing: "border-box",
+            padding: "2px 10px",
+            border: "1px solid #EAEAEA",
+            backgroundColor: "#FAFAFC",
+            textTransform: "uppercase",
+            fontSize: 9,
+            fontWeight: theme.fontWeight.semiBold,
+            color: "#313097",
+            marginRight: 8,
+            marginBottom: 5,
+            display: "inline-block",
+            cursor: "pointer",
+            transition: "transform 200ms ease-in",
+
+            "&:hover": {
+                transform: "translateY(-2px)",
+            },
+        },
+    },
+    mq({
+        "& .text": {
+            fontSize: [theme.fontSize.base, theme.fontSize.xl],
+            display: ["block", "inline-block"],
+            marginRight: [0, 16],
+            marginBottom: [8, 0],
+        },
+        "& .tag": {
+            fontSize: [9, 12],
+            marginRight: [8, 12],
+            letterSpacing: ["0", "0.025em"],
+        },
+    }),
+);
 
 export default function Template({
     data, // this prop will be injected by the GraphQL query below.
@@ -189,7 +218,7 @@ export default function Template({
     const {
         mdx: { frontmatter, body },
     } = data; // data.markdownRemark holds your post data
-    
+
     // handle image transformation exceptions
     let featureImage = frontmatter.featureImage.publicURL;
     if (frontmatter.featureImage.childImageSharp !== null) {
@@ -219,12 +248,14 @@ export default function Template({
                             </MDXProvider>
                         </div>
                     </div>
+                    <HorizontalLine />
                     <TagList>
+                        <span className={"text"}>Find more articles on the topic of:</span>
                         {Array.isArray(frontmatter.tags) &&
                             frontmatter.tags.map((tag, index) => (
-                                <span key={index} className="tag">
+                                <Link key={index} className="tag" to={`/blog/?query=${tag}`}>
                                     {tag}
-                                </span>
+                                </Link>
                             ))}
                     </TagList>
                 </BlogContainer>

@@ -3,12 +3,12 @@ import { graphql } from "gatsby";
 import BaseLayout from "../layouts/base";
 import Blogs from "../components/blog/blog";
 
-export default ({ data }) => {
+export default ({ data, location }) => {
     const blogPosts = data.allMdx.nodes;
 
     return (
         <BaseLayout title="Webiny Serverless Blog">
-            <Blogs data={blogPosts} />
+            <Blogs data={blogPosts} location={location} />
         </BaseLayout>
     );
 };
