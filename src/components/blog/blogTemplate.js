@@ -2,6 +2,7 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import styled from "react-emotion";
 import { css } from "emotion";
+import "remark-admonitions/styles/classic.css";
 import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 import BaseLayout from "../../layouts/base";

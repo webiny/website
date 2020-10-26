@@ -97,6 +97,13 @@ module.exports = {
                     {
                         resolve: "@weknow/gatsby-remark-twitter",
                     },
+                    {
+                        resolve: `gatsby-remark-admonitions`,
+                        options: {
+                          tag: ":::",
+                          icons: "svg"
+                        }
+                    },
                 ],
             },
         },
@@ -109,6 +116,13 @@ module.exports = {
                     },
                     {
                         resolve: "@weknow/gatsby-remark-twitter",
+                    },
+                    {
+                        resolve: `gatsby-remark-admonitions`,
+                        options: {
+                          tag: ":::",
+                          icons: "svg"
+                        }
                     },
                 ],
             },
