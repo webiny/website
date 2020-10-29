@@ -245,7 +245,7 @@ We already have pre-build components such as the `components/CheckoutForm.js`, a
 
 The `components/CheckoutForm.js` component has the `billingDetails` and an empty spot
 for the `CardElement` in the `<CardElementContainer></CardElementContainer>` where you are going to add it, and it has a submit button and a
-spot to display some errors. Check out the `CheckoutForm.js` below:
+spot to display some errors. Check out the `components/CheckoutForm.js` below:
 
 `gist:AlbionaHoti/b3efdb52196d42113b130dace41159f2`
 
@@ -398,7 +398,7 @@ try {
 The `totalPrice` we are getting is from the `total` context,
 that holds the total price of all the products that are added on the `Cart`.
 Whenever the price changes, it will end up into the `total` context and
-triple down into our component `CheckoutForm.js`
+triple down into our component `components/CheckoutForm.js`
 
 Now, let's check what is happening on the server side,
 navigate to `pages/api/payment_intents.js`. Check out the code snipped below:
@@ -499,7 +499,7 @@ log to find the below result:
 
 We got the `paymentIntent` id, and the `status` which is `succeeded`.
 
-Check out the below snippet, to get the full code for the `CheckoutForm.js` file:
+Check out the below snippet, to get the full code for the `components/CheckoutForm.js` file:
 
 `gist:AlbionaHoti/e417c1374d7539e729c06f8bcd42e3bb`
 
