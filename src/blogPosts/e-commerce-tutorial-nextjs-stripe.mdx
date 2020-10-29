@@ -14,47 +14,47 @@ from the best Open Source Projects such as Webiny, Next.js, React, etc.
 Before we continue, let's go through what you'll learn about building this website.
 
 You will learn how to create the back-end with <ExternalLink href="http://docs.webiny.com/docs/webiny-apps/headless-cms/features/content-modeling?utm_source=Webiny-blog&utm_medium=webiny-h3-tutorial&utm_campaign=webiny-blog-e-commerce-tutorial-oct-19&utm_content=webiny-headless-cms-features-docs&utm_term=W00180">Webiny Headless CMS</ExternalLink>
-and set up two content models, the products, and the categories. Then, fetching the data from the headless CMS to the Next.js project using Apollo GraphQL.
-Last but not least, integrating Stripe to implement a shopping cart for our products.
+and set up two content models, the products, and the categories. Then, fetch the data from the headless CMS to the Next.js project using Apollo GraphQL.
+Last but not least, integrating Stripe to implement a checkout experience.
 
 While working on this starter, I shared my progress on Twitter, and <ExternalLink href="https://twitter.com/joshuaackerman">Josh</ExternalLink> from Stripe <ExternalLink href="https://twitter.com/joshuaackerman/status/1305857426059653122?s=20">reached out</ExternalLink>
 for being available for any feedback regarding improvements, developer experience, and documentation. Thank you, Josh!
 Without further ado, let's get started.
 
-First, let's take a look what we'll build ⬇️
+First, let's take a look at the diagram of what we'll build ⬇️
 
-![e-commerce gif](./assets/e-commerce-tutorial-nextjs-stripe/demo-e-commerce-starter.gif)
+![E commerce starter](/assets/e-commerce-tutorial-nextjs-stripe/e-commerce-tutorial-diagram.png)
 
 Without further ado let's get started.
 
 ## 1. The e-commerce-starter
 
 To get started, we'll clone the `e-commerce-starter` git repository.
-The starter will have a ready-made Next.js application, and the Ant Design UI Library set up
-that looks like in the image below.
 
-![E commerce starter](/assets/e-commerce-tutorial-nextjs-stripe/e-commerce-starter.png)
-
+The starter will have a ready-made Next.js application, and the Ant Design UI Library.
 We already have some components and functionalities ready, such as the `Header`, `Search`, `Product List`, the `Product` card, and the `Cart` component.
-Note that the data shown in the starter is static.
+Check out the image below.
+
+![E commerce starter](./assets/e-commerce-tutorial-nextjs-stripe/e-commerce-starter.png)
 
 Clone the `e-commerce-starter` project by running the following commands to have the project set up and running.
 
 ```
 git clone https://github.com/webiny/e-commerce-starter
 cd e-commerce-start
-npm install
-npm run dev
+yarn install
+yarn run dev
 
 // head over to localhost:3000
 ```
 
+:::note Note
+For the e-commerce starter project we use static data, throughout the tutorial we will update the project so the data is pulled from the headless CMS via the GraphQL API.
+:::
+
 Now that we have the starter project, we can focus on creating the back-end with Webiny headless CMS and fetching the data to our front-end.
 
 ## 2. Webiny Headless CMS
-
-Webiny provides several serverless apps such as the `Headless CMS`, `Page Builder`, `Form Builder`, and `File Manager`.
-In this tutorial, we are going to use the Headless CMS only.
 
 ### Prerequisites
 
@@ -62,16 +62,15 @@ In this tutorial, we are going to use the Headless CMS only.
 
   First of all, make sure you have a working <ExternalLink href="http://docs.webiny.com/docs/get-started/quick-start?utm_source=Webiny-blog&utm_medium=webiny-h3-tutorial&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-quick-start-guide&utm_term=W00214">Webiny project</ExternalLink> set up.
 
-> When setting up a new project, currently, there are two project templates you
-> can choose from: `full` and `cms`. Both include the Headless CMS app by default.
-
 - **Content Delivery API URL**
 
   The Headless CMS app exposes data via the `Content Delivery API`,
   which is a simple GraphQL API that dynamically updates its schema on
-  content model changes that you make. Once you have deployed your API stack
+  content model changes. Once you have deployed your API stack
   (using the `npx webiny deploy api --env=local` command), you should be able to
   find the Content Delivery API URL in the `API Information` menu item, in your admin app.
+
+  ![Admin App](/assets/e-commerce-tutorial-nextjs-stripe/admin-app.png)
 
 - **Content Delivery API Access Token**
 
@@ -79,30 +78,33 @@ In this tutorial, we are going to use the Headless CMS only.
 
   1.  Follow the <ExternalLink href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens?utm_source=Webiny-blog&utm_medium=webiny-h3-tutorial&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-headless-cms-access-tokens&utm_term=W00187">link</ExternalLink> here to create an access token
       for a specific environment.
-  2.  Use this access token as a HTTP header to your GraphQL Playground in `/cms/read/{alias}` endpoints.
-      ![Access token auth](/assets/e-commerce-tutorial-nextjs-stripe/access-tokens-graphql.png)
 
-> In the root of the `e-commerce-starter` app that you set up,
-> you will find the `.env` file, that's the place where we need to save the Content Delivery API, and the Content Delivery API Access Token
+> In the root of the `e-commerce-starter` app that you've set up,
+> you will find the `.env` file, that's the place where you need to save the `Content Delivery API`, and the `Content Delivery API Access Token`
 
 Now that we have all of the prerequisites out of the way, it's time to create our first <ExternalLink href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/content-modeling/?utm_source=Webiny-blog&utm_medium=webiny-h3-tutorial&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-headless-cms-content-modeling&utm_term=W00182">content model</ExternalLink> for the e-commerce website.
 
 We are going to create two content models, the `products` and `category`
 
 - Products
-  - 6 Created Products
 - Category
-  - 3 Created Categories
 
-Let's go now on our back-end project, and start the admin app, we will create the content models we need, the `products` and `category`.
+To create the content models, you have to run your headless cms backend project, then open the admin menu and head over to the Content Models as shown in the image below.
 
-To create the content models, you can open the admin menu and head over to the Content Models as shown in the image below.
-
-![Content models admin menu](./assets/e-commerce-tutorial-nextjs-stripe/content-models-admin-menu.png)
+![Content models admin menu](./assets/e-commerce-tutorial-nextjs-stripe/content-models.png)
 
 Click on the `Models` menu item, and from there you'll create the content models by clicking on the `plus` button on the right corner on the bottom.
 
 The images below will guide you through the fields we'll use to create our content models.
+
+The `Category` content model.
+
+![Category content model](/assets/e-commerce-tutorial-nextjs-stripe/category_content_model.png)
+Comment: Provide a screenshot of the menu of content models.
+
+The `Category` content model will contain the fields such as:
+
+- Title - `Text(entry title)`
 
 The `Products` content model.
 
@@ -121,24 +123,15 @@ When adding a `Reference field`, you can toggle the `Use as a list of references
 
 ![Products Ref Field](/assets/e-commerce-tutorial-nextjs-stripe/products_ref_field.png)
 
-The `Category` content model.
+Once the content models are created, add a few record entries to each 🎉
 
-![Category content model](/assets/e-commerce-tutorial-nextjs-stripe/category_content_model.png)
-
-The `Category` content model will contain the fields such as:
-
-- Title - `Text(entry title)`
-- Products - `Reference(multiple values)`
-
-We toggle the `Use as a list of references` for the category can have multiple Products.
-
-Now that we have created the content models, click on `View Content` and start creating your Swag `products` and the `categories` 🎉
+![Content models admin menu](./assets/e-commerce-tutorial-nextjs-stripe/content-models-admin-menu.png)
 
 ## 3. Next.js + Apollo GraphQL to fetch data from the backend
 
 Now, finally, we're going to start fetching the actual content from the Content Delivery API.
 
-We are going to start off by installing a few NPM packages:
+We are going to start off by installing a few NPM packages in the `e-commerce-starter` project:
 
 - `@apollo/client` - This single package contains virtually everything we need to set up Apollo Client. It includes the in-memory cache, local state management, error handling, and a React-based view layer.
 
@@ -149,15 +142,13 @@ npm i @apollo/client graphql --save
 ```
 
 Now that we installed the necessary packages, let's check the `e-commerce-starter` website structure in the image below:
--Note: update the below image with the new structure
--Note: updated image
 
 ![E commerce starter structure](/assets/e-commerce-tutorial-nextjs-stripe/e-commerce-starter-structure-2.png)
 
 - `/components` folder contains the react `antd` starter components, as seen in the image above.
 - `/context/context.js` contains the React context that holds the state of the `Cart`, `Favorite` products, `Modal` of Products Cart, and `Total` price of the cart.
 - `/pages/api/payment_intents.js` file provides a server side function for the stripe integration.
-- `/pages/_app.js` component file is provided by Next.js, and serves as a wrapper of every single Next.js page of your front-end.
+- `/pages/_app.js` component file is provided by Next.js, and serves as a wrapper of every single Next.js page of your frontend.
   The `_app.js` file allows us to wrap the `Apollo Provider` around the function component so that we can have it available in every single page.
 
   Now, you may ask What is Apollo Provider⁉️ Good point ‼️
@@ -166,11 +157,11 @@ Now that we installed the necessary packages, let's check the `e-commerce-starte
 
 We've covered the packages used and the folder structure of our `e-commerce-starter` app, let's jump on the code.
 
-Open the `_app.js` file and paste the following snippet:
+Open the `pages/_app.js` file and replace the existing code with the following snippet:
 
 `gist:AlbionaHoti/22688a0c4fac917a17f3ddaec13fc9b5`
 
-As we can see, the `_app.js` has different external components that act as wrappers to our Next.js app.
+As you can see, the `_app.js` has different external components that act as wrappers to our Next.js app.
 
 - `LayoutComponent` - Holds the base layout for our app.
 - `CartProvider` - Is the React context for state management, in this case for the products cart data.
@@ -188,10 +179,6 @@ tell the Apollo how to go and fetch the data, and we do that by calling a new in
 and pass the options to this, which is the `URI` → That means: `Where on the internet does your GraphQL URL exist?` 🚀
 This is where the Webiny's `Content Delivery API` URL comes into play.
 
-We noted a small and very important detail on the Webiny Headless CMS section, and that is: `To access the data via the Content Delivery API, we'll need a valid` <ExternalLink href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens?utm_source=Webiny-blog&utm_medium=webiny-h3-tutorial&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-headless-cms-access-tokens&utm_term=W00187">Access Token</ExternalLink>
-
-So, in the headers, we pass the `authorization` with our Access Token.
-
 Now, finally, we are going to start fetching the actual content from our headless CMS back-end project. 🚀🚀
 
 With this set-up, now we have the `apolloClient` that is passed to the `ApolloProvider` in
@@ -199,12 +186,17 @@ the `_app.js` file, for the `ApolloProvider` wraps every single page within our 
 we can actually go into a page, and import a hook called `useQuery` and the `gql`.
 With these two, we can perform queries against our GraphQL API. Let's do that!
 
-Navigate to the `components/ProductList.js` file, and paste the below snippet:
+Navigate to the `components/ProductList.js` file, and replace the code with the below snippet:
 
 `gist:AlbionaHoti/6de0c012c0041e883f34be3a40db50b9`
 
 We've defined our `QUERY`, where we are fetching the list of products, and it's fields. Except the `products`, we are
 fetching the `categories` content model. From here, then we will be able to fetch categories separately on a another page.
+
+:::note Note
+You can freely open a PR to fetch the `categories` data on the `components/categories.js` component, make it your first, or second PR @ <ExternalLink href="https://www.webiny.com/?utm_source=Webiny-blog&utm_medium=webiny-website&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-website&utm_term=W00258">Webiny</ExternalLink>. 👩🏻‍🚀
+Head over to our <ExternalLink href="https://github.com/webiny/community?utm_source=Webiny-blog&utm_medium=webiny-github-community&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-github-community-repo&utm_term=W00259">Community repository </ExternalLink> to open the PR 🚀
+:::
 
 Now, we will use the `QUERY` with the `useQuery` hook, which will return the `data`, the `error`, and a boolean `loading`,
 for whether it's still loading the data.
@@ -234,8 +226,6 @@ with the `e-commerce-starter` pack 🚀 Navigate to the `components/Product.js` 
 there you'll find the product cart functionalities such as `addToCart`,
 `removeFromCart`, and `addToFavorites`. One functionality is missing though,
 and that is the `goToProduct` that should open a modal, and show the product details⁉️
-
-> This year Webiny is participating in the <ExternalLink href="https://www.webiny.com/blog/webiny-hacktoberfest-2020?utm_source=Webiny-blog&utm_medium=webiny-h3-tutorial&utm_campaign=webiny-blog-e-commerce-tutorial-oct-19&utm_content=webiny-hacktoberfest-2020&utm_term=W00181"> Hacktoberfest 2020 </ExternalLink> - Join us on developing the leading serverless framework ⚡️
 
 You can freely open a PR for the `goToProduct` function and make it your first PR @ <ExternalLink href="https://www.webiny.com/?utm_source=Webiny-blog&utm_medium=webiny-website&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-website&utm_term=W00258">Webiny</ExternalLink>. 👩🏻‍🚀
 Head over to our <ExternalLink href="https://github.com/webiny/community?utm_source=Webiny-blog&utm_medium=webiny-github-community&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-github-community-repo&utm_term=W00259">Community repository </ExternalLink> to open the PR 🚀
