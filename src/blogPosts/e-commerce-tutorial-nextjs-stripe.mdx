@@ -8,14 +8,14 @@ author: albiona
 date: 2020-10-19
 ---
 
-In this tutorial, we will create a simple e-commerce website, where you can buy Swag
-from the best Open Source Projects such as Webiny, Next.js, React, etc.
+In this tutorial, we will create a simple e-commerce website, where you can buy Swag from the best Open Source projects such as Webiny, Next.js, React, etc.
 
 Before we continue, let's go through what you'll learn about building this website.
 
-You will learn how to create the back-end with <ExternalLink href="http://docs.webiny.com/docs/webiny-apps/headless-cms/features/content-modeling?utm_source=Webiny-blog&utm_medium=webiny-h3-tutorial&utm_campaign=webiny-blog-e-commerce-tutorial-oct-19&utm_content=webiny-headless-cms-features-docs&utm_term=W00180">Webiny Headless CMS</ExternalLink>
-and set up two content models, the products, and the categories. Then, fetch the data from the headless CMS to the Next.js project using Apollo GraphQL.
-Last but not least, integrating Stripe to implement a checkout experience.
+You will learn how to create the back-end using Webiny Headless
+CMS and set up two content models, the products, and the categories.
+Afterward, we'll fetch the data from the Headless CMS to the
+Next.js project using Apollo GraphQL. Last but not least, we'll integrate Stripe to implement a checkout experience.
 
 While working on this starter, I shared my progress on Twitter, and <ExternalLink href="https://twitter.com/joshuaackerman">Josh</ExternalLink> from Stripe <ExternalLink href="https://twitter.com/joshuaackerman/status/1305857426059653122?s=20">reached out</ExternalLink>
 for being available for any feedback regarding improvements, developer experience, and documentation. Thank you, Josh!
@@ -41,7 +41,7 @@ Clone the `e-commerce-starter` project by running the following commands to have
 
 ```
 git clone https://github.com/webiny/e-commerce-starter
-cd e-commerce-start
+cd e-commerce-starter
 yarn install
 yarn run dev
 
@@ -49,10 +49,10 @@ yarn run dev
 ```
 
 :::note Note
-For the e-commerce starter project we use static data, throughout the tutorial we will update the project so the data is pulled from the headless CMS via the GraphQL API.
+For the e-commerce starter project we use static data, throughout the tutorial we will update the project so the data is pulled from the Headless CMS via the GraphQL API.
 :::
 
-Now that we have the starter project, we can focus on creating the back-end with Webiny headless CMS and fetching the data to our front-end.
+Now that we have the starter project, we can focus on creating the back-end using Webiny Headless CMS.
 
 ## 2. Webiny Headless CMS
 
@@ -64,11 +64,12 @@ Now that we have the starter project, we can focus on creating the back-end with
 
 - **Content Delivery API URL**
 
-  The Headless CMS app exposes data via the `Content Delivery API`,
-  which is a simple GraphQL API that dynamically updates its schema on
-  content model changes. Once you have deployed your API stack
-  (using the `npx webiny deploy api --env=local` command), you should be able to
-  find the Content Delivery API URL in the `API Information` menu item, in your admin app.
+  The Headless CMS app exposes data via the Content Delivery API,
+  which is a simple GraphQL API that dynamically updates its schema
+  on content model changes. Once you have deployed your API stack
+  (using the yarn webiny deploy api --env=local command), you should
+  be able to find the Content Delivery API URL in the API Information
+  menu item, in your admin app.
 
   ![Admin App](/assets/e-commerce-tutorial-nextjs-stripe/admin-app.png)
 
@@ -79,13 +80,17 @@ Now that we have the starter project, we can focus on creating the back-end with
   1.  Follow the <ExternalLink href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens?utm_source=Webiny-blog&utm_medium=webiny-h3-tutorial&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-headless-cms-access-tokens&utm_term=W00187">link</ExternalLink> here to create an access token
       for a specific environment.
 
-> In the root of the `e-commerce-starter` app that you've set up,
-> you will find the `.env` file, that's the place where you need to save the `Content Delivery API`, and the `Content Delivery API Access Token`
+:::warning Warning
+In the root of the e-commerce-starter app that you've set up,
+you will find the .env file, that's the place where you need to
+save the Content Delivery API, and the Content Delivery API
+Access Token | Make sure to set up your .env file before proceeding to the next steps.
+:::
 
 Now that we have all of the prerequisites out of the way, it's time to create the <ExternalLink href="https://docs.webiny.com/docs/webiny-apps/headless-cms/features/content-modeling/?utm_source=Webiny-blog&utm_medium=webiny-h3-tutorial&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-headless-cms-content-modeling&utm_term=W00182">content models</ExternalLink> for the e-commerce website.
 
-We are going to create two content models, the `products` and `category`.
-First, you have to run your headless cms backend project, then open the admin menu and head over to the Content Models as shown in the image below.
+We are going to create two content models, the products and category.
+First, you have to run your Headless CMS backend project, then open the admin menu and head over to the Content Models as shown in the image below.
 
 ![Content models admin menu](./assets/e-commerce-tutorial-nextjs-stripe/content-models.png)
 
@@ -121,7 +126,7 @@ When adding a `Reference field`, you can toggle the `Use as a list of references
 
 Once the content models are created, add a few record entries to each 🎉
 
-![Content models admin menu](./assets/e-commerce-tutorial-nextjs-stripe/content-models-admin-menu.png)
+![Content models admin menu](./assets/e-commerce-tutorial-nextjs-stripe/content-models-menu.png)
 
 ## 3. Next.js + Apollo GraphQL to fetch data from the backend
 
@@ -134,7 +139,7 @@ Start off by installing a few NPM packages in the `e-commerce-starter` project:
 - `graphql` - This package provides logic for parsing GraphQL queries.
 
 ```
-npm i @apollo/client graphql --save
+yarn i @apollo/client graphql --save
 ```
 
 Now that you installed the necessary packages, let's check the `e-commerce-starter` website structure in the image below:
@@ -142,12 +147,12 @@ Now that you installed the necessary packages, let's check the `e-commerce-start
 ![E commerce starter structure](/assets/e-commerce-tutorial-nextjs-stripe/e-commerce-starter-structure-2.png)
 
 - `/components` folder contains the react `antd` starter components, as seen in the image above.
-- `/context/context.js` contains the React context that holds the state of the `Cart`, `Favorite` products, `Modal` of Products Cart, and `Total` price of the cart.
-- `/pages/api/payment_intents.js` file provides a server side function for the stripe integration.
+- `/context/context.js` contains the React context that holds the state of the `Cart`, `Favorite` products, Shopping Cart, and `Total` price of the cart.
+- `/pages/api/payment_intents.js` file provides a server side function for the Stripe integration.
 - `/pages/_app.js` component file is provided by Next.js, and serves as a wrapper of every single Next.js page of your frontend.
   The `pages/_app.js` file allows us to wrap the `Apollo Provider` around the function component so that we can have it available in every single page.
 
-  Now, you may ask What is Apollo Provider⁉️ Good point ‼️
+  Now, you may ask What is Apollo Provider⁉️ Good point ‼️ We'll get back to this later when we set up the ApolloClient.
 
 ---
 
@@ -175,7 +180,7 @@ tell the Apollo how to go and fetch the data, and we do that by calling a new in
 and pass the options to this, which is the `URI` → That means: `Where on the internet does your GraphQL URL exist?` 🚀
 This is where the Webiny's `Content Delivery API` URL comes into play.
 
-Now, finally, we are going to start fetching the actual content from our headless CMS back-end project. 🚀🚀
+Now, finally, we are going to start fetching the actual content from our Headless CMS back-end project. 🚀🚀
 
 With this set-up, now you have the `apolloClient` that is passed to the `ApolloProvider` in
 the `pages/_app.js` file, for the `ApolloProvider` wraps every single page within our application,
@@ -186,18 +191,18 @@ Navigate to the `components/ProductList.js` file, and replace the code with the 
 
 `gist:AlbionaHoti/6de0c012c0041e883f34be3a40db50b9`
 
-We've defined the `QUERY`, where we fetch the list of products, and it's fields. Except the `products`, we
-fetch the `categories` content model.
+We've defined the QUERY, where we fetch the list of products, and it's fields. Besides the products, we also fetch the categories' content model.
 
-:::note Note
-You can freely open a PR to fetch the `categories` data on the `components/categories.js` component, make it your first, or second PR @ <ExternalLink href="https://www.webiny.com/?utm_source=Webiny-blog&utm_medium=webiny-website&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-website&utm_term=W00258">Webiny</ExternalLink>. 👩🏻‍🚀
-Head over to our <ExternalLink href="https://github.com/webiny/community?utm_source=Webiny-blog&utm_medium=webiny-github-community&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-github-community-repo&utm_term=W00259">Community repository </ExternalLink> to open the PR 🚀
+:::info Info
+For now, we are still using static data in the `components/Categories.js` component, to use your actual data, you have to fetch the `categories` data in
+the `components/Categories.js` file. Furthermore, you can freely open a PR to place this feature on the `e-commerce-starter` project. Make it your first, or second PR @ <ExternalLink href="https://www.webiny.com/?utm_source=Webiny-blog&utm_medium=webiny-website&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-website&utm_term=W00258">Webiny</ExternalLink>. 👩🏻‍🚀
+Head over to our <ExternalLink href="https://github.com/webiny/e-commerce-starter?utm_source=Webiny-blog&utm_medium=webiny-github-community&utm_campaign=webiny-blog-e-commerce-next-oct-26&utm_content=webiny-github-community-repo&utm_term=W00259">project repository </ExternalLink> to open the PR 🚀
 :::
 
 Now, you will use the `QUERY` with the `useQuery` hook, which will return the `data`, the `error`, and a boolean `loading`,
 for whether it's still loading the data.
 
-When you get the data from the headless CMS, in the starter project we implemented a simple `search` functionality for the products.
+When you get the data from the Headless CMS, in the starter project we implemented a simple `search` functionality for the products.
 The `search` input value is received through the `props` of the `components/ProductList` component.
 
 Before jumping on the `localhost:3000/` to see the actual data, you need to add one more detail!
@@ -211,11 +216,11 @@ Navigate to the `pages/index.js` file, and replace its content with the followin
 The `getStaticProps` function gets called at build time on server-side.
 It won't be called on client-side, so you can even do direct database queries.
 
-Inside this function, you are querying the GraphQL API, and cashing the data in the background. Now, you can freely update your content on the Webiny headless CMS 🎉
+Inside this function, you are querying the GraphQL API, and cashing the data in the background. Now, you can freely update your content on the Webiny Headless CMS 🎉
 
 ![Fetching products](./assets/e-commerce-tutorial-nextjs-stripe/fetching-data.png)
 
-As you can see, I already created some products on my headless CMS back-end project!
+As you can see, I already created some products on my Headless CMS back-end project!
 
 Now that we have the data, let's go and check the `components/ProductCard` component that came
 with the `e-commerce-starter` pack 🚀 Navigate to the `components/Product.js` file,
@@ -245,18 +250,18 @@ We already have pre-build components such as the `components/CheckoutForm.js`, a
 
 The `components/CheckoutForm.js` component has the `billingDetails` and an empty spot
 for the `CardElement` in the `<CardElementContainer></CardElementContainer>` where you are going to add it, and it has a submit button and a
-spot to display some errors. Check out the `components/CheckoutForm.js` below:
+spot to display some errors. Let's take a look at the existing `components/CheckoutForm.js` file below:
 
 `gist:AlbionaHoti/b3efdb52196d42113b130dace41159f2`
 
 For the `components/Layout.js` component, you can think of it as a wrapper component around
-all of our pages in the site. In here you'll load the `stripe.js` library.
+all of our pages on the site. In here you'll load the `stripe.js` library later when we'll start coding.
 
-Check out the `components/Layout.js` component below:
+Have a look at the existing `components/Layout.js` component below:
 
 `gist:AlbionaHoti/dce28e953da3c7c8f8c3a62e3bb0dc4c`
 
-One last check regarding the stripe integration before you can actually start coding, you need to save the two Stripe keys in a `sticky desktop note` or anywhere it's easier for you to grab the data later:
+One last check regarding the Stripe integration before you can actually start coding, you need to save the two Stripe keys in a `sticky desktop note` or anywhere it's easier for you to grab the data later:
 
 ```
 PUBLISHABLE_KEY = pk_test_1234
@@ -275,7 +280,7 @@ On the right, you will find the data for your publishable and secret keys.
 
 ![Stripe Dashboard](/assets/e-commerce-tutorial-nextjs-stripe/stripe-dashboard.png)
 
-Now, run the `e-commerce-starter` project by running the `npm run dev`, and the project will be served in the `localhost:3000`
+Now, run the `e-commerce-starter` project by running the `yarn run dev`, and the project will be served in the `localhost:3000`
 
 When clicking on the cart, and proceed to do the payment, this is the view you'll get in `/checkout` page. 🚀
 
@@ -288,7 +293,7 @@ Let's go and add the `Pay` functionality!
 Install the below packages in the `e-commerce-starter`:
 
 ```jsx
-npm install stripe @stripe/stripe-js @stripe/react-stripe-js axios --save
+yarn install stripe @stripe/stripe-js @stripe/react-stripe-js axios --save
 ```
 
 Now, head back to the code editor and open the `component/Layout.js`
@@ -301,28 +306,34 @@ import { Elements } from "@stripe/react-stripe-js";
 const stripePromise = loadStripe("YOUR_STRIPE_PUBLISHABLE_KEY");
 ```
 
-Now, we have a stripe promise which resolves to stripe.js,
+:::warning Note
+You have to replace the `YOUR_STRIPE_PUBLISHABLE_KEY` with your publishable stripe key before proceeding.
+:::
+
+Now, we have a Stripe promise which resolves to stripe.js,
 we have to find a way to inject that stripe.js object into the
 rest of our Next.js components.
 
 To do that, we will use the `Elements` provider from `react-stripe-js`
-library, and wrap the `{props.children}` in the `components/Layout.js` component file in the `Elements` provider:
+library, and wrap the `{props.children}` in the `Elements` provider at line `48` in the `components/Layout.js` component:
 
 ```jsx
 <Elements stripe={stripePromise}>{props.children}</Elements>
 ```
 
-Let's do a quick check if it's everything working/compiling on `http://localhost:3000`!
+Next, you'll need the Card input to provide the credit cart for the checkout, you'll use the stripe's `CardElement` component.
 
-One thing is still missing, and that is the Card Input, let's add it right away 🙂
+:::into Info
+The Card Element lets you collect card information all within one Element. It includes a dynamically-updating card brand icon as well as inputs for number, expiry, CVC, and postal code. - <ExternalLink href="https://stripe.com/docs/stripe-js">Resource</ExternalLink>
+:::
 
-Navigate to the `components/CheckoutForm.js` file and import the Card Element like so:
+Navigate to the `components/CheckoutForm.js` file and import the `CardElement` like so:
 
 ```jsx
 import { CardElement } from "@stripe/react-stripe-js";
 ```
 
-Now, add the `CardElement` to the `CardElementContainer`
+Now, add the `CardElement` to the `CardElementContainer`, on line `88`
 
 ```jsx
 <CardElementContainer>
@@ -358,7 +369,7 @@ Head over to `components/CheckoutForm.js` to continue adding the payment functio
 
 1. Create a payment intent on the server
 
-   1. One request to the stripe node library, to get the `client_secret` of that payment intent
+   1. One request to the Stripe node library, to get the `client_secret` of that payment intent
 
 2. Create a payment method
 
@@ -381,7 +392,7 @@ First, import `axios` library to the `components/CheckoutForm.js` component as b
 import axios from "axios";
 ```
 
-Inside the `handleSumit` function, paste the below code.
+Inside the `handleSumit` function at `61` line, paste the below code.
 
 ```jsx
 try {
@@ -406,7 +417,7 @@ navigate to `pages/api/payment_intents.js`. Check out the code snipped below:
 `gist:AlbionaHoti/757544d7953962842bfac5a50f9a6010`
 
 :::note Note:
-Provide your Stripe `secret key` on the 3rd line on `pages/api/payment_intents.js`
+Provide your Stripe `secret key` on the 4th line on `pages/api/payment_intents.js`
 :::
 
 As you can see, for the `/payment_intents` endpoint, we have a simple handler.
@@ -427,48 +438,47 @@ We will be using the `clientSecret` to confirm the card payment after we create 
 
 **2. Create a payment method**
 
-We'll use the `stripe` method of createPaymentMethod: `stripe.createPaymentMethod` where you'll provide the card type that you'll get
+We'll use stripe's createPaymentMethod, `stripe.createPaymentMethod` where you'll provide the card type that you'll get
 from the `CardElement` of the `react-stripe-js` library, and the `billing_details` from our form.
 
-```jsx
+First, import the following from the stripe's `react-stripe-js` library:
+
+```
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
-
-// Add the reference to the elements object, using the useElements() hook
-// and the reference to the stripe object, using the useStripe() hook
-
-const CheckoutForm = () => {
-  const stripe = useStripe();
-  const elements = useElements();
-
-  const handleSubmit = async e => {
-    //...
-
-    setProcessingTo(true);
-    const cardElement = elements.getElement("card");
-
-    try {
-      const { data: clientSecret } = await axios.post("/api/payment_intents", {
-        amount: totalPrice * 100,
-      });
-
-      console.log("clientSecret:", clientSecret);
-
-      // create the payment method:
-      const paymentMethodReq = await stripe.createPaymentMethod({
-        type: "card",
-        card: cardElement,
-        billing_details: billingDetails,
-      });
-
-      console.log("paymentMethodReq: ", paymentMethodReq);
-    } catch (err) {
-      setCheckoutError(err.message);
-    }
-  };
-};
 ```
 
-Now let's head over to the console on the developer tools of chrome and test 🙂
+Second, inside the `CheckoutForm` component, on line `53` add the reference to the elements
+object using the `useElements()` hook and the reference to the Stripe object, using `useStripe()` hook.
+
+```
+const stripe = useStripe();
+const elements = useElements();
+```
+
+Third, paste the `paymentMethodReq` method by placing it under the `clientSecret` request in the `try and catch` statement.
+
+```jsx
+try {
+  const { data: clientSecret } = await axios.post("/api/payment_intents", {
+    amount: totalPrice * 100,
+  });
+
+  console.log("clientSecret:", clientSecret);
+
+  // create the payment method:
+  const paymentMethodReq = await stripe.createPaymentMethod({
+    type: "card",
+    card: cardElement,
+    billing_details: billingDetails,
+  });
+
+  console.log("paymentMethodReq: ", paymentMethodReq);
+} catch (err) {
+  setCheckoutError(err.message);
+}
+```
+
+Now let's head over to chrome's developer tools console. 🙂
 
 ![Payment method Request](/assets/e-commerce-tutorial-nextjs-stripe/payment_method_req.png)
 
