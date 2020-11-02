@@ -1,0 +1,85 @@
+---
+slug: "blog/local-development-is-dying-and-it-s-for-the-better"
+title: "Local Development Is Dying 💀 - And It's for the Better"
+description: "As a tradeoff, development takes less time and the result is a more performant, resilient, and secure app. Learn why."
+tags: ["Serverless", "Cloud computing", "Web development"]
+featureImage: "./assets/local-development-is-dying/featureImage.png"
+author: sven
+date: 2020-11-02
+---
+
+Serverless infrastructure is changing the way we architect applications and it’s also changing the way we code and work as developers. The development is moving away from our laptop and into the cloud. It’s the start of cloud-native development.
+
+We at Webiny have been practicing cloud-native development for over a year now, and we believe this is the future. In this article, I will explain why.
+
+---
+
+A **local development environment** (LDE) is a way of configuring services on our laptop/desktop to run a website or a web application. This entails installing a web server, a database, and some sort of a language as Node.js, Python, PHP, and others.
+
+This combination we call a **stack**. Some of the popular stacks are LAMP (linux-apache-mysql-php), MEAN (mongodb-express-angular-node) and others. Today you find these stacks preconfigured as Docker containers. This way you don’t “pollute” your machine with services as they run inside a container.
+
+---
+
+## Advantages and Disadvantages of a Local Development Environment
+
+### Advantage: work offline
+
+For years installing these stacks was the first thing a developer would do before checking out some code from git and running it. A local stack has several advantages. One of the main ones is that you can **work offline**. This is possible because all the services run locally on your machine, there is no need to fetch any data from “outside” the network.
+
+### Advantage: simplicity of debugging
+
+Another meaningful advantage is the **simplicity of debugging**. If your code, database, or network is not working, you access those components directly and try and find the problem. You attach debuggers, inspectors, and profilers along the way to gain additional insight.
+
+### Advantage: no need to upload files
+
+Lastly, with a local development environment, each time you change a file there is **no need to upload it to a remote server**. The moment you save the code it gets compiled locally and you instantly see the result. It provides a faster turnaround time.
+
+Let’s review some of the **disadvantages** because it’s not all ideal when it comes to having an LDE.
+
+### Disadvantage: can be complex to setup
+
+When working in a larger organization the LDE can be **large and complex**. These environments take a lot of time to get them up and running. When they break, you often need to run the whole setup from the ground up.
+
+### Disadvantage: resource intensive
+
+You are also **limited to a fixed number of containers** and services you are able to run locally. This is because of the constraints to your CPU and memory. Try having 10 or more Docker containers running in parallel, it will significantly impede the performance of other apps, like your IDE for example.
+
+### Disadvantage: "Works on my pc"
+
+Because not everyone has an identical setup, there are differences in how things work. This causes inconsistencies in testing, security, and performance. Those can later cause serious problems. When using an LDE with a team, you need to ensure everyone has the same stack, version and is always updating it with the latest releases.
+
+### Disadvantage: reinventing the wheel
+
+Another limitation is you **can’t use a closed source or 3rd party services**. This is because, in most cases, they don’t provide a way of running their service locally. To keep an LDE, with all the previously mentioned advantages, you might decide not to use a 3rd party service but develop something internally you own. Over time you’ll make several of such decisions which end up wasting a big chunk of your time maintaining them.
+
+**This last one is the key reason why a local development environment is dying.** — Let me explain.
+
+---
+
+## Introducing Serverless
+
+Development is complex. Over time some of those complexities were solved and solutions were created as new products. Products that all other developers can now use and integrate into their applications. By using those products and services, instead of reinventing the wheel, developers save a lot of time and money, and create more resilient and secure solutions.
+
+Let’s take a search engine for an eCommerce website as an example. Coding one is a daunting challenge. You might not have the right expertise in data storage and know the most optimal languages to code such a feature. Luckily services such as <ExternalLink href="https://www.algolia.com/">Algolia</ExternalLink> have been created. By leveraging a ready-made service you are certain that it will work, that there are no bugs, and that it can handle the load from your users (in most cases at least).
+
+When you test for resiliency and scale even the simple tasks, such as file storage, can pose a challenge to code from the ground up. Try and achieve 99.999999999% uptime that **AWS S3** provides.
+
+Many such examples are available, but the main takeaway is those services are not available inside an LDE. Serverless services in the majority of cases can only be consumed via an API contacting the service in the cloud.
+
+**The question is now — would you sacrifice having an LDE over a proven, performant and secure service with SLAs?**
+
+Many developers and businesses have answered NO. This is what’s driving the adoption of building solutions in a serverless way.
+
+With serverless, there are servers behind those services, but you don’t care about them. The infrastructure is managed for you, including all the security patches and backups.
+
+---
+
+## Cloud-Native Development
+
+Developing applications the serverless way changes how we configure our LDE. We can no longer work offline and run services from our laptop.
+
+Even if we get a part of the services running locally, it’s not a solution. LDE can’t emulate the network of a cloud setup, not to talk about API limits and performance.
+
+Because the LDE is no longer reliable, in my view, the only way forward is to embrace cloud-native development. Our code needs to run in the cloud and the cloud is now part of our development environment and not just the production. **The only remaining thing which is running “locally” will be our editor.**
+
+It’s clear that LDE is dying, and we won’t miss it. As a tradeoff, we get to create performant, scalable, resilient, reliable, and secure applications in less time. The industry is moving in that direction. There is still a way to go to make it a pleasant experience, but **it is certainly coming**.
