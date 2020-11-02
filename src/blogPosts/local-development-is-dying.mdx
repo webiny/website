@@ -8,7 +8,7 @@ author: sven
 date: 2020-11-02
 ---
 
-Serverless infrastructure is changing the way we architect applications and it’s also changing the way we code applications and work as developers. The development is moving away from our laptop and into the cloud. It’s the start of cloud-native development.
+Serverless infrastructure is changing the way we architect applications and it’s also changing the way we code and work as developers. The development is moving away from our laptop and into the cloud. It’s the start of cloud-native development.
 
 We at Webiny have been practicing cloud-native development for over a year now, and we believe this is the future. In this article, I will explain why.
 
@@ -28,7 +28,7 @@ For years installing these stacks was the first thing a developer would do befor
 
 ### Advantage: simplicity of debugging
 
-Another meaningful advantage is the **simplicity of debugging**. If your code, database, or network is not working, you access those components and try and find the problem. You attach debuggers, inspectors, and profilers along the way to gain additional insight.
+Another meaningful advantage is the **simplicity of debugging**. If your code, database, or network is not working, you access those components directly and try and find the problem. You attach debuggers, inspectors, and profilers along the way to gain additional insight.
 
 ### Advantage: no need to upload files
 
@@ -38,7 +38,7 @@ Let’s review some of the **disadvantages** because it’s not all ideal when i
 
 ### Disadvantage: can be complex to setup
 
-When working in a larger organization the LDE can be **large and complex, or even scary**. These environments take a lot of time to get them up and running. When they break, you often need to run the whole setup from the ground up.
+When working in a larger organization the LDE can be **large and complex**. These environments take a lot of time to get them up and running. When they break, you often need to run the whole setup from the ground up.
 
 ### Disadvantage: resource intensive
 
@@ -46,11 +46,11 @@ You are also **limited to a fixed number of containers** and services you are ab
 
 ### Disadvantage: "Works on my pc"
 
-Because not everyone has an identical setup, there are differences in how things work. This causes inconsistencies in testing, security, and performance. Those can later cause serious problems. When using an LDE with a team, you need to enforce everyone has the same stack, version and is always updating them with the latest releases.
+Because not everyone has an identical setup, there are differences in how things work. This causes inconsistencies in testing, security, and performance. Those can later cause serious problems. When using an LDE with a team, you need to ensure everyone has the same stack, version and is always updating it with the latest releases.
 
 ### Disadvantage: reinventing the wheel
 
-Another limitation is you **can’t use a closed source or 3rd party services**. This is because they don’t provide a way of running their service locally. To keep an LDE, with all the previously mentioned advantages, you might decide not to use a 3rd party service but develop something internally you own. Over time you’ll make several of such decisions which end up wasting a big chunk of your time maintaining them.
+Another limitation is you **can’t use a closed source or 3rd party services**. This is because, in most cases, they don’t provide a way of running their service locally. To keep an LDE, with all the previously mentioned advantages, you might decide not to use a 3rd party service but develop something internally you own. Over time you’ll make several of such decisions which end up wasting a big chunk of your time maintaining them.
 
 **This last one is the key reason why a local development environment is dying.** — Let me explain.
 
@@ -58,13 +58,13 @@ Another limitation is you **can’t use a closed source or 3rd party services**.
 
 ## Introducing Serverless
 
-Development is complex. Over time some of those complexities were solved and solutions were created as new products. Products that all other developers can now use and integrate into their applications. By using those products and services, instead of reinventing the wheel, developers save a lot of time and money, create more resilient and secure solutions.
+Development is complex. Over time some of those complexities were solved and solutions were created as new products. Products that all other developers can now use and integrate into their applications. By using those products and services, instead of reinventing the wheel, developers save a lot of time and money, and create more resilient and secure solutions.
 
 Let’s take a search engine for an eCommerce website as an example. Coding one is a daunting challenge. You might not have the right expertise in data storage and know the most optimal languages to code such a feature. Luckily services such as <ExternalLink href="https://www.algolia.com/">Algolia</ExternalLink> have been created. By leveraging a ready-made service you are certain that it will work, that there are no bugs, and that it can handle the load from your users (in most cases at least).
 
 When you test for resiliency and scale even the simple tasks, such as file storage, can pose a challenge to code from the ground up. Try and achieve 99.999999999% uptime that **AWS S3** provides.
 
-Many such examples are available, but the main takeaway is those services are not available inside an LDE. Serverless services in the majority of cases can only be consumed via an API contacting the service cloud provider.
+Many such examples are available, but the main takeaway is those services are not available inside an LDE. Serverless services in the majority of cases can only be consumed via an API contacting the service in the cloud.
 
 **The question is now — would you sacrifice having an LDE over a proven, performant and secure service with SLAs?**
 
