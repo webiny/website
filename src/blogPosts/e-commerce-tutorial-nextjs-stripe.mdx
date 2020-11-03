@@ -3,9 +3,9 @@ slug: "blog/e-commerce-tutorial-nextjs-stripe"
 title: "Build an E-commerce Website with Webiny Serverless Headless CMS, Next.js, and Stripe"
 description: "You'll learn how to create an e-commerce website using Webiny Serverless Headless CMS, Next.js, and Stripe."
 tags: ["Serverless", "Web development", "Javascript", "Software Development", "GraphQL"]
-featureImage: "./assets/e-commerce-tutorial-nextjs-stripe/e-commerce-tutorial-nextjs-stripe-cover.png"
+featureImage: "./assets/e-commerce-tutorial-nextjs-stripe/e-commerce-tutorial-nextjs-stripe.png"
 author: albiona
-date: 2020-10-19
+date: 2020-11-09
 ---
 
 In this tutorial, we will create a simple e-commerce website, where you can buy Swag from the best Open Source projects such as Webiny, Next.js, React, etc.
@@ -24,6 +24,7 @@ Without further ado, let's get started.
 First, let's take a look at the diagram of what we'll build ⬇️
 
 ![E commerce starter](/assets/e-commerce-tutorial-nextjs-stripe/diagram-e-comm.png)
+
 Without further ado let's get started.
 
 ## 1. The e-commerce-starter
@@ -38,7 +39,8 @@ Check out the image below.
 
 Clone the `e-commerce-starter` project by running the following commands to have the project set up and running.
 
-```ts
+<code
+
 git clone https://github.com/webiny/e-commerce-starter
 
 cd e-commerce-starter
@@ -48,7 +50,7 @@ yarn install
 yarn run dev
 
 // head over to localhost:3000
-```
+/>
 
 :::note Note
 For the e-commerce starter project we use static data, throughout the tutorial we will update the project so the data is pulled from the Headless CMS via the GraphQL API.
@@ -257,7 +259,7 @@ spot to display some errors. Let's take a look at the existing `components/Check
 `gist:AlbionaHoti/b3efdb52196d42113b130dace41159f2`
 
 For the `components/Layout.js` component, you can think of it as a wrapper component around
-all of our pages on the site. In here you'll load the `stripe.js` library later when we'll start coding.
+all of our pages on the site. In here you'll load the Stripe library later when we'll start coding.
 
 Have a look at the existing `components/Layout.js` component below:
 
