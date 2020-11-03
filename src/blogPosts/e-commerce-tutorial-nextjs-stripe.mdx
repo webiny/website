@@ -38,10 +38,13 @@ Check out the image below.
 
 Clone the `e-commerce-starter` project by running the following commands to have the project set up and running.
 
-```
+```ts
 git clone https://github.com/webiny/e-commerce-starter
+
 cd e-commerce-starter
+
 yarn install
+
 yarn run dev
 
 // head over to localhost:3000
@@ -137,7 +140,7 @@ Start off by installing a few NPM packages in the `e-commerce-starter` project:
 
 - `graphql` - This package provides logic for parsing GraphQL queries.
 
-```
+```ts
 yarn i @apollo/client graphql --save
 ```
 
@@ -262,9 +265,10 @@ Have a look at the existing `components/Layout.js` component below:
 
 One last check regarding the Stripe integration before you can actually start coding, you need to save the two Stripe keys in a `sticky desktop note` or anywhere it's easier for you to grab the data later:
 
-```
-PUBLISHABLE_KEY = pk_test_1234
-SECRET_KEY = sk_test_1234
+```ts
+PUBLISHABLE_KEY = pk_test_1234;
+
+SECRET_KEY = sk_test_1234;
 ```
 
 The `publishable` and the `secret` key can be found in the Stripe dashboard,
@@ -291,14 +295,14 @@ Let's go and add the `Pay` functionality!
 
 Install the below packages in the `e-commerce-starter`:
 
-```jsx
+```ts
 yarn install stripe @stripe/stripe-js @stripe/react-stripe-js axios --save
 ```
 
 Now, head back to the code editor and open the `component/Layout.js`
 file and add these changes:
 
-```jsx
+```ts
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
@@ -316,7 +320,7 @@ rest of our Next.js components.
 To do that, we will use the `Elements` provider from `react-stripe-js`
 library, and wrap the `{props.children}` in the `Elements` provider at line `48` in the `components/Layout.js` component:
 
-```jsx
+```ts
 <Elements stripe={stripePromise}>{props.children}</Elements>
 ```
 
@@ -328,13 +332,13 @@ The Card Element lets you collect card information all within one Element. It in
 
 Navigate to the `components/CheckoutForm.js` file and import the `CardElement` like so:
 
-```jsx
+```ts
 import { CardElement } from "@stripe/react-stripe-js";
 ```
 
 Now, add the `CardElement` to the `CardElementContainer`, on line `88`
 
-```jsx
+```ts
 <CardElementContainer>
   <CardElement />
 </CardElementContainer>
@@ -348,12 +352,9 @@ Let's go and change the styles of the Card input by adding
 the `options` prop to the `CardElement` and passing there the
 `cardElementOpts` variable that was pre-build with the `e-commerce-starter`, check out the below snippet.
 
-```
+```ts
 <CardElementContainer>
-    <CardElement
-        options={cardElementOpts}
-        onChange={handleCardDetailsChange}
-    />
+  <CardElement options={cardElementOpts} onChange={handleCardDetailsChange} />
 </CardElementContainer>
 ```
 
@@ -389,13 +390,13 @@ Now, we will use `axios` to make a `post` request to the server-side of the Next
 
 First, import `axios` library to the `components/CheckoutForm.js` component as below.
 
-```jsx
+```ts
 import axios from "axios";
 ```
 
 Inside the `handleSumit` function at `61` line, paste the below code.
 
-```jsx
+```ts
 try {
   const { data: clientSecret } = await axios.post("/api/payment_intents", {
     amount: totalPrice * 100,
@@ -444,21 +445,21 @@ from the `CardElement` of the `react-stripe-js` library, and the `billing_detail
 
 First, import the following from the Stripe's `react-stripe-js` library:
 
-```
+```ts
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 ```
 
 Second, inside the `CheckoutForm` component, on line `53` add the reference to the elements
 object using the `useElements()` hook and the reference to the Stripe object, using `useStripe()` hook.
 
-```
+```ts
 const stripe = useStripe();
 const elements = useElements();
 ```
 
 Third, paste the `paymentMethodReq` method by placing it under the `clientSecret` request in the `try and catch` statement.
 
-```jsx
+```ts
 try {
   const { data: clientSecret } = await axios.post("/api/payment_intents", {
     amount: totalPrice * 100,
@@ -494,7 +495,7 @@ Now, we'll confirm the card payment by using the `confirmCardPayment`
 Stripe's method in which we will provide the `paymentMethod.id` we got earlier.
 Add the following snippet on `components/CheckoutForm.js` file, just after the `paymentMethodReq`:
 
-```jsx
+```ts
 const confirmCardPayment = await stripe.confirmCardPayment(clientSecret, {
   payment_method: paymentMethodReq.paymentMethod.id,
 });
