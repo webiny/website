@@ -362,7 +362,9 @@ the `options` prop to the `CardElement` and passing there the
 Whoa! 🚀 Now that we have the Card input set-up, one thing is
 missing and that is the payment, we are not able to accept payments yet.
 
+:::info Note
 Head over to `components/CheckoutForm.js` to continue adding the payment functionality.
+:::
 
 **The steps we will do are:**
 
@@ -437,8 +439,8 @@ We will be using the `clientSecret` to confirm the card payment after we create 
 
 **2. Create a payment method**
 
-We'll use Stripe's createPaymentMethod, `stripe.createPaymentMethod` where you'll provide the card type that you'll get
-from the `CardElement` of the `react-stripe-js` library, and the `billing_details` from our form.
+Now, use the Stripe's createPaymentMethod, `stripe.createPaymentMethod` in the `components/CheckoutForm.js` file, provide the card type that you'll get
+from the `CardElement` of the `react-stripe-js` library, and the `billing_details` from our form, follow the snippets below.
 
 First, import the following from the Stripe's `react-stripe-js` library:
 
