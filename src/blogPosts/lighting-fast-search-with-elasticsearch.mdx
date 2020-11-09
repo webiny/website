@@ -1,0 +1,467 @@
+---
+slug: "blog/lighting-fast-search-with-elasticsearch"
+title: "Lighting fast search with Elasticsearch"
+description: "Learn how to get started with Elasticsearch & implement a fast search for your app in less than 10 minutes!"
+tags: ["Elasticsearch", "Web development", "Open source", "Javascript"]
+featureImage: "./assets/lighting-fast-search-with-elasticsearch/coverImg.png"
+author: ashu
+date: 2020-11-09
+---
+
+If you're reading this blog chances are you really interested in Elasticsearch and the solutions that it provides. This blog will introduce you to Elasticsearch and explain how to get started with implementing a fast search for your app in less than 10 minutes. Of course, we're not going to code up a full-blown production-ready search solution here. But, the below-mentioned concepts will help you get up to speed quickly. So, without further ado, let's start!
+
+## What is Elasticsearch?
+
+Elasticsearch is a distributed search and analytics engine. It provides near real-time search and analytics for all types of data. Whether you have structured or unstructured text, numerical data, or geospatial data.
+One of the key specialties of Elasticsearch is that it can efficiently store and index it in a way that supports fast searches. You can go far beyond simple data retrieval and aggregate information to discover trends and patterns in your data.
+
+## Why do you need it?
+
+**Elasticsearch is fast.** Because Elasticsearch is built on top of <ExternalLink href="https://lucene.apache.org/">Lucene</ExternalLink>, it excels at full-text search. Elasticsearch is also a near real-time search platform, meaning the latency from the time a document is indexed until it becomes searchable is very short — typically one second. As a result, Elasticsearch is well suited for time-sensitive use cases such as security analytics and infrastructure monitoring.
+
+**Elasticsearch is distributed by nature.** The documents stored in Elasticsearch are distributed across different containers known as *shards*, which are duplicated to provide redundant copies of the data in case of hardware failure. The distributed nature of Elasticsearch allows it to scale out to hundreds (or even thousands) of servers and handle petabytes of data.
+
+The speed and scalability of Elasticsearch and its ability to index many types of content mean that it can be used for a number of use cases:
+
+- Application search
+- Website search
+- Enterprise search
+- Logging and log analytics
+- And many more...
+
+We at <ExternalLink href="https://www.webiny.com/?utm_source=Webiny-blo&utm_medium=webiny-blog&utm_campaign=webiny-blog-nov-09&utm_content=webiny-blog-lighting-fast-search-with-elasticsearch&utm_term=W00340">Webiny</ExternalLink> are building a feature for the upcoming `v5` release where we'll use Elasticsearch to perform a super-fast search in our core apps like Page builder, File manager, and Headless CMS. Please check out our <ExternalLink href="https://github.com/webiny/webiny-js?utm_source=Webiny-blog&utm_medium=webiny-github&utm_campaign=webiny-blog-nov-09&utm_content=webiny-github-repo&utm_term=W00343">Github repo</ExternalLink> to learn more about it.
+
+## Getting started with Elasticsearch
+
+### Setup Elasticsearch cluster
+
+You can create a hosted deployment or set up an Elasticsearch cluster on your local machine. For the purpose of this blog, we'll assume that we have an Elasticsearch cluster running at `localhost:9200`. If you want to go with a local setup please check out this <ExternalLink href="https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-install.html#run-elasticsearch-local">guide</ExternalLink>.
+
+### Setup Elasticsearch Node.js client
+
+We'll be going to use the official Node.js client for Elasticsearch. You can create a new `Node.js` project or use this <ExternalLink href="https://github.com/Ashu96/Elasticsearch-example-nodejs">example project</ExternalLink>.
+
+To install the latest version of the client, run the following command:
+
+```js
+npm install @elastic/elasticsearch
+```
+
+Using the client is straightforward, it supports all the public APIs of Elasticsearch, and every method exposes the same signature.
+
+#### Configure the client
+
+The client is designed to be easily configured for your needs. In the example mentioned below, you can see how easy it is to configure it with basic options.
+
+```js
+const { Client } = require("@elastic/elasticsearch");
+
+const client = new Client({
+  // The Elasticsearch endpoint to use.
+  node: "http://localhost:9200",
+  // Max number of retries for each request.
+  maxRetries: 5,
+  // Max request timeout in milliseconds for each request.
+  requestTimeout: 60000,
+});
+```
+
+:::note
+As we previously mentioned we're assuming that we have an Elasticsearch cluster running locally on `localhost:9200`
+:::
+
+---
+
+## Elasticsearch in action
+
+Before jumping into core topic of this blog i.e _search_, we'll need to create the _index_ and add few documents to it.
+
+### Create an index
+
+Let's create an index inside our Elasticsearch cluster.
+
+You can use the `create` index API to add a new index to an Elasticsearch cluster. When creating an index, you can specify the following:
+
+- Settings for the index (optional)
+- Mappings for fields in the index (optional)
+- Index aliases (optional)
+
+```jsx
+await client.indices.create({
+  // Name of the index you wish to create.
+  index: "products",
+});
+```
+
+We'll be using a dynamic mapping that's why didn't add the `settings` and `mappings` in the body here. But, if needed we could have something like this:
+
+```jsx
+await client.indices.create({
+  // Name of the index you wish to create.
+  index: "products",
+  // If you want to add "settings" & "mappings"
+  body: {
+    settings: {
+      number_of_shards: 1,
+    },
+    mappings: {
+      properties: {
+        field1: { type: "text" },
+      },
+    },
+  },
+});
+```
+
+### Index documents
+
+Now that we have created the `product` index, let's add a few documents so that we can perform a search on those later. There are basically two ways you can do this depending upon the use case.
+
+1. Index a single document.
+2. Index multiple documents in bulk.
+
+We'll cover both of these use case in a moment.
+
+#### Index a single document
+
+Here we're going to use the `create` method on the client that we created earlier. Let's take a look at the code:
+
+```jsx
+await client.create({
+  // Unique identifier for the document.
+  // To automatically generate a document ID omit this parameter.
+  id: 1,
+  type: "doc",
+  // The name of the index.
+  index: "products",
+  body: {
+    id: 1,
+    name: "iPhone 12",
+    price: 699,
+    description: "Blast past fast",
+  },
+});
+```
+
+We can index a new `JSON` document with the `_doc` or `_create` resource. Using `_create` guarantees that the document is only indexed if it does not already exist. To update an existing document, you must use the `_doc` resource.
+
+#### Index multiple documents at once
+
+This is all good. But, sometimes we want to index multiple documents at once. For example, in our case wouldn't it be better if we can index all brand new iPhones at once? Right?
+We can use the `bulk` method for this exact use case. Let's take a look at the code:
+
+```jsx
+const dataset = [
+  {
+    id: 2,
+    name: "iPhone 12 mini",
+    description: "Blast past fast.",
+    price: 599,
+  },
+  {
+    id: 3,
+    name: "iPhone 12 Pro",
+    description: "It's a leap year.",
+    price: 999,
+  },
+  {
+    id: 4,
+    name: "iPhone 12 Pro max",
+    description: "It's a leap year.",
+    price: 1199,
+  },
+];
+
+const body = dataset.flatMap(doc => [{ index: { _index: "products" } }, doc]);
+
+const { body: bulkResponse } = await client.bulk({ refresh: true, body });
+
+if (bulkResponse.errors) {
+  const erroredDocuments = [];
+  // The items array has the same order of the dataset we just indexed.
+  // The presence of the `error` key indicates that the operation
+  // that we did for the document has failed.
+  bulkResponse.items.forEach((action, i) => {
+    const operation = Object.keys(action)[0];
+    if (action[operation].error) {
+      erroredDocuments.push({
+        // If the status is 429 it means that you can retry the document,
+        // otherwise it's very likely a mapping error, and you should
+        // fix the document before to try it again.
+        status: action[operation].status,
+        error: action[operation].error,
+        operation: body[i * 2],
+        document: body[i * 2 + 1],
+      });
+    }
+  });
+  // Do something useful with it.
+  console.log(erroredDocuments);
+}
+```
+
+The `bulk` method provides a way to perform multiple `index`, `create`, `delete`, and `update` actions in a single request. Here we are using the `index` action but you can use the other actions as per your needs.
+:::tip
+`bulk` performs multiple indexing or delete operations in a single API call. This reduces overhead and can greatly increase indexing speed.
+:::
+
+### Update an existing document
+
+We often needs to update and existing document. We'll use the `update` method for the same.
+
+It enables you to script document updates. The script can update, delete, or skip modifying the document. To increment the `price`, you can call the `update` method with the following script:
+
+```jsx
+await client.update({
+  // The name of the index.
+  index: "products",
+  // Document ID.
+  id: -1,
+  body: {
+    script: {
+      source: "ctx._source.price += params.price_diff",
+      params: {
+        price_diff: 99,
+      },
+    },
+  },
+});
+```
+
+The `update` API also supports passing a partial document, which is merged into the existing document. Let's use it to update the `description` of the product with `id = -1`:
+
+```jsx
+await client.update({
+  // The name of the index.
+  index: "products",
+  // Document ID.
+  id: -1,
+  body: {
+    doc: {
+      description: "Fast enough!",
+    },
+  },
+});
+```
+
+### Delete an existing document
+
+It's a no-brainer that we also need to remove existing documents at some point.
+
+We'll use the `delete` method to remove a document from an index. For that, we must specify the index name and document ID. Let's take a look at an example:
+
+```jsx
+await client.delete({
+  // The name of the index.
+  index: "products",
+  // Document ID.
+  id: -1,
+});
+```
+
+### The Search
+
+The `search` API allows us to execute a search query and get back search hits that match the query.
+
+Let's start with a simple query.
+
+```jsx
+// Let's search!
+const { body } = await client.search({
+  // The name of the index.
+  index: "products",
+  body: {
+    // Defines the search definition using the Query DSL.
+    query: {
+      match: {
+        description: "blast",
+      },
+    },
+  },
+});
+```
+
+This query will return all the documents whose `description` field matches with `"blast"`
+:::info
+Learn more about Query DSL <ExternalLink href="https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl.html">here</ExternalLink>.
+:::
+Nice and simple right. But, that's not all! We can go for even more specific queries. Let's look at some examples:
+
+- Search for exact text like name of a product
+
+```jsx
+// Let's search for products with name "iPhone 12 Pro" !
+const { body } = await client.search({
+	// The name of the index.
+  index: "products",
+  body: {
+		// Defines the search definition using the Query DSL.
+    query: {
+      term: {
+        title.keyword: {
+					value: "iPhone 12 Pro"
+				}
+      }
+    }
+  }
+});
+```
+
+- Search for a range of values like products between a price range
+
+```jsx
+// Let's search for products ranging between 500 and 1000!
+const { body } = await client.search({
+  // The name of the index.
+  index: "products",
+  body: {
+    // Defines the search definition using the Query DSL.
+    query: {
+      range: {
+        price: {
+          gte: 500,
+          lte: 1000,
+        },
+      },
+    },
+  },
+});
+```
+
+- Search using multiple conditions
+
+```jsx
+// Let's search for products that are either ranging between 500 and 1000
+// or description matching "stunning"
+const { body } = await client.search({
+  // The name of the index.
+  index: "products",
+  body: {
+    // Defines the search definition using the Query DSL.
+    query: {
+      // Return result for which this nested condition is TRUE.
+      bool: {
+        // Acts like an OR operator.
+        // Returns TRUE even if one of these conditions is met
+        should: [
+          {
+            range: {
+              price: {
+                gte: 500,
+                lte: 1000,
+              },
+            },
+          },
+          {
+            match: {
+              description: "stunning",
+            },
+          },
+        ],
+      },
+    },
+  },
+});
+```
+
+If you need a search query where all the conditions must be matched then you should use the `must` operator inside the `bool` It acts like an AND operator and returns TRUE only if all the conditions met. Inside `bool`, there are also other operators `must_not` and `should_not` that you can use as per your needs.
+
+These are just a few examples of search queries, you can perform even more specific and power search queries.
+:::info
+Learn more about search using Query DSL <ExternalLink href="https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl.html">here</ExternalLink>.
+:::
+
+#### Sort search results
+
+Elasticsearch allows us to add one or more sorts on specific fields. Each sort can be reversed as well. The sort is defined on a per-field level, with special field name for `_score` to sort by score, and `_doc` to sort by index order.
+
+The order defaults to "desc" when sorting on the `_score`, and defaults to "asc" when sorting on anything else.
+
+Let's take a look at the following example:
+
+```jsx
+// Let's sort the search results!
+const { body } = await client.search({
+  // The name of the index.
+  index: "products",
+  body: {
+    // Defines the search definition using the Query DSL.
+    query: {
+      bool: {
+        // Acts like an AND operator.
+        // Returns TRUE only if all of these conditions are met.
+        must: [
+          {
+            range: {
+              price: {
+                gte: 500,
+                lte: 1100,
+              },
+            },
+          },
+          {
+            match: {
+              name: "iPhone",
+            },
+          },
+        ],
+      },
+    },
+    // Sort the search result by "price"
+    sort: [
+      {
+        price: {
+          order: "asc",
+        },
+      },
+    ],
+  },
+});
+```
+
+Here we've sort the search result by `price` in `"asc"` order.
+
+#### Paginate search results
+
+Pagination is a must-have feature for every decent real-world app. And Elasticsearch helps us with this as well. Let's see how? 🙂
+
+By default, the `search` method returns the top 10 matching documents.
+
+To paginate through a larger set of results, you can use the search API’s `size` and `from` parameters. The `size` parameter is the number of matching documents to return. The `from` parameter is a zero-indexed offset from the beginning of the complete result set that indicates the document you want to start with.
+
+For example, the following `search` method call sets the `from` offset to `15`, meaning the request offsets, or skips, the first fifteen matching documents.
+
+The `size` parameter is `15`, meaning the request can return up to 15 documents, starting at the offset.
+
+```jsx
+// Let's paginate the search results!
+const { body } = await client.search({
+  // The name of the index.
+  index: "products",
+  body: {
+    // Starting offset (default: 0)
+    from: 15,
+    // Number of hits to return (default: 10)
+    size: 15,
+    // Defines the search definition using the Query DSL.
+    query: {
+      match: {
+        description: "blast",
+      },
+    },
+  },
+});
+```
+
+## Conclusion
+
+If you're looking to implement a fast search mechanism for your app or website. I would recommend you to consider Elasticsearch as a solution to that.
+
+And if you're interested in building full-stack serverless web applications I would highly recommend you try out <ExternalLink href="https://www.webiny.com/?utm_source=Webiny-blo&utm_medium=webiny-blog&utm_campaign=webiny-blog-nov-09&utm_content=webiny-blog-lighting-fast-search-with-elasticsearch&utm_term=W00340">Webiny</ExternalLink> The Easiest Way To Adopt Serverless. We've _Elasticsearch_ along with _DynamoDB_ baked-in for super-fast search in our core apps like Page builder, File manager, and Headless CMS.
+
+I hope this blog will help you in your web development journey, but, of course, if you have any further questions, concerns, or ideas, feel free to ping me 💬 over <ExternalLink href="https://twitter.com/BhardwajAshu96">Twitter</ExternalLink> or even directly via our <ExternalLink href="https://www.webiny.com/slack?utm_source=Webiny-blog&utm_medium=webiny-blog&utm_campaign=webiny-blog-nov-09&utm_content=webiny-slack-community&utm_term=W00341">community Slack</ExternalLink>.
+
+---
+
+Thanks for reading this blog! My name is Ashutosh, and I work as a full-stack developer at Webiny. If you have any questions, comments, or just wanna say hi, feel free to reach out to me via <ExternalLink href="https://twitter.com/BhardwajAshu96">Twitter</ExternalLink>.
+You can also subscribe 🍿 our <ExternalLink href="https://www.youtube.com/channel/UCI5TBif-unrpn5htTRxXPQw?utm_source=Webiny-blog&utm_medium=webiny-yt-channel&utm_campaign=webiny-blog-nov-09&utm_content=webiny-yt-channel&utm_term=W00342">YouTube channel</ExternalLink> where we post knowledge sharing every week.
