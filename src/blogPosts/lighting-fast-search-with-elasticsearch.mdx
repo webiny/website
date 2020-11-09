@@ -3,7 +3,7 @@ slug: "blog/lighting-fast-search-with-elasticsearch"
 title: "Lighting fast search with Elasticsearch"
 description: "Learn how to get started with Elasticsearch & implement a fast search for your app in less than 10 minutes!"
 tags: ["Elasticsearch", "Web development", "Open source", "Javascript"]
-featureImage: "./assets/lighting-fast-search-with-elasticsearch/fast-marc-olivier-jodoin-unsplash.jpg"
+featureImage: "./assets/lighting-fast-search-with-elasticsearch/coverImg.png"
 author: ashu
 date: 2020-11-09
 ---
@@ -29,7 +29,7 @@ The speed and scalability of Elasticsearch and its ability to index many types o
 - Logging and log analytics
 - And many more...
 
-We at <ExternalLink href="https://webiny.com">Webiny</ExternalLink> are building a feature for the upcoming `v5` release where we'll use Elasticsearch to perform a super-fast search in our core apps like Page builder, File manager, and Headless CMS. Please check out our <ExternalLink href="https://github.com/webiny/webiny-js">Github repo</ExternalLink> to learn more about it.
+We at <ExternalLink href="https://www.webiny.com/?utm_source=Webiny-blo&utm_medium=webiny-blog&utm_campaign=webiny-blog-nov-09&utm_content=webiny-blog-lighting-fast-search-with-elasticsearch&utm_term=W00340">Webiny</ExternalLink> are building a feature for the upcoming `v5` release where we'll use Elasticsearch to perform a super-fast search in our core apps like Page builder, File manager, and Headless CMS. Please check out our <ExternalLink href="https://github.com/webiny/webiny-js?utm_source=Webiny-blog&utm_medium=webiny-github&utm_campaign=webiny-blog-nov-09&utm_content=webiny-github-repo&utm_term=W00343">Github repo</ExternalLink> to learn more about it.
 
 ## Getting started with Elasticsearch
 
@@ -65,9 +65,11 @@ const client = new Client({
   requestTimeout: 60000,
 });
 ```
+
 :::note
 As we previously mentioned we're assuming that we have an Elasticsearch cluster running locally on `localhost:9200`
 :::
+
 ---
 
 ## Elasticsearch in action
@@ -202,6 +204,7 @@ The `bulk` method provides a way to perform multiple `index`, `create`, `delete`
 :::tip
 `bulk` performs multiple indexing or delete operations in a single API call. This reduces overhead and can greatly increase indexing speed.
 :::
+
 ### Update an existing document
 
 We often needs to update and existing document. We'll use the `update` method for the same.
@@ -367,6 +370,7 @@ These are just a few examples of search queries, you can perform even more speci
 :::info
 Learn more about search using Query DSL <ExternalLink href="https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl.html">here</ExternalLink>.
 :::
+
 #### Sort search results
 
 Elasticsearch allows us to add one or more sorts on specific fields. Each sort can be reversed as well. The sort is defined on a per-field level, with special field name for `_score` to sort by score, and `_doc` to sort by index order.
@@ -453,11 +457,11 @@ const { body } = await client.search({
 
 If you're looking to implement a fast search mechanism for your app or website. I would recommend you to consider Elasticsearch as a solution to that.
 
-And if you're interested in building full-stack serverless web applications I would highly recommend you try out <ExternalLink href="https://webiny.com">Webiny</ExternalLink> The Easiest Way To Adopt Serverless. We've _Elasticsearch_ along with _DynamoDB_ baked-in for super-fast search in our core apps like Page builder, File manager, and Headless CMS.
+And if you're interested in building full-stack serverless web applications I would highly recommend you try out <ExternalLink href="https://www.webiny.com/?utm_source=Webiny-blo&utm_medium=webiny-blog&utm_campaign=webiny-blog-nov-09&utm_content=webiny-blog-lighting-fast-search-with-elasticsearch&utm_term=W00340">Webiny</ExternalLink> The Easiest Way To Adopt Serverless. We've _Elasticsearch_ along with _DynamoDB_ baked-in for super-fast search in our core apps like Page builder, File manager, and Headless CMS.
 
-I hope this blog will help you in your web development journey, but, of course, if you have any further questions, concerns, or ideas, feel free to ping me 💬 over <ExternalLink href="https://twitter.com/BhardwajAshu96">Twitter</ExternalLink> or even directly via our <ExternalLink href="https://webiny.com/slack">community Slack</ExternalLink>.
+I hope this blog will help you in your web development journey, but, of course, if you have any further questions, concerns, or ideas, feel free to ping me 💬 over <ExternalLink href="https://twitter.com/BhardwajAshu96">Twitter</ExternalLink> or even directly via our <ExternalLink href="https://www.webiny.com/slack?utm_source=Webiny-blog&utm_medium=webiny-blog&utm_campaign=webiny-blog-nov-09&utm_content=webiny-slack-community&utm_term=W00341">community Slack</ExternalLink>.
 
 ---
 
 Thanks for reading this blog! My name is Ashutosh, and I work as a full-stack developer at Webiny. If you have any questions, comments, or just wanna say hi, feel free to reach out to me via <ExternalLink href="https://twitter.com/BhardwajAshu96">Twitter</ExternalLink>.
-You can also subscribe 🍿 our <ExternalLink href="https://www.youtube.com/webiny">YouTube channel</ExternalLink> where we post knowledge sharing every week.
+You can also subscribe 🍿 our <ExternalLink href="https://www.youtube.com/channel/UCI5TBif-unrpn5htTRxXPQw?utm_source=Webiny-blog&utm_medium=webiny-yt-channel&utm_campaign=webiny-blog-nov-09&utm_content=webiny-yt-channel&utm_term=W00342">YouTube channel</ExternalLink> where we post knowledge sharing every week.
