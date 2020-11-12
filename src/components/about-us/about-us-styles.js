@@ -40,8 +40,6 @@ export const SectionWithWaves = styled("section")(
 export const SectionWithDots = styled("section")(
     {
         backgroundColor: theme.color.white,
-        position: "relative",
-        zIndex: 0,
         backgroundImage: "url(" + dotsBg + ")",
         backgroundRepeatX: "repeat",
         backgroundRepeatY: "no-repeat",
