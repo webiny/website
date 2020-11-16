@@ -7520,6 +7520,15 @@ gatsby-mdx-fix@^0.0.3:
     unist-util-remove "^1.0.1"
     unist-util-visit "^1.4.0"
 
+gatsby-node-helpers@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/gatsby-node-helpers/-/gatsby-node-helpers-0.3.0.tgz#3bdca3b7902a702a5834fef280ad66d51099d57c"
+  integrity sha1-O9yjt5AqcCpYNP7ygK1m1RCZ1Xw=
+  dependencies:
+    json-stringify-safe "^5.0.1"
+    lodash "^4.17.4"
+    p-is-promise "^1.1.0"
+
 gatsby-page-utils@^0.2.25:
   version "0.2.25"
   resolved "https://registry.yarnpkg.com/gatsby-page-utils/-/gatsby-page-utils-0.2.25.tgz#bfaa132d80c5e6e8877261177368ba7390d31435"
@@ -7841,6 +7850,16 @@ gatsby-remark-embed-gist@^1.2.1:
     cheerio "^1.0.0-rc.3"
     node-fetch "^2.6.0"
     parse-numeric-range "^1.2.0"
+
+gatsby-remark-highlight-code@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-highlight-code/-/gatsby-remark-highlight-code-2.1.0.tgz#f8d266e6d139465a9fd8f17a3bf3e5a20c02c2d0"
+  integrity sha512-lu944ZTfAViFQ4+t7NDzbWQgmI9gyHGBnp9rqDg9EvvUb3Y2YYhqi7QVMYre0+vqeah0IWKjgokXwhUJ8kg1zQ==
+  dependencies:
+    gatsby-node-helpers "^0.3.0"
+    lodash "^4.17.15"
+    mdast-util-to-string "^1.1.0"
+    unist-util-visit "^2.0.2"
 
 gatsby-remark-images@^3.3.30:
   version "3.3.30"

@@ -100,9 +100,9 @@ module.exports = {
                     {
                         resolve: `gatsby-remark-admonitions`,
                         options: {
-                          tag: ":::",
-                          icons: "svg"
-                        }
+                            tag: ":::",
+                            icons: "svg",
+                        },
                     },
                 ],
             },
@@ -120,9 +120,17 @@ module.exports = {
                     {
                         resolve: `gatsby-remark-admonitions`,
                         options: {
-                          tag: ":::",
-                          icons: "svg"
-                        }
+                            tag: ":::",
+                            icons: "svg",
+                        },
+                    },
+                    {
+                        resolve: `gatsby-remark-highlight-code`,
+                        options: {
+                            terminal: "carbon",
+                            theme: "blackboard",
+                            lineNumbers: "false",
+                        },
                     },
                 ],
             },
