@@ -6,6 +6,7 @@ import profileAdrian from "./assets/Adrian.png";
 import profileAshutosh from "./assets/Ashutosh.png";
 import profileAlbiona from "./assets/Albiona.png";
 import profileMislav from "./assets/Mislav.png";
+import profileBruno from "./assets/Bruno.png";
 
 import githubIcon from "./assets/github.svg";
 import twitterIcon from "./assets/twitter.svg";
@@ -77,6 +78,15 @@ export const TEAM_MEMBERS = [
         jobTitle: "Business development",
         linkedIn: "https://www.linkedin.com/in/mislavstreicher",
         imgSrc: profileMislav,
+    },
+    {
+        id: 8,
+        name: "Bruno Zorić",
+        jobTitle: "Full-stack developer",
+        github: "https://github.com/brunozoric",
+        twitter: "https://twitter.com/snyder_hr",
+        linkedIn: "https://www.linkedin.com/in/brunozoric",
+        imgSrc: profileBruno,
     },
 ];
 
