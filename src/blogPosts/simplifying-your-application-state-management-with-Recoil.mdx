@@ -1,0 +1,406 @@
+---
+slug: "blog/simplifying-your-application-state-management-with-Recoil"
+title: "Simplifying your application state management with Recoil"
+description: "Switching Webiny's Page Builder Application state management to Recoil due to redux being hard to maintain and debug."
+tags: ["Recoil", "Redux", "Page Builder", "JavaScript"]
+featureImage: "./assets/simplifying-your-application-state-management-with-Recoil/cover.png"
+author: bruno
+date: 2020-11-23
+---
+
+In Webiny we have the Page Builder Application that was built with help of redux as global state management. We decided to switch our Page Builder to Recoil due to redux being hard to maintain and debug. But before we dive into how we did it, what were the issues and how we managed to make everything work with our code structure, a bit info about ...
+
+## Recoil
+
+It is a, fairly new, library for managing global state - like redux. It is being developed by people at Facebook and it is still in an experimental state, so you can expect things will change.
+
+## Introduction
+
+A recoil state is contained within an atom. The official description says an atom is “a representation of the state”. You can have multiple atoms, to split state, e.g. page, content, UI, etc., which helps when structuring the actual state. It can lead to some problems though, but we will come to that later.
+
+Recoil is used via hooks, so you can not use it in your class components. If you would like to use Recoil, and you have class components, you need to wrap your class component in a function one and pass the Recoil state and state set function.
+
+## Basic Recoil API info
+
+### Atom
+
+“An atom represents a state in Recoil”, says the official documentation about it. Look at it as part of the global state object from redux. Of course, you can put everything in a single atom, but we reckon that is not the intended use. The main properties you need when instantiating an atom are `key` and `default`, where the `key` is a unique string that identifies an atom internally in Recoil and `default` is the initial value of the state. You can create an atom without a default value, of course, just try not to. <ExternalLink href="https://recoiljs.org/docs/api-reference/core/atom">Read more...</ExternalLink>
+
+### Selector
+
+“Selectors represent a function, or derived state in Recoil”, as it states in the official documentation. When you are creating the selector, you need to define the `key` and `get` properties, where `key` is a unique string that identifies the selector internally and `get` is a function that returns a value (it can be an async function as well). We explain that more later on. <ExternalLink href="https://recoiljs.org/docs/api-reference/core/selector">Read more...</ExternalLink>
+
+### Selector family
+
+This function is used to read the state with help of a passed param. Basically, you can pass it an `id` and return only the part of the state based on that value. When you are creating the selectorFamily you need to define the `key` and `get` properties, where the `key` is a unique string that identifies the selector family internally in Recoil and `get` is a function that accepts an argument which you passed into `selectorFamily` and it returns a function that is exactly the same as `get` in the plain selector. You can use the sent value to search the state or do whatever you need to do. <ExternalLink href="https://recoiljs.org/docs/api-reference/utils/selectorFamily">Read more...</ExternalLink>
+
+### useRecoilState(atom | selector)
+
+A hook that returns a tuple of current atom, or selector, value and a setter function for that atom or selector, as built-in React’s `useState`. Note that if you are calling this hook with a selector variable, it must be a writable selector - have _set_ property defined. <ExternalLink href="https://recoiljs.org/docs/api-reference/core/useRecoilState">Read more...</ExternalLink>
+
+### useRecoilValue(atom | selector)
+
+A hook that returns the current atom or selector value. This hook is intended to use when you only need to read the state, not write to it. <ExternalLink href="https://recoiljs.org/docs/api-reference/core/useRecoilValue">Read more...</ExternalLink>
+
+### useSetRecoilState(atom | selector)
+
+A hook that returns a setter function for a given atom or selector. Be aware that if you are using the selector must be writable to be able to use this hook. Also, this hook will not subscribe the component to re-render when the value changes. <ExternalLink href="https://recoiljs.org/docs/api-reference/core/useSetRecoilState">Read more...</ExternalLink>
+
+### useResetRecoilState(atom)
+
+A hook that will reset the state to default value given when creating the atom. As the `useSetRecoilState`, this hook will not subscribe the component to re-render when value changes. <ExternalLink href="https://recoiljs.org/docs/api-reference/core/useResetRecoilState">Read more...</ExternalLink>
+
+## Starting with Recoil
+
+1. Install it via package manager:
+
+```bash
+yarn add recoil or npm install recoil
+```
+
+1. Wrap your code in RecoilRoot component:
+
+```tsx
+const YouAppCodeWrap = () => {
+  return (
+    <RecoilRoot>
+      <YourAppCode />
+    </RecoilRoot>
+  );
+};
+```
+
+1. Create an atom:
+
+```tsx
+const exampleAtom = atom({
+  key: "example",
+  default: false,
+});
+```
+
+1. Use it:
+
+```tsx
+const YourAppCode = () => {
+  const [exampleValue, setExampleValue] = useRecoilState(exampleAtom);
+  return <Button onClick={() => setExampleValue(!exampleValue)} active={exampleValue} />;
+};
+```
+
+## Switching code from redux to Recoil
+
+When we decided to switch the Webiny Page Builder application from redux to Recoil, we knew nothing about it, so when we first read about it intrigued us how it will work in terms of speed and ease of understanding compared to redux.
+
+All the components that used redux were using the `connect` function to map state and dispatch methods to the component.
+
+State being used here is something similar to this (types are not exact since there is no point to complicate the example):
+
+```tsx
+{
+  elements: { [key: string]: any },
+  page: {
+    content: {
+      id: string;
+      [key: string]: any;
+    },
+    settings: {
+      general: {
+        layout: string;
+      };
+    }
+  }
+  plugins: { [key: string]: any[] };
+}
+```
+
+So next, let’s see some code that uses values from redux state:
+
+```tsx
+const Content = ({ rootElement, renderLayout, layout }) => {
+  const { theme } = usePageBuilder();
+  const plugins = getPlugins<PbEditorContentPlugin>("pb-editor-content");
+
+  const layouts = React.useMemo(() => {
+    const plugins = getPlugins<PbPageLayoutPlugin>("pb-page-layout");
+    return plugins.map(pl => pl.layout);
+  }, []);
+
+  const themeLayout = layouts.find(l => l.name === layout);
+
+  if (renderLayout && !themeLayout) {
+    return <div>Layout &quot;{layout}&quot; was not found in your theme!</div>;
+  }
+
+  let content = <Element id={rootElement.id} />;
+
+  content = renderLayout ? React.createElement(themeLayout.component, null, content) : content;
+
+  return (
+    <div>
+      {plugins.map(plugin => React.cloneElement(plugin.render(), { key: plugin.name }))}
+      <div>{content}</div>
+    </div>
+  );
+};
+
+const stateToProps = state => ({
+  rootElement: state.elements[getContent(state).id],
+  layout: get(getPage(state), "settings.general.layout"),
+  renderLayout: isPluginActive("pb-editor-toolbar-preview")(state),
+});
+
+export default connect<any, any, any>(stateToProps)(Content);
+```
+
+We did not put some parts of the component since it does not matter in this context. The whole component is located <ExternalLink href="https://github.com/webiny/webiny-js/blob/031f0644c52fa2bd1f7095f0b80818c549d7672d/packages/app-page-builder/src/editor/components/Editor/Content.tsx">here</ExternalLink>.
+
+Redux state structure was transferred to Recoil, with a difference that each of the top-level state properties (page, elements, and plugins) were separated into its own atoms. So we have `pageAtom`, `elementsAtom`, and `pluginsAtom` with the same types as in the redux state.
+
+And that same <ExternalLink href="https://github.com/webiny/webiny-js/blob/812a7ab3725bdb56b9fa0841eb5e8fa05bc0c7a1/packages/app-page-builder/src/editor/components/Editor/Content.tsx">component</ExternalLink> with Recoil:
+
+```tsx
+const Content = () => {
+  const rootElement = useRecoilValue(contentSelector);
+  const renderLayout = useRecoilValue(isPluginActiveSelector("pb-editor-toolbar-preview"));
+  const layout = useRecoilValue(layoutSelector);
+
+  const { theme } = usePageBuilder();
+  const pluginsByType = plugins.byType<PbEditorContentPlugin>("pb-editor-content");
+  const layouts = React.useMemo(() => {
+    const layoutPlugins = plugins.byType<PbPageLayoutPlugin>("pb-page-layout");
+    return layoutPlugins.map(pl => pl.layout);
+  }, []);
+  const themeLayout = layouts.find(l => l.name === layout);
+  if (renderLayout && !themeLayout) {
+    return <div>Layout &quot;{layout}&quot; was not found in your theme!</div>;
+  }
+  return (
+    <div>
+      {pluginsByType.map(plugin => React.cloneElement(plugin.render(), { key: plugin.name }))}
+      <div>{renderContent(themeLayout, rootElement, renderLayout)}</div>
+    </div>
+  );
+};
+
+export default Content;
+```
+
+Notice how much simpler this is. Recoil state is being read like plain React’s state, the difference is just that you pass the atom or selector you want to read instead of the default state value. Also, there is no need to write which type is the variable, e.g., `rootElement`, since it is extrapolated from an atom or selector that is being used with the hook.
+
+For setting the state, it is simple.
+
+First, let’s look at one simple component that uses redux:
+
+```tsx
+const Background = ({ element, deactivateElement, highlightElement }) => {
+  return (
+    <div
+      className={backgroundStyle}
+      onMouseOver={() => highlightElement({ element: null })}
+      onClick={() => element && deactivateElement()}
+    />
+  );
+};
+
+export default connect<any, any, any>(null, { deactivateElement, highlightElement })(
+  withActiveElement()(Background),
+);
+```
+
+Then look at that same component using Recoil (there was some refactoring included, but you get the picture):
+
+```tsx
+const Background: React.FunctionComponent = () => {
+  const [uiAtomValue, setUiAtomValue] = useRecoilState(uiAtom);
+  const { activeElement } = uiAtomValue;
+
+  const deactivateElement = useCallback(() => {
+    if (!activeElement) {
+      return;
+    }
+    setUiAtomValue(prev => ({
+      ...prev,
+      activeElement: null,
+      highlightElement: null,
+    }));
+  }, [activeElement]);
+  return <div className={backgroundStyle} onClick={deactivateElement} />;
+};
+
+export default React.memo(Background);
+```
+
+As when using React’s built-in `useState` hook, you use `useRecoilState` and set that atom state.
+
+## Creating selectors
+
+We will give a few example selectors from Webiny Page Builder, first it will be `contentSelector`. It is a quite simple piece of code:
+
+```tsx
+export const contentSelector = selector<PbElement>({
+  key: "contentSelector",
+  get: ({ get }) => {
+    const content = get(contentAtom);
+    if (content) {
+      return content;
+    }
+
+    const document = plugins.byName<PbDocumentElementPlugin>("pb-editor-page-element-document");
+    invariant(
+      document,
+      `"pb-editor-page-element-document" plugin must exist for Page Builder to work!`,
+    );
+    return document.create();
+  },
+});
+```
+
+So basically it reads `contentAtom`, if it is set - it returns that value. Otherwise it creates the document element.
+
+A more complex selector is an `activeElementWithChildrenSelector`, which uses other selectors to read the state and return some value.
+
+```tsx
+export const activeElementWithChildrenSelector = selector<PbElement | undefined>({
+  key: "activeElementWithChildrenSelector",
+  get: ({ get }) => {
+    const id = get(activeElementIdSelector);
+    if (!id) {
+      return undefined;
+    }
+    return get(elementWithChildrenByIdSelector(id));
+  },
+});
+```
+
+Even if it is a more “complex” selector, there is nothing complex about it, actually. It is a pure function that reads other selectors and returns an element with its children.
+
+## Creating selector families
+
+In Webiny we have plugins orientated structure of the code. So basically you can create a plugin, register it and our code will handle running the plugin and doing something with a plugin result if any. So let’s say that at some point you need to check if some plugin is active. It is quite simple with a `selectorFamily`:
+
+```tsx
+export const isPluginActiveSelector = selectorFamily<boolean, string>({
+  key: "isPluginActiveSelector",
+  get: name => {
+    return ({ get }) => {
+      const target = plugins.byName(name);
+      const state = get(pluginsAtom);
+      if (!target) {
+        return false;
+      }
+      const { type } = target;
+      if (!state[type]) {
+        return false;
+      }
+      const list = state[type];
+      return list.some(({ name }) => {
+        return name === target.name;
+      });
+    };
+  },
+});
+```
+
+And then you can check if that plugin is active:
+
+```tsx
+const isSomePluginActive = useRecoilValue(isPluginActiveSelector("plugin-name"));
+```
+
+## But Recoil is missing something ...
+
+What Recoil is missing are some kind of built-in actions, like in redux. There is nothing like that out of the box, so you will need to implement it yourself or find some existing library.
+
+In our case, we wrote a small class that handles running the actions when triggered and taking care of the state and any consequent actions that are derived from triggered action. It also has a few types and interfaces to help with writing actual actions and their arguments. You can check the class on our <ExternalLink href="https://github.com/webiny/webiny-js/blob/36cd7e6d23e48e31dac1ad2228cd865ef1838f59/packages/app-page-builder/src/editor/recoil/eventActions/EventActionHandler.ts">Github</ExternalLink>. By the time you read this, it might change a bit, but overall structure and how it works will most likely stay the same.
+
+Let us explain on usage examples:
+
+```tsx
+const handler = useEventActionHandler();
+const onClickHandler = useCallback(() => {
+  handler.trigger(
+    new TogglePluginActionEvent({
+      name: plugin,
+      closeOtherInGroup: true,
+    }),
+  );
+}, [plugin]);
+```
+
+Plugin toggle is a simple example of triggering the event which was registered with an event registration plugin. Again, plugin registration is something that has to do internally with our project, but basically, it assigns an action, which is a function of a certain type, to `TogglePluginActionEvent`. The action looks like this:
+
+```tsx
+export const togglePluginAction: EventActionCallableType<TogglePluginActionArgsType> = (
+  state,
+  meta,
+  args,
+) => {
+  const { name, params = {}, closeOtherInGroup = false } = args;
+  const plugin = plugins.byName(name);
+  if (!plugin) {
+    throw new Error(`There is no plugin with name "${name}".`);
+  }
+  const { plugins: pluginsAtomValue } = state;
+  const activePluginsByType = pluginsAtomValue[plugin.type] || [];
+  const isAlreadyActive = activePluginsByType.some(pl => pl.name === name);
+
+  let newPluginsList;
+  if (isAlreadyActive) {
+    newPluginsList = activePluginsByType.filter(pl => pl.name !== name);
+  } else if (closeOtherInGroup) {
+    newPluginsList = [{ name, params }];
+  } else {
+    newPluginsList = activePluginsByType.concat([{ name, params }]);
+  }
+
+  return {
+    state: {
+      plugins: {
+        ...pluginsAtomValue,
+        [plugin.type]: newPluginsList,
+      },
+    },
+  };
+};
+```
+
+As you can see, the action changes something in the existing state and returns it for `EventActionHandler` to write into the atoms.
+
+More complex example of the action is the update element action:
+
+```tsx
+export const updateElementAction: EventActionCallableType<UpdateElementActionArgsType> = (
+  state,
+  { client },
+  { element, merge, history = false },
+) => {
+  const content = createContentState(state.content, element, merge);
+  const actions = [];
+  if (history === true) {
+    if (!client) {
+      throw new Error("You cannot save revision while updating if you do not pass client arg.");
+    }
+    actions.push(new SaveRevisionActionEvent());
+  }
+  return {
+    state: {
+      content,
+      elements: flattenElementsHelper(content),
+    },
+    actions,
+  };
+};
+```
+
+This action creates a new content state and, if set to write history, “dispatches” a new action to actually save it to the database. When the handler receives a new state and actions, it keeps running actions it received and only then sets a new state. Action can be async so setting the state will occur after the promise has been awaited, if awaited.
+
+Problems that have arisen were connected to the fact that the Recoil state is accessible only in the tree of `RecoilRoot` and sometimes you need to access the state outside of it. When running the action and it starts another action, you want to use an updated state merged with the state that the first action produced, just in case something changed in between the actions. For that issue, there is a small [class](https://github.com/webiny/webiny-js/blob/36cd7e6d23e48e31dac1ad2228cd865ef1838f59/packages/app-page-builder/src/editor/recoil/modules/connected.ts) that allows using Recoil state outside of the root, but it's a hack - not officially supported. That class is a derivative of [recoil-connected-store](https://github.com/lnilya/recoil-connected-store). Since the time we did it this way, an [atom effects API](https://recoiljs.org/docs/guides/atom-effects) was released, which should help with this issue. That might be another blog :)
+
+## And…
+
+From our perspective it was a good idea to switch to Recoil, although for our case it was not a minor task - there are hundreds of changed or added files.
+
+If you are starting the project from scratch, we would suggest using Recoil, just note that there are differences between it and redux - mainly the hacky state access when not under the `RecoilRoot`.
+
+This refactored Page Builder will be released with version 5 of Webiny this December.
