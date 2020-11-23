@@ -118,9 +118,9 @@ const blogStyles = css(
                     fontSize: "1.2em",
                     marginBottom: 15,
                     marginLeft: 30,
-                    'p, ol li, ul li':{
+                    "p, ol li, ul li": {
                         fontSize: "1em",
-                    }
+                    },
                 },
             },
             blockquote: {
