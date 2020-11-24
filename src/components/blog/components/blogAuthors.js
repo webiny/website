@@ -53,7 +53,7 @@ export default {
     nico: {
         name: "Nico Schönnagel",
         description: "Solution Architect @ OEV Online Dienste GmbH.",
-        twitter: "",
+        twitter: "oev_online",
         avatar: nicoImg,
     },
 };
