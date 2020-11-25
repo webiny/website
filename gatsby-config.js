@@ -104,26 +104,6 @@ module.exports = {
                             icons: "svg",
                         },
                     },
-                ],
-            },
-        },
-        {
-            resolve: `gatsby-transformer-remark`,
-            options: {
-                plugins: [
-                    {
-                        resolve: "gatsby-remark-embed-gist",
-                    },
-                    {
-                        resolve: "@weknow/gatsby-remark-twitter",
-                    },
-                    {
-                        resolve: `gatsby-remark-admonitions`,
-                        options: {
-                            tag: ":::",
-                            icons: "svg",
-                        },
-                    },
                     {
                         resolve: `gatsby-remark-prismjs`,
                         options: {
@@ -187,6 +167,26 @@ module.exports = {
                             // Add additional HTML escapes by providing a mapping
                             // of HTML entities and their escape value IE: { '}': '&#123;' }
                             escapeEntities: {},
+                        },
+                    },
+                ],
+            },
+        },
+        {
+            resolve: `gatsby-transformer-remark`,
+            options: {
+                plugins: [
+                    {
+                        resolve: "gatsby-remark-embed-gist",
+                    },
+                    {
+                        resolve: "@weknow/gatsby-remark-twitter",
+                    },
+                    {
+                        resolve: `gatsby-remark-admonitions`,
+                        options: {
+                            tag: ":::",
+                            icons: "svg",
                         },
                     },
                 ],
