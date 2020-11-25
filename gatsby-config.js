@@ -135,5 +135,30 @@ module.exports = {
                 ],
             },
         },
+        {
+            resolve: "gatsby-plugin-google-tagmanager",
+            options: {
+                id: "GTM-5TG2W9G",
+
+                // Include GTM in development.
+                //
+                // Defaults to false meaning GTM will only be loaded in production.
+                includeInDevelopment: false,
+
+                // datalayer to be set before GTM is loaded
+                // should be an object or a function that is executed in the browser
+                //
+                // Defaults to null
+                defaultDataLayer: { platform: "gatsby" },
+
+                // Specify optional GTM environment details.
+                gtmAuth: "q6mZlPddNJ_r_QSuUBx2aA",
+                gtmPreview: "env-1",
+                dataLayerName: "dataLayer",
+
+                // Name of the event that is triggered
+                // on every Gatsby route change.
+            },
+        },
     ],
 };
