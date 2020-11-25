@@ -141,7 +141,7 @@ Start off by installing a few NPM packages in the `e-commerce-starter` project:
 
 - `graphql` - This package provides logic for parsing GraphQL queries.
 
-```ts
+```bash
 yarn i @apollo/client graphql --save
 ```
 
@@ -446,21 +446,21 @@ from the `CardElement` of the `react-stripe-js` library, and the `billing_detail
 
 First, import the following from the Stripe's `react-stripe-js` library:
 
-```ts
+```javascript
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 ```
 
 Second, inside the `CheckoutForm` component, on line `53` add the reference to the elements
 object using the `useElements()` hook and the reference to the Stripe object, using `useStripe()` hook.
 
-```ts
+```js
 const stripe = useStripe();
 const elements = useElements();
 ```
 
 Third, paste the `paymentMethodReq` method by placing it under the `clientSecret` request in the `try and catch` statement.
 
-```ts
+```tsx
 try {
   const { data: clientSecret } = await axios.post("/api/payment_intents", {
     amount: totalPrice * 100,
