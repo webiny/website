@@ -1,10 +1,10 @@
+import CircleIcon from "../assets/circle.inline.svg";
 import { FeaturedBlogWrapper } from "../blog-styles";
 import Img from "gatsby-image";
 import React from "react";
-import { navigate } from "gatsby";
 // assets
 import authors from "./blogAuthors";
-import CircleIcon from "../assets/circle.inline.svg";
+import { navigate } from "gatsby";
 
 export default ({ data }) => {
     // handle image transformation exceptions
@@ -22,7 +22,10 @@ export default ({ data }) => {
         >
             <div className={"media-container"}>{FeatureImage}</div>
             <div className={"text-container"}>
-                <span className={"featured-tag"}>featured post</span>
+                <div className={"tags"}>
+                    <span className={"tag"}>featured post</span>
+                    <span className={"tag"}>guest post</span>
+                </div>
                 <h2 className={"title"}>{data.title}</h2>
                 <p className={"description"}>{data.description}</p>
                 <div className={"author-wrapper"}>

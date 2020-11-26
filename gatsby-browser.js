@@ -5,6 +5,7 @@
  */
 
 // You can delete this file if you're not using it
+require("prismjs/themes/prism.css");
 
 exports.onRouteUpdate = ({ location, prevLocation }) => {
     if (window.posthog) {

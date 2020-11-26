@@ -1,10 +1,11 @@
-import svenImg from "../assets/sven.png";
-import pavelImg from "../assets/pavel.png";
 import adrianImg from "../assets/adrian.png";
-import ashuImg from "../assets/ashu.png";
 import albionaImg from "../assets/albiona.png";
-import mislavImg from "../assets/mislav.png";
+import ashuImg from "../assets/ashu.png";
 import brunoImg from "../assets/bruno.png";
+import mislavImg from "../assets/mislav.png";
+import nicoImg from "../assets/nico.png";
+import pavelImg from "../assets/pavel.png";
+import svenImg from "../assets/sven.png";
 
 export default {
     sven: {
@@ -48,5 +49,11 @@ export default {
         description: "Full-stack Developer @ Webiny",
         twitter: "snyder_hr",
         avatar: brunoImg,
+    },
+    nico: {
+        name: "Nico Schönnagel",
+        description: "Solution Architect @ OEV Online Dienste GmbH.",
+        twitter: "oev_online",
+        avatar: nicoImg,
     },
 };

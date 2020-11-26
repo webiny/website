@@ -1,11 +1,11 @@
-import styled from "react-emotion";
+import chevron from "./assets/chevron.svg";
 import { css } from "emotion";
-import mq from "../utils/breakpoints";
-import theme from "../utils/theme";
 import heroBg from "./assets/hero-bg.svg";
+import mq from "../utils/breakpoints";
 // assets
 import rectImg from "./assets/featured-rect.svg";
-import chevron from "./assets/chevron.svg";
+import styled from "react-emotion";
+import theme from "../utils/theme";
 
 export const SectionWithBackground = styled("section")(
     {
@@ -86,7 +86,11 @@ export const FeaturedBlogWrapper = styled("div")(
                 height: "100%",
             },
         },
-        "& .featured-tag": {
+        "& .tags": {
+            display: "flex",
+            flexDirection: "row",
+        },
+        "& .tag": {
             backgroundColor: "#F9DFD6",
             textTransform: "uppercase",
             fontSize: "0.7em",
@@ -94,6 +98,8 @@ export const FeaturedBlogWrapper = styled("div")(
             borderRadius: 5,
             width: "80px",
             textAlign: "center",
+            alignItems: "flex-start",
+            marginRight: "5px",
         },
         "& .text-container": {
             boxSizing: "border-box",
