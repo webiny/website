@@ -23,23 +23,23 @@ module.exports = {
                 autoLabel: true,
             },
         },
-        {
-            resolve: "gatsby-plugin-google-marketing-platform",
-            options: {
-                dataLayer: {
-                    // Preset dataLayer values
-                    gaPropertyId: "UA-35527198-1",
-                },
-                analytics: {
-                    id: "UA-35527198-1",
-                },
-                optimize: {
-                    id: "GTM-NJG8KQL",
-                    timeout: 1000,
-                    activateOn: "observer",
-                },
-            },
-        },
+        // {
+        //     resolve: "gatsby-plugin-google-marketing-platform",
+        //     options: {
+        //         dataLayer: {
+        //             // Preset dataLayer values
+        //             gaPropertyId: "UA-35527198-1",
+        //         },
+        //         analytics: {
+        //             id: "UA-35527198-1",
+        //         },
+        //         optimize: {
+        //             id: "GTM-NJG8KQL",
+        //             timeout: 1000,
+        //             activateOn: "observer",
+        //         },
+        //     },
+        // },
         {
             resolve: "gatsby-plugin-facebook-pixel",
             options: {
