@@ -34,7 +34,7 @@ as Twitter or GitHub.
 
 ![dev.to login](./assets/what-is-idaas-and-why-use-one/dev-to-login.png)
 
-### **Open Authentication and OpenID Connect protocols**
+### Open Authentication and OpenID Connect protocols
 
 After some research, you learn that to implement this feature there are **internet standards** you have to use,
 such as **Open Authentication 2.0 (OAuth 2.0), and OpenID Connect (OIDC).**
@@ -64,10 +64,16 @@ With a proper IDaaS (Identity as as Service) provider, you'll be able to configu
 ways to authenticate, and have one centralized layer of access control.
 Let's learn more about what IDaaS is in the following section.
 
-### **Identity as a Service provider (IDaaS)**
+---
+
+**\*Authorization server:** The application that knows the owner of the identity, where the owner already has an account.
+
+**\*Resource owner:** You're the owner of your identity, your data and any actions that you perform with your accounts.
+
+### Identity as a Service provider (IDaaS)
 
 To better understand what is an IDaaS, we'll continue with the context of the client who has other requests regarding the login/registration feature.
-The client, inspired by the <ExternalLink href="http://acloudguru.com">acloudguru.com</ExternalLink> platform,
+The client, inspired by the <ExternalLink href="http://acloudguru.com">acloud.guru</ExternalLink> platform,
 requires implementing another 5-6 options to login/register, as seen in the image below:
 
 ![acloudguru login](./assets/what-is-idaas-and-why-use-one/acloudguru-login.png)
@@ -102,7 +108,9 @@ Once logged in, the user is redirected back to your app with an authorization co
 which is then exchanged for a [JSON Web Token (JWT)](https://auth0.com/docs/tokens/json-web-tokens)
 from Auth0. The JWT will then be used to call your APIs, and will also contain basic information about the user.
 
-A cloud guru (**ACG**): **ACG → Auth0 → GitHub (**3rd party authorization providers**) → Auth0 → ACG**
+In the context of acloud.guru website (**ACG**), as an example, the flow goes like this:
+
+**ACG → Auth0 → GitHub (**3rd party authorization providers**) → Auth0 → ACG**
 
 - **ACG** is only communicating with **Auth0**
 
@@ -110,7 +118,7 @@ A cloud guru (**ACG**): **ACG → Auth0 → GitHub (**3rd party authorization pr
 
 ![Auth0 dashboard](./assets/what-is-idaas-and-why-use-one/auth0-dashboard.png)
 
-## **What is SSO?**
+## What is SSO?
 
 IDaaS enables scenarios where **one login** can be used **across multiple applications**,
 also known as a **Single-Sign-On** or **SSO**.
@@ -159,7 +167,7 @@ Some key benefits to using an identity provider are:
 - Quick and easy self-registration to your custom applications.
 - Users don't need to remember additional passwords.
 
-**Customer Benefits of Using an IDaaS**
+#### Customer Benefits of Using an IDaaS
 
 - **A great user experience**
 
@@ -180,7 +188,7 @@ Some key benefits to using an identity provider are:
   > implementation. Source: Best Practices: <ExternalLink href="http://docs.media.bitpipe.com/io_11x/io_115401/item_884892/Best%20Practices_Single%20Sign%20On%20Drives%20Productivtiy%20Security%20and%20Adoption%20When%20Used%20with%20EHR%20at%20The%20Johns%20Hopkins%20Hospitalpdf.pdf">Single Sign-On Drives Productivity, Security, and Adoption When Used with EHR at The Johns
   > Hopkins Hospital</ExternalLink>
 
-**Business Benefits of Using an IDaaS**
+#### Business Benefits of Using an IDaaS
 
 - **Improves return on investment (ROI)**
 
