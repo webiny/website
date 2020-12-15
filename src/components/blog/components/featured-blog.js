@@ -24,7 +24,6 @@ export default ({ data }) => {
             <div className={"text-container"}>
                 <div className={"tags"}>
                     <span className={"tag"}>featured post</span>
-                    <span className={"tag"}>guest post</span>
                 </div>
                 <h2 className={"title"}>{data.title}</h2>
                 <p className={"description"}>{data.description}</p>
