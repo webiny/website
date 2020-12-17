@@ -5,7 +5,7 @@ import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 import ContentContainer from "../ui/content-container";
 import Button from "../ui/button";
-import maskGroupBg from "./assets/bg.svg";
+import maskGroupBg from "./assets/mask-group.svg";
 
 const HaveMoreQuestionSection = styled("section")(
     {
