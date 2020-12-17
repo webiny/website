@@ -35,9 +35,13 @@ const SubWrapper = styled("div")(
         width: "22.5%",
         textAlign: "center",
 
+        "& h4": {
+            fontWeight: "bold"
+        },
+
         "& p": {
             maxWidth: 232,
-            margin: "10px auto"
+            margin: "0 auto 20px"
         },
 
         "&.with-button": {
