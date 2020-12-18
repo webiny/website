@@ -1,0 +1,131 @@
+---
+slug: "blog/aws-re-nvent-webiny-top-5-picks-on-serverless-announcements"
+title: "AWS re:Invent - Webiny's Top 5 Picks on Serverless Announcements"
+description: "We'll go through Webiny's top 5 picks on serverless announcements @ AWS re:Invent!"
+tags: ["AWS", "Lambda", "API", "S3", "Serverless", "Cloud"]
+featureImage: "./assets/aws-re-nvent-webiny-top-5-picks-on-serverless-announcements/image.png"
+author: albiona
+date: 2020-12-18
+---
+
+AWS re:Invent 2020 is the Amazon Web Services (AWS) annual conference, one of the largest in the world. Focusing on Cloud strategies, cloud operations, security and developer productivity, IT architecture, and infrastructure.
+
+Usually, the event is organized on-site in Las Vegas where it welcomes over 60.000 attendees for a few days. This year, the event was fully virtual, and it lasts for three weeks from November 30 to December 18, 2020.
+
+In this article, we're going through Webiny's top 5 picks on serverless announcements ⬇️
+
+## 1. AWS Lambda
+
+### 1.1. Lambda changes billing to per ms
+
+Lambda now will bill your functions by the ms, as opposed to a round of 100ms.
+
+"For example, a function that runs in 30ms on average used to be billed for 100ms. Now, it will be billed for 30ms resulting in a 70% drop in its duration spend."
+
+For more details and information about pricing check out the article <ExternalLink href="https://aws.amazon.com/about-aws/whats-new/2020/12/aws-lambda-changes-duration-billing-granularity-from-100ms-to-1ms/">here</ExternalLink>.
+
+### 1.2. Lambda now supports 10GB memory and 6 vCPU cores for Lambda Functions
+
+Lambda increased the memory limit by 3x compared to the previous limit, from 3,008 MB up to 10,240 MB (10 GB) 🚀
+
+This helps performing memory intensive operations at scale.
+
+Starting today you can configure between 128 MB and 10.140 MB of memory for new or existing Lambda functions.
+
+For more details check out the article <ExternalLink href="https://aws.amazon.com/about-aws/whats-new/2020/12/aws-lambda-supports-10gb-memory-6-vcpu-cores-lambda-functions/">here</ExternalLink>.
+
+### 1.3. Lambda supports container images as a packaging format
+
+Package the Lambda functions and deploy as a container image up to 10 GB. Now you have the chance to build and use Lambda based applications using container tooling, workflows, and dependencies.
+
+Some advantages on Lambda packaging:
+
+- Operational simplicity
+- Automatic scaling
+- High availability
+- Native integrations with 140 AWS services
+
+"With this launch, AWS provides a set of base images for Lambda that are available on ECR Public and Docker Hub."
+
+For more details check out the article <ExternalLink href="https://aws.amazon.com/about-aws/whats-new/2020/12/aws-lambda-now-supports-container-images-as-a-packaging-format/">here</ExternalLink>.
+
+### 1.4. Lambda Runtime Logs API
+
+You can now subscribe to log streams directly from within the Lambda execution environment.
+
+"After receiving the subscription request, the Lambda service streams logs to the extension, and the extension can then process, filter, and send them to any preferred destination."
+
+This extension supersedes the CloudWatch Logs, making it easier for you to use your preferred extensions for diagnostics.
+
+For more details on how to get started with the extension, follow the article <ExternalLink href="https://aws.amazon.com/blogs/compute/using-aws-lambda-extensions-to-send-logs-to-custom-destinations/">here</ExternalLink>.
+
+## 2. AWS Aurora Serverless v2
+
+Extending the features of Aurora Serverless, this is one of the biggest announcements on the first week of AWS re:Invent.
+
+One of the key features: "_You pay only for the capacity your application consumes, and you can save up to 90% of your database cost compared to the cost of provisioning capacity for peak load."_
+
+Amazon Aurora Serverless v2 also provides the full breadth of Amazon Aurora’s capabilities:
+
+- Multi-AZ support,
+- Global Database, and
+- Read replicas
+
+For more details, check out the article <ExternalLink href="https://aws.amazon.com/about-aws/whats-new/2020/12/introducing-the-next-version-of-amazon-aurora-serverless-in-preview/">here</ExternalLink>.
+
+## 3. AWS Proton
+
+"Automated management for container and serverless deployments"
+
+AWS Proton is the first application to fully manage and deploy container and serverless applications.
+
+With AWS Proton, engineering teams can connect and coordinate all the different tools needed for:
+
+- Infrastructure Provisioning,
+- Code Deployments
+- Monitoring, and
+- Updates
+
+To learn more about what AWS Proton solves on the software systems complexities, check out the article <ExternalLink href="https://aws.amazon.com/proton/">here</ExternalLink>.
+
+## 4. AWS S3
+
+### 4.1. S3 Replication adds support for multiple destinations
+
+You can replicate data from one source bucket to multiple destination buckets at the same or different AWS regions.
+
+This is intended for you if you're interested to maintain multiple copies of your data in one or more AWS Regions.
+
+"With S3 Replication (multi-destination), you can easily create a shared dataset by replicating data to multiple buckets in the same or different AWS Regions."
+
+For more details on S3 features and the pricing page, check out the article <ExternalLink href="https://aws.amazon.com/s3/pricing/">here</ExternalLink>.
+
+### 4.2. S3 adds read-after-write consistency automatically for applications
+
+S3 delivers strong read-after-write consistency for any storage request. With the strong consistency S3 is removing the need to make changes to apps, and reduces costs by removing the need for extra infrastructure which provided strong consistency.
+
+This <ExternalLink href="https://aws.amazon.com/blogs/aws/amazon-s3-update-strong-read-after-write-consistency/">blog post</ExternalLink> guides you on more details on react-after-write consistency.
+
+### 4.3. S3 supports two-way replication for object metadata changes
+
+If you want to build shared datasets across multiple regions and keep all object and object metadata changes in sync then the two-way replication is important.
+
+Learn more about the S3 Replication <ExternalLink href="https://aws.amazon.com/s3/features/replication/">here</ExternalLink>.
+
+## 5. DynamoDB supports export to S3
+
+You can now export your Amazon DynamoDB table data to your data lake in AWS S3 where you can use different services such as Athena.
+
+Your DynamoDB data added in your AWS S3 data is easily discovered, encrypted at rest and in transit.
+
+With just a few clicks in the AWS Management Console, and a simple API call, you can export DynamoDB tables ranging from a few megabytes to hundreds of terabytes of data.
+
+Learn more about this announcement <ExternalLink href="https://aws.amazon.com/about-aws/whats-new/2020/11/now-you-can-export-your-amazon-dynamodb-table-data-to-your-data-lake-in-amazon-s3-to-perform-analytics-at-any-scale/">here</ExternalLink>
+
+---
+
+These were Webiny's top 5 picks on Serverless Announcements @ AWS re:Invent. If you're interested in our future blog posts, ** <ExternalLink href="https://landing.mailerlite.com/webforms/landing/g9f1i1">subscribe</ExternalLink>** to our **newsletter** and you'll be notified when we have interesting topics to share!
+
+---
+
+Thanks for reading! My name is <ExternalLink href="https://twitter.com/albionaitoh">Albiona</ExternalLink> and I work as a developer relations engineer at <ExternalLink href="https://www.webiny.com/">Webiny</ExternalLink>. I enjoy learning new tech and building communities around them = ) If you have questions or just want to say hi, reach out to me via <ExternalLink href="https://twitter.com/albionaitoh">Twitter</ExternalLink>.
