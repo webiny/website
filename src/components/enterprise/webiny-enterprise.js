@@ -17,7 +17,7 @@ const contentContainerClass = css(
 const ctaButton = css(
     {
         maxWidth: 320,
-        margin: "30px auto 0"
+        margin: "30px auto !important"
     }
 )
 
