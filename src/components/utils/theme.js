@@ -23,6 +23,7 @@ export default {
         backgroundGray: "#F3F3F3",
         yetAnotherGray: "#F3F1F5",
         gray700: "#7D7D7D",
+        blue100: "#002B50"
     },
     fontWeight: {
         bold: 700,
