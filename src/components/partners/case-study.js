@@ -44,17 +44,6 @@ const Section = styled("section")(
     }),
 )
 
-const Title = styled("h3")(
-    {
-        margin: "30px auto",
-        color: theme.color.black,
-        fontSize: "3rem",
-        fontWeight: 700,
-        textAlign: "center",
-        maxWidth: 458
-    }
-)
-
 const CaseStudyPart = styled("div")(
     {
         display: "flex",
@@ -119,6 +108,42 @@ const CaseStudyInfo = styled("div")(
     }
 )
 
+const Wrapper = styled("div")(
+    {
+        display: "flex",
+        flexDirection: "column",
+    },
+    mq({
+        width: ["100%", "100%"],
+        alignItems: ["center"],
+        marginBottom: [60],
+    }),
+);
+
+const Title = styled("h1")(
+    {
+        maxWidth: 768,
+        fontSize: theme.fontSize["5xl"],
+        fontWeight: theme.fontWeight.bold,
+        color: theme.color.black,
+        textAlign: "center",
+        lineHeight: "48px",
+        margin: "60px 0px 0px",
+    },
+    mq({
+        marginLeft: [0, "auto"],
+        marginRight: [0, "auto"],
+        fontSize: [40, theme.fontSize["5xl"]],
+    }),
+);
+
+const TitleHighlight = styled("span")({
+    backgroundImage: "url(" + highLightImg + ")",
+    backgroundPositionX: "right",
+    backgroundPositionY: "bottom",
+    backgroundRepeat: "no-repeat",
+});
+
 const summaryList = [
     {number: "250+", title: "Number of Agents"},    
     {number: "175k+", title: "Monthly Ticket Volume"},
@@ -130,7 +155,14 @@ const CaseStudy = () => {
     return (
         <Section>
             <ContentContainer className={containerClass}>
-                <Title>Case Study</Title>
+                <Wrapper>
+                    <Title>
+                        Case {" "}
+                        <TitleHighlight>
+                            Study
+                        </TitleHighlight>
+                    </Title>
+                </Wrapper>
                 <CaseStudyPart>
                     <CaseStudyImagePart>
                         <img src={caseImg} alt=""/>
