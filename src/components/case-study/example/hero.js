@@ -20,7 +20,7 @@ const HeroSection = styled("section")(
     },
     mq({
         backgroundSize: ["cover", "auto", "cover"],
-        padding: ["0px 0px 110px", "0"],
+        padding: ["0px 15px 110px", "0"],
         "@media (min-width: 1460px)": {
             backgroundPosition: "bottom",
             paddingTop: 0,

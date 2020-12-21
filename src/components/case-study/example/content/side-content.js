@@ -24,10 +24,16 @@ const button = css(
 
 const SideSection = styled("div")(
     {        
-        paddingLeft: 20
+        paddingLeft: 20,        
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column"
     },
     mq({
         width: ["auto", "25%"],
+        display: ["flex", "block"],
+        maxWidth: [400, "25%"],
+        margin: ["0 auto", 0]
     })
 )
 
