@@ -53,6 +53,7 @@ const HeroSectionWrapper = styled("div")(
     {
         display: "flex",
         flexDirection: "column",
+        padding: "0 10px"
     },
     mq({
         width: ["100%", 1100],
@@ -62,7 +63,7 @@ const HeroSectionWrapper = styled("div")(
 
 const Title = styled("h1")(
     {
-        maxWidth: 880,
+        maxWidth: 816,
         fontSize: theme.fontSize["5xl"],
         fontWeight: theme.fontWeight.bold,
         color: theme.color.white,
@@ -70,6 +71,7 @@ const Title = styled("h1")(
         lineHeight: "48px",
         marginBottom: 20,
         marginTop: 40,
+        padding: "0 10px"
     },
     mq({
         marginLeft: [0, "auto"],
@@ -87,6 +89,7 @@ const SubTitle = styled("h3")(
         marginBottom: 26,
         color: theme.color.white,
         textAlign: "center",
+        padding: "0 10px"
     },
     mq({        
         marginLeft: [0, "auto"],
@@ -99,11 +102,11 @@ const WebinyHallMarkImage = styled("img")(
         position: "absolute",
         zIndex: 1,
         top: 0,
+        left: 0
     },
     mq({
-        width: ["auto", "100%"],
-        height: ["100%", 756],
-        left: ["-45%", 0],
+        width: ["100%", "100%"],
+        height: ["auto", 756]        
     }),
 );
 
