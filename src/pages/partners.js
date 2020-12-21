@@ -1,0 +1,16 @@
+import React from "react";
+
+import BaseLayout from "../layouts/base";
+import Hero from "../components/partners/hero";
+import CaseStudy from "../components/partners/case-study";
+
+const Partners = () => {
+    return (
+        <BaseLayout title="Partners - Webiny">
+            <Hero />
+            <CaseStudy />
+        </BaseLayout>
+    );
+}
+
+export default Partners;
