@@ -11,16 +11,29 @@ import freeImg from "./assets/free.svg";
 import insightImg from "./assets/insight.svg";
 import clientImg from "./assets/client.svg";
 import commissionImg from "./assets/commission.svg";
+import arrowIcon from "./assets/arrow-green.svg";
 
 const ctaBtn = css({
     maxWidth: 260,
     width: "260px !important",
-    backgroundColor: theme.color.purple + "!important",
-
-    "& img": {
-        marginLeft: 15
-    }
+    backgroundColor: "#00CCB0 !important",
 })
+
+const ctaOutlineBtn = css(
+    {
+        maxWidth: 260,
+        width: "260px !important",
+        border: "2px solid #00CCB0 !important",
+        color: "#00CCB0 !important",
+
+        "& img": {
+            marginLeft: 15
+        }
+    },
+    mq({
+        marginLeft: [0, "15px !important"]
+    })
+)
 
 const containerClass = css(
     {
@@ -99,12 +112,23 @@ const BecomePartnerItem = styled("div")(
         },
 
         "& p": {
-            maxWidth: 230,
+            maxWidth: 180,
             margin: "0 auto",
             fontWeight: 700,
             textAlign: "center"
         }
     }
+)
+
+const ButtonGroup = styled("div")(
+    {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    mq({
+        display: ["block", "flex"]
+    })
 )
 
 const partnerList = [
@@ -140,6 +164,20 @@ const CaseStudy = () => {
                         )
                     }
                 </BecomePartnerList>
+                <ButtonGroup>
+                    <Button
+                        className={ctaBtn}
+                        type="primary"                        
+                    >
+                        Become a Partner
+                    </Button>
+                    <Button
+                        className={ctaOutlineBtn}
+                        type="outline"                        
+                    >
+                        Download Brochure <img src={arrowIcon} alt="" className="icon" />
+                    </Button>
+                </ButtonGroup>
             </ContentContainer>
         </Section>
     )
