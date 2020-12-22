@@ -7,10 +7,23 @@ import ContentContainer from "../ui/content-container";
 import Button from "../ui/button";
 
 
-const contentContainerClass = css(    
+const contentContainerClass = css(
+    {
+        position: "relative",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        maxWidth: 1200        
+    },
     mq({
+        width: ["100%", "100%"],
+        height: ["100%"],
         paddingTop: [40, 80],
         paddingBottom: [40, 80],
+        "&::before": {
+            display: ["none", "block"],
+            left: [0, "-10%", "-10%"],
+        },
     }),
 );
 
@@ -32,13 +45,13 @@ const Feature = styled("div")(
         width: "100%",
         display: "flex",
         alignItems: "center",
-        position: "relative",
-        boxShadow: "0px 0px 15px rgba(0,0,0,0.0941176)",
-        borderRadius: 8,
-        backgroundColor: theme.color.white
+        position: "relative"    
     },
     mq({
-        flexDirection: ["column", "row"]             
+        flexDirection: ["column", "row"],
+        backgroundColor: ["transparent", theme.color.white],
+        boxShadow: ["none", "0px 0px 15px rgba(0,0,0,0.0941176)"],
+        borderRadius: [0, 8]
     }),
 );
 
@@ -52,9 +65,19 @@ const FeatureContent = styled("div")(
 
         "&.enterprise": {        
             backgroundColor: "#FA5A28",
-            padding: 40,
-            borderBottomLeftRadius: 8,
-            borderTopLeftRadius: 8
+            padding: 40,            
+
+            "&:before": {
+                content: '" "',
+                position: "absolute",
+                right: -37,
+                bottom: 0,
+                width: 0,
+                height: 0,
+                borderLeft: "37px solid #FA5A28",
+                borderTop: "191px solid transparent",
+                borderBottom: "161px solid transparent",
+            }
         },
 
         "& p": {
@@ -103,7 +126,21 @@ const FeatureContent = styled("div")(
         }
     },
     mq({
-        width: ["auto", "50%"]
+        width: ["auto", "50%"],
+        maxWidth: [600, "none"],
+        padding: [0, "0px 45px"],
+        marginBottom: [30, 0],
+
+        "&.enterprise": {
+            borderBottomLeftRadius: [8, 8],
+            borderTopLeftRadius: [8, 8],            
+            borderTopRightRadius: [8, 0],
+            borderBottomRightRadius: [8, 0],
+
+            "&:before": {
+                display: ["none", "block"]
+            }
+        }
     }),
 )
 
