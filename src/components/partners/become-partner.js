@@ -56,7 +56,8 @@ const Wrapper = styled("div")(
         flexDirection: "column",
 
         "& p": {
-            margin: "20px 0 0"
+            margin: "10px 0 0",
+            textAlign: "center"
         }
     },
     mq({
@@ -92,9 +93,11 @@ const TitleHighlight = styled("span")({
 
 const BecomePartnerList = styled("div")(
     {
-        display: "grid",
-        gridTemplateColumns: "repeat(4, 1fr)"
-    }
+        display: "grid"        
+    },
+    mq({
+        gridTemplateColumns: ["repeat(2, 1fr)", "repeat(4, 1fr)"]
+    })
 )
 
 const BecomePartnerItem = styled("div")(
@@ -105,8 +108,7 @@ const BecomePartnerItem = styled("div")(
             textAlign: "center",
 
             "& img": {
-                width: "80%",
-                height: 180,
+                width: "80%",                
                 objectFit: "contain"
             }
         },
@@ -117,7 +119,12 @@ const BecomePartnerItem = styled("div")(
             fontWeight: 700,
             textAlign: "center"
         }
-    }
+    },
+    mq({
+        "& img": {
+            height: [90, 180]            
+        }
+    })
 )
 
 const ButtonGroup = styled("div")(
@@ -127,7 +134,10 @@ const ButtonGroup = styled("div")(
         justifyContent: "center"
     },
     mq({
-        display: ["block", "flex"]
+        flexDirection: ["column", "row"],
+        "& button:first-child": {
+            marginBottom: [15, 0]
+        }
     })
 )
 

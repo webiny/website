@@ -95,9 +95,10 @@ const SubTitle = styled("h3")(
         marginBottom: 26,
         color: theme.color.white,
         textAlign: "center",
+        padding: "0 15px"
     },
     mq({
-        maxWidth: [337, 880],
+        maxWidth: [600, 880],
         marginLeft: [0, "auto"],
         marginRight: [0, "auto"],
     }),
