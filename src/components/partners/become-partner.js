@@ -75,7 +75,7 @@ const Title = styled("h1")(
         color: theme.color.black,
         textAlign: "center",
         lineHeight: "48px",
-        margin: "60px 0px 0px"        
+        margin: "60px 0px 30px"     
     },
     mq({
         marginLeft: [0, "auto"],

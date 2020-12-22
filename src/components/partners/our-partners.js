@@ -18,11 +18,9 @@ import startImg from "./assets/star.svg";
 const wrapperClass = css(
     {
         position: "relative",
-    },
-    mq({
-        paddingTop: [40, 0],
-        paddingBottom: [40, 0],
-    }),
+        paddingTop: 0,
+        paddingBottom: 0
+    }
 );
 
 const contentContainerClass = css(
@@ -36,8 +34,8 @@ const contentContainerClass = css(
     mq({
         width: ["100%", "100%"],
         height: ["100%"],
-        paddingTop: [40, 80],
-        paddingBottom: [40, 80],
+        paddingTop: [0, 80],
+        paddingBottom: [0, 80],
         "&::before": {
             display: ["none", "block"],
             left: [0, "-10%", "-10%"],
@@ -131,7 +129,11 @@ const FeatureInfo = styled("div")(
         width: ["auto", "50%"],
         maxWidth: [600, "none"],
         padding: ["0px 30px", "0px 45px"],
-        marginBottom: [30, 0],        
+        marginBottom: [30, 0],
+        
+        "& h3": {
+            marginTop: [0, "0.7em"]
+        },
         
         "&.border-right": {
             borderRight: ["none", "2px dashed #FA5A28"]

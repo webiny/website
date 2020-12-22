@@ -52,7 +52,7 @@ const Wrapper = styled("div")(
     mq({
         width: ["100%", "100%"],
         alignItems: ["center"],
-        marginBottom: [60],
+        marginBottom: [35],
     }),
 );
 
@@ -90,7 +90,7 @@ const Feature = styled("div")(
     },
     mq({
         width: ["auto", "100%"],
-        alignItems: ["center", "flex-start"],
+        alignItems: ["center", "stretch"],
         flexDirection: ["column", "row"]        
     }),
 );
@@ -103,7 +103,9 @@ const FeatureImagePart = styled("div")(
         padding: 20,
         
         "& img": {
-            width: "100%"
+            width: "100%",
+            height: "100%",
+            objectFit: "cover"
         }
     },
     mq({
@@ -174,6 +176,15 @@ const FeatureInfo = styled("div")(
     }),
 );
 
+const actionPart = css(
+    {
+        display: "flex"        
+    },
+    mq({
+        alignItems: ["center", "flex-start"],
+        justifyContent: ["center", "flex-start"]
+    })
+)
 const summaryList = [
     {number: "250+", title: "Number of Agents"},    
     {number: "175k+", title: "Monthly Ticket Volume"},
@@ -213,9 +224,11 @@ const CaseStudy = () => {
                                 )
                             }
                         </div>
-                        <Button type="primary" className={ctaBtn}>
-                            Read case study <img src={arrowIcon} alt="" className="icon" />
-                        </Button>
+                        <div className={actionPart}>
+                            <Button type="primary" className={ctaBtn}>
+                                Read case study <img src={arrowIcon} alt="" className="icon" />
+                            </Button>
+                        </div>                        
                     </FeatureInfo>
                 </Feature>
             </ContentContainer>
