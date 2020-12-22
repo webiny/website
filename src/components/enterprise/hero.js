@@ -15,12 +15,12 @@ const HeroSection = styled("section")(
         position: "relative",
         zIndex: 0,
         backgroundImage: "url(" + heroBg + ")",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "bottom",
+        backgroundRepeat: "no-repeat"
     },
     mq({
         backgroundSize: ["cover", "auto", "100%"],
-        padding: ["0px 0px 110px", "0"]        
+        padding: ["0px 0px 110px", "0"],
+        backgroundPosition: ["top", "top"],     
     }),
 );
 
