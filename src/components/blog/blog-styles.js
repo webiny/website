@@ -132,7 +132,7 @@ export const FeaturedBlogWrapper = styled("div")(
                     },
                     "& .media": {
                         width: 48,
-                        height: 48,
+                        height: 53,
                         objectFit: "cover",
                     },
                     "& .icon": {
