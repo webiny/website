@@ -131,7 +131,8 @@ const ButtonGroup = styled("div")(
     {
         display: "flex",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        marginTop: 40
     },
     mq({
         flexDirection: ["column", "row"],

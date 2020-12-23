@@ -15,7 +15,7 @@ const HeroSection = styled("section")(
         zIndex: 0,
         backgroundImage: "url(" + heroBg + ")",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "top",
+        backgroundPosition: "bottom",
     },
     mq({
         backgroundSize: ["cover", "auto", "cover"],
@@ -65,7 +65,8 @@ const Title = styled("h1")(
         textAlign: "center",
         lineHeight: "60px",
         marginBottom: 20,
-        marginTop: "10%",
+        marginTop: 40,
+        padding: "0 10px"
     },
     mq({
         marginLeft: [0, "auto"],
