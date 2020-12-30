@@ -335,7 +335,7 @@ export const FACTS = [
         id: 1,
         renderTitle: () => (
             <Title>
-                <TitleHighlight bg={greenRectImg}>Full</TitleHighlight>&nbsp;customizable
+                <TitleHighlight bg={greenRectImg}>Fully</TitleHighlight>&nbsp;customizable
             </Title>
         ),
         body:
