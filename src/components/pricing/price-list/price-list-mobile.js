@@ -84,7 +84,7 @@ const PriceListMobile = ({ priceList }) => {
                     </div>
                 ))}
                 <Button target="_blank" link="https://calendly.com/webiny/30min" type="primary">
-                    Book a Call
+                    Talk to Us
                 </Button>
             </PriceGroupItem>
         </>

@@ -137,18 +137,18 @@ export const PRODUCTS_MENU = {
                 label: "Product Roadmap",
                 link: "/roadmap",
             },
+            /*
             {
                 id: 5,
                 label: "For Agencies",
                 link: "/agency",
             },
-            /*
+            */
             {
                 id: 6,
                 label: "For Enterprises",
-                link: "/enterprise"
-            }
-            */
+                link: "/enterprise",
+            },
         ],
     },
     secondarySection: {

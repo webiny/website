@@ -51,29 +51,23 @@ const contentContainerClass = css(
     }),
 );
 
-const vpcClass = css(
-    {
-        backgroundImage: "url(" + vpcBg + ")",
-        backgroundPosition: "top",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover"
-    }
-);
+const vpcClass = css({
+    backgroundImage: "url(" + vpcBg + ")",
+    backgroundPosition: "top",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+});
 
-const customClass = css(
-    {
-        backgroundImage: "url(" + customBg + ")",
-        backgroundPosition: "top",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover"
-    }
-);
+const customClass = css({
+    backgroundImage: "url(" + customBg + ")",
+    backgroundPosition: "top",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+});
 
-const ctaButton = css(
-    {
-        maxWidth: 320
-    }
-)
+const ctaButton = css({
+    maxWidth: 320,
+});
 
 const Feature = styled("div")(
     {
@@ -124,8 +118,8 @@ const FeatureTitle = styled("h2")(
         marginTop: 0,
 
         "& span": {
-            color: theme.color.purple
-        }
+            color: theme.color.purple,
+        },
     },
     mq({
         marginBottom: [24, 40],
@@ -197,13 +191,10 @@ const SecurityParameters = () => {
             <ContentContainer>
                 <Wrapper>
                     <Title>
-                        Webiny security  {" "}
-                        <TitleHighlight>
-                            perimeter
-                        </TitleHighlight>
+                        Webiny security <TitleHighlight>perimeter</TitleHighlight>
                     </Title>
                 </Wrapper>
-            </ContentContainer>            
+            </ContentContainer>
             <ContentContainer className={contentContainerClass}>
                 <Feature>
                     <FeatureInfo>
@@ -211,41 +202,40 @@ const SecurityParameters = () => {
                             <span>Your cloud,</span> your database, your data
                         </FeatureTitle>
                         <FeatureDescription>
-                            Webiny is hosted inside your own AWS cloud. You own all the networking, security and databases. 
-                            Webiny doesn't break your data regulation compliancies nor make it hard for your legal team and your dev team to integrate the solution.
+                            Webiny is hosted inside your own AWS cloud. You own all the networking,
+                            security and databases. Webiny doesn't break your data regulation
+                            compliancies nor make it hard for your legal team and your dev team to
+                            integrate the solution.
                         </FeatureDescription>
                         <FeatureDescription>
-                            All the data stays within your cloud giving you a peace of mind which only comes when you have the full control.
+                            All the data stays within your cloud giving you a peace of mind which
+                            only comes when you have the full control.
                         </FeatureDescription>
                     </FeatureInfo>
-                    <FeatureImage
-                        src={databaseImage}
-                        alt="Your cloud, your database, your data"
-                    />                        
-                </Feature>                
+                    <FeatureImage src={databaseImage} alt="Your cloud, your database, your data" />
+                </Feature>
             </ContentContainer>
             <div className={vpcClass}>
                 <ContentContainer className={contentContainerClass}>
                     <Feature className="reverse">
                         <FeatureInfo>
                             <FeatureTitle className="medium-width">
-                                <span>Run inside</span> a VPC
+                                <span>Runs inside</span> a VPC
                             </FeatureTitle>
                             <FeatureDescription>
-                                You have the full control over how open or closed you want your Webiny instance to be. 
-                                Webiny can be deployed both inside a VPC, as well as outside.
+                                You have the full control over how open or closed you want your
+                                Webiny instance to be. Webiny can be deployed both inside a VPC, as
+                                well as outside.
                             </FeatureDescription>
                             <FeatureDescription>
-                                Define custom security policies and networking rules, allow only access from certain IPs, or the public internet.
+                                Define custom security policies and networking rules, allow only
+                                access from certain IPs, or the public internet.
                             </FeatureDescription>
                         </FeatureInfo>
-                        <FeatureImage
-                            src={vpcImage}
-                            alt="Run inside a VPC"
-                        />                        
+                        <FeatureImage src={vpcImage} alt="Run inside a VPC" />
                     </Feature>
                 </ContentContainer>
-            </div>            
+            </div>
             <ContentContainer className={contentContainerClass}>
                 <Feature>
                     <FeatureInfo>
@@ -253,20 +243,22 @@ const SecurityParameters = () => {
                             <span>Code</span> security
                         </FeatureTitle>
                         <FeatureDescription>
-                            Webiny being a public open-source project our code is our product. But it's also our pride accomplishment. 
-                            To tighten the security, our code base is constantly scanned by CodeQL - the world's most powerful code analysis 
-                            engine for any security vulnerabilities.
+                            Webiny, being a public open-source project, our code is our product. But
+                            it's also our pride accomplishment. To tighten the security, our code
+                            base is constantly scanned by CodeQL - the world's most powerful code
+                            analysis engine for any security vulnerabilities.
                         </FeatureDescription>
                         <FeatureDescription>
-                            We also use Dependabot to scan for any security vulnerabilities in our dependencies and 3rd party libraries.
+                            We also use Dependabot to scan for any security vulnerabilities in our
+                            dependencies and 3rd party libraries.
                         </FeatureDescription>
                     </FeatureInfo>
                     <FeatureImage
                         src={securityImage}
                         alt="webiny is a dynamic CMS not a static site generator"
-                    />                        
+                    />
                 </Feature>
-            </ContentContainer >
+            </ContentContainer>
             <div className={customClass}>
                 <ContentContainer className={contentContainerClass}>
                     <Feature className="reverse">
@@ -275,19 +267,21 @@ const SecurityParameters = () => {
                                 <span>Customise</span> the deployment workflow
                             </FeatureTitle>
                             <FeatureDescription>
-                                Webiny deployment mechanism is completely customisable. 
-                                By default Webiny uses Pulumi, however, you can change this and integrate solutions like Cloudformation, 
-                                Serverless Framework, TerraForm, or any custom process.
+                                Webiny deployment mechanism is completely customisable. By default
+                                Webiny uses Pulumi, however, you can change this and integrate
+                                solutions like CloudFormation, Serverless Framework, TerraForm, or
+                                any other process.
                             </FeatureDescription>
                             <FeatureDescription>
-                                We intentionally separated our deployment process as many enterprises want to have full control over how infrastructure 
-                                get created within their cloud platform.
+                                We intentionally separated our deployment process as many
+                                enterprises want to have full control over how infrastructure get
+                                created within their cloud platform.
                             </FeatureDescription>
                         </FeatureInfo>
                         <FeatureImage
                             src={customizeImage}
                             alt="no need to do scaling and infrastructure management"
-                        />                        
+                        />
                     </Feature>
                 </ContentContainer>
             </div>
@@ -298,23 +292,30 @@ const SecurityParameters = () => {
                             <span>We have</span> your back
                         </FeatureTitle>
                         <FeatureDescription>
-                            Our team of professionals is here for you. We will work with you to ensure your team uses serverless and Webiny best practices.
+                            Our team of professionals is here for you. We will work with you to
+                            ensure your team uses serverless and Webiny best practices.
                         </FeatureDescription>
                         <FeatureDescription>
-                            We will help you get the right architecture in place and train your developers ensuring your project is a success.
+                            We will help you get the right architecture in place and train your
+                            developers ensuring your project is a success.
                         </FeatureDescription>
                     </FeatureInfo>
                     <FeatureImage
                         src={havebackImage}
                         alt="no need to do scaling and infrastructure management"
-                    />                        
+                    />
                 </Feature>
-                <Button type="secondary" className={ctaButton}>
+                <Button
+                    link="https://calendly.com/webiny/30min"
+                    target="_blank"
+                    type="secondary"
+                    className={ctaButton}
+                >
                     Talk to Us
                 </Button>
-            </ContentContainer>        
+            </ContentContainer>
         </section>
-    )
-}
+    );
+};
 
 export default SecurityParameters;

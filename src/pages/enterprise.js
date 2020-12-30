@@ -13,7 +13,7 @@ const Enterprise = () => {
             <SeverlessAdvantage />
             <SecurityParameter />
             <WebinyEnterprise />
-            <FaqAccordion />
+            {/*<FaqAccordion />*/}
         </BaseLayout>
     );
 };

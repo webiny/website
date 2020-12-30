@@ -24,16 +24,14 @@ const HeroSection = styled("section")(
         "@media (min-width: 1460px)": {
             backgroundPosition: "bottom",
             paddingTop: 0,
-        },  
+        },
     }),
 );
 
-const ctaButton = css(
-    {
-        maxWidth: 320,
-        margin: "0 auto"
-    }
-)
+const ctaButton = css({
+    maxWidth: 320,
+    margin: "0 auto",
+});
 
 const heroContainerClass = css(
     {
@@ -57,7 +55,7 @@ const HeroSectionWrapper = styled("div")(
     {
         display: "flex",
         flexDirection: "column",
-        padding: "0 10px"
+        padding: "0 10px",
     },
     mq({
         width: ["100%", 1100],
@@ -75,7 +73,7 @@ const Title = styled("h1")(
         lineHeight: "48px",
         marginBottom: 20,
         marginTop: 40,
-        padding: "0 10px"
+        padding: "0 10px",
     },
     mq({
         marginLeft: [0, "auto"],
@@ -93,9 +91,9 @@ const SubTitle = styled("h3")(
         marginBottom: 26,
         color: theme.color.white,
         textAlign: "center",
-        padding: "0 10px"
+        padding: "0 10px",
     },
-    mq({        
+    mq({
         marginLeft: [0, "auto"],
         marginRight: [0, "auto"],
     }),
@@ -106,11 +104,11 @@ const WebinyHallMarkImage = styled("img")(
         position: "absolute",
         zIndex: 1,
         top: 0,
-        left: 0
+        left: 0,
     },
     mq({
         width: ["100%", "100%"],
-        height: ["auto", 756]        
+        height: ["auto", 756],
     }),
 );
 
@@ -122,10 +120,16 @@ const HeroComponent = () => {
                 <HeroSectionWrapper>
                     <Title>The framework for building enterprise-grade serverless solutions</Title>
                     <SubTitle>
-                        Webiny provides organisations with the technology, processes, knowledge and support to successfully 
-                        build and deliver solutions on top of serverless infrastructure.
+                        Webiny provides organisations with the technology, processes, knowledge and
+                        support to successfully build and deliver solutions on top of serverless
+                        infrastructure.
                     </SubTitle>
-                    <Button type="secondary" className={ctaButton}>
+                    <Button
+                        link="https://calendly.com/webiny/30min"
+                        target="_blank"
+                        type="secondary"
+                        className={ctaButton}
+                    >
                         Talk to Us
                     </Button>
                 </HeroSectionWrapper>
