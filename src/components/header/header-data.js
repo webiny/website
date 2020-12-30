@@ -261,4 +261,16 @@ export const RESOURCES_MENU = {
     },
 };
 
-export const DROPDOWN_MENUS = [PRODUCTS_MENU, SOLUTIONS_MENU, COMMUNITY_MENU, RESOURCES_MENU];
+export const PRICING_MENU = {
+    id: 4,
+    label: "Pricing",
+    link: "/pricing",
+};
+
+export const DROPDOWN_MENUS = [
+    PRODUCTS_MENU,
+    SOLUTIONS_MENU,
+    COMMUNITY_MENU,
+    RESOURCES_MENU,
+    PRICING_MENU,
+];
