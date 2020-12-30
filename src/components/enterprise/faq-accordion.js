@@ -8,7 +8,7 @@ import hightLightBg from "./assets/highlight-title.svg"
 
 const FAQAccordionSection = styled("section")(
     {
-        backgroundColor: theme.color.gray100,
+        backgroundColor: theme.color.white,
     },
     mq({
         padding: ["110px 15px 110px", "110px 15px"]
@@ -71,7 +71,7 @@ const FAQAccordion = () => {
                         Frequently Asked {" "}
                         <ServerlessBenefitTitleHighlight>
                             Questions
-                        </ServerlessBenefitTitleHighlight>                        
+                        </ServerlessBenefitTitleHighlight>
                     </ServerlessBenefitTitle>
                 </Wrapper>
                 {
