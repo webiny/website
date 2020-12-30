@@ -40,7 +40,7 @@ class AgencyPage extends React.Component {
 
     render() {
         return (
-            <BaseLayout title="Webiny - How Agencies can benefit">
+            <BaseLayout title="How Agencies can benefit from serverless">
                 <Hero handleDemoClick={this.bookADemo} />
                 <WhatIsWebiny />
                 <WhyServerless />

@@ -6,7 +6,7 @@ import Hero from "../components/contact-us/hero/hero";
 class ContactUsPage extends React.Component {
     render() {
         return (
-            <BaseLayout title="Contact Us - Webiny">
+            <BaseLayout title="Contact Us">
                 <Hero />
             </BaseLayout>
         );

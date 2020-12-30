@@ -20,7 +20,7 @@ class WhyWebinyPage extends React.Component {
     render() {
         return (
             <BaseLayout
-                title="Why Webiny - Serverless CMS powered by GraphQL and React"
+                title="The easiest way to adopt serverless"
                 description="Discover the serverless benefits, its challenges and how Webiny overcomes them."
                 fixedHeader={false}
             >

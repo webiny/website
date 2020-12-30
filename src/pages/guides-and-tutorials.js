@@ -16,7 +16,7 @@ const GuidesAndTutorialsPage = () => {
 
     return (
         <BaseLayout
-            title="The easiest way to adopt serverless | Webiny"
+            title="Serverless Guides & Tutorials"
             description="Webiny is an open-source framework for building serverless applications. Webiny is powered by React, Node and GraphQL."
             fixedHeader={false}
         >

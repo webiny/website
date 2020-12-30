@@ -6,7 +6,7 @@ import Tos from "../components/static/tos";
 class TosPage extends React.Component {
     render() {
         return (
-            <BaseLayout title="Terms of Service - Webiny">
+            <BaseLayout title="Terms of Service">
                 <Tos />
             </BaseLayout>
         );

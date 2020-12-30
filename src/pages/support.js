@@ -6,7 +6,7 @@ import Support from "../components/support/support";
 class SupportPage extends React.Component {
     render() {
         return (
-            <BaseLayout title="Support - Webiny">
+            <BaseLayout title="Support">
                 <Support />
             </BaseLayout>
         );

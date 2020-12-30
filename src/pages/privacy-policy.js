@@ -6,7 +6,7 @@ import PrivacyPolicy from "../components/static/privacy";
 class PrivacyPolicyPage extends React.Component {
     render() {
         return (
-            <BaseLayout title="Privacy Policy - Webiny">
+            <BaseLayout title="Privacy Policy">
                 <PrivacyPolicy />
             </BaseLayout>
         );

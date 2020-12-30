@@ -6,7 +6,7 @@ import Hero from "../components/about-us/about-us";
 class AboutUsPage extends React.Component {
     render() {
         return (
-            <BaseLayout title="About Us - Webiny">
+            <BaseLayout title="About Us">
                 <Hero />
             </BaseLayout>
         );

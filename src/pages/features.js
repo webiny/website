@@ -15,7 +15,7 @@ class FeaturesPage extends React.Component {
     render() {
         return (
             <BaseLayout
-                title="Webiny - Features"
+                title="Features"
                 description="Create reliable serverless apps with ease"
                 fixedHeader={false}
             >

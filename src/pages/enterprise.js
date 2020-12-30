@@ -8,14 +8,14 @@ import FaqAccordion from "../components/enterprise/faq-accordion";
 
 const Enterprise = () => {
     return (
-        <BaseLayout title="Webiny - Enterprise">
+        <BaseLayout title="The serverless solution for enterprises">
             <Hero />
             <SeverlessAdvantage />
             <SecurityParameter />
             <WebinyEnterprise />
             <FaqAccordion />
         </BaseLayout>
-    )
-}
+    );
+};
 
-export default Enterprise
+export default Enterprise;

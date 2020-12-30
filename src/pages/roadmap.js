@@ -11,7 +11,7 @@ import WCPMore from "../components/product-roadmap/wcp-more/wcp-more";
 const ProductRoadmap = () => {
     return (
         <BaseLayout
-            title="Product roadmap - Serverless CMS powered by GraphQL and React"
+            title="Product roadmap"
             description="Discover the serverless benefits, its challenges and how Webiny overcomes them."
             fixedHeader={false}
         >

@@ -26,7 +26,7 @@ class BaseLayout extends React.Component {
         return (
             <>
                 <Head
-                    title={this.props.title}
+                    title={this.props.title + " | Webiny"}
                     description={this.props.description}
                     image={this.props.image}
                 />
