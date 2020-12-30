@@ -3,7 +3,7 @@ import theme from "../../utils/theme";
 export const TASKS = [
     {
         id: 0,
-        tag: { accent: theme.color.yellow, text: "in development" },
+        tag: { accent: theme.color.yellow, text: "in beta" },
         title: "DynamoDB support",
         body: "Add DynamoDB as one of the supported databases.",
         action: {
@@ -13,7 +13,7 @@ export const TASKS = [
     },
     {
         id: 1,
-        tag: { accent: theme.color.yellow, text: "in development" },
+        tag: { accent: theme.color.yellow, text: "in beta" },
         title: "Page builder i18n integration",
         body: "Add multi-language support to Webiny",
         action: {
@@ -43,7 +43,7 @@ export const TASKS = [
     },
     {
         id: 4,
-        tag: { accent: theme.color.secondaryDark, text: "approved" },
+        tag: { accent: theme.color.yellow, text: "in beta" },
         title: "Support 3rd party identity providers (Okta, Auth0)",
         body: "Manage access to Webiny using 3rd party identity providers",
         action: {

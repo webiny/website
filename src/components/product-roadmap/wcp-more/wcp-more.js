@@ -131,7 +131,7 @@ const WCPMore = props => {
                 <OverviewSectionWrapper>
                     <More>
                         <Title>There is much more to WCP. </Title>
-                        <Caption>We plan to have the first version out before the Q4 2020.</Caption>
+                        <Caption></Caption>
                         <Button type={"secondary"} link={"mailto:sven@webiny.com"}>
                             Get in touch if you'd like to know more
                         </Button>
