@@ -1,0 +1,195 @@
+---
+slug: "blog/5-aws-services-you-need-to-know-for-web-development"
+title: "5 AWS Services you need to know for Web Development"
+description: "Only 5 AWS services you need to know to build your web applications super fast."
+tags: ["AWS", "SaaS", "Serverless", "Software"]
+featureImage: "./assets/5-aws-services-you-need-to-know-for-web-development/5-aws-services-for-web-dev-featureImg.png"
+author: albiona
+date: 2021-01-11
+---
+
+If you're getting started with AWS and you're interested to build your web applications using AWS services in a short amount of time, then you're in the right place. AWS offers more than 300 services, and to start developing applications with AWS without the right information might be a huge burden. As for today, we'll provide to you only 5 AWS services you need to know, to develop your web application.
+
+Without further ado, let's get started.
+
+# Amazon Web Services
+
+## AWS S3
+
+For any product that you're going to build, you'll need to simply and securely collect, store, and analyze data. Amazon Simple Storage Service (Amazon S3) is a cloud hosting service, part of the **AWS Storage Services**, that provides you a place to collect, store and analyze your data in the cloud in **any amount** **from anywhere on the web**. With AWS S3 features you'll store the data in a large amount and securely run queries on the data without implementing other platforms. Alongside the existing feature, AWS re:Invent 2020 announced that S3 delivers strong **read-after-write** consistency, for any request, without changes to performance or availability.
+
+### AWS S3 Benefits
+
+- Cost-effective, relatively cheap when it comes to storing files, and you'll get to pay for what you use, the bill grows with your website.
+- Security - AWS S3 supports three different forms of encryption.
+- Scaling - You can keep uploading files, and it will scale with it.
+- AWS S3 has a web interface to manage your data and the security settings.
+- Integrates with all the other AWS services, like CloudFront.
+- Serve files directly from S3, or even whole static websites.
+
+### AWS S3 Pricing
+
+AWS S3 charges for what you actually use, no hidden fees or overage charges. This gives you as a developer a space for growing your business while enjoying the cost advantages of the AWS infrastructure. You only have to provide a payment method, and by the end of the month, your payment method is automatically charged for that particular month's usage. Follow the article <ExternalLink href="https://aws.amazon.com/s3/pricing/">here</ExternalLink> to get to know more about AWS S3 Pricing. For every service, AWS offers a **free tier**, and for S3 the free tier includes a **5 GB** of Amazon S3 **storage** in the S3 Standard storage class. By the end of the month, AWS calculates all the AWS Regions and automatically applies to your monthly bill; unused monthly free tier will not roll over.
+
+### AWS S3 Get Started
+
+Get started with AWS S3 <ExternalLink href="https://docs.aws.amazon.com/AmazonS3/latest/gsg/GetStartedWithS3.html">here</ExternalLink>.
+
+## AWS API Gateway
+
+API Gateway service allows you as a developer to create, publish, maintain, and secure APIs at any scale. The API Gateway is acting as a "front door" for your applications to connect with data, and backend services. With API Gateway you can create RESTful APIs and WebSocket APIs enabling real-time two-way communication applications.
+
+### AWS API Gateway Benefits
+
+- You can build stateful (WebSocket) and stateless (HTTP and REST) APIs.
+- Authentication mechanisms such as AWS Identity and Access Management policies, Lambda authorizer functions, and Amazon Cognito user pools.
+- A <ExternalLink href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-developer-portal.html">developer portal</ExternalLink> for publishing APIs.
+- Monitoring <ExternalLink href="https://docs.aws.amazon.com/apigateway/latest/developerguide/monitoring-cloudwatch.html">REST</ExternalLink> and <ExternalLink href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-logging.html">WebSocket</ExternalLink> APIs execution with CloudWatch metrics.
+- Support for <ExternalLink href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">custom domain names</ExternalLink>.
+
+### AWS API Gateway Pricing
+
+AWS offers the **free tier** up to **one million API calls** received for REST APIs, **one million API calls** received for HTTP APIs, and **one million messages** and 750k connection minutes for WebSocket APIs per month - up to one year.
+
+For the API Gateway, AWS doesn't have a minimum fee or upfront commitments. You'll be charged only for the API calls you receive and the amount of data transferred out. There are options for data caching to be charged at an hourly rate that varies based on the cache size you select. For the WebSocket APIs, you only pay when your APIs are in use - based on the messages send and received and connection minutes.
+
+### AWS API Gateway Get Started
+
+Get started with API Gateway <ExternalLink href="https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started.html">here</ExternalLink>.
+
+## AWS Lambda
+
+Lambda is part of the Compute Services of AWS. You can run code without managing servers. It offers an automatic scale from a few requests per day to thousands per second. With Lambda you can run any type of application you want to build, with zero administration; offering you the space to write your code in any of the [supported programming languages](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html).
+
+With Lambda you can build serverless backends to handle web, mobile, and 3rd party API requests. Lambda offers the opportunity to combine it with other AWS services, as a developer you can use those services to build powerful web applications that scale up or down automatically.
+
+### AWS Lambda Benefits
+
+- **Pay for what you use -** Lambda charges per ms, based on the number of **requests and the duration** of your requests.
+- **Managed infrastructure -** By using AWS Lambda functions you no longer have to manage underlying servers - AWS takes care of that for you.
+- **Scaling -** Automatically scaling up or down based on the function requests.
+- **Easily integration with other AWS services -** You can add custom functionalities using other AWS services such as S3 or DynamoDB.
+
+### AWS Lambda Pricing
+
+Two important things on Lambda pricing, the **number of requests** for your functions and the **duration,** the time it takes for your code to execute. Each time there is a **request** **executed** in response to an **event notification** or an **invocation**, lambda **charges**. It calculates the duration when your code begins the execution until it's terminated, rounding up to the nearest 1ms. The price depends on the memory allocated in the function. There is a free usage tier including **1M requests per month.** Find out more about Lambda pricing <ExternalLink href="https://aws.amazon.com/lambda/pricing/">here</ExternalLink>.
+
+### AWS Lambda Get Started
+
+Get started with Lambda <ExternalLink href="https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html">here</ExternalLink>.
+
+## AWS DynamoDB
+
+When building your web application, the database is one of the key parts you need to research for different scenarios such as the scaling options.
+
+AWS offers a fully managed, NoSQL database service - DynamoDB, which offers great performance and scalability. In a matter of minutes, you'll be able to set up the database and maintain it. DynamoDB stores data as JSON objects in a simple key-value pair. It is a fast, cost-effective, flexible, scalable, and secure database service. Giving you the chance to scale up from 10 to 1000 transactions per second (tps) in a couple of seconds.
+
+### AWS DynamoDB Benefits
+
+- **Performance at scale -** DynamoDB can auto-scale when there is huge traffic. It replicates your data across multiple AWS Regions and gives you fast, local access to data for your globally distributed applications.
+- **No servers -** DynamoDB is serverless, meaning there are no servers to manage, install, maintain. It automatically scales tables up and down based on the current need.
+- **Auto management -** DynamoDB creates backups of your data. By offering DynamoDB global tables, which provide a fully managed, multi-region, and multi-master database so you can deliver low-latency data access to your users no matter where they are located on the globe.
+
+### AWS DynamoDB Pricing
+
+Two ways that AWS DynamoDB pricing works, there is the **on-demand capacity mode** where DynamoDB charges you for the data reads and writes your application performs on your tables. The **On-demand** is best for you when you:
+
+- Create new tables with unknown workloads
+- Unpredicted application traffic
+
+AWS has a **free tier** for the **on-demand capacity** mode which includes:
+
+- 25 GB of data storage
+- 2.5 million stream read requests from DynamoDB Streams
+- 1 GB of data transfer out, aggregated across AWS services.
+
+---
+
+The other way is pricing for **provisioned capacity** mode, you specify the number of reads and writes per second that you expect your application to require. There is the auto-scaling option to use automatically to adjust your table's capacity based on the specific utilization rate.
+
+The **provisioned capacity** mode is best for you when you:
+
+- Have a predict application traffic
+- Run applications with a consistent traffic
+- Can predict capacity requirements to control costs
+
+For the **provisioned capacity** mode there is a free tier as well, including:
+
+- 25 WCUs and 25 RCUs of provisioned capacity
+- 25 GB of data storage
+- 25 rWCUs for global tables deployed in two AWS Regions
+- 2.5 million stream read requests from DynamoDB Streams
+- 1 GB of data transfer out (15 GB for your first 12 months), aggregated across AWS services.
+
+AWS calculates the **monthly usage** per-region, per-payer account basis.
+
+### AWS DynamoDB Get Started
+
+To get started with DynamoDB check out these awesome resources from AWS.
+
+Get started with DynamoDB <ExternalLink href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html">here</ExternalLink>.
+
+Serverless Reference Architecture: Web Application <ExternalLink href="https://github.com/aws-samples/lambda-refarch-webapp">here</ExternalLink>.
+
+## AWS CloudFront
+
+When you have your application ready for the users, you need to distribute your web application to the internet/users, that's where the AWS CloudFront comes in. CloudFront delivers your content, the static and dynamic web content, through a worldwide network of data centers called edge locations. Known for the high transfer speed delivery, and low latency.
+
+### AWS CloudFront Benefits
+
+- **Caching your content and decreases the workload** - resulting in high availability of your web applications
+- **Easy to use -** Simple to set up and use
+- **Security -** Securing both network and application-level against the most frequent DDoS attacks that target websites.
+- **Access to other AWS services -** The CloudFront integrates with other AWS services such as S3, EC2, Elastic Load Balancing, Route 53 using the AWS management console.
+- **Cost-Effective**
+
+### AWS CloudFront Pricing
+
+As most of the AWS services, using CloudFront you don't have to pay any up-front fees, you'll pay as you go and only for what you use. Checkout this <ExternalLink href="https://aws.amazon.com/cloudfront/pricing/">page</ExternalLink> for more details.
+
+The **free tier** includes 50 GB of data transfer out for 12 months free, and 2.000.000 HTTP or HTTPS Requests each month for one year!
+
+### AWS CloudFront Get Started
+
+Get started with AWS CloudFront <ExternalLink href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/GettingStarted.html">here</ExternalLink>.
+
+CloudFront <ExternalLink href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/IntroductionUseCases.html">use cases</ExternalLink>
+
+---
+
+## Extra AWS Service - AWS Cognito
+
+As you're building your web application, there is a 100% chance that you'll offer distinct features to different users, but how do you first manage users' information? Well, AWS offers the Cognito service.
+
+Cognito provides authentication, authorization, and user management for your web applications. There are two key components in Cognito, the user, and the identity pools. User pools are directories that provide sign-up and sign-in options for your application users. Identity pools enable you to grant your users access to other AWS services.
+
+### AWS Cognito Benefits
+
+- **Scalable and secure -** AWS provides a highly scalable directory up to millions of users. With this directory, you can enable the users to sign in to your web application using AWS Cognito. For the security AWS is the one who manages the user pools of your applications.
+- **Social identity providers -** Your users can access your application with different social identity providers such as Google, Facebook, or Apple - an effortless user experience.
+- **Access control for AWS resources -** You have the option to define roles and map users to different roles, so your app can access only resources authorized for each user.
+
+### AWS Cognito Pricing
+
+For the AWS Cognito you'll pay for the monthly active users (MAUs) only. There is a free tier that includes a 50.000 MAUs for users who sign in directly to Cognito User Pools. Check out more info about the pricing <ExternalLink href="https://aws.amazon.com/cognito/pricing/">here</ExternalLink>.
+
+### AWS Cognito Get Started
+
+Get started with Amazon Cognito <ExternalLink href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-getting-started.html">here</ExternalLink>.
+
+## Use AWS services for your web applications for it's:
+
+- **Easy to use**
+- **Flexible**
+- **Cost-Effective**
+- **Reliable**
+- **Scalable and high-perdormance**
+- **Secure**
+
+---
+
+Now that you have the tools you need, building your web applications with AWS is an amazing experience considering the benefits it offers for developers. And if you want to go one step further, try Webiny — Webiny is an open-source serverless application framework that brings all those tools together. <ExternalLink href="http://docs.webiny.com/">Start building</ExternalLink> your serverless applications using <ExternalLink href="https://www.webiny.com?utm_source=Webiny-blog&utm_medium=webiny-blog&utm_campaign=webiny-weekly-blog&utm_content=webiny-5-aws-services-you-need-for-web-development&utm_term=W00467">Webiny</ExternalLink>. today 🚀
+
+---
+
+Thanks for reading! My name is <ExternalLink href="https://twitter.com/albionaitoh">Albiona</ExternalLink> and I work as a developer relations engineer at <ExternalLink href="https://www.webiny.com?utm_source=Webiny-blog&utm_medium=webiny-blog&utm_campaign=webiny-weekly-blog&utm_content=webiny-5-aws-services-you-need-for-web-development&utm_term=W00467">Webiny</ExternalLink>. I enjoy learning new tech and building communities around them = ) If you have questions or just want to say hi, reach out to me via [Twitter](https://twitter.com/albionaitoh).
