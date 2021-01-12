@@ -6,35 +6,37 @@ import mq from "../../utils/breakpoints";
 import ContentContainer from "../../ui/content-container";
 import YTVideoComponent from "../../ui/layout/yt-video";
 import Button from "../../ui/button";
-import { trackGoToGithub } from "../../ui/functions";
 
 import heroBg from "./assets/hero-bg-with-scroll.svg";
 import webinyLogo from "./assets/webiny-logo.svg";
 import vectorIcon from "./assets/vector.svg";
-import githubIcon from "./assets/github-mark.svg";
 import webinyEasyImg from "./assets/easy-webiny.svg";
 import backgroundImg from "./assets/home-hero-bg.svg";
 import webinyGroup from "./assets/webiny-group.svg";
-import circleIcon from "./assets/circle.svg";
 import PageBuilderDemoImg from "./assets/why-webiny-video-cover.png";
+import commandImg from "./assets/command.svg";
 
 const HeroSection = styled("section")(
     {
         backgroundColor: "#F6F4F8",
         position: "relative",
         zIndex: 0,
-        backgroundImage: "url(" + heroBg + ")",
         backgroundRepeat: "no-repeat",
         overflow: "hidden",
     },
     mq({
-        backgroundSize: ["cover", "cover", "100%"],
-        backgroundPosition: ["center", "top", "top", "center"],
-        padding: ["0px 0px 110px", "0 0 400px"],
+        backgroundImage: ["url(" + heroBg + ")", "url(" + backgroundImg + ")"],
+        backgroundSize: ["cover", "contain", "100%"],
+        backgroundPosition: ["center", "top", "top", "top"],
+        padding: ["0px 0px 110px", "0 0 450px"],
         "@media (min-width: 1460px)": {
             backgroundPosition: "top",
             paddingTop: 0,
         },
+
+        "@media (min-width: 1600px)": {
+            backgroundImage: "url(" + heroBg + ")"
+        }
     }),
 );
 
@@ -96,8 +98,8 @@ const TitleHighlight = styled("span")({
 
 const SubTitle = styled("h3")(
     {
-        fontSize: 28,
-        fontWeight: theme.fontWeight.regular,
+        fontSize: 24,
+        fontWeight: 300,
         lineHeight: "34px",
         marginTop: 15,
         marginBottom: 40,
@@ -121,7 +123,7 @@ const ButtonWrapper = styled("div")(
     mq({
         flexDirection: ["column", "row"],
         alignItems: ["center", "flex-start"],
-        marginBottom: [75, 50],
+        marginBottom: [0, 50],
     }),
 );
 
@@ -138,29 +140,6 @@ const getStartedButtonClass = css(
         marginBottom: ["16px !important", "0px !important"],
     }),
 );
-const githubButtonClass = css(
-    {
-        a: {
-            textTransform: "uppercase",
-            padding: "10px 12px !important",
-        },
-    },
-    mq({
-        width: ["90% !important", "190px !important"],
-    }),
-);
-
-const ScheduleDemoImage = styled("img")(
-    {
-        position: "relative",
-        width: 20,
-        height: 20,
-        marginRight: 8,
-    },
-    mq({
-        display: ["block"],
-    }),
-);
 
 const WebinyLogoImage = styled("img")({
     marginBottom: 12,
@@ -170,32 +149,16 @@ const FeatureWrapper = styled("div")(
     {
         display: "flex",
         justifyContent: "center",
-        marginBottom: 44,
+        marginBottom: 44,        
     },
     mq({
         flexDirection: ["column", "row"],
+        "& img": {
+            width: ["90%", 400],
+            margin: ["0 auto", 0]
+        }
     }),
 );
-
-const Feature = styled("div")({
-    display: "flex",
-    alignItems: "center",
-    marginRight: 50,
-    "&:last-child": {
-        marginRight: 0,
-    },
-
-    "& .feature-icon": {
-        width: 20,
-        height: 20,
-        marginRight: 12,
-    },
-
-    "& .feature-text": {
-        fontSize: 18,
-        color: theme.color.white,
-    },
-});
 
 const WebinyHallMarkImage = styled("img")(
     {
@@ -233,26 +196,9 @@ class HeroComponent extends React.Component {
                             The Easiest Way To Adopt &nbsp;
                             <TitleHighlight>Serverless</TitleHighlight>
                         </Title>
-                        <SubTitle>Build Full-Stack Serverless Web Applications</SubTitle>
+                        <SubTitle>We help developers and organizations architect, build and deploy full-stack serverless applications and websites.</SubTitle>
                         <FeatureWrapper>
-                            <Feature>
-                                <img className={"feature-icon"} src={circleIcon} alt={""} />
-                                <span className={"feature-text"}>
-                                    Zero Infrastructure Management
-                                </span>
-                            </Feature>
-                            <Feature>
-                                <img className={"feature-icon"} src={circleIcon} alt={""} />
-                                <span className={"feature-text"}>Open Source</span>
-                            </Feature>
-                            <Feature>
-                                <img className={"feature-icon"} src={circleIcon} alt={""} />
-                                <span className={"feature-text"}>Self Hosted</span>
-                            </Feature>
-                            <Feature>
-                                <img className={"feature-icon"} src={circleIcon} alt={""} />
-                                <span className={"feature-text"}>Infinite Scale</span>
-                            </Feature>
+                            <img src={commandImg} alt=""/>
                         </FeatureWrapper>
                         <ButtonWrapper>
                             <Button
@@ -262,22 +208,7 @@ class HeroComponent extends React.Component {
                                 target="_blank"
                             >
                                 Get started
-                            </Button>
-                            <div
-                                className={githubButtonClass}
-                                onClick={() => {
-                                    trackGoToGithub({ placement: "homepage-hero" });
-                                }}
-                            >
-                                <Button
-                                    type="default"
-                                    link="https://github.com/webiny/webiny-js"
-                                    target="_blank"
-                                >
-                                    <ScheduleDemoImage src={githubIcon} alt={""} />
-                                    View on Github
-                                </Button>
-                            </div>
+                            </Button>                            
                         </ButtonWrapper>
                     </HeroSectionWrapper>
                     <ImageWrapper>                        

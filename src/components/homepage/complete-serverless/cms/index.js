@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "react-emotion";
+import { css } from "emotion";
 import mq from "../../../utils/breakpoints";
+import Button from "../../../ui/button";
 import theme from "../../../utils/theme";
 import SelectedNav from "./selected-nav";
 
@@ -18,7 +20,7 @@ const FrameworksSection = styled("div")(
       marginBottom: 30
   },
   mq({
-      flexDirection: ["column", "row"],
+      flexDirection: ["column-reverse", "row"],
       padding: ["0 0 50px", "0 0 100px"]
   }),
 );
@@ -55,6 +57,10 @@ const Navigation = styled("div")(
       "& .description": {
         fontSize: 24,
         lineHeight: "32px"
+      },
+
+      "& .navigation-list": {
+        marginBottom: 50
       },
 
       "& .navigation-item": {
@@ -116,7 +122,29 @@ const Navigation = styled("div")(
   mq({
     width: ["100%", "48%"],
     maxWidth: ["100%", "48%"],
-    margin: [0, "0 0 0 2%"]
+    margin: [0, "0 0 0 2%"],
+
+    "& .navigation-header": {
+      flexDirection: ["column", "row"],
+
+      "& img": {
+        marginRight: [0, 30],
+        marginBottom: [10, 0],
+      },
+
+      "& h5": {
+        textAlign: ["center", "left"]
+      }
+    },
+
+    "& .navigation-content": {
+      maxWidth: [400, "100%"],
+      margin: ["0 auto", 0]
+    },
+
+    "& .navigation-list": {
+      display: ["none", "block"]
+    },
   }),
 )
 
@@ -127,6 +155,20 @@ const SlideSection = styled("div")(
     margin: [0, "0 2% 0 0"]
   }),
 )
+
+const getStartedButtonClass = css(
+  {
+      backgroundColor: `${theme.color.yellow} !important`,
+      textTransform: "uppercase",
+      padding: "10px 12px !important",
+      height: "40px !important",
+  },
+  mq({
+      width: ["100% !important", "150px !important"],
+      margin: ["0 auto", 0],
+      marginBottom: ["16px !important", "0px !important"],
+  }),
+);
 
 const navigationList = [
   {id: 1, text: "GraphQL-based Headless CMS", selected: true},
@@ -184,7 +226,22 @@ const navigationContent = [
   },
 ]
 
+const useWindowWidth = () => {
+  const [width, setWidth] = useState();
+
+  useEffect(() => {
+    function handleResize() {
+      setWidth(window.innerWidth)      
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return width;
+}
+
 const CMSSection = () => {
+  const width = useWindowWidth();
   const [navigateItems, setNavigateItems] = useState(navigationList)
   const [selectedNav, setSelectedNav] = useState(navigationContent[0])
   const updateNavigate = (id) => {
@@ -201,7 +258,13 @@ const CMSSection = () => {
   return (
     <FrameworksSection>
       <SlideSection>
-        <SelectedNav content={selectedNav}/>
+        {
+          width > 1024 ? 
+            <SelectedNav content={selectedNav}/> :
+            navigationContent.map(item => (
+              <SelectedNav content={item} key={item.id}/>
+            ))
+        }
       </SlideSection>
       <Navigation>
         <div className="navigation-header">
@@ -210,19 +273,27 @@ const CMSSection = () => {
         </div>
         <div className="navigation-content">
           <p className="description">A self-hosted CMS that runs on top of serverless infrastructure. Scaleable, cost-effective, self-hosted and performant solution for managing all of your content needs.</p>
-          {
-            navigateItems && navigateItems.map(item => (
-              <div className="navigation-item" key={item.id}>                
-                <div className={`navigation-item-content ${item.selected ? "active" : ""}`} onClick={() => updateNavigate(item.id)}>
-                  <div className="nav-circle">
-                    <span>{item.id}</span>
+          <div className="navigation-list">
+            {
+              navigateItems && navigateItems.map(item => (
+                <div className="navigation-item" key={item.id}>                
+                  <div className={`navigation-item-content ${item.selected ? "active" : ""}`} onClick={() => updateNavigate(item.id)}>
+                    <div className="nav-circle">
+                      <span>{item.id}</span>
+                    </div>
+                    <p>{item.text}</p>
                   </div>
-                  <p>{item.text}</p>
+                  {item.id < 5 ? <div className="seperater"/> : '' }
                 </div>
-                {item.id < 5 ? <div className="seperater"/> : '' }
-              </div>
-            ))
-          }
+              ))
+            }
+          </div>
+          <Button
+            className={getStartedButtonClass}
+            type="default"
+          >
+            Get started
+          </Button>       
         </div>        
       </Navigation>      
     </FrameworksSection>

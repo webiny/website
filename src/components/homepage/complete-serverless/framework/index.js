@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "react-emotion";
+import { css } from "emotion";
 import mq from "../../../utils/breakpoints";
 import theme from "../../../utils/theme";
+import Button from "../../../ui/button";
 import SelectedNav from "./selected-nav";
 
 import Logo from "../assets/framework/logo.svg";
@@ -32,10 +34,6 @@ const Navigation = styled("div")(
       padding: "0 0 33px",
       borderBottom: "1px solid #E6E6E6",
 
-      "& img": {
-        marginRight: 30
-      },
-
       "& h5": {
         fontSize: 42,
         color: theme.color.black,
@@ -56,6 +54,10 @@ const Navigation = styled("div")(
       "& .description": {
         fontSize: 24,
         lineHeight: "32px"
+      },
+
+      "& .navigation-list": {
+        marginBottom: 50
       },
 
       "& .navigation-item": {
@@ -117,7 +119,29 @@ const Navigation = styled("div")(
   mq({
     width: ["100%", "48%"],
     maxWidth: ["100%", "48%"],
-    margin: [0, "0 2% 0 0"]
+    margin: [0, "0 2% 0 0"],
+
+    "& .navigation-header": {
+      flexDirection: ["column", "row"],
+
+      "& img": {
+        marginRight: [0, 30],
+        marginBottom: [10, 0],
+      },
+
+      "& h5": {
+        textAlign: ["center", "left"]
+      }
+    },
+
+    "& .navigation-content": {
+      maxWidth: [400, "100%"],
+      margin: ["0 auto", 0]
+    },
+
+    "& .navigation-list": {
+      display: ["none", "block"]
+    },
   }),
 )
 
@@ -128,6 +152,20 @@ const SlideSection = styled("div")(
     margin: [0, "0 0 0 2%"]
   }),
 )
+
+const getStartedButtonClass = css(
+  {
+      backgroundColor: `${theme.color.yellow} !important`,
+      textTransform: "uppercase",
+      padding: "10px 12px !important",
+      height: "40px !important",
+  },
+  mq({
+      width: ["100% !important", "150px !important"],
+      margin: ["0 auto", 0],
+      marginBottom: ["16px !important", "0px !important"],
+  }),
+);
 
 const navigationList = [
   {id: 1, text: "An easier way to build serverless apps", selected: true},
@@ -174,7 +212,22 @@ const navigationContent = [
   },
 ]
 
+const useWindowWidth = () => {
+  const [width, setWidth] = useState();
+
+  useEffect(() => {
+    function handleResize() {
+      setWidth(window.innerWidth)      
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return width;
+}
+
 const Frameworks = () => {
+  const width = useWindowWidth();
   const [navigateItems, setNavigateItems] = useState(navigationList)
   const [selectedNav, setSelectedNav] = useState(navigationContent[0])
   const updateNavigate = (id) => {
@@ -197,23 +250,37 @@ const Frameworks = () => {
         </div>
         <div className="navigation-content">
           <p className="description">Webiny is an open-source framework that helps developers and organisations to build solutions on top of serverless infrastructure.</p>
-          {
-            navigateItems && navigateItems.map(item => (
-              <div className="navigation-item" key={item.id}>                
-                <div className={`navigation-item-content ${item.selected ? "active" : ""}`} onClick={() => updateNavigate(item.id)}>
-                  <div className="nav-circle">
-                    <span>{item.id}</span>
+          <div className="navigation-list">
+            {
+              navigateItems && navigateItems.map(item => (
+                <div className="navigation-item" key={item.id}>                
+                  <div className={`navigation-item-content ${item.selected ? "active" : ""}`} onClick={() => updateNavigate(item.id)}>
+                    <div className="nav-circle">
+                      <span>{item.id}</span>
+                    </div>
+                    <p>{item.text}</p>
                   </div>
-                  <p>{item.text}</p>
+                  {item.id < 5 ? <div className="seperater"/> : '' }
                 </div>
-                {item.id < 5 ? <div className="seperater"/> : '' }
-              </div>
-            ))
-          }
-        </div>        
+              ))
+            }
+          </div>          
+          <Button
+            className={getStartedButtonClass}
+            type="default"
+          >
+            Get started
+          </Button>
+        </div>   
       </Navigation>
       <SlideSection>
-        <SelectedNav content={selectedNav}/>
+        {
+          width > 1024 ? 
+            <SelectedNav content={selectedNav}/> :
+            navigationContent.map(item => (
+              <SelectedNav content={item} key={item.id}/>
+            ))
+        }        
       </SlideSection>
     </FrameworksSection>
   )

@@ -18,10 +18,7 @@ const CompleteServerlessSection = styled("section")(
       position: "relative",
       backgroundColor: "#fff",
       padding: "100px 20px 25px"
-  },
-  mq({
-      textAlign: ["center", "left"]
-  }),
+  }
 );
 
 const Title = styled("h1")(
@@ -59,6 +56,16 @@ const SubTitle = styled("h3")(
   }),
 );
 
+const contentContainerClass = css(
+  {
+    position: "relative",
+    maxWidth: 1200,
+  },
+  mq({
+    width: ["100%", "100%"]
+  }),
+);
+
 const CompleteServerless = () => {
   return (
     <CompleteServerlessSection>
@@ -68,7 +75,7 @@ const CompleteServerless = () => {
           Serverless Experience
       </Title>
       <SubTitle>Architect. Code. Deploy.</SubTitle>
-      <ContentContainer>
+      <ContentContainer className={contentContainerClass}>
         <Frameworks />
         <CMSSection />
       </ContentContainer>

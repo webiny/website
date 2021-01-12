@@ -9,6 +9,7 @@ import CompleteSection from "../components/homepage/complete-serverless";
 import GoServerless from "../components/homepage/go-serverless/go-serverless";
 import WhyWebinyWhyServerless from "../components/homepage/why-serverless/why-serverless";
 import ClientsLogo from "../components/homepage/clients-logo/clients-logo";
+import CaseStudy from "../components/homepage/case-study";
 
 class IndexPage extends React.Component {
     componentDidMount() {
@@ -29,6 +30,7 @@ class IndexPage extends React.Component {
                 
                 
                 <ServerlessEasy />
+                <CaseStudy />
                 <GoServerless />
             </BaseLayout>
         );
