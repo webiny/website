@@ -4,6 +4,7 @@ import { css } from "emotion";
 import theme from "../../utils/theme";
 import mq from "../../utils/breakpoints";
 import ContentContainer from "../../ui/content-container";
+import YTVideoComponent from "../../ui/layout/yt-video";
 import Button from "../../ui/button";
 import { trackGoToGithub } from "../../ui/functions";
 
@@ -12,8 +13,10 @@ import webinyLogo from "./assets/webiny-logo.svg";
 import vectorIcon from "./assets/vector.svg";
 import githubIcon from "./assets/github-mark.svg";
 import webinyEasyImg from "./assets/easy-webiny.svg";
+import backgroundImg from "./assets/home-hero-bg.svg";
 import webinyGroup from "./assets/webiny-group.svg";
 import circleIcon from "./assets/circle.svg";
+import PageBuilderDemoImg from "./assets/why-webiny-video-cover.png";
 
 const HeroSection = styled("section")(
     {
@@ -25,11 +28,11 @@ const HeroSection = styled("section")(
         overflow: "hidden",
     },
     mq({
-        backgroundSize: ["cover", "auto", "100%"],
+        backgroundSize: ["cover", "cover", "100%"],
         backgroundPosition: ["center", "top", "top", "center"],
-        padding: ["0px 0px 110px", "0"],
+        padding: ["0px 0px 110px", "0 0 400px"],
         "@media (min-width: 1460px)": {
-            backgroundPosition: "bottom",
+            backgroundPosition: "top",
             paddingTop: 0,
         },
     }),
@@ -208,6 +211,15 @@ const WebinyHallMarkImage = styled("img")(
     }),
 );
 
+const ImageWrapper = styled("div")({
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    width: "100%",
+    position: "relative",
+    marginTop: 20
+});
+
 class HeroComponent extends React.Component {
     render() {
         const { handleDemoClick, ...restProps } = this.props;
@@ -268,6 +280,9 @@ class HeroComponent extends React.Component {
                             </div>
                         </ButtonWrapper>
                     </HeroSectionWrapper>
+                    <ImageWrapper>                        
+                        <YTVideoComponent img={PageBuilderDemoImg} id={"odotdrOOvJE"} />
+                    </ImageWrapper>
                 </ContentContainer>
             </HeroSection>
         );
