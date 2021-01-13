@@ -164,14 +164,13 @@ const FeatureWrapper = styled("div")(
 const WebinyHallMarkImage = styled("img")(
     {
         position: "absolute",
-        zIndex: -1,
+        zIndex: 1,
         top: 0,
         left: 0,
     },
     mq({
-        width: ["auto", "100%"],
-        maxHeight: ["unset", 700],
-        transform: ["translate(-35%, -8%)", "none"],
+        width: ["100%", "100%"],
+        height: ["auto", 756],
     }),
 );
 
