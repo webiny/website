@@ -162,6 +162,7 @@ const getStartedButtonClass = css(
       textTransform: "uppercase",
       padding: "10px 12px !important",
       height: "40px !important",
+      fontWeight: "bold !important"
   },
   mq({
       width: ["100% !important", "150px !important"],

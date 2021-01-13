@@ -26,7 +26,7 @@ const Section = styled("section")(
         backgroundPosition: "top",
     },
     mq({
-        padding: ["0px 15px 15px", "100px 15px 100px"],
+        padding: ["0px 15px 15px", "0 15px 100px"],
     }),
 )
 

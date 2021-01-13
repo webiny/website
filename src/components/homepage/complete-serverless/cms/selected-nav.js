@@ -71,7 +71,6 @@ const SelectedItem = styled("div")(
       padding: 0,
 
       "& li": {
-        marginBottom: 10,
         position: "relative",
         paddingLeft: 25,
         color: theme.color.black,

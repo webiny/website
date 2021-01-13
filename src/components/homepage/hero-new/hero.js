@@ -28,7 +28,7 @@ const HeroSection = styled("section")(
         backgroundImage: ["url(" + heroBg + ")", "url(" + backgroundImg + ")"],
         backgroundSize: ["cover", "contain", "100%"],
         backgroundPosition: ["center", "top", "top", "top"],
-        padding: ["0px 0px 110px", "0 0 450px"],
+        padding: ["0px 0px 50px", "0 0 450px"],
         "@media (min-width: 1460px)": {
             backgroundPosition: "top",
             paddingTop: 0,
@@ -133,6 +133,7 @@ const getStartedButtonClass = css(
         textTransform: "uppercase",
         padding: "10px 12px !important",
         height: "40px !important",
+        fontWeight: "bold !important"
     },
     mq({
         width: ["90% !important", "150px !important"],
