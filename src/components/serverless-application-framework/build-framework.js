@@ -50,7 +50,7 @@ const BuildFrameworkSection = styled("section")(
         backgroundColor: theme.color.white
     },
     mq({
-        padding: ["0px 15px 15px", "100px 15px"],
+        padding: ["30px 15px 15px", "100px 15px"],
     }),
 )
 
@@ -71,12 +71,8 @@ const Title = styled("h1")(
         color: theme.color.black,
         textAlign: "center",
         lineHeight: "48px",
-        marginBottom: 26,
-    },
-    mq({
-        marginLeft: [0, "auto"],
-        marginRight: [0, "auto"],
-    }),
+        margin: "0 auto 26px",
+    }
 );
 
 const TitleHighlight = styled("span")({
@@ -102,9 +98,6 @@ const Description = styled("p")(
 const BuildList = styled("div")(
     {
         display: "grid",
-        gridTemplateColumns: "repeat(2, 1fr)",
-        gridGap: 50,
-        paddingTop: 100,
 
         "& .build-item": {
             display: "flex",
@@ -127,7 +120,14 @@ const BuildList = styled("div")(
                 }
             }
         }
-    }
+    },
+    mq({
+        gridTemplateColumns: ["repeat(1, 1fr)", "repeat(2, 1fr)"],
+        maxWidth: [360, "100%"],
+        margin: ["0 auto", 0],
+        gridGap: [30, 50],
+        paddingTop: [50, 100],
+    }),
 )
 
 const BuildFramework = () => {

@@ -19,7 +19,7 @@ const EasyPartSection = styled("section")(
         backgroundPosition: "bottom",
     },
     mq({
-        padding: ["0px 15px 15px", "120px 15px"],
+        padding: ["60px 15px 80px", "120px 15px"],
     }),
 )
 
@@ -49,7 +49,12 @@ const Content = styled("div")(
         "& img": {
             marginBottom: 11
         }
-    }
+    },
+    mq({
+        "& img": {
+            width: ["90%", "100%"]
+        }
+    }),
 )
 
 const Title = styled("h1")(

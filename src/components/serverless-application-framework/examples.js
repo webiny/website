@@ -23,13 +23,9 @@ const ExampleSection = styled("section")(
         overflow: "hidden",
     },
     mq({
-        backgroundSize: ["cover", "contain", "100%"],
-        backgroundPosition: ["center", "top", "top", "top"],
-        padding: ["0px 0px 50px", "0 0 100px"],
-        "@media (min-width: 1460px)": {
-            backgroundPosition: "top",
-            paddingTop: 0,
-        }
+        backgroundSize: ["cover", "cover", "100%"],
+        backgroundPosition: ["center", "bottom"],
+        padding: ["50px 0", "100px 0"]
     }),
 );
 
@@ -43,7 +39,6 @@ const heroContainerClass = css(
     },
     mq({
         width: ["100%", "100%"],
-        padding: ["75px 0px 0px", "85px 0px 0px"],
         "@media (min-width: 2000px)": {
             paddingBottom: 80,
         },
@@ -148,11 +143,12 @@ const ExampleLogoImage = styled("img")({
 const ExampleList = styled("div")(
     {
         display: "grid",
-        gridGap: 20,
-        marginBottom: 70
+        marginBottom: 70,
+        gridTemplateColumns: "repeat(1, 1fr)"
     },
     mq({
-        gridTemplateColumns: ["repeat(1, 1fr)", "repeat(4, 1fr)"],
+        gridTemplateColumns: ["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(4, 1fr)"],
+        gridGap: [40, 30],
     }),
 )
 
@@ -166,6 +162,7 @@ const ReasonBox = styled("div")(
         borderRadius: 8,
         padding: 11,
         borderTop: `6px solid ${props.color}`,
+        margin: "0 auto",
 
         "& img": {
             marginBottom: 20,
@@ -186,6 +183,9 @@ const ReasonBox = styled("div")(
             marginBottom: 24,
             lineHeight: "28px",
         },
+    }),
+    mq({
+        width: [300, 250]
     })
 );
 

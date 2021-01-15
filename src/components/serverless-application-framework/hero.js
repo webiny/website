@@ -15,20 +15,16 @@ import arrowImg from "./assets/btn-arrow.svg";
 const HeroSection = styled("section")(
     {
         backgroundImage: "url(" + heroBg + ")",
-        backgroundColor: "#F6F4F8",
+        backgroundColor: theme.color.white,
         position: "relative",
         zIndex: 0,
         backgroundRepeat: "no-repeat",
         overflow: "hidden",
     },
     mq({
-        backgroundSize: ["cover", "contain", "100%"],
-        backgroundPosition: ["center", "top", "top", "top"],
-        padding: ["0px 0px 50px", "0 0 100px"],
-        "@media (min-width: 1460px)": {
-            backgroundPosition: "top",
-            paddingTop: 0,
-        }
+        backgroundSize: ["cover", "cover", "100%"],
+        backgroundPosition: ["top", "bottom"],
+        padding: ["0px 0px 80px", "0 0 150px"],        
     }),
 );
 

@@ -48,28 +48,33 @@ const TitleHighlight = styled("span")({
     backgroundRepeat: "no-repeat",
 });
 
-export const overviewContainerClass = css({
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    width: "100%",
-    maxWidth: 1200,
-    padding: 0,
-    position: "relative",
-});
+const overviewContainerClass = css(
+    {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        width: "100%",
+        maxWidth: 1200,
+        padding: 0,
+        position: "relative",
+    },
+    mq({
+        width: ["100%", "100%"]
+    }),
+);
 
 const LogosWrapper = styled("div")(
     {
         display: "grid",
     },
     mq({
-        gridTemplateColumns: ["repeat(1, 1fr)", "repeat(4, 1fr)"],
+        gridTemplateColumns: ["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(4, 1fr)"],
     }),
 );
 
 const FeatureCard = styled("div")(
     props => ({
-        minHeight: 430,
+        minHeight: 380,
         borderRadius: 0,
 
         borderLeft: props.borderLeft ? "1px solid #E2E2E2" : "",
@@ -116,10 +121,10 @@ const FeatureCard = styled("div")(
         },
     }),    
     mq({
-        width: ["95%", "100%", 352],
-        height: ["auto", 430],
+        width: [360, 360, 352],
+        height: ["auto", 380],
         justifySelf: ["center"],
-        borderColor: ["white", "#E2E2E2"],
+        borderColor: ["white", "white", "#E2E2E2"],
 
         "& .feature-card__connector": {
             display: ["none", "block"],

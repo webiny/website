@@ -45,7 +45,6 @@ const ReasonBox = styled("div")(
         flexDirection: "column",
         alignItems: "center",
         backgroundColor: theme.color.white,
-        width: 350,
         height: 240,
         borderRadius: 8,
         padding: 24,
@@ -68,6 +67,7 @@ const ReasonBox = styled("div")(
         "&:last-child": {
             marginRight: [0],
         },
+        width: [300, 350],
     }),
 );
 
