@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "react-emotion";
 import { css } from "emotion";
 import theme from "../utils/theme";
@@ -80,7 +80,58 @@ const TitleHighlight = styled("span")({
     backgroundRepeat: "no-repeat",
 });
 
+const Clipboard = styled("div")(
+    {
+        position: "relative",
+        marginBottom: 11,
+        width: "100%",
+
+        "& div": {
+            color: theme.color.white,
+            backgroundColor: theme.color.black,
+            padding: 20,
+            fontSize: 20,
+            borderRadius: 8
+        }
+    }
+)
+
+const CopyButton = styled("button")(
+    {
+        background: theme.color.white,
+        border: "none",
+        borderRadius: 4,
+        color: theme.color.black,
+        cursor: "pointer",
+        opacity: 0,
+        outline: "none",
+        padding: ".4rem .5rem",
+        position: "absolute",
+        right: 5,
+        top: 5,
+        transition: "opacity .2s ease-in-out,visibility .2s ease-in-out,bottom .2s ease-in-out",
+    }
+)
+
 const EasyPart = () => {
+    const [showCopyButton, setShowCopyButton] = useState(false)
+    const copyText = () => {
+        // set textarea to display block, then select the text inside the textarea
+        let text = document.getElementById('create-command').textContent;
+        console.log('text', text)
+        
+        try {
+          let status = document.execCommand("Copy");
+          if(!status) {
+            console.log('Cannot copy text');
+          } else {
+            console.log("copy success")
+          }
+        } catch(err) {
+          console.log('error', err)
+        }
+    }
+
     return (
         <EasyPartSection>
             <ContentContainer className={ContainerClass}>
@@ -89,7 +140,12 @@ const EasyPart = () => {
                         <TitleHighlight>It's easy</TitleHighlight> &nbsp; to get started
                     </Title>
                     <p>Explore our docs for more tutorials and examples.</p>
-                    <img src={Code1} alt=""/>
+                    <Clipboard onMouseEnter={() => setShowCopyButton(true)} onMouseLeave={() => setShowCopyButton(false)}>
+                        {showCopyButton ? <CopyButton onClick={() => copyText()}>Copy</CopyButton> : null}
+                        <div>
+                            <span id="create-command">npx create-webiny-project new-project</span>
+                        </div>
+                    </Clipboard>                    
                     <img src={Code2} alt=""/>
                 </Content>                
             </ContentContainer>

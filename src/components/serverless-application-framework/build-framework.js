@@ -108,10 +108,10 @@ const BuildList = styled("div")(
             
             "& .main-description": {
                 "& h3": {
-                    margin: "0 0 5px",
+                    margin: "0 0 15px",
                     fontWeight: theme.fontWeight.bold,
                     fontSize: 28,
-                    lineHeight: "40px",
+                    lineHeight: "20px",
                 },
 
                 "& p": {

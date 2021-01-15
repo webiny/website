@@ -52,7 +52,7 @@ const ReasonBox = styled("div")(
 
         "& img": {
             marginBottom: 20,
-            height: 88,
+            height: 102,
         },
 
         "& .text": {

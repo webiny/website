@@ -128,10 +128,10 @@ const getStartedButtonClass = css(
         padding: "10px 12px !important",
         height: "40px !important",
         fontWeight: "bold !important",
-        color: theme.color.white
+        color: `${theme.color.white} !important`,
+        width: "254px !important" 
     },
     mq({
-        width: ["90% !important", "254px !important"],
         marginBottom: ["16px !important", "0px !important"],
     }),
 );
