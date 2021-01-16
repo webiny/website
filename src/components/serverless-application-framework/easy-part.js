@@ -7,7 +7,7 @@ import ContentContainer from "../ui/content-container";
 import Button from "../ui/button";
 import bgImage from "./assets/easy-bg.svg";
 import vectorIcon from "./assets/easy-highlight.svg";
-import arrowImg from "./assets/btn-arrow.svg";
+import arrowImg from "./assets/btn-white-arrow.svg";
 
 import ClipPart from "./clipboard";
 
