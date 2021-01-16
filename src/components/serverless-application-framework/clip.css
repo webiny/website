@@ -1,0 +1,67 @@
+body {
+  background: #444;
+}
+.wrapper {
+  color: #fff;
+  width: 50%;
+  margin: 20px 25%;
+}
+p {
+  font-weight: 700;
+}
+.code-sample {
+  color: #222;
+  position: relative;
+  margin-bottom: 11px;
+  overflow: hidden;
+  text-overflow: wrap;
+  cursor: pointer;
+  width: 100%;
+  color: #fff;
+  background-color: #000e1a;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.code-sample:hover .clip-button {
+    opacity: 1;
+}
+
+.code-sample.clip-pop .clip-button {
+    opacity: 0;
+    /* animation: 0.3s clip-pop 0.1s; */
+}
+
+.code-sample pre {
+    padding: 20px;
+    margin: 0;
+}
+  
+
+.code-sample .clip-button {
+    position: absolute;
+    opacity: 0;
+    right: 5px;
+    top: 5px;
+    padding: 2px 4px;
+    font-size: 1rem;
+    color: black;
+    background: white;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+}
+
+/* @keyframes clip-pop {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(1.5);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+} */

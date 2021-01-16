@@ -9,6 +9,8 @@ import vectorIcon from "./assets/easy-highlight.svg";
 import Code1 from "./assets/code-1.svg";
 import Code2 from "./assets/code-2.svg";
 
+import ClipPart from "./clippart";
+
 const EasyPartSection = styled("section")(
     {
         backgroundImage: "url(" + bgImage + ")",
@@ -114,24 +116,6 @@ const CopyButton = styled("button")(
 )
 
 const EasyPart = () => {
-    const [showCopyButton, setShowCopyButton] = useState(false)
-    const copyText = () => {
-        // set textarea to display block, then select the text inside the textarea
-        let text = document.getElementById('create-command').textContent;
-        console.log('text', text)
-        
-        try {
-          let status = document.execCommand("Copy");
-          if(!status) {
-            console.log('Cannot copy text');
-          } else {
-            console.log("copy success")
-          }
-        } catch(err) {
-          console.log('error', err)
-        }
-    }
-
     return (
         <EasyPartSection>
             <ContentContainer className={ContainerClass}>
@@ -140,13 +124,8 @@ const EasyPart = () => {
                         <TitleHighlight>It's easy</TitleHighlight> &nbsp; to get started
                     </Title>
                     <p>Explore our docs for more tutorials and examples.</p>
-                    <Clipboard onMouseEnter={() => setShowCopyButton(true)} onMouseLeave={() => setShowCopyButton(false)}>
-                        {showCopyButton ? <CopyButton onClick={() => copyText()}>Copy</CopyButton> : null}
-                        <div>
-                            <span id="create-command">npx create-webiny-project new-project</span>
-                        </div>
-                    </Clipboard>                    
-                    <img src={Code2} alt=""/>
+                    <ClipPart text="npx create-webiny-project new-project"/>                
+                    <ClipPart text="yarn webiny deploy"/>
                 </Content>                
             </ContentContainer>
         </EasyPartSection>
