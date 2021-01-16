@@ -17,7 +17,7 @@ const Section = styled("section")(
     },
     mq({
         backgroundSize: ["cover", "auto", "cover"],
-        padding: ["110px 15px", "40px 15px 110px"],
+        padding: ["110px 15px", "110px 15px"],
         "@media (min-width: 1460px)": {
             backgroundPosition: "bottom",
             paddingTop: 0,
@@ -69,6 +69,7 @@ const LogosWrapper = styled("div")(
     },
     mq({
         gridTemplateColumns: ["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(4, 1fr)"],
+        paddingTop: [50, 100]
     }),
 );
 
@@ -97,7 +98,7 @@ const FeatureCard = styled("div")(
         },
 
         "& .feature-card__title": {
-            margin: "10px 0px 8px",
+            margin: "17px 0px 12px",
             maxWidth: 285,
             color: theme.color.black,
             fontSize: 20,

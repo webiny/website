@@ -101,6 +101,10 @@ const BuildList = styled("div")(
 
         "& .build-item": {
             display: "flex",
+
+            "& .main-logo": {
+                paddingTop: 7
+            },
         
             "& img": {
                 marginRight: 20,
@@ -108,10 +112,10 @@ const BuildList = styled("div")(
             
             "& .main-description": {
                 "& h3": {
-                    margin: "0 0 15px",
+                    margin: "0 0 10px",
                     fontWeight: theme.fontWeight.bold,
                     fontSize: 28,
-                    lineHeight: "20px",
+                    lineHeight: "32px",
                 },
 
                 "& p": {

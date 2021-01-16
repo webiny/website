@@ -93,14 +93,16 @@ const GoServerless = () => {
                     <p className="text">
                         Get started with your next project in a few easy steps
                     </p>
-                    <Button
-                        link={"https://docs.webiny.com"}
-                        target={"_blank"}
-                        type={"dark"}
-                        className={ctaButton}
-                    >
-                        Get started tutorial
-                    </Button>
+                    <div>
+                        <Button
+                            link={"https://docs.webiny.com"}
+                            target={"_blank"}
+                            type={"dark"}
+                            className={ctaButton}
+                        >
+                            Get started tutorial
+                        </Button>
+                    </div>                    
                 </ReasonBox>                
                 <ReasonBox color={theme.color.secondaryDark}>
                     <img src={talkToUsImg} alt="talk to us" />

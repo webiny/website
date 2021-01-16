@@ -16,20 +16,24 @@ const ClipBoardItem = styled("div")(
       backgroundColor: theme.color.black,
       borderRadius: 8,
 
-      "&:hover" : {
-        "& .clip-button": {
-          opacity: 1
-        }
-      },
-
       "& pre": {
         padding: 20,
         margin: 0,
+        display: "flex",
+        alignItems: "center",
+
+        "& .yellow-rectangle": {
+          display: "inline-block",
+          width: 10,
+          height: 19,
+          background: theme.color.yellow,
+          color: theme.color.yellow,
+          marginLeft: 10
+        }
       },
 
       "& .clip-button": {
         position: "absolute",
-        opacity: 0,
         right: 5,
         top: 5,
         padding: "2px 4px",
@@ -74,6 +78,7 @@ class ClipBoard extends React.Component {
   
       if (document.execCommand('copy')){
         this.handleDidCopy()
+        this.setState({copied: true})
       } else {
         console.log('Copy failed');
       }
@@ -88,18 +93,18 @@ class ClipBoard extends React.Component {
         
         const Pre = ({setRef, text}) => (
             <pre ref={setRef}>
-                {text}
+              <span>{text}</span> <span className="yellow-rectangle"></span>
             </pre>
         )
 
         try {
-            const {pop} = this.state || {},
+            const {pop, copied} = this.state || {},
                 classNames = `code-sample ${pop || ''}`
     
             return (
                 <ClipBoardItem className={classNames} onClick={ () => this.handleCopy() } onMouseOut={ () => this.handleMouseOut() }>
-                    <Pre setRef={(r) => this.sample = r } text={this.props.text}/>                    
-                    {pop === "clip-pop" ? <FakeButton text="Copied"/> : <FakeButton text="Copy"/>}
+                    <Pre setRef={(r) => this.sample = r } text={this.props.text}/>
+                    {copied ? <FakeButton text="Copied"/> : <FakeButton text="Copy"/>}
                 </ClipBoardItem>
             )
         } catch (e) {

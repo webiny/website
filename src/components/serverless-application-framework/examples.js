@@ -158,7 +158,7 @@ const ReasonBox = styled("div")(
         flexDirection: "column",
         alignItems: "center",
         backgroundColor: theme.color.white,
-        height: 260,
+        height: 300,
         borderRadius: 8,
         padding: 11,
         borderTop: `6px solid ${props.color}`,
@@ -166,7 +166,7 @@ const ReasonBox = styled("div")(
 
         "& img": {
             marginBottom: 20,
-            height: 88,
+            width: "100%"
         },
 
         "& h3": {
