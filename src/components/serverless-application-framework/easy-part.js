@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "react-emotion";
 import { css } from "emotion";
 import theme from "../utils/theme";
@@ -6,10 +6,8 @@ import mq from "../utils/breakpoints";
 import ContentContainer from "../ui/content-container";
 import bgImage from "./assets/easy-bg.svg";
 import vectorIcon from "./assets/easy-highlight.svg";
-import Code1 from "./assets/code-1.svg";
-import Code2 from "./assets/code-2.svg";
 
-import ClipPart from "./clippart";
+import ClipPart from "./clipboard";
 
 const EasyPartSection = styled("section")(
     {
@@ -55,6 +53,10 @@ const Content = styled("div")(
     mq({
         "& img": {
             width: ["90%", "100%"]
+        },
+
+        "& p": {
+            textAlign: ["center", "left"]
         }
     }),
 )
@@ -82,46 +84,13 @@ const TitleHighlight = styled("span")({
     backgroundRepeat: "no-repeat",
 });
 
-const Clipboard = styled("div")(
-    {
-        position: "relative",
-        marginBottom: 11,
-        width: "100%",
-
-        "& div": {
-            color: theme.color.white,
-            backgroundColor: theme.color.black,
-            padding: 20,
-            fontSize: 20,
-            borderRadius: 8
-        }
-    }
-)
-
-const CopyButton = styled("button")(
-    {
-        background: theme.color.white,
-        border: "none",
-        borderRadius: 4,
-        color: theme.color.black,
-        cursor: "pointer",
-        opacity: 0,
-        outline: "none",
-        padding: ".4rem .5rem",
-        position: "absolute",
-        right: 5,
-        top: 5,
-        transition: "opacity .2s ease-in-out,visibility .2s ease-in-out,bottom .2s ease-in-out",
-    }
-)
-
 const EasyPart = () => {
     return (
         <EasyPartSection>
             <ContentContainer className={ContainerClass}>
                 <Content>
                     <Title>                        
-                        <TitleHighlight>It's easy</TitleHighlight> &nbsp; to get started
+                        <TitleHighlight>It's easy</TitleHighlight> to get started
                     </Title>
                     <p>Explore our docs for more tutorials and examples.</p>
                     <ClipPart text="npx create-webiny-project new-project"/>                
