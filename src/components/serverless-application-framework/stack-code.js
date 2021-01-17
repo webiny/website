@@ -91,9 +91,10 @@ const Navigate = styled("div")(
 
             "&.active": {
                 borderBottom: `2px solid ${theme.color.purple}`,
+                padding: "10px 0 8px",
                 
                 "& h5": {
-                    color: theme.color.purple
+                    color: theme.color.purple,                    
                 },
             },
 
@@ -109,7 +110,11 @@ const Navigate = styled("div")(
                 fontWeight: theme.fontWeight.regular,
                 fontSize: 16,
                 lineHeight: "20px",
-                margin: 0
+                margin: 0,
+
+                "&.my-2": {
+                    margin: "2px 0"
+                }
             }
         }
     },
@@ -142,11 +147,51 @@ const SlideSection = styled("div")(
         },
         "& img": {
             width: "100%",
-            height: "100%"
+            height: "100%",
+        },
+        "& .slide-content": {
+            maxWidth: [450, "100%"],
+            height: "120%",
+            width: "100%"
         }
     },
     mq({
-        height: ["100%", 700]
+        height: ["100%", 700],
+        "& .slide-content": {
+            position: ["relative", "absolute"],
+        }
+    })
+)
+
+const StackPart = styled("div")(
+    {
+        backgroundImage: "url(" + StackImage + ")",
+        backgroundColor: theme.color.white,
+        position: "relative",
+        zIndex: 0,
+        backgroundRepeat: "no-repeat",
+        overflow: "hidden",
+        backgroundPosition: "center",
+        backgroundSize: "contain",
+    },
+    mq({
+        height: [600, 885]
+    })
+)
+
+const ArchitecturePart = styled("div")(
+    {
+        backgroundImage: "url(" + ArchitectureImage + ")",
+        backgroundColor: theme.color.white,
+        position: "relative",
+        zIndex: 0,
+        backgroundRepeat: "no-repeat",
+        overflow: "hidden",
+        backgroundPosition: "center",
+        backgroundSize: "contain",
+    },
+    mq({
+        height: [600, 805]
     })
 )
 
@@ -180,9 +225,9 @@ const StackCode = () => {
     const renderContent = () => {
         switch (selectedNav.id) {
             case 1:
-                return <img src={StackImage} alt=""/>
+                return <StackPart />
             case 2:
-                return <img src={ArchitectureImage} alt=""/>
+                return <ArchitecturePart />
             case 3:
                 return <CodeTab />           
             default:
@@ -203,7 +248,7 @@ const StackCode = () => {
                             <div className={`navigation-item ${item.selected ? "active" : ""}`} key={item.id} onClick={() => updateNavigate(item.id)}>                
                                 <img src={item.img} alt=""/>
                                 <h5>{item.title}</h5>
-                                <p>{item.text}</p>                   
+                                <p className={item.id === 1 ? "my-2" : ""}>{item.text}</p>                   
                             </div>
                         ))
                     }
@@ -211,7 +256,9 @@ const StackCode = () => {
                 <SlideSection>
                     <TransitionGroup className={containerClass}>
                         <CSSTransition key={selectedNav.id} timeout={600} classNames={"fade"}>
-                            {renderContent()}
+                            <div className="slide-content">
+                                {renderContent()}
+                            </div>                            
                         </CSSTransition>
                     </TransitionGroup>                    
                 </SlideSection>
