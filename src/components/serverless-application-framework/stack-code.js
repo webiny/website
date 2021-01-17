@@ -173,6 +173,9 @@ const StackPart = styled("div")(
         overflow: "hidden",
         backgroundPosition: "center",
         backgroundSize: "contain",
+        "@media (max-width: 600px)": {
+            height: 300
+        },
     },
     mq({
         height: [600, 885]
@@ -189,6 +192,9 @@ const ArchitecturePart = styled("div")(
         overflow: "hidden",
         backgroundPosition: "center",
         backgroundSize: "contain",
+        "@media (max-width: 600px)": {
+            height: 300
+        },
     },
     mq({
         height: [600, 805]
