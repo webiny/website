@@ -12,7 +12,7 @@ const containerClass = css(
 );
 
 const SlideSection = styled("div")(
-  {
+  { 
     ".fade-enter": {
         opacity: 0,
     },

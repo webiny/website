@@ -266,7 +266,7 @@ const StackCode = () => {
                                 {renderContent()}
                             </div>                            
                         </CSSTransition>
-                    </TransitionGroup>                    
+                    </TransitionGroup>
                 </SlideSection>
             </ContentContainer>
         </StackCodeSection>

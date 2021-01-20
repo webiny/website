@@ -27,8 +27,6 @@ class IndexPage extends React.Component {
                 <ClientsLogo />
                 <CompleteSection />
                 <WhyWebinyWhyServerless />
-                
-                
                 <ServerlessEasy />
                 <CaseStudy />
                 <GoServerless />
