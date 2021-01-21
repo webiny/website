@@ -43,12 +43,8 @@ const Title = styled("h1")(
         color: theme.color.black,
         textAlign: "center",
         lineHeight: "48px",
-        marginBottom: 26,
-    },
-    mq({
-        marginLeft: [0, "auto"],
-        marginRight: [0, "auto"],
-    }),
+        margin: "0 auto 26px"
+    }
 );
 
 const TitleHighlight = styled("span")({
@@ -123,89 +119,6 @@ const Navigate = styled("div")(
         }
     })
 )
-
-const SlideSection = styled("div")(
-    {
-        ".fade-enter": {
-            opacity: 0,
-        },
-        ".fade-enter.fade-enter-active": {
-            opacity: 1,
-            transition: "opacity 200ms ease-in",
-            transitionDelay: "200ms",
-        },
-        ".fade-exit": {
-            opacity: 1,
-        },
-        ".fade-exit.fade-exit-active": {
-            opacity: 0,
-            transition: "opacity 200ms ease-in",
-        },
-        ".fade-exit-done": {
-            opacity: 0,
-        },
-        "& img": {
-            width: "100%",
-            height: "100%",
-        },
-        "& .slide-content": {
-            maxWidth: [450, "100%"],
-            height: "120%",
-            width: "100%"
-        }
-    },
-    mq({
-        height: ["100%", 700],
-        "& .slide-content": {
-            position: ["relative", "absolute"],
-        }
-    })
-)
-
-const StackPart = styled("div")(
-    {
-        // backgroundImage: "url(" + StackImage + ")",
-        backgroundColor: theme.color.white,
-        position: "relative",
-        zIndex: 0,
-        backgroundRepeat: "no-repeat",
-        overflow: "hidden",
-        backgroundPosition: "center",
-        backgroundSize: "contain",
-        "@media (max-width: 600px)": {
-            height: 300
-        },
-    },
-    mq({
-        height: [600, 885]
-    })
-)
-
-const ArchitecturePart = styled("div")(
-    {
-        // backgroundImage: "url(" + ArchitectureImage + ")",
-        backgroundColor: theme.color.white,
-        position: "relative",
-        zIndex: 0,
-        backgroundRepeat: "no-repeat",
-        overflow: "hidden",
-        backgroundPosition: "center",
-        backgroundSize: "contain",
-        "@media (max-width: 600px)": {
-            height: 300
-        },
-    },
-    mq({
-        height: [600, 805]
-    })
-)
-
-const containerClass = css(
-    {
-      position: "relative",
-      height: "100%"
-    }
-);
 
 const navigationList = [
     {id: 1, title: "Headless CMS",  img: TabImg1, selected: true},
