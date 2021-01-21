@@ -193,7 +193,10 @@ const HeroList = styled("div")(
         }
     },
     mq({
-        gridTemplateColumns: ["repeat(1, 1fr)", "repeat(2, 1fr)"]
+        gridTemplateColumns: ["repeat(1, 1fr)", "repeat(2, 1fr)"],
+        "& .hero-item": {
+            margin: ["0px 28px 0px 20px", 0]
+        }
     })
 );
 

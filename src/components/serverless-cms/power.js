@@ -114,7 +114,8 @@ const PowerList = styled("div")(
     mq({
         gridTemplateColumns: ["repeat(1, 1fr)", "repeat(3, 1fr)"],
         "& .power-item": {
-            maxWidth: 340
+            maxWidth: 340,
+            textAlign: ["center", "left"]
         }
     })
 )
