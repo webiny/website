@@ -14,7 +14,7 @@ const BreadCrumbPart = styled("section")(
         padding: "10px 0",
     },
     mq({
-        display: ["none", "block"]
+        display: ["none", "block"],
     }),
 );
 
@@ -30,17 +30,15 @@ const BreadCrumbList = styled("div")(
                 color: theme.color.white,
 
                 "&.last": {
-                    textDecoration: "none"
-                }
+                    textDecoration: "none",
+                },
             },
             "& img": {
-                margin: "0 15px"
-            }
-        }
+                margin: "0 15px",
+            },
+        },
     },
-    mq({
-
-    })
+    mq({}),
 );
 
 const powerContainerClass = css(
@@ -48,29 +46,35 @@ const powerContainerClass = css(
         maxWidth: 1200,
     },
     mq({
-        width: ["100%", "100%"]
+        width: ["100%", "100%"],
     }),
 );
 
+const BreadCrumb = props => {
+    if (!props.breadcrumbs) {
+        return null;
+    }
 
-
-const BreadCrumb = (props) => {
     const breadcrumbs = props.breadcrumbs;
     return (
         <BreadCrumbPart>
             <ContentContainer className={powerContainerClass}>
                 <BreadCrumbList>
-                    {
-                        breadcrumbs.map((item, index) => (
-                            <div className="breadcrumb-item" key={index}>
-                                <Link href={item.link} className={breadcrumbs.length > index + 1 ? 'not-last' : 'last'}>{item.text}</Link> {breadcrumbs.length > index + 1 ? <img src={arrowIcon} alt=""/> : '' }
-                            </div>
-                        ))
-                    }
+                    {breadcrumbs.map((item, index) => (
+                        <div className="breadcrumb-item" key={index}>
+                            <Link
+                                to={item.link}
+                                className={breadcrumbs.length > index + 1 ? "not-last" : "last"}
+                            >
+                                {item.text}
+                            </Link>{" "}
+                            {breadcrumbs.length > index + 1 ? <img src={arrowIcon} alt="" /> : ""}
+                        </div>
+                    ))}
                 </BreadCrumbList>
             </ContentContainer>
         </BreadCrumbPart>
     );
-}
+};
 
 export default BreadCrumb;

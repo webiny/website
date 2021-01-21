@@ -108,22 +108,27 @@ export const PRODUCTS_MENU = {
         menuItems: [
             {
                 id: 0,
-                label: "Why Webiny?",
-                link: "/why-webiny",
+                label: "Serverless Application Framework",
+                link: "/serverless-application-framework",
             },
             {
                 id: 1,
-                label: "Features",
-                link: "/features",
+                label: "Serverless CMS",
+                link: "/serverless-cms",
             },
             {
                 id: 11,
                 renderItem: () => <div key={11} className="spacer" />,
             },
             {
-                id: 2,
-                label: "Webiny Apps",
-                link: "/serverless-apps",
+                id: 3,
+                label: "For Enterprises",
+                link: "/enterprise",
+            },
+            {
+                id: 4,
+                label: "Why Webiny?",
+                link: "/why-webiny",
             },
             /*
             {
@@ -133,7 +138,7 @@ export const PRODUCTS_MENU = {
             },
             */
             {
-                id: 4,
+                id: 5,
                 label: "Product Roadmap",
                 link: "/roadmap",
             },
@@ -144,11 +149,6 @@ export const PRODUCTS_MENU = {
                 link: "/agency",
             },
             */
-            {
-                id: 6,
-                label: "For Enterprises",
-                link: "/enterprise",
-            },
         ],
     },
     secondarySection: {

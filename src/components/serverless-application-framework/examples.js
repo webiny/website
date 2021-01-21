@@ -25,7 +25,7 @@ const ExampleSection = styled("section")(
     mq({
         backgroundSize: ["cover", "cover", "100%"],
         backgroundPosition: ["center", "bottom"],
-        padding: ["50px 0", "100px 0"]
+        padding: ["50px 0", "100px 0"],
     }),
 );
 
@@ -113,10 +113,10 @@ const ButtonWrapper = styled("div")(
             fontSize: 14,
             lineHeight: "18px",
             color: theme.color.white,
-            margin: "5px 0 0"
-        }
+            margin: "5px 0 0",
+        },
     },
-    mq({        
+    mq({
         marginBottom: [0, 50],
     }),
 );
@@ -129,7 +129,7 @@ const getStartedButtonClass = css(
         height: "40px !important",
         fontWeight: "bold !important",
         color: `${theme.color.white} !important`,
-        width: "254px !important" 
+        width: "254px !important",
     },
     mq({
         marginBottom: ["16px !important", "0px !important"],
@@ -144,13 +144,13 @@ const ExampleList = styled("div")(
     {
         display: "grid",
         marginBottom: 70,
-        gridTemplateColumns: "repeat(1, 1fr)"
+        gridTemplateColumns: "repeat(1, 1fr)",
     },
     mq({
         gridTemplateColumns: ["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(4, 1fr)"],
         gridGap: [40, 30],
     }),
-)
+);
 
 const ReasonBox = styled("div")(
     props => ({
@@ -166,7 +166,7 @@ const ReasonBox = styled("div")(
 
         "& img": {
             marginBottom: 20,
-            width: "100%"
+            width: "100%",
         },
 
         "& h3": {
@@ -174,7 +174,7 @@ const ReasonBox = styled("div")(
             fontSize: 24,
             lineHeight: "28px",
             color: props.color,
-            margin: "0 0 14px"
+            margin: "0 0 14px",
         },
 
         "& .text": {
@@ -185,52 +185,75 @@ const ReasonBox = styled("div")(
         },
     }),
     mq({
-        width: [300, 250]
-    })
+        width: [300, 250],
+    }),
 );
 
 const examples = [
-    {img: example1, title: "Headless CMS", description: "GraphQL based headless CMS with powerful content modeling features.", color: theme.color.dark},
-    {img: example2, title: "Page Builder", description: "For when you need a quick landing page created without any coding.", color: theme.color.primaryDark},
-    {img: example3, title: "Form Builder", description: "Create forms using a drag&drop interface and track how they convert.", color: theme.color.lightGreen},
-    {img: example4, title: "File Manager", description: "Create forms using a drag&drop interface and track how they convert.", color: theme.color.purple},
-]
+    {
+        img: example1,
+        title: "Headless CMS",
+        description: "GraphQL based headless CMS with powerful content modeling features.",
+        color: theme.color.dark,
+    },
+    {
+        img: example2,
+        title: "Page Builder",
+        description: "For when you need a quick landing page created without any coding.",
+        color: theme.color.primaryDark,
+    },
+    {
+        img: example3,
+        title: "Form Builder",
+        description: "Create forms using a drag&drop interface and track how they convert.",
+        color: theme.color.lightGreen,
+    },
+    {
+        img: example4,
+        title: "File Manager",
+        description: "Create forms using a drag&drop interface and track how they convert.",
+        color: theme.color.purple,
+    },
+];
 
 const ExampleApp = () => {
     return (
         <ExampleSection>
             <ContentContainer className={heroContainerClass}>
                 <ExampleSectionWrapper>
-                    <ExampleLogoImage src={exampleLogo} alt={""} />                     
+                    <ExampleLogoImage src={exampleLogo} alt={""} />
                     <Title>
-                        Example apps?<br />
-                        Check out Webiny  &nbsp;
+                        Example apps?
+                        <br />
+                        Check out Webiny &nbsp;
                         <TitleHighlight>Serverless CMS</TitleHighlight>
                     </Title>
-                    <SubTitle>We've build a whole suite of serverless apps using Webiny Serverless Application Framework - check them out.</SubTitle>
+                    <SubTitle>
+                        We've build a whole suite of serverless apps using Webiny Serverless
+                        Application Framework - check them out.
+                    </SubTitle>
                     <ExampleList>
-                        {
-                            examples.map((item, index) => (
-                                <ReasonBox color={item.color} key={index}>
-                                    <img src={item.img} alt="get started with tutorial" />
-                                    <h3>{item.title}</h3>
-                                    <p className="text">{item.description}</p>                            
-                                </ReasonBox>
-                            ))
-                        }                          
-                    </ExampleList>                   
+                        {examples.map((item, index) => (
+                            <ReasonBox color={item.color} key={index}>
+                                <img src={item.img} alt="get started with tutorial" />
+                                <h3>{item.title}</h3>
+                                <p className="text">{item.description}</p>
+                            </ReasonBox>
+                        ))}
+                    </ExampleList>
                     <ButtonWrapper>
                         <Button
                             className={getStartedButtonClass}
-                            type="default"                            
+                            type="default"
+                            link="/serverless-cms"
                         >
                             Learn More
-                        </Button>                                                
+                        </Button>
                     </ButtonWrapper>
-                </ExampleSectionWrapper>                
+                </ExampleSectionWrapper>
             </ContentContainer>
         </ExampleSection>
     );
-}
+};
 
 export default ExampleApp;

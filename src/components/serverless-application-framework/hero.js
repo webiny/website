@@ -5,6 +5,7 @@ import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 import ContentContainer from "../ui/content-container";
 import Button from "../ui/button";
+import Breadcrumb from "../../layouts/components/breadcrumb";
 
 import heroBg from "./assets/hero-bg.svg";
 import webinyLogo from "./assets/webiny-logo.svg";
@@ -24,7 +25,7 @@ const HeroSection = styled("section")(
     mq({
         backgroundSize: ["cover", "cover", "100%"],
         backgroundPosition: ["top", "bottom"],
-        padding: ["0px 0px 80px", "0 0 150px"],        
+        padding: ["0px 0px 80px", "0 0 150px"],
     }),
 );
 
@@ -113,10 +114,10 @@ const ButtonWrapper = styled("div")(
             fontSize: 14,
             lineHeight: "18px",
             color: theme.color.white,
-            margin: "5px 0 0"
-        }
+            margin: "5px 0 0",
+        },
     },
-    mq({        
+    mq({
         marginBottom: [0, 50],
     }),
 );
@@ -127,7 +128,7 @@ const getStartedButtonClass = css(
         textTransform: "uppercase",
         padding: "10px 12px !important",
         height: "40px !important",
-        fontWeight: "bold !important"
+        fontWeight: "bold !important",
     },
     mq({
         width: ["90% !important", "254px !important"],
@@ -152,18 +153,21 @@ const WebinyHallMarkImage = styled("img")(
     }),
 );
 
-const Hero = () => {
+const Hero = props => {
     return (
         <HeroSection>
+            <Breadcrumb breadcrumbs={props.breadcrumbs} />
             <ContentContainer className={heroContainerClass}>
                 <WebinyHallMarkImage src={webinyGroup} alt={""} />
                 <HeroSectionWrapper>
-                    <WebinyLogoImage src={webinyLogo} alt={""} />                     
+                    <WebinyLogoImage src={webinyLogo} alt={""} />
                     <Title>
                         Webiny Serverless Application &nbsp;
                         <TitleHighlight>Framework</TitleHighlight>
                     </Title>
-                    <SubTitle>Everything you need to architect, build and deploy serverless applications.</SubTitle>                    
+                    <SubTitle>
+                        Everything you need to architect, build and deploy serverless applications.
+                    </SubTitle>
                     <ButtonWrapper>
                         <Button
                             className={getStartedButtonClass}
@@ -171,14 +175,14 @@ const Hero = () => {
                             link="https://docs.webiny.com/"
                             target="_blank"
                         >
-                            Get Started Tutorial &nbsp; <img src={arrowImg} alt=""/>
+                            Get Started Tutorial &nbsp; <img src={arrowImg} alt="" />
                         </Button>
-                        <p>(FREE & OPEN-SOURCE)</p>                           
+                        <p>(FREE & OPEN-SOURCE)</p>
                     </ButtonWrapper>
-                </HeroSectionWrapper>                
+                </HeroSectionWrapper>
             </ContentContainer>
         </HeroSection>
     );
-}
+};
 
 export default Hero;

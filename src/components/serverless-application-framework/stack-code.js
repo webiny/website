@@ -25,7 +25,7 @@ const StackCodeSection = styled("section")(
     mq({
         padding: ["60px 15px 80px", "120px 15px"],
     }),
-)
+);
 
 const ContainerClass = css(
     {
@@ -68,13 +68,13 @@ const Description = styled("p")(
         textAlign: "center",
 
         "& span": {
-            color: theme.color.purple
-        }
+            color: theme.color.purple,
+        },
     },
     mq({
         maxWidth: [360, 760],
-    })
-)
+    }),
+);
 
 const Navigate = styled("div")(
     {
@@ -84,17 +84,18 @@ const Navigate = styled("div")(
         marginTop: 75,
         borderBottom: "1px solid #E7E8F0",
 
-        "& .navigation-item": {            
+        "& .navigation-item": {
             textAlign: "center",
             cursor: "pointer",
             padding: "10px 0",
+            borderBottom: `2px solid transparent`,
 
             "&.active": {
                 borderBottom: `2px solid ${theme.color.purple}`,
-                padding: "10px 0 8px",
-                
+                padding: "10px 0 10px",
+
                 "& h5": {
-                    color: theme.color.purple,                    
+                    color: theme.color.purple,
                 },
             },
 
@@ -111,19 +112,19 @@ const Navigate = styled("div")(
                 fontSize: 16,
                 lineHeight: "20px",
                 margin: 0,
+            },
 
-                "&.my-2": {
-                    margin: "2px 0"
-                }
-            }
-        }
+            "& img": {
+                height: 40,
+            },
+        },
     },
     mq({
         "& .navigation-item": {
             margin: ["0 10px", "0 30px"],
-        }
-    })
-)
+        },
+    }),
+);
 
 const SlideSection = styled("div")(
     {
@@ -152,16 +153,16 @@ const SlideSection = styled("div")(
         "& .slide-content": {
             maxWidth: [450, "100%"],
             height: "120%",
-            width: "100%"
-        }
+            width: "100%",
+        },
     },
     mq({
         height: ["100%", 700],
         "& .slide-content": {
             position: ["relative", "absolute"],
-        }
-    })
-)
+        },
+    }),
+);
 
 const StackPart = styled("div")(
     {
@@ -174,13 +175,13 @@ const StackPart = styled("div")(
         backgroundPosition: "center",
         backgroundSize: "contain",
         "@media (max-width: 600px)": {
-            height: 300
+            height: 300,
         },
     },
     mq({
-        height: [600, 885]
-    })
-)
+        height: [600, 885],
+    }),
+);
 
 const ArchitecturePart = styled("div")(
     {
@@ -193,84 +194,95 @@ const ArchitecturePart = styled("div")(
         backgroundPosition: "center",
         backgroundSize: "contain",
         "@media (max-width: 600px)": {
-            height: 300
+            height: 300,
         },
     },
     mq({
-        height: [600, 805]
-    })
-)
-
-const containerClass = css(
-    {
-      position: "relative",
-      height: "100%"
-    }
+        height: [600, 805],
+    }),
 );
 
+const containerClass = css({
+    position: "relative",
+    height: "100%",
+});
+
 const navigationList = [
-    {id: 1, title: "Stack", text: "What's it made of.", img: stackImg, selected: true},
-    {id: 2, title: "Architecture", text: "How are things connected.", img: architectureImg, selected: false},
-    {id: 3, title: "Code", text: "How things work.", img: codeImg, selected: false},
-]
+    { id: 1, title: "Code", text: "How things work.", img: codeImg, selected: true },
+    { id: 2, title: "Stack", text: "What's it made of.", img: stackImg, selected: false },
+    {
+        id: 3,
+        title: "Architecture",
+        text: "How are things connected.",
+        img: architectureImg,
+        selected: false,
+    },
+];
 
 const StackCode = () => {
-    const [navigateItems, setNavigateItems] = useState(navigationList)
-    const [selectedNav, setSelectedNav] = useState(navigationList[0])
-    const updateNavigate = (id) => {
-        setSelectedNav(navigationList.find(item => item.id === id))
-        setNavigateItems(navigateItems.map(item => {
-            if(item.id === id) {
-                return {...item, selected: !item.selected}
-            } else {
-                return {...item, selected: false}
-            }
-        }))
-    }
+    const [navigateItems, setNavigateItems] = useState(navigationList);
+    const [selectedNav, setSelectedNav] = useState(navigationList[0]);
+    const updateNavigate = id => {
+        setSelectedNav(navigationList.find(item => item.id === id));
+        setNavigateItems(
+            navigateItems.map(item => {
+                if (item.id === id) {
+                    return { ...item, selected: !item.selected };
+                } else {
+                    return { ...item, selected: false };
+                }
+            }),
+        );
+    };
 
     const renderContent = () => {
         switch (selectedNav.id) {
             case 1:
-                return <StackPart />
+                return <CodeTab />;
             case 2:
-                return <ArchitecturePart />
+                return <StackPart />;
             case 3:
-                return <CodeTab />           
+                return <ArchitecturePart />;
             default:
-                return null
+                return null;
         }
-    }
+    };
 
     return (
         <StackCodeSection>
             <ContentContainer className={ContainerClass}>
-                <Title>                        
+                <Title>
                     <TitleHighlight>Stack, architecture and code</TitleHighlight>
                 </Title>
-                <Description>Webiny <span>Serverless Application Framework</span> was designed for many different use-cases. You can modify its stack and architecture and adapt to the needs of your project and your organization. </Description>
+                <Description>
+                    Webiny <span>Serverless Application Framework</span> was designed for many
+                    different use-cases. You can modify its stack and architecture and adapt to the
+                    needs of your project and your organization.{" "}
+                </Description>
                 <Navigate>
-                    {
-                        navigateItems && navigateItems.map(item => (
-                            <div className={`navigation-item ${item.selected ? "active" : ""}`} key={item.id} onClick={() => updateNavigate(item.id)}>                
-                                <img src={item.img} alt=""/>
+                    {navigateItems &&
+                        navigateItems.map(item => (
+                            <div
+                                className={`navigation-item ${item.selected ? "active" : ""}`}
+                                key={item.id}
+                                onClick={() => updateNavigate(item.id)}
+                            >
+                                <img src={item.img} alt="" />
                                 <h5>{item.title}</h5>
-                                <p className={item.id === 1 ? "my-2" : ""}>{item.text}</p>                   
+                                <p>{item.text}</p>
                             </div>
-                        ))
-                    }
+                        ))}
                 </Navigate>
                 <SlideSection>
                     <TransitionGroup className={containerClass}>
                         <CSSTransition key={selectedNav.id} timeout={600} classNames={"fade"}>
-                            <div className="slide-content">
-                                {renderContent()}
-                            </div>                            
+                            <div className="slide-content">{renderContent()}</div>
                         </CSSTransition>
                     </TransitionGroup>
                 </SlideSection>
             </ContentContainer>
         </StackCodeSection>
-    )
-}
+    );
+};
 
-export default StackCode
+export default StackCode;

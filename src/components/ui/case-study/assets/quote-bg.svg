@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="555px" height="123px" viewBox="0 0 555 123" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>quote</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M26.82,62.16 C15.66,62.16 9.9,53.34 9.9,38.58 C9.9,21.66 18.18,8.52 35.46,0.06 L41.22,11.58 C30.42,16.98 25.02,23.82 25.02,34.44 C25.56,34.26 26.28,34.26 26.82,34.26 C34.38,34.26 40.68,39.3 40.68,47.4 C40.68,56.4 34.74,62.16 26.82,62.16 Z M69.48,62.16 C58.32,62.16 52.56,53.34 52.56,38.58 C52.56,21.66 60.84,8.52 78.12,0.06 L83.88,11.58 C73.08,16.98 67.68,23.82 67.68,34.44 C68.22,34.26 68.94,34.26 69.48,34.26 C77.04,34.26 83.34,39.3 83.34,47.4 C83.34,56.4 77.4,62.16 69.48,62.16 Z" id="path-1"></path>
+    </defs>
+    <g id="Landing-page-Webiny" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-745.000000, -11394.000000)">
+            <g id="case-study" transform="translate(3.000000, 10972.000000)">
+                <g id="case-studys" transform="translate(131.000000, 264.000000)">
+                    <g id="10" transform="translate(0.000000, 2.000000)">
+                        <g id="key-numbers" transform="translate(609.000000, 156.000000)">
+                            <g id="quote" transform="translate(2.000000, 0.000000)">
+                                <path d="M4,14 L551,14 C553.209139,14 555,15.790861 555,18 L555,119 C555,121.209139 553.209139,123 551,123 L4,123 C1.790861,123 2.705415e-16,121.209139 0,119 L0,18 C-2.705415e-16,15.790861 1.790861,14 4,14 Z" id="Rectangle-27" fill="#F9F7FC"></path>
+                                <g id="“" opacity="0.150000006" fill-rule="nonzero" fill="#7B39D9">
+                                    <use xlink:href="#path-1"></use>
+                                    <use xlink:href="#path-1"></use>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
