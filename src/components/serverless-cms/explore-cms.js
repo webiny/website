@@ -30,7 +30,7 @@ const Section = styled("section")(
     },
     mq({
         backgroundSize: ["cover", "auto", "cover"],
-        padding: ["110px 15px", "110px 15px"]
+        padding: ["80px 15px 40px", "110px 15px 30px"]
     }),
 );
 
@@ -75,24 +75,22 @@ const overviewContainerClass = css(
 const LogosWrapper = styled("div")(
     {
         display: "grid",
+        gridGap: 73,
+        marginTop: 100
     },
     mq({
         gridTemplateColumns: ["repeat(1, 1fr)", "repeat(3, 1fr)"],
-        paddingTop: [50, 100]
     }),
 );
 
 const FeatureCard = styled("div")(
     {
-        minHeight: 380,
-
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         boxSizing: "border-box",
         position: "relative",
         backgroundColor: theme.color.white,
-        padding: "24px",
         textAlign: "center",
 
         "& .feature-card__img": {
@@ -103,18 +101,17 @@ const FeatureCard = styled("div")(
 
         "& .feature-card__title": {
             margin: "17px 0px 12px",
-            maxWidth: 285,
             color: theme.color.black,
-            fontSize: 20,
+            fontSize: 28,
             fontWeight: theme.fontWeight.bold,
-            lineHeight: "25px"
+            lineHeight: "40px"
         },
         "& .feature-card__body": {
             margin: 0,
             color: theme.color.black,
-            fontSize: 14,
+            fontSize: 18,
             fontWeight: theme.fontWeight.lg,
-            lineHeight: "18px",
+            lineHeight: "26px",
             "& a": {
                 color: theme.color.primaryDark,
             },

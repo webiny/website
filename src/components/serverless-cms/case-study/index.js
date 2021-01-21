@@ -7,6 +7,7 @@ import ContentContainer from "../../ui/content-container";
 import SlideItem from "./slide-item";
 import Slider from "react-slick";
 import highLightImg from "./assets/case-highlight.svg";
+import caseBg from "./assets/case-bg.svg";
 
 const containerClass = css(
     {
@@ -19,14 +20,15 @@ const containerClass = css(
 
 const Section = styled("section")(
     {
+        backgroundImage: "url(" + caseBg + ")",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         position: "relative",
         zIndex: 0,
-        backgroundPosition: "top",
+        backgroundPosition: "bottom",
     },
     mq({
-        padding: ["0px 15px 15px", "0 15px 100px"],
+        padding: [15, "100px 15px"],
     }),
 )
 

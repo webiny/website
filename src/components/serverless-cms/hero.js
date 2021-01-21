@@ -5,6 +5,7 @@ import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 import ContentContainer from "../ui/content-container";
 import Button from "../ui/button";
+import Breadcrumb from "../../layouts/components/breadcrumb";
 
 import heroBg from "./assets/hero-bg.svg";
 import webinyLogo from "./assets/webiny-logo.svg";
@@ -196,9 +197,11 @@ const HeroList = styled("div")(
     })
 );
 
-const Hero = () => {
+const Hero = (props) => {
+    const breadcrumbs = props.breadcrumbs;
     return (
         <HeroSection>
+            <Breadcrumb breadcrumbs={breadcrumbs}/>
             <ContentContainer className={heroContainerClass}>
                 <WebinyHallMarkImage src={webinyGroup} alt={""} />
                 <HeroSectionWrapper>

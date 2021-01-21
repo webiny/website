@@ -50,7 +50,7 @@ const BuildFrameworkSection = styled("section")(
         backgroundColor: theme.color.white
     },
     mq({
-        padding: ["30px 15px 15px", "100px 15px"],
+        padding: ["50px 15px", "100px 15px"],
     }),
 )
 

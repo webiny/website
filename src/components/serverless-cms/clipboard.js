@@ -55,7 +55,6 @@ const ClipBoardItem = styled("div")(
 class ClipBoard extends React.Component {
     
     handleDidCopy() {
-      console.log('Copied content');
       this.setState({
         pop: "clip-pop"
       })
@@ -80,7 +79,7 @@ class ClipBoard extends React.Component {
         this.handleDidCopy()
         this.setState({copied: true})
       } else {
-        console.log('Copy failed');
+        // console.log('Copy failed');
       }
     }
     

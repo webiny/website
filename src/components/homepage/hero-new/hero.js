@@ -6,6 +6,8 @@ import mq from "../../utils/breakpoints";
 import ContentContainer from "../../ui/content-container";
 import YTVideoComponent from "../../ui/layout/yt-video";
 import Button from "../../ui/button";
+import Breadcrumb from "../../../layouts/components/breadcrumb";
+
 
 import heroBg from "./assets/hero-bg-with-scroll.svg";
 import webinyLogo from "./assets/webiny-logo.svg";
@@ -185,10 +187,11 @@ const ImageWrapper = styled("div")({
 
 class HeroComponent extends React.Component {
     render() {
-        const { handleDemoClick, ...restProps } = this.props;
+        const { handleDemoClick, breadcrumbs, ...restProps } = this.props;
         return (
             <HeroSection {...restProps}>
-                <ContentContainer className={heroContainerClass}>
+                <Breadcrumb breadcrumbs={breadcrumbs}/>
+                <ContentContainer className={heroContainerClass}>                    
                     <WebinyHallMarkImage src={webinyGroup} alt={""} />
                     <HeroSectionWrapper>
                         <WebinyLogoImage src={webinyLogo} alt={""} />

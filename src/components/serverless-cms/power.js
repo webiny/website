@@ -45,7 +45,7 @@ const powerContainerClass = css(
     },
     mq({
         width: ["100%", "100%"],
-        padding: ["75px 0px 0px", "85px 0px 0px"],
+        padding: ["75px 0px 0px", "160px 0px 0px"],
         "@media (min-width: 2000px)": {
             paddingBottom: 80,
         },
@@ -77,14 +77,14 @@ const TitleHighlight = styled("span")({
 });
 
 const MainImage = styled("img")({
-    margin: "100px 0",
-    width: "100%"
+    maxWidth: "90%",
+    margin: "40px auto",
+    width: "90%"
 })
 
 const PowerList = styled("div")(
     {
         display: "grid",
-        gridTemplateColumns: "repeat(3, 1fr)",
         gridGap: 40,
 
         "& .power-item": {
@@ -110,7 +110,13 @@ const PowerList = styled("div")(
                 margin: 0
             }
         }
-    }
+    },
+    mq({
+        gridTemplateColumns: ["repeat(1, 1fr)", "repeat(3, 1fr)"],
+        "& .power-item": {
+            maxWidth: 340
+        }
+    })
 )
 
 const powerList = [

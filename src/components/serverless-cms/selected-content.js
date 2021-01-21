@@ -120,47 +120,42 @@ const SelectedItem = styled("div")(
     width: "100%",
     height: "100%",
     textAlign: "center",
+    maxWidth: "100%",
 
     "& img.main-image": {
         maxWidth: 670,
-        margin: "0 auto"
+        margin: "0 auto",
+        width: "100%"
     },
 
     "& h4": {
         margin: "15px 0 0",
         fontWeight: theme.fontWeight.bold,
-        fontSize: 24,
-        lineHeight: "40px",
         color: theme.color.black
     }
   },
   mq({
-    maxWidth: [450, "100%"],
+    // maxWidth: [450, "100%"],
     margin: ["10px auto 0", 0],
     flexDirection: ["column", "column"],
     padding: ["24px", "24px 36px"],
     position: ["relative", "absolute"],
+
+    "& h4": {
+        fontSize: [18, 24],
+        lineHeight: ["18px", "40px"],
+    }
   })
 )
 
 const RelatedItems = styled("div")(
     {
         display: "grid",
-        gridTemplateColumns: "repeat(2, 1fr)",
         gridGap: "30px 40px",
-        margin: "20px 0",
 
         "& .related-item": {
             display: "flex",
             alignItems: "center",
-
-            "&.reverse": {
-                flexDirection: "row-reverse",
-
-                "& img": {
-                    marginLeft: 20
-                }
-            },
 
             "& p": {
                 margin: 0,
@@ -168,25 +163,50 @@ const RelatedItems = styled("div")(
                 fontSize: 18,
                 lineHeight: "23px"
             },
-
-            "&:not(.reverse)": {
-                "& img": {
-                    marginRight: 20
-                }
-            },
             
             "& img": {
                 minWidth: 40
             }
         }
-    }
+    },
+    mq({
+        gridTemplateColumns: ["repeat(1, 1fr)", "repeat(2, 1fr)"],
+        maxWidth: [400, "100%"],
+        margin: ["20px auto", "20px 0"],
+        
+        "& .related-item": {
+            "&.reverse": {
+                flexDirection: ["row", "row-reverse"],
+
+                "& img": {
+                    marginRight: [20, 0],
+                    marginLeft: [0, 20]
+                }
+            },
+
+            "&:not(.reverse)": {
+                "& img": {
+                    marginRight: [20, 20],
+                    // marginLeft: [0, ]
+                }
+            },
+
+            "& p": {
+                textAlign: ["left", "center"]
+            }
+        }
+    })
 )
 
-const ctaBtn = css({
+const btnWrapper = css({
+    width: 360,
     maxWidth: 360,
-    width: "360px !important",
+    margin: "0 auto"
+})
+
+const ctaBtn = css({
+    width: "100% !important",
     backgroundColor: theme.color.primaryDark + "!important",
-    margin: "0 auto",
 
     "& img": {
         marginLeft: 15
@@ -206,16 +226,18 @@ const SelectedContent = (props) => {
                         <RelatedItems>
                             {
                                 selectedContent.relatedItems.map((item, index) => (
-                                    <div className={`related-item ${index % 2 ? "" : "reverse"}`}>
+                                    <div className={`related-item ${index % 2 ? "" : "reverse"}`} key={index}>
                                         <img src={item.img} alt=""/>
                                         <p>{item.text}</p>                                        
                                     </div>
                                 ))
                             }
                         </RelatedItems>
-                        <Button type="primary" className={ctaBtn}>
-                            {selectedContent.buttonText} <img src={arrowIcon} alt="" className="icon" />
-                        </Button>
+                        <div className={btnWrapper}>
+                            <Button type="primary" className={ctaBtn}>
+                                {selectedContent.buttonText} <img src={arrowIcon} alt="" className="icon" />
+                            </Button>
+                        </div>
                     </SelectedItem>
                 </CSSTransition>
             </TransitionGroup>

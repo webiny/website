@@ -11,6 +11,10 @@ import WhyWebinyWhyServerless from "../components/homepage/why-serverless/why-se
 import ClientsLogo from "../components/homepage/clients-logo/clients-logo";
 import CaseStudy from "../components/homepage/case-study";
 
+const breadcrumbs = [
+    {link: '/', text: 'Home'}
+]
+
 class IndexPage extends React.Component {
     componentDidMount() {
         AOS.init();
@@ -21,9 +25,9 @@ class IndexPage extends React.Component {
             <BaseLayout
                 title="The easiest way to adopt serverless"
                 description="Webiny is an open-source framework for building serverless applications. Webiny is powered by React, Node and GraphQL."
-                fixedHeader={false}
+                fixedHeader={false}                
             >
-                <Hero />
+                <Hero breadcrumbs={breadcrumbs}/>
                 <ClientsLogo />
                 <CompleteSection />
                 <WhyWebinyWhyServerless />
