@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "react-emotion";
+import { Link } from "gatsby";
 import { css } from "emotion";
 import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 import ContentContainer from "../ui/content-container";
 import Logo from "./assets/framework-logo.svg";
-import arrow from "./assets/arrow-link.svg";
 import vectorIcon from "./assets/framework-highlight.svg";
+import arrow from "./assets/arrow-framework.svg";
 
 const heroContainerClass = css(
     {
@@ -60,8 +61,22 @@ const FrameworkContent = styled("div")(
             fontWeight: theme.fontWeight.regular,
             color: "#454545",
             lineHeight: "40px",
-            margin: 0,
+            margin: "0 0 26px",
             maxWidth: 660
+        },
+
+        "& a": {
+            fontWeight: theme.fontWeight.bold,
+            fontSize: 20,
+            lineHeight: "25px",
+            letterSpacing: "0.75px",
+            textDecoration: "underline",
+            textTransform: "uppercase",
+            color: theme.color.primaryDark,
+
+            "& img": {
+                marginLeft: 9
+            }
         }
     },
     mq({
@@ -86,7 +101,7 @@ const Framework = () => {
                             Webiny Serverless Application  <TitleHighlight>Framework</TitleHighlight>
                         </Title>
                         <p className="description">Everything you need to architect, build and deploy serverless applications.</p>
-                        
+                        <Link to="#">learn more <img src={arrow} alt=""/></Link>
                     </div>
                 </FrameworkContent>          
             </ContentContainer>

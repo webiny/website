@@ -198,11 +198,15 @@ const RelatedItems = styled("div")(
     })
 )
 
-const btnWrapper = css({
-    width: 360,
-    maxWidth: 360,
-    margin: "0 auto"
-})
+const btnWrapper = css(
+    {        
+        margin: "0 auto"
+    },
+    mq({
+        width: ["100%", 360],
+        maxWidth: ["100%", 360],
+    })
+)
 
 const ctaBtn = css({
     width: "100% !important",

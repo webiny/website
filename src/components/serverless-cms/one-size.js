@@ -95,9 +95,7 @@ const Navigate = styled("div")(
 
             "& h5": {
                 color: "#292929",
-                fontWeight: theme.fontWeight.semiBold,
-                fontSize: 24,
-                lineHeight: "30px",
+                fontWeight: theme.fontWeight.semiBold
             },
 
             "& p": {
@@ -116,6 +114,11 @@ const Navigate = styled("div")(
     mq({
         "& .navigation-item": {
             margin: ["0 10px", "0 30px"],
+
+            "& h5": {
+                fontSize: [17, 24],
+                lineHeight: ["21px", "30px"],
+            },
         }
     })
 )
