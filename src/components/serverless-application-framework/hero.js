@@ -24,7 +24,7 @@ const HeroSection = styled("section")(
     },
     mq({
         backgroundSize: ["cover", "cover", "100%"],
-        backgroundPosition: ["top", "bottom"],
+        backgroundPosition: ["top", "top"],
         padding: ["0px 0px 80px", "0 0 150px"],
     }),
 );

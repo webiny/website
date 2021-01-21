@@ -11,8 +11,6 @@ import ClientsLogo from "../components/homepage/clients-logo/clients-logo";
 import CaseStudy from "../components/ui/case-study";
 import FooterCta from "../components/ui/footer-cta";
 
-const breadcrumbs = [{ link: "/", text: "Home" }];
-
 class IndexPage extends React.Component {
     componentDidMount() {
         AOS.init();

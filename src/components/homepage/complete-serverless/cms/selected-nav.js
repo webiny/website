@@ -116,17 +116,26 @@ const SelectedItem = styled("div")(
             gridTemplateColumns: ["repeat(1, 1fr)", "repeat(2, 1fr)"],
             gridGap: [0, 10],
         },
+        "& img": {
+            "&.headless-img": {
+                marginLeft: [0, -25],
+            },
+            "&.pbfb-img, &.acl-img": {
+                marginLeft: [0, -15],
+            },
+        },
     }),
 );
 
 const SelectedNav = props => {
     const selectedNav = props.content;
+
     return (
         <SlideSection>
             <TransitionGroup className={containerClass}>
                 <CSSTransition key={selectedNav.id} timeout={600} classNames={"fade"}>
                     <SelectedItem>
-                        <img src={selectedNav.mainLogo} alt="" />
+                        <img src={selectedNav.mainLogo} className={selectedNav.imgClass} alt="" />
                         <h4 className="main-title">{selectedNav.title}</h4>
                         {selectedNav.description && (
                             <p className="description">{selectedNav.description}</p>

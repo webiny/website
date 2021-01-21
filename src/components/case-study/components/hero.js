@@ -96,11 +96,7 @@ const HeroLogoImage = styled("img")({
 });
 
 const HeroComponent = props => {
-    const breadcrumbs = [
-        { link: "/", text: "Home" },
-        { text: "Case studies" },
-        { text: props.title },
-    ];
+    const breadcrumbs = [{ link: "/", text: "Home" }, { text: "Case study: " + props.title }];
     return (
         <HeroSection>
             <Breadcrumb breadcrumbs={breadcrumbs} />

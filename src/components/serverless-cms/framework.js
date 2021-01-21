@@ -11,7 +11,7 @@ import arrow from "./assets/arrow-framework.svg";
 
 const heroContainerClass = css(
     {
-        maxWidth: 1200
+        maxWidth: 1200,
     },
     mq({
         width: ["100%", "100%"],
@@ -28,8 +28,8 @@ const Title = styled("h1")(
         lineHeight: "60px",
     },
     mq({
-        margin: ["0 auto 16px", "0 0 16px"]
-    })
+        margin: ["0 auto 16px", "0 0 16px"],
+    }),
 );
 
 const TitleHighlight = styled("span")({
@@ -53,7 +53,7 @@ const FrameworkContent = styled("div")(
             color: theme.color.black,
             lineHeight: "23px",
             margin: 0,
-            textTransform: "uppercase"
+            textTransform: "uppercase",
         },
 
         "& p.description": {
@@ -62,12 +62,12 @@ const FrameworkContent = styled("div")(
             color: "#454545",
             lineHeight: "40px",
             margin: "0 0 26px",
-            maxWidth: 660
+            maxWidth: 660,
         },
 
         "& a": {
             fontWeight: theme.fontWeight.bold,
-            fontSize: 20,
+            fontSize: 18,
             lineHeight: "25px",
             letterSpacing: "0.75px",
             textDecoration: "underline",
@@ -75,38 +75,43 @@ const FrameworkContent = styled("div")(
             color: theme.color.primaryDark,
 
             "& img": {
-                marginLeft: 9
-            }
-        }
+                marginLeft: 9,
+            },
+        },
     },
     mq({
         flexDirection: ["column", "row"],
         textAlign: ["center", "left"],
 
         "& img.logo": {
-            marginRight: [0 , 73]
-        }
-    })
-)
+            marginRight: [0, 73],
+        },
+    }),
+);
 
 const Framework = () => {
     return (
         <section>
             <ContentContainer className={heroContainerClass}>
                 <FrameworkContent>
-                    <img src={Logo} alt="Logo" className="logo"/>
+                    <img src={Logo} alt="Logo" className="logo" />
                     <div>
                         <p className="powered">powered by</p>
                         <Title>
-                            Webiny Serverless Application  <TitleHighlight>Framework</TitleHighlight>
+                            Webiny Serverless Application <TitleHighlight>Framework</TitleHighlight>
                         </Title>
-                        <p className="description">Everything you need to architect, build and deploy serverless applications.</p>
-                        <Link to="#">learn more <img src={arrow} alt=""/></Link>
+                        <p className="description">
+                            Everything you need to architect, build and deploy serverless
+                            applications.
+                        </p>
+                        <Link to="/serverless-application-framework">
+                            learn more <img src={arrow} alt="" />
+                        </Link>
                     </div>
-                </FrameworkContent>          
+                </FrameworkContent>
             </ContentContainer>
         </section>
     );
-}
+};
 
 export default Framework;

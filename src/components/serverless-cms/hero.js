@@ -26,7 +26,7 @@ const HeroSection = styled("section")(
     mq({
         backgroundSize: ["cover", "cover"],
         backgroundPosition: ["top", "bottom"],
-        padding: ["0px 0px 80px", "0 0 150px"],        
+        padding: ["0px 0px 80px", "0 0 150px"],
     }),
 );
 
@@ -115,10 +115,10 @@ const ButtonWrapper = styled("div")(
             fontSize: 14,
             lineHeight: "18px",
             color: theme.color.white,
-            margin: "5px 0 0"
-        }
+            margin: "5px 0 0",
+        },
     },
-    mq({        
+    mq({
         marginBottom: [0, 50],
     }),
 );
@@ -129,7 +129,7 @@ const getStartedButtonClass = css(
         textTransform: "uppercase",
         padding: "10px 12px !important",
         height: "40px !important",
-        fontWeight: "bold !important"
+        fontWeight: "bold !important",
     },
     mq({
         width: ["90% !important", "254px !important"],
@@ -180,7 +180,7 @@ const HeroList = styled("div")(
                     backgroundPositionX: "right",
                     backgroundPositionY: "bottom",
                     backgroundRepeat: "no-repeat",
-                }
+                },
             },
 
             "& p": {
@@ -188,49 +188,75 @@ const HeroList = styled("div")(
                 fontWeight: theme.fontWeight.regular,
                 fontSize: 14,
                 lineHeight: "18px",
-                margin: 0                
-            }
-        }
+                margin: 0,
+            },
+        },
     },
     mq({
         gridTemplateColumns: ["repeat(1, 1fr)", "repeat(2, 1fr)"],
         "& .hero-item": {
-            margin: ["0px 28px 0px 20px", 0]
-        }
-    })
+            margin: ["0px 28px 0px 20px", 0],
+        },
+    }),
 );
 
-const Hero = (props) => {
+const Hero = props => {
     const breadcrumbs = props.breadcrumbs;
     return (
         <HeroSection>
-            <Breadcrumb breadcrumbs={breadcrumbs}/>
+            <Breadcrumb breadcrumbs={breadcrumbs} />
             <ContentContainer className={heroContainerClass}>
                 <WebinyHallMarkImage src={webinyGroup} alt={""} />
                 <HeroSectionWrapper>
-                    <WebinyLogoImage src={webinyLogo} alt={""} />                     
+                    <WebinyLogoImage src={webinyLogo} alt={""} />
                     <Title>
                         Webiny Serverless <TitleHighlight>CMS</TitleHighlight>
                     </Title>
-                    <SubTitle>Agile, flexible and scalable solution for your growing content needs.</SubTitle>
+                    <SubTitle>
+                        Agile, flexible and scalable solution for your growing content needs.
+                    </SubTitle>
+
+                    {/** 
                     <HeroList>
                         <div className="hero-item">
-                            <h3><span>Serverless</span> and self-hosted</h3>
-                            <p>Run the apps in your own cloud on top of the serverless infrastructure.</p>
+                            <h3>
+                                <span>Serverless</span> and self-hosted
+                            </h3>
+                            <p>
+                                Run the apps in your own cloud on top of the serverless
+                                infrastructure.
+                            </p>
                         </div>
                         <div className="hero-item">
-                            <h3><span>Quick and easy</span> deployment</h3>
-                            <p>Using Webiny CLI each app takes a single command to create and configure all of its serverless services.</p>
+                            <h3>
+                                <span>Quick and easy</span> deployment
+                            </h3>
+                            <p>
+                                Using Webiny CLI each app takes a single command to create and
+                                configure all of its serverless services.
+                            </p>
                         </div>
                         <div className="hero-item">
-                            <h3>Requires <span>zero</span> maintenance</h3>
-                            <p>Serverless infrastructure means zero maintenance and you can also forget about all the scalability headaches.</p>
+                            <h3>
+                                Requires <span>zero</span> maintenance
+                            </h3>
+                            <p>
+                                Serverless infrastructure means zero maintenance and you can also
+                                forget about all the scalability headaches.
+                            </p>
                         </div>
                         <div className="hero-item">
-                            <h3><span>Efficient</span> infrastructure cost</h3>
-                            <p>Because with serverless infrastructure you only pay for what you use, you'll have a very efficient way of controlling the cost of your infrastructure.</p>
+                            <h3>
+                                <span>Efficient</span> infrastructure cost
+                            </h3>
+                            <p>
+                                Because with serverless infrastructure you only pay for what you
+                                use, you'll have a very efficient way of controlling the cost of
+                                your infrastructure.
+                            </p>
                         </div>
-                    </HeroList>                   
+                    </HeroList>
+                    */}
                     <ButtonWrapper>
                         <Button
                             className={getStartedButtonClass}
@@ -238,13 +264,14 @@ const Hero = (props) => {
                             link="https://docs.webiny.com/"
                             target="_blank"
                         >
-                            Get Started Tutorial &nbsp; <img src={arrowImg} alt=""/>
-                        </Button>                                                
+                            Get Started Tutorial &nbsp; <img src={arrowImg} alt="" />
+                        </Button>
+                        <p>(FREE & OPEN-SOURCE)</p>
                     </ButtonWrapper>
-                </HeroSectionWrapper>                
+                </HeroSectionWrapper>
             </ContentContainer>
         </HeroSection>
     );
-}
+};
 
 export default Hero;

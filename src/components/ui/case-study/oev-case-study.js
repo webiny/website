@@ -183,7 +183,11 @@ const SlideItem = () => {
                         is worth thinking bigger.
                     </Quote>
                     <div className={actionPart}>
-                        <Button type="primary" className={ctaBtn}>
+                        <Button
+                            type="primary"
+                            className={ctaBtn}
+                            link={"/case-study/smarkt-mehrwert-reha-assist-oev"}
+                        >
                             Read case study <img src={arrowIcon} alt="" className="icon" />
                         </Button>
                     </div>

@@ -47,9 +47,10 @@ const WebinyAppsWrapper = styled("div")(
         position: "relative",
     },
     mq({
-        gridTemplateColumns: ["repeat(1, 1fr)", "repeat(3, 1fr)", "repeat(4, 1fr)"],
+        gridTemplateColumns: ["repeat(1, 1fr)", "repeat(4, 1fr)", "repeat(4, 1fr)"],
         gap: ["40px 0px", "40px 24px", "0px 18px"],
         marginBottom: [0, 100],
+        height: ["auto", 360],
     }),
 );
 

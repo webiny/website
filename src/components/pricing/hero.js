@@ -3,6 +3,8 @@ import styled from "react-emotion";
 import { css } from "emotion";
 import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
+
+import Breadcrumb from "../../layouts/components/breadcrumb";
 import ContentContainer from "../ui/content-container";
 import heroBg from "./assets/hero-bg.png";
 
@@ -20,6 +22,10 @@ const Hero = styled("section")(
         marginBottom: [50, 0],
         backgroundSize: ["cover"],
         backgroundPosition: ["top", "top", "center"],
+        ".nav-breadcrumb": {
+            marginTop: ["0", "-150px"],
+            marginBottom: [0, 125],
+        },
     }),
 );
 
@@ -53,8 +59,11 @@ const containerClass = css(
     }),
 );
 
+const breadcrumbs = [{ link: "/", text: "Home" }, { text: "Pricing" }];
+
 export default ({ children, ...props }) => (
     <Hero {...props}>
+        <Breadcrumb breadcrumbs={breadcrumbs} />
         <ContentContainer className={containerClass}>
             <Title>Pricing</Title>
             <SubText>We're committed to keeping the Webiny free and open source forever.</SubText>

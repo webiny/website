@@ -12,6 +12,17 @@ const BreadCrumbPart = styled("section")(
         boxShadow: "0px 0px 5px rgb(0 0 0 / 30%)",
         backgroundColor: "rgba(255, 255, 255, 0.1)",
         padding: "10px 0",
+        a: {
+            color: "#fff",
+        },
+        "&.dark": {
+            a: {
+                color: "#000",
+            },
+            img: {
+                filter: "invert(1)",
+            },
+        },
     },
     mq({
         display: ["none", "block"],
@@ -27,7 +38,6 @@ const BreadCrumbList = styled("div")(
             "& a": {
                 fontSize: 14,
                 lineHeight: "18px",
-                color: theme.color.white,
 
                 "&.last": {
                     textDecoration: "none",
@@ -57,7 +67,7 @@ const BreadCrumb = props => {
 
     const breadcrumbs = props.breadcrumbs;
     return (
-        <BreadCrumbPart>
+        <BreadCrumbPart className={"nav-breadcrumb" + (props.theme ? " " + props.theme : "")}>
             <ContentContainer className={powerContainerClass}>
                 <BreadCrumbList>
                     {breadcrumbs.map((item, index) => (

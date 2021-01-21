@@ -4,6 +4,7 @@ import { css } from "emotion";
 import theme from "../../utils/theme";
 import mq from "../../utils/breakpoints";
 import ContentContainer from "../../ui/content-container";
+import Breadcrumb from "../../../layouts/components/breadcrumb";
 
 import heroBg from "./assets/hero-bg.svg";
 import webinyBg from "./assets/webiny-bg.svg";
@@ -86,9 +87,11 @@ const WebinyHallMarkImage = styled("img")(
     }),
 );
 
+const breadcrumbs = [{ link: "/", text: "Home" }, { text: "Product roadmap" }];
 const HeroComponent = props => {
     return (
         <HeroSection {...props}>
+            <Breadcrumb breadcrumbs={breadcrumbs} />
             <ContentContainer className={heroContainerClass}>
                 <WebinyHallMarkImage src={webinyBg} alt={""} />
                 <HeroSectionWrapper>

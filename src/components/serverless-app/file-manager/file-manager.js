@@ -1,7 +1,7 @@
 import React from "react";
 import LearnMoreAboutWebiny from "../../ui/layout/learn-more";
 // assets
-import HeroImage from "./assets/file-manager.jpg";
+import HeroImage from "../../../assets/products/webiny-file-manager.jpg";
 import HeroBg from "./assets/file-manager-hero-bg.svg";
 // data
 import { FEATURES, HERO_FEATURES, KEYNOTES } from "./file-manager-data";

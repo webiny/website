@@ -4,6 +4,7 @@ import { css } from "emotion";
 import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 import ContentContainer from "../ui/content-container";
+import Breadcrumb from "../../layouts/components/breadcrumb";
 
 import heroBg from "./assets/hero-bg.svg";
 import webinyBg from "./assets/webiny-bg.svg";
@@ -66,7 +67,7 @@ const Title = styled("h1")(
         lineHeight: "60px",
         marginBottom: 20,
         marginTop: 40,
-        padding: "0 10px"
+        padding: "0 10px",
     },
     mq({
         marginLeft: [0, "auto"],
@@ -96,7 +97,7 @@ const SubTitle = styled("h3")(
         marginBottom: 26,
         color: theme.color.white,
         textAlign: "center",
-        padding: "0 15px"
+        padding: "0 15px",
     },
     mq({
         maxWidth: [600, 880],
@@ -105,16 +106,20 @@ const SubTitle = styled("h3")(
     }),
 );
 
+const breadcrumbs = [{ link: "/", text: "Home" }, { text: "Partners" }];
+
 const HeroComponent = props => {
     return (
         <HeroSection {...props}>
+            <Breadcrumb breadcrumbs={breadcrumbs} />
             <ContentContainer className={heroContainerClass}>
                 <WebinyHallMarkImage src={webinyBg} alt={""} />
                 <HeroSectionWrapper>
                     <Title>Webiny Partners</Title>
                     <SubTitle>
-                        Meet the great companies that are pushing the boundaries of serverless solutions using Webiny. 
-                        If you are interested in accelerating your projects - they are the experts we trust and recommend!
+                        Meet the great companies that are pushing the boundaries of serverless
+                        solutions using Webiny. If you are interested in accelerating your projects
+                        - they are the experts we trust and recommend!
                     </SubTitle>
                 </HeroSectionWrapper>
             </ContentContainer>

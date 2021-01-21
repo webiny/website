@@ -8,7 +8,7 @@ import SelectedNav from "./selected-nav";
 
 import Logo from "../assets/cms/logo.svg";
 import vectorIcon from "../assets/cms/highlight.svg";
-import graphQlImg from "../assets/cms/headless-cms-cover-graphql.png";
+import graphQlImg from "../../../../assets/products/webiny-headless-cms.jpg";
 import pageBuilderImg from "../assets/cms/webiny-pb-fb.jpg";
 import securityImg from "../assets/cms/security.jpg";
 import multiTenancyImg from "../assets/cms/multi-tenancy.svg";
@@ -185,6 +185,7 @@ const navigationList = [
 const navigationContent = [
     {
         id: 1,
+        imgClass: "headless-img",
         mainLogo: graphQlImg,
         title: "GraphQL-based Headless CMS",
         description:
@@ -200,6 +201,7 @@ const navigationContent = [
     },
     {
         id: 2,
+        imgClass: "pbfb-img",
         mainLogo: pageBuilderImg,
         title: "Page Builder & Form Builder",
         description:
@@ -215,6 +217,7 @@ const navigationContent = [
     },
     {
         id: 3,
+        imgClass: "acl-img",
         mainLogo: securityImg,
         title: "Advanced roles & permissions",
         description:
@@ -228,6 +231,7 @@ const navigationContent = [
     },
     {
         id: 4,
+        imgClass: "svg",
         mainLogo: multiTenancyImg,
         title: "Multi-tenancy & multi-language",
         description:
@@ -241,6 +245,7 @@ const navigationContent = [
     },
     {
         id: 5,
+        imgClass: "img",
         mainLogo: serverlessImg,
         title: "Powered by serverless",
         description:

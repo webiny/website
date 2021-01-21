@@ -16,7 +16,10 @@ const ServerlessFramework = () => {
         { link: "/serverless-application-framework", text: "Serverless Application Framework" },
     ];
     return (
-        <BaseLayout title="Serverless Application Framework">
+        <BaseLayout
+            title="Serverless Application Framework"
+            description="Everything you need to architect, build and deploy serverless applications."
+        >
             <Hero breadcrumbs={breadcrumbs} />
             <StackCode />
             <GetStartedCode />

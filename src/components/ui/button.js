@@ -95,6 +95,17 @@ const buttonDefaultDark = css({
     },
 });
 
+const buttonPrimaryLink = css({
+    backgroundColor: "transparent",
+    color: theme.color.primaryDark,
+    textTransform: "uppercase",
+    padding: 0,
+    "&:hover": {
+        boxShadow: "none",
+        textDecoration: "underline",
+    },
+});
+
 const buttonOutline = css({
     backgroundColor: "transparent",
     color: theme.color.white,
@@ -121,6 +132,7 @@ class Button extends React.Component {
         dark: buttonDark,
         outline: buttonOutline,
         outlineDark: buttonOutlineDark,
+        primaryLink: buttonPrimaryLink,
     };
 
     render() {
