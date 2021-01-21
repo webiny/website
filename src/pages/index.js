@@ -26,7 +26,7 @@ class IndexPage extends React.Component {
                 <Hero />
                 <ClientsLogo />
                 <CompleteSection />
-                <WhyWebinyWhyServerless />
+                {/*<WhyWebinyWhyServerless />*/}
                 <ServerlessEasy />
                 <CaseStudy />
                 <GoServerless />

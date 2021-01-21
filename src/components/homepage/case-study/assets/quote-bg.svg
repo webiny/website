@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="555px" height="123px" viewBox="0 0 555 123" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Landing-page-Webiny" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-745.000000, -11394.000000)">
+            <g id="case-study" transform="translate(3.000000, 10972.000000)">
+                <g id="case-studys" transform="translate(131.000000, 264.000000)">
+                    <g id="10" transform="translate(0.000000, 2.000000)">
+                        <g id="key-numbers" transform="translate(609.000000, 170.000000)">
+                            <g id="quote" transform="translate(2.000000, 0.000000)">
+                                <path d="M4,0 L551,0 C553.209139,-4.05812251e-16 555,1.790861 555,4 L555,105 C555,107.209139 553.209139,109 551,109 L4,109 C1.790861,109 2.705415e-16,107.209139 0,105 L0,4 C-2.705415e-16,1.790861 1.790861,4.05812251e-16 4,0 Z" id="Rectangle-27" fill="#F9F7FC"></path>
+                                <text id="“" fill="#7B39D9" opacity="0.150000006" font-family="SourceSansPro-Bold, Source Sans Pro" font-size="180" font-weight="bold" line-spacing="100">
+                                    <tspan x="0" y="186">“</tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
