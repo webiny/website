@@ -11,7 +11,7 @@ import stackImg from "./assets/stack-icon.svg";
 import architectureImg from "./assets/architecture-icon.svg";
 import codeImg from "./assets/code-icon.svg";
 import StackImage from "./assets/stack-image.svg";
-import ArchitectureImage from "./assets/architecture-image.svg";
+import ArchitectureTab from "./architecture";
 
 const StackCodeSection = styled("section")(
     {
@@ -183,25 +183,6 @@ const StackPart = styled("div")(
     }),
 );
 
-const ArchitecturePart = styled("div")(
-    {
-        backgroundImage: "url(" + ArchitectureImage + ")",
-        backgroundColor: theme.color.white,
-        position: "relative",
-        zIndex: 0,
-        backgroundRepeat: "no-repeat",
-        overflow: "hidden",
-        backgroundPosition: "center",
-        backgroundSize: "contain",
-        "@media (max-width: 600px)": {
-            height: 300,
-        },
-    },
-    mq({
-        height: [600, 805],
-    }),
-);
-
 const containerClass = css({
     position: "relative",
     height: "100%",
@@ -242,7 +223,7 @@ const StackCode = () => {
             case 2:
                 return <StackPart />;
             case 3:
-                return <ArchitecturePart />;
+                return <ArchitectureTab />;
             default:
                 return null;
         }
