@@ -118,7 +118,7 @@ const SelectedItem = styled("div")(
         },
         "& img": {
             "&.headless-img": {
-                marginLeft: [0, -25],
+                boxShadow: "0 0 10px 0 rgba(0,0,0,0.25)",
             },
             "&.pbfb-img, &.acl-img": {
                 marginLeft: [0, -15],

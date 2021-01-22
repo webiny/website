@@ -212,6 +212,7 @@ const navigationContent = [
             "Build landing pages",
             "Blazing fast performance",
             //"Build layouts for dynamic content",
+            "Prerendered and SEO optimized",
             "Multi-language and multi-tenant",
         ],
     },
@@ -225,7 +226,7 @@ const navigationContent = [
         relatedList: [
             "Permission control matching business requirements",
             "Easily integrate 3rd parties like OKTA, Auth0 and others",
-            "Ready-made security library to integrate into your own apps",
+            "Ready-made security library to integrate into your own custom apps",
             "Fully customizable security workflow",
         ],
     },
@@ -256,7 +257,6 @@ const navigationContent = [
             "Open-source",
             "Fully customizable",
             "Self-hosted",
-            "There's a community",
         ],
     },
 ];
@@ -313,7 +313,7 @@ const CMSSection = () => {
                 <div className="navigation-content">
                     <p className="description">
                         Everything you need to manage your content needs and operate a website on
-                        top of the severless infrastructure.
+                        top of the serverless infrastructure.
                     </p>
                     <div className="navigation-list">
                         {navigateItems &&

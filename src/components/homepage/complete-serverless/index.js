@@ -10,7 +10,7 @@ import vectorIcon from "./assets/highlight.svg";
 
 const CompleteServerlessSection = styled("section")({
     width: "100%",
-    margin: "0 auto",
+    margin: "0 auto 50px 0",
     backgroundSize: "cover",
     color: theme.color.black,
     boxSizing: "border-box",

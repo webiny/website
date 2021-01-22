@@ -192,8 +192,8 @@ const navigationContent = [
         mainLogo: buildAppImg,
         title: "An easier way to build serverless apps",
         description:
-            "There are many solutions that help you run, deploy and monitor serverless functions, but when it comes to actually coding one, there are none. Webiny is a solution that helps you code your serverless app by providing you with all the components like ACL, routing, file storage and many more.",
-        subtitle: "Use it to build:",
+            "There are many solutions that help you run, deploy and monitor serverless functions, but when it comes to actually coding one, there are none. Webiny is a solution that helps you code your serverless app by providing you with all the components like ACL, routing, file storage and many more, specifically created for serverless environments.",
+        subtitle: "Build with Webiny Framework:",
         relatedList: ["Websites", "APIs", "Applications", "Microservices"],
     },
     {
@@ -203,12 +203,12 @@ const navigationContent = [
         description:
             "Start with a base project structure that's ready to deploy. There is a CLI to handle all the deployments and it's CI/CD ready. There is a GraphQL API layer that you can expand and add your logic to. Leverage existing ACL layer to implement security.  Use the Admin Panel and React components to build your SPA.",
         relatedList: [
-            "IaaC support",
+            "IaC support",
             "Admin panel SPA",
             "CI/CD ready",
-            "Powerful ACL",
+            "Ready-made ACL",
             "GraphQL API",
-            "Webpack bundling",
+            "Built-in prerendering",
         ],
     },
     {
@@ -217,6 +217,12 @@ const navigationContent = [
         title: "Support for multiple databases",
         description:
             "We understand that most projects have a strong preference on the type of the database. For this reason Webiny comes with multi-database support out of the box. In case your preferred database is not on the list - it's easy to build an adapter for one.",
+        relatedList: [
+            "DynamoDB support",
+            "Elasticsearch support",
+            "Create your own DB adapter",
+            "Call 3rd party DBs when needed",
+        ],
     },
     {
         id: 4,
@@ -237,6 +243,14 @@ const navigationContent = [
         title: "Made for developers",
         description:
             "Webiny is built using many of the tools you already know and use today. In case you need to bring in any other tools or libraries, just import them like any other NPM package.",
+        relatedList: [
+            "Written in Typescript",
+            "100% Javascript",
+            "Uses workspaces for code organization",
+            "Built-in GraphQL playground",
+            "Built-in Lambda debugger",
+            "Great for both small and large projects",
+        ],
     },
 ];
 

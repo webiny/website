@@ -66,7 +66,7 @@ const Data = [
             { text: "No-code form builder", img: form1 },
             { text: "Input validation control", img: form2 },
             { text: "Webhook support", img: form3 },
-            { text: "ReCAPTCA protected", img: form4 },
+            { text: "ReCAPTCHA protected", img: form4 },
         ],
         buttonText: "Check out Form Builder",
         link: "/serverless-app/form-builder",
@@ -74,7 +74,7 @@ const Data = [
     {
         id: 4,
         mainImg: FileMain,
-        title: "Upload, categorise, search and edit your files.",
+        title: "Upload, categorize, search and edit your files.",
         relatedItems: [
             { text: "Asset management", img: file1 },
             { text: "Image editor built-in", img: file2 },

@@ -260,7 +260,7 @@ class HeroComponent extends React.Component {
                                     <span>Serverless</span>, open-source and self-hosted
                                 </h3>
                                 <p>
-                                    Run the apps in your own cloud on top of the serverless
+                                    Run Webiny in your own cloud on top of the serverless
                                     infrastructure. Your data stays with you.
                                 </p>
                             </div>

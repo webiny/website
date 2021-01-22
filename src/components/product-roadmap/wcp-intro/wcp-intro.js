@@ -163,7 +163,7 @@ const WCPIntroComponent = props => {
                         Introducing <TitleHighlight>Webiny Control Panel</TitleHighlight>
                     </Title>
                     <SubTitle>
-                        At Webiny we have a mission to empower developers and organisations to build
+                        At Webiny we have a mission to empower developers and organizations to build
                         serverless applications. As the next step in our mission, we want to bring
                         Webiny even closer to our audience. Webiny Control Panel will be our first
                         commercial product and it will greatly complement our open-source offering.
