@@ -23,7 +23,7 @@ const Hero = () => (
             <Subtitle>
                 Serverless is making big changes to how we operate, deploy, architect and run
                 applications. There are many benefits that serverless brings, the ones below are
-                just a few.
+                just a few..
             </Subtitle>
         </Header>
     </React.Fragment>
