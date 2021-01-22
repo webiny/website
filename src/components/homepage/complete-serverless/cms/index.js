@@ -205,7 +205,7 @@ const navigationContent = [
         mainLogo: pageBuilderImg,
         title: "Page Builder & Form Builder",
         description:
-            "Sometimes a headless solution is not enough, it only gets you a part of the way. With the Page and Form builder you can build forms and landing pages. No need to code anything by hand.",
+            "Sometimes a headless solution is not enough, it only gets you part of the way. With the Page and Form builder you can build forms and landing pages. No need to code anything by hand.",
         relatedList: [
             "Build forms",
             "No need to redeploy or rebuild on changes",
@@ -250,7 +250,7 @@ const navigationContent = [
         mainLogo: serverlessImg,
         title: "Powered by serverless",
         description:
-            "Webiny, being a self-hosted solution, means you have the full control over your security parameter and your data is your own, no need to share it with a 3rd party SaaS provider. It also means there is no vendor lock-in and you're free to customize the solution to fits your exact need. Being serverless means you don't worry about how to scale the solution, it's scales automatically and you don't worry about things like CPU, memory, load balancers, networking and so on. Serverless also brings up to 80% cost reduction when compared to VMs.",
+            "Webiny, being a self-hosted solution, means you have the full control over your security parameter and your data is your own, no need to share it with a 3rd party SaaS provider. It also means there is no vendor lock-in and you're free to customize the solution to fits your exact need. Being serverless means you don't worry about how to scale the solution, it scales automatically and you don't worry about things like CPU, memory, load balancers, networking and so on. Serverless also brings up to 80% cost reduction when compared to VMs.",
         relatedList: [
             "Serverless",
             "Cheaper to operate",
@@ -298,7 +298,14 @@ const CMSSection = () => {
                 {width > 1024 ? (
                     <SelectedNav content={selectedNav} />
                 ) : (
-                    navigationContent.map(item => <SelectedNav content={item} key={item.id} />)
+                    <React.Fragment>
+                        {navigationContent.map(item => (
+                            <SelectedNav content={item} key={item.id} />
+                        ))}
+                        <Button type="outlineDark" arrow={true} link="/serverless-cms">
+                            Learn more about the cms
+                        </Button>
+                    </React.Fragment>
                 )}
             </SlideSection>
             <Navigation>

@@ -145,13 +145,13 @@ const powerList = [
     {
         title: "Content localization",
         text:
-            "Publish and manage content on multiple languages. Use the API to retrieve a specific content on a specific language.",
+            "Publish and manage content in multiple languages. Use the API to retrieve a specific content on a specific language.",
         img: icon4,
     },
     {
         title: "Manage API",
         text:
-            "The manage API allows you to modify and create new content model schemas programmatically.",
+            "Manage API allows you to modify and create new content model schemas programmatically.",
         img: icon5,
     },
     {

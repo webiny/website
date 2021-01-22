@@ -27,17 +27,17 @@ const HeroSection = styled("section")(
         overflow: "hidden",
     },
     mq({
-        backgroundImage: ["url(" + heroBg + ")", "url(" + backgroundImg + ")"],
-        backgroundSize: ["cover", "contain", "100%"],
-        backgroundPosition: ["center", "top", "top", "top"],
+        backgroundImage: ["url(" + backgroundImg + ")", "url(" + backgroundImg + ")"],
+        backgroundSize: ["cover", "100%", "100%"],
+        backgroundPosition: ["center", "top", "bottom", "bottom"],
         padding: ["0px 0px 250px", "0 0 200px"],
         "@media (min-width: 1460px)": {
-            backgroundPosition: "top",
+            backgroundPosition: "bottom",
             paddingTop: 0,
         },
 
         "@media (min-width: 1600px)": {
-            backgroundImage: "url(" + heroBg + ")",
+            backgroundImage: "url(" + backgroundImg + ")",
         },
     }),
 );
@@ -219,7 +219,7 @@ const HeroList = styled("div")(
                     backgroundImage: "url(" + highlightIcon + ")",
                     backgroundPositionX: "right",
                     backgroundPositionY: "bottom",
-                    backgroundRepeat: "no-repeat",
+                    backgroundRepeat: "repeat-x",
                 },
             },
 
@@ -252,6 +252,7 @@ class HeroComponent extends React.Component {
                         </Title>
                         <SubTitle>
                             We help developers and organizations architect, build and deploy
+                            <br />
                             full-stack serverless applications and websites.
                         </SubTitle>
                         <HeroList>

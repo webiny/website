@@ -46,8 +46,9 @@ const SelectedItem = styled("div")(
         },
 
         "& img": {
-            width: "100%",
             borderRadius: 5,
+            maxHeight: "360px",
+            height: "auto",
         },
 
         "& p": {
@@ -117,6 +118,7 @@ const SelectedItem = styled("div")(
             gridGap: [0, 10],
         },
         "& img": {
+            width: ["100%", "auto"],
             "&.headless-img": {
                 boxShadow: "0 0 10px 0 rgba(0,0,0,0.25)",
             },

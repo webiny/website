@@ -229,7 +229,7 @@ const ExampleApp = () => {
                         <TitleHighlight>Serverless CMS</TitleHighlight>
                     </Title>
                     <SubTitle>
-                        We've build a whole suite of serverless apps using Webiny Serverless
+                        We've built a whole suite of serverless apps using Webiny Serverless
                         Application Framework - check them out.
                     </SubTitle>
                     <ExampleList>

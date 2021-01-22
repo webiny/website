@@ -45,14 +45,14 @@ const SelectedItem = styled("div")(
             margin: "10px 0",
         },
 
-        "& img": {
-            width: "100%",
-        },
-
         "& p": {
             fontSize: 18,
             lineHeight: "150%",
             color: theme.color.black,
+        },
+
+        "& img": {
+            width: "100%",
         },
 
         "& h5": {
@@ -115,6 +115,9 @@ const SelectedItem = styled("div")(
         "& ul": {
             gridTemplateColumns: ["repeat(1, 1fr)", "repeat(2, 1fr)"],
             gridGap: [0, 10],
+        },
+        "& img": {
+            maxHeight: ["auto", "330px"],
         },
     }),
 );

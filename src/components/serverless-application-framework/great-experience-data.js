@@ -57,7 +57,7 @@ export const experienceList = [
         imageSrc: Icon4,
         title: "Multiple environments",
         body:
-            "No code change goes directly into a production environment. Webiny CLI makes it easy to manage and create multiple environments for your project.",
+            "No code change goes directly into a production environment. Webiny CLI makes it easy to create and manage multiple environments for your project.",
         borderBottom: true,
     },
     {
@@ -188,7 +188,7 @@ export const experienceList = [
         imageSrc: Icon21,
         title: "We've created a UI package for you so you don't need to bother with one",
         body:
-            "Security is a crucial layer in any application. Webiny includes a customizable security module you can use in your schemas. There is also a built-in UI to manage users, groups, roles and scopes.",
+            "When we say that with Webiny you can focus on your business logic right away, we truly mean it. Webiny comes with a built-in Admin UI. It has over 30 reusable React components you can use to build interfaces for your application. Everything can be fully stylized to fit your brand identity.",
     },
     {
         imageSrc: Icon22,

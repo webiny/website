@@ -229,7 +229,7 @@ const navigationContent = [
         mainLogo: secureImg,
         title: "Secure by design",
         description:
-            "Webiny being serverless reduces potential attack vectors for attackers. Webiny also can be deployed inside a VPC with a whitelisted access control, giving you even greater security over your data and how users can access your application",
+            "Webiny being serverless reduces potential attack vectors for attackers. Webiny also can be deployed inside a VPC with a whitelisted access control, giving you even greater security over your data and how users can access your application.",
         relatedList: [
             "Built-in integration with AWS Cognito",
             "Generate access tokens for registered users to control access",
@@ -330,7 +330,18 @@ const Frameworks = () => {
                 {width > 1024 ? (
                     <SelectedNav content={selectedNav} />
                 ) : (
-                    navigationContent.map(item => <SelectedNav content={item} key={item.id} />)
+                    <React.Fragment>
+                        {navigationContent.map(item => (
+                            <SelectedNav content={item} key={item.id} />
+                        ))}
+                        <Button
+                            type="outlineDark"
+                            arrow={true}
+                            link="/serverless-application-framework"
+                        >
+                            Learn more about the framework
+                        </Button>
+                    </React.Fragment>
                 )}
             </SlideSection>
         </FrameworksSection>
