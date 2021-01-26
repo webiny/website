@@ -34,7 +34,7 @@ export const CONTENT_LIST = [
         id: 1,
         title: "Take the beaten path and avoid any nasty surprises",
         description:
-            'New technologies are great, but often they come with a "discovery path". That path can have many hidden pitfalls that are hard to spot, and only come to light when you\'re deep into your project. Webiny is a proven and tested framework. No nasty suprises here.',
+            'New technologies are great, but often they come with a "discovery path". That path can have many hidden pitfalls that are hard to spot, and only come to light when you\'re deep into your project. Webiny is a proven and tested framework. No nasty surprises here.',
         imageSrc: avoidPitfalls,
     },
     {
@@ -48,7 +48,7 @@ export const CONTENT_LIST = [
         id: 3,
         title: "Guides, tutorials and manuals - it's all included",
         description:
-            "Educating people takes a lot of time. From producing the required docs, to organizing them into logical structures and ensuring they actually convey the required knowledge back to the readear. Webiny is a complete product, meaning you'll get all the docs you will need, and in case something is missing, our community chat is always active with helpful people. ",
+            "Educating people takes a lot of time. From producing the required docs, to organizing them into logical structures and ensuring they actually convey the required knowledge back to the reader. Webiny is a complete product, meaning you'll get all the docs you will need, and in case something is missing, our community chat is always active with helpful people. ",
         imageSrc: educateStaff,
     },
 ];

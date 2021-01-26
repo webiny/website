@@ -16,7 +16,7 @@ export const SectionWithBackground = styled("section")(
         zIndex: 0,
         backgroundImage: "url(" + heroBg + ")",
         backgroundRepeat: "no-repeat",
-        padding: "0px 15px",
+        //padding: "0px 15px",
         backgroundPosition: "bottom",
         backgroundSize: "cover",
     },

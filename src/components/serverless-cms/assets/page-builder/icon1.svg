@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="35px" viewBox="0 0 26 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Group 224</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="11" cy="11" r="11"></circle>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="22" height="22" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <path d="M25.9164515,24.8928566 C25.7591834,25.2499995 25.4862771,25.4285717 25.0977325,25.4285717 L19.6581087,25.7423849 L22.5860691,31.8035698 C22.6785797,32.0267841 22.6785797,32.245536 22.5860691,32.4598217 C22.4935585,32.6741074 22.33629,32.8303574 22.1142645,32.9285717 L19.6656342,34.4553566 C19.4343576,34.5446423 19.207706,34.5446423 18.9856806,34.4553566 C18.7636551,34.3660709 18.6017617,34.2142857 18.5,34 L15.3333335,27.8871403 L11.5125486,31.6026783 C11.3367784,31.7723212 11.1286295,31.8571415 10.8881019,31.8571415 C10.7770891,31.8571415 10.6660764,31.8348212 10.5550637,31.7901783 C10.1850212,31.6383926 10,31.375 10,31 L10,10.8571429 C10,10.4821429 10.1850212,10.21875 10.5550637,10.0669643 C10.6660764,10.0223214 10.7770891,10 10.8881019,10 C11.1378805,10 11.3460294,10.0848214 11.5125486,10.2544643 L25.7221785,23.968751 C26.0089613,24.2366081 26.0737195,24.5446423 25.9164515,24.8928566 Z" id="path-3"></path>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="16" height="24.5223217" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-dasharray="0,0">
+        <g id="Page-builder" transform="translate(-575.000000, -656.000000)" fill="#FFFFFF" stroke-width="2">
+            <g id="One-size..." transform="translate(61.000000, 70.000000)">
+                <g id="Group-144" transform="translate(257.000000, 585.000000)">
+                    <g id="Group-136" transform="translate(39.000000, 1.000000)">
+                        <g id="Group-186">
+                            <g id="Group-224" transform="translate(218.000000, 0.000000)">
+                                <use id="Ellipse-65" stroke="#FA5A28" mask="url(#mask-2)" xlink:href="#path-1"></use>
+                                <use id="Vector" stroke="#6A6E7C" mask="url(#mask-4)" xlink:href="#path-3"></use>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

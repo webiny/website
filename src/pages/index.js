@@ -5,13 +5,11 @@ import "aos/dist/aos.css";
 import BaseLayout from "../layouts/base";
 import Hero from "../components/homepage/hero-new/hero";
 import ServerlessEasy from "../components/homepage/serverless-easy/serverless-easy";
-
-import GoServerless from "../components/homepage/go-serverless/go-serverless";
-import ReadyMadeApps from "../components/agency/ready-made-apps/ready-made-apps";
-import ServerlessDIY from "../components/homepage/serverless-diy/serverless-diy";
+import CompleteSection from "../components/homepage/complete-serverless";
 import WhyWebinyWhyServerless from "../components/homepage/why-serverless/why-serverless";
-import WhyIsWebiny from "../components/homepage/what-is-webiny/what-is-webiny";
 import ClientsLogo from "../components/homepage/clients-logo/clients-logo";
+import CaseStudy from "../components/ui/case-study";
+import FooterCta from "../components/ui/footer-cta";
 
 class IndexPage extends React.Component {
     componentDidMount() {
@@ -27,12 +25,11 @@ class IndexPage extends React.Component {
             >
                 <Hero />
                 <ClientsLogo />
-                <WhyIsWebiny />
-                <WhyWebinyWhyServerless />
-                <ServerlessDIY />
-                <ReadyMadeApps cta={false} demoLink={"/agency#schedule-demo"} />
+                <CompleteSection />
+                {/*<WhyWebinyWhyServerless />*/}
+                <CaseStudy />
                 <ServerlessEasy />
-                <GoServerless />
+                <FooterCta />
             </BaseLayout>
         );
     }

@@ -6,6 +6,8 @@ import mq from "../utils/breakpoints";
 import ContentContainer from "../ui/content-container";
 import Button from "../ui/button";
 
+import Breadcrumb from "../../layouts/components/breadcrumb";
+
 import heroBg from "./assets/hero-bg.svg";
 import webinyBg from "./assets/webiny-hallmark.svg";
 
@@ -112,9 +114,12 @@ const WebinyHallMarkImage = styled("img")(
     }),
 );
 
+const breadcrumbs = [{ link: "/", text: "Home" }, { text: "Enterprise" }];
+
 const HeroComponent = () => {
     return (
         <HeroSection>
+            <Breadcrumb breadcrumbs={breadcrumbs} />
             <ContentContainer className={heroContainerClass}>
                 <WebinyHallMarkImage src={webinyBg} alt={""} />
                 <HeroSectionWrapper>

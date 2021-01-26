@@ -4,7 +4,7 @@ import WhyChooseWebiny from "../elements/why-choose-webiny/why-choose-webiny";
 // assets
 import HeadlessCMSDemoImg from "./assets/youtube-headless-cms.png";
 import HeroBg from "./assets/headless-cms-hero-bg.svg";
-import HeadlessCMSCover from "./assets/headless-cms-cover-graphql.png";
+import HeadlessCMSCover from "../../../assets/products/webiny-headless-cms.jpg";
 
 import { FACTS, FEATURES, HERO_FEATURES, KEYNOTES } from "./headless-cms-data";
 import Hero from "../elements/hero/hero";

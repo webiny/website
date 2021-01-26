@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "react-emotion";
 import { css } from "emotion";
+
 // utils
 import theme from "../../utils/theme";
 import mq from "../../utils/breakpoints";
 import ContentContainer from "../../ui/content-container";
 import Button from "../../ui/button";
+import Breadcrumb from "../../../layouts/components/breadcrumb";
 // assets
 import heroBg from "./assets/hero-bg.svg";
 import webinyBg from "./assets/webiny-bg.svg";
@@ -22,7 +24,7 @@ const HeroSection = styled("section")(
         backgroundRepeat: "no-repeat",
         position: "relative",
         zIndex: 0,
-        padding: "0px 15px",
+        //padding: "0px 15px",
         height: "100%",
     },
     mq({
@@ -135,10 +137,13 @@ const defaultSecondaryCTA = {
     link: REQUEST_TUTORIAL_LINK,
 };
 
+const breadcrumbs = [{ link: "/", text: "Home" }, { text: "Guides & Tutorials" }];
+
 const Hero = props => {
     const { primaryCTA = defaultPrimaryCTA, secondaryCTA = defaultSecondaryCTA } = props;
     return (
         <HeroSection {...props}>
+            <Breadcrumb breadcrumbs={breadcrumbs} />
             <ContentContainer className={heroContainerClass}>
                 <WebinyHallMarkImage src={webinyBg} alt={""} />
                 <HeroContentWrapper className={"hero-left"}>

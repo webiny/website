@@ -204,7 +204,7 @@ const SecurityParameters = () => {
                         <FeatureDescription>
                             Webiny is hosted inside your own AWS cloud. You own all the networking,
                             security and databases. Webiny doesn't break your data regulation
-                            compliancies nor make it hard for your legal team and your dev team to
+                            compliances or make it hard for your legal team and your dev team to
                             integrate the solution.
                         </FeatureDescription>
                         <FeatureDescription>

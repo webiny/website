@@ -66,7 +66,7 @@ class BaseLayout extends React.Component {
       */}
                 <ModalProvider>
                     <Wrapper>
-                        <Header trackScroll={!this.props.fixedHeader} />
+                        <Header trackScroll={!this.props.fixedHeader} />                        
                         {this.props.children}
                         <Footer />
                         <CookieNotice />

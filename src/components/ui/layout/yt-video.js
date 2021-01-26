@@ -10,8 +10,9 @@ const VideoImage = styled("img")(
     {
         border: "1px solid #E6E6E6",
         borderRadius: 5,
-        //opacity: '0.7',
-        boxShadow: "0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3)",
+        // opacity: '0.7',
+        // boxShadow: "0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3)",
+        boxShadow: "0px 0px 20px rgba(100, 100, 100, 0.3)",
         cursor: "pointer",
         transition: "opacity 0.3s",
         boxSizing: "border-box",

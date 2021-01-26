@@ -19,7 +19,7 @@ const wrapperClass = css(
         backgroundSize: "cover",
     },
     mq({
-        padding: ["0 15px 60px 15px", "25px 0 150px 0"],
+        padding: ["0 15px 60px 15px", "25px 0 50px 0"],
     }),
 );
 
@@ -205,6 +205,7 @@ class ServerlessMadeEasy extends React.Component {
                             </p>
                         </ReasonBox>
                     </Wrapper>
+                    {/**
                     <ButtonWrapper>
                         <div
                             className={ctaButton}
@@ -222,6 +223,7 @@ class ServerlessMadeEasy extends React.Component {
                             </Button>
                         </div>
                     </ButtonWrapper>
+                     */}
                 </ContentContainer>
             </section>
         );

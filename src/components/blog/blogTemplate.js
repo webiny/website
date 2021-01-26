@@ -11,6 +11,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import ExternalLink from "../utils/ExternalLink";
 import AuthorCard from "./components/AuthorCard";
 import NewsletterFooter from "./components/NewsletterFooter";
+import Breadcrumb from "../../layouts/components/breadcrumb";
 
 const shortcodes = { ExternalLink };
 
@@ -29,23 +30,30 @@ const BlogContainer = styled("div")(
     }),
 );
 
-const BlogHeader = styled("div")({
-    width: "100%",
-    maxWidth: 1200,
-    marginTop: 25,
-    margin: "0 auto",
-    ".blog-header-inner": {
+const BlogHeader = styled("div")(
+    {
         width: "100%",
+        maxWidth: 1200,
         marginTop: 25,
-        a: {
-            textDecoration: "none",
-            color: theme.color.primaryDark,
-            "&:hover": {
-                textDecoration: "underline",
+        margin: "0 auto",
+        ".blog-header-inner": {
+            width: "100%",
+            marginTop: 25,
+            a: {
+                textDecoration: "none",
+                color: theme.color.primaryDark,
+                "&:hover": {
+                    textDecoration: "underline",
+                },
             },
         },
     },
-});
+    mq({
+        ".blog-header-inner": {
+            display: ["block", "none"],
+        },
+    }),
+);
 
 const blogStyles = css(
     {
@@ -229,6 +237,12 @@ export default function Template({
         featureImage = frontmatter.featureImage.childImageSharp.fluid.src;
     }
 
+    const breadcrumbs = [
+        { link: "/", text: "Home" },
+        { link: "/blog", text: "Blog" },
+        { text: frontmatter.title },
+    ];
+
     return (
         <BaseLayout
             title={frontmatter.title}
@@ -236,6 +250,7 @@ export default function Template({
             fixedHeader={false}
             image={featureImage}
         >
+            <Breadcrumb theme="dark" breadcrumbs={breadcrumbs} />
             <div className={blogStyles}>
                 <BlogHeader>
                     <div className="blog-header-inner">

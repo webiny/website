@@ -5,6 +5,7 @@ import { css, keyframes } from "emotion";
 import theme from "../../../utils/theme";
 import mq from "../../../utils/breakpoints";
 import ContentContainer from "../../../ui/content-container";
+import Breadcrumb from "../../../../layouts/components/breadcrumb";
 
 import featuresFunnelImg from "./assets/feature-funnel.svg";
 import webinyBg from "./assets/webiny-hallmark.svg";
@@ -20,7 +21,7 @@ const HeroSection = styled("section")(
         // overflowX: "hidden"
     },
     mq({
-        padding: ["0px 15px 0px", "0px 15px"],
+        padding: ["0px 15px 0px", "0px"],
         height: ["auto", "calc(100vh - 150px)"],
         minHeight: ["auto", 750],
         maxHeight: ["auto", 768],
@@ -117,6 +118,7 @@ const MediaContentWrapper = styled("div")(
             overflow: "hidden",
             border: "1px solid #E6E6E6",
             animation: float + " 8s ease-in-out infinite",
+            boxShadow: "0 0 10px 0 rgba(0,0,0,0.25)",
         },
     },
     mq({
@@ -188,27 +190,39 @@ const WebinyHallMarkImage = styled("img")(
     }),
 );
 
-const HeroComponent = ({ className, backgroundImg, appName, title, features, media }) => (
-    <HeroSection className={className} style={{ backgroundImage: "url(" + backgroundImg + ")" }}>
-        <ContentContainer className={containerClass}>
-            <WebinyHallMarkImage src={webinyBg} alt={""} />
-            <HeroContentWrapper className={"hero-left"}>
-                {appName && <TopTitle>WEBINY SERVERLESS APP:</TopTitle>}
-                <AppName>{appName}</AppName>
-                <Title>{title}</Title>
-                <HeroFeaturesWrapper>
-                    {features.map(feature => (
-                        <div className={"feature-box"} key={feature.id}>
-                            <p className="feature-box__title">{feature.title}</p>
-                            <p className="feature-box__body">{feature.body}</p>
-                        </div>
-                    ))}
-                    <img src={featuresFunnelImg} alt="" className="features__funnel" />
-                </HeroFeaturesWrapper>
-            </HeroContentWrapper>
-            <MediaContentWrapper className={"hero-right"}>{media}</MediaContentWrapper>
-        </ContentContainer>
-    </HeroSection>
-);
+const HeroComponent = ({ className, backgroundImg, appName, title, features, media }) => {
+    const breadcrumbs = [
+        { link: "/", text: "Home" },
+        { link: "/serverless-cms", text: "Serverless CMS" },
+        { text: appName },
+    ];
+
+    return (
+        <HeroSection
+            className={className}
+            style={{ backgroundImage: "url(" + backgroundImg + ")" }}
+        >
+            <Breadcrumb breadcrumbs={breadcrumbs} />
+            <ContentContainer className={containerClass}>
+                <WebinyHallMarkImage src={webinyBg} alt={""} />
+                <HeroContentWrapper className={"hero-left"}>
+                    {appName && <TopTitle>WEBINY SERVERLESS APP:</TopTitle>}
+                    <AppName>{appName}</AppName>
+                    <Title>{title}</Title>
+                    <HeroFeaturesWrapper>
+                        {features.map(feature => (
+                            <div className={"feature-box"} key={feature.id}>
+                                <p className="feature-box__title">{feature.title}</p>
+                                <p className="feature-box__body">{feature.body}</p>
+                            </div>
+                        ))}
+                        <img src={featuresFunnelImg} alt="" className="features__funnel" />
+                    </HeroFeaturesWrapper>
+                </HeroContentWrapper>
+                <MediaContentWrapper className={"hero-right"}>{media}</MediaContentWrapper>
+            </ContentContainer>
+        </HeroSection>
+    );
+};
 
 export default HeroComponent;

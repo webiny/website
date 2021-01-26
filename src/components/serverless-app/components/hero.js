@@ -128,29 +128,33 @@ const GitHubLogo = styled("img")(
     }),
 );
 
-export default props => (
-    <Hero className={props.className} style={{ backgroundImage: "url(" + props.bg + ")" }}>
-        <ContentContainer className={container}>
-            <LeftSide className={"hero-left"}>
-                {props.appName && <TopTitle>WEBINY SERVERLESS APP:</TopTitle>}
-                <AppName>{props.appName}</AppName>
-                <Title>{props.title}</Title>
-                {props.children}
+const HeroComponent = props => {
+    return (
+        <Hero className={props.className} style={{ backgroundImage: "url(" + props.bg + ")" }}>
+            <ContentContainer className={container}>
+                <LeftSide className={"hero-left"}>
+                    {props.appName && <TopTitle>WEBINY SERVERLESS APP:</TopTitle>}
+                    <AppName>{props.appName}</AppName>
+                    <Title>{props.title}</Title>
+                    {props.children}
 
-                {props.github && (
-                    <Button link={props.github} type="outline">
-                        <GitHubLogo src={gitHubLogo} />
-                        View on GitHub
-                    </Button>
-                )}
+                    {props.github && (
+                        <Button link={props.github} type="outline">
+                            <GitHubLogo src={gitHubLogo} />
+                            View on GitHub
+                        </Button>
+                    )}
 
-                {props.getStarted && (
-                    <Button link={props.getStarted} type="outline">
-                        Get Started
-                    </Button>
-                )}
-            </LeftSide>
-            <RightSide className={"hero-right"}>{props.media}</RightSide>
-        </ContentContainer>
-    </Hero>
-);
+                    {props.getStarted && (
+                        <Button link={props.getStarted} type="outline">
+                            Get Started
+                        </Button>
+                    )}
+                </LeftSide>
+                <RightSide className={"hero-right"}>{props.media}</RightSide>
+            </ContentContainer>
+        </Hero>
+    );
+};
+
+export default HeroComponent;

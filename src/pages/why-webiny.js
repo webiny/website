@@ -4,7 +4,7 @@ import "aos/dist/aos.css";
 
 import BaseLayout from "../layouts/base";
 
-import GoServerless from "../components/homepage/go-serverless/go-serverless";
+import FooterCta from "../components/ui/footer-cta";
 import ServerlessDIY from "../components/why-webiny/serverless-diy/serverless-diy";
 import Hero from "../components/why-webiny/hero/hero";
 import WebinyOverview from "../components/why-webiny/overview/overview";
@@ -20,7 +20,7 @@ class WhyWebinyPage extends React.Component {
     render() {
         return (
             <BaseLayout
-                title="The easiest way to adopt serverless"
+                title="Why Webiny?"
                 description="Discover the serverless benefits, its challenges and how Webiny overcomes them."
                 fixedHeader={false}
             >
@@ -30,7 +30,7 @@ class WhyWebinyPage extends React.Component {
                 <ServerlessChallenges />
                 <HereComesWebiny />
                 <ServerlessDIY />
-                <GoServerless />
+                <FooterCta />
             </BaseLayout>
         );
     }
