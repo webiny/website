@@ -29,6 +29,7 @@ const SectionTitle = styled("span")({
 
 const footerMenu = css(
     {
+        maxWidth: "100%",
         flexDirection: "row",
         justifyContent: "space-between",
         color: theme.color.white,
@@ -87,21 +88,6 @@ const FooterMenu = () => (
             <Link to="/blog">Blog</Link>
             <Link to="/swag">SWAG</Link>
             <Link to="/events">Events</Link>
-        </MenuBlock>
-        <MenuBlock>
-            <SectionTitle>Serverless CMS Apps</SectionTitle>
-            <Link rel="prerender" to="/serverless-app/headless-cms">
-                Headless CMS
-            </Link>
-            <Link rel="prerender" to="/serverless-app/page-builder">
-                Page Builder
-            </Link>
-            <Link rel="prerender" to="/serverless-app/form-builder">
-                Form Builder
-            </Link>
-            <Link rel="prerender" to="/serverless-app/file-manager">
-                File Manager
-            </Link>
         </MenuBlock>
         <MenuBlock>
             <SectionTitle>Use Cases & Guides</SectionTitle>

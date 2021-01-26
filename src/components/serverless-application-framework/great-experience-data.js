@@ -181,7 +181,7 @@ export const experienceList = [
         imageSrc: Icon20,
         title: "Control your deploy process",
         body:
-            "When we say that with Webiny you can focus on your business logic right away, we truly mean it. Webiny comes with a built-in Admin UI. It has over 30 reusable React components you can use to build interfaces for your application. Everything can be fully stylized to fit your brand identity.",
+            "Webiny CLI comes with hooks as integration points. You can use these hooks to further expand the deploy process, like adding CI/CD support and syncing state files. The CLI is also pluginable, so you can build new functionality to optimize your development and deployment process even further.",
         borderBottom: true,
     },
     {

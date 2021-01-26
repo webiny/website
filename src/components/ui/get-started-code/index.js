@@ -113,7 +113,7 @@ const EasyPart = () => {
                     <p>Explore our docs for more tutorials and examples.</p>
                     <ClipPart text="npx create-webiny-project@beta my-project --tag beta" />
                     <ClipPart text="yarn webiny deploy" />
-                    <SubTitle>Your Project is live!</SubTitle>
+                    <SubTitle>Your project is live!</SubTitle>
                     <Button
                         className={getStartedButtonClass}
                         type="default"

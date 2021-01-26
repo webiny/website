@@ -11,16 +11,22 @@ import { trackGoToGithub, trackJoinSlack } from "../ui/functions";
 
 import webinyLogo from "./assets/webiny-logo-with-icon-left-white.svg";
 
-const Wrapper = styled("div")({
-    backgroundColor: theme.color.footerBg,
-    padding: "50px 0 5px",
-    "--nl-text-color": "white",
-    "--nl-text-align": "right",
-});
+const Wrapper = styled("div")(
+    {
+        backgroundColor: theme.color.footerBg,
+        "--nl-text-color": "white",
+        "--nl-text-align": "right",
+    },
+    mq({
+        padding: ["50px 25px 5px 25px", "50px 25px 5px 25px", "50px 0 5px"],
+    }),
+);
 
 const FlexDisplay = css(
     {
+        maxWidth: "100%",
         justifyContent: "space-between",
+        boxSizing: "border-box",
     },
     mq({
         display: ["block", "flex"],

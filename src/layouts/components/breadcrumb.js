@@ -11,7 +11,6 @@ const BreadCrumbPart = styled("section")(
     {
         boxShadow: "0px 0px 5px rgb(0 0 0 / 30%)",
         backgroundColor: "rgba(255, 255, 255, 0.1)",
-        padding: "10px 0",
         a: {
             color: "#fff",
         },
@@ -26,6 +25,7 @@ const BreadCrumbPart = styled("section")(
     },
     mq({
         display: ["none", "block"],
+        padding: ["10px 0 10px 10px", "10px 0 10px 10px", "10px 0"],
     }),
 );
 
