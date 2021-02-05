@@ -2,6 +2,7 @@ import React from "react";
 import styled from "react-emotion";
 import { css } from "emotion";
 import { trackBookADemo } from "../../../ui/functions";
+import Breadcrumb from "../../../../layouts/components/breadcrumb";
 
 import theme from "../../../utils/theme";
 import mq from "../../../utils/breakpoints";
@@ -19,7 +20,7 @@ const HeroSection = styled("section")(
         backgroundRepeat: "no-repeat",
         position: "relative",
         zIndex: 0,
-        padding: "0px 15px",
+        //.padding: "0px 15px",
         height: "100%",
     },
     mq({
@@ -139,34 +140,38 @@ const HeroComponent = ({
     subtitle,
     primaryCTA = defaultPrimaryCTA,
     secondaryCTA = defaultSecondaryCTA,
-}) => (
-    <HeroSection className={className} style={{ backgroundImage: "url(" + heroImage + ")" }}>
-        <ContentContainer className={heroContainerClass}>
-            <WebinyHallMarkImage src={webinyBg} alt={""} />
-            <HeroContentWrapper className={"hero-left"}>
-                <Title>{title}</Title>
-                <SubTitle>{subtitle}</SubTitle>
-                <HeroCTAWrapper>
-                    {primaryCTA && (
-                        <Button className={"button button--yellow-bg"} link={primaryCTA.link}>
-                            {primaryCTA.label}
-                        </Button>
-                    )}
-                    {secondaryCTA && (
-                        <div
-                            onClick={() => {
-                                trackBookADemo({ placement: "solutions-page-hero" });
-                            }}
-                        >
-                            <Button className={"button"} link={secondaryCTA.link}>
-                                {secondaryCTA.label}
+}) => {
+    const breadcrumbs = [{ link: "/", text: "Home" }, { text: "Solution: " + title }];
+    return (
+        <HeroSection className={className} style={{ backgroundImage: "url(" + heroImage + ")" }}>
+            <Breadcrumb breadcrumbs={breadcrumbs} />
+            <ContentContainer className={heroContainerClass}>
+                <WebinyHallMarkImage src={webinyBg} alt={""} />
+                <HeroContentWrapper className={"hero-left"}>
+                    <Title>{title}</Title>
+                    <SubTitle>{subtitle}</SubTitle>
+                    <HeroCTAWrapper>
+                        {primaryCTA && (
+                            <Button className={"button button--yellow-bg"} link={primaryCTA.link}>
+                                {primaryCTA.label}
                             </Button>
-                        </div>
-                    )}
-                </HeroCTAWrapper>
-            </HeroContentWrapper>
-        </ContentContainer>
-    </HeroSection>
-);
+                        )}
+                        {secondaryCTA && (
+                            <div
+                                onClick={() => {
+                                    trackBookADemo({ placement: "solutions-page-hero" });
+                                }}
+                            >
+                                <Button className={"button"} link={secondaryCTA.link}>
+                                    {secondaryCTA.label}
+                                </Button>
+                            </div>
+                        )}
+                    </HeroCTAWrapper>
+                </HeroContentWrapper>
+            </ContentContainer>
+        </HeroSection>
+    );
+};
 
 export default HeroComponent;

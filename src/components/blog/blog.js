@@ -3,6 +3,8 @@ import { DelayInput } from "react-delay-input";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import queryString from "query-string";
 import { navigate } from "gatsby-link";
+import Breadcrumb from "../../layouts/components/breadcrumb";
+
 // utils
 import ContentContainer from "../ui/content-container";
 import BlogCard from "./components/blog-card";
@@ -109,8 +111,11 @@ const Blogs = props => {
         }
     }, [location]);
 
+    const breadcrumbs = [{ link: "/", text: "Home" }, { text: "Blog" }];
+
     return (
         <Fragment>
+            <Breadcrumb theme="dark" breadcrumbs={breadcrumbs} />
             <FeaturedContentSection {...props}>
                 <ContentContainer className={containerClass}>
                     <TextContentWrapper>

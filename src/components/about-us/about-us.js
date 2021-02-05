@@ -9,6 +9,8 @@ import VideoCover from "./assets/hi-from-founders-cover.png";
 import ContentContainer from "../ui/content-container";
 import Button from "../ui/button";
 
+import Breadcrumb from "../../layouts/components/breadcrumb";
+
 // assets
 import webinyBg from "./assets/webiny-bg.svg";
 import welcomeRectImg from "./assets/about-welcome-rect.svg";
@@ -203,9 +205,12 @@ const InvestorText = styled(Text)(
     }),
 );
 
+const breadcrumbs = [{ link: "/", text: "Home" }, { text: "About Us" }];
+
 export default () => (
     <Fragment>
         <SectionWithBackground>
+            <Breadcrumb breadcrumbs={breadcrumbs} />
             <ContentContainer className={heroContainerClass}>
                 <WebinyHallMarkImage src={webinyBg} alt={""} />
                 <HeroSectionWrapper>

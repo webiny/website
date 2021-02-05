@@ -11,7 +11,7 @@ import WhyChooseWebiny from "../elements/why-choose-webiny/why-choose-webiny";
 import { WebinyAppsServerlessBenefits } from "../webiny-apps/webiny-apps";
 import WebinyAppsComponent from "../elements/apps/apps";
 // assets
-import HeroImage from "./assets/page-builder.png";
+import HeroImage from "../../../assets/products/webiny-page-builder.jpg";
 import HeroBg from "./assets/page-builder-hero-bg.svg";
 import PageBuilderDemoImg from "./assets/page-builder-demo.png";
 import Hero from "../elements/hero/hero";

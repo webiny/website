@@ -190,6 +190,7 @@ export const FEATURES = [
         background: grayRectImg,
         imageOnLeft: false,
     },
+    /*
     {
         id: 4,
         videoFile: EnvironmentsVideo,
@@ -266,6 +267,7 @@ export const FEATURES = [
         background: grayRectImg,
         imageOnLeft: false,
     },
+    */
     {
         id: 7,
         videoFile: ContentGroupsVideo,

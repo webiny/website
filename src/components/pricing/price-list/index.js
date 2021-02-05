@@ -51,7 +51,22 @@ const priceList = [
         enterprise: true,
     },
     {
-        label: "Access to enterprise only-features",
+        label: "Multi-tenancy support",
+        open_source: false,
+        enterprise: true,
+    },
+    {
+        label: "Audit logs",
+        open_source: false,
+        enterprise: true,
+    },
+    {
+        label: "3rd party IdP integration (OKTA, Auth0, AD)",
+        open_source: false,
+        enterprise: true,
+    },
+    {
+        label: "Advanced publishing workflow",
         open_source: false,
         enterprise: true,
     },

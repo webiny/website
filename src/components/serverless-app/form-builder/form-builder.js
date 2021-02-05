@@ -1,7 +1,7 @@
 import React from "react";
 import LearnMoreAboutWebiny from "../../ui/layout/learn-more";
 // assets
-import HeroImage from "./assets/form-builder.jpg";
+import HeroImage from "../../../assets/products/webiny-form-builder.jpg";
 import HeroBg from "./assets/hero-bg.svg";
 import FormBuilderDemoImg from "./assets/webiny-form-builder-video-preview.png";
 // data

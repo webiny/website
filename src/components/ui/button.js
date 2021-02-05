@@ -3,6 +3,7 @@ import { cx, css } from "emotion";
 import mq from "../utils/breakpoints";
 import theme from "../utils/theme";
 import Link from "gatsby-link";
+import arrowImg from "./assets/btn-arrow.svg";
 
 const buttonDefault = css(
     {
@@ -36,6 +37,9 @@ const buttonDefault = css(
         },
         "&:active": {
             transform: "translateY(1px)",
+        },
+        "img.arrow": {
+            marginLeft: 10,
         },
     },
     mq({
@@ -80,6 +84,28 @@ const buttonDark = css({
     textTransform: "uppercase",
 });
 
+const buttonDefaultDark = css({
+    backgroundColor: "transparent",
+    color: theme.color.black,
+    textTransform: "uppercase",
+    padding: 0,
+    "&:hover": {
+        boxShadow: "none",
+        textDecoration: "underline",
+    },
+});
+
+const buttonPrimaryLink = css({
+    backgroundColor: "transparent",
+    color: theme.color.primaryDark,
+    textTransform: "uppercase",
+    padding: 0,
+    "&:hover": {
+        boxShadow: "none",
+        textDecoration: "underline",
+    },
+});
+
 const buttonOutline = css({
     backgroundColor: "transparent",
     color: theme.color.white,
@@ -98,6 +124,7 @@ const buttonOutlineDark = css({
 
 class Button extends React.Component {
     styles = {
+        defaultDark: buttonDefaultDark,
         fullWidth: buttonFullWidthStyle,
         primary: buttonPrimary,
         secondary: buttonSecondary,
@@ -105,6 +132,7 @@ class Button extends React.Component {
         dark: buttonDark,
         outline: buttonOutline,
         outlineDark: buttonOutlineDark,
+        primaryLink: buttonPrimaryLink,
     };
 
     render() {
@@ -131,12 +159,14 @@ class Button extends React.Component {
                         target={this.props.hasOwnProperty("target") ? this.props.target : "_self"}
                     >
                         {this.props.children}
+                        {this.props.arrow && <img className="arrow" src={arrowImg} alt="" />}
                     </a>
                 );
             } else {
                 return (
                     <Link to={this.props.link} className={style}>
                         {this.props.children}
+                        {this.props.arrow && <img className="arrow" src={arrowImg} alt="" />}
                     </Link>
                 );
             }
@@ -144,6 +174,7 @@ class Button extends React.Component {
             return (
                 <button className={style} onClick={this.props.onClick}>
                     {this.props.children}
+                    {this.props.arrow && <img className="arrow" src={arrowImg} alt="" />}
                 </button>
             );
         }

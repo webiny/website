@@ -4,7 +4,7 @@ import "aos/dist/aos.css";
 
 import BaseLayout from "../layouts/base";
 
-import GoServerless from "../components/homepage/go-serverless/go-serverless";
+import FooterCta from "../components/ui/footer-cta";
 import HeroSection from "../components/guides-tutorials/hero/hero";
 import DidNotFound from "../components/guides-tutorials/did-not-found/did-not-found";
 import FeaturedContent from "../components/guides-tutorials/featured-content/featured-content";
@@ -23,7 +23,7 @@ const GuidesAndTutorialsPage = () => {
             <HeroSection />
             <FeaturedContent />
             <DidNotFound />
-            <GoServerless />
+            <FooterCta />
         </BaseLayout>
     );
 };

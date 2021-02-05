@@ -29,6 +29,7 @@ const SectionTitle = styled("span")({
 
 const footerMenu = css(
     {
+        maxWidth: "100%",
         flexDirection: "row",
         justifyContent: "space-between",
         color: theme.color.white,
@@ -43,7 +44,6 @@ const FooterMenu = () => (
     <ContentContainer className={footerMenu}>
         <MenuBlock>
             <SectionTitle>Developers</SectionTitle>
-            <a href="https://docs.webiny.com/docs/get-started/quick-start">Getting Started</a>
             <a href="https://docs.webiny.com/">Documentation</a>
             <a
                 onClick={() => {
@@ -72,32 +72,22 @@ const FooterMenu = () => (
         </MenuBlock>
         <MenuBlock>
             <SectionTitle>Webiny</SectionTitle>
+            <Link to="/serverless-application-framework">
+                Serverless Application
+                <br />
+                Framework
+            </Link>
+            <Link to="/serverless-cms">Serverless CMS</Link>
+            <Link to="/enterprise">For Enterprise</Link>
             <Link to="/why-webiny">Why Webiny?</Link>
-            <Link to="/features">Features</Link>
             <Link to="/roadmap">Roadmap</Link>
         </MenuBlock>
         <MenuBlock>
             <SectionTitle>Community</SectionTitle>
-            <a href="https://community.webiny.com/">Forum</a>
-            <a href="https://gitter.im/Webiny/webiny-js">Chat</a>
+            <a href="https://www.webiny.com/slack">Slack Chat</a>
             <Link to="/blog">Blog</Link>
             <Link to="/swag">SWAG</Link>
             <Link to="/events">Events</Link>
-        </MenuBlock>
-        <MenuBlock>
-            <SectionTitle>Included Apps</SectionTitle>
-            <Link rel="prerender" to="/serverless-app/headless-cms">
-                Headless CMS
-            </Link>
-            <Link rel="prerender" to="/serverless-app/page-builder">
-                Page Builder
-            </Link>
-            <Link rel="prerender" to="/serverless-app/form-builder">
-                Form Builder
-            </Link>
-            <Link rel="prerender" to="/serverless-app/file-manager">
-                File Manager
-            </Link>
         </MenuBlock>
         <MenuBlock>
             <SectionTitle>Use Cases & Guides</SectionTitle>

@@ -1,7 +1,7 @@
 import React from "react";
 
 import BaseLayout from "../layouts/base";
-import GoServerless from "../components/homepage/go-serverless/go-serverless";
+import FooterCta from "../components/ui/footer-cta";
 import HeroComponent from "../components/product-roadmap/hero/hero";
 import IntroComponent from "../components/product-roadmap/intro/intro";
 import GameChangerComponent from "../components/product-roadmap/game-changer/game-changer";
@@ -20,7 +20,7 @@ const ProductRoadmap = () => {
             <GameChangerComponent />
             <WCPIntroComponent />
             <WCPMore />
-            <GoServerless />
+            <FooterCta />
         </BaseLayout>
     );
 };
