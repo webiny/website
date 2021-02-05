@@ -17,6 +17,7 @@ const wrapperClass = css(
         backgroundImage: "url(" + goServerlessBg + ")",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
+        backgroundColor: '#F6F4F8',
     },
     mq({
         padding: ["0 15px 25px 15px", "75px 0 25px 0"],
