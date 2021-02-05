@@ -6,7 +6,7 @@ import mq from "../../utils/breakpoints";
 import Button from "../../ui/button";
 import Logo from "./assets/cms/logo.svg";
 import vectorIcon from "./assets/cms/highlight.svg";
-import MainImage from "./assets/cms/main.svg";
+import MainImage from "./assets/cms/main.png";
 import Icon1 from "./assets/cms/icon1.svg";
 import Icon2 from "./assets/cms/icon2.svg";
 import Icon3 from "./assets/cms/icon3.svg";
@@ -55,10 +55,6 @@ const LeftPart = styled("div")(
             alignItems: "center",
             padding: "0 0 33px",
             borderBottom: "1px solid #E6E6E6",
-
-            img: {
-                marginRight: 30
-            },
 
             "& h5": {
                 fontSize: 42,
@@ -129,6 +125,15 @@ const LeftPart = styled("div")(
 
         '& .action-part': {
             justifyContent: ['center', 'flex-start']
+        },
+
+        "& .navigation-header": {
+            flexDirection: ['column', 'row'],
+            textAlign: ['center', 'left'],
+
+            '& img': {
+                marginRight: [0, 30]
+            },
         }
     }),
 );

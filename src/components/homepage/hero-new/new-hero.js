@@ -59,7 +59,6 @@ const getStartedButtonClass = css(
         display: "block !important",
         backgroundColor: `${theme.color.yellow} !important`,
         textTransform: "uppercase",
-        padding: "10px 12px !important",
         height: "40px !important",
         fontWeight: "bold !important",
     },
@@ -126,18 +125,15 @@ const LeftPart = styled("div")(
 const RightPart = styled("div")(
     {
         '& img': {
-            width: '100%'
+            width: '100%',
+            margin: 0
         }
     },
     mq({
         width: ["auto", "60%"],
         maxWidth: [600, "none"],
         marginBottom: [30, 0],
-        padding: ['40px 20px 0', '0 20px'],
-
-        '& img': {
-            margin: [0, 25]
-        }
+        padding: ['40px 20px 0', '0 20px']
     }),
 );
 
@@ -172,6 +168,7 @@ const SubTitle = styled("h3")(
         marginTop: 15,
         marginBottom: 40,
         color: theme.color.white,
+        margin: '20px auto',
 
         '& span': {
             fontWeight: 'bold'
@@ -179,8 +176,6 @@ const SubTitle = styled("h3")(
     },
     mq({
         maxWidth: [337, 887],
-        marginLeft: [0, "auto"],
-        marginRight: [0, "auto"],
         textAlign: ['center', 'left']
     }),
 );

@@ -6,7 +6,7 @@ import mq from "../../utils/breakpoints";
 import Button from "../../ui/button";
 import Logo from "./assets/application/logo.svg";
 import vectorIcon from "./assets/application/highlight.svg";
-import MainImage from "./assets/application/main.svg";
+import MainImage from "./assets/application/main.png";
 import Icon1 from "./assets/application/icon1.svg";
 import Icon2 from "./assets/application/icon2.svg";
 import Icon3 from "./assets/application/icon3.svg";
@@ -50,10 +50,6 @@ const LeftPart = styled("div")(
             padding: "0 0 33px",
             borderBottom: "1px solid #E6E6E6",
 
-            img: {
-                marginRight: 30
-            },
-
             "& h5": {
                 fontSize: 42,
                 color: theme.color.black,
@@ -90,21 +86,17 @@ const LeftPart = styled("div")(
         '& .build-list': {
             display: 'grid',
             gridTemplateColumns: 'repeat(2, 1fr)',
+            gridGap: 8,
 
             '& .build-item': {
                 display: 'flex',
                 alignItems: 'center',
                 marginBottom: 40,
 
-                '& img': {
-                    marginRight: 18
-                },
-
                 '& p': {
                     margin: 0,
                     maxWidth: 142,
-                    fontWeight: 600,                    
-                    fontSize: 18,
+                    fontWeight: 600,
                     lineHeight: '23px',
                     color: '#000'
                 }
@@ -123,6 +115,27 @@ const LeftPart = styled("div")(
 
         '& .action-part': {
             justifyContent: ['center', 'flex-start']
+        },
+
+        "& .navigation-header": {
+            flexDirection: ['column', 'row'],
+            textAlign: ['center', 'left'],
+
+            '& img': {
+                marginRight: [0, 30]
+            },
+        },
+
+        '& .build-list': {
+            '& .build-item': {
+                '& p': {
+                    fontSize: [16, 18],
+                },
+
+                '& img': {
+                    marginRight: [16, 18]
+                },
+            }
         }
     }),
 );

@@ -107,15 +107,23 @@ const DescriptionList = styled("div")(
             '&.bordered': {
                 borderRight: [0, '2px solid white'],
             },
+
+            '& div': {
+                justifyContent: ['center', 'flex-start']
+            },
+
+            '& p': {
+                textAlign: ['center', 'left']
+            }
         }
     }),
 )
 
 const descriptionList = [
-    {img: Icon1, title: 'SEO', description: 'The built-in prerendering services makes your pages crawlable by search engines.'},
-    {img: Icon2, title: 'Images', description: 'Manage digital assets, resize and deliver images on multiple resolutions.'},
-    {img: Icon3, title: 'Plugins', description: 'Expand and change any aspact of the system with custom plugins and business logic.'},
-    {img: Icon4, title: 'Performance', description: 'Numerous built-in performance optimizations make your sites fast and scalable.'}
+    {img: Icon1, title: 'A ready project', description: 'You get a full-stack project with a GraphQL API and a React frontend that you can use to start building.'},
+    {img: Icon2, title: 'Framework', description: 'Write custom apps and business logic and let our framework solve the serverless complexities.'},
+    {img: Icon3, title: 'CLI', description: 'Create new projects and scaffold apps and APIs via command-line. Deploy projects to AWS.'},
+    {img: Icon4, title: 'CMS', description: 'A set of ready-made apps you can use to create APIs, static pages and forms using no-code approach.'}
 ];
 
 const FocusBusiness = () => {
