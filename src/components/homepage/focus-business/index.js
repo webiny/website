@@ -130,7 +130,7 @@ const FocusBusiness = () => {
     return (
         <FocusBusinessSection>            
             <ContentContainer className={contentContainerClass}>
-                <SubTitle>Explore the products</SubTitle>
+                <SubTitle>WHAT’S INCLUDED WITH WEBINY</SubTitle>
                 <Title>
                     Focus on <TitleHighlight>Your Business Requirements,</TitleHighlight> Not Serverless Infrastructure Complexities                    
                 </Title>

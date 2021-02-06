@@ -156,6 +156,7 @@ const DescriptionList = styled("div")(
     {
         display: 'grid',
         marginTop: 38,
+        padding: '0 20px',
 
         '& .description-item': {
             padding: 30,

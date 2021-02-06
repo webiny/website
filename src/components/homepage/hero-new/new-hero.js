@@ -210,7 +210,7 @@ class HeroComponent extends React.Component {
                             </div>                            
                         </LeftPart>
                         <RightPart>
-                            <ImageWrapper>                        
+                            <ImageWrapper>                      
                                 <YTVideoComponent img={PageBuilderDemoImg} id={"odotdrOOvJE"} />
                             </ImageWrapper>
                         </RightPart>
