@@ -84,7 +84,7 @@ class YTVideo extends React.Component {
                     channel="youtube"
                     isOpen={this.state.isOpen}
                     videoId={this.props.id}
-                    onClose={() => this.setState({ isOpen: false })}
+                    onClose={() => this.setState({ isOpen: false })}                    
                 />
             </>
         );

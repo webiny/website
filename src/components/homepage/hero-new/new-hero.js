@@ -16,8 +16,6 @@ import arrowImg from "./assets/btn-arrow.svg";
 const HeroSection = styled("section")(
     {
         backgroundColor: "#F6F4F8",
-        position: "relative",
-        zIndex: 0,
         backgroundRepeat: "no-repeat",
         overflow: "hidden",
     },
