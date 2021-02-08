@@ -12,6 +12,9 @@ import backgroundImg from "./assets/home-hero-bg.svg";
 import webinyGroup from "./assets/webiny-group.svg";
 import PageBuilderDemoImg from "./assets/why-webiny-video-cover.png";
 import arrowImg from "./assets/btn-arrow.svg";
+import backedBy from "./assets/backed-by.svg";
+import checked from "./assets/checked.svg";
+import Slider from "./slider/slider";
 
 const HeroSection = styled("section")(
     {
@@ -23,7 +26,7 @@ const HeroSection = styled("section")(
         backgroundImage: ["url(" + backgroundImg + ")", "url(" + backgroundImg + ")"],
         backgroundSize: ["cover", "100%", "100%"],
         backgroundPosition: ["center", "top", "bottom", "bottom"],
-        padding: ['50px 0 100px', '100px 0'],
+        padding: ["50px 0 100px", "100px 0"],
         "@media (min-width: 1460px)": {
             backgroundPosition: "bottom",
         },
@@ -94,44 +97,45 @@ const ContentSection = styled("div")(
     },
     mq({
         width: ["auto", "100%"],
-        alignItems: ["center", "stretch"],
+        alignItems: ["center", "center"],
         flexDirection: ["column", "row"],
     }),
 );
 
 const LeftPart = styled("div")(
     {
-        padding: '0 20px',
+        padding: "0 20px",
 
-        '& .action-part': {
-            display: 'flex',
-            alignItems: 'center',
-            marginTop: 30
-        }
+        "& .action-part": {
+            display: "flex",
+            alignItems: "center",
+            marginTop: 30,
+            marginBottom: 30,
+        },
     },
     mq({
         width: ["auto", "40%"],
         maxWidth: [600, "none"],
         marginBottom: [0, 0],
 
-        '& .action-part': {
-            justifyContent: ['center', 'flex-start']
-        }
+        "& .action-part": {
+            justifyContent: ["center", "flex-start"],
+        },
     }),
 );
 
 const RightPart = styled("div")(
     {
-        '& img': {
-            width: '100%',
-            margin: 0
-        }
+        "& img": {
+            width: "100%",
+            margin: 0,
+        },
     },
     mq({
         width: ["auto", "60%"],
         maxWidth: [600, "none"],
         marginBottom: [30, 0],
-        padding: ['40px 20px 0', '0 20px']
+        padding: ["40px 20px 0", "0 20px"],
     }),
 );
 
@@ -147,7 +151,7 @@ const Title = styled("h1")(
     mq({
         marginLeft: [0, "auto"],
         marginRight: [0, "auto"],
-        textAlign: ['center', 'left']
+        textAlign: ["center", "left"],
     }),
 );
 
@@ -166,17 +170,33 @@ const SubTitle = styled("h3")(
         marginTop: 15,
         marginBottom: 40,
         color: theme.color.white,
-        margin: '20px auto',
+        margin: "20px auto",
 
-        '& span': {
-            fontWeight: 'bold'
-        }
+        "& span": {
+            fontWeight: "bold",
+        },
     },
     mq({
         maxWidth: [337, 887],
-        textAlign: ['center', 'left']
+        textAlign: ["center", "left"],
     }),
 );
+
+const List = styled("div")({
+    display: "flex",
+    color: theme.color.white,
+    fontSize: 20,
+    fontWeight: 300,
+    margin: "30px 0",
+    ">div": {
+        backgroundImage: "url(" + checked + ")",
+        backgroundPositionX: 0,
+        backgroundPositionY: 5,
+        backgroundRepeat: "no-repeat",
+        paddingLeft: 35,
+        marginRight: 80,
+    },
+});
 
 class HeroComponent extends React.Component {
     render() {
@@ -189,13 +209,20 @@ class HeroComponent extends React.Component {
                         <LeftPart>
                             <Title>
                                 Build &nbsp;
-                                <TitleHighlight>Serverless</TitleHighlight>&nbsp;
-                                Solutions in Minutes
+                                <TitleHighlight>Serverless</TitleHighlight>&nbsp; Solutions in
+                                Minutes
                             </Title>
                             <SubTitle>
-                                Create <span>GraphQL APIs, full-stack applications and  websites</span>. Deploy with single command to your AWS.
+                                Create{" "}
+                                <span>GraphQL APIs, full-stack applications and websites</span>.
+                                Deploy with single command to your AWS.
                             </SubTitle>
-                            <ClipPart text="npx create-webiny-project new-project" />
+
+                            <List>
+                                <div>Open-source</div>
+                                <div>Self-hosted</div>
+                            </List>
+
                             <div className="action-part">
                                 <Button
                                     className={getStartedButtonClass}
@@ -205,11 +232,12 @@ class HeroComponent extends React.Component {
                                 >
                                     Get Started Tutorial &nbsp; <img src={arrowImg} alt="" />
                                 </Button>
-                            </div>                            
+                            </div>
+                            <img src={backedBy} />
                         </LeftPart>
                         <RightPart>
-                            <ImageWrapper>                      
-                                <YTVideoComponent img={PageBuilderDemoImg} id={"odotdrOOvJE"} />
+                            <ImageWrapper>
+                                <Slider />
                             </ImageWrapper>
                         </RightPart>
                     </ContentSection>

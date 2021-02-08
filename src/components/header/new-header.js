@@ -161,7 +161,7 @@ const MenuItemList = props => (
     </React.Fragment>
 );
 
-const Header = ({ hasBanner = false }) => {
+const Header = ({ hasBanner = true }) => {
     // TODO: We'll see what to do with them
     const [sticky, setSticky] = useState(true);
     const [hideBanner, setHideBanner] = useState(false);
@@ -177,10 +177,8 @@ const Header = ({ hasBanner = false }) => {
         <Fragment>
             {hasBanner && (
                 <Banner
-                    title={
-                        "♥️♥️♥️ We are live on Product hunt - if you like what you see here, please show us some love ♥️♥️♥️"
-                    }
-                    link={"https://www.webiny.com/product-hunt"}
+                    title={"Webiny v5 beta is now available for testing 🚀"}
+                    link={"https://docs.webiny.com/"}
                     tag={"new"}
                 />
             )}
