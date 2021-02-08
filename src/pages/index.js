@@ -3,10 +3,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import BaseLayout from "../layouts/base";
-import Hero from "../components/homepage/hero-new/hero";
+import Hero from "../components/homepage/hero-new/new-hero";
+import FocusBusiness from "../components/homepage/focus-business";
 import ServerlessEasy from "../components/homepage/serverless-easy/serverless-easy";
-import CompleteSection from "../components/homepage/complete-serverless";
-import WhyWebinyWhyServerless from "../components/homepage/why-serverless/why-serverless";
+import CompleteSection from "../components/homepage/new-complete-serverless";
 import ClientsLogo from "../components/homepage/clients-logo/clients-logo";
 import CaseStudy from "../components/ui/case-study";
 import FooterCta from "../components/ui/footer-cta";
@@ -24,11 +24,11 @@ class IndexPage extends React.Component {
                 fixedHeader={false}
             >
                 <Hero />
-                <ClientsLogo />
-                <CompleteSection />
-                {/*<WhyWebinyWhyServerless />*/}
+                <FocusBusiness />
+                <CompleteSection />                
                 <CaseStudy />
                 <ServerlessEasy />
+                <ClientsLogo />
                 <FooterCta />
             </BaseLayout>
         );
