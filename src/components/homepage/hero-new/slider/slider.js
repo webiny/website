@@ -12,19 +12,29 @@ import enjoyVideo from "../assets/webiny-install-enjoy-step.mp4";
 
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
-const Wrapper = styled("div")({
-    display: "flex",
-    width: "calc(100% - 100px)",
-    flexDirection: "column",
-    marginLeft: 100,
-});
+const Wrapper = styled("div")(
+    {
+        display: "flex",
+        flexDirection: "column",
+    },
+    mq({
+        width: ["auto", "calc(100% - 100px)"],
+        marginLeft: [0, 100],
+        maxWidth: ["100vw", "100%"],
+    }),
+);
 
-const Content = styled("div")({
-    width: "100%",
-    marginTop: 25,
-    marginLeft: 10,
-    position: "relative",
-});
+const Content = styled("div")(
+    {
+        width: "100%",
+        height: 368,
+        marginTop: 25,
+        position: "relative",
+    },
+    mq({
+        marginLeft: [0, 10],
+    }),
+);
 
 const Spinner = styled("div")({
     position: "absolute",
@@ -70,14 +80,17 @@ const StepDivider = styled("div")({
     opacity: 0.7,
 });
 
-const Video = styled("video")({
-    borderRadius: 5,
-    width: "567",
-    //border: "1px solid #000",
-    boxShadow: "0 2px 4px 0 rgba(0,0,0,0.25)",
-    height: 363,
-    marginRight: -5,
-});
+const Video = styled("video")(
+    {
+        borderRadius: 5,
+        boxShadow: "0 2px 4px 0 rgba(0,0,0,0.25)",
+    },
+    mq({
+        height: ["auto", 363],
+        width: ["100%", 567],
+        marginRight: -5,
+    }),
+);
 
 class Slider extends React.Component {
     state = {
@@ -113,6 +126,7 @@ class Slider extends React.Component {
             content: this.tabs[tab].content,
             duration: this.tabs[tab].duration,
         });
+        console.log("Change tab:" + tab);
     };
 
     render() {
@@ -158,7 +172,7 @@ class Slider extends React.Component {
                             duration={this.state.duration}
                             colors={[["#E8653B"]]}
                             onComplete={() => {
-                                let activeTab = this.state.activeTab;
+                                let activeTab = this.state.activeTab + 1;
                                 if (activeTab > 3) {
                                     activeTab = 1;
                                 }

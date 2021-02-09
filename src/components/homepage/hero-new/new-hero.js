@@ -121,6 +121,10 @@ const LeftPart = styled("div")(
         "& .action-part": {
             justifyContent: ["center", "flex-start"],
         },
+        "& .backed-by": {
+            margin: ["0 auto", 0],
+            display: "block",
+        },
     }),
 );
 
@@ -182,21 +186,28 @@ const SubTitle = styled("h3")(
     }),
 );
 
-const List = styled("div")({
-    display: "flex",
-    color: theme.color.white,
-    fontSize: 20,
-    fontWeight: 300,
-    margin: "30px 0",
-    ">div": {
-        backgroundImage: "url(" + checked + ")",
-        backgroundPositionX: 0,
-        backgroundPositionY: 5,
-        backgroundRepeat: "no-repeat",
-        paddingLeft: 35,
-        marginRight: 80,
+const List = styled("div")(
+    {
+        display: "flex",
+        color: theme.color.white,
+        fontSize: 20,
+        fontWeight: 300,
+        margin: "30px 0",
+        ">div": {
+            backgroundImage: "url(" + checked + ")",
+            backgroundPositionX: 0,
+            backgroundPositionY: 5,
+            backgroundRepeat: "no-repeat",
+            paddingLeft: 35,
+        },
     },
-});
+    mq({
+        justifyContent: ["center", "flex-start"],
+        ">div": {
+            marginRight: [25, 80],
+        },
+    }),
+);
 
 class HeroComponent extends React.Component {
     render() {
@@ -215,7 +226,9 @@ class HeroComponent extends React.Component {
                             <SubTitle>
                                 Create{" "}
                                 <span>GraphQL APIs, full-stack applications and websites</span>.
-                                Deploy with single command to your AWS.
+                                Deploy with single command to your AWS. Runs on services like AWS
+                                Lambda and DynamoDB.{" "}
+                                <span>Highly-scalable & highly-available out of the box.</span>
                             </SubTitle>
 
                             <List>
@@ -233,7 +246,13 @@ class HeroComponent extends React.Component {
                                     Get Started Tutorial &nbsp; <img src={arrowImg} alt="" />
                                 </Button>
                             </div>
-                            <img src={backedBy} />
+                            {/*
+                            <img
+                                class="backed-by"
+                                src={backedBy}
+                                title="Backed by Y Combinator & Episode 1"
+                            />
+                            */}
                         </LeftPart>
                         <RightPart>
                             <ImageWrapper>

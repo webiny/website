@@ -18,8 +18,8 @@ const ServerlessCMS = () => {
     ];
     return (
         <BaseLayout
-            title="Serverless CMS"
-            description="Agile, flexible and scalable solution for your growing content needs."
+            title="Serverless CMS - Open-source & Self-hosted powered by GraphQL"
+            description="Agile, flexible and scalable solution for your growing content needs. Headless CMS with a GraphQL API."
         >
             <Hero breadcrumbs={breadcrumbs} />
             <OneSize />
