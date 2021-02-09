@@ -3,10 +3,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import BaseLayout from "../layouts/base";
-import Hero from "../components/homepage/hero-new/hero";
+import Hero from "../components/homepage/hero-new/new-hero";
+import FocusBusiness from "../components/homepage/focus-business";
 import ServerlessEasy from "../components/homepage/serverless-easy/serverless-easy";
-import CompleteSection from "../components/homepage/complete-serverless";
-import WhyWebinyWhyServerless from "../components/homepage/why-serverless/why-serverless";
+import CompleteSection from "../components/homepage/new-complete-serverless";
 import ClientsLogo from "../components/homepage/clients-logo/clients-logo";
 import CaseStudy from "../components/ui/case-study";
 import FooterCta from "../components/ui/footer-cta";
@@ -19,16 +19,16 @@ class IndexPage extends React.Component {
     render() {
         return (
             <BaseLayout
-                title="The easiest way to adopt serverless"
-                description="Webiny is an open-source framework for building serverless applications. Webiny is powered by React, Node and GraphQL."
+                title="Open-Source Serverless CMS and Serverless Application Framework"
+                description="Webiny is an open-source framework for building serverless applications with a drop-in CMS. Webiny is powered by React, Node and GraphQL."
                 fixedHeader={false}
             >
                 <Hero />
-                <ClientsLogo />
+                <FocusBusiness />
                 <CompleteSection />
-                {/*<WhyWebinyWhyServerless />*/}
                 <CaseStudy />
                 <ServerlessEasy />
+                <ClientsLogo />
                 <FooterCta />
             </BaseLayout>
         );

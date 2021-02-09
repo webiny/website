@@ -19,7 +19,8 @@ import teslaLogo from "./assets/tesla.svg";
 
 const wrapperClass = css(
     {
-        backgroundImage: "url(" + sectionBg + ")",
+        //backgroundImage: "url(" + sectionBg + ")",
+        backgroundColor: '#F6F4F8',
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "bottom",
@@ -39,7 +40,7 @@ const contentContainerClass = css(
     mq({
         width: ["100%", "100%"],
         height: ["100%", "auto"],
-        padding: ["0px 0px 120px", "16px 0px 80px"],
+        padding: ["100px 0px 80px", "80px 0px 40px"],
     }),
 );
 

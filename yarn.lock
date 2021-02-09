@@ -14633,6 +14633,15 @@ react-addons-css-transition-group@^15.6.2:
   dependencies:
     react-transition-group "^1.2.0"
 
+react-animated-term@^1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/react-animated-term/-/react-animated-term-1.3.2.tgz#e222bf9fb5ccc3864c5498db0c8352c1cf897072"
+  integrity sha1-4iK/n7XMw4ZMVJjbDINSwc+JcHI=
+  dependencies:
+    babel-runtime "^6.26.0"
+    classnames "^2.2.5"
+    prop-types "^15.6.1"
+
 react-circular-progressbar@^2.0.0:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/react-circular-progressbar/-/react-circular-progressbar-2.0.3.tgz#fa8eb59f8db168d2904bae4590641792c80f5991"
@@ -14644,6 +14653,13 @@ react-clientside-effect@^1.2.2:
   integrity sha512-nRmoyxeok5PBO6ytPvSjKp9xwXg9xagoTK1mMjwnQxqM9Hd7MNPl+LS1bOSOe+CV2+4fnEquc7H/S8QD3q697A==
   dependencies:
     "@babel/runtime" "^7.0.0"
+
+react-countdown-circle-timer@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/react-countdown-circle-timer/-/react-countdown-circle-timer-2.4.0.tgz#9d07dc63073265876ee54caf8f76baaf8b9946f6"
+  integrity sha512-ooJNThmJJb5BdRbDHPRc5dyP5Zl1uuCwifuOk4HP0MkeAq3ePZx2E7bcKC5O6wvdsa2YFBIrndCsHwUkSc7qxQ==
+  dependencies:
+    use-elapsed-time "2.1.6"
 
 react-delay-input@^4.1.0:
   version "4.1.0"
@@ -18107,6 +18123,11 @@ use-callback-ref@^1.2.1, use-callback-ref@^1.2.3:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/use-callback-ref/-/use-callback-ref-1.2.4.tgz#d86d1577bfd0b955b6e04aaf5971025f406bea3c"
   integrity sha512-rXpsyvOnqdScyied4Uglsp14qzag1JIemLeTWGKbwpotWht57hbP78aNT+Q4wdFKQfQibbUX4fb6Qb4y11aVOQ==
+
+use-elapsed-time@2.1.6:
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/use-elapsed-time/-/use-elapsed-time-2.1.6.tgz#8ad0c0054a1ba7bf881540855b5eb2d60ff501be"
+  integrity sha512-6h6bY63oto1REUqcID3Goedgl5tVqWXsLzUSJ6EB9VprqZqnO5VDo1kkQqY/6V5Jc4Wu4XUgW3B8aDUHG2KRcA==
 
 use-sidecar@^1.0.1:
   version "1.0.3"

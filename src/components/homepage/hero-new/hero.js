@@ -4,7 +4,7 @@ import { css } from "emotion";
 import theme from "../../utils/theme";
 import mq from "../../utils/breakpoints";
 import ContentContainer from "../../ui/content-container";
-//import YTVideoComponent from "../../ui/layout/yt-video";
+import YTVideoComponent from "../../ui/layout/yt-video";
 import Button from "../../ui/button";
 
 import heroBg from "./assets/hero-bg-with-scroll.svg";
@@ -13,7 +13,7 @@ import vectorIcon from "./assets/vector.svg";
 //import webinyEasyImg from "./assets/easy-webiny.svg";
 import backgroundImg from "./assets/home-hero-bg.svg";
 import webinyGroup from "./assets/webiny-group.svg";
-//import PageBuilderDemoImg from "./assets/why-webiny-video-cover.png";
+import PageBuilderDemoImg from "./assets/why-webiny-video-cover.png";
 //import commandImg from "./assets/command.svg";
 import arrowImg from "./assets/btn-arrow.svg";
 import highlightIcon from "./assets/hero-highlight.svg";
@@ -255,7 +255,7 @@ class HeroComponent extends React.Component {
                             <br />
                             full-stack serverless applications and websites.
                         </SubTitle>
-                        <HeroList>
+                        {/* <HeroList>
                             <div className="hero-item">
                                 <h3>
                                     <span>Serverless</span>, open-source and self-hosted
@@ -294,7 +294,7 @@ class HeroComponent extends React.Component {
                                     less effort required to maintain your application.
                                 </p>
                             </div>
-                        </HeroList>
+                        </HeroList> */}
                         {/*
                         <FeatureWrapper>
                             <img src={commandImg} alt="" />
@@ -311,11 +311,11 @@ class HeroComponent extends React.Component {
                             </Button>
                         </ButtonWrapper>
                     </HeroSectionWrapper>
-                    {/*
+                    
                     <ImageWrapper>                        
                         <YTVideoComponent img={PageBuilderDemoImg} id={"odotdrOOvJE"} />
                     </ImageWrapper>
-                    */}
+                   
                 </ContentContainer>
             </HeroSection>
         );
