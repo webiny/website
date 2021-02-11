@@ -15,7 +15,7 @@ import "./reset.css";
 const Wrapper = styled("div")(
     {},
     mq({
-        paddingTop: [55, 65],
+        paddingTop: [55, 90], // 65 if there is no banner, 90 if there is a banner
     }),
 );
 
@@ -66,7 +66,7 @@ class BaseLayout extends React.Component {
       */}
                 <ModalProvider>
                     <Wrapper>
-                        <Header trackScroll={!this.props.fixedHeader} />                        
+                        <Header trackScroll={!this.props.fixedHeader} />
                         {this.props.children}
                         <Footer />
                         <CookieNotice />

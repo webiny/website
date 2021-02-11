@@ -211,7 +211,7 @@ const examples = [
     {
         img: example4,
         title: "File Manager",
-        description: "Create forms using a drag&drop interface and track how they convert.",
+        description: "Upload, categorize, search and edit your files.",
         color: theme.color.purple,
     },
 ];

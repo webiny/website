@@ -209,6 +209,6 @@ export const experienceList = [
         imageSrc: Icon24,
         title: "Server(less) pre-rendering",
         body:
-            "Webiny features a built-in service for pre-rendering content for SEO and performance purposes. Our Page Builder app uses is, but so can you custom apps as well. Pre-rendered pages can be stored to S3 and cache on CloudFront for fast and scalable content delivery.",
+            "Webiny features a built-in service for pre-rendering content for SEO and performance purposes. Our Page Builder app uses it, but so can your custom apps as well. Pre-rendered pages can be stored to S3 and cached on CloudFront for fast and scalable content delivery.",
     },
 ];

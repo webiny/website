@@ -140,7 +140,7 @@ const WEBINY_APPS = [
     {
         id: 3,
         title: "File Manager",
-        body: "Upload, categorise, search and edit your files.",
+        body: "Upload, categorize, search and edit your files.",
         color: theme.color.purple,
         actionType: "dark",
         actionLabel: "learn more",
