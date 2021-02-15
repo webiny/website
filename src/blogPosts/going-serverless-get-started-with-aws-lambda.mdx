@@ -230,7 +230,7 @@ Remove the comments in the JSON file below when you paste the policy.
             "Effect": "Allow",
             "Action": [
                 "s3:GetObject" 
-								// This is the GetObject action which allows us to get the base `image` bucket.
+                // This is the GetObject action which allows us to get the base `image` bucket.
             ],
             "Resource": "arn:aws:s3:::lambdatestingimage/*"
         },
@@ -240,7 +240,7 @@ Remove the comments in the JSON file below when you paste the policy.
                 "s3:PutObject"
             ],
             "Resource": "arn:aws:s3:::lambdatestingimage-resized/*" 
-						// This is the PutObject which allows us to add the new object to the `image-resized` bucket.
+            // This is the PutObject which allows us to add the new object to the `image-resized` bucket.
         }
     ]
 }
@@ -421,8 +421,6 @@ Create a new txt file as inputFile.txt and copy/paste the below JSON snippet, do
             "eTag":"d41d8cd98f00b204e9800998ecf8427e",
             "versionId":"096fKKXTRTtl3on89fVO.nfljtsv6qko"
         }
-        }
-    }
     ]
 }
 ```
