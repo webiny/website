@@ -8,9 +8,9 @@ author: albiona
 date: 2021-02-15
 ---
 
-Earlier in the Webiny blog, we discussed <ExternalLink href="https://www.webiny.com/blog/5-aws-services-you-need-to-know-for-web-development?utm_source=Webiny-blog&utm_medium=webiny-blog&utm_campaign=webiny-weekly-tech-blog-feb-15&utm_content=webiny-5-aws-services-you-need-for-web-development&utm_term=W00542">the top 5 AWS services you need to know when it comes to web development</ExternalLink> — The one AWS service that it grew super fast is the compute service: Lambda. `Lambda is a compute service that lets you run code without provisioning or managing servers.` — <ExternalLink href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">Source</ExternalLink>. 
+Earlier on the Webiny blog, we discussed <ExternalLink href="https://www.webiny.com/blog/5-aws-services-you-need-to-know-for-web-development?utm_source=Webiny-blog&utm_medium=webiny-blog&utm_campaign=webiny-weekly-tech-blog-feb-15&utm_content=webiny-5-aws-services-you-need-for-web-development&utm_term=W00542">the top 5 AWS services you need to know when it comes to web development</ExternalLink> — The one AWS service that grew super fast is the compute service: Lambda. `Lambda is a compute service that lets you run code without provisioning or managing servers.` — <ExternalLink href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What is AWS Lambda?</ExternalLink>. 
 
-In this article, we'll provide a guide for beginners to get starting with Lambda service, starting from serverless architecture paradigm, where does Lambda comes in? What is Lambda? What are the core parts of Lambda? What are Lambda invocation patterns? What are Lambda Execution Models? 
+In this article, we’ll provide a guide for beginners to get started with Lambda service, starting from the serverless architecture paradigm, where does Lambda come in? We’ll go through what is Lambda, the core parts of Lambda, Lambda invocation patterns, and Lambda Execution Models? 
 
 Last but not least, you'll get hands-on Lambda by triggering a Lambda function in each S3 image file upload where you'll resize the image.
 
@@ -18,7 +18,7 @@ Let's dive in.
 
 When starting with AWS Lambda there is a great chance you heard about Serverless! **Serverless** is the new **application architecture paradigm** that came up with the **creation** of the **AWS Lambda service**. 
 
-With serverless usually referred as serverless applications, you will focus on the core product and business logic, learn more about serverless on the *Serverless Computing* section in <ExternalLink href="https://www.webiny.com/blog/get-started-with-cloud-concepts?utm_source=Webiny-blog&utm_medium=webiny-blog&utm_campaign=webiny-weekly-tech-blog-feb-15&utm_content=webiny-get-started-with-cloud-computing&utm_term=W00543">Get Started with Cloud Computing blog</ExternalLink>.
+With serverless usually referred to as serverless applications, you will focus on the core product and business logic, learn more about serverless on the *Serverless Computing* section in <ExternalLink href="https://www.webiny.com/blog/get-started-with-cloud-concepts?utm_source=Webiny-blog&utm_medium=webiny-blog&utm_campaign=webiny-weekly-tech-blog-feb-15&utm_content=webiny-get-started-with-cloud-computing&utm_term=W00543">Get Started with Cloud Computing blog</ExternalLink>.
 
 Lambda is usually described as a type of **serverless** ***Function-as-a-Service(FaaS)**** — a **single unit** acting as a **service** performing an **action**, no need for a server.
 
@@ -26,13 +26,13 @@ Lambda is usually described as a type of **serverless** ***Function-as-a-Service
 
 Lambda is a high-scale, provision-free serverless compute service, that is offered via **functions**. With Lambda you can build the cloud logic layer for your application. You can create Lambda functions in multiple programming languages, such as Java, Node.js, C#, Go. 
 
-Your **code** will be placed inside the Lambda function, and depending on the **event source** that will **trigger the Lambda function**, it will **execute the code** toward any **service** you want to connect your Lambda to, such as databases, data stores, or API endpoints. 
+Your **code** will be placed inside the Lambda function, and depending on the **event source** that will **trigger the Lambda function**, it will **execute the code** toward any **service** you want to connect your Lambda too, such as databases, data stores, or API endpoints. 
 
 Right now we mentioned three important steps of creating and using Lambda functions, those are the **Event sources** that trigger Lambda functions, the **Code** inside Lambda function, and the **Services** you connect with your Lambda function. 
 
-There are somewhere 50 different event sources at AWS that directly invoke the Lambda function — these services represent different **categories** such as changes in data state, requests to endpoints, etc. There are many event source options that can trigger your Lambda function directly, check out the full list <ExternalLink href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-services.html">here</ExternalLink>.  
+There are somewhere 50 different event sources at AWS that directly invoke the Lambda function — these services represent different **categories** such as changes in data state, requests to endpoints, etc. Many event source options can trigger your Lambda function directly, check out the full list <ExternalLink href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-services.html">here</ExternalLink>.  
 
-The other side of the Lambda function are the **services** we mentioned, anything you would do when building an application elsewhere can be can be done inside Lambda as well. As we can see Lambda runs within a simplified architecture that looks like the image below.
+The other side of the Lambda function is the **services** we mentioned, anything you would do when building an application elsewhere can be done inside Lambda as well. As we can see Lambda runs within a simplified architecture that looks like the image below.
 
 ![Lambda workflow](./assets/going-serverless-get-started-with-aws-lambda/lambda_workflow.png)
 <p style="text-align: center; font-style: italic;">
@@ -43,17 +43,17 @@ The Lambda runtime converts the event source into an object and passes it to you
 
 ## Lambda core parts
 
-Our goal is to learn the main components and features of Lambda, then followed by a real-world example on building serverless applications using Lambda. Now, we'll go through the core parts of Lambda that are the function code, event sources, and function configuration. 
+Our goal is to learn the key components and features of Lambda, then followed by a real-world example of building serverless applications using Lambda. Now, we'll go through the core parts of Lambda that are the function code, event sources, and function configuration. 
 
 ### Lambda Function Code
 
-We mentioned that Lambda offers the ability to write code in different programming languages. You can also use different third party libraries as part of your function code package. This function code package can hold up at the minimum your code you want the Lambda function to execute, and additional files, classes and libraries that your code needs to import, manipulate, and execute. There is a limit size for the Lambda function that is a 50 MB compressed and 250 MB extracted. 
+We mentioned that Lambda offers the ability to write code in different programming languages. You can also use different third-party libraries as part of your function code package. This function code package can hold up at the minimum your code you want the Lambda function to execute, and additional files, classes, and libraries that your code needs to import, manipulate, and execute. There is a limit size for the Lambda function that is a 50 MB compressed and 250 MB extracted. 
 
 ### The Handler
 
-When your Lamdba function invokes, the code execution starts in the `handler()` function (Node,js, Python), the handler function is where your logic or the statements that call your logic would exist. The code you have inside the Lambda function can call other methods and functions within the files that you've uploaded in the function code package. You can import third-party libraries, install and execute them, also **interact** with other **AWS services** or doing **API requests** to third-party web services it depends on.
+When your Lambda function invokes, the code execution starts in the `handler()` function (Node,js, Python), the handler function is where your logic or the statements that call your logic would exist. The code you have inside the Lambda function can call other methods and functions within the files that you've uploaded in the function code package. You can import third-party libraries, install and execute them, also **interact** with other **AWS services** or doing **API requests** to third-party web services it depends on.
 
-Creating a lambda func via the user interface on aws console.
+Creating a lambda func via the user interface on AWS console.
 
 ```jsx
 exports.handler = async (event, context, callback) => {
@@ -71,11 +71,11 @@ Once the handler is invoked inside your Lambda function, the runtime environment
 
 ### **The Event Object**
 
-The **event object** is one of the parameters provided to the handler function when the Lambda function is invoked. The **event object** can have different structure and content based on the **event source** that creates the event. Your Lambda function will consume all the data and metadata it holds in the **event** parameter. Depending on the **event source**, lets say an **API Gateway** event will have information related to the HTTPS request such as the path, query string, request body, whereas an event from **S3** will have information related to the newly created object, and details about the bucket. 
+The **event object** is one of the parameters provided to the handler function when the Lambda function is invoked. The **event object** can have a different structure and content based on the **event source** that creates the event. Your Lambda function will consume all the data and metadata it holds in the **event** parameter. Depending on the **event source**, let's say an **API Gateway** event will have information related to the HTTPS request such as the path, query-string, request body, whereas an event from **S3** will have information related to the newly created object, and details about the bucket. 
 
 ### **The Context Object**
 
-We mentioned that when once the handler is invoked inside the Lambda function, the runtime environment now belongs to the code inside our Lambda function, the **context object** in this case takes information about the actual environment that lambda function is running in. Things like **request ID log** information, **remaining time** information memory, **logging**, and other things we can pass down.
+We mentioned when once the handler is invoked inside the Lambda function, the runtime environment now belongs to the code inside our Lambda function, the **context object**, in this case, takes information about the actual environment that the lambda function is running in. Things like **request ID log** information, **remaining time** information memory, **logging**, and other things we can pass down.
 
 ## Lambda Invocation Patterns
 
@@ -83,7 +83,7 @@ There are two invocation methods for a Lambda function:
 
 - **Push Model**
 
-    Your Lambda function is invoked every time a particular event occurs within another AWS service, that event can be placed by an API Gateway request, new object added to S3 bucket, or a new SNS notification. The data source gives a sign for Lambda to start invoking the Lambda function with the new *data record*. 
+    It invokes Your Lambda function every time a particular event occurs within another AWS service, that event can be placed by an API Gateway request, a new object added to the S3 bucket or a new SNS notification. The data source gives a sign for Lambda to start invoking the Lambda function with the new *data record*. 
 
 - **Pull Model**
 
@@ -91,7 +91,7 @@ There are two invocation methods for a Lambda function:
 
 You can also run Lambda functions in **synchronously** and **asynchronously** — by choosing the `InvocationType` parameter that's provided when invoking a Lambda function. 
 
-The `InvocationType` parameter is what offers you to choose between three values, and those are:
+The `InvocationType` parameter offers you to choose between three values, and those are:
 
 - `RequestResponse` — Executing synchronously
 - `Event` — Executing asynchronously
@@ -101,7 +101,7 @@ The **event sources** are the ones that decide how your Lambda function will be 
 
 ## Lambda Use Cases
 
-As you dive into AWS services, you start to get the idea how different services can be used together to solve a digital problem, and provide value for your customers. Now that you have an idea of what is and what does Lambda provides when building serverless applications, you know that the core components of Lambda are the **functions** and **triggers**. 
+As you dive into AWS services, you get the idea of how different services we can use together to solve a digital problem and provide value for your customers. Now that you what is and what does Lambda provides when building serverless applications, you know that the core components of Lambda are the **functions** and **triggers**. 
 
 A **trigger** is the AWS service or application that **invokes** a Lambda function, and the **Lambda function** is the code or runtime that processes events. 
 
@@ -138,7 +138,7 @@ Let's go through types and use-cases you can build using AWS Lambda.
     2. Mobile
     3. IoT
 - **Data Processing**
-    1. Real time
+    1. Real-time
     2. MapReduce
     3. Batch
 - **Chatbots**
@@ -155,17 +155,17 @@ Let's go through types and use-cases you can build using AWS Lambda.
 
 Now that we learned what is Lambda and the core parts, let's learn how to use lambda with S3 storage by code.
 
-There are plenty of ideas you can start off with AWS Lambda, for this article, we'll use the AWS Lambda with AWS S3 storage. We already published a <ExternalLink href="https://www.webiny.com/blog/get-started-with-aws-s3?utm_source=Webiny-blog&utm_medium=webiny-blog&utm_campaign=webiny-weekly-tech-blog-feb-15&utm_content=webiny-get-started-with-aws-s3&utm_term=W00544">Get Started with S3</ExternalLink> article on our blog, where you can learn how to create S3 buckets, uploading files, listing objects, and deleting S3 bucket.
+There are plenty of ideas you can start with AWS Lambda, for this article, we'll use the AWS Lambda with AWS S3 storage. We already published a <ExternalLink href="https://www.webiny.com/blog/get-started-with-aws-s3?utm_source=Webiny-blog&utm_medium=webiny-blog&utm_campaign=webiny-weekly-tech-blog-feb-15&utm_content=webiny-get-started-with-aws-s3&utm_term=W00544">Get Started with S3</ExternalLink> article on our blog, where you can learn how to create S3 buckets, uploading files, listing objects, and deleting S3 bucket.
 
-Now that we've learned two AWS services, the S3 and the AWS Lambda, we are going to use the two of them to really understand how those can interact with each other to build different use cases we plan to. 
+Now that we've learned two AWS services, the S3 and the AWS Lambda, we are going to use the two of them to understand how those can interact with each other to build different use cases we plan to. 
 
-We mentioned the use cases when it comes to Lambda and S3 on creating image modifications such as thumbnails, different resolutions, watermarks, etc. for images that you upload to an S3 bucket through your application. Processing the data that are uploaded to S3 bucket and then moving those to another S3 bucket as part of a larger data pipeline.
+We mentioned the use cases for Lambda and S3 on creating image modifications such as thumbnails, different resolutions, watermarks, for images that you upload to an S3 bucket through your application. Processing the data that are uploaded to the S3 bucket and then moving those to another S3 bucket as part of a larger data pipeline.
 
 In this article we're going to do just that, we're going to ***resize*** for each image file that is uploaded to a **bucket**. 
 
 
 :::note
-The example below is inspired from the AWS docs.*
+The example below is inspired by the AWS docs.*
 :::
 
 **AWS Lambda** **Resources**:
@@ -182,7 +182,7 @@ The example below is inspired from the AWS docs.*
 - Source bucket with a notification configuration that invokes the Lambda function.
 - Another bucket to save the resized images.
 
-The below diagram shows the connection between the user, that creates an object in a S3 bucket, then the S3 detection of the created event, S3 invoking the Lambda function using the execution role permissions, and then the Lambda function.
+The below diagram shows the connection between the user, that creates an object in an S3 bucket, then the S3 detection of the created event, S3 invoking the Lambda function using the execution role permissions, and then the Lambda function.
 
 ![AWS Lambda S3 Workflow](./assets/going-serverless-get-started-with-aws-lambda/aws-lambda-s3.png)
 
@@ -199,7 +199,7 @@ The below diagram shows the connection between the user, that creates an object 
 
 ### IAM Policy
 
-In order for us to manipulate with the data in S3 with our Lambda function, we need to create an IAM policy defining the permissions for the Lambda function. That means having the chance to get the object from the `image` S3 bucket, add the `image-resized` object into the target S3 bucket, and add the permissions for the CloudWatch Logs.
+For us to manipulate the data in S3 with our Lambda function, we need to create an IAM policy defining the permissions for the Lambda function. That means having the chance to get the object from the `image` S3 bucket, add the `image-resized` object into the target S3 bucket, and add the permissions for the CloudWatch Logs.
 
 1. Open the <ExternalLink href="https://console.aws.amazon.com/iam/home#/policies">Policies page</ExternalLink> in the IAM console.
 2. Click the `Create policy` button.
@@ -210,7 +210,7 @@ In order for us to manipulate with the data in S3 with our Lambda function, we n
 4. copy/paste the below JSON, and click on `Review policy`, give it a name such as `AWSLambdaS3Policy` and create the policy.
 
 :::note
-Remove the comments in the json file below when you paste the policy.
+Remove the comments in the JSON file below when you paste the policy.
 :::
 
 ```json
@@ -230,7 +230,7 @@ Remove the comments in the json file below when you paste the policy.
             "Effect": "Allow",
             "Action": [
                 "s3:GetObject" 
-								// This is the GetObject action which allow us to get the base `image` bucket.
+								// This is the GetObject action which allows us to get the base `image` bucket.
             ],
             "Resource": "arn:aws:s3:::lambdatestingimage/*"
         },
@@ -240,7 +240,7 @@ Remove the comments in the json file below when you paste the policy.
                 "s3:PutObject"
             ],
             "Resource": "arn:aws:s3:::lambdatestingimage-resized/*" 
-						// This is the PutObject which allow us to add the newly object to the `image-resized` bucket.
+						// This is the PutObject which allows us to add the new object to the `image-resized` bucket.
         }
     ]
 }
@@ -248,7 +248,7 @@ Remove the comments in the json file below when you paste the policy.
 
 ### Execution role
 
-The execution role grants permissions to AWS Lambda to access different AWS services and resources. You have to provide the role when you create a function, then the Lambda function assumes the role when the function is invoked.
+The execution role grants permissions to AWS Lambda to access different AWS services and resources. Provide the role when you create a function, then the Lambda function assumes the role when the function is invoked.
 
 Let's create the execution role.
 
@@ -268,14 +268,14 @@ Remember, we created the policy `AWSLambdaS3Policy` in the above step. This poli
 
 Now, we'll create the lambda function to resize the images from one S3 bucket, and put the new image to another S3 bucket.
 
-Create an `index.js` file, and copy/paste the below snippet, you'll find comments through out the code that will explain what's happening. For your information, the <ExternalLink href="https://www.npmjs.com/package/sharp/v/0.5.2">sharp</ExternalLink> module is used to convert large images of many formats to smaller.
+Create an `index.js` file, and copy/paste the below snippet, you'll find comments throughout the code that will explain what's happening. For your information, the <ExternalLink href="https://www.npmjs.com/package/sharp/v/0.5.2">sharp</ExternalLink> module is used to convert large images of many formats to smaller.
 
 ```jsx
 // dependencies
 const AWS = require('aws-sdk');
 const sharp = require('sharp');
 
-// get reference to S3 client
+// get reference to the S3 client
 const s3 = new AWS.S3();
 
 exports.handler = async (event, context, callback) => {
@@ -316,10 +316,10 @@ exports.handler = async (event, context, callback) => {
         return;
     }  
 
-    // set the image width. Resize will set the height automatically to maintain aspect ratio.
+    // set the image width. Resize will set the height automatically to maintain the aspect ratio.
     const width  = 200;
 
-    // Use the Sharp module to resize the image and save in a buffer.
+    // Use the Sharp module to resize the image and save it in a buffer.
     try { 
         var buffer = await sharp(origimage.Body).resize(width).toBuffer();
             
@@ -382,9 +382,9 @@ If you're using AWS CLI version 2, add the following command parameters:
 ### Test the Lambda function
 
 Create a new txt file as inputFile.txt and copy/paste the below JSON snippet, don't forget to replace the source bucket name with your source bucket name. 
-— You can see that there is the file we uploaded to S3 bucket the `ExampleImg.jpg` 
+— You can see that there is the file we uploaded to the S3 bucket the `ExampleImg.jpg` 
 
-— Replace that with your own image that you've uploaded, if you did change the name.
+— Replace that with the image that you've uploaded, if you did change the name.
 
 ```jsx
 {
@@ -444,7 +444,7 @@ Create a new txt file as inputFile.txt and copy/paste the below JSON snippet, do
 
 In this step, you add the remaining configuration so that Amazon S3 can publish object-created events to AWS Lambda and invoke your Lambda function. You do the following in this step:
 
-- Add the permissions to the function policy by running the following Lambda CLI `add-permission` in order to perform `lambda:InvokeFunction` action.
+- Add the permissions to the function policy by running the following Lambda CLI `add-permission` to perform `lambda:InvokeFunction` action.
 
     Run the below command,  by replacing the `sourcebucket` into your base bucket name, and the `account-id` into your account id number.
 
@@ -460,7 +460,7 @@ aws lambda add-permission --function-name CreateThumbnail --principal s3.amazona
 aws lambda get-policy --function-name CreateThumbnail
 ```
 
-We'll add notification configurations to the source S3 bucket, in order to request S3 to publish object-created events to Lambda. Follow the below steps to achieve that.
+We'll add notification configurations to the source S3 bucket, to request S3 to publish object-created events to Lambda. Follow the below steps to achieve that.
 
 **To configure notifications**
 
@@ -478,14 +478,14 @@ We'll add notification configurations to the source S3 bucket, in order to reque
 Now you can test the setup as follows:
 
 1. Upload `.jpg` or `.png` objects to the source bucket using the Amazon S3 console.
-2. Verify that the thumbnail was created in the target bucket using the `CreateThumbnail` function.
+2. Verify it created the thumbnail in the target bucket using the `CreateThumbnail` function.
 3. View logs in the CloudWatch console.
 
 ## Lambda Cheat-sheet
 
-1. **Lambda's** are serverless functions — meaning you'll put your code into lambda function without the need to setup servers.
+1. **Lambda's** are serverless functions — meaning you'll put your code into lambda function without the need to set up servers.
 2. With Lambda you don't need to worry about **underlying architecture**.
-3. Pricing — you'll pay per invocation that includes the **duration** and the amount of **memory** used. Follow the <ExternalLink href="https://www.webiny.com/blog/5-tips-to-make-your-lambda-functions-run-faster-and-cheaper?utm_source=Webiny-blog&utm_medium=webiny-blog&utm_campaign=webiny-weekly-tech-blog-feb-15&utm_content=webiny-5-tips-make-lambda-func-faster&utm_term=W00548">5 Tips to Make Your Lambda Functions Run Faster (and Cheaper)</ExternalLink> to learn how to make your Lambda functions cheaper. 
+3. Pricing — you'll pay per invocation that includes the **duration** and the amount of **memory** used. Follow the <ExternalLink href="https://www.webiny.com/blog/5-tips-to-make-your-lambda-functions-run-faster-and-cheaper?utm_source=Webiny-blog&utm_medium=webiny-blog&utm_campaign=webiny-weekly-tech-blog-feb-15&utm_content=webiny-5-tips-make-lambda-func-faster&utm_term=W00548">5 Tips to Make Your Lambda Functions Run Faster (and Cheaper)</ExternalLink> learn how to make your Lambda functions cheaper. 
 4. You can **trigger** Lambda from the SDK or multiple AWS services, S3, API Gateway, DynamoDB.
 5. **Function size and cold start**
 
@@ -503,22 +503,22 @@ Now you can test the setup as follows:
 
 8. **Runtime**
 
-    There are **7 predefined runtimes** for: NodeJs, .NET, Java, C#, Ruby, Powershell, and Go.
+    There are **7 predefined runtimes** for NodeJs, .NET, Java, C#, Ruby, Powershell, and Go.
 
-    Customize for your own case, build the runtime to support any programming language.
+    Customize for your case, build the runtime to support any programming language.
 
 ## Lambda Pricing
 
-AWS offers a free tier for all its services, even though they provide automatic scaling for each service, you'll pay for on demand usage. We give more details on **pricing** in our blog of <ExternalLink href="https://www.webiny.com/blog/5-aws-services-you-need-to-know-for-web-development?utm_source=Webiny-blog&utm_medium=webiny-blog&utm_campaign=webiny-weekly-tech-blog-feb-15&utm_content=webiny-5-aws-services-you-need-for-web-development&utm_term=W00549">5 AWS Services you need to know for web development</ExternalLink>. 
+AWS offers a free tier for all its services, even though they provide automatic scaling for each service, you'll pay for on-demand usage. We give more details on **pricing** in our blog of <ExternalLink href="https://www.webiny.com/blog/5-aws-services-you-need-to-know-for-web-development?utm_source=Webiny-blog&utm_medium=webiny-blog&utm_campaign=webiny-weekly-tech-blog-feb-15&utm_content=webiny-5-aws-services-you-need-for-web-development&utm_term=W00549">5 AWS Services you need to know for web development</ExternalLink>. 
 
 ---
 
 - **Function-as-a-Service (FaaS)** — FaaS is a category of cloud computing services, providing a platform for customers to develop, run, and manage applications without having to deal with the infrastructure. Building an application following this model is one way of achieving a "serverless" architecture, and is typically used when building microservices applications. — <ExternalLink href="https://en.wikipedia.org/wiki/Function_as_a_service">Source</ExternalLink>.
-- **Event-driven systems or Event-drive architecture** — refers to a system of loosely coupled microservices that exchange information between each other through the production and consumption of events. An event-driven system enables messages to be ingested into the event driven ecosystem and then broadcast out to whichever services are interested in receiving them. — <ExternalLink href="https://developer.ibm.com/technologies/messaging/articles/advantages-of-an-event-driven-architecture/">Source</ExternalLink>.
+- **Event-driven systems or Event-drive architecture** — refers to a system of loosely coupled microservices that exchange information between each other through the production and consumption of events. An event-driven system enables messages to be ingested into the event-driven ecosystem and then broadcast out to whichever services are interested in receiving them. — <ExternalLink href="https://developer.ibm.com/technologies/messaging/articles/advantages-of-an-event-driven-architecture/">Source</ExternalLink>.
 
 ---
 
-Now that you have a thorough understanding of AWS Lambda compute service, from the core parts of the service, to the way Lambda functions are triggered. The function in JavaScript on delivering data through the `Event` object, and manipulating data from one S3 bucket to another.
+Now that you have a thorough understanding of AWS Lambda compute service, from the core parts of the service to the way Lambda functions are triggered. The function in JavaScript on delivering data through the `Event` object, and manipulating data from one S3 bucket to another.
 
 If you're interested to learn more, here are some blogs we suggest by Webiny on AWS.
 
