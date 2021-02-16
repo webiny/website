@@ -5,7 +5,7 @@ description: "Learn how serverless architecture paradigm came with the Lambda de
 tags: ["AWS Lambda", "Cloud", "S3", "Cloud Providers", "AWS"]
 featureImage: "./assets/going-serverless-get-started-with-aws-lambda/featureImg.png"
 author: albiona
-date: 2021-02-15
+date: 2021-02-16
 ---
 
 Earlier on the Webiny blog, we discussed <ExternalLink href="https://www.webiny.com/blog/5-aws-services-you-need-to-know-for-web-development?utm_source=Webiny-blog&utm_medium=webiny-blog&utm_campaign=webiny-weekly-tech-blog-feb-15&utm_content=webiny-5-aws-services-you-need-for-web-development&utm_term=W00542">the top 5 AWS services you need to know when it comes to web development</ExternalLink> — The one AWS service that grew super fast is the compute service: Lambda. `Lambda is a compute service that lets you run code without provisioning or managing servers.` — <ExternalLink href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What is AWS Lambda?</ExternalLink>. 
@@ -99,7 +99,7 @@ The `InvocationType` parameter offers you to choose between three values, and th
 
 The **event sources** are the ones that decide how your Lambda function will be invoked. We'll go through Lambda use cases, and in there mention the invocation type as well.
 
-## Lambda Use Cases
+## Lambda Use Cases and Application Types
 
 As you dive into AWS services, you'll get the idea of how different services can be used together to solve a digital problem and provide value for your customers. 
 
@@ -109,25 +109,26 @@ A **trigger** is the AWS service or application that **invokes** a Lambda functi
 
 Let's go through types and use-cases you can build using AWS Lambda.
 
-### Lambda Application Types
+### Application Types
 
 - **File processing**
     1. Invocation Model: **Push**
     2. Invocation Type: **Event**
     3. Use Cases
-        - Web apps, static websites, complex web apps, packages for Flask and Express.
-        - For more specific use cases using the Lambda and S3 together on creating image modifications such as thumbnails, different resolutions, watermarks, etc.
+    
+    - Web apps, static websites, complex web apps, packages for Flask and Express.
+    - For more specific use cases using the Lambda and S3 together on creating image modifications such as thumbnails, different resolutions, watermarks, etc.
 
     S3 event notifications can be used to invoke Lambda functions as they are published. 
 
 - **Data and analytics**
-    1. Invocation Model: Push
-    2. Invocation Type: Event or RequestResponse
+    1. Invocation Model: **Push**
+    2. Invocation Type: **Event** or **RequestResponse**
 
         When you build up your APIs methods, you can use Lambda functions as the backend services. Choosing Lambda as the integration type for an API method, your Lambda function is invoked synchronously — acting as a response for the API request.
 
     3. Use Cases
-        - Backends, Apps & services, Mobile, IoT
+    - Backends, Apps & services, Mobile, IoT
 
 ### Use-cases
 
