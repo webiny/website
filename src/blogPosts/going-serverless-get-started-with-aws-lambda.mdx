@@ -75,7 +75,7 @@ The **event object** is one of the parameters provided to the handler function w
 
 ### **The Context Object**
 
-We mentioned when once the handler is invoked inside the Lambda function, the runtime environment now belongs to the code inside our Lambda function, the **context object**, in this case, takes information about the actual environment that the lambda function is running in. Things like **request ID log** information, **remaining time** information memory, **logging**, and other things we can pass down.
+We mentioned that when once the handler is invoked inside the Lambda function, the runtime environment now belongs to the code inside our Lambda function, the **context object**, in this case, takes information about the actual environment that the lambda function is running in. Things like **request ID log** information, **remaining time** information memory, **logging**, and other things we can pass down.
 
 ## Lambda Invocation Patterns
 
@@ -87,9 +87,9 @@ There are two invocation methods for a Lambda function:
 
 - **Pull Model**
 
-    Lambda polls a data source and invokes your function with any new records that arrive at the data source, batching new records together in a single function invocation (for example, new records in an Amazon Kinesis or Amazon DynamoDB stream).
+    Lambda pulls a data source and invokes your function with any new records that arrive at the data source, batching new records together in a single function invocation (for example, new records in an Amazon Kinesis or Amazon DynamoDB stream).
 
-You can also run Lambda functions in **synchronously** and **asynchronously** — by choosing the `InvocationType` parameter that's provided when invoking a Lambda function. 
+You can also run Lambda functions **synchronously** and **asynchronously** — by choosing the `InvocationType` parameter that's provided when invoking a Lambda function. 
 
 The `InvocationType` parameter offers you to choose between three values, and those are:
 
@@ -101,7 +101,9 @@ The **event sources** are the ones that decide how your Lambda function will be 
 
 ## Lambda Use Cases
 
-As you dive into AWS services, you get the idea of how different services we can use together to solve a digital problem and provide value for your customers. Now that you what is and what does Lambda provides when building serverless applications, you know that the core components of Lambda are the **functions** and **triggers**. 
+As you dive into AWS services, you'll get the idea of how different services can be used together to solve a digital problem and provide value for your customers. 
+
+The key parts of a lambda function are **triggers** and the **functions**.
 
 A **trigger** is the AWS service or application that **invokes** a Lambda function, and the **Lambda function** is the code or runtime that processes events. 
 
