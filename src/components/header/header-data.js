@@ -78,32 +78,13 @@ export const SOLUTIONS_CARDS = [
     },
 ];
 
-export const PRODUCT_CARDS = [
-    {
-        id: 0,
-        title: "Get started",
-        imgSrc: imgGetSTarted,
-        imgAlt: "Webiny Get Started",
-        actionLabel: "learn more",
-        actionLink:
-            "https://www.youtube.com/watch?v=G_du-yE_DL4&list=PL9HlKSQaEuXScbySDD7QgITEA8RCHp-IS",
-        videoId: "G_du-yE_DL4",
-    },
-    {
-        id: 1,
-        title: "Why Webiny",
-        imgSrc: imgWhyWebiny,
-        imgAlt: "Why Webiny",
-        actionLabel: "learn more",
-        actionLink: "https://www.youtube.com/watch?v=odotdrOOvJE",
-        videoId: "odotdrOOvJE",
-    },
-];
+export const PRODUCT_CARDS = [];
 
 export const PRODUCTS_MENU = {
     id: 0,
     label: "Product",
     link: null,
+    className: "two-rows",
     primarySection: {
         menuItems: [
             {
@@ -130,29 +111,21 @@ export const PRODUCTS_MENU = {
                 label: "Why Webiny?",
                 link: "/why-webiny",
             },
-            /*
-            {
-                id: 3,
-                label: "Webiny Plugins",
-                link: "plugins"
-            },
-            */
+        ],
+    },
+    secondarySection: {
+        menuItems: [
             {
                 id: 5,
                 label: "Product Roadmap",
                 link: "/roadmap",
             },
-            /*
             {
                 id: 5,
-                label: "For Agencies",
-                link: "/agency",
+                label: "Webiny Partners",
+                link: "/partners",
             },
-            */
         ],
-    },
-    secondarySection: {
-        cards: PRODUCT_CARDS,
     },
 };
 
@@ -160,6 +133,7 @@ export const SOLUTIONS_MENU = {
     id: 1,
     label: "Solutions",
     link: null,
+    className: "one-row",
     primarySection: {
         menuItems: [
             {
@@ -185,7 +159,7 @@ export const SOLUTIONS_MENU = {
         ],
     },
     secondarySection: {
-        cards: SOLUTIONS_CARDS,
+        //cards: SOLUTIONS_CARDS,
     },
 };
 
@@ -231,6 +205,7 @@ export const COMMUNITY_MENU = {
 export const RESOURCES_MENU = {
     id: 3,
     label: "Resources",
+    className: "one-row",
     link: null,
     primarySection: {
         menuItems: [
@@ -257,7 +232,7 @@ export const RESOURCES_MENU = {
         ],
     },
     secondarySection: {
-        cards: RESOURCES_CARDS,
+        //cards: RESOURCES_CARDS,
     },
 };
 

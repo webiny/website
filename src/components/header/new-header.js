@@ -64,7 +64,7 @@ const MenuItemList = props => (
                     {menu.hasOwnProperty("primarySection") && (
                         <React.Fragment>
                             <DownArrowIcon className={downArrowClass + " arrow-icon"} />
-                            <DropDown>
+                            <DropDown className={menu.className}>
                                 <div className={dropdownArrow} />
                                 <div className="section--primary">
                                     {menu.primarySection.menuItems.map(menuItem => {
@@ -94,25 +94,59 @@ const MenuItemList = props => (
                                         );
                                     })}
                                 </div>
-                                <div className="section--secondary">
-                                    {menu.secondarySection.cards.map(item => (
-                                        <Card
-                                            key={item.id}
-                                            onClick={() => handleClick(item, props.handleVideoPlay)}
-                                        >
-                                            <img
-                                                src={item.imgSrc}
-                                                alt={item.imgAlt}
-                                                className="card__img"
-                                            />
-                                            <h4 className="card__title">{item.title}</h4>
-                                            <p className="card__link">
-                                                {item.actionLabel}{" "}
-                                                <RightArrowIcon className={"icon"} />{" "}
-                                            </p>
-                                        </Card>
-                                    ))}
-                                </div>
+                                {menu.secondarySection.hasOwnProperty("menuItems") && (
+                                    <div className="section--primary has-border">
+                                        {menu.secondarySection.menuItems.map(menuItem => {
+                                            if (typeof menuItem.renderItem === "function") {
+                                                return menuItem.renderItem();
+                                            }
+
+                                            return (
+                                                <Link
+                                                    key={menuItem.id}
+                                                    className={"link"}
+                                                    rel="prerender"
+                                                    to={menuItem.link}
+                                                >
+                                                    {menuItem.action ? (
+                                                        <span
+                                                            onClick={() => {
+                                                                menuItem.action();
+                                                            }}
+                                                        >
+                                                            {menuItem.label}
+                                                        </span>
+                                                    ) : (
+                                                        menuItem.label
+                                                    )}
+                                                </Link>
+                                            );
+                                        })}
+                                    </div>
+                                )}
+                                {menu.secondarySection.hasOwnProperty("cards") && (
+                                    <div className="section--secondary">
+                                        {menu.secondarySection.cards.map(item => (
+                                            <Card
+                                                key={item.id}
+                                                onClick={() =>
+                                                    handleClick(item, props.handleVideoPlay)
+                                                }
+                                            >
+                                                <img
+                                                    src={item.imgSrc}
+                                                    alt={item.imgAlt}
+                                                    className="card__img"
+                                                />
+                                                <h4 className="card__title">{item.title}</h4>
+                                                <p className="card__link">
+                                                    {item.actionLabel}{" "}
+                                                    <RightArrowIcon className={"icon"} />{" "}
+                                                </p>
+                                            </Card>
+                                        ))}
+                                    </div>
+                                )}
                             </DropDown>
                         </React.Fragment>
                     )}
