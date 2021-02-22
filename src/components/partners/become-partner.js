@@ -17,7 +17,7 @@ const ctaBtn = css({
     maxWidth: 260,
     width: "260px !important",
     backgroundColor: "#00CCB0 !important",
-})
+});
 
 const ctaOutlineBtn = css(
     {
@@ -27,28 +27,28 @@ const ctaOutlineBtn = css(
         color: "#00CCB0 !important",
 
         "& img": {
-            marginLeft: 15
-        }
+            marginLeft: 15,
+        },
     },
     mq({
-        marginLeft: [0, "15px !important"]
-    })
-)
+        marginLeft: [0, "15px !important"],
+    }),
+);
 
 const containerClass = css(
     {
-        maxWidth: 1200
+        maxWidth: 1200,
     },
     mq({
         width: ["100%", "100%"],
     }),
-)
+);
 
-const Section = styled("section")(    
+const Section = styled("section")(
     mq({
         padding: ["0px 15px 15px", "100px 15px 100px"],
     }),
-)
+);
 
 const Wrapper = styled("div")(
     {
@@ -57,8 +57,8 @@ const Wrapper = styled("div")(
 
         "& p": {
             margin: "10px 0 0",
-            textAlign: "center"
-        }
+            textAlign: "center",
+        },
     },
     mq({
         width: ["100%", "100%"],
@@ -75,7 +75,7 @@ const Title = styled("h1")(
         color: theme.color.black,
         textAlign: "center",
         lineHeight: "48px",
-        margin: "60px 0px 30px"     
+        margin: "60px 0px 30px",
     },
     mq({
         marginLeft: [0, "auto"],
@@ -93,61 +93,61 @@ const TitleHighlight = styled("span")({
 
 const BecomePartnerList = styled("div")(
     {
-        display: "grid"        
+        display: "grid",
     },
     mq({
-        gridTemplateColumns: ["repeat(2, 1fr)", "repeat(4, 1fr)"]
-    })
-)
+        gridTemplateColumns: ["repeat(2, 1fr)", "repeat(4, 1fr)"],
+    }),
+);
 
 const BecomePartnerItem = styled("div")(
-    {        
+    {
         padding: 15,
 
         "& div": {
             textAlign: "center",
 
             "& img": {
-                width: "80%",                
-                objectFit: "contain"
-            }
+                width: "80%",
+                objectFit: "contain",
+            },
         },
 
         "& p": {
             maxWidth: 180,
             margin: "0 auto",
             fontWeight: 700,
-            textAlign: "center"
-        }
+            textAlign: "center",
+        },
     },
     mq({
         "& img": {
-            height: [90, 180]            
-        }
-    })
-)
+            height: [90, 180],
+        },
+    }),
+);
 
 const ButtonGroup = styled("div")(
     {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        marginTop: 40
+        marginTop: 40,
     },
     mq({
         flexDirection: ["column", "row"],
         "& button:first-child": {
-            marginBottom: [15, 0]
-        }
-    })
-)
+            marginBottom: [15, 0],
+        },
+    }),
+);
 
 const partnerList = [
-    {image: freeImg, title: "Free consultancy and technical support"},    
-    {image: insightImg, title: "Insight into Webiny roadmap"},
-    {image: clientImg, title: "Client introductions"},
-    {image: commissionImg, title: "Commission on Webiny Enterprise sales"},
-]
+    { image: freeImg, title: "Free consultancy and technical support" },
+    { image: insightImg, title: "Insight into Webiny roadmap" },
+    { image: clientImg, title: "Client introductions" },
+    { image: commissionImg, title: "Commission on Webiny Enterprise sales" },
+];
 
 const CaseStudy = () => {
     return (
@@ -155,43 +155,42 @@ const CaseStudy = () => {
             <ContentContainer className={containerClass}>
                 <Wrapper>
                     <Title>
-                        Want to becoma a {" "}
-                        <TitleHighlight>
-                            Webiny partner?
-                        </TitleHighlight>
+                        Want to becoma a <TitleHighlight>Webiny partner?</TitleHighlight>
                     </Title>
                     <p>Being a Webiny partner comes with many benefits.</p>
                     <p>Here are just a few:</p>
                 </Wrapper>
                 <BecomePartnerList>
-                    {
-                        partnerList.map((partner, index) => 
-                            <BecomePartnerItem key={index}>
-                                <div>
-                                    <img src={partner.image} alt=""/>
-                                </div>                                
-                                <p>{partner.title}</p>
-                            </BecomePartnerItem>
-                        )
-                    }
+                    {partnerList.map((partner, index) => (
+                        <BecomePartnerItem key={index}>
+                            <div>
+                                <img src={partner.image} alt="" />
+                            </div>
+                            <p>{partner.title}</p>
+                        </BecomePartnerItem>
+                    ))}
                 </BecomePartnerList>
                 <ButtonGroup>
                     <Button
                         className={ctaBtn}
-                        type="primary"                        
+                        type="primary"
+                        link="https://calendly.com/webiny/partnership"
+                        target="_blank"
                     >
                         Become a Partner
                     </Button>
                     <Button
                         className={ctaOutlineBtn}
-                        type="outline"                        
+                        type="outline"
+                        link="https://drive.google.com/file/d/1jD_unIyd2MCFpH_Tu1dGLplnbHK1Y8q6/view?usp=sharing"
+                        target="_blank"
                     >
                         Download Brochure <img src={arrowIcon} alt="" className="icon" />
                     </Button>
                 </ButtonGroup>
             </ContentContainer>
         </Section>
-    )
-}
+    );
+};
 
-export default CaseStudy
+export default CaseStudy;
