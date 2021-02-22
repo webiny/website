@@ -178,11 +178,6 @@ export const COMMUNITY_MENU = {
                 },
             },
             {
-                id: 1,
-                label: "Forum",
-                link: "https://community.webiny.com",
-            },
-            {
                 id: 2,
                 label: "Slack",
                 link: "https://www.webiny.com/slack",

@@ -215,7 +215,7 @@ const ButtonGroup = styled("div")(
         display: "flex",
         marginBottom: 30,
 
-        "& button": {
+        "& a": {
             width: "200px !important",
         },
     },
@@ -224,7 +224,7 @@ const ButtonGroup = styled("div")(
         alignItems: ["center", "flex-start"],
         justifyContent: ["center", "flex-start"],
 
-        "& button:first-child": {
+        "& a:first-child": {
             marginBottom: [10, 0],
         },
     }),
