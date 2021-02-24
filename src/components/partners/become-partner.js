@@ -182,7 +182,7 @@ const CaseStudy = () => {
                     <Button
                         className={ctaOutlineBtn}
                         type="outline"
-                        link="https://drive.google.com/file/d/1jD_unIyd2MCFpH_Tu1dGLplnbHK1Y8q6/view?usp=sharing"
+                        link="https://drive.google.com/uc?export=download&id=1jD_unIyd2MCFpH_Tu1dGLplnbHK1Y8q6"
                         target="_blank"
                     >
                         Download Brochure <img src={arrowIcon} alt="" className="icon" />

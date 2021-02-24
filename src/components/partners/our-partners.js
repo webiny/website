@@ -97,8 +97,10 @@ const FeatureImageInner = styled("div")(
         flexDirection: "column",
         borderRadius: 8,
         img: {
-            width: "100%",
+            maxWidth: "100%",
             height: "auto",
+            maxHeight: "100px",
+            objectFit: "contain",
         },
     },
     mq({
