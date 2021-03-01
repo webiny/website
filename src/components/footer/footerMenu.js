@@ -80,6 +80,7 @@ const FooterMenu = () => (
             <Link to="/serverless-cms">Serverless CMS</Link>
             <Link to="/enterprise">For Enterprise</Link>
             <Link to="/why-webiny">Why Webiny?</Link>
+            <Link to="/partners">Webiny Partners</Link>
             <Link to="/roadmap">Roadmap</Link>
         </MenuBlock>
         <MenuBlock>

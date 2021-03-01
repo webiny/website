@@ -11,7 +11,7 @@ import webinyBg from "./assets/webiny-bg.svg";
 
 const HeroSection = styled("section")(
     {
-        backgroundColor: theme.color.white,
+        backgroundColor: "#F3F3F3",
         position: "relative",
         zIndex: 0,
         backgroundImage: "url(" + heroBg + ")",
@@ -38,7 +38,7 @@ const heroContainerClass = css(
     },
     mq({
         width: ["100%", "100%"],
-        height: ["100%", 425],
+        height: ["100%", 380],
         padding: ["75px 0px 0px", "85px 0px 0px"],
         "@media (min-width: 2000px)": {
             paddingBottom: 80,

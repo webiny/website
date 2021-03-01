@@ -6,22 +6,22 @@ import { css } from "emotion";
 import ContentContainer from "../ui/content-container";
 import Button from "../ui/button";
 
-import akqaImage from "./assets/akqa.svg";
-import digitalImage from "./assets/digital.svg";
-import aceikImage from "./assets/aceik.svg";
-import alliantsImage from "./assets/alliants.svg";
-import altudImage from "./assets/altud.svg";
+import logoAlpine from "./logos/alpine-logo.png";
+import logoAnthill from "./logos/anthill-logo.png";
+import logoAntStack from "./logos/antstack-logo.svg";
+import logoCodingSans from "./logos/coding-sans-logo.png";
+import logoIan from "./logos/ian-logo.png";
+import logoNttData from "./logos/ntt-data-logo.png";
+import logoOev from "./logos/oev-logo.png";
 import titleHightlightImage from "./assets/partner-highlight.svg";
 import arrowIcon from "./assets/arrow-default.svg";
 import startImg from "./assets/star.svg";
 
-const wrapperClass = css(
-    {
-        position: "relative",
-        paddingTop: 0,
-        paddingBottom: 0
-    }
-);
+const wrapperClass = css({
+    position: "relative",
+    paddingTop: 0,
+    paddingBottom: 0,
+});
 
 const contentContainerClass = css(
     {
@@ -29,7 +29,7 @@ const contentContainerClass = css(
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        maxWidth: 1200        
+        maxWidth: 1200,
     },
     mq({
         width: ["100%", "100%"],
@@ -50,20 +50,20 @@ const visitSiteBtn = css(
         color: "#ED4005 !important",
 
         "& img": {
-            marginLeft: 15
-        }
+            marginLeft: 15,
+        },
     },
     mq({
-        marginLeft: [0, "15px !important"],        
+        marginLeft: [0, "15px !important"],
     }),
-)
+);
 
 const Feature = styled("div")(
     {
         width: "100%",
         display: "flex",
         alignItems: "center",
-        position: "relative"        
+        position: "relative",
     },
     mq({
         flexDirection: ["column", "row"],
@@ -78,33 +78,38 @@ const FeatureImagePart = styled("div")(
     {
         display: "flex",
         justifyContent: "center",
-        flexDirection: "column"
+        flexDirection: "column",
     },
     mq({
         width: [320, "50%"],
         maxWidth: [600, "none"],
         padding: [0, "0px 45px"],
-        marginBottom: [30, 0]
+        marginBottom: [30, 0],
     }),
-
-)
+);
 
 const FeatureImageInner = styled("div")(
     {
         position: "relative",
-        margin: "0 auto",        
+        margin: "0 auto",
         boxShadow: "rgba(100,100,100,0.24) 2px 3px 15px",
         height: 130,
         display: "flex",
         justifyContent: "center",
         flexDirection: "column",
-        borderRadius: 8        
+        borderRadius: 8,
+        img: {
+            maxWidth: "100%",
+            height: "auto",
+            maxHeight: "100px",
+            objectFit: "contain",
+        },
     },
-    mq({        
+    mq({
         maxWidth: ["auto", 350],
         minWidth: ["auto", "65%"],
         padding: ["30px 0", 30],
-        width: ["100%", "auto"]  
+        width: ["100%", "auto"],
     }),
 );
 
@@ -113,34 +118,34 @@ const FeatureInfo = styled("div")(
         display: "flex",
         justifyContent: "center",
         flexDirection: "column",
-        position: "relative",        
+        position: "relative",
 
         "& .location": {
             color: "#4F4F4F",
-            fontSize: 15
+            fontSize: 15,
         },
 
         "& .description": {
             cololr: "#000E1A",
-            fontSize: 20
-        }
+            fontSize: 20,
+        },
     },
     mq({
         width: ["auto", "50%"],
         maxWidth: [600, "none"],
         padding: ["0px 30px", "0px 45px"],
         marginBottom: [30, 0],
-        
+
         "& h3": {
-            marginTop: [0, "0.7em"]
+            marginTop: [0, "0.7em"],
         },
-        
+
         "&.border-right": {
-            borderRight: ["none", "2px dashed #FA5A28"]
+            borderRight: ["none", "2px dashed #FA5A28"],
         },
 
         "&.border-left": {
-            borderLeft: ["none", "2px dashed #FA5A28"]            
+            borderLeft: ["none", "2px dashed #FA5A28"],
         },
     }),
 );
@@ -155,17 +160,17 @@ const RoundDot = styled("div")(
         borderRadius: 30,
 
         "&.right": {
-            right: -10
+            right: -10,
         },
 
         "&.left": {
-            left: -10
-        }
+            left: -11,
+        },
     },
     mq({
-        display: ["none", "block"]        
+        display: ["none", "block"],
     }),
-)
+);
 
 const TopBorder = styled("div")(
     {
@@ -173,12 +178,12 @@ const TopBorder = styled("div")(
         position: "absolute",
         border: "1px solid #FA5A28",
         top: 0,
-        left: -17
+        left: -17,
     },
     mq({
-        display: ["none", "block"]        
+        display: ["none", "block"],
     }),
-)
+);
 
 const Wrapper = styled("div")(
     {
@@ -213,20 +218,20 @@ const ButtonGroup = styled("div")(
     {
         display: "flex",
         marginBottom: 30,
-        
-        "& button": {
-            width: "200px !important"
-        }
+
+        "& a": {
+            width: "200px !important",
+        },
     },
     mq({
         flexDirection: ["column", "row"],
         alignItems: ["center", "flex-start"],
         justifyContent: ["center", "flex-start"],
-        
-        "& button:first-child": {
-            marginBottom: [10, 0]
-        }
-    })
+
+        "& a:first-child": {
+            marginBottom: [10, 0],
+        },
+    }),
 );
 
 const BottomMark = styled("div")(
@@ -236,7 +241,7 @@ const BottomMark = styled("div")(
         padding: 10,
         borderRadius: 50,
         border: "2px dashed #FA5A28",
-        left: -45,
+        left: -47,
         width: 65,
         height: 65,
 
@@ -250,14 +255,14 @@ const BottomMark = styled("div")(
             borderRadius: 40,
 
             "& img": {
-                width: 35
-            }
-        }
+                width: 35,
+            },
+        },
     },
     mq({
-        display: ["none", "block"]        
+        display: ["none", "block"],
     }),
-)
+);
 
 const TitleHighlight = styled("span")({
     backgroundImage: "url(" + titleHightlightImage + ")",
@@ -268,94 +273,111 @@ const TitleHighlight = styled("span")({
 
 const ourPartners = [
     {
-        image: akqaImage,
-        name: "AKQA",
-        location: "Australia, Denmark, France, Germany, India, Japan, New Zealand, United Kingdom of Great Britain and Northern Ireland, United States of America",
-        description: "A recognized pioneer, AKQA is an innovation and experience design agency. We believe in the imaginative application of art and science to create beautiful ideas, products, services and spaces."
+        image: logoAlpine,
+        name: "Alpine Consulting Partners",
+        location: "United States of America",
+        website: "https://alpine-consulting.com/",
+        description:
+            "Alpine Consulting Partners is a full-service technology consultancy that provides design and implementation services to help clients tackle complex data challenges. We leverage industry leading enterprise performance management and analytics tools to help our clients improve business processes and reduce time to insight. We serve clients across multiple sectors including all levels of Government, Hospitality, Insurance, Banking, Technology, Manufacturing, Automotive and Energy industries.",
     },
     {
-        image: digitalImage,
-        name: "AND Digital",
-        location: "United Kingdom of Great Britain and Northern Ireland",
-        description: "AND Digital is on a mission to close the world's digital skills gap. To make that happen, we reimagine digital delivery from the ground up: blending software and product craft skills with an award-winning approach to talent..."
+        image: logoAnthill,
+        name: "Anthill",
+        website: "https://www.anthillagency.com/",
+        location: "Denmark / Germany",
+        description:
+            "Anthill is a digital communications agency for the life sciences. We believe that understanding human beliefs and behaviors is the missing piece in pharma digital communications. We call it the Human Factor. And when applied to each stage of the development process, it results in truly empowering experiences for customers. As a specialist life sciences digital communications agency, we work closely with global and regional teams: ensuring that every project has a strong strategy; developing the technical and creative solutions; building internal belief and support; and scaling adoption across organizations.",
     },
     {
-        image: aceikImage,
-        name: "Aceik",
-        location: "Australia, New Zealand",
-        description: "Aceik is a digital consultancy that specialise in the implementation and support of Contentful solutions."
+        image: logoAntStack,
+        name: "AntStack",
+        website: "https://www.antstack.io/",
+        location: "India",
+        description:
+            "We are a fullstack serverless company aiming at providing holistic solutions to get you up and running with serverless!",
     },
     {
-        image: alliantsImage,
-        name: "Alliants",
-        location: "Canada, United Kingdom of Great Britain and Northern Ireland",
-        description: "Alliants is a specialist digital innovation company based in London and North America. We specialize in travel, retail and hospitality helping organizations grow through business and technological innovation..."
+        image: logoCodingSans,
+        name: "Coding Sans",
+        location: "Hungary",
+        website: "https://codingsans.com/",
+        description:
+            "Coding Sans is a full-stack web development agency building complex, market-ready products from design to delivery.",
     },
     {
-        image: altudImage,
-        name: "Altudo",
-        location: "United States of America, India",
-        description: "At Altudo, we help our clients deliver exceptional customer experience & grow revenue streams through 1:1 personalization. With over 300 employees spread across 7 countries..."
+        image: logoIan,
+        name: "Ian Digital Talent",
+        location: "Argentina",
+        website: "https://iandigitaltalent.com/en/",
+        description:
+            "At IAN DIGITAL TALENT we specialize cost effective in the development, implementation and optimization of web pages. We provide customized solutions for ecommerce.",
     },
-]
+    {
+        image: logoNttData,
+        name: "NTT Data",
+        website: "https://www.nttdata.com/",
+        location: "Global",
+        description:
+            "NTT DATA is a top 10 global IT services provider, headquartered in Tokyo and operating in more than 50 countries. For us, work is not only for technological innovation, it is about connecting people to create better solutions for everyday life. NTT DATA offers an advanced portfolio of consulting, application, business process, cloud, and infrastructure services to businesses and governments worldwide. Our roots cross continents and cultures, dating back five decades. Since the foundation of NTT DATA , we have made sustainable business growth through our DNA to be people-oriented. Through our long-term perspective, we hope to make a big difference in this world by getting the small things right. This pedigree yields a characteristic unique to NTT DATA: the opportunity for a global brand with the creative energy and enthusiasm of an entrepreneur.",
+    },
+    {
+        image: logoOev,
+        name: "OEV",
+        website: "https://www.oev-online.de/",
+        location: "Germany",
+        description:
+            "OEV Online Dienste GmbH was founded in Düsseldorf (Germany) in 2001. It is an expert for digital media with distinct expertise in CMS systems. It develops comprehensive, cross-media concepts and advises clients on all aspects of digital distribution.",
+    },
+];
 
 const ServerLessAdvantage = () => {
     return (
-        <section className={wrapperClass}>            
+        <section className={wrapperClass}>
             <ContentContainer className={contentContainerClass}>
                 <Wrapper>
                     <Title>
-                        Our {" "}
-                        <TitleHighlight>
-                            partners
-                        </TitleHighlight>
+                        Our <TitleHighlight>partners</TitleHighlight>
                     </Title>
                 </Wrapper>
-                {
-                    ourPartners.map((partner, index) => 
-                        <Feature key={index}>
-                            <FeatureImagePart>
-                                <FeatureImageInner>
-                                    <img
-                                        src={partner.image}
-                                        alt="partner iamge"
-                                    />
-                                </FeatureImageInner>                                
-                            </FeatureImagePart>                         
-                            <FeatureInfo className={ index % 2 ? 'border-right' : 'border-left'}>
-                                {index === 0 && <TopBorder />}
-                                <h3>{partner.name}</h3>
-                                <p className="location">{partner.location}</p>
-                                <p className="description">{partner.description}</p>
-                                <ButtonGroup>
-                                    <Button
-                                        type="primary"                        
-                                    >
-                                        Contact this Partner
-                                    </Button>
-                                    <Button
-                                        type="outline"
-                                        className={visitSiteBtn}                        
-                                    >
-                                        Visit Website <img src={arrowIcon} alt="" className="icon" />
-                                    </Button>
-                                </ButtonGroup>
-                                <RoundDot className={ index % 2 ? 'right' : 'left'} />
-                                {
-                                    index === 4 &&
-                                        <BottomMark>
-                                            <div className="inner">
-                                                <img src={startImg} alt=""/>
-                                            </div>                                    
-                                        </BottomMark>
-                                }
-                            </FeatureInfo>                            
-                        </Feature>   
-                    )
-                }            
+                {ourPartners.map((partner, index) => (
+                    <Feature key={index}>
+                        <FeatureImagePart>
+                            <FeatureImageInner>
+                                <img src={partner.image} alt="partner iamge" />
+                            </FeatureImageInner>
+                        </FeatureImagePart>
+                        <FeatureInfo className={index % 2 ? "border-right" : "border-left"}>
+                            {index === 0 && <TopBorder />}
+                            <h3>{partner.name}</h3>
+                            <p className="location">{partner.location}</p>
+                            <p className="description">{partner.description}</p>
+                            <ButtonGroup>
+                                <Button type="primary" link="mailto:partners@webiny.com">
+                                    Contact this Partner
+                                </Button>
+                                <Button
+                                    link={partner.website}
+                                    target="_blank"
+                                    type="outline"
+                                    className={visitSiteBtn}
+                                >
+                                    Visit Website <img src={arrowIcon} alt="" className="icon" />
+                                </Button>
+                            </ButtonGroup>
+                            <RoundDot className={index % 2 ? "right" : "left"} />
+                            {index === ourPartners.length - 1 && (
+                                <BottomMark>
+                                    <div className="inner">
+                                        <img src={startImg} alt="" />
+                                    </div>
+                                </BottomMark>
+                            )}
+                        </FeatureInfo>
+                    </Feature>
+                ))}
             </ContentContainer>
         </section>
-    )
-}
+    );
+};
 
 export default ServerLessAdvantage;

@@ -120,6 +120,11 @@ export const DropDown = styled("div")(
             "& .spacer": {
                 height: DROPDOWN_LINK_HEIGHT,
             },
+
+            "&.has-border": {
+                borderLeft: "1px solid #E3E3E3",
+                paddingLeft: 26,
+            },
         },
         "& .section--secondary": {
             boxSizing: "border-box",
@@ -136,7 +141,7 @@ export const DropDown = styled("div")(
         position: ["relative", "absolute"],
         display: ["none", "flex"],
         boxShadow: ["none", "0px 4px 16px rgba(0, 0, 0, 0.2)"],
-        width: ["100%", 785],
+        width: ["100%", "785px"],
         left: [0, -40],
         padding: ["0 25px 10px 25px", 30],
         top: [25, 56],
@@ -146,6 +151,12 @@ export const DropDown = styled("div")(
         },
         "& .section--secondary": {
             display: ["none", "flex"],
+        },
+        "&.one-row": {
+            width: ["100%", "380px"],
+        },
+        "&.two-rows": {
+            width: ["100%", "600px"],
         },
     }),
 );

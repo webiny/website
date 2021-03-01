@@ -25,7 +25,7 @@ class WhyWebinyPage extends React.Component {
                 fixedHeader={false}
             >
                 <Hero />
-                <WebinyOverview />
+                {/*<WebinyOverview />*/}
                 <WhyServerlessComponent />
                 <ServerlessChallenges />
                 <HereComesWebiny />

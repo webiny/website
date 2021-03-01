@@ -23,7 +23,7 @@ const HeroSection = styled("section")(
         backgroundPosition: "bottom",
         backgroundRepeat: "no-repeat",
         position: "relative",
-        zIndex: 0,
+        zIndex: -1,
         //padding: "0px 15px",
         height: "100%",
     },

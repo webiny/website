@@ -81,6 +81,10 @@ const Divider = styled("div")({
 const containerStyle = css({
     maxWidth: 1100,
     marginBottom: 50,
+    ".notice": {
+        fontSize: 12,
+        color: theme.color.grayText,
+    },
 });
 
 const swagImage = css({
@@ -215,10 +219,12 @@ export default ({ children, ...props }) => (
         <Divider />
         <ContentContainer className={containerStyle}>
             <SubTitle>What’s Available for Grabs</SubTitle>
+            {/*
             <Grid left>
                 <Cell>
                     <img className={swagImage} src={webinyStickers} alt="Webiny SWAG - Stickers" />
                 </Cell>
+                
                 <Cell title="Become a Fan">
                     <p>
                         A fan is someone who loves what we do here. Fans give us support to keep
@@ -232,14 +238,20 @@ export default ({ children, ...props }) => (
                         <a href="https://twitter.com/WebinyPlatform">Twitter</a> or{" "}
                         <a href="https://www.youtube.com/c/webiny">YouTube</a>.
                     </p>
-                </Cell>
+                </Cell> 
             </Grid>
+            */}
             <Grid right>
                 <Cell title="Spread the Knowledge">
                     <p>
                         You have created a blog post, a tutorial or a video guide for Webiny related
                         content? We would love to know about it, so we can spread the word through
                         our channels. On top of that, we’ll send you a Webiny branded t-shirt.
+                    </p>
+                    <p className={"notice"}>
+                        <strong>Note:</strong> Before commiting your time to writing a tutorial, we
+                        recommend you give us a ping our our <a href="/slack">community slack</a> so
+                        we make sure it's a valuable contribution.
                     </p>
                 </Cell>
                 <Cell>
@@ -266,6 +278,12 @@ export default ({ children, ...props }) => (
                         contributing your time to our project. Expect this small token of
                         appreciation. We will also add you to our contributors' page, as well as
                         promote your profile on our website.
+                    </p>
+                    <p className={"notice"}>
+                        <strong>Note:</strong> Altough we are happy when people decide to contribute
+                        to our project, we had people requesting swag by changing words on our
+                        documentation and similar. Please note that we reserve this swag only to
+                        valuable contributors who really want to help our project grow.
                     </p>
                 </Cell>
                 <Cell>

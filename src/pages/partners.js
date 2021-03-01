@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/base";
 import Hero from "../components/partners/hero";
 import OurPartners from "../components/partners/our-partners";
 import BecomePartner from "../components/partners/become-partner";
-import CaseStudy from "../components/partners/case-study";
+import CaseStudy from "../components/ui/case-study";
 
 const Partners = () => {
     return (
@@ -13,8 +13,9 @@ const Partners = () => {
             <OurPartners />
             <BecomePartner />
             <CaseStudy />
+            <br />
         </BaseLayout>
     );
-}
+};
 
 export default Partners;
