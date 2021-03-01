@@ -8,7 +8,9 @@ import Button from "../ui/button";
 
 import logoAlpine from "./logos/alpine-logo.png";
 import logoAnthill from "./logos/anthill-logo.png";
+import logoAntStack from "./logos/antstack-logo.svg";
 import logoCodingSans from "./logos/coding-sans-logo.png";
+import logoIan from "./logos/ian-logo.png";
 import logoNttData from "./logos/ntt-data-logo.png";
 import logoOev from "./logos/oev-logo.png";
 import titleHightlightImage from "./assets/partner-highlight.svg";
@@ -281,10 +283,18 @@ const ourPartners = [
     {
         image: logoAnthill,
         name: "Anthill",
-        website: "http://www.anthillagency.com/",
+        website: "https://www.anthillagency.com/",
         location: "Denmark / Germany",
         description:
-            "Anthill is a digital communications agency for the life sciences. We believe that understanding human beliefs and behaviors is the missing piece in pharma digital communications. We call it the Human Factor. And when applied to each stage of the development process, it results in truly empowering experiences for customers. As a specialist life sciences digital communications agency, we work closely with global and regional teams: ensuring that every project has a strong strategy; developing the technical and creative solutions; building internal belief and support; and scaling adoption across organisations.",
+            "Anthill is a digital communications agency for the life sciences. We believe that understanding human beliefs and behaviors is the missing piece in pharma digital communications. We call it the Human Factor. And when applied to each stage of the development process, it results in truly empowering experiences for customers. As a specialist life sciences digital communications agency, we work closely with global and regional teams: ensuring that every project has a strong strategy; developing the technical and creative solutions; building internal belief and support; and scaling adoption across organizations.",
+    },
+    {
+        image: logoAntStack,
+        name: "AntStack",
+        website: "https://www.antstack.io/",
+        location: "India",
+        description:
+            "We are a fullstack serverless company aiming at providing holistic solutions to get you up and running with serverless!",
     },
     {
         image: logoCodingSans,
@@ -293,6 +303,14 @@ const ourPartners = [
         website: "https://codingsans.com/",
         description:
             "Coding Sans is a full-stack web development agency building complex, market-ready products from design to delivery.",
+    },
+    {
+        image: logoIan,
+        name: "Ian Digital Talent",
+        location: "Argentina",
+        website: "https://iandigitaltalent.com/en/",
+        description:
+            "At IAN DIGITAL TALENT we specialize cost effective in the development, implementation and optimization of web pages. We provide customized solutions for ecommerce.",
     },
     {
         image: logoNttData,
