@@ -155,7 +155,7 @@ const CaseStudy = () => {
             <ContentContainer className={containerClass}>
                 <Wrapper>
                     <Title>
-                        Want to becoma a <TitleHighlight>Webiny partner?</TitleHighlight>
+                        Want to become a <TitleHighlight>Webiny partner?</TitleHighlight>
                     </Title>
                     <p>Being a Webiny partner comes with many benefits.</p>
                     <p>Here are just a few:</p>

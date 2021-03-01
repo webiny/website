@@ -164,7 +164,7 @@ const RoundDot = styled("div")(
         },
 
         "&.left": {
-            left: -10,
+            left: -11,
         },
     },
     mq({
@@ -241,7 +241,7 @@ const BottomMark = styled("div")(
         padding: 10,
         borderRadius: 50,
         border: "2px dashed #FA5A28",
-        left: -45,
+        left: -47,
         width: 65,
         height: 65,
 
@@ -365,7 +365,7 @@ const ServerLessAdvantage = () => {
                                 </Button>
                             </ButtonGroup>
                             <RoundDot className={index % 2 ? "right" : "left"} />
-                            {index === 4 && (
+                            {index === ourPartners.length - 1 && (
                                 <BottomMark>
                                     <div className="inner">
                                         <img src={startImg} alt="" />
