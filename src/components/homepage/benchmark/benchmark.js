@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "react-emotion";
 import { Link } from "gatsby";
+import Button from "../../ui/button";
 import { css } from "emotion";
 import theme from "../../utils/theme";
 import mq from "../../utils/breakpoints";
@@ -35,14 +36,14 @@ const Wrapper = styled("div")(
         justifyContent: "space-between",
         alignItems: "center",
         "& .learnLink": {
-            fontWeight: theme.fontWeight.bold,
-            fontSize: 18,
-            lineHeight: "25px",
-            letterSpacing: "0.75px",
-            textDecoration: "underline",
-            textTransform: "uppercase",
-            color: theme.color.primaryDark,
-            marginTop: 30,
+            //fontWeight: theme.fontWeight.bold,
+            //fontSize: 18,
+            //lineHeight: "25px",
+            //letterSpacing: "0.75px",
+            //textDecoration: "underline",
+            //textTransform: "uppercase",
+            //color: theme.color.primaryDark,
+            width: 270,
             display: "block",
 
             "& img": {
@@ -53,6 +54,9 @@ const Wrapper = styled("div")(
     mq({
         flexDirection: ["column", "row"],
         padding: [0, 100],
+        "& .learnLink": {
+            margin: ["25px auto", "30px 0 25px 0"],
+        },
         "& .mobileOnly": {
             display: ["block", "none"],
         },
@@ -87,10 +91,20 @@ const LeftSide = styled("div")(
 );
 
 const RightSide = styled("div")(
-    {},
+    {
+        p: {
+            textTransform: "uppercase",
+            color: theme.color.lightGray,
+            textAlign: "center",
+            lineHeight: "150%",
+        },
+    },
     mq({
         textAlign: ["center", "left"],
         width: ["100%", "100%"],
+        p: {
+            margin: [15, "50px 50px 0 50px"],
+        },
     }),
 );
 
@@ -144,35 +158,44 @@ class Benchmark extends React.Component {
                         <Title>
                             <span className="orange">Webiny</span> performance benchmark
                         </Title>
-                        <Link className="learnLink" to="/serverless-application-framework">
+                        <Button
+                            type={"outline"}
+                            className="learnLink"
+                            link="https://docs.webiny.com/docs/webiny-overview/performance-benchmark/introduction"
+                        >
                             Benchmark details <img src={arrow} alt="" />
-                        </Link>
+                        </Button>
                     </LeftSide>
                     <RightSide>
                         <Grid>
                             <div className="row">
                                 <span class="number">0.4s</span>
-                                <span class="desc">API CALL LATENCY WRITE OPERATION</span>
+                                <span class="desc">API WRITE OPERATION RESPONSE TIME</span>
                             </div>
                             <div className="row">
                                 <span class="number">0.5s</span>
-                                <span class="desc">API CALL LATENCY READ OPERATION</span>
+                                <span class="desc">API READ OPERATION RESPONSE TIME</span>
                             </div>
                             <div className="row">
                                 <span class="number">3.5k</span>
-                                <span class="desc">REQUESTS A SECOND ON THE API</span>
+                                <span class="desc">REQUESTS PER SECOND ON THE API</span>
                             </div>
                             <div className="row">
                                 <span class="number">3.6k</span>
-                                <span class="desc">REQUESTS A SECOND DELIVERING A PAGE</span>
+                                <span class="desc">REQUESTS PER SECOND DELIVERING A PAGE</span>
                             </div>
                         </Grid>
-                        <Link
+                        <p>
+                            The numbers are an average from a test where we serverved 3M requests in
+                            14 minutes with 3M records in the database.
+                        </p>
+                        <Button
+                            type={"outline"}
                             className="learnLink mobileOnly"
-                            to="/serverless-application-framework"
+                            link="https://docs.webiny.com/docs/webiny-overview/performance-benchmark/introduction"
                         >
                             Benchmark details <img src={arrow} alt="" />
-                        </Link>
+                        </Button>
                     </RightSide>
                 </Wrapper>
             </ContentContainer>
