@@ -158,6 +158,9 @@ export const DropDown = styled("div")(
         "&.two-rows": {
             width: ["100%", "600px"],
         },
+        "&.three-rows-large": {
+            width: 900,
+        },
     }),
 );
 

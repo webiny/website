@@ -9,10 +9,12 @@ import Button from "../ui/button";
 import logoAlpine from "./logos/alpine-logo.png";
 import logoAnthill from "./logos/anthill-logo.png";
 import logoAntStack from "./logos/antstack-logo.svg";
+import logoCasaSoft from "./logos/casasoft-logo.svg";
 import logoCodingSans from "./logos/coding-sans-logo.png";
 import logoIan from "./logos/ian-logo.png";
 import logoNttData from "./logos/ntt-data-logo.png";
 import logoOev from "./logos/oev-logo.png";
+
 import titleHightlightImage from "./assets/partner-highlight.svg";
 import arrowIcon from "./assets/arrow-default.svg";
 import startImg from "./assets/star.svg";
@@ -294,7 +296,15 @@ const ourPartners = [
         website: "https://www.antstack.io/",
         location: "India",
         description:
-            "We are a fullstack serverless company aiming at providing holistic solutions to get you up and running with serverless!",
+            "AntStack is a fullstack serverless company aiming at providing holistic solutions to get you up and running with serverless!",
+    },
+    {
+        image: logoCasaSoft,
+        name: "Casasoft",
+        location: "Malta",
+        website: "https://www.casasoft.mt/",
+        description:
+            "Casasoft is an award winning ISO 9001:2015 certified software company composed of a team of highly skilled software architects, developers, designers and strategic thinkers full of passion and innovation. Through offering digital solutions & applications. Casasoft helps businesses go digital to increase their productivity, efficiency, sales and competitiveness whilst reducing costs in today’s highly digitalized world.",
     },
     {
         image: logoCodingSans,
@@ -310,7 +320,7 @@ const ourPartners = [
         location: "Argentina",
         website: "https://iandigitaltalent.com/en/",
         description:
-            "At IAN DIGITAL TALENT we specialize cost effective in the development, implementation and optimization of web pages. We provide customized solutions for ecommerce.",
+            "Ian Digital Talent adopts a cost-effective approach to provide retail companies around the world with customized e-commerce and marketplace serverless solutions",
     },
     {
         image: logoNttData,

@@ -15,6 +15,7 @@ import imgWebinyApi from "./resource-cards/yt-webiny-api.jpg";
 // product
 import imgGetSTarted from "./resource-cards/yt-get-started.jpg";
 import imgWhyWebiny from "./resource-cards/yt-why-webiny.jpg";
+import imgWebinyOverview from "./resource-cards/yt-webiny-overview.jpg";
 
 export const RESOURCES_CARDS = [
     {
@@ -78,13 +79,23 @@ export const SOLUTIONS_CARDS = [
     },
 ];
 
-export const PRODUCT_CARDS = [];
+export const PRODUCT_CARDS = [
+    {
+        id: 0,
+        title: "Webiny Overview (7min)",
+        imgSrc: imgWebinyOverview,
+        imgAlt: "Webiny Overview",
+        actionLabel: "learn more",
+        actionLink: "https://www.youtube.com/watch?v=gOGJKHXntiU",
+        videoId: "gOGJKHXntiU",
+    },
+];
 
 export const PRODUCTS_MENU = {
     id: 0,
     label: "Product",
     link: null,
-    className: "two-rows",
+    className: "three-rows-large",
     primarySection: {
         menuItems: [
             {
@@ -126,6 +137,7 @@ export const PRODUCTS_MENU = {
                 link: "/partners",
             },
         ],
+        cards: PRODUCT_CARDS,
     },
 };
 
