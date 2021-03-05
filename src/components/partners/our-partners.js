@@ -100,6 +100,7 @@ const FeatureImageInner = styled("div")(
         justifyContent: "center",
         flexDirection: "column",
         borderRadius: 8,
+        boxSizing: "border-box",
         img: {
             maxWidth: "100%",
             height: "auto",
@@ -110,7 +111,7 @@ const FeatureImageInner = styled("div")(
     mq({
         maxWidth: ["auto", 350],
         minWidth: ["auto", "65%"],
-        padding: ["30px 0", 30],
+        padding: ["30px", 30],
         width: ["100%", "auto"],
     }),
 );
@@ -260,6 +261,15 @@ const BottomMark = styled("div")(
                 width: 35,
             },
         },
+        "&.right": {
+            right: -45,
+            left: "auto",
+        },
+
+        "&.left": {
+            left: -45,
+            right: "auto",
+        },
     },
     mq({
         display: ["none", "block"],
@@ -304,7 +314,7 @@ const ourPartners = [
         location: "Malta",
         website: "https://www.casasoft.mt/",
         description:
-            "Casasoft is an award winning ISO 9001:2015 certified software company composed of a team of highly skilled software architects, developers, designers and strategic thinkers full of passion and innovation. Through offering digital solutions & applications. Casasoft helps businesses go digital to increase their productivity, efficiency, sales and competitiveness whilst reducing costs in today’s highly digitalized world.",
+            "Casasoft is an award winning ISO 9001:2015 certified software company composed of a team of highly skilled software architects, developers, designers and strategic thinkers full of passion and innovation. Through offering digital solutions & applications. Casasoft helps businesses go digital to increase their productivity, efficiency sales and competitiveness whilst reducing costs in today’s highly digitalized world.",
     },
     {
         image: logoCodingSans,
@@ -374,9 +384,9 @@ const ServerLessAdvantage = () => {
                                     Visit Website <img src={arrowIcon} alt="" className="icon" />
                                 </Button>
                             </ButtonGroup>
-                            <RoundDot className={index % 2 ? "right" : "left"} />
+
                             {index === ourPartners.length - 1 && (
-                                <BottomMark>
+                                <BottomMark className={index % 2 ? "right" : "left"}>
                                     <div className="inner">
                                         <img src={startImg} alt="" />
                                     </div>
