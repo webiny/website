@@ -75,7 +75,7 @@ const Title = styled("h2")(
     },
     mq({
         textAlign: ["center", "left"],
-        fontSize: [48, 72],
+        fontSize: [48, 48, 72],
     }),
 );
 
@@ -145,6 +145,9 @@ const Grid = styled("div")(
         flexDirection: ["column", "row"],
         "& .row": {
             flexDirection: ["column", "row"],
+            "& .number": {
+                fontSize: [72, 72, 100],
+            },
         },
     }),
 );
