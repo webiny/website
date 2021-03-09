@@ -3,12 +3,12 @@ slug: "blog/webiny-v5-the-big-update"
 title: "Webiny v5 - The BIG update"
 description: ""
 tags: ["Javascript", "Serverless", "React", "Nodejs", "AWS"]
-featureImage: "./assets/webiny-just-got-400-faster-16223744eca3/proxy-1ZB9u_IEwlq-gUiF7AdZKPQ.png"
+featureImage: "./assets/webiny-v5-the-big-update/v5-release-cover.png"
 author: sven
 date: 2021-03-09
 ---
 
-Going through my calendar, in the last 8 months, I had 179 calls with potential clients and users of Webiny. Some were small web agencies, others were a Fortune 500 business. Through those calls, I've noted down over 1000 lines of feedback items.
+Going through my calendar, in the last 8 months, I had 179 calls with potential clients and users of Webiny. Some were small web agencies, others were Fortune 500 businesses. Through those calls, I've noted down over 1000 lines of feedback items.
 
 It was clear, there was a great interest in a solution like Webiny, but for many of them, Webiny was missing certain features. From DynamoDB compatibility and VPC support to publishing workflows and better user permissions.
 
@@ -16,14 +16,14 @@ In the last ~6 months, we put 100% of our focus on addressing this feedback and 
 
 As a quick summary of the update, here are the main highlights:
 
-- 🚀 Drastic performance improvements (bechmark included below)
+- 🚀 Drastic performance improvements (benchmark included below)
 - 🔐 Default VPC and private VPC deployment now supported
 - 🗄 DynamoDB and Elasticsearch support
 - 🏗 Page Builder overhaul - way faster and more stable than before
 - 💻 Developer experience improved
 - 🧱 IaC implementation via Pulumi
 
-In this post we won't go through all the changes, as there's a lot of them, instead, we'll focus on the most important ones.
+In this post we won't go through all the changes, as there's a lot of them. Instead, we'll focus on the most important ones.
 
 In case you're new to Webiny, we're prepared a quick overview video for you:
 
@@ -39,7 +39,7 @@ Let's go through the updates.
 
 ## DynamoDB support
 
-Pretty much the #1 top requested feature is now implemented. Webiny by default ships with DynamoDB. For this, we had to rewrite all of our apps, from Page Builder to Headless CMS, and completely change the way how we store and retrieve content from the database.
+Pretty much the #1 top requested feature is now implemented. Webiny by default ships with DynamoDB. For this, we had to rewrite all our apps, from Page Builder to Headless CMS, and completely change the way how we store and retrieve content from the database.
 
 DynamoDB is used for write operations, so you have super-fast writes, and then the information is transformed and synced into an Elasticsearch cluster. If you are doing a read operation and are fetching an object via its PK, then DynamoDB is used. For all other operations, Webiny goes directly to the Elasticsearch cluster. This makes the querying of data more flexible and you'll also take the advantage of the amazing full-text search capabilities of ElasticSearch.
 
@@ -63,7 +63,7 @@ The third change we did was to use DynamoDB and Elasticsearch as the default dat
 
 You can now choose if you want to deploy Webiny inside a VPC or outside a VPC. You can also configure the VPC settings inside your project, use existing VPCs, and similar.
 
-Here's a quick snapshot of the architecture, for the full overview, checkout [this page](https://docs.webiny.com/docs/key-topics/cloud-infrastructure/introduction).
+Here's a quick snapshot of the architecture, for the full overview, check out [this page](https://docs.webiny.com/docs/key-topics/cloud-infrastructure/introduction).
 
 ![Webiny serverless architecture](/assets/webiny-v5-the-big-update/arch.png)
 
@@ -125,7 +125,7 @@ We took the UX to the next level. We've implemented a new sidebar for much bette
 
 ### Performance improvement
 
-The overall performance and scalability of delivering Page Builder pages have been also re-architected and improved upon. Now the delivery path is CloudFront > S3 and nothing in between. This makes it super scalable, cost-efficient, and performant. However, to get to this setup, we had to build a whole new pre-rendering mechanism with a queuing system and improve on the caching mechanism and publishing workflow.
+The overall performance and scalability of delivering Page Builder pages have been also re-architected and improved upon. Now the delivery path is CloudFront > S3 and nothing in between. This makes it super scalable, cost-efficient, and performant. However, to get to this setup, we had to build a whole new pre-rendering mechanism with a queuing system and improve on the caching mechanism and publishing workflow. This mechanism now replaces the SSR mechanism we had previously.
 
 There are 2 more exciting new features coming to Page Builder that we'll reveal in one of the next releases.
 
