@@ -1,0 +1,160 @@
+---
+slug: "blog/webiny-v5-the-big-update"
+title: "Webiny v5 - The BIG update"
+description: ""
+tags: ["Javascript", "Serverless", "React", "Nodejs", "AWS"]
+featureImage: "./assets/webiny-just-got-400-faster-16223744eca3/proxy-1ZB9u_IEwlq-gUiF7AdZKPQ.png"
+author: sven
+date: 2021-03-09
+---
+
+Going through my calendar, in the last 8 months, I had 179 calls with potential clients and users of Webiny. Some were small web agencies, others were a Fortune 500 business. Through those calls, I've noted down over 1000 lines of feedback items.
+
+It was clear, there was a great interest in a solution like Webiny, but for many of them, Webiny was missing certain features. From DynamoDB compatibility and VPC support to publishing workflows and better user permissions.
+
+In the last ~6 months, we put 100% of our focus on addressing this feedback and getting Webiny to the next level. Today the team is happy to present the Webiny v5 release.
+
+As a quick summary of the update, here are the main highlights:
+
+- 🚀 Drastic performance improvements (bechmark included below)
+- 🔐 Default VPC and private VPC deployment now supported
+- 🗄 DynamoDB and Elasticsearch support
+- 🏗 Page Builder overhaul - way faster and more stable than before
+- 💻 Developer experience improved
+- 🧱 IaC implementation via Pulumi
+
+In this post we won't go through all the changes, as there's a lot of them, instead, we'll focus on the most important ones.
+
+In case you're new to Webiny, we're prepared a quick overview video for you:
+
+<iframe
+  class="video"
+  src="https://www.youtube.com/embed/gOGJKHXntiU"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+Let's go through the updates.
+
+## DynamoDB support
+
+Pretty much the #1 top requested feature is now implemented. Webiny by default ships with DynamoDB. For this, we had to rewrite all of our apps, from Page Builder to Headless CMS, and completely change the way how we store and retrieve content from the database.
+
+DynamoDB is used for write operations, so you have super-fast writes, and then the information is transformed and synced into an Elasticsearch cluster. If you are doing a read operation and are fetching an object via its PK, then DynamoDB is used. For all other operations, Webiny goes directly to the Elasticsearch cluster. This makes the querying of data more flexible and you'll also take the advantage of the amazing full-text search capabilities of ElasticSearch.
+
+With this implementation, we also created an ORM-free layer that still allows integration with other databases, both SQL and NoSQL ones.
+
+## Performance improvements
+
+We improved the performance in multiple layers. The cold-start times are now 60-70% shorter, the Headless CMS API response times are 3-5x faster. You might want to check the full performance benchmark we did, it's [available here](https://docs.webiny.com/docs/webiny-overview/performance-benchmark/introduction).
+
+![Webiny performance benchmark](/assets/webiny-v5-the-big-update/benchmark.png)
+
+There isn't a single change, but numerous changes in a combination that we implemented to get to this level. We moved away from having several Lambda calls in a chain, which is usually the case with a distributed GraphQL schema. That architecture heavily bloats the cold start times.
+
+We now run Webiny and the GraphQL schema inside a single Lambda function. (note: you can still create a distributed schema, but by default, we don't ship with one).
+
+The second change we made was to get rid of the Commodo data layer and now we only use a super-thin layer without any "smart" functionality to communicate with the database. The Commodo library worked great with a slim data structure, but the moment you had numerous nested references, typical for a headless CMS, it caused performance issues.
+
+The third change we did was to use DynamoDB and Elasticsearch as the default databases instead of MongoDB Atlas. No longer we need to worry about connection pooling and overflowing the connection pool.
+
+## VPC support
+
+You can now choose if you want to deploy Webiny inside a VPC or outside a VPC. You can also configure the VPC settings inside your project, use existing VPCs, and similar.
+
+Here's a quick snapshot of the architecture, for the full overview, checkout [this page](https://docs.webiny.com/docs/key-topics/cloud-infrastructure/introduction).
+
+![Webiny serverless architecture](/assets/webiny-v5-the-big-update/arch.png)
+
+## Replaced API Gateway with HTTP Gateway
+
+By default, Webiny will deploy an AWS HTTP Gateway instead of an AWS API Gateway. This is better both in terms of cost as well as performance. In case you want to go with API Gateway because you need WebSocket support or for some other reason, you can adjust the deployment settings inside your project.
+
+## Pulumi support
+
+Webiny by default now uses [Pulumi](https://www.pulumi.com) to deploy your architecture instead of a custom deployment mechanism.
+
+The deployment mechanism is registered as a plugin, so if needed you can replace Pulumi with a custom one that supports something like CloudFormation, TerraForm, or Serverless Framework.
+
+The benefit we saw with Pulumi is that we can truly control infrastructure as code, and not use some templating language such as YAML.
+
+The additional feature we implemented on the IaC side is that now you can have several different infrastructure layouts for the same project. For example, if you're deploying a project in a dev environment, you might not want to have a super big Elasticsearch instance or use a private VPC with a NAT gateway, this is something you would consider for production use-cases.
+
+Have a look at the prod and dev stack we have for the default Webiny API: [https://github.com/webiny/webiny-js/tree/next/api/pulumi](https://github.com/webiny/webiny-js/tree/next/api/pulumi)
+
+## Multi-tenancy support
+
+This is one of our first enterprise-only features.
+
+It enables you to have 1 instance of Webiny to run as many projects or websites as you want. Each tenant has full data separation and they act as if you had a completely different Webiny installation. This is ideal for building SaaS solutions.
+
+In case you want to know more about the multi-tenancy feature, please [book a call](https://calendly.com/webiny/30min).
+
+## Refactored user security and permissions
+
+![Webiny security](/assets/webiny-v5-the-big-update/security.png)
+
+In v4 the roles and user permissions were based on the GraphQL API scopes, which was a bit clumsy as in many cases you didn't know what some of the scopes meant and in other cases, they were not granular enough.
+
+V5 features a completely new security implementation that focuses on business requirements. Now you can create permissions like:
+
+1. A user can only access the "Products" content model in the English locale and they can only request to publish a new record, but not publish it themselves.
+2. A user can only read his own records in the German locale.
+3. A user can create pages in Page Builder, but can't change the categories and menus.
+
+The cool thing is that the new security implementation and permissions now reflect on both the API side as well as the UI side. If a user can't perform a certain action, like publishing a new content record, the publish button will be hidden for them.
+
+Finally, to mention, the security layer now acts as a mini framework of its own. You can use it to define and control permissions for your custom Webiny APIs and apps. And now it's way simpler to implement 3rd part auth providers like OKTA, Auth0, ActiveDirectory, and others.
+
+## Multi-language support
+
+Webiny v4 had partial multi-language support, but in v5 we now have 100% coverage across all apps and modules.
+
+## Page Builder - massive improvements
+
+![Webiny Page Builder](/assets/webiny-v5-the-big-update/page-builder.png)
+
+### Redux out, Recoil in
+
+We've rewritten the Page Builder pretty much from the scratch. We removed the redux as the state management inside the editor and replaced it with recoil. As a result, the editor is more responsive, undo/redo works way better, and no more broken pages.
+
+### UX improvements
+
+We took the UX to the next level. We've implemented a new sidebar for much better control of the styles of your elements. We also implemented the support to view your page across different devices and screen sizes like tables and mobile.
+
+### Performance improvement
+
+The overall performance and scalability of delivering Page Builder pages have been also re-architected and improved upon. Now the delivery path is CloudFront > S3 and nothing in between. This makes it super scalable, cost-efficient, and performant. However, to get to this setup, we had to build a whole new pre-rendering mechanism with a queuing system and improve on the caching mechanism and publishing workflow.
+
+There are 2 more exciting new features coming to Page Builder that we'll reveal in one of the next releases.
+
+## Documentation
+
+Unfortunately, we have to admit, this is one area where we failed to deliver quality to our users. We acknowledge that, but also we have a plan on how to turn things around.
+
+We've written an extensive guide for ourselves on how to structure and write better documentation. We've implemented a peer review process, automated quality checks, and worked hard on how the overall content should look like → mainly based on your feedback.
+
+At the moment we're provided more than 40 brand new articles, and even more, are coming in the upcoming weeks.
+
+## Developer experience
+
+Finally, to mention, we've made numerous code refactors with the primary purpose of "hiding the magic" and showing the developers how things are connected, how they work, and how to expand or change them. Now it's easier than before to grasp the inner workings of Webiny.
+
+## V5 Summary
+
+We built the very first Webiny version based on what we wanted and what at the time was possible to build with serverless technologies.
+
+Since then we learned a lot, technologies have evolved and gotten better, new best practices were found. Our users tested Webiny inside and out and were quite vocal about their feedback, which we really appreciated.
+
+The v5 release is 100% driven by what our users wanted, with a few minor adjustments here and there. We believe this one is going to put a lot of smiles on developers around the world.
+
+```
+npx create-webiny-project my-project
+```
+
+We believe we built the most complete, self-hosted serverless solution out there that's open-source. It scales almost infinitely, you're charged per 1ms of consumption and no servers to maintain. And best of all, it's completely free!
+
+So go ahead, give the Webiny a spin and let us know what you think.
+
+In case you want to reach out to the team you can find us on our [community slack](https://www.webiny.com/) and [github](https://github.com/webiny/webiny-js).

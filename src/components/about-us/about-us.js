@@ -19,7 +19,8 @@ import teamRectImg from "./assets/about-team-rect.svg";
 import teamPathImg from "./assets/about-team-path.svg";
 import arrowIcon from "./assets/about-arrow.svg";
 import valueRectImg from "./assets/about-value-rect.svg";
-import investorImg from "./assets/e1-logo.png";
+import investorE1Img from "./assets/e1-logo.png";
+import investorYCImg from "./assets/yc-logo.png";
 import circleBgImg from "./assets/about-circle-bg.svg";
 
 // data
@@ -205,6 +206,25 @@ const InvestorText = styled(Text)(
     }),
 );
 
+const InvestorLogos = styled("div")(
+    {
+        display: "flex",
+        justifyContent: "space-around",
+        width: "100%",
+        alignItems: "center",
+        img: {
+            width: "100%",
+            height: "auto",
+        },
+    },
+    mq({
+        flexDirection: ["column", "row"],
+        img: {
+            marginTop: [25, 0],
+        },
+    }),
+);
+
 const breadcrumbs = [{ link: "/", text: "Home" }, { text: "About Us" }];
 
 export default () => (
@@ -361,7 +381,10 @@ export default () => (
                         <InvestorText>
                             We are proud to be backed by visionary investors
                         </InvestorText>
-                        <img src={investorImg} alt="" className="img" />
+                        <InvestorLogos>
+                            <img src={investorE1Img} alt="Episode 1" className="img" />
+                            <img src={investorYCImg} alt="Y Combinator" className="img" />
+                        </InvestorLogos>
                     </More>
                 </ImageWrapper>
             </ContentContainer>

@@ -211,8 +211,8 @@ const Header = ({ hasBanner = true }) => {
         <Fragment>
             {hasBanner && (
                 <Banner
-                    title={"Webiny v5 beta is now available for testing 🚀"}
-                    link={"https://docs.webiny.com/"}
+                    title={"Webiny 5.0 release it LIVE! Check out what's new!"}
+                    link={"/blog/webiny-v5-the-big-update"}
                     tag={"new"}
                 />
             )}
