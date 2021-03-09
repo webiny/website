@@ -82,8 +82,8 @@ const blogStyles = css(
                 fontWeight: theme.fontWeight.semiBold,
             },
             p: {
-                lineHeight: "165%",
-                fontSize: "1.2em",
+                lineHeight: "150%",
+                fontSize: "1.1em",
             },
             a: {
                 textDecoration: "underline",
@@ -104,6 +104,9 @@ const blogStyles = css(
             iframe: {
                 margin: "0 auto",
                 display: "block",
+                "&.video": {
+                    objectFit: "contain",
+                },
             },
             hr: {
                 display: "block",
@@ -122,8 +125,8 @@ const blogStyles = css(
             },
             "ol, ul": {
                 li: {
-                    lineHeight: "165%",
-                    fontSize: "1.2em",
+                    lineHeight: "150%",
+                    fontSize: "1.1em",
                     marginBottom: 15,
                     marginLeft: 30,
                     "p, ol li, ul li": {
@@ -176,6 +179,14 @@ const blogStyles = css(
     },
     mq({
         fontSize: [14, 18],
+        ".blog-post-content": {
+            iframe: {
+                "&.video": {
+                    width: ["100%", 960],
+                    height: ["auto", 540],
+                },
+            },
+        },
     }),
 );
 

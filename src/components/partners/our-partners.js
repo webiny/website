@@ -314,7 +314,7 @@ const ourPartners = [
         location: "Malta",
         website: "https://www.casasoft.mt/",
         description:
-            "Casasoft is an award winning ISO 9001:2015 certified software company composed of a team of highly skilled software architects, developers, designers and strategic thinkers full of passion and innovation. Through offering digital solutions & applications. Casasoft helps businesses go digital to increase their productivity, efficiency sales and competitiveness whilst reducing costs in today’s highly digitalized world.",
+            "CasaSoft is an award-winning ISO 9001:2015 certified software company based in Malta helping businesses succeed by increasing their productivity, efficiency, sales and competitiveness whilst reducing costs by working smarter, not harder.",
     },
     {
         image: logoCodingSans,
@@ -384,7 +384,7 @@ const ServerLessAdvantage = () => {
                                     Visit Website <img src={arrowIcon} alt="" className="icon" />
                                 </Button>
                             </ButtonGroup>
-
+                            <RoundDot className={index % 2 ? "right" : "left"} />
                             {index === ourPartners.length - 1 && (
                                 <BottomMark className={index % 2 ? "right" : "left"}>
                                     <div className="inner">

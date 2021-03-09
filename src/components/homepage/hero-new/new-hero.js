@@ -246,13 +246,12 @@ class HeroComponent extends React.Component {
                                     Get Started Tutorial &nbsp; <img src={arrowImg} alt="" />
                                 </Button>
                             </div>
-                            {/*
+
                             <img
                                 class="backed-by"
                                 src={backedBy}
                                 title="Backed by Y Combinator & Episode 1"
                             />
-                            */}
                         </LeftPart>
                         <RightPart>
                             <ImageWrapper>

@@ -111,7 +111,7 @@ const EasyPart = () => {
                         <TitleHighlight>It's easy</TitleHighlight> to get started
                     </Title>
                     <p>Explore our docs for more tutorials and examples.</p>
-                    <ClipPart text="npx create-webiny-project@beta my-project --tag beta" />
+                    <ClipPart text="npx create-webiny-project my-project" />
                     <ClipPart text="yarn webiny deploy" />
                     <SubTitle>Your project is live!</SubTitle>
                     <Button

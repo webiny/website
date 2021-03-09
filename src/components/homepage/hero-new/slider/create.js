@@ -6,7 +6,7 @@ export default () => {
     const spinnerFrames = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"];
     const spinnerLines = [
         {
-            text: "npx create-webiny-project@beta my-project --tag beta",
+            text: "npx create-webiny-project my-project",
             cmd: true,
             delay: 50,
         },
