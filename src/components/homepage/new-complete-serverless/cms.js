@@ -211,7 +211,7 @@ const descriptionList = [
     {
         title: "Plugins",
         description:
-            "Expand and change any aspact of the system with custom plugins and business logic.",
+            "Expand and change any aspect of the system with custom plugins and business logic.",
     },
     {
         title: "Performance",

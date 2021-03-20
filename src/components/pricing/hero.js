@@ -66,7 +66,7 @@ export default ({ children, ...props }) => (
         <Breadcrumb breadcrumbs={breadcrumbs} />
         <ContentContainer className={containerClass}>
             <Title>Pricing</Title>
-            <SubText>We're committed to keeping the Webiny free and open source forever.</SubText>
+            <SubText>We're committed to keeping Webiny free and open source forever.</SubText>
             <SubText>
                 But we also recognise the need of certain businesses to get additional support when
                 it comes to building enterprise-grade serverless solutions.
