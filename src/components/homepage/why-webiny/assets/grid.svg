@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="480px" height="481px" viewBox="0 0 480 481" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>grid</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Landing-page-Webiny" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.367569508" stroke-linecap="square">
+        <g id="Desktop-HD" transform="translate(-831.000000, -3087.000000)" stroke="#979797">
+            <g id="Performance-stats" transform="translate(-848.000000, 2911.000000)">
+                <g id="stats" transform="translate(1675.000000, 177.000000)">
+                    <g id="grid" transform="translate(4.000000, 0.000000)">
+                        <path d="M240,0 L240,208.546082" id="Line-6"></path>
+                        <path d="M240,270 L240,478.546082" id="Line-6-Copy"></path>
+                        <path d="M105,135 L105,343.546082" id="Line-6-Copy-3" transform="translate(105.000000, 239.500000) rotate(-90.000000) translate(-105.000000, -239.500000) "></path>
+                        <path d="M375,135 L375,343.546082" id="Line-6-Copy-2" transform="translate(375.000000, 239.500000) rotate(-90.000000) translate(-375.000000, -239.500000) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,199 +1,138 @@
 import React from "react";
 import styled from "react-emotion";
+import { Link } from "gatsby";
+import Button from "../../ui/button";
+import { css } from "emotion";
 import theme from "../../utils/theme";
 import mq from "../../utils/breakpoints";
-import { css } from "emotion";
-import Link from "gatsby-link";
 import ContentContainer from "../../ui/content-container";
 
-import imgCommunityTools from "./assets/community-tools.svg";
-import imgCompleteEnv from "./assets/complete-env.svg";
-import imgJs from "./assets/js.svg";
-import imgMultiCloud from "./assets/multi-cloud.svg";
-import imgBuildMore from "./assets/build-stuff.svg";
-import imgMicroservices from "./assets/microservices.svg";
+import benchmarkBg from "./assets/performance-bg.png";
+import arrow from "./assets/link-arrow.svg";
+import gridBg from "./assets/grid.svg";
 
-const wrapperClass = css(
+const benchmarkContainer = css(
     {
-        backgroundColor: "transparent",
-    },
-    mq({
-        paddingTop: [0, 70],
-        paddingBottom: [25, 100],
-    }),
-);
-
-const SubTitle = styled("h2")({
-    fontSize: 42,
-    //fontWeight: theme.fontWeight.semiBold,
-    color: theme.color.black,
-    textAlign: "center",
-    paddingTop: 50,
-    marginTop: 25,
-    marginBottom: 100,
-});
-
-const Grid = styled("div")(
-    {
-        width: "100%",
-        display: "flex",
-        justifyContent: "space-between",
+        backgroundSize: "cover",
+        backgroundPosition: "0px 0px",
+        backgroundRepeat: "no-repeat",
+        color: theme.color.white,
+        padding: 25,
         boxSizing: "border-box",
+        backgroundColor: "#252233",
     },
     mq({
         flexDirection: ["column", "row"],
-        marginLeft: [0, 0],
-        marginRight: [0, 0],
-        padding: ["0 25px", 0],
-        "&.first": {
-            margin: [0, "100px 0px"],
-        },
-        margin: ["0", "50px 0 25px 0"],
+        width: ["100%", "100%"],
+        backgroundImage: ["none", "url(" + benchmarkBg + ")"],
     }),
 );
 
-const Cell = styled("div")(
+const Wrapper = styled("div")(
     {
-        boxSizing: "border-box",
-        flexBasis: "100%",
-        textAlign: "center",
-        h3: {
-            fontSize: 32,
-            color: theme.color.black,
-            margin: "20px 0",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            img: {
-                marginRight: 0,
+        margin: "0 auto",
+        maxWidth: 1150,
+        ul: {
+            listStyle: "none",
+            fontSize: 26,
+            lineHeight: "64px",
+            span: {
+                fontSize: "38",
+                display: "inline-block",
+                marginRight: 10,
             },
-        },
-        p: {
-            fontSize: 18,
-            color: theme.color.black,
-            lineHeight: "160%",
-        },
-        img: {
-            maxWidth: 250,
-        },
-        "&:nth-child(2)": {
-            marginRight: "25px !important",
-            marginLeft: "25px !important",
+            a: {
+                color: theme.color.white,
+                ":hover": {
+                    textDecoration: "none",
+                },
+            },
         },
     },
     mq({
-        marginRight: [0, 50],
-        "&:last-child": {
-            marginRight: ["0 !important", "0 !important"],
-            marginLeft: ["0 !important", "50px !important"],
-        },
-        ".image-small": {
-            width: ["100%", "325px"],
-            margin: "0 auto",
-        },
-        h3: {
-            flexDirection: ["column", "row"],
-        },
+        padding: [0, 100],
     }),
 );
 
-const ComingSoon = styled("div")({
-    fontSize: 10,
-    textTransform: "uppercase",
-    color: theme.color.grayText,
-    backgroundColor: theme.color.darkGray,
-    borderRadius: 5,
-    padding: "2px 5px",
-    marginTop: 2,
-    marginLeft: 10,
-});
+const Title = styled("h2")(
+    {
+        fontWeight: theme.fontWeight.bold,
+        lineHeight: "125%",
+        margin: "25px 0 50px 0",
+        textTransform: "uppercase",
+        ".orange": {
+            color: theme.color.primaryDark,
+        },
+    },
+    mq({
+        textAlign: ["center", "left"],
+        fontSize: [48, 48, 72],
+    }),
+);
 
-class WhyWebiny extends React.Component {
+class Benchmark extends React.Component {
     render() {
         return (
-            <section {...this.props} className={wrapperClass}>
-                <SubTitle>Why Webiny?</SubTitle>
-
-                <ContentContainer>
-                    <Grid>
-                        <Cell>
-                            <img
-                                className={"image-small"}
-                                src={imgCommunityTools}
-                                alt="Made for developers"
-                            />
-                            <h3>Made for developers</h3>
-                            <p>
-                                We created Webiny with developers in mind. It’s a single platform
-                                built with community accepted tools and libraries.
-                            </p>
-                        </Cell>
-                        <Cell>
-                            <img
-                                className={"image-small"}
-                                src={imgMicroservices}
-                                alt="The future is serverless"
-                            />
-                            <h3>The future is serverless</h3>
-                            <p>
-                                Serverless will be the way how we create most, if not all, web
-                                applications and Webiny makes it real easy.
-                            </p>
-                        </Cell>
-                        <Cell>
-                            <img
-                                className={"image-small"}
-                                src={imgMultiCloud}
-                                alt="Multi cloud support"
-                            />
-                            <h3>
-                                Multi cloud support <ComingSoon>Coming Soon</ComingSoon>
-                            </h3>
-                            <p>
-                                Deployed Webiny to any of the major cloud providers, like AWS, GCP
-                                or Azure.
-                            </p>
-                        </Cell>
-                    </Grid>
-                    <Grid>
-                        <Cell>
-                            <img
-                                className={"image-small"}
-                                src={imgBuildMore}
-                                alt="Build more than websites"
-                            />
-                            <h3>Build more than websites</h3>
-                            <p>
-                                Webiny makes it easy to build websites, web applications, APIs and
-                                microservices inside the serverless environment.
-                            </p>
-                        </Cell>
-                        <Cell>
-                            <img
-                                className={"image-small"}
-                                src={imgCompleteEnv}
-                                alt="Complete environment"
-                            />
-                            <h3>Complete environment</h3>
-                            <p>
-                                It’s a whole dev environment that’s ready to go. No need to
-                                configure webpack, babel, routing and other stuff. All you need is
-                                already there.
-                            </p>
-                        </Cell>
-                        <Cell>
-                            <img className={"image-small"} src={imgJs} alt="100% Javascript" />
-                            <h3>100% Javascript</h3>
-                            <p>
-                                One language is all you need to know, no matter if you’re coding a
-                                SPA or an API.
-                            </p>
-                        </Cell>
-                    </Grid>
-                </ContentContainer>
-            </section>
+            <ContentContainer className={benchmarkContainer}>
+                <Wrapper>
+                    <Title>
+                        Why <span className="orange">Webiny</span>?
+                    </Title>
+                    <ul>
+                        <li>
+                            <span>01.</span> Developer experience is the cornerstone of our product.
+                            (
+                            <a
+                                href="https://docs.webiny.com/docs/webiny/introduction/#our-philosophy"
+                                target="_blank"
+                            >
+                                our philosophy
+                            </a>
+                            )
+                        </li>
+                        <li>
+                            <span>02.</span> Scale, performance and reliability is what you can
+                            expect. (
+                            <a
+                                href="https://docs.webiny.com/docs/webiny-overview/performance-benchmark/introduction"
+                                target="_blank"
+                            >
+                                benchmark
+                            </a>
+                            )
+                        </li>
+                        <li>
+                            <span>03.</span> Continuously challenged and improved by our welcoming
+                            community. (
+                            <a href="/slack" target="_blank">
+                                slack
+                            </a>
+                            )
+                        </li>
+                        <li>
+                            <span>04.</span> Self-hosted & open-source, your data and privacy are
+                            yours to control. (
+                            <a
+                                href="https://docs.webiny.com/docs/webiny-overview/security#data"
+                                target="/_blank"
+                            >
+                                data security
+                            </a>
+                            )
+                        </li>
+                        <li>
+                            <span>05.</span> Cut your infrastructure costs up to 80% by switching to
+                            serverless. (
+                            <a href="/why-webiny" target="_blank">
+                                serverless benefits
+                            </a>
+                            )
+                        </li>
+                    </ul>
+                </Wrapper>
+            </ContentContainer>
         );
     }
 }
 
-export default WhyWebiny;
+export default Benchmark;

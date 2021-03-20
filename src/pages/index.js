@@ -8,7 +8,7 @@ import FocusBusiness from "../components/homepage/focus-business";
 import ServerlessEasy from "../components/homepage/serverless-easy/serverless-easy";
 import CompleteSection from "../components/homepage/new-complete-serverless";
 import ClientsLogo from "../components/homepage/clients-logo/clients-logo";
-import Benchmark from "../components/homepage/benchmark/benchmark";
+import WhyWebiny from "../components/homepage/why-webiny/why-webiny";
 import CaseStudy from "../components/ui/case-study";
 import FooterCta from "../components/ui/footer-cta";
 
@@ -27,7 +27,7 @@ class IndexPage extends React.Component {
                 <Hero />
                 <FocusBusiness />
                 <CompleteSection />
-                <Benchmark />
+                <WhyWebiny />
                 <CaseStudy />
                 <ServerlessEasy />
                 {/*<ClientsLogo />*/}
