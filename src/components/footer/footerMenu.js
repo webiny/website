@@ -44,7 +44,7 @@ const FooterMenu = () => (
     <ContentContainer className={footerMenu}>
         <MenuBlock>
             <SectionTitle>Developers</SectionTitle>
-            <a href="https://docs.webiny.com/">Documentation</a>
+            <a href="/docs/webiny/introduction/">Documentation</a>
             <a
                 onClick={() => {
                     trackGoToGithub({ placement: "footer-menu" });

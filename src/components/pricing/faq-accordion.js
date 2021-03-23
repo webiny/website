@@ -70,7 +70,7 @@ const FAQAccordion = () => {
             children: (
                 <p>
                     Follow the{" "}
-                    <a href="https://docs.webiny.com/" target="_blank">
+                    <a href="/docs/webiny/introduction/" target="_blank">
                         get started tutorial
                     </a>
                     .
@@ -98,7 +98,7 @@ const FAQAccordion = () => {
             children: (
                 <p>
                     We don't host a public demo at this time. You're welcome to{" "}
-                    <a href="https://docs.webiny.com/" target="_blank">
+                    <a href="/docs/webiny/introduction/" target="_blank">
                         install it yourself
                     </a>
                     , or{" "}

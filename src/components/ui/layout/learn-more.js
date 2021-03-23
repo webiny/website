@@ -88,7 +88,7 @@ const LearnMoreAboutWebiny = () => (
                     Get started with our step-by-step tutorial. <br />
                     It's only gonna take a minute.
                 </Text>
-                <Button className={"button"} type="primary" link={"https://docs.webiny.com/"}>
+                <Button className={"button"} type="primary" link={"/docs/webiny/introduction/"}>
                     Quick Start
                 </Button>
             </Wrapper>

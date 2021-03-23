@@ -73,7 +73,7 @@ class Footer extends React.Component {
                             Get started with our step-by-step tutorial. <br />
                             It's only gonna take a minute.
                         </Text>
-                        <Button type="primary" link="https://docs.webiny.com/">
+                        <Button type="primary" link="/docs/webiny/introduction/">
                             Quick Start
                         </Button>
                     </Wrapper>

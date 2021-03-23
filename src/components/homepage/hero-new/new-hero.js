@@ -240,7 +240,7 @@ class HeroComponent extends React.Component {
                                 <Button
                                     className={getStartedButtonClass}
                                     type="default"
-                                    link="https://docs.webiny.com/"
+                                    link="/docs/webiny/introduction/"
                                     target="_blank"
                                 >
                                     Get Started Tutorial &nbsp; <img src={arrowImg} alt="" />

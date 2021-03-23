@@ -125,7 +125,7 @@ const WebinyHallMarkImage = styled("img")(
 
 const defaultPrimaryCTA = {
     label: "Get started",
-    link: "https://docs.webiny.com",
+    link: "/docs/webiny/introduction/",
 };
 
 const defaultSecondaryCTA = {

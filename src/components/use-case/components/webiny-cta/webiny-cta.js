@@ -131,7 +131,7 @@ const defaultCTA = {
     color: theme.color.primaryDark,
     actionType: "dark",
     actionLabel: "quick start",
-    actionLink: "https://docs.webiny.com/docs/get-started/quick-start/",
+    actionLink: "/docs/tutorials/install-webiny",
 };
 
 const primaryCTA = {

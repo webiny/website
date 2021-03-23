@@ -68,7 +68,7 @@ const PriceListMobile = ({ priceList }) => {
                     Button
                     target="_blank"
                     className={buttonOutlinePrimary}
-                    link="https://docs.webiny.com/"
+                    link="/docs/webiny/introduction/"
                 >
                     Get Started
                 </Button>

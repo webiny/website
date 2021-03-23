@@ -234,7 +234,7 @@ export const RESOURCES_MENU = {
             {
                 id: 0,
                 label: "Documentation",
-                link: "https://docs.webiny.com/docs/webiny/introduction/",
+                link: "/docs/webiny/introduction/",
             },
         ],
     },

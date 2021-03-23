@@ -187,7 +187,7 @@ const MenuItemList = props => (
                 </div>
             </MenuItem>
             <MenuItem>
-                <Button link="https://docs.webiny.com/" type={props.sticky && "primary"}>
+                <Button link="/docs/webiny/introduction/" type={props.sticky && "primary"}>
                     Get Started
                 </Button>
             </MenuItem>

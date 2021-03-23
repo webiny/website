@@ -172,7 +172,7 @@ const Blogs = props => {
                                 className={"not-found__button"}
                                 type={"primary"}
                                 target={"_blank"}
-                                link={"https://docs.webiny.com"}
+                                link={"/docs/webiny/introduction/"}
                             >
                                 Visit docs
                             </Button>

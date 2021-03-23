@@ -166,7 +166,7 @@ const Blocks = () => (
                 <Button
                     className={ctaButton}
                     target="_blank"
-                    link="https://docs.webiny.com/"
+                    link="/docs/webiny/introduction/"
                     type="outlineDark"
                 >
                     View Documentation
