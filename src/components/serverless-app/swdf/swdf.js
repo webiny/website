@@ -52,7 +52,7 @@ export default ({ children, ...props }) => (
             className={heroStyles}
             bg={HeroBg}
             title={"Serverless Web Development Framework"}
-            getStarted="https://docs.webiny.com/"
+            getStarted="/docs/webiny/introduction/"
             media={
                 <img
                     className={heroImageStyle}

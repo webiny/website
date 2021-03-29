@@ -264,7 +264,7 @@ class HeroComponent extends React.Component {
                         <Buttons>
                             <Button
                                 className={ctaButton}
-                                link="https://docs.webiny.com/"
+                                link="/docs/webiny/introduction/"
                                 type="dark"
                             >
                                 Get Started

@@ -96,7 +96,7 @@ class GoServerless extends React.Component {
                             Get started with your next project in a few easy steps
                         </p>
                         <Button
-                            link={"https://docs.webiny.com"}
+                            link={"/docs/webiny/introduction/"}
                             target={"_blank"}
                             type={"dark"}
                             className={ctaButton}

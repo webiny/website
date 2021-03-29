@@ -82,10 +82,7 @@ class Benchmark extends React.Component {
                         <li>
                             <span>01.</span> Developer experience is the cornerstone of our product.
                             (
-                            <a
-                                href="https://docs.webiny.com/docs/webiny/introduction/#our-philosophy"
-                                target="_blank"
-                            >
+                            <a href="/docs/webiny/introduction/#our-philosophy" target="_blank">
                                 our philosophy
                             </a>
                             )
@@ -94,7 +91,7 @@ class Benchmark extends React.Component {
                             <span>02.</span> Scale, performance and reliability is what you can
                             expect. (
                             <a
-                                href="https://docs.webiny.com/docs/webiny-overview/performance-benchmark/introduction"
+                                href="/docs/webiny-overview/performance-benchmark/introduction"
                                 target="_blank"
                             >
                                 benchmark
@@ -112,10 +109,7 @@ class Benchmark extends React.Component {
                         <li>
                             <span>04.</span> Self-hosted & open-source, your data and privacy are
                             yours to control. (
-                            <a
-                                href="https://docs.webiny.com/docs/webiny-overview/security#data"
-                                target="/_blank"
-                            >
+                            <a href="/docs/webiny-overview/security#data" target="/_blank">
                                 data security
                             </a>
                             )

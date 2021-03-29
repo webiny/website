@@ -164,7 +164,7 @@ class Benchmark extends React.Component {
                         <Button
                             type={"outline"}
                             className="learnLink"
-                            link="https://docs.webiny.com/docs/webiny-overview/performance-benchmark/introduction"
+                            link="/docs/webiny-overview/performance-benchmark/introduction"
                         >
                             Benchmark details <img src={arrow} alt="" />
                         </Button>
@@ -195,7 +195,7 @@ class Benchmark extends React.Component {
                         <Button
                             type={"outline"}
                             className="learnLink mobileOnly"
-                            link="https://docs.webiny.com/docs/webiny-overview/performance-benchmark/introduction"
+                            link="/docs/webiny-overview/performance-benchmark/introduction"
                         >
                             Benchmark details <img src={arrow} alt="" />
                         </Button>

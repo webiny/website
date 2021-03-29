@@ -187,7 +187,7 @@ export default ({ children, ...props }) => (
                 <Cell>
                     <h3>
                         <img src={docsIcon} />
-                        <a href="https://docs.webiny.com/">
+                        <a href="/docs/webiny/introduction/">
                             Documentation
                             <img className={"arrow"} src={arrow} />
                         </a>

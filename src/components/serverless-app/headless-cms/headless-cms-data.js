@@ -286,8 +286,8 @@ export const FEATURES = [
                 </p>
             </Fragment>
         ),
-        actionLabel: "Learn more",
-        actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens",
+        //actionLabel: "Learn more",
+        //actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens",
         background: false,
         imageOnLeft: true,
     },
@@ -310,8 +310,8 @@ export const FEATURES = [
         renderImg: () => (
             <img src={DeviceAgnostic} alt="Device & Frontend Agnostic" className={"img"} />
         ),
-        actionLabel: "Learn more",
-        actionLink: "https://docs.webiny.com/docs/guides/headless-gatsby-tutorial",
+        //actionLabel: "Learn more",
+        //actionLink: "https://docs.webiny.com/docs/guides/headless-gatsby-tutorial",
         background: grayRectInvertedImg,
         imageOnLeft: false,
     },
