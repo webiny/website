@@ -1,6 +1,6 @@
 import Hero from "../components/hero";
 import React from "react";
-import logoImg from "./assets/kammer-alise-britt-logo-2.png";
+import logoImg from "./assets/logo.png";
 
 const HeroContent = props => {
     return (
