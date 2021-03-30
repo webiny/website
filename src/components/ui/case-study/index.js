@@ -1,14 +1,14 @@
-import React from "react";
-import styled from "react-emotion";
-import { css } from "emotion";
-import theme from "../../utils/theme";
-import mq from "../../utils/breakpoints";
 import ContentContainer from "../../ui/content-container";
-import Slider from "react-slick";
-import highLightImg from "./assets/case-highlight.svg";
-import caseBg from "./assets/case-bg.svg";
-
+import KammerAliceBritt from "./kammer-alice-britt";
 import OevCaseStudy from "./oev-case-study";
+import React from "react";
+import Slider from "react-slick";
+import caseBg from "./assets/case-bg.svg";
+import { css } from "emotion";
+import highLightImg from "./assets/case-highlight.svg";
+import mq from "../../utils/breakpoints";
+import styled from "react-emotion";
+import theme from "../../utils/theme";
 
 const containerClass = css(
     {
@@ -111,6 +111,7 @@ const CaseStudy = () => {
                     ]}
                 >
                     <OevCaseStudy />
+                    <KammerAliceBritt />
                 </Slider>
             </ContentContainer>
         </Section>
