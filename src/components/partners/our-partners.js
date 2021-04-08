@@ -1,6 +1,6 @@
 import Button from "../ui/button";
 import ContentContainer from "../ui/content-container";
-import Iconis from "./logos/iconis-logo.jpeg";
+import Iconis from "./logos/iconis-logo-2.jpeg";
 import Kipanga from "./logos/kipanga-logo.png";
 import React from "react";
 import arrowIcon from "./assets/arrow-default.svg";
@@ -343,7 +343,7 @@ const ourPartners = [
     {
         image: Kipanga,
         name: "Kipanga",
-        website: "www.kipanga.com.au",
+        website: "https://kipanga.com.au",
         location: "Australia",
         description:
             "With more than 20 years of software development experience; building online solutions for clients in retail, supply chain, medical, automotive and education industries, Kipanga is equipped with the experience and knowledge to help businesses with their online endeavours - branding websites, e-commerce solutions, and any custom software. Our process starts with understanding our client needs and goals, and then architect and develop a suitable solution within budget. We are certified AWS experts, and utilise their services to develop robust, resilient, scalable and cost effective solutions to our clients.",
