@@ -333,6 +333,22 @@ const ourPartners = [
             "Ian Digital Talent adopts a cost-effective approach to provide retail companies around the world with customized e-commerce and marketplace serverless solutions",
     },
     {
+        image: Iconis,
+        name: "Iconis",
+        website: "https://iconisagency.com/",
+        location: "Croatia",
+        description:
+            "We are highly experienced, creative, motivated, dedicated professionals that will do everything necessary to produce the best possible results for our clients. Our team is comprised of talented marketers, brand strategy experts, web developers, designers, and social media managers. We specialise in digital marketing strategy, web development, eCommerce, content production, branding, design. This means that we invest every available resource in developing and improving our skills so that we are able to provide a better service.",
+    },
+    {
+        image: Kipanga,
+        name: "Kipanga",
+        website: "www.kipanga.com.au",
+        location: "Australia",
+        description:
+            "With more than 20 years of software development experience; building online solutions for clients in retail, supply chain, medical, automotive and education industries, Kipanga is equipped with the experience and knowledge to help businesses with their online endeavours - branding websites, e-commerce solutions, and any custom software. Our process starts with understanding our client needs and goals, and then architect and develop a suitable solution within budget. We are certified AWS experts, and utilise their services to develop robust, resilient, scalable and cost effective solutions to our clients.",
+    },
+    {
         image: logoNttData,
         name: "NTT Data",
         website: "https://www.nttdata.com/",
@@ -347,22 +363,6 @@ const ourPartners = [
         location: "Germany",
         description:
             "OEV Online Dienste GmbH was founded in Düsseldorf (Germany) in 2001. It is an expert for digital media with distinct expertise in CMS systems. It develops comprehensive, cross-media concepts and advises clients on all aspects of digital distribution.",
-    },
-    {
-        image: Iconis,
-        name: "Iconis",
-        website: "https://iconisagency.com/",
-        location: "Croatia",
-        description:
-            "We are highly experienced, creative, motivated, dedicated professionals that will do everything necessary to produce the best possible results for our clients. Our team is comprised of talented marketers, brand strategy experts, web developers, designers, and social media managers. We specialise in digital marketing strategy, web development, eCommerce, content production, branding, design. This means that we invest every available resource in developing and improving our skills so that we are able to provide a better service.",
-    },
-    {
-        image: Kipanga,
-        name: "Kipanga",
-        website: "www.kipanga.com.au/",
-        location: "Australia",
-        description:
-            "With more than 20 years of software development experience; building online solutions for clients in retail, supply chain, medical, automotive and education industries, Kipanga is equipped with the experience and knowledge to help businesses with their online endeavours - branding websites, e-commerce solutions, and any custom software. Our process starts with understanding our client needs and goals, and then architect and develop a suitable solution within budget. We are certified AWS experts, and utilise their services to develop robust, resilient, scalable and cost effective solutions to our clients.",
     },
 ];
 
