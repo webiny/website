@@ -1,23 +1,23 @@
-import React from "react";
-import styled from "react-emotion";
-import theme from "../utils/theme";
-import mq from "../utils/breakpoints";
-import { css } from "emotion";
-import ContentContainer from "../ui/content-container";
 import Button from "../ui/button";
-
+import ContentContainer from "../ui/content-container";
+import Iconis from "./logos/iconis-logo.jpeg";
+import Kipanga from "./logos/kipanga-logo.png";
+import React from "react";
+import arrowIcon from "./assets/arrow-default.svg";
+import { css } from "emotion";
 import logoAlpine from "./logos/alpine-logo.png";
-import logoAnthill from "./logos/anthill-logo.png";
 import logoAntStack from "./logos/antstack-logo.svg";
+import logoAnthill from "./logos/anthill-logo.png";
 import logoCasaSoft from "./logos/casasoft-logo.svg";
 import logoCodingSans from "./logos/coding-sans-logo.png";
 import logoIan from "./logos/ian-logo.png";
 import logoNttData from "./logos/ntt-data-logo.png";
 import logoOev from "./logos/oev-logo.png";
-
-import titleHightlightImage from "./assets/partner-highlight.svg";
-import arrowIcon from "./assets/arrow-default.svg";
+import mq from "../utils/breakpoints";
 import startImg from "./assets/star.svg";
+import styled from "react-emotion";
+import theme from "../utils/theme";
+import titleHightlightImage from "./assets/partner-highlight.svg";
 
 const wrapperClass = css({
     position: "relative",
@@ -347,6 +347,22 @@ const ourPartners = [
         location: "Germany",
         description:
             "OEV Online Dienste GmbH was founded in Düsseldorf (Germany) in 2001. It is an expert for digital media with distinct expertise in CMS systems. It develops comprehensive, cross-media concepts and advises clients on all aspects of digital distribution.",
+    },
+    {
+        image: Iconis,
+        name: "Iconis",
+        website: "https://iconisagency.com/",
+        location: "Croatia",
+        description:
+            "We are highly experienced, creative, motivated, dedicated professionals that will do everything necessary to produce the best possible results for our clients. Our team is comprised of talented marketers, brand strategy experts, web developers, designers, and social media managers. We specialise in digital marketing strategy, web development, eCommerce, content production, branding, design. This means that we invest every available resource in developing and improving our skills so that we are able to provide a better service.",
+    },
+    {
+        image: Kipanga,
+        name: "Kipanga",
+        website: "www.kipanga.com.au/",
+        location: "Australia",
+        description:
+            "With more than 20 years of software development experience; building online solutions for clients in retail, supply chain, medical, automotive and education industries, Kipanga is equipped with the experience and knowledge to help businesses with their online endeavours - branding websites, e-commerce solutions, and any custom software. Our process starts with understanding our client needs and goals, and then architect and develop a suitable solution within budget. We are certified AWS experts, and utilise their services to develop robust, resilient, scalable and cost effective solutions to our clients.",
     },
 ];
 
