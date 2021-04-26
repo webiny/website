@@ -9,15 +9,15 @@ const LeftSide = () => {
             <ul>
                 <li>
                     <span />
+                    Microservices architecture to publish content to other channels
+                </li>
+                <li>
+                    <span />
                     Flexible tech stack for individual frontend features
                 </li>
                 <li>
                     <span />
-                    Smart content models to publishing new content fast and easy
-                </li>
-                <li>
-                    <span />
-                    Microservices architecture to publish content to other channels
+                    Smart content models for fast and easy publishing of the new content
                 </li>
                 <li>
                     <span />
@@ -43,7 +43,7 @@ const RightSide = () => {
     return (
         <React.Fragment>
             <h3>Partner</h3>
-            <a title="OEV Online" href="https://oev-online.de" target="_blank">
+            <a title="OEV Online" href="https://digitalcampus360.de/" target="_blank">
                 <img src={partnerLogo} alt="OEV Logo" />
             </a>
             <p>

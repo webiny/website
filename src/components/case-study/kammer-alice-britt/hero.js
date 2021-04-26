@@ -1,6 +1,6 @@
 import Hero from "../components/hero";
 import React from "react";
-import logoImg from "./assets/logo.png";
+import logoImg from "./assets/vkb-case-study.png";
 
 const HeroContent = props => {
     return (

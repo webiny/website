@@ -4,7 +4,7 @@ import arrowIcon from "./assets/arrow-white.svg";
 import { css } from "emotion";
 import highLightImg from "./assets/case-highlight.svg";
 import mq from "../../utils/breakpoints";
-import oevCS2 from "./assets/versicherungskammer-and-alice-and-britt-case-study.png";
+import oevCS2 from "./assets/versicherungskammer-and-alice-and-britt-case-study.jpg";
 import quoteBg from "./assets/quote-bg.svg";
 import styled from "react-emotion";
 import theme from "../../utils/theme";
@@ -161,11 +161,10 @@ const SlideItem = () => {
                     <img src={oevCS2} alt="" />
                 </FeatureImagePart>
                 <FeatureInfo>
-                    <h5>Versicherungskammer & Alice&Britt</h5>
+                    <h5> Versicherungkammer & Alice&Britt</h5>
                     <p>
-                        Development of an MVP project as a value-added module in the care sector in
-                        cooperation with the Versicherungskammer Bayern, S-Markt & Mehrwert and Reha
-                        Assist.
+                        Developing a new highly performant and flexible platform that has the
+                        ability to be easily expanded in the future.
                     </p>
                     {/*
                     <div className="summary">
@@ -178,8 +177,10 @@ const SlideItem = () => {
                     </div>
                     */}
                     <Quote>
-                        Even if it is only a matter of designing a small MVP for the time being, it
-                        is worth thinking bigger.
+                        We have already used Webiny very successfully in other projects. The system
+                        convinced us with its modern architecture and flexibility. For this
+                        lighthouse project, it was therefore immediately decided that Webiny would
+                        be the choice.
                     </Quote>
                     <div className={actionPart}>
                         <Button
