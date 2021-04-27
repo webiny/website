@@ -94,6 +94,7 @@ const CaseStudy = () => {
                     swipeToSlide={true}
                     focusOnSelect={true}
                     dots={true}
+                    arrows={false}
                     className={caseStudySlide}
                     responsive={[
                         {
@@ -105,7 +106,7 @@ const CaseStudy = () => {
                         {
                             breakpoint: 480,
                             settings: {
-                                dots: false,
+                                dots: true,
                             },
                         },
                     ]}
