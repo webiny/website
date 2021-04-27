@@ -1,9 +1,8 @@
-import React from "react";
-
 import BaseLayout from "../../layouts/base";
+import Content from "../../components/case-study/smarkt-mehrwert-reha-assist-oev/content";
 import Hero from "../../components/case-study/smarkt-mehrwert-reha-assist-oev/hero";
 import ProjectOverviewContent from "../../components/case-study/smarkt-mehrwert-reha-assist-oev/project-overview";
-import Content from "../../components/case-study/smarkt-mehrwert-reha-assist-oev/content";
+import React from "react";
 
 const Example = () => {
     return (

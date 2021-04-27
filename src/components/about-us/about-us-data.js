@@ -64,15 +64,6 @@ export const TEAM_MEMBERS = [
         imgSrc: profileAshutosh,
     },
     {
-        id: 6,
-        name: "Albiona Hoti",
-        jobTitle: "Developer relations",
-        github: "https://github.com/albionahoti",
-        twitter: "https://twitter.com/albionaitoh",
-        linkedIn: "https://www.linkedin.com/in/albionahoti/",
-        imgSrc: profileAlbiona,
-    },
-    {
         id: 7,
         name: "Mislav Streicher",
         jobTitle: "Business development",

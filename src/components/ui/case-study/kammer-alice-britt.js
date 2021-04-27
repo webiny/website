@@ -1,10 +1,10 @@
-import Button from "../../ui/button";
+import Button from "../button";
 import React from "react";
 import arrowIcon from "./assets/arrow-white.svg";
 import { css } from "emotion";
 import highLightImg from "./assets/case-highlight.svg";
 import mq from "../../utils/breakpoints";
-import oevCS1 from "./assets/oev-case-study.jpg";
+import oevCS2 from "./assets/versicherungskammer-and-alice-and-britt-case-study.jpg";
 import quoteBg from "./assets/quote-bg.svg";
 import styled from "react-emotion";
 import theme from "../../utils/theme";
@@ -48,7 +48,7 @@ const FeatureImagePart = styled("div")(
         "& img": {
             width: "100%",
             height: "100%",
-            objectFit: "cover",
+            objectFit: "contain",
         },
     },
     mq({
@@ -158,14 +158,13 @@ const SlideItem = () => {
         <SlideItemPart>
             <Feature>
                 <FeatureImagePart>
-                    <img src={oevCS1} alt="" />
+                    <img src={oevCS2} alt="" />
                 </FeatureImagePart>
                 <FeatureInfo>
-                    <h5>S-MARKT & MEHRWERT</h5>
+                    <h5> Versicherungkammer & Alice&Britt</h5>
                     <p>
-                        Development of an MVP project as a value-added module in the care sector in
-                        cooperation with the Versicherungskammer Bayern, S-Markt & Mehrwert and Reha
-                        Assist.
+                        Developing a new highly performant and flexible platform that has the
+                        ability to be easily expanded in the future.
                     </p>
                     {/*
                     <div className="summary">
@@ -178,14 +177,16 @@ const SlideItem = () => {
                     </div>
                     */}
                     <Quote>
-                        Even if it is only a matter of designing a small MVP for the time being, it
-                        is worth thinking bigger.
+                        We have already used Webiny very successfully in other projects. The system
+                        convinced us with its modern architecture and flexibility. For this
+                        lighthouse project, it was therefore immediately decided that Webiny would
+                        be the choice.
                     </Quote>
                     <div className={actionPart}>
                         <Button
                             type="primary"
                             className={ctaBtn}
-                            link={"/case-study/smarkt-mehrwert-reha-assist-oev"}
+                            link={"/case-study/kammer-alice-britt"}
                         >
                             Read case study <img src={arrowIcon} alt="" className="icon" />
                         </Button>

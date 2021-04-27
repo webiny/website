@@ -85,6 +85,7 @@ const Logo = styled("div")({
         marginBottom: -15,
         height: 200,
         width: 200,
+        objectFit: "contain",
     },
 });
 
@@ -278,6 +279,14 @@ const PurpleSection = styled("div")(
         color: theme.color.purple,
         marginBottom: 15,
         lineHeight: 1.2,
+        span: {
+            display: "inline-block",
+            width: "100%",
+            textAlign: "center",
+            color: "#333",
+            paddingTop: 15,
+            fontSize: 18,
+        },
     },
     mq({
         fontSize: ["1.3rem", "2rem"],
@@ -303,5 +312,10 @@ export const Quote = props => {
 };
 
 export const StandoutSection = props => {
-    return <PurpleSection>{props.children}</PurpleSection>;
+    return (
+        <PurpleSection>
+            {props.children}
+            <span>{props.author}</span>
+        </PurpleSection>
+    );
 };

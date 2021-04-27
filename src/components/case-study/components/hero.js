@@ -50,6 +50,7 @@ const HeroSectionWrapper = styled("div")(
     {
         display: "flex",
         flexDirection: "column",
+        zIndex: 1,
     },
     mq({
         width: ["100%", 1100],

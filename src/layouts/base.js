@@ -15,7 +15,7 @@ import "./reset.css";
 const Wrapper = styled("div")(
     {},
     mq({
-        paddingTop: [55, 90], // 65 if there is no banner, 90 if there is a banner
+        paddingTop: [55, 65], // 65 if there is no banner, 90 if there is a banner
     }),
 );
 
