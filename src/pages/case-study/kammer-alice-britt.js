@@ -2,7 +2,7 @@ import BaseLayout from "../../layouts/base";
 import Content from "../../components/case-study/kammer-alice-britt/content";
 import Hero from "../../components/case-study/kammer-alice-britt/hero";
 import ProblemSolution from "../../components/case-study/example/problem-solution";
-import ProjectOverviewContent from "../../components/case-study/smarkt-mehrwert-reha-assist-oev/project-overview";
+import ProjectOverviewContent from "../../components/case-study/kammer-alice-britt/project-overview";
 import React from "react";
 import WebinyJourney from "../../components/case-study/example/webiny-journey";
 
