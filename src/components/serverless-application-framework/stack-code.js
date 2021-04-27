@@ -10,7 +10,7 @@ import vectorIcon from "./assets/stack-highlight.svg";
 import stackImg from "./assets/stack-icon.svg";
 import architectureImg from "./assets/architecture-icon.svg";
 import codeImg from "./assets/code-icon.svg";
-import StackImage from "./assets/stack-image.svg";
+import StackImage from "./assets/stack-image-new.jpg";
 import ArchitectureTab from "./architecture";
 
 const StackCodeSection = styled("section")(
