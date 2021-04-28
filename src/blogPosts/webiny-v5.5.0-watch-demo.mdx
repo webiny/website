@@ -1,12 +1,16 @@
 ---
 slug: "blog/webiny-v5.5.0-watch"
 title: "Webiny v5.5.0 - Introducing The New Watch Command"
-description: "Yikes."
+description: "In this blog post, we cover the brand new watch command, which takes the serverless application development experience to a whole new level."
 tags: ["5.5.0", "release", "serverless", "watch", "command", "Webiny CLI"]
-featureImage: "./assets/webiny-v5-the-big-update/v5-release-cover.png"
+featureImage: "./assets/webiny-v5.5.0-watch-demo/splash-screen.png"
 author: adrian
-date: 2021-04-26
+date: 2021-04-28
 ---
+
+<iframe width="844" height="475" src="https://www.youtube.com/embed/leKEVVUPrEs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/>
 
 With the new [Webiny 5.5.0 release](https://www.webiny.com/docs/changelog/5.5.0), we introduced the brand new `webiny watch` command, which, we believe, will bring the development experience to a whole new level!
 
@@ -38,7 +42,7 @@ The question we asked ourselves here is - can we use a single approach (command)
 
 Furthermore, having developers focus their attention on packages, instead of higher-level project constructs - project applications, really isn't the best way to approach application development. This is simply because, as the number of packages starts to grow in a Webiny project, it gets harder and harder for developers to track what are the relevant packages of a project application they're currently developing.
 
-So once again, we asked ourselves - instead of starting watch sessions on particular packages in a Webiny project, wouldn't be just easier if we could initiate a watch session on a complete project application?
+So once again, we asked ourselves - instead of starting watch sessions on particular packages in a Webiny project, wouldn't it be just easier if we could initiate a watch session on a complete project application?
 
 > Every Webiny project consists of project applications and packages. Take a look at our [Project Organization](https://www.webiny.com/docs/key-topics/project-organization/project-applications-and-packages) key topics section to learn more.
 
@@ -66,9 +70,9 @@ So, from now on, starting a new watch session on one of your project application
 
 The last thing we wanted to try to improve is logging.
 
-While watching and developing project applications, it's not unusual to debug certain code issues by checking the values of one or more variables, while the code is in runtime.
+While watching and developing project applications, it's not unusual to debug certain code issues by checking the values of one or more variables at runtime.
 
-If not using the native Node.js debugger, usually we tend to place one or more `console.log` calls in our code and then run the application again (for example, a specific GraphQL query). And although in serverless environments this is possible, when it comes to actually reading the logged data, the developer experience has shown to be a bit cumbersome and really not that straight forward.
+If not using the native Node.js debugger, usually we tend to place one or more `console.log` calls in our code and then run the application again (for example, a specific GraphQL query). And although in serverless environments this is possible, when it comes to actually reading the logged data, the developer experience has shown to be a bit cumbersome and really not that straightforward.
 
 That's why, upon running the `webiny watch` command, by simply appending the `--logs` argument, you can have all of your `console.log` calls stream logged data directly to your terminal. No more digging through [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) and dozens of AWS Lambda function logs, just to find the output of a single `console.log` call!
 
@@ -103,7 +107,7 @@ yarn webiny watch api --env dev --logs
 
 But, before we do it, let's point out a couple of things.
 
-First, note that we've appended the `--logs` argument at the end of the command. With it, as you might've already guessed, we're enabling the logs forwarding feature, that we mentioned earlier (be default, this feature is not enabled).
+First, note that we've appended the `--logs` argument at the end of the command. With it, as you might've already guessed, we're enabling the logs forwarding feature, that we mentioned earlier (by default, this feature is not enabled).
 
 Secondly, we should be aware of the fact that the **API** project application contains much more than just the GraphQL API, which we aim to extend in this demo. That's why, running the `webiny watch` command on the whole project application doesn't make much sense here. It is more efficient for us to start the watch session only for the GraphQL API related code.
 
@@ -163,7 +167,7 @@ Now, let's move on to frontend development, and see how we can use the new `webi
 
 ### Frontend Development
 
-With the **API** project application, which we've had the chance to visit in the section above, every Webiny project also contains the **Admin Area** and **Website** project applications, which, essentially, contain the Webiny Admin Area and public website React applications.
+With the **API** project application, which we've had the chance to visit in the section above, every Webiny project also contains the **Admin Area** and **Website** project applications, which contain the Webiny Admin Area and public website React applications.
 
 How do we start a new watch session if we wanted to expand these? Well, we use the exact same approach we've used in order to expand the **API** project application.
 
@@ -181,9 +185,9 @@ Now, if you were to run one of these, you might notice that there is no **Deploy
 
 ![](./assets/webiny-v5.5.0-watch-demo/frontend-output.png)
 
-This is because, these project applications, essentially, represent frontend React applications, and in order to develop these, we don't need the shown automatic re-deployment and logs forwarding features. Simply said, frontend development can still be performed locally.
+This is because these project applications represent React applications. In order to develop these, we don't need automatic re-deployment and logs forwarding features. Simply put, frontend development can still be performed locally. Simply said, frontend development can still be performed locally.
 
-Once we reach a point in which we feel confident enough to deploy it to the actual cloud, then we can do that via the already seen [`webiny deploy`](https://www.webiny.com/docs/how-to-guides/deployment/deploy-your-project) command.
+Once we're ready to deploy it to the actual cloud, we can do that via the [`webiny deploy`](https://www.webiny.com/docs/how-to-guides/deployment/deploy-your-project) command, described previously in the article.
 
 But, regarding everything else, we can continue using the same approach we used in the previous backend development section. For example, we could also start by simply scaffolding a new **Admin Area** module, completing the extra steps that are provided for us, and finally, running the shown `webiny watch` commands.
 
