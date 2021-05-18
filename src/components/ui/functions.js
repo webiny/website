@@ -1,7 +1,7 @@
-import { trackAction } from "wts";
-
 function trackGoToGithub() {
-    trackAction("gh-click");
+    if (window.wts) {
+        window.wts.trackEvent("website-action", { action: "Go to GitHub" });
+    }
     window.gtag("config", "UA-35527198-1", {
         page_title: "Go to GitHub",
         page_path: "/goal-ga-github",
@@ -9,11 +9,15 @@ function trackGoToGithub() {
 }
 
 function trackBookADemo(params) {
-    trackAction("book-a-demo-click", params);
+    if (window.wts) {
+        window.wts.trackEvent("website-action", { action: "Book a demo", ...params });
+    }
 }
 
 function trackJoinSlack(params) {
-    trackAction("slack-click", params);
+    if (window.wts) {
+        window.wts.trackEvent("website-action", { action: "Join Slack", ...params });
+    }
 }
 
 export { trackGoToGithub, trackBookADemo, trackJoinSlack };

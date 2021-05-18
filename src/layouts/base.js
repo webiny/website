@@ -1,7 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
 import styled from "react-emotion";
-import { activateTracking } from "wts";
 import mq from "../components/utils/breakpoints";
 import Head from "./components/head";
 import Header from "../components/header/new-header";
@@ -21,8 +20,6 @@ const Wrapper = styled("div")(
 
 class BaseLayout extends React.Component {
     render() {
-        activateTracking();
-
         return (
             <>
                 <Head
@@ -49,21 +46,13 @@ class BaseLayout extends React.Component {
           `}
                     </script>
                 </Helmet>
-                {/*
                 <Helmet>
                     <script type="text/javascript">
                         {`
-        // crisp
-        window.$crisp=[];
-        window.CRISP_WEBSITE_ID="2776e9a3-7196-4cd7-828a-96de2d509b75";
-        (function(){ 
-          d=document;s=d.createElement("script"); 
-          s.src="https://client.crisp.chat/l.js"; 
-          s.async=1;d.getElementsByTagName("head")[0].appendChild(s);
-        })();`}
+                        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};   
+                        `}
                     </script>
                 </Helmet>
-      */}
                 <ModalProvider>
                     <Wrapper>
                         <Header trackScroll={!this.props.fixedHeader} />
