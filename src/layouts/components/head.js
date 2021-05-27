@@ -6,7 +6,10 @@ import ogImageDefault from "../assets/webiny-social-share.jpg";
 class Head extends React.Component {
     render() {
         const ogImage = this.props.image ? this.props.image : ogImageDefault;
-        const domainName = window ? window.location.origin : "";
+        let domainName = "";
+        if (typeof window !== "undefined") {
+            domainName = window.location.origin;
+        }
 
         return (
             <React.Fragment>
