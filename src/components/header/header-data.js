@@ -219,7 +219,7 @@ export const RESOURCES_MENU = {
             {
                 id: 1,
                 label: "Guides & Tutorials",
-                link: "/guides-and-tutorials",
+                link: "/docs/tutorials/install-webiny",
             },
             {
                 id: 2,

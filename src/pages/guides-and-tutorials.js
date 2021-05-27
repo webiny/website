@@ -28,9 +28,7 @@ const GuidesAndTutorialsPage = () => {
         >
             <HeroSection />
             <Notice>
-                We are working hard on upgrading our tutorials to the latest version. For now we had
-                to remove the old articles. Please join us on our <a href="/slack">slack</a> where
-                we can help you with any queries.
+                This page has been moved <a href="/docs/tutorials/install-webiny">here</a>.
             </Notice>
             {/*
             <FeaturedContent />
