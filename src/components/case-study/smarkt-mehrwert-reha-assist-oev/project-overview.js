@@ -22,7 +22,7 @@ const LeftSide = () => {
                 </li>
                 <li>
                     <span />
-                    Future-proof the stack beyond the MPV stage
+                    Future-proof the stack beyond the MVP stage
                 </li>
             </ul>
             <h3>Product used</h3>
