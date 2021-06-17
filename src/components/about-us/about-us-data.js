@@ -81,7 +81,7 @@ export const TEAM_MEMBERS = [
     },
     {
         id: 9,
-        name: "Swapnil Mane",
+        name: "Swapnil M Mane",
         jobTitle: "Developer relations",
         github: "https://github.com/swapnilmmane",
         twitter: "https://twitter.com/swapnilmmane",
