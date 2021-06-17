@@ -12,7 +12,7 @@ const Banner = styled("div")({
     boxSizing: "border-box",
     display: "flex",
     justifyContent: "center",
-    alignItems: "baseline",
+    alignItems: "center",
 
     width: "100%",
     minHeight: BANNER_HEIGHT,
@@ -20,8 +20,9 @@ const Banner = styled("div")({
     background: "linear-gradient(358.81deg, #FFF3B8 0%, #FFD43C 100%)",
     textAlign: "center",
     a: {
-        fontSize: 11,
-        lineHeight: "14px",
+        fontSize: 14,
+        fontWeight: theme.fontWeight.semiBold,
+        lineHeight: "16px",
         color: theme.color.superDarkPurple,
         textDecoration: "none",
         "&:hover": {
@@ -33,7 +34,7 @@ const Banner = styled("div")({
         boxSizing: "border-box",
         width: "auto",
         minWidth: 32,
-        height: 14,
+        height: 16,
         borderRadius: 7,
         padding: "1px 7px",
         marginRight: 16,
