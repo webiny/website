@@ -4,7 +4,7 @@ import profileSven from "./assets/Sven.png";
 import profilePavel from "./assets/Pavel.png";
 import profileAdrian from "./assets/Adrian.png";
 import profileAshutosh from "./assets/Ashutosh.png";
-import profileAlbiona from "./assets/Albiona.png";
+import profileSwapnil from "./assets/swapnil.png";
 import profileMislav from "./assets/Mislav.png";
 import profileBruno from "./assets/Bruno.png";
 
@@ -78,6 +78,15 @@ export const TEAM_MEMBERS = [
         twitter: "https://twitter.com/snyder_hr",
         linkedIn: "https://www.linkedin.com/in/brunozoric",
         imgSrc: profileBruno,
+    },
+    {
+        id: 9,
+        name: "Swapnil Mane",
+        jobTitle: "Developer relations",
+        github: "https://github.com/swapnilmmane",
+        twitter: "https://twitter.com/swapnilmmane",
+        linkedIn: "https://www.linkedin.com/in/swapnilmmane",
+        imgSrc: profileSwapnil,
     },
 ];
 
