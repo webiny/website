@@ -81,6 +81,16 @@ const blogStyles = css(
                 fontSize: "1.8em",
                 fontWeight: theme.fontWeight.semiBold,
             },
+            h5: {
+                fontSize: "1.5em",
+                fontWeight: theme.fontWeight.semiBold,
+                margin: "1.2em 0 0.5em",
+            },
+            h6: {
+                fontSize: "1em",
+                fontWeight: theme.fontWeight.semiBold,
+                margin: "1em 0 0.5em",
+            },
             p: {
                 lineHeight: "150%",
                 fontSize: "1.1em",
