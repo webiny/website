@@ -164,11 +164,12 @@ const blogStyles = css(
                 },
             },
             code: {
-                fontSize: "0.9em",
                 background: "rgba(0,0,0,.05)",
                 borderRadius: "2px",
+                fontSize: "0.9em",
                 whiteSpace: "pre-wrap",
                 "&.language-text": {
+                    fontSize: "0.8em",
                     padding: "3px 5px"
                 }
             },
