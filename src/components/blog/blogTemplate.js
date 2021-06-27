@@ -74,15 +74,15 @@ const blogStyles = css(
                 fontWeight: theme.fontWeight.semiBold,
             },
             h3: {
-                fontSize: "2em",
+                fontSize: "1.9em",
                 fontWeight: theme.fontWeight.semiBold,
             },
             h4: {
-                fontSize: "1.8em",
+                fontSize: "1.5em",
                 fontWeight: theme.fontWeight.semiBold,
             },
             h5: {
-                fontSize: "1.5em",
+                fontSize: "1.3em",
                 fontWeight: theme.fontWeight.semiBold,
                 margin: "1.2em 0 0.5em",
             },
