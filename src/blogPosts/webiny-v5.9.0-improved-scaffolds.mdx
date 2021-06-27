@@ -164,16 +164,16 @@ How easy was that? 🚀
 
 Once we got the initial **Car Manufacturers** Admin Area module working, we can proceed by modifying and extending it to our needs. Usually, we would continue further development by doing one or more of the following steps.
 
-On the GraphQL API side, we'd want to start by expanding the [`CarManufacturer` entity](https://github.com/webiny/webiny-js/blob/v5.9.0/packages/cli-plugin-scaffold-graphql-service/template/entities/TargetDataModels.ts#L15-L22) and our [GraphQL schema](https://github.com/webiny/webiny-js/blob/v5.9.0/packages/cli-plugin-scaffold-graphql-service/template/typeDefs.ts) with attributes and fields, respectively. Once we're done, we'd then continue by propagating the same changes on the to the Admin Area React application side, by adding new fields to the [`CarManufacturersForm`](https://github.com/webiny/webiny-js/blob/v5.9.0/packages/cli-plugin-scaffold-admin-app-module/template/views/TargetDataModelsForm.tsx#L50-L82) React component and updating GraphQL queries and mutations we already had in place.
+On the GraphQL API side, we'd want to start by expanding the [`CarManufacturer` entity](https://github.com/webiny/webiny-examples/blob/master/blog/webiny-v5.9.0-improved-scaffolds-and-development/api/code/graphql/src/plugins/scaffolds/graphql/carManufacturers/entities/CarManufacturers.ts#L14) and our [GraphQL schema](https://github.com/webiny/webiny-examples/blob/master/blog/webiny-v5.9.0-improved-scaffolds-and-development/api/code/graphql/src/plugins/scaffolds/graphql/carManufacturers/typeDefs.ts) with attributes and fields, respectively. Once we're done, we'd then continue by propagating the same changes on the to the Admin Area React application side, by adding new fields to the [`CarManufacturersForm`](https://github.com/webiny/webiny-examples/blob/master/blog/webiny-v5.9.0-improved-scaffolds-and-development/apps/admin/code/src/plugins/scaffolds/admin/carManufacturers/views/CarManufacturersForm.tsx#L54) React component and updating GraphQL queries and mutations we already had in place.
 
-Initially, the `CarManufacturer` entity only contains two fields: `title` and `description`, which we can set via the form that's part of the generated CRUD view in our Admin Area React application. So, for example, let's see how we can add the new `isPopular` boolean attribute to the entity, and then, enable logged-in administrators to modify its value, by adding a simple `Switch` form element.
+Initially, the `CarManufacturer` entity only contains two fields: `title` and `description`, which, for each car manufacturer entry, we can set via the the CRUD view in our Admin Area React application. So, for example, let's see how we can add the new `isPopular` boolean attribute to the entity, and then, enable logged-in administrators to modify its value, by adding a simple `Switch` form element.
 
 #### GraphQL API
 
-Starting from the GraphQL API side, let's open our [`CarManufacturers`](https://github.com/webiny/webiny-js/blob/v5.9.0/packages/cli-plugin-scaffold-graphql-service/template/entities/TargetDataModels.ts#L15-L22) entity and simply define the new attribute on it (parts of code removed for brevity):
+Starting from the GraphQL API side, let's open our [`CarManufacturer`](https://github.com/webiny/webiny-examples/blob/master/blog/webiny-v5.9.0-improved-scaffolds-and-development/api/code/graphql/src/plugins/scaffolds/graphql/carManufacturers/entities/CarManufacturers.ts#L20) entity and simply define the new attribute on it (parts of code removed for brevity):
 
 ```ts
-// api/code/graphql/src/plugins/scaffolds/graphql/entities/CarManufacturers.ts
+// api/code/graphql/src/plugins/scaffolds/graphql/carManufacturers/entities/CarManufacturers.ts
 
 (...)
 
@@ -196,10 +196,10 @@ export default new Entity<CarManufacturerEntity>({
 });
 ```
 
-Notice how we're passing the [`CarManufacturerEntity`](#) interface upon instantiating the `Entity` class. Since the interface is essentially listing all attributes that our entity consists of, let's update it as well:
+Notice how we're passing the [`CarManufacturerEntity`](https://github.com/webiny/webiny-examples/blob/master/blog/webiny-v5.9.0-improved-scaffolds-and-development/api/code/graphql/src/plugins/scaffolds/graphql/carManufacturers/types.ts#L6) interface upon instantiating the `Entity` class. Since the interface is essentially listing all attributes that our entity consists of, let's update it as well:
 
 ```ts
-// api/code/graphql/src/plugins/scaffolds/graphql/types.ts
+// api/code/graphql/src/plugins/scaffolds/graphql/carManufacturers/types.ts
 
 (...)
 
@@ -219,10 +219,10 @@ export interface CarManufacturerEntity {
 (...)
 ```
 
-Finally, let's update our GraphQL `CarManufacturer`-related types in our schema, located in the [`typeDefs.ts`](https://github.com/webiny/webiny-js/blob/v5.9.0/packages/cli-plugin-scaffold-graphql-service/template/typeDefs.ts) file:
+Finally, let's update our GraphQL `CarManufacturer`-related types in our schema, located in the [`typeDefs.ts`](https://github.com/webiny/webiny-examples/blob/master/blog/webiny-v5.9.0-improved-scaffolds-and-development/api/code/graphql/src/plugins/scaffolds/graphql/carManufacturers/typeDefs.ts) file:
 
 ```ts
-// api/code/graphql/src/plugins/scaffolds/graphql/CAR-MANUFACTURERS/typeDefs.ts
+// api/code/graphql/src/plugins/scaffolds/graphql/carManufacturers/typeDefs.ts
 
 export default /* GraphQL */ `
     type CarManufacturer {
@@ -258,13 +258,13 @@ export default /* GraphQL */ `
 `
 ```
 
-Note that if you've previously run the two shown [`webiny watch`](#) commands, all of the changes should be automatically redeployed into the cloud as you're making them.
+Note that if you've previously run the two shown [`webiny watch`](https://www.webiny.com/docs/how-to-guides/webiny-cli/use-watch-command/) commands, all of the changes should be automatically redeployed into the cloud as you're making them.
 
 Once we've done all of the above shown changes, we're ready to move on to the Admin Area React application.
 
 #### Admin Area React Application
 
-In the [`CarManufacturersForm`](https://github.com/webiny/webiny-js/blob/v5.9.0/packages/cli-plugin-scaffold-admin-app-module/template/views/TargetDataModelsForm.tsx#L50-L82) form, let's add a new [`Switch`]() form element, which will enable logged-in users to mark a particular car manufacturer as popular or not popular (parts of code removed for brevity):
+In the [`CarManufacturersForm`](https://github.com/webiny/webiny-examples/blob/master/blog/webiny-v5.9.0-improved-scaffolds-and-development/apps/admin/code/src/plugins/scaffolds/admin/carManufacturers/views/CarManufacturersForm.tsx#L54) form, let's add a new [`Switch`](https://storybook.webiny.com/?path=/story/components-switch--usage) form element, which will enable logged-in users to mark a particular car manufacturer as popular or not popular (parts of code removed for brevity):
 
 ```tsx
 // apps/admin/code/src/plugins/scaffolds/admin/carManufacturers/views/CarManufacturersForm.tsx
@@ -315,9 +315,9 @@ Once we've updated the form, it should look like the following:
 
 But, we're not there yet. There are still two steps that we need to do in order to make this complete.
 
-First, we'll need to add the `isPopular` field in all relevant GraphQL query and mutation operations, in the `graphql.ts` file. This will ensure that we're both sending and receiving the `isPopulate` value while interacting with the GraphQL API.
+First, we'll need to add the `isPopular` field in all relevant GraphQL query and mutation operations, in the [`graphql.ts`](https://github.com/webiny/webiny-examples/blob/master/blog/webiny-v5.9.0-improved-scaffolds-and-development/apps/admin/code/src/plugins/scaffolds/admin/carManufacturers/views/hooks/graphql.ts) file. This will ensure that we're both sending and receiving the `isPopulate` value while interacting with the GraphQL API.
 
-Finally, in the `useCarManufacturersForm` React hook, we'll just need to include the value of the `isPopular` form data property in the `variables` argument upon executing the [`CREATE_CAR_MANUFACTURER`](#) and [`UPDATE_CAR_MANUFACTURER`](#) mutations.
+Finally, in the [`useCarManufacturersForm`](https://github.com/webiny/webiny-examples/blob/master/blog/webiny-v5.9.0-improved-scaffolds-and-development/apps/admin/code/src/plugins/scaffolds/admin/carManufacturers/views/hooks/useCarManufacturersForm.ts) React hook, we'll just need to [include the value](https://github.com/webiny/webiny-examples/blob/master/blog/webiny-v5.9.0-improved-scaffolds-and-development/apps/admin/code/src/plugins/scaffolds/admin/carManufacturers/views/hooks/useCarManufacturersForm.ts#L42-L45) of the `isPopular` form data property in the `variables` argument upon executing the `CREATE_CAR_MANUFACTURER` and `UPDATE_CAR_MANUFACTURER` mutations.
 
 With all of the changes in place, we should be good to go and be able to set any car manufacturer as popular or not popular.
 
@@ -349,13 +349,13 @@ That's why, as mentioned, with the generated GraphQL API application code, the s
 
 ##### Different Tests for Different Purposes
 
-###### [`typeDefs.unit.test.ts`](https://github.com/webiny/webiny-js/blob/v5.9.0/packages/cli-plugin-scaffold-graphql-service/template/__tests__/typeDefs.unit.test.ts)
+###### [`typeDefs.unit.test.ts`](https://github.com/webiny/webiny-examples/blob/master/blog/webiny-v5.9.0-improved-scaffolds-and-development/api/code/graphql/src/plugins/scaffolds/graphql/carManufacturers/__tests__/typeDefs.unit.test.ts)
 
 Unit tests are probably not something you're going to write too often. In theory, these tests should not talk to any external services, and should just ensure that isolated units in your code, like functions, classes, or class methods, work as expected. Because of this narrow scope, other types of tests often provide more value. Personally, I like to use these when I'm working on an important function that has to follow a specific business logic rules, and I want to ensure it works as expected.
 
-The provided [`typeDefs.unit.test.ts`](https://github.com/webiny/webiny-js/blob/v5.9.0/packages/cli-plugin-scaffold-graphql-service/template/__tests__/typeDefs.unit.test.ts) example test is simple - it ensures that the base [`CarManufacturer` GraphQL type](https://github.com/webiny/webiny-js/blob/v5.9.0/packages/cli-plugin-scaffold-graphql-service/template/typeDefs.ts#L2-L9) exists in your GraphQL schema (defined in [`typeDefs.ts`](https://github.com/webiny/webiny-js/blob/v5.9.0/packages/cli-plugin-scaffold-graphql-service/template/typeDefs.ts)). Probably not that useful, but still, we decided to include this example test, mainly for awareness purposes.
+The provided [`typeDefs.unit.test.ts`](https://github.com/webiny/webiny-examples/blob/master/blog/webiny-v5.9.0-improved-scaffolds-and-development/api/code/graphql/src/plugins/scaffolds/graphql/carManufacturers/__tests__/typeDefs.unit.test.ts) example test is simple - it ensures that the base `CarManufacturer` GraphQL type exists in your GraphQL schema (defined in [`typeDefs.ts`](https://github.com/webiny/webiny-examples/blob/master/blog/webiny-v5.9.0-improved-scaffolds-and-development/api/code/graphql/src/plugins/scaffolds/graphql/carManufacturers/typeDefs.ts#L2)). Probably not that useful, but still, we decided to include this example test, mainly for awareness purposes.
 
-###### [`crud.integration.test.ts`](https://github.com/webiny/webiny-js/blob/v5.9.0/packages/cli-plugin-scaffold-graphql-service/template/__tests__/crud.integration.test.ts)
+###### [`crud.integration.test.ts`](https://github.com/webiny/webiny-examples/blob/master/blog/webiny-v5.9.0-improved-scaffolds-and-development/api/code/graphql/src/plugins/scaffolds/graphql/carManufacturers/__tests__/crud.integration.test.ts)
 
 These are the tests that you'll probably write most often, as these interact with real cloud infrastructure resources. This means they are testing a bigger picture, and thus, can provide more value.
 
@@ -365,11 +365,11 @@ You can start with the default setup and simply test against the cloud infrastru
 
 And although our application code is interacting with real cloud infrastructure resources during the execution of an integration test, what is interesting here is that the application code is still being run locally on our machine. Which means we can use the native [Node.js Debugger](https://nodejs.org/api/debugger.html) to travel line by line through the application code while it's running and inspect different values we might potentially be interested in. This can be of great help while we're working on a mew feature or if we simply need to debug a newly reported bug.
 
-The provided [`crud.integration.test.ts`](https://github.com/webiny/webiny-js/blob/v5.9.0/packages/cli-plugin-scaffold-graphql-service/template/__tests__/crud.integration.test.ts) integration example test ensures that the newly generated GraphQL query and mutation operations work as expected, by simply locally invoking our GraphQL API [handler function](https://github.com/webiny/webiny-js/blob/v5.9.0/packages/cwp-template-aws/template/api/code/graphql/src/index.ts). Creation of a new `CarManufacturer` entry, the update of an existing one, or paginating through a list of `CarManufacturer` entries are some of the assertions that are being made.
+The provided [`crud.integration.test.ts`](https://github.com/webiny/webiny-examples/blob/master/blog/webiny-v5.9.0-improved-scaffolds-and-development/api/code/graphql/src/plugins/scaffolds/graphql/carManufacturers/__tests__/crud.integration.test.ts) integration example test ensures that the newly generated GraphQL query and mutation operations work as expected, by simply locally invoking our GraphQL API [handler function](https://github.com/webiny/webiny-js/blob/v5.9.0/packages/cwp-template-aws/template/api/code/graphql/src/index.ts). Creation of a new `CarManufacturer` entry, the update of an existing one, or paginating through a list of `CarManufacturer` entries are some of the assertions that are being made.
 
 Note that, as you make changes to the application code, most probably, you will also need to make adjustments in this test as well.
 
-###### [`e2e.integration.test.ts`](https://github.com/webiny/webiny-js/blob/v5.9.0/packages/cli-plugin-scaffold-graphql-service/template/__tests__/crud.e2e.test.ts)
+###### [`e2e.integration.test.ts`](https://github.com/webiny/webiny-examples/blob/master/blog/webiny-v5.9.0-improved-scaffolds-and-development/api/code/graphql/src/plugins/scaffolds/graphql/carManufacturers/__tests__/crud.e2e.test.ts)
 
 Last but not least, end-to-end tests enable us not only to ensure our application code works correctly with real cloud infrastructure resources, but also that the resources that are set up around it, are working as expected.
 
@@ -381,7 +381,7 @@ Note that this means the changes we make to our application code need to be depl
 
 Unfortunately, unlike with our integration tests, here it's not recommended to partially deploy the testing cloud infrastructure resources. It's quite the opposite. Here, the resources should be deployed in a way that is as similar as possible to the setup we're using in production environment. The less difference there is, the higher level of confidence in our application we'll have.
 
-If we were to open the [`e2e.integration.test.ts`](https://github.com/webiny/webiny-js/blob/v5.9.0/packages/cli-plugin-scaffold-graphql-service/template/__tests__/crud.e2e.test.ts) example test, we could see that we're making very similar assertions to what we already had in the [`crud.integration.test.ts`](https://github.com/webiny/webiny-js/blob/v5.9.0/packages/cli-plugin-scaffold-graphql-service/template/__tests__/crud.integration.test.ts) integration example test. But, this time, we're issuing HTTP requests with a [`graphql-request`](https://www.npmjs.com/package/graphql-request) GraphQL client, directly to our deployed Amazon CloudFront distribution. This way, we ensure that both Amazon CloudFront and API Gateway are configured properly, and ultimately, that our GraphQL API returns a correct HTTP response to the user.
+If we were to open the [`e2e.integration.test.ts`](https://github.com/webiny/webiny-examples/blob/master/blog/webiny-v5.9.0-improved-scaffolds-and-development/api/code/graphql/src/plugins/scaffolds/graphql/carManufacturers/__tests__/crud.e2e.test.ts) example test, we could see that we're making very similar assertions to what we already had in the [`crud.integration.test.ts`](https://github.com/webiny/webiny-examples/blob/master/blog/webiny-v5.9.0-improved-scaffolds-and-development/api/code/graphql/src/plugins/scaffolds/graphql/carManufacturers/__tests__/crud.integration.test.ts) integration example test. But, this time, we're issuing HTTP requests with a [`graphql-request`](https://www.npmjs.com/package/graphql-request) GraphQL client, directly to our deployed Amazon CloudFront distribution. This way, we ensure that both Amazon CloudFront and API Gateway are configured properly, and ultimately, that our GraphQL API returns a correct HTTP response to the user.
 
 ##### Running Tests
 
