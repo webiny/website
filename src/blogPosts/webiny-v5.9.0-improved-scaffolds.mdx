@@ -3,7 +3,7 @@ slug: "blog/webiny-v5.9.0-improved-scaffolds-and-development"
 title: "Webiny v5.9.0 - Improved Scaffolding and Development Workflows"
 description: "In this blog post, we talk about the improved scaffolding utilities and development workflows, which will make serverless application development easier than ever."
 tags: ["5.9.0", "release", "serverless", "new", "scaffolds", "development", "workflows", "cli"]
-featureImage: "./assets/webiny-v5.9.0-improved-scaffolding-and-development-workflows/top.png"
+featureImage: "./assets/webiny-v5.9.0-improved-scaffolding-and-development-workflows/top2.png"
 author: adrian
 date: 2021-06-28
 ---
@@ -96,7 +96,7 @@ We will take a look at these in the following demo.
 
 ## Demo
 
-Alright, let's see everything in action!
+Alright, let's see it in action!
 
 In this short demo, we're going to use the new **Extend Admin Area** scaffold to create a new **Car Manufacturers** Admin Area module. Once completed, we should end up with the following:
 
@@ -160,7 +160,11 @@ How easy was that? 🚀
 
 ![New Car Manufacturer Admin Area Module](./assets/webiny-v5.9.0-improved-scaffolding-and-development-workflows/scaffolds-admin-area.png)
 
-## Want to Learn More?
+## Next Steps
+
+Once we got the initial **Car Manufacturers** Admin Area module working, we can proceed by modifying and extending it to our needs.
+
+On the GraphQL API side, we'd want to start by expanding the [CarManufacturer](https://github.com/webiny/webiny-examples/blob/master/blog/webiny-v5.9.0-improved-scaffolds-and-development/api/code/graphql/src/plugins/scaffolds/graphql/carManufacturers/entities/CarManufacturers.ts#L14) entity and our [GraphQL schema](https://github.com/webiny/webiny-examples/blob/master/blog/webiny-v5.9.0-improved-scaffolds-and-development/api/code/graphql/src/plugins/scaffolds/graphql/carManufacturers/typeDefs.ts) with attributes and fields, respectively. Once we're done, we'd then continue by propagating the same changes on the to the Admin Area React application side, by adding new fields to the [CarManufacturersForm](https://github.com/webiny/webiny-examples/blob/master/blog/webiny-v5.9.0-improved-scaffolds-and-development/apps/admin/code/src/plugins/scaffolds/admin/carManufacturers/views/CarManufacturersForm.tsx#L54) React component and updating GraphQL queries and mutations we already had in place.
 
 If you want to learn more, we encourage you to check out the [Extend Admin Area](https://www.webiny.com/docs/how-to-guides/webiny-cli/scaffolding/extend-admin-area) and [Extend GraphQL API](https://www.webiny.com/docs/how-to-guides/webiny-cli/scaffolding/extend-graphql-api) docs that we've also published with the Webiny 5.9.0 release. We also have a couple of general development guides that we're currently working on, so stay tuned for those.
 
