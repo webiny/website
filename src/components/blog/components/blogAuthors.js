@@ -6,6 +6,7 @@ import mislavImg from "../assets/mislav.png";
 import nicoImg from "../assets/nico.png";
 import pavelImg from "../assets/pavel.png";
 import svenImg from "../assets/sven.png";
+import swapnilImg from "../assets/swapnil.png";
 
 export default {
     sven: {
@@ -56,4 +57,10 @@ export default {
         twitter: "oev_online",
         avatar: nicoImg,
     },
+    swapnil: {
+        name: "Swapnil M Mane",
+        description: "Developer Relations @ Webiny",
+        twitter: "swapnilmmane",
+        avatar: swapnilImg
+    }
 };
