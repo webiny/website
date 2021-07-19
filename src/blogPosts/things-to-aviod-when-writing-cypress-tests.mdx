@@ -1,0 +1,102 @@
+---
+slug: "blog/things-to-avoid-when-writing-cypress-tests"
+title: "5 Things to Avoid When Writing Cypress Tests"
+description: "Learn how to get started with Elasticsearch & implement a fast search for your app in less than 10 minutes!"
+tags: ["Cypress", "End-to-End testing", "Web development", "Open source"]
+featureImage: "./assets/things-to-avoid-when-writing-cypress-tests/5-things-to-avoid-when-writing-cypress-tests.png"
+author: ashu
+date: 2021-17-23
+---
+
+When it comes to testing an application, End-to-End (E2E) testing provides the most confidence and the most bang for the buck.
+
+![Testing Pyramid](./assets/things-to-avoid-when-writing-cypress-tests/pyramid.png)
+
+There is no doubt that End-to-End testing is hard, time-consuming, and comes with a bag of issues to solve. But, only if you're using the wrong tool for the job.
+
+_Enter [Cypress](https://www.cypress.io): Fast, easy, and reliable testing for anything that runs in a browser_.
+
+Cypress helps in solving most of the pain points of End-to-End testing and makes it fun to write tests.
+But, there are certain mistakes to be avoided so that you can get the full benefit of working with Cypress.
+
+In this blog post, we'll cover 5 such mistakes to avoid when writing Cypress tests.
+So, without further ado, let's begin!
+
+
+## Use `id` and `class` For Selecting Element
+
+Using `id` and `class` for selecting element is problematic because they are primarily for behavior and styling purposes, due to which they are subject to change frequently.
+Doing so result in brittle tests which, you probably don't want.
+
+Instead, you should always try to use `data-cy` or `data-test-id`.
+Why? Because they are specifically for testing purposes, which makes them decoupled to the behavior or styling, hence more reliable.
+
+**What about using text for selecting element?**
+
+Sometimes it is necessary to use text such as button label to make an assertion or action.
+Although, it's perfectly fine, keep in mind that, your test will fail if the text changes, which is what you might want if the text is critical for the application.
+
+## Treating Cypress Commands as Promise
+
+Cypress tests are composed of Cypress commands, for example, `cy.get` and `cy.visit`.
+Cypress commands are like _Promise_, but they are not real _Promise_.
+
+What that means is, we can't use syntax like `async-await` while working with them.
+If you need to do something after a command has been completed, you can do so with the help of the `cy.then` command.
+It will guarantee that only after the previous command finishes, the next will run.
+
+Note when using a clause like `Promise.all` with Cypress command, it might not work as you expect because Cypress commands are like _Promise_, but not real _Promise_.
+
+## Using Arbitrary Waits in Cypress Tests
+
+When writing the Cypress test we want to mimic the behavior of a real user in real-world scenarios.
+Real-world applications are asynchronous and slow due to things like network latency and device limitations.
+
+When writing tests for such applications we are tempted to use arbitrary values in the `cy.wait` command.
+The problem with this approach is that, while it works fine in development, it is not guaranteed. Why? Because the underlying system depends upon things like network requests which are asynchronous and nearly impossible to predict.
+
+Instead, we should wait for visual elements, for example, completion of loading. Not only does it mimic the real-world use case more closely, but it also gives more reliable results.
+Think about it, a user using your application mostly likely wait for a visual clue like loading to determine the completion of an action rather than arbitrary time.
+
+Cypress commands, for example, `cy.get` wait for the element before making the assertion, of course for a predefined **timeout** value which you can [modify](https://docs.cypress.io/guides/references/configuration#Timeouts).
+The cool thing about **timeout** is that they will only wait until the condition is met rather than waiting for the complete duration like the `cy.wait` command.
+
+## Using Different Domains within a Cypress Test
+
+One limitation of Cypress is that it doesn't allow using more than one domain name in a single test.
+
+If you try using more than one domain in a single test block `it(...)` or `test(...)`, Cypress will throw a security warning.
+This is the way Cypress has been [built](https://docs.cypress.io/guides/guides/web-security#Same-superdomain-per-test).
+
+With that being said, sometimes there is a requirement to visit more than one domain in a single test. We can do so by splitting our test logic into multiple test blocks within a single test file. You can think of it as a multi-step test, for example,
+```js
+describe("Test Page Builder", () => {
+    it("Step 1: Visit Admin app and do something", {
+        // ...
+    });
+
+    it("Step 2: Visit Website app and assert something", {
+        // ...
+    });
+});
+```
+We use a similar approach at Webiny for testing the [Page Builder application](/serverless-app/page-builder).
+
+Few things to keep in mind when writing tests in such a manner are:
+
+1. You cannot rely on persistent storage be it variable in test block or even local storage.
+Why? Because, when we issue a Cypress command with a domain other than the `baseURL` defined in the [configuration](https://docs.cypress.io/guides/references/best-practices#Setting-a-global-baseUrl), Cypress performs a tear-down and does a full reload.
+
+2. Blocks like `"before"`, `"after"` will be run for each such test block because of the same issue mentioned above.
+
+Be mindful of these issues before adapting this approach and adjust the tests accordingly.
+
+## Conclusion
+
+Cypress is a powerful tool for End-to-End testing, but sometimes we make few mistakes which makes the experience not fun.
+By avoiding the common mistakes we can make the journey of End-to-End testing smooth and fun.
+
+---
+
+Thanks for reading! My name is Ashutosh and I work as a full stack developer at [Webiny](https://www.webiny.com).
+If you have any questions, comments or just want to connect, feel free to reach out to me via [Twitter](https://www.twitter.com/bhardwajashu96).
