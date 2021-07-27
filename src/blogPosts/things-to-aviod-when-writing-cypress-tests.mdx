@@ -108,7 +108,7 @@ Think about it, a user using your application mostly likely wait for a visual cl
     // The right way ☑️
     cy.get("[data-testid=element]").performSomeAsyncAction();
     // Wait for loading to finish
-    cy.get("[data-testid=loader]").should("not.visible");
+    cy.get("[data-testid=loader]").should("not.be.visible");
     // Now that we know previous action has been completed; move ahead
 ```
 
@@ -134,7 +134,7 @@ describe("Test Page Builder", () => {
     });
 });
 ```
-We use a similar approach at Webiny for testing the [Page Builder application](/serverless-app/page-builder).
+We use a similar approach at Webiny for testing the <ExternalLink href="https://www.webiny.com/serverless-app/page-builder/?utm_source=Webiny-blog&utm_medium=blog-post&utm_campaign=Regular-content&utm_content=5-things-to-avoid-cypress-tests&utm_term=W00689">Page Builder application</ExternalLink>
 
 Few things to keep in mind when writing tests in such a manner are:
 
