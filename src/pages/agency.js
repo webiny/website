@@ -33,7 +33,7 @@ class AgencyPage extends React.Component {
         trackBookADemo({ placement: "agency" });
 
         if (window) {
-            const win = window.open("https://calendly.com/webiny/30min", "_blank");
+            const win = window.open("/call/demo", "_blank");
             win.focus();
         }
     };

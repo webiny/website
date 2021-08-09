@@ -83,7 +83,7 @@ const PriceListMobile = ({ priceList }) => {
                         <p>{item.label}</p>
                     </div>
                 ))}
-                <Button target="_blank" link="https://calendly.com/webiny/30min" type="primary">
+                <Button target="_blank" link="/call/demo" type="primary">
                     Talk to Us
                 </Button>
             </PriceGroupItem>

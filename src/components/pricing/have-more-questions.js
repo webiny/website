@@ -81,7 +81,7 @@ const HaveMoreQuestoins = () => {
                     <Button
                         className={"button"}
                         type={"secondary"}
-                        link="https://calendly.com/webiny/30min"
+                        link="/call/demo"
                         target="_blank"
                     >
                         Book a Call

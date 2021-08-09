@@ -174,7 +174,7 @@ const CaseStudy = () => {
                     <Button
                         className={ctaBtn}
                         type="primary"
-                        link="https://calendly.com/webiny/partnership"
+                        link="/call/partnership"
                         target="_blank"
                     >
                         Become a Partner

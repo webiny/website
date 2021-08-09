@@ -130,7 +130,7 @@ const defaultPrimaryCTA = {
 
 const defaultSecondaryCTA = {
     label: "Book a demo",
-    link: "https://calendly.com/webiny/30min",
+    link: "/call/demo",
 };
 
 const HeroComponent = ({

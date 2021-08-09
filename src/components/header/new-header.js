@@ -179,7 +179,7 @@ const MenuItemList = props => (
                 >
                     <Button
                         className={buttonOutlinePrimary}
-                        link="https://calendly.com/webiny/30min"
+                        link="/call/demo"
                         type={props.sticky && "outline"}
                     >
                         Book a demo

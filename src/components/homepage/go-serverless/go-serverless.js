@@ -120,7 +120,7 @@ class GoServerless extends React.Component {
                             }}
                         >
                             <Button
-                                link={"https://calendly.com/webiny/30min"}
+                                link={"/call/demo"}
                                 target={"_blank"}
                                 type={"secondary"}
                                 className={ctaButton}

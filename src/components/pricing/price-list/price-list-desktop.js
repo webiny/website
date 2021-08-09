@@ -112,7 +112,7 @@ const PriceListDesktop = ({ priceList }) => {
                 </SubWrapper>
                 <SubWrapper className="with-button">
                     <h3>Custom</h3>
-                    <Button target="_blank" link="https://calendly.com/webiny/30min" type="primary">
+                    <Button target="_blank" link="/call/demo" type="primary">
                         Book a Call
                     </Button>
                 </SubWrapper>

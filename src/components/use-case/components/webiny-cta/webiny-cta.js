@@ -141,7 +141,7 @@ const primaryCTA = {
     color: theme.color.purple,
     actionType: "dark",
     actionLabel: "book a call",
-    actionLink: "https://calendly.com/webiny/30min",
+    actionLink: "/call/demo",
 };
 
 const WebinyCTAComponent = ({ className, cta = defaultCTA }) => (
