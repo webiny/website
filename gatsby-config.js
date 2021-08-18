@@ -105,6 +105,14 @@ module.exports = {
                         },
                     },
                     {
+                        resolve: `gatsby-remark-autolink-headers`,
+                        options: {
+                            offsetY: `100`,
+                            className: `heading-link-anchor`,
+                            isIconAfterHeader: true,
+                        },
+                    },
+                    {
                         resolve: `gatsby-remark-prismjs`,
                         options: {
                             // Class prefix for <pre> tags containing syntax highlighting;
