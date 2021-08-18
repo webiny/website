@@ -59,7 +59,7 @@
     "react-github-btn": "^1.0.6",
     "react-helmet": "^5.2.0",
     "react-html5video": "^2.5.1",
-    "react-modal-video": "^1.2.1",
+    "react-modal-video": "1.2.6",
     "react-progressive-bg-image": "^3.0.0",
     "react-slick": "^0.25.2",
     "react-syntax-highlighter": "^12.2.1",
