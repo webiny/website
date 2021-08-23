@@ -15,15 +15,17 @@ const styles = css`
     top: calc(var(--navbar-height) + 2rem);
     border-right: 1px solid ${theme.color.grayBorder};
 
-    & ul.root {
+    & ol.root {
       padding: var(--size) var(--size) var(--size) 0;
     }
 
-    & ul {
+    & ol {
       list-style: none;
+      counter-reset: item;
 
       & li {
         margin: var(--size);
+        counter-increment: item;
 
         & a {
           font-size: 14px;
@@ -33,13 +35,19 @@ const styles = css`
           &.active, &:hover {
             color: ${theme.color.primaryDark}
           }
+
+          &::before {
+            content: counters(item, '.') '.';
+            color: inherit;
+            margin-right: 4px;
+          }
         }
       }
     }
 `;
 
 const Headings = ({ headings, level, activeId }) => (
-    <ul className={level === 0 ? "root" : ""} style={{ paddingLeft: 8 * level }}>
+    <ol className={level === 0 ? "root" : ""} style={{ paddingLeft: 8 * level }}>
         {headings.map(heading => (
             <li key={heading.url}>
                 <a
@@ -60,7 +68,7 @@ const Headings = ({ headings, level, activeId }) => (
                 )}
             </li>
         ))}
-    </ul>
+    </ol>
 );
 
 const TableOfContents = ({ tableOfContents }) => {
