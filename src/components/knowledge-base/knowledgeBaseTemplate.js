@@ -10,7 +10,6 @@ import BaseLayout from "../../layouts/base";
 import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import ExternalLink from "../utils/ExternalLink";
-import NewsletterFooter from "./components/NewsletterFooter";
 import Breadcrumb from "../../layouts/components/breadcrumb";
 import TableOfContents from "./components/tableOfContents";
 
@@ -270,6 +269,7 @@ const wrapperGridStyle = css(
         },
     },
     mq({
+        paddingTop: [30, 0],
         "& .sidebar": {
             display: ["none", "block"],
         },
@@ -314,10 +314,9 @@ export default function Template({
                 <div className={cx("content", blogStyles)}>
                     <BlogHeader>
                         <div className="blog-header-inner">
-                            <Link to="/blog">← blog</Link>
+                            <Link to="/serverless-knowledge-base">← Serverless Knowledge Base</Link>
                         </div>
                         <h1>{frontmatter.title}</h1>
-                        {/*<AuthorCard author={frontmatter.author} publishedDate={frontmatter.date} />*/}
                     </BlogHeader>
                     <BlogContainer>
                         <div className="blog-post">
@@ -328,17 +327,7 @@ export default function Template({
                             </div>
                         </div>
                         <HorizontalLine />
-                        <TagList>
-                            <span className={"text"}>Find more articles on the topic of:</span>
-                            {Array.isArray(frontmatter.tags) &&
-                                frontmatter.tags.map((tag, index) => (
-                                    <Link key={index} className="tag" to={`/blog/?query=${tag}`}>
-                                        {tag}
-                                    </Link>
-                                ))}
-                        </TagList>
                     </BlogContainer>
-                    <NewsletterFooter />
                 </div>
             </div>
         </BaseLayout>
@@ -365,7 +354,7 @@ export const pageQuery = graphql`
                     }
                 }
             }
-            tableOfContents
+            tableOfContents(maxDepth: 2)
         }
     }
 `;
