@@ -15,7 +15,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     const result = await graphql(`
         {
-            allMdx {
+            blog: allMdx(
+                filter: { frontmatter: { slug: { regex: "/blog/" } } }
+            ) {
                 edges {
                     node {
                         frontmatter {
@@ -45,7 +47,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         return;
     }
 
-    result.data.allMdx.edges.forEach(({ node }) => {
+    result.data.blog.edges.forEach(({ node }) => {
         createPage({
             path: node.frontmatter.slug,
             component: blogPostTemplate,
