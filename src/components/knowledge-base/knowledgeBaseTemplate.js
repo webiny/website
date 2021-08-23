@@ -12,6 +12,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import ExternalLink from "../utils/ExternalLink";
 import Breadcrumb from "../../layouts/components/breadcrumb";
 import TableOfContents from "./components/tableOfContents";
+import NewsletterFooter from "./components/NewsletterFooter";
 
 const shortcodes = { ExternalLink };
 
@@ -270,6 +271,7 @@ const wrapperGridStyle = css(
     },
     mq({
         paddingTop: [30, 0],
+        paddingBottom: [30, 100],
         "& .sidebar": {
             display: ["none", "block"],
         },
@@ -330,6 +332,7 @@ export default function Template({
                     </BlogContainer>
                 </div>
             </div>
+            <NewsletterFooter />
         </BaseLayout>
     );
 }
@@ -354,7 +357,7 @@ export const pageQuery = graphql`
                     }
                 }
             }
-            tableOfContents(maxDepth: 2)
+            tableOfContents
         }
     }
 `;
