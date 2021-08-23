@@ -1,8 +1,19 @@
 import { FeaturedBlogWrapper } from "../../blog/blog-styles";
 import Img from "gatsby-image";
 import React from "react";
+import styled from "react-emotion";
 // assets
 import { navigate } from "gatsby";
+
+const PostCardWrapper = styled(FeaturedBlogWrapper)({
+    "& .text-container": {
+        "& .author-wrapper": {
+            "& .author__details": {
+                paddingLeft: 0,
+            },
+        },
+    },
+});
 
 export default ({ data }) => {
     // handle image transformation exceptions
@@ -12,9 +23,8 @@ export default ({ data }) => {
     }
 
     return (
-        <FeaturedBlogWrapper
+        <PostCardWrapper
             onClick={() => {
-                //window.open(data.slug, "_blank", "noopener noreferrer");
                 navigate("/" + data.slug);
             }}
         >
@@ -30,6 +40,6 @@ export default ({ data }) => {
                     </div>
                 </div>
             </div>
-        </FeaturedBlogWrapper>
+        </PostCardWrapper>
     );
 };
