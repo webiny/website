@@ -7,7 +7,7 @@ export default ({ data, location }) => {
     const knowledgeBasePosts = data.knowledgeBase.nodes;
 
     return (
-        <BaseLayout title="Webiny Serverless Blog">
+        <BaseLayout title="Serverless Knowledge Base">
             <KnowledgeBase data={knowledgeBasePosts} location={location} />
         </BaseLayout>
     );
