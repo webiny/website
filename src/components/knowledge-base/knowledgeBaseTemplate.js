@@ -69,6 +69,17 @@ const blogStyles = css(
             lineHeight: "1em",
         },
         ".blog-post-content": {
+            h1: {
+                "&::after": {
+                    position: "absolute",
+                    bottom: -20,
+                    left: 0,
+                    content: `""`,
+                    width: "100%",
+                    height: 2,
+                    backgroundColor: theme.color.primaryDark,
+                },
+            },
             h2: {
                 fontSize: "2.3em",
                 fontWeight: theme.fontWeight.semiBold,
