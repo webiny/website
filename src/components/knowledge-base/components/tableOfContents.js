@@ -14,6 +14,7 @@ const styles = css`
     position: sticky;
     top: calc(var(--navbar-height) + 2rem);
     border-right: 1px solid ${theme.color.grayBorder};
+    padding-left: 16px;
 
     & ol.root {
       padding: var(--size) var(--size) var(--size) 0;
@@ -24,7 +25,7 @@ const styles = css`
       counter-reset: item;
 
       & li {
-        margin: var(--size);
+        margin: var(--size) 0;
         counter-increment: item;
 
         & a {

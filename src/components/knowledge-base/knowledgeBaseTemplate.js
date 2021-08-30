@@ -67,6 +67,7 @@ const blogStyles = css(
             fontWeight: theme.fontWeight.bold,
             margin: "75px 0 50px 0",
             lineHeight: "1em",
+            textAlign: "center",
         },
         ".blog-post-content": {
             h1: {
@@ -252,12 +253,13 @@ const HorizontalLine = styled("div")({
 
 const wrapperGridStyle = css(
     {
+        "--sidebar-width": "300px",
         display: "flex",
-        maxWidth: 1200,
+        maxWidth: 1440,
         margin: "0 auto",
 
         "& .sidebar": {
-            width: 240,
+            width: "var(--sidebar-width)",
         },
         "& .content": {
             flexGrow: 1,
@@ -271,7 +273,7 @@ const wrapperGridStyle = css(
             display: ["none", "block"],
         },
         "& .content": {
-            maxWidth: ["100%", "calc(min(100% - 240px, 1140px))"],
+            maxWidth: ["100%", "calc(min(100% - var(--sidebar-width), 1140px))"],
             padding: ["0px 16px", "0px 16px 0px 24px"],
         },
     }),
