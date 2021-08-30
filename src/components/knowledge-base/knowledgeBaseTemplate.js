@@ -58,12 +58,6 @@ const BlogHeader = styled("div")(
 
 const blogStyles = css(
     {
-        "h2, h3": {
-            // Add an offset when we jump to a heading by clicking the link from Table of Contents (TOC)
-            // The value depends upon the height of sticky header
-            // banner height + header height + breadcrumb height - margin top on heading(s)
-            scrollMarginTop: 100,
-        },
         "h1, h2, h3, p, i, a": {
             color: "rgba(0, 0, 0, 0.84)",
             textRendering: "optimizeLegibility",
@@ -71,7 +65,6 @@ const blogStyles = css(
         h1: {
             fontSize: "4em",
             fontWeight: theme.fontWeight.bold,
-            textAlign: "center",
             margin: "75px 0 50px 0",
             lineHeight: "1em",
         },
@@ -107,6 +100,34 @@ const blogStyles = css(
                 color: theme.color.primaryDark,
                 "&:hover": {
                     textDecoration: "none",
+                },
+            },
+            "h1,h2,h3,h4,h5,h6": {
+                // Add an offset when we jump to a heading by clicking the link from Table of Contents (TOC)
+                // The value depends upon the height of sticky header
+                // banner height + header height + breadcrumb height - margin top on heading(s)
+                scrollMarginTop: 100,
+
+                display: "flex",
+                // Make link anchor visible
+                "&:hover": {
+                    "a.heading-link-anchor": {
+                        opacity: 1,
+                    },
+                },
+            },
+            "a.heading-link-anchor": {
+                display: "flex",
+                alignItems: "center",
+                // Hide link anchor by default
+                opacity: 0,
+                transition: "opacity 200ms ease-in-out",
+                "& svg": {
+                    width: "min(1em, 48px)",
+                    height: "min(1em, 48px)",
+                },
+                "&:hover": {
+                    textDecoration: "underline",
                 },
             },
             img: {
@@ -217,43 +238,6 @@ const HorizontalLine = styled("div")({
     marginBottom: 24,
     backgroundColor: theme.color.darkGray,
 });
-
-const TagList = styled("div")(
-    {
-        "& .tag": {
-            boxSizing: "border-box",
-            padding: "2px 10px",
-            border: "1px solid #EAEAEA",
-            backgroundColor: "#FAFAFC",
-            textTransform: "uppercase",
-            fontSize: 9,
-            fontWeight: theme.fontWeight.semiBold,
-            color: "#313097",
-            marginRight: 8,
-            marginBottom: 5,
-            display: "inline-block",
-            cursor: "pointer",
-            transition: "transform 200ms ease-in",
-
-            "&:hover": {
-                transform: "translateY(-2px)",
-            },
-        },
-    },
-    mq({
-        "& .text": {
-            fontSize: [theme.fontSize.base, theme.fontSize.xl],
-            display: ["block", "inline-block"],
-            marginRight: [0, 16],
-            marginBottom: [8, 0],
-        },
-        "& .tag": {
-            fontSize: [9, 12],
-            marginRight: [8, 12],
-            letterSpacing: ["0", "0.025em"],
-        },
-    }),
-);
 
 const wrapperGridStyle = css(
     {
