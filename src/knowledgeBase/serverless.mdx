@@ -52,11 +52,11 @@ code written by a developer executed in the cloud and runs on a stateless contai
 
 Some of the major FaaS providers are:
 
-- [AWS Lambda](https://aws.amazon.com/lambda/)
-- [Microsoft Azure Functions](https://azure.microsoft.com/en-in/services/functions/)
-- [Google Cloud Functions](https://cloud.google.com/functions)
-- [IBM Cloud Functions](https://cloud.ibm.com/functions/)
-- [OpenFaaS](https://www.openfaas.com/)
+- <ExternalLink href="https://aws.amazon.com/lambda/">AWS Lambda</ExternalLink>
+- <ExternalLink href="https://azure.microsoft.com/en-in/services/functions/">Microsoft Azure Functions</ExternalLink>
+- <ExternalLink href="https://cloud.google.com/functions">Google Cloud Functions</ExternalLink>
+- <ExternalLink href="https://cloud.ibm.com/functions/">IBM Cloud Functions</ExternalLink>
+- <ExternalLink href="https://www.openfaas.com/">OpenFaaS</ExternalLink>
 
 ## Benefits of serverless computing
 
@@ -92,7 +92,7 @@ Serverless architectures excel in a variety of computing operations and provide 
 
 ### Multimedia processing
 
-A common use case is the execution of some transformational process in response to file upload. For example, if an image is uploaded in an object storage service such as Amazon S3, trigger a function to create the thumbnail version of the image and store it. Similarly, another commonly used use case is the resizing images on the fly. AWS shared an [example](https://aws.amazon.com/blogs/compute/resize-images-on-the-fly-with-amazon-s3-aws-lambda-and-amazon-api-gateway/) illustration for resizing images on the fly.
+A common use case is the execution of some transformational process in response to file upload. For example, if an image is uploaded in an object storage service such as Amazon S3, trigger a function to create the thumbnail version of the image and store it. Similarly, another commonly used use case is the resizing images on the fly. AWS shared an <ExternalLink href="https://aws.amazon.com/blogs/compute/resize-images-on-the-fly-with-amazon-s3-aws-lambda-and-amazon-api-gateway/">example</ExternalLink> illustration for resizing images on the fly.
 
 ### APIs and web applications
 
@@ -180,43 +180,43 @@ The infrastructure behind serverless databases offers built-in high availability
 
 #### Amazon DynamoDB
 
-[Amazon DynamoDB](https://aws.amazon.com/dynamodb/) is a fully managed NoSQL database service by AWS that provides excellent performance with seamless scalability.
+<ExternalLink href="https://aws.amazon.com/dynamodb/">Amazon DynamoDB</ExternalLink> is a fully managed NoSQL database service by AWS that provides excellent performance with seamless scalability.
 
 DynamoDB promises to deliver single-digit millisecond performance at any load. As per official docs, it supports more than 10 trillion requests per day and can handle the peaks of more than 20 million requests per second. DynamoDB also supports ACID transactions that enable building business-critical applications at scale.
 
 #### Amazon Aurora
 
-[Amazon Aurora Serverless](https://aws.amazon.com/rds/aurora/serverless/) is a configuration for [Amazon Aurora](https://aws.amazon.com/rds/aurora) with serverless offerings. It responds to applications needs and automatically scales the capacity, start up, and shut down.
+<ExternalLink href="https://aws.amazon.com/rds/aurora/serverless/">Amazon Aurora Serverless</ExternalLink> is a configuration for <ExternalLink href="https://aws.amazon.com/rds/aurora">Amazon Aurora</ExternalLink> with serverless offerings. It responds to applications needs and automatically scales the capacity, start up, and shut down.
 
 After launching Aurora, AWS observed the load patterns and found there are many instances where most of the time customer is not using the provisioned database capacity but were paying for it. This inspired team to build the Aurora serverless offering. Aurora is great for infrequently used, unpredictable, or cyclical workloads.
 
 #### Azure Cosmos DB Serverless
 
-[Azure Cosmos DB serverless](https://docs.microsoft.com/en-us/azure/cosmos-db/serverless) offers consumption-based pricing with [Azure Cosmos DB](https://azure.microsoft.com/en-us/services/cosmos-db/). Azure Cosmos DB is a robust NoSQL database. It's a serverless offering charge for the request units consumed by database operations and the storage consumed by the data. As per the official docs, Cosmos DB guarantees the single-digit millisecond response time.
+<ExternalLink href="https://docs.microsoft.com/en-us/azure/cosmos-db/serverless">Azure Cosmos DB serverless</ExternalLink> offers consumption-based pricing with <ExternalLink href="https://azure.microsoft.com/en-us/services/cosmos-db/">Azure Cosmos DB</ExternalLink>. Azure Cosmos DB is a robust NoSQL database. It's a serverless offering charge for the request units consumed by database operations and the storage consumed by the data. As per the official docs, Cosmos DB guarantees the single-digit millisecond response time.
 
 #### Google Cloud Datastore
 
-[Google Cloud Datastore](https://cloud.google.com/serverless/whitepaper#storing_your_application_data) is a serverless NoSQL database offering from Google Cloud Platform that automatically scales based on traffic. It provides significant cost and maintenance savings over managing your own NoSQL database.
+<ExternalLink href="https://cloud.google.com/serverless/whitepaper#storing_your_application_data">Google Cloud Datastore</ExternalLink> is a serverless NoSQL database offering from Google Cloud Platform that automatically scales based on traffic. It provides significant cost and maintenance savings over managing your own NoSQL database.
 
 #### MongoDB Atlas Serverless
 
-[MongoDB Atlas Serverless](https://www.mongodb.com/cloud/atlas/serverless) is the serverless offering on the MongoDB Atlas service. The serverless instances MongoDB Atlas automatically scales to meet the workload and you only for the operation you run. It is currently in the preview phase, and you can find more details [here](https://www.mongodb.com/blog/post/introducing-serverless-instances-mongodb-atlas-now-available-preview).
+<ExternalLink href="https://www.mongodb.com/cloud/atlas/serverless">MongoDB Atlas Serverless</ExternalLink> is the serverless offering on the MongoDB Atlas service. The serverless instances MongoDB Atlas automatically scales to meet the workload and you only for the operation you run. It is currently in the preview phase, and you can find more details <ExternalLink href="https://www.mongodb.com/blog/post/introducing-serverless-instances-mongodb-atlas-now-available-preview">here</ExternalLink>.
 
 #### Fauna
 
-[Fauna](https://fauna.com/serverless) is the data API, with it you can modernize your OLTP infrastructure to a serverless approach without sacrificing the capabilities that developers need for building rich business applications.
+<ExternalLink href="https://fauna.com/serverless">Fauna</ExternalLink> is the data API, with it you can modernize your OLTP infrastructure to a serverless approach without sacrificing the capabilities that developers need for building rich business applications.
 
 #### DataStax Astra DB
 
-[DataStax Astra DB](https://www.datastax.com/products/datastax-astra) is a multi-cloud serverless Database-as-a-Service built on [Apache Cassandra](https://cassandra.apache.org/_/index.html). It claims to reduce the total cost of ownership by 75% with the serverless Cassandra offering. You can deploy it to AWS, GCP or Azure based on your preference. Global scaling and enterprise security are some highlighting features of Astra DB.
+<ExternalLink href="https://www.datastax.com/products/datastax-astra">DataStax Astra DB</ExternalLink> is a multi-cloud serverless Database-as-a-Service built on <ExternalLink href="https://cassandra.apache.org/_/index.html">Apache Cassandra</ExternalLink>. It claims to reduce the total cost of ownership by 75% with the serverless Cassandra offering. You can deploy it to AWS, GCP or Azure based on your preference. Global scaling and enterprise security are some highlighting features of Astra DB.
 
 #### Macrometa
 
-[Macrometa](https://www.macrometa.com/) is a serverless streaming NoSQL database with integrated compute engine and stream data processing. Its Globally Distributed NoSQL Database enables access to data in real-time at the lowest possible latency. You can also build stateful micro-services and real-time Data Pipelines with Macrometa.
+<ExternalLink href="https://www.macrometa.com/">Macrometa</ExternalLink> is a serverless streaming NoSQL database with integrated compute engine and stream data processing. Its Globally Distributed NoSQL Database enables access to data in real-time at the lowest possible latency. You can also build stateful micro-services and real-time Data Pipelines with Macrometa.
 
 #### PlanetScale
 
-[PlanetScale](https://planetscale.com/) is a MySQL compatible serverless database. It is powered by [Vitess](https://vitess.io/), a database clustering system for horizontal scaling of MySQL. Database branching and connection strings are few concepts that make this platform unique.
+<ExternalLink href="https://planetscale.com/">PlanetScale</ExternalLink> is a MySQL compatible serverless database. It is powered by <ExternalLink href="https://vitess.io/">Vitess</ExternalLink>, a database clustering system for horizontal scaling of MySQL. Database branching and connection strings are few concepts that make this platform unique.
 
 # Serverless Providers
 
@@ -230,20 +230,20 @@ AWS offers various serverless services for computing, data storage, and applicat
 
 AWS Lambda is the most popular computing service that lets you run code without provisioning or managing servers and have a pay-per-use model. It was introduced in 2014 and very much popularized the serverless computing model.
 
-Various AWS serverless services and tools like [AWS SAM](https://aws.amazon.com/serverless/sam/), [Amazon CloudWatch](https://en.wikipedia.org/wiki/Amazon_CloudWatch), and others work seamlessly to provide a unified experience to build serverless applications. You can find the complete list of [AWS serverless services here](https://aws.amazon.com/serverless/).
+Various AWS serverless services and tools like <ExternalLink href="https://aws.amazon.com/serverless/sam/">AWS SAM</ExternalLink>, <ExternalLink href="https://aws.amazon.com/cloudwatch/">Amazon CloudWatch</ExternalLink>, and others work seamlessly to provide a unified experience to build serverless applications. You can find the complete list of <ExternalLink href="https://aws.amazon.com/serverless/">AWS serverless services here</ExternalLink>.
 
 ## Azure Serverless Solutions
 
-[Azure serverless](https://azure.microsoft.com/en-in/solutions/serverless/) has a broad spectrum of serverless offerings, ranging from computing to database, DevOps to monitoring, storage to analytics, and many more. With a range of Azure serverless services and developer tools, you can build your serverless application seamlessly. 
+<ExternalLink href="https://azure.microsoft.com/en-in/solutions/serverless/">Azure serverless</ExternalLink> has a broad spectrum of serverless offerings, ranging from computing to database, DevOps to monitoring, storage to analytics, and many more. With a range of Azure serverless services and developer tools, you can build your serverless application seamlessly.
 
-[Azure Functions](https://azure.microsoft.com/en-us/services/functions/) was the first serverless service launched in the Azure serverless ecosystem in 2016. Since then, a range of serverless execution environments, fully managed services, and developer tools are added to the ecosystem to enhance serverless development and computing experience.
+<ExternalLink href="https://azure.microsoft.com/en-us/services/functions/">Azure Functions</ExternalLink> was the first serverless service launched in the Azure serverless ecosystem in 2016. Since then, a range of serverless execution environments, fully managed services, and developer tools are added to the ecosystem to enhance serverless development and computing experience.
 
 ## Google Serverless Computing
 
-[Google Cloud Platform](https://cloud.google.com/serverless) offers various services that enable you to develop and deploy highly scalable serverless applications. The popular serverless products from GCP are Cloud Functions, Cloud Run, and App Engine.
+<ExternalLink href="https://cloud.google.com/serverless">Google Cloud Platform</ExternalLink> offers various services that enable you to develop and deploy highly scalable serverless applications. The popular serverless products from GCP are Cloud Functions, Cloud Run, and App Engine.
 
-[Cloud Functions](https://cloud.google.com/functions) is scalable pay-as-you-go functions as a service (FaaS) to run your code without server maintenance.
+<ExternalLink href="https://cloud.google.com/functions">Cloud Functions</ExternalLink> is scalable pay-as-you-go functions as a service (FaaS) to run your code without server maintenance.
 
-[Cloud Run](https://cloud.google.com/run) is a Fully managed computing platform for deploying and scaling containerized applications quickly and securely.
+<ExternalLink href="https://cloud.google.com/run">Cloud Run</ExternalLink> is a Fully managed computing platform for deploying and scaling containerized applications quickly and securely.
 
-[App Engine](https://cloud.google.com/appengine) is a fully managed serverless application platform with simple administration. You can write your code with any supported language & framework. Once the code is ready, with App Engine, you can seamlessly push your code and run it on the cloud. Along with auto-scaling capabilities, you pay for what you use.
+<ExternalLink href="https://cloud.google.com/appengine">App Engine</ExternalLink> is a fully managed serverless application platform with simple administration. You can write your code with any supported language & framework. Once the code is ready, with App Engine, you can seamlessly push your code and run it on the cloud. Along with auto-scaling capabilities, you pay for what you use.
