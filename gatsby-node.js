@@ -9,26 +9,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const { createPage } = actions;
 
     const blogPostTemplate = require.resolve(`./src/components/blog/blogTemplate.js`);
-    const knowledgeBaseTemplate = require.resolve(
-        `./src/components/knowledge-base/knowledgeBaseTemplate.js`,
-    );
 
     const result = await graphql(`
         {
-            blog: allMdx(
-                filter: { frontmatter: { slug: { regex: "/blog/" } } }
-            ) {
-                edges {
-                    node {
-                        frontmatter {
-                            slug
-                        }
-                    }
-                }
-            }
-            knowledgeBase: allMdx(
-                filter: { frontmatter: { slug: { regex: "/serverless-knowledge-base/" } } }
-            ) {
+            allMdx {
                 edges {
                     node {
                         frontmatter {
@@ -47,21 +31,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         return;
     }
 
-    result.data.blog.edges.forEach(({ node }) => {
+    result.data.allMdx.edges.forEach(({ node }) => {
         createPage({
             path: node.frontmatter.slug,
             component: blogPostTemplate,
-            context: {
-                // additional data can be passed via context
-                slug: node.frontmatter.slug,
-            },
-        });
-    });
-
-    result.data.knowledgeBase.edges.forEach(({ node }) => {
-        createPage({
-            path: node.frontmatter.slug,
-            component: knowledgeBaseTemplate,
             context: {
                 // additional data can be passed via context
                 slug: node.frontmatter.slug,

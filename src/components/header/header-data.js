@@ -227,11 +227,6 @@ export const RESOURCES_MENU = {
                 link: "/blog",
             },
             {
-                id: 4,
-                label: "Serverless Knowledge Base",
-                link: "/serverless-knowledge-base",
-            },
-            {
                 id: 3,
                 label: "YouTube",
                 link: "https://youtube.com/c/webiny",
