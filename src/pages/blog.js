@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/base";
 import Blogs from "../components/blog/blog";
 
 export default ({ data, location }) => {
-    const blogPosts = data.blog.nodes;
+    const blogPosts = data.allMdx.nodes;
 
     return (
         <BaseLayout title="Webiny Serverless Blog">
@@ -15,11 +15,7 @@ export default ({ data, location }) => {
 
 export const listBlogsQuery = graphql`
     query MyQuery {
-        blog: allMdx(
-            limit: 1000,
-            sort: { fields: frontmatter___date, order: DESC },
-            filter: { frontmatter: { slug: { regex: "/blog/" } } }
-        ) {
+        allMdx(limit: 1000, sort: { fields: frontmatter___date, order: DESC }) {
             nodes {
                 id
                 frontmatter {
