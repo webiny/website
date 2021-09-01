@@ -1,24 +1,24 @@
 import React from "react";
 import { graphql } from "gatsby";
 import BaseLayout from "../layouts/base";
-import Blogs from "../components/blog/blog";
+import KnowledgeBase from "../components/knowledge-base/knowledgeBase";
 
 export default ({ data, location }) => {
-    const blogPosts = data.blog.nodes;
+    const knowledgeBasePosts = data.knowledgeBase.nodes;
 
     return (
-        <BaseLayout title="Webiny Serverless Blog">
-            <Blogs data={blogPosts} location={location} />
+        <BaseLayout title="Serverless Knowledge Base">
+            <KnowledgeBase data={knowledgeBasePosts} location={location} />
         </BaseLayout>
     );
 };
 
 export const listBlogsQuery = graphql`
-    query MyQuery {
-        blog: allMdx(
-            limit: 1000,
-            sort: { fields: frontmatter___date, order: DESC },
-            filter: { frontmatter: { slug: { regex: "/blog/" } } }
+    query AllKnowledgeBaseMdxQuery {
+        knowledgeBase: allMdx(
+            limit: 1000
+            sort: { fields: frontmatter___date, order: DESC }
+            filter: { frontmatter: { slug: { regex: "/serverless-knowledge-base/" } } }
         ) {
             nodes {
                 id

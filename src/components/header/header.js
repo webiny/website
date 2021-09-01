@@ -325,7 +325,6 @@ const NavBar = styled("div")(
             justifyContent: "flex-start",
             [MobileMenu]: {
                 display: "none",
-                display: "block",
             },
         },
     },
