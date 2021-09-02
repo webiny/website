@@ -82,7 +82,12 @@ export const DropDown = styled("div")(
         transform: "translateY(2em) translateX(0%)",
         zIndex: "-1",
         transition: "all 0.1s ease-in-out 0s, visibility 0s linear 0.1s, z-index 0s linear 0.01s",
-
+        // Make primary section span 100% width if there is only one column in DropDown content
+        "&.one-row": {
+            "& .section--primary": {
+                width: "100%",
+            },
+        },
         "& .section--primary": {
             boxSizing: "border-box",
             width: "45%",
@@ -348,9 +353,10 @@ export const dropdownArrow = css`
     position: absolute;
     background: #fff;
     border: 4px solid #fff;
-    top: 0px;
+    top: 0;
     left: 5%;
     z-index: -1;
+
     &:after,
     &:before {
         bottom: 100%;
@@ -369,6 +375,7 @@ export const dropdownArrow = css`
         border-width: 5px;
         margin-left: -5px;
     }
+
     &:before {
         border-color: rgba(194, 225, 245, 0);
         border-bottom-color: #fff;
