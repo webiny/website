@@ -72,6 +72,14 @@ module.exports = {
             resolve: "gatsby-source-filesystem",
             options: {
                 path: `${__dirname}/src/blogPosts`,
+                name: "blogPosts",
+            },
+        },
+        {
+            resolve: "gatsby-source-filesystem",
+            options: {
+                path: `${__dirname}/src/knowledgeBase`,
+                name: "knowledgeBase",
             },
         },
         {
@@ -102,6 +110,17 @@ module.exports = {
                         options: {
                             tag: ":::",
                             icons: "svg",
+                        },
+                    },
+                    {
+                        resolve: `gatsby-remark-autolink-headers`,
+                        options: {
+                            offsetY: `100`,
+                            className: `heading-link-anchor`,
+                            isIconAfterHeader: true,
+                            icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
+                            </svg>`,
                         },
                     },
                     {
