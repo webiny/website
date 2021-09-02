@@ -102,6 +102,14 @@ const blogStyles = css(
                     textDecoration: "none",
                 },
             },
+            /*
+            * We're using `gatsby-remark-autolink-headers` plugin to generate heading links.
+            * Because it works on all ".mdx" files, so, we can't just disable it for "/blog/*".
+            * Therefore, we're removing the heading links via CSS.
+            */
+            "a.heading-link-anchor": {
+                display: "none"
+            },
             img: {
                 margin: "0 auto",
                 display: "block",
