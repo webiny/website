@@ -2,3 +2,6 @@
 
 /js/script.js https://plausible.io/js/plausible.js 200
 /api/event https://plausible.io/api/event 202
+
+# [2021-09-10] Redirect Serverless Guide
+/guides/serverless-guide /serverless-knowledge-base/serverless
