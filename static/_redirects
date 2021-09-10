@@ -1,0 +1,4 @@
+# [2021-09-10] Plausible.io Redirects
+
+/js/script.js https://plausible.io/js/plausible.js 200
+/api/event https://plausible.io/api/event 202
