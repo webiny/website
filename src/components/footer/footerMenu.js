@@ -104,7 +104,7 @@ const FooterMenu = () => (
             <Link rel="prerender" to="/use-case/microservices">
                 Build Microservices
             </Link>
-            <Link rel="prerender" to="/guides/serverless-guide">
+            <Link rel="prerender" to="/serverless-knowledge-base/serverless">
                 Guide to Serverless
             </Link>
         </MenuBlock>
