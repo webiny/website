@@ -47,7 +47,7 @@ class BaseLayout extends React.Component {
                     </script>
                 </Helmet>
                 <Helmet>
-                    <script defer data-domain="webiny.com" src="/js/script.js" />
+                    <script defer data-domain="webiny.com" src="https://plausible.io/js/plausible.js" />
                 </Helmet>
                 <Helmet>
                     <script type="text/javascript">
