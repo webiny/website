@@ -15,7 +15,7 @@ import Explore6 from "./assets/explore6.svg";
 const experienceList = [
     {id: 1, title: "Scalable", body: "No matter the demand, Webiny Serverless CMS can easily scale to meet even the most challenging workloads.", imageSrc: Explore1},
     {id: 2, title: "Adaptable", body: "Being an open-source project, it's easy to modify and adapt things to your own needs.", imageSrc: Explore2},
-    {id: 3, title: "Lower cost of ownership", body: "Self-hosted on top of serverless infrastructure. No infrastructure to mange, less people required to operate and maintain.", imageSrc: Explore3},
+    {id: 3, title: "Lower cost of ownership", body: "Self-hosted on top of serverless infrastructure. No infrastructure to manage, less people required to operate and maintain.", imageSrc: Explore3},
     {id: 4, title: "Secure", body: "Secured by AWS Cognito. It's also easy to integrate services like OKTA, Auth0 and similar.", imageSrc: Explore4},
     {id: 5, title: "Data ownership", body: "Webiny is self-hosted, it means your data stays within your data center.", imageSrc: Explore5},
     {id: 6, title: "Permission control", body: "Powerful options to control the permissions your users will have. They perfectly align with your business requirements.", imageSrc: Explore6},
