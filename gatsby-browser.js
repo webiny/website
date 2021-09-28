@@ -7,6 +7,7 @@
 // You can delete this file if you're not using it
 require("prismjs/themes/prism.css");
 const { WTS } = require("wts/src/web");
+const Plausible = require("plausible-tracker").default;
 
 exports.onInitialClientRender = ({ location, prevLocation }) => {
     setTimeout(async () => {
@@ -15,6 +16,11 @@ exports.onInitialClientRender = ({ location, prevLocation }) => {
             window.wts.identify();
         }
     }, 500);
+    // Plausible analytics
+    const { enableAutoPageviews } = Plausible({
+        domain: "webiny.com",
+    });
+    enableAutoPageviews();
 };
 
 exports.onRouteUpdate = async ({ location, prevLocation }) => {

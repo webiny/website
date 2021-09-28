@@ -45,6 +45,7 @@
     "install": "^0.13.0",
     "js-cookie": "^2.2.1",
     "npm": "^6.14.9",
+    "plausible-tracker": "^0.3.1",
     "posthog-js": "^1.4.4",
     "prismjs": "^1.22.0",
     "query-string": "^6.13.6",
