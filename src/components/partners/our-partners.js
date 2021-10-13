@@ -274,6 +274,10 @@ const TitleHighlight = styled("span")({
     backgroundRepeat: "no-repeat",
 });
 
+const sortAlphabetically = (a, b) => {
+    return a.name.localeCompare(b.name, "en", { sensitivity: "base", ignorePunctuation: true });
+};
+
 const ServerLessAdvantage = () => {
     return (
         <section className={wrapperClass}>
@@ -283,7 +287,7 @@ const ServerLessAdvantage = () => {
                         Our <TitleHighlight>partners</TitleHighlight>
                     </Title>
                 </Wrapper>
-                {OUR_PARTNERS_DATA.map((partner, index) => (
+                {OUR_PARTNERS_DATA.sort(sortAlphabetically).map((partner, index) => (
                     <Feature key={index}>
                         <FeatureImagePart>
                             <FeatureImageInner>
