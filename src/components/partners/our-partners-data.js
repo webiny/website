@@ -9,6 +9,9 @@ import Kipanga from "./logos/kipanga-logo.png";
 import logoNttData from "./logos/ntt-data-logo.png";
 import logoOev from "./logos/oev-logo.png";
 import logoAspire from "./logos/aspire-logo.png";
+import logoFR from "./logos/fr-logo-.jpeg";
+import logoApeFactory from "./logos/ape-factory-logo.png";
+import logoInneed from "./logos/inneed-logo.png";
 
 export const OUR_PARTNERS_DATA = [
     {
@@ -92,29 +95,26 @@ export const OUR_PARTNERS_DATA = [
             "OEV Online Dienste GmbH was founded in Düsseldorf (Germany) in 2001. It is an expert for digital media with distinct expertise in CMS systems. It develops comprehensive, cross-media concepts and advises clients on all aspects of digital distribution.",
     },
     {
-        image: logoOev,
+        image: logoApeFactory,
         name: "ape factory GmbH",
         location: "Germany / France",
         website: "https://apefactory.com",
-        contact: "info@apefactory.com",
         description:
             "We are experts in building and operating digital platforms by leveraging cloud-native architecture, Agile, DevOps & Lean approaches.",
     },
     {
-        image: logoOev,
+        image: logoFR,
         name: "FocusReactive",
         location: "London",
         website: "https://focusreactive.com/",
-        contact: "hi@focusreactive.com",
         description:
             "FocusReactive is a tech agency that specialises in hands-on advice and execution of React projects and focuses on delivering large-scale Jamstack solutions leveraging Headless CMS, Serverless, building performant (Headless) eCommerce websites using innovative tech platforms.",
     },
     {
-        image: logoOev,
+        image: logoInneed,
         name: "InNeed Intelligent Cloud",
         location: "Bangladesh",
         website: "https://inneed.cloud/",
-        contact: "sam@inneed.cloud",
         description:
             "InNeed is a cloud-native advanced IT consulting and service provider. We leverage the innovative capabilities of the cloud to help customers build new revenue streams, save infrastructure cost, increase efficiency, and deliver advanced technology solutions. Our team of full-stack software engineers, data engineers, business analysts accelerate innovations. We use a diverse set of product building, research and development experiences to build and deploy your custom and re-invigorated applications, that enable you to find new meanings in your relationship with your data.",
     },
@@ -123,7 +123,6 @@ export const OUR_PARTNERS_DATA = [
         name: "AspireNxt",
         location: "India",
         website: "https://aspirenxt.com/",
-        contact: "sales@aspirenxt.com",
         description:
             "We are a leading IT Solutions provider with offices across India, South East Asia, and USA. We work fast, smart, and in sync with you helping you achieve more across digital transformation, cloud, and workplace transformation.",
     },

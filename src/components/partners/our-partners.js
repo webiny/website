@@ -296,14 +296,7 @@ const ServerLessAdvantage = () => {
                             <p className="location">{partner.location}</p>
                             <p className="description">{partner.description}</p>
                             <ButtonGroup>
-                                <Button
-                                    type="primary"
-                                    link={
-                                        partner.contact
-                                            ? `mailto:${partner.contact}`
-                                            : "mailto:partners@webiny.com"
-                                    }
-                                >
+                                <Button type="primary" link={"mailto:partners@webiny.com"}>
                                     Contact this Partner
                                 </Button>
                                 <Button
