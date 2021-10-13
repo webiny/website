@@ -1,23 +1,14 @@
 import Button from "../ui/button";
 import ContentContainer from "../ui/content-container";
-import Iconis from "./logos/iconis-logo-2.jpeg";
-import Kipanga from "./logos/kipanga-logo.png";
 import React from "react";
 import arrowIcon from "./assets/arrow-default.svg";
 import { css } from "emotion";
-import logoAlpine from "./logos/alpine-logo.png";
-import logoAntStack from "./logos/antstack-logo.svg";
-import logoAnthill from "./logos/anthill-logo.png";
-import logoCasaSoft from "./logos/casasoft-logo.svg";
-import logoCodingSans from "./logos/coding-sans-logo.png";
-import logoIan from "./logos/ian-logo.png";
-import logoNttData from "./logos/ntt-data-logo.png";
-import logoOev from "./logos/oev-logo.png";
 import mq from "../utils/breakpoints";
 import startImg from "./assets/star.svg";
 import styled from "react-emotion";
 import theme from "../utils/theme";
 import titleHightlightImage from "./assets/partner-highlight.svg";
+import { OUR_PARTNERS_DATA } from "./our-partners-data";
 
 const wrapperClass = css({
     position: "relative",
@@ -283,88 +274,9 @@ const TitleHighlight = styled("span")({
     backgroundRepeat: "no-repeat",
 });
 
-const ourPartners = [
-    {
-        image: logoAlpine,
-        name: "Alpine Consulting Partners",
-        location: "United States of America",
-        website: "https://alpine-consulting.com/",
-        description:
-            "Alpine Consulting Partners is a full-service technology consultancy that provides design and implementation services to help clients tackle complex data challenges. We leverage industry leading enterprise performance management and analytics tools to help our clients improve business processes and reduce time to insight. We serve clients across multiple sectors including all levels of Government, Hospitality, Insurance, Banking, Technology, Manufacturing, Automotive and Energy industries.",
-    },
-    {
-        image: logoAnthill,
-        name: "Anthill",
-        website: "https://www.anthillagency.com/",
-        location: "Denmark / Germany",
-        description:
-            "Anthill is a digital communications agency for the life sciences. We believe that understanding human beliefs and behaviors is the missing piece in pharma digital communications. We call it the Human Factor. And when applied to each stage of the development process, it results in truly empowering experiences for customers. As a specialist life sciences digital communications agency, we work closely with global and regional teams: ensuring that every project has a strong strategy; developing the technical and creative solutions; building internal belief and support; and scaling adoption across organizations.",
-    },
-    {
-        image: logoAntStack,
-        name: "AntStack",
-        website: "https://www.antstack.io/",
-        location: "India",
-        description:
-            "AntStack is a fullstack serverless company aiming at providing holistic solutions to get you up and running with serverless!",
-    },
-    {
-        image: logoCasaSoft,
-        name: "Casasoft",
-        location: "Malta",
-        website: "https://www.casasoft.mt/",
-        description:
-            "CasaSoft is an award-winning ISO 9001:2015 certified software company based in Malta helping businesses succeed by increasing their productivity, efficiency, sales and competitiveness whilst reducing costs by working smarter, not harder.",
-    },
-    {
-        image: logoCodingSans,
-        name: "Coding Sans",
-        location: "Hungary",
-        website: "https://codingsans.com/",
-        description:
-            "Coding Sans is a full-stack web development agency building complex, market-ready products from design to delivery.",
-    },
-    {
-        image: logoIan,
-        name: "Ian Digital Talent",
-        location: "Argentina",
-        website: "https://iandigitaltalent.com/en/",
-        description:
-            "Ian Digital Talent adopts a cost-effective approach to provide retail companies around the world with customized e-commerce and marketplace serverless solutions",
-    },
-    {
-        image: Iconis,
-        name: "Iconis",
-        website: "https://iconisagency.com/",
-        location: "Croatia",
-        description:
-            "We are highly experienced, creative, motivated, dedicated professionals that will do everything necessary to produce the best possible results for our clients. Our team is comprised of talented marketers, brand strategy experts, web developers, designers, and social media managers. We specialise in digital marketing strategy, web development, eCommerce, content production, branding, design. This means that we invest every available resource in developing and improving our skills so that we are able to provide a better service.",
-    },
-    {
-        image: Kipanga,
-        name: "Kipanga",
-        website: "https://kipanga.com.au",
-        location: "Australia",
-        description:
-            "With more than 20 years of software development experience; building online solutions for clients in retail, supply chain, medical, automotive and education industries, Kipanga is equipped with the experience and knowledge to help businesses with their online endeavours - branding websites, e-commerce solutions, and any custom software. Our process starts with understanding our client needs and goals, and then architect and develop a suitable solution within budget. We are certified AWS experts, and utilise their services to develop robust, resilient, scalable and cost effective solutions to our clients.",
-    },
-    {
-        image: logoNttData,
-        name: "NTT Data",
-        website: "https://www.nttdata.com/",
-        location: "Global",
-        description:
-            "NTT DATA is a top 10 global IT services provider, headquartered in Tokyo and operating in more than 50 countries. For us, work is not only for technological innovation, it is about connecting people to create better solutions for everyday life. NTT DATA offers an advanced portfolio of consulting, application, business process, cloud, and infrastructure services to businesses and governments worldwide. Our roots cross continents and cultures, dating back five decades. Since the foundation of NTT DATA , we have made sustainable business growth through our DNA to be people-oriented. Through our long-term perspective, we hope to make a big difference in this world by getting the small things right. This pedigree yields a characteristic unique to NTT DATA: the opportunity for a global brand with the creative energy and enthusiasm of an entrepreneur.",
-    },
-    {
-        image: logoOev,
-        name: "OEV",
-        website: "https://www.oev-online.de/",
-        location: "Germany",
-        description:
-            "OEV Online Dienste GmbH was founded in Düsseldorf (Germany) in 2001. It is an expert for digital media with distinct expertise in CMS systems. It develops comprehensive, cross-media concepts and advises clients on all aspects of digital distribution.",
-    },
-];
+const sortAlphabetically = (a, b) => {
+    return a.name.localeCompare(b.name, "en", { sensitivity: "base", ignorePunctuation: true });
+};
 
 const ServerLessAdvantage = () => {
     return (
@@ -375,7 +287,7 @@ const ServerLessAdvantage = () => {
                         Our <TitleHighlight>partners</TitleHighlight>
                     </Title>
                 </Wrapper>
-                {ourPartners.map((partner, index) => (
+                {OUR_PARTNERS_DATA.sort(sortAlphabetically).map((partner, index) => (
                     <Feature key={index}>
                         <FeatureImagePart>
                             <FeatureImageInner>
@@ -388,7 +300,7 @@ const ServerLessAdvantage = () => {
                             <p className="location">{partner.location}</p>
                             <p className="description">{partner.description}</p>
                             <ButtonGroup>
-                                <Button type="primary" link="mailto:partners@webiny.com">
+                                <Button type="primary" link={"mailto:partners@webiny.com"}>
                                     Contact this Partner
                                 </Button>
                                 <Button
@@ -401,7 +313,7 @@ const ServerLessAdvantage = () => {
                                 </Button>
                             </ButtonGroup>
                             <RoundDot className={index % 2 ? "right" : "left"} />
-                            {index === ourPartners.length - 1 && (
+                            {index === OUR_PARTNERS_DATA.length - 1 && (
                                 <BottomMark className={index % 2 ? "right" : "left"}>
                                     <div className="inner">
                                         <img src={startImg} alt="" />
