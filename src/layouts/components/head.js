@@ -25,15 +25,15 @@ class Head extends React.Component {
                                 "width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5",
                         },
                         {
-                            name: "og:type",
+                            property: "og:type",
                             content: "website",
                         },
                         {
-                            name: "og:title",
+                            property: "og:title",
                             content: this.props.title,
                         },
                         {
-                            name: "og:image",
+                            property: "og:image",
                             content: domainName + ogImage,
                         },
                         {
