@@ -6,7 +6,7 @@ import ogImageDefault from "../assets/webiny-social-share.jpg";
 class Head extends React.Component {
     render() {
         const ogImage = this.props.image ? this.props.image : ogImageDefault;
-        let domainName = typeof window !== 'undefined' ? window.location.origin+'/' : 'https://deploy-preview-111--webiny.netlify.app/';
+        let domainName = typeof window !== 'undefined' ? window.location.origin+'/' : 'https://www.webiny.com/';
 
 
         return (
