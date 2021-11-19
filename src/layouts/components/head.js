@@ -6,7 +6,8 @@ import ogImageDefault from "../assets/webiny-social-share.jpg";
 class Head extends React.Component {
     render() {
         const ogImage = this.props.image ? this.props.image : ogImageDefault;
-        let domainName = "https://www.webiny.com/";
+        let domainName = typeof window !== 'undefined' ? window.location.origin+'/' : 'https://deploy-preview-111--webiny.netlify.app/';
+
 
         return (
             <React.Fragment>
@@ -33,6 +34,10 @@ class Head extends React.Component {
                             content: this.props.title,
                         },
                         {
+                            property: "og:description",
+                            content: this.props.description,
+                        },
+                        {
                             property: "og:image",
                             content: domainName + ogImage,
                         },
@@ -44,10 +49,6 @@ class Head extends React.Component {
                         {
                             name: "twitter:image",
                             content: domainName + ogImage,
-                        },
-                        {
-                            name: "og:description",
-                            content: this.props.description,
                         },
                         {
                             name: "twitter:card",
