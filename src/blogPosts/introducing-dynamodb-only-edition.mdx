@@ -9,15 +9,17 @@ date: 2021-11-19
 ---
 
 
-> Is there a way to install Webiny without Elasticsearch?  
-Webiny is too expensive for smaller projects because of Elasticsearch!  
-AWS doesn't have Elasticsearch as a serverless service. 
+> Is there a way to install Webiny without Elasticsearch?
+Webiny is too expensive for smaller projects because of Elasticsearch!
+AWS doesn't have Elasticsearch as a serverless service.
 
-These are just some of the many comments we've been getting over the past months. Today we're happy to announce that Webiny now comes with two database setups. We recommend the current Elasticsearch + DynamoDB for larger projects and a new DynamoDB-only setup for small to medium projects.
+These are just some of the many comments we've been receiving over the past months from our community.
 
-Just run `npx create-webiny-project my-new-project` to get started, or follow this [installation tutorial](/docs/tutorials/install-webiny).
+So, today, we're happy to announce that Webiny now comes with two database setups. We recommend the current Elasticsearch + DynamoDB for larger projects and the new DynamoDB-only setup for small to medium projects.
 
-Fyi, we plan to support even more serverless databases in the future. Webiny's database layer doesn't use an ORM. We found ORMs to be very restrictive, and they come with a big performance hit. So instead, we're using native clients. Now, every data storage implementation can have a completely different table design, but also utilize more than one storage service, or even use a combination of several services at the same time.". It was a big challenge we wanted to solve, and if you want to learn more about it, continue reading.
+To get started, simply run `npx create-webiny-project my-new-project`, or follow this [installation tutorial](/docs/tutorials/install-webiny).
+
+With this new setup, we've also made it possible to integrate Webiny with other serverless databases much easier. We've accomplished this by completely rearchitecting the internals of Webiny's database layer. In short, by replacing the previous ORM-style approach with so called "storage operations", we've managed to make the codebase more flexible and get much better overall performance. It was a big challenge we wanted to solve, and if you want to learn more about it, continue reading.
 
 ## Goals
 
@@ -79,7 +81,7 @@ There are a couple of main differences the DynamoDB-only edition introduces:
 
 There are four main points why this release is essential to us and to the future of Webiny:
 
-**Truly 100% serverless stack** - by eliminating the Elasticsearch from the stack, developers can enjoy a maintenance-free stack with consumption-based pricing. All the services in the stack are now either fault-tolerant or highly-available. Scaling in and out is also fully automatic. 
+**Truly 100% serverless stack** - by eliminating the Elasticsearch from the stack, developers can enjoy a maintenance-free stack with consumption-based pricing. All the services in the stack are now either fault-tolerant or highly-available. Scaling in and out is also fully automatic.
 
 **Contributor friendly** - Our community is super important to us, and we believe we can show that every day on our [community slack](/slack). However, many people that thought of contributing to Webiny decided not to do so because it comes at a dollar-cost due to the Elasticsearch dependency. Now, this is no longer the case.
 
@@ -89,7 +91,7 @@ There are four main points why this release is essential to us and to the future
 
 ---
 
-We haven't yet tested it, but I have a hunch that Webiny is the most cost-efficient open-source CMS on the market → although I doubt anyone will type that into google :) 
+We haven't yet tested it, but I have a hunch that Webiny is the most cost-efficient open-source CMS on the market → although I doubt anyone will type that into google :)
 
 Give Webiny a spin, let us know how you find the new DynamoDB-only version in terms of performance, and please share any other feedback that could help us improve the product even more.
 
