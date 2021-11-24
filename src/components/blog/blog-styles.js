@@ -73,7 +73,7 @@ export const FeaturedBlogWrapper = styled("div")(
         display: "flex",
         background: theme.color.white,
         boxShadow: "0px 0px 10px rgba(100, 100, 100, 0.2)",
-        marginBottom: 120,
+        marginBottom: 60,
         transition: "box-shadow 250ms ease-in-out",
         cursor: "pointer",
 
@@ -110,7 +110,6 @@ export const FeaturedBlogWrapper = styled("div")(
             "& .title": {
                 margin: "0px 0px 24px",
                 color: theme.color.dark,
-
                 fontWeight: theme.fontWeight.semiBold,
                 textAlign: "left",
             },
@@ -133,7 +132,7 @@ export const FeaturedBlogWrapper = styled("div")(
                     "& .media": {
                         width: 48,
                         height: 53,
-                        objectFit: "cover",
+                        objectFit: "contain",
                     },
                     "& .icon": {
                         position: "absolute",
@@ -162,7 +161,7 @@ export const FeaturedBlogWrapper = styled("div")(
         },
     },
     mq({
-        minHeight: ["auto", "352px"],
+        minHeight: ["auto", "292px"],
         flexDirection: ["column", "row"],
         "& .media-container": {
             width: ["100%", "50%"],
@@ -171,7 +170,7 @@ export const FeaturedBlogWrapper = styled("div")(
             width: ["100%", "50%"],
             padding: ["24px", "15px 60px"],
             "& .title": {
-                fontSize: [theme.fontSize["3xl"], theme.fontSize["5xl"]],
+                fontSize: [theme.fontSize["3xl"], theme.fontSize["3xl"]],
             },
             "& .description": {
                 fontSize: [theme.fontSize["base"], theme.fontSize["lg"]],

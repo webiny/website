@@ -6,7 +6,8 @@ import ogImageDefault from "../assets/webiny-social-share.jpg";
 class Head extends React.Component {
     render() {
         const ogImage = this.props.image ? this.props.image : ogImageDefault;
-        let domainName = "https://www.webiny.com/";
+        let domainName = typeof window !== 'undefined' ? window.location.origin+'/' : 'https://www.webiny.com/';
+
 
         return (
             <React.Fragment>
@@ -25,15 +26,19 @@ class Head extends React.Component {
                                 "width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5",
                         },
                         {
-                            name: "og:type",
+                            property: "og:type",
                             content: "website",
                         },
                         {
-                            name: "og:title",
+                            property: "og:title",
                             content: this.props.title,
                         },
                         {
-                            name: "og:image",
+                            property: "og:description",
+                            content: this.props.description,
+                        },
+                        {
+                            property: "og:image",
                             content: domainName + ogImage,
                         },
                         {
@@ -44,10 +49,6 @@ class Head extends React.Component {
                         {
                             name: "twitter:image",
                             content: domainName + ogImage,
-                        },
-                        {
-                            name: "og:description",
-                            content: this.props.description,
                         },
                         {
                             name: "twitter:card",
