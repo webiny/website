@@ -235,7 +235,7 @@ export default ({ children, ...props }) => (
                             subscribed to our newsletter
                         </a>{" "}
                         3) follows us on either{" "}
-                        <a href="https://twitter.com/WebinyPlatform">Twitter</a> or{" "}
+                        <a href="https://twitter.com/WebinyCMS">Twitter</a> or{" "}
                         <a href="https://www.youtube.com/c/webiny">YouTube</a>.
                     </p>
                 </Cell> 
