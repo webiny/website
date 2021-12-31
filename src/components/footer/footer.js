@@ -108,7 +108,7 @@ const Footer = () => (
                             GitHub
                         </a>{" "}
                         /{" "}
-                        <a className={linkStyle} href="https://twitter.com/WebinyPlatform">
+                        <a className={linkStyle} href="https://twitter.com/WebinyCMS">
                             Twitter
                         </a>{" "}
                         /{" "}

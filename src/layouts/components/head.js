@@ -56,7 +56,7 @@ class Head extends React.Component {
                         },
                         {
                             name: "twitter:site",
-                            content: "@WebinyPlatform",
+                            content: "@WebinyCMS",
                         },
                         {
                             name: "twitter:title",
