@@ -1,0 +1,120 @@
+---
+slug: "blog/what-is-infrastructure-as-code"
+title: "What is Infrastructure as Code?"
+description: "Infrastructure as Code (IaC) is the process of managing and configuring an infrastructure using configuration files, rather than manually editing configurations on servers or using interactive configuration tools."
+tags: ["IaC", "Software Development", "Cloud", "DevOps"]
+featureImage: "./assets/what-is-infrastructure-as-code/what-is-infrastructure-as-code-cover.png"
+author: pavel
+date: 2022-01-12
+---
+
+In the past, IT infrastructure management was challenging. Hardware and software had to be managed and configured manually. Recently, a tool, that allows you to simplify and automate these actions, has appeared. This tool is called infrastructure as code (IaC).
+
+In this article, we will discuss what infrastructure as code is, the best providers that allow you to implement IaC, IaC best practices, examples, and possible challenges.
+
+## Infrastructure as code declaration
+
+Infrastructure as Code (IaC) is the process of managing and configuring an infrastructure using configuration files, rather than manually editing configurations on servers or using interactive configuration tools. The IaC model creates the same environment every time it is applied. IaC is used in infrastructure as a service (IaaS), but they should not be confused. The main idea of IaC is to describe the infrastructure using code.
+
+## Why it is needed
+
+Without IaC, teams must maintain customization of individual deployment environments. Over time, this leads to each environment having a unique configuration that cannot be reproduced automatically, which in turn leads to problems during deployment. In such a case, infrastructure administration and maintenance involve manual processes that are difficult to track and which can lead to errors. IaC allows you to always set the same configuration for the target environment, regardless of the initial state of the environment.
+
+## The best IaC providers
+
+Let’s take a look at the most popular IaC providers and the main features they provide.
+
+### Amazon AWS Cloudformation
+
+<ExternalLink href="https://aws.amazon.com/cloudformation/">AWS CloudFormation</ExternalLink> is a built-in IaC tool in the AWS Cloud Platform that provides the ability to provision and manage a set of multiple related AWS and third-party resources. CloudFormation lets you manage your resource scaling, automate resource management by integrating CloudFormation with other required AWS resources, and create your own resource providers to provide and manage third-party application resources.
+
+### Azure Resource Manager
+<ExternalLink href="https://azure.microsoft.com/features/resource-manager/">Azure Resource Manager</ExternalLink> is an IaC tool for deploying and managing Azure resources. It allows you to deploy, maintain, and track resources as a collective action rather than separately. It incorporates role-based access control into the resource control mechanism to enable users to enforce access control over all resources in a resource category.
+
+### Google Cloud Deployment Manager
+<ExternalLink href="https://cloud.google.com/deployment-manager/docs">Google Cloud Deployment Manager</ExternalLink> is an infrastructure deployment service designed to automate the creation, configuration, provision, and management of assets on the Google Cloud Platform. It allows you to easily create a collection of Google cloud assets and then manage them as a whole. Google Cloud Deployment Manager enables multiple resources to be deployed concurrently, controls the order in which resources are created, and creates resource definition dependencies.
+
+### Terraform
+<ExternalLink href="https://www.terraform.io/">HashiCorp Terraform</ExternalLink> is the most popular open-source infrastructure automation tool. terraform allows you to easily plan and build IaC for multiple infrastructure providers with a single workflow. You can easily provision different environments using the same configuration and manage the complete lifecycle of the infrastructure you want; thereby reducing human error and increasing the automation of infrastructure provision and management.
+
+### AWS CDK
+The <ExternalLink href="https://aws.amazon.com/cdk/">AWS CDK</ExternalLink> is a software development platform for defining cloud infrastructure in code and exposing it using AWS CloudFormation. It allows you to define the framework and application stack in programming languages such as Python, Java, Typescript, .NET, and JavaScript, and deploys a full-featured application stack directly from a supported IDE.
+
+AWS CDK allows you to automatically create a CloudFormation template based on your source code and deploy this template to your AWS account.
+
+### Pulumi
+<ExternalLink href="https://www.pulumi.com/">Pulumi</ExternalLink> is an open-source multilingual development platform that lets you manage your cloud infrastructure with code. It provides any cloud deployment functionality, cloud management. Pulumi offers the freedom to use any supported programming language you like. With Pulumi, you can view all existing environments and the changes you make to them. In addition, you can easily customize their configurations to protect your data.
+
+## IaC examples
+
+Let’s look at a simple scenario for provisioning an AWS EC2 instance. In the following example, we can see how Terraform code is used for this requirement.
+
+```jsx
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.27"
+    }
+  }
+}
+
+provider "aws" {
+  access_key = "aws_access_key"
+  secret_key = "aws_secret_key"
+  region = "us-west-1"
+}
+
+resource "aws_instance" "web_server" {
+  ami                    = "ami-0123456"
+  instance_type          = "t3.small"
+  subnet_id              = "subnet-a000111x"
+  vpc_security_group_ids = "sg-dfdd00011"
+  key_name               = "web_server_test_key"
+
+  tags = {
+    Name = "Web_Server"
+  }
+}
+```
+
+## IaC best practices
+
+Some of the best IaC practices to consider when developing it are listed below.
+
+### Version control
+
+Configuration files should be versioned so that you can easily track, manage, and recover any potential changes. Version control is also very helpful in diagnosing problems.
+
+### Document as little as possible
+
+When using IaC, the code is the infrastructure documentation and will always be up-to-date, so your employees don’t need to write a lot of additional instructions.
+
+### Modularity and microservices
+
+IaC can be used to develop, manage and maintain applications as many deployable modules. It also allows you to split your infrastructure into multiple modular components and then use automation to combine them in the most appropriate way.
+
+### IaC Compliance Regulation
+
+Errors in IaC files can be a serious problem if they are not detected prior to deploying IaC definitions. Therefore, it is recommended to automatically and continuously scan IaC files, ensuring that verification occurs whenever an IaC definition is created or updated. You can do it using such tools as <ExternalLink href="https://www.checkov.io/">Checkov</ExternalLink>, <ExternalLink href="https://github.com/terraform-linters/tflint">TFLint</ExternalLink>, <ExternalLink href="https://www.accurics.com/products/accurics/">Accurics</ExternalLink>.
+
+## IaC challenges
+
+While there is a list of IaC advantages, there are certain issues with this model that need to be understood and solved before the IaC implementation process.
+
+### Shift of configuration
+
+In the long run, a configuration shift can occur, no matter how consistently or often you configure your servers. Therefore, every time you need to change your infrastructure, you must ensure that it is done in accordance with a predefined maintenance workflow.
+
+### Potential duplication of errors
+
+In the process of implementing IaC, there are certain processes that must be done manually. One of these processes is writing the code that generates your IaC architecture, during which there is always the possibility of error.
+
+### Need for new skills
+
+The IaC model requires a high level of technical expertise, so teams must continually invest in people and skills. For some teams, this may be too costly.
+
+## Conclusion
+
+IaC fully frees developers and other professionals from manual, error-prone tasks. In addition, it lowers costs and increases efficiency throughout the entire software development lifecycle.
+If you have questions or comments, please reach out via <ExternalLink href="https://twitter.com/paveldenisjuk">Twitter</ExternalLink> or <ExternalLink href="https://www.webiny.com/slack?utm_source=Webiny-blog&utm_medium=blog-post&utm_campaign=Regular-content&utm_content=what-is-infrastructure-as-code&utm_term=W00750">Webiny Community Slack</ExternalLink>.
