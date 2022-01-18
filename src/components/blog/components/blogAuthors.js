@@ -67,6 +67,7 @@ export default {
     },
     igor: {
         name: "Igor Bobriakov",
-        avatar: IgorImg
+        avatar: IgorImg,
+        twitter: "WebinyCMS"
     }
 };
