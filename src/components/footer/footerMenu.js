@@ -36,7 +36,7 @@ const footerMenu = css(
         paddingBottom: 20,
     },
     mq({
-        display: ["none", "flex"],
+        display: ["none", "none", "flex"],
     }),
 );
 
@@ -44,6 +44,7 @@ const FooterMenu = () => (
     <ContentContainer className={footerMenu}>
         <MenuBlock>
             <SectionTitle>Developers</SectionTitle>
+            <a href="/">Getting Started</a>
             <a href="/docs/webiny/introduction/">Documentation</a>
             <a
                 onClick={() => {
@@ -72,23 +73,23 @@ const FooterMenu = () => (
         </MenuBlock>
         <MenuBlock>
             <SectionTitle>Webiny</SectionTitle>
-            <Link to="/serverless-application-framework">
-                Serverless Application
-                <br />
-                Framework
-            </Link>
-            <Link to="/serverless-cms">Serverless CMS</Link>
-            <Link to="/enterprise">For Enterprise</Link>
-            <Link to="/why-webiny">Why Webiny?</Link>
-            <Link to="/partners">Webiny Partners</Link>
+            <Link to="/why-serverless">Why Serverless?</Link>
+            <Link to="/features">Features</Link>
             <Link to="/roadmap">Roadmap</Link>
         </MenuBlock>
         <MenuBlock>
             <SectionTitle>Community</SectionTitle>
-            <a href="https://www.webiny.com/slack">Slack Chat</a>
+            <Link to="/forum">Forum</Link>
+            <a href="https://www.webiny.com/slack">Chat</a>
             <Link to="/blog">Blog</Link>
             <Link to="/swag">SWAG</Link>
-            <Link to="/events">Events</Link>
+        </MenuBlock>
+        <MenuBlock>
+            <SectionTitle>Included Apps</SectionTitle>
+            <Link to="/">Headless CMS</Link>
+            <Link to="/">Page Builder</Link>
+            <Link to="/">Form Builder</Link>
+            <Link to="/">File Manager</Link>
         </MenuBlock>
         <MenuBlock>
             <SectionTitle>Use Cases & Guides</SectionTitle>
@@ -118,6 +119,9 @@ const FooterMenu = () => (
                 Privacy Policy
             </Link>
             <a href="mailto:sven@webiny.com">Contact Us</a>
+            <Link rel="prerender" to="/">
+                Support
+            </Link>
         </MenuBlock>
     </ContentContainer>
 );

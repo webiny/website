@@ -1,0 +1,33 @@
+<svg width="50" height="51" viewBox="0 0 50 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="36.2506" cy="28.4168" r="10.0833" fill="#200F3B" stroke="#00CCB0"/>
+<path d="M34.3542 31.068L30.9972 28.791V28.233L34.3542 25.956V26.667L31.6452 28.494V28.53L34.3542 30.357V31.068ZM34.7047 32.94L37.6567 25.11H38.3227L35.3707 32.94H34.7047ZM38.6732 31.068V30.357L41.3822 28.53V28.494L38.6732 26.667V25.956L42.0302 28.233V28.791L38.6732 31.068Z" fill="white"/>
+<path d="M36.6672 40.5V42.8935C36.6672 44.333 35.5002 45.5 34.0606 45.5V45.5H16.6634H9.00049C6.79135 45.5 5.00049 43.7091 5.00049 41.5V9.5C5.00049 7.29086 6.79135 5.5 9.00049 5.5H32.6672C34.8763 5.5 36.6672 7.29086 36.6672 9.5V16.3333" stroke="white"/>
+<line x1="5.83374" y1="12.5" x2="35.8337" y2="12.5" stroke="white"/>
+<circle cx="9.09213" cy="9.15292" r="1.48104" fill="#00CCB0"/>
+<circle cx="13.6339" cy="9.15292" r="1.48104" fill="#00CCB0"/>
+<circle cx="18.1759" cy="9.15292" r="1.48104" fill="#00CCB0"/>
+<rect x="7.50049" y="14.6665" width="8.33333" height="0.833333" rx="0.416667" fill="#00CCB0"/>
+<rect x="7.50049" y="30.5" width="8.33333" height="0.833333" rx="0.416667" fill="#00CCB0"/>
+<rect x="17.5005" y="30.5" width="3.33333" height="0.833333" rx="0.416667" fill="white"/>
+<rect x="8.33374" y="17.1665" width="5" height="0.833333" rx="0.416667" fill="white"/>
+<rect x="8.33374" y="27.1665" width="5" height="0.833333" rx="0.416667" fill="white"/>
+<rect x="8.33374" y="38" width="5" height="0.833333" rx="0.416667" fill="white"/>
+<rect width="5" height="0.833333" rx="0.416667" transform="matrix(-1 0 0 1 17.5005 19.6665)" fill="white"/>
+<rect width="5" height="0.833333" rx="0.416667" transform="matrix(-1 0 0 1 17.5005 24.6665)" fill="white"/>
+<rect width="5" height="0.833333" rx="0.416667" transform="matrix(-1 0 0 1 17.5005 35.5)" fill="white"/>
+<rect x="14.1672" y="22.1665" width="5" height="0.833333" rx="0.416667" fill="white"/>
+<rect x="14.1672" y="33" width="5" height="0.833333" rx="0.416667" fill="white"/>
+<rect x="14.1672" y="17.1665" width="3.33333" height="0.833333" rx="0.416667" fill="white"/>
+<rect x="14.1672" y="27.1665" width="3.33333" height="0.833333" rx="0.416667" fill="white"/>
+<rect x="14.1672" y="38" width="3.33333" height="0.833333" rx="0.416667" fill="white"/>
+<rect width="3.33333" height="0.833333" rx="0.416667" transform="matrix(-1 0 0 1 11.6672 19.6665)" fill="white"/>
+<rect width="3.33333" height="0.833333" rx="0.416667" transform="matrix(-1 0 0 1 11.6672 24.6665)" fill="white"/>
+<rect width="3.33333" height="0.833333" rx="0.416667" transform="matrix(-1 0 0 1 11.6672 35.5)" fill="white"/>
+<rect x="20.0005" y="22.1665" width="3.33333" height="0.833333" rx="0.416667" fill="white"/>
+<rect x="20.0005" y="33" width="3.33333" height="0.833333" rx="0.416667" fill="white"/>
+<rect width="3.33333" height="0.833333" rx="0.416667" transform="matrix(-1 0 0 1 21.6672 19.6665)" fill="white"/>
+<rect width="3.33333" height="0.833333" rx="0.416667" transform="matrix(-1 0 0 1 21.6672 24.6665)" fill="white"/>
+<rect width="3.33333" height="0.833333" rx="0.416667" transform="matrix(-1 0 0 1 21.6672 35.5)" fill="white"/>
+<rect x="8.33374" y="22.1665" width="5" height="0.833333" rx="0.416667" fill="white"/>
+<rect x="8.33374" y="33" width="5" height="0.833333" rx="0.416667" fill="white"/>
+</svg>

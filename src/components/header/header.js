@@ -1,582 +1,413 @@
-import React from "react";
-import styled from "react-emotion";
-import theme from "../utils/theme";
-import mq from "../utils/breakpoints";
+import React, { Fragment, useContext, useState } from "react";
+import Link, { navigate } from "gatsby-link";
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
+
 import ContentContainer from "../ui/content-container";
 import Button from "../ui/button";
-import Link from "gatsby-link";
-import { css } from "emotion";
-import GitHubButton from "react-github-btn";
-import NewsBanner from "../ui/news-banner";
 import { trackGoToGithub } from "../ui/functions";
-
+import { ModalContext } from "../ui/layout/video-modal";
+// assets
 import logo from "./assets/webiny-logo-with-icon-left-white.svg";
 import logoOrange from "./assets/webiny-logo-with-icon-left-orange.svg";
-import menuIcon from "./assets/round-menu-24px.svg";
-import menuIconBlack from "./assets/round-menu-24px-black.svg";
-import downArrowWhite from "./assets/down-arrow-white.svg";
-import downArrowBlack from "./assets/down-arrow-black.svg";
+import menuIconBlack from "./assets/burger-menu-icon.svg";
+import closeMenuIcon from "./assets/close-burger-menu.svg";
+import RightArrowIcon from "./assets/arrow-orange.svg";
+import DownArrowIcon from "./assets/down-arrow-black.inline.svg";
+import MobileDownArrowIcon from "./assets/mobile-menu-icon.svg";
+import RightArrow from "./assets/arrow-right.svg";
+// data
+import { DROPDOWN_MENUS } from "./header-data";
+// styles
+import {
+    MenuItem,
+    parentMenu,
+    linkStyle,
+    horizontalLine,
+    verticalLine,
+    DropDown,
+    HeaderContainer,
+    headerInnerContainer,
+    NavBar,
+    WebinyLogo,
+    Card,
+    DropDownTitle,
+    logoImage,
+    Menu,
+    MobileMenu,
+    MenuItemMobile,
+    MobileMenuIcon,
+    MobileDownArrow,
+    MobileMenuBackground,
+    downArrowClass,
+    ProductDropdownItem,
+    ResourcesDropdownItem,
+    ResourcesDropdownItemMobile,
+    ProductDropdownItemMobile,
+    FromTheBlogCOntainer,
+    itemsParent,
+    TitleContainer,
+    mobileMenuList,
+    headerButton,
+} from "./header-styles";
 
-const WebinyLogo = styled("div")({
-    padding: 0,
-    lineHeight: "100%",
-    zIndex: 100,
-});
-
-const logoImage = css(
-    {},
-    mq({
-        paddingLeft: [20, 0],
-        height: [28, 32],
-        marginTop: [5],
-    }),
-);
-
-const Menu = styled("ul")(
-    {
-        listStyle: "none",
-        //display: 'flex',
-        flexDirection: "row",
-        flexWrap: "wrap",
-        alignItems: "center",
-        justifyContent: "center",
-    },
-    mq({
-        display: ["none", "flex"],
-    }),
-);
-
-const linkStyle = css({
-    fontWeight: 600,
-    textDecoration: "none",
-    color: "#fff",
-    transition: "250ms opacity",
-    "&:hover": {
-        opacity: "0.8",
-    },
-});
-
-const DropDown = styled("div")(
-    {
-        textAlign: "left",
-        borderRadius: 2,
-        visibility: "hidden",
-        minWidth: "160px",
-        boxSizing: "border-box",
-        opacity: 0,
-        left: "calc(50% - 12px)",
-        transform: "translateY(1em) translateX(-50%)",
-        zIndex: "-1",
-        transition: "all 0.1s ease-in-out 0s, visibility 0s linear 0.1s, z-index 0s linear 0.01s",
-        a: {
-            color: theme.color.black,
-            fontWeight: theme.fontWeight.regular,
-            fontSize: theme.fontSize.navMenuSubItem,
-            textDecoration: "none",
-            transition: "250ms opacity",
-            display: "block",
-            marginBottom: 25,
-            "&:hover": {
-                opacity: "0.8",
-                textDecoration: "underline",
-            },
-            "&:last-child": {
-                marginBottom: 0,
-            },
-        },
-        hr: {
-            borderColor: "#e8e8e8",
-            margin: "-5px -10px 10px -10px",
-            borderTop: "none",
-        },
-        ".section-wrapper": {
-            display: "flex",
-            ".section": {
-                width: 120,
-                ".section-title": {
-                    fontWeight: theme.fontWeight.semiBold,
-                    marginBottom: 15,
-                    cursor: "text",
-                    color: theme.color.black,
-                },
-                "&:last-child": {
-                    marginBottom: "0px !important",
-                },
-            },
-            hr: {
-                display: "none",
-            },
-        },
-    },
-    mq({
-        position: ["relative", "absolute"],
-        display: ["none", "block"],
-        boxShadow: ["none", "0px 8px 16px 0px rgba(0,0,0,0.2)"],
-        width: ["100%", "auto"],
-        backgroundColor: ["white", "#f9f9f9"],
-        padding: ["0 25px 10px 25px", 25],
-        top: [25, 50],
-        ".open": {
-            display: "block",
-        },
-        ".section-wrapper": {
-            marginTop: [-25, 0],
-            flexDirection: ["column", "row"],
-            ".section": {
-                ".section-title": {
-                    marginTop: [25, 0],
-                },
-                a: {
-                    paddingLeft: [25, 0],
-                },
-            },
-        },
-    }),
-);
-
-const DownArrow = styled("div")(
-    {
-        position: "absolute",
-        width: 24,
-        height: 24,
-        background: "url(" + downArrowWhite + ") no-repeat",
-        right: 0,
-        color: "white",
-    },
-    mq({
-        top: [-1, 14],
-    }),
-);
-
-const MenuItem = styled("li")(
-    {
-        textAlign: "left",
-        cursor: "pointer",
-        position: "relative",
-        fontSize: 14,
-        color: theme.color.black,
-        "&:hover, &:focus": {
-            [DropDown]: {
-                //display: 'block',
-                visibility: "visible",
-                display: "block",
-                opacity: 1,
-                zIndex: 1,
-                //left: 'calc(-50% - 25px)',
-                transform: "translateY(0%) translateX(-50%)",
-                transitionDelay: "0s, 0s, 0.1s",
-            },
-        },
-    },
-    mq({
-        marginLeft: [0, 30],
-        marginBottom: [15, 0],
-        marginTop: [0, -15],
-        paddingBottom: [15, 15],
-        paddingTop: [0, 15],
-        borderBottom: ["1px solid " + theme.color.lightGray, "none"],
-    }),
-);
-
-const parentMenu = css(
-    {
-        paddingRight: 25,
-        marginRight: -5,
-        a: {
-            color: "inherit",
-            textDecoration: "none",
-        },
-        "&:hover": {
-            opacity: 1,
-        },
-    },
-    mq({
-        marginBottom: [15, 0],
-        paddingBottom: [15, 15],
-    }),
-);
-
-const dropdownArrow = css`
-    position: absolute;
-    background: #fff;
-    border: 4px solid #fff;
-    top: 2px;
-    left: 50%;
-    zindex: -1;
-    &:after,
-    &:before {
-        bottom: 100%;
-        left: 50%;
-        border: solid transparent;
-        content: " ";
-        height: 0;
-        width: 0;
-        position: absolute;
-        pointer-events: none;
+const handleClick = (item, playVideo) => {
+    const fullLink = typeof item.actionLink === "string" && item.actionLink.startsWith("http");
+    // We assume that a full link is an external link,
+    // So, we open it in a new tab
+    if (fullLink) {
+        window.open(item.actionLink, "_blank", "noopener noreferrer");
+    } else {
+        navigate(item.actionLink);
     }
+};
 
-    &:after {
-        border-color: rgba(136, 183, 213, 0);
-        border-bottom-color: #fff;
-        border-width: 5px;
-        margin-left: -5px;
-    }
-    &:before {
-        border-color: rgba(194, 225, 245, 0);
-        border-bottom-color: #fff;
-        border-width: 11px;
-        margin-left: -11px;
-    }
-`;
-
-const HeaderContainer = styled("header")(
-    {
-        left: 0,
-        paddingTop: 15,
-        paddingBottom: 15,
-        width: "100%",
-        transition: "all 500ms",
-    },
-    props => ({
-        position: props.isSticky ? "fixed" : "absolute",
-        backgroundColor: props.isSticky ? "#fff" : "transparent",
-        boxShadow: props.isSticky && "0 0 1px 1px rgba(34,45,57,.15)",
-        paddingTop: props.isSticky ? 10 : 20,
-        paddingBottom: props.isSticky ? 10 : 20,
-        top: props.hasBanner ? (props.hideBanner ? 0 : 35) : 0,
-        zIndex: props.hasBanner ? (props.hideBanner ? 102 : 100) : 100,
-        [MenuItem]: {
-            color: props.isSticky ? "#000" : "#fff",
-            ["a." + linkStyle]: {
-                color: props.isSticky ? "#000" : "#fff",
-            },
-            [DownArrow]: {
-                background:
-                    "url(" + (props.isSticky ? downArrowBlack : downArrowWhite) + ") no-repeat",
-            },
-        },
-    }),
-    mq({
-        height: ["auto", 45],
-    }),
-);
-
-const headerInnerContainer = css(
-    {
-        maxWidth: 1200,
-        width: "100%",
-        boxSizing: "border-box",
-    },
-    mq({
-        width: ["100%", "100%"],
-        padding: [0, "0 5px", 0],
-    }),
-);
-
-const MobileMenu = styled("ul")(
-    {
-        paddingRight: 20,
-        display: "flex",
-        position: "relative",
-        height: "calc(100vh - 80px)",
-        overflowX: "scroll",
-        width: "auto",
-        margin: 15,
-        listStyle: "none",
-        boxSizing: "border-box",
-        backgroundColor: "white",
-        padding: 15,
-        borderRadius: 5,
-    },
-    mq({
-        display: ["block", "none"],
-    }),
-);
-
-const MobileMenuIcon = styled("img")(
-    {
-        zIndex: 100,
-        position: "absolute",
-        right: 20,
-        top: 17,
-    },
-    mq({
-        display: ["block", "none"],
-    }),
-);
-
-const link = css({
-    textDecoration: "none",
-    color: theme.color.black,
-});
-
-const NavBar = styled("div")(
-    {
-        margin: "0 auto",
-        display: "flex",
-        alignContent: "flex-end",
-        justifyContent: "space-between",
-        [MobileMenu]: {
-            display: "none",
-        },
-        "&.mobile-opened": {
-            backgroundColor: theme.color.darkGray,
-            height: "100vh",
-            justifyContent: "flex-start",
-            [MobileMenu]: {
-                display: "none",
-            },
-        },
-    },
-    mq({
-        flexDirection: ["column", "row"],
-        marginTop: [-10, 0],
-        paddingTop: [10, 0],
-    }),
-);
-
-const githubMenu = css(
-    {},
-    mq({
-        paddingTop: [5, 19],
-    }),
-);
-
-const MenuItemList = props => (
-    <React.Fragment>
-        <MenuItem className={githubMenu}>
-            <div
-                onClick={() => {
-                    trackGoToGithub({ placement: "header-github-star" });
-                }}
-            >
-                <GitHubButton
-                    href="https://github.com/webiny/webiny-js"
-                    data-icon="octicon-star"
-                    data-show-count="true"
-                    aria-label="Star webiny/webiny-js on GitHub"
-                >
-                    Star
-                </GitHubButton>
-            </div>
-        </MenuItem>
-        <MenuItem>
-            <Link className={linkStyle} rel="prerender" to="/why-webiny">
-                Why Webiny?
-            </Link>
-        </MenuItem>
-
-        <MenuItem>
-            <Link className={linkStyle} rel="prerender" to="/features">
-                Features
-            </Link>
-        </MenuItem>
-
-        <MenuItem>
-            <Link className={linkStyle} rel="prerender" to="/agency">
-                For Agencies
-            </Link>
-        </MenuItem>
-
-        <MenuItem className={linkStyle + " " + parentMenu}>
-            <Link rel="prerender" to="/serverless-apps">
-                Apps
-            </Link>
-            <DownArrow />
-            <DropDown>
-                <div className={dropdownArrow} />
-                <Link rel="prerender" to="/serverless-app/headless-cms">
-                    Headless CMS
-                </Link>
-                <Link rel="prerender" to="/serverless-app/page-builder">
-                    Page Builder
-                </Link>
-                <Link rel="prerender" to="/serverless-app/form-builder">
-                    Form Builder
-                </Link>
-                <Link rel="prerender" to="/serverless-app/file-manager">
-                    File Manager
-                </Link>
-                <hr />
-                <Link rel="prerender" to="/serverless-apps">
-                    View All
-                </Link>
-            </DropDown>
-        </MenuItem>
-        {/**
-    <MenuItem>
-      <Link className={linkStyle} rel="prerender" to="/plugins">
-        Plugins
-      </Link>
-    </MenuItem>
- */}
-
-        <MenuItem className={linkStyle + " " + parentMenu}>
-            Community
-            <DownArrow />
-            <DropDown>
-                <div className={dropdownArrow} />
-                <a href="https://github.com/webiny/webiny-js">GitHub</a>
-                <a href="https://community.webiny.com">Forum</a>
-                <a href="https://www.webiny.com/slack">Slack</a>
-                <a href="https://blog.webiny.com">Blog</a>
-                <a href="/events">Events</a>
-            </DropDown>
-        </MenuItem>
-
-        <MenuItem>
-            <Link className={linkStyle} rel="prerender" to="/about-us">
-                About Us
-            </Link>
-        </MenuItem>
-
-        <MenuItem>
-            <Button link="/docs/webiny/introduction/" type={props.sticky && "primary"}>
-                Get Started
-            </Button>
-        </MenuItem>
-    </React.Fragment>
-);
-
-class Header extends React.Component {
-    didScroll = false;
-    hasBanner = true;
-    bannerListnerer = false;
-    scrollListener = false;
-    state = { isSticky: false, mobileMenuOpen: false, hideBanner: false };
-
-    componentDidMount() {
-        if (this.hasBanner) {
-            this.initBannerListener();
-        }
-
-        if (this.props.trackScroll === false) {
-            this.setState({ isSticky: true });
-            return;
-        }
-
-        this.initScrollListener();
-    }
-
-    componentWillUnmount() {
-        if (this.hasBanner && this.bannerListnerer !== false) {
-            clearInterval(this.bannerListnerer);
-            this.bannerListnerer = false;
-        }
-
-        if (this.scrollListener !== false) {
-            clearInterval(this.scrollListener);
-            this.scrollListener = false;
-        }
-    }
-
-    toggleMobileMenu = () => {
-        this.setState(
-            {
-                mobileMenuOpen: !this.state.mobileMenuOpen,
-                isSticky: true, //this.state.mobileMenuOpen,
-            },
-            () => {
-                this.didScroll = true;
-            },
-        );
-    };
-
-    initScrollListener = () => {
-        window.onscroll = event => {
-            this.didScroll = true;
-        };
-
-        this.scrollListener = setInterval(() => {
-            if (this.didScroll) {
-                this.didScroll = false;
-
-                if (this.state.mobileMenuOpen) {
-                    return;
-                }
-
-                if (window.scrollY > window.innerHeight) {
-                    if (this.state.isSticky) {
-                        return;
-                    }
-                    this.setState({ isSticky: true });
-                } else if (window.scrollY < 1) {
-                    this.setState({ isSticky: false });
-                }
-            }
-        }, 500);
-    };
-
-    initBannerListener = () => {
-        this.bannerListnerer = setInterval(() => {
-            if (window.scrollY > 30 && this.state.hideBanner == false) {
-                this.setState({ hideBanner: true });
-            } else if (window.scrollY < 30 && this.state.hideBanner == true) {
-                this.setState({ hideBanner: false });
-            }
-        }, 500);
-    };
-
-    render() {
-        return (
-            <React.Fragment>
-                {this.hasBanner && (
-                    <NewsBanner
-                        title={
-                            "♥️♥️♥️ We are live on Product hunt - if you like what you see here, please show us some love ♥️♥️♥️"
-                        }
-                        link={"https://www.webiny.com/product-hunt"}
-                    />
-                )}
-
-                <HeaderContainer
-                    hasBanner={this.props.hasBanner}
-                    isSticky={this.state.isSticky}
-                    hideBanner={this.state.hideBanner}
-                    hasBanner={this.hasBanner}
-                >
-                    <ContentContainer className={headerInnerContainer}>
-                        <NavBar
-                            className={
-                                this.state.mobileMenuOpen ? "mobile-opened" : "mobile-closed"
-                            }
-                        >
-                            <WebinyLogo alt="Webiny Home">
-                                <Link rel="prerender" to="/">
-                                    <img
-                                        alt="Webiny Logo"
-                                        className={logoImage}
-                                        src={
-                                            this.state.isSticky || this.state.mobileMenuOpen
-                                                ? logoOrange
-                                                : logo
+const MobileMenuItemList = () => {
+    return (
+        <React.Fragment>
+            <ul className={mobileMenuList}>
+                {DROPDOWN_MENUS.map(menu => (
+                    <MenuItemMobile key={menu.id}>
+                        <Link className="mobile-link" to={menu.link}>
+                            {menu.label}
+                        </Link>
+                        {menu.hasOwnProperty("primarySection") && (
+                            <React.Fragment>
+                                <MobileDownArrow src={MobileDownArrowIcon} alt="menu-arrow" />
+                                <div className="section--primary">
+                                    {menu.primarySection.menuItems
+                                        .sort((a, b) => (a.id > b.id ? 1 : -1))
+                                        .map(menuItem => {
+                                            return (
+                                                <Link
+                                                    key={menuItem.id}
+                                                    className={"link"}
+                                                    rel="prerender"
+                                                    to={menuItem.link}
+                                                >
+                                                    <ProductDropdownItemMobile>
+                                                        <div className="image--container-mobile">
+                                                            {menuItem.isComingSoon && (
+                                                                <div className="coming--soon">
+                                                                    coming soon
+                                                                </div>
+                                                            )}
+                                                            <img
+                                                                src={menuItem.image}
+                                                                alt="menu-icon"
+                                                            />
+                                                        </div>
+                                                        <div
+                                                            className={
+                                                                menuItem.isComingSoon
+                                                                    ? "add-margin" +
+                                                                      " " +
+                                                                      "label-arrow-container"
+                                                                    : "label-arrow-container"
+                                                            }
+                                                        >
+                                                            <span>{menuItem.label}</span>
+                                                            <img
+                                                                src={RightArrow}
+                                                                alt="right-arrow"
+                                                            />
+                                                        </div>
+                                                    </ProductDropdownItemMobile>
+                                                </Link>
+                                            );
+                                        })}
+                                </div>
+                            </React.Fragment>
+                        )}
+                        {menu.hasOwnProperty("mainSection") && (
+                            <React.Fragment>
+                                <MobileDownArrow src={MobileDownArrowIcon} alt="menu-arrow" />
+                                <div className={itemsParent}>
+                                    {menu.mainSection.menuItems.map(menuItem => {
+                                        if (typeof menuItem.renderItem === "function") {
+                                            return menuItem.renderItem();
                                         }
-                                    />
-                                </Link>
-                            </WebinyLogo>
 
-                            <Menu>
-                                <MenuItemList sticky={this.state.isSticky} />
-                            </Menu>
+                                        return (
+                                            <Link
+                                                key={menuItem.id}
+                                                className={"link"}
+                                                rel="prerender"
+                                                to={menuItem.link}
+                                            >
+                                                <ResourcesDropdownItemMobile>
+                                                    <div className="image--container">
+                                                        <img src={menuItem.image} alt="menu-icon" />
+                                                    </div>
+                                                    <div>
+                                                        <span className="label">
+                                                            {menuItem.label}
+                                                        </span>
+                                                        <img src={RightArrow} alt="right-arrow" />
+                                                    </div>
+                                                </ResourcesDropdownItemMobile>
+                                            </Link>
+                                        );
+                                    })}
+                                </div>
+                            </React.Fragment>
+                        )}
+                    </MenuItemMobile>
+                ))}
+            </ul>
+            <hr className={verticalLine} />
+            <Button link="/docs/webiny/introduction/" type={"primary"}>
+                TRY IT NOW FOR FREE
+            </Button>
+        </React.Fragment>
+    );
+};
 
-                            <MobileMenuIcon
-                                onClick={this.toggleMobileMenu}
-                                alt="Mobile Menu"
-                                src={
-                                    this.state.mobileMenuOpen || this.state.isSticky
-                                        ? menuIconBlack
-                                        : menuIcon
+const MenuItemList = ({ cards, handleVideoPlay, sticky }) => {
+    return (
+        <React.Fragment>
+            <ul className="menu--left">
+                {DROPDOWN_MENUS.map(menu => (
+                    <MenuItem key={menu.id} className={linkStyle + " " + parentMenu}>
+                        <Link rel="prerender" to={menu.link}>
+                            {menu.label}
+                        </Link>
+                        {menu.hasOwnProperty("primarySection") && (
+                            <React.Fragment>
+                                <DownArrowIcon className={downArrowClass + " arrow-icon"} />
+                                <DropDown className={menu.className}>
+                                    <DropDownTitle>{menu.primarySection.title}</DropDownTitle>
+                                    <div className="section--primary">
+                                        {menu.primarySection.menuItems.map(menuItem => {
+                                            return (
+                                                <Link
+                                                    key={menuItem.index}
+                                                    className={"link"}
+                                                    rel="prerender"
+                                                    to={menuItem.link}
+                                                >
+                                                    <ProductDropdownItem>
+                                                        <div className="image--container">
+                                                            {menuItem.isComingSoon && (
+                                                                <div className="coming--soon">
+                                                                    coming soon
+                                                                </div>
+                                                            )}
+                                                            <img
+                                                                src={menuItem.image}
+                                                                alt="menu-icon"
+                                                            />
+                                                        </div>
+                                                        <div className="text--container">
+                                                            <div className="label-arrow-container">
+                                                                <span>{menuItem.label}</span>
+                                                                <img
+                                                                    src={RightArrow}
+                                                                    alt="right-arrow"
+                                                                />
+                                                            </div>
+                                                            <span>{menuItem.text}</span>
+                                                        </div>
+                                                    </ProductDropdownItem>
+                                                </Link>
+                                            );
+                                        })}
+                                    </div>
+                                </DropDown>
+                            </React.Fragment>
+                        )}
+                        {menu.hasOwnProperty("mainSection") && (
+                            <React.Fragment>
+                                <DownArrowIcon className={downArrowClass + " arrow-icon"} />
+                                <DropDown className={menu.className}>
+                                    <div className="two-rows-background"></div>
+                                    <TitleContainer>
+                                        <DropDownTitle>{menu.mainSection.title}</DropDownTitle>
+                                        <DropDownTitle>{menu.secondarySection.title}</DropDownTitle>
+                                    </TitleContainer>
+                                    <div className="section--secondary">
+                                        <div className={itemsParent}>
+                                            {menu.mainSection.menuItems.map(menuItem => {
+                                                if (typeof menuItem.renderItem === "function") {
+                                                    return menuItem.renderItem();
+                                                }
+
+                                                return (
+                                                    <Link
+                                                        key={menuItem.id}
+                                                        className={"link"}
+                                                        rel="prerender"
+                                                        to={menuItem.link}
+                                                    >
+                                                        <ResourcesDropdownItem>
+                                                            <div className="image--container">
+                                                                <img
+                                                                    src={menuItem.image}
+                                                                    alt="menu-icon"
+                                                                />
+                                                            </div>
+                                                            <div>
+                                                                <span className="label">
+                                                                    {menuItem.label}
+                                                                </span>
+                                                                <img
+                                                                    src={RightArrow}
+                                                                    alt="right-arrow"
+                                                                />
+                                                            </div>
+                                                        </ResourcesDropdownItem>
+                                                    </Link>
+                                                );
+                                            })}
+                                        </div>
+                                        <FromTheBlogCOntainer>
+                                            {cards.map(item => (
+                                                <Card onClick={() => handleClick(item)}>
+                                                    <Img
+                                                        className="blog-image"
+                                                        fluid={item.imgSrc}
+                                                        alt={item.imgAlt}
+                                                    />
+                                                    <div className="blog-text-container">
+                                                        <span className="blog-title">
+                                                            {item.title}
+                                                        </span>
+                                                        <div className="arrow-container">
+                                                            <span className="blog-subtitle">
+                                                                {item.actionLabel}
+                                                            </span>
+                                                            <img
+                                                                src={RightArrowIcon}
+                                                                alt="right-arrow"
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </Card>
+                                            ))}
+                                        </FromTheBlogCOntainer>
+                                    </div>
+                                </DropDown>
+                            </React.Fragment>
+                        )}
+                    </MenuItem>
+                ))}
+            </ul>
+            <ul className="menu--right">
+                <li
+                    onClick={() => {
+                        trackGoToGithub({ placement: "header-github-star" });
+                    }}
+                >
+                    <a href="https://github.com/webiny/webiny-js">
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 16 16"
+                            fill="#000"
+                            aria-hidden="true"
+                        >
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                        </svg>
+                    </a>
+                </li>
+                <hr className={horizontalLine} />
+                <li>
+                    <Button
+                        className={headerButton}
+                        link="/docs/webiny/introduction/"
+                        type={sticky && "primary"}
+                    >
+                        TRY IT NOW FOR FREE
+                    </Button>
+                </li>
+            </ul>
+        </React.Fragment>
+    );
+};
+
+const Header = ({ hasBanner = true }) => {
+    const { latestBlockPosts } = useStaticQuery(graphql`
+        query HeaderQuery {
+            latestBlockPosts: allMdx(sort: { fields: frontmatter___date, order: DESC }, limit: 2) {
+                nodes {
+                    frontmatter {
+                        title
+                        slug
+                        featureImage {
+                            childImageSharp {
+                                fluid(maxWidth: 100) {
+                                    ...GatsbyImageSharpFluid
                                 }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `);
+    const resourcesCards = latestBlockPosts.nodes.map((card, index) => {
+        return {
+            id: index,
+            title: card.frontmatter.title,
+            imgSrc: card.frontmatter.featureImage.childImageSharp.fluid,
+            imgAlt: card.frontmatter.title,
+            actionLabel: "Read more",
+            actionLink: card.frontmatter.slug,
+        };
+    });
+
+    // TODO: We'll see what to do with them
+    const [sticky, setSticky] = useState(true);
+    const [hideBanner, setHideBanner] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    const toggleMobileMenu = () => {
+        setMobileMenuOpen(!mobileMenuOpen);
+    };
+
+    const { setVideoId, setModalOpen } = useContext(ModalContext);
+
+    return (
+        <Fragment>
+            <HeaderContainer isSticky={sticky} hideBanner={hideBanner}>
+                <ContentContainer className={headerInnerContainer}>
+                    <NavBar className={mobileMenuOpen ? "mobile-opened" : "mobile-closed"}>
+                        <WebinyLogo alt="Webiny Home">
+                            <Link rel="prerender" to="/">
+                                <img
+                                    alt="Webiny Logo"
+                                    className={logoImage}
+                                    src={sticky || mobileMenuOpen ? logoOrange : logo}
+                                />
+                            </Link>
+                        </WebinyLogo>
+
+                        <Menu>
+                            <MenuItemList
+                                cards={resourcesCards}
+                                sticky={sticky}
+                                handleVideoPlay={videoId => {
+                                    setModalOpen(true);
+                                    setVideoId(videoId);
+                                }}
                             />
+                        </Menu>
+
+                        <MobileMenuIcon
+                            onClick={toggleMobileMenu}
+                            alt="Mobile Menu"
+                            src={mobileMenuOpen ? closeMenuIcon : menuIconBlack}
+                        />
+                        <MobileMenuBackground className={mobileMenuOpen ? "show-background" : ""}>
                             <MobileMenu>
-                                <MenuItemList sticky={this.state.mobileMenuOpen} />
+                                <MobileMenuItemList />
                             </MobileMenu>
-                        </NavBar>
-                    </ContentContainer>
-                </HeaderContainer>
-            </React.Fragment>
-        );
-    }
-}
+                        </MobileMenuBackground>
+                    </NavBar>
+                </ContentContainer>
+            </HeaderContainer>
+        </Fragment>
+    );
+};
 
 export default Header;

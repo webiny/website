@@ -5,47 +5,44 @@ import theme from "../utils/theme";
 import Link from "gatsby-link";
 import arrowImg from "./assets/btn-arrow.svg";
 
-const buttonDefault = css(
-    {
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        marginRight: 0,
-        marginLeft: 0,
-        padding: "14px 20px",
-        verticalAlign: "top",
-        textAlign: "center",
-        fontFamily: "Source Sans Pro",
-        fontSize: 14,
-        lineHeight: 1,
-        borderRadius: 4,
-        willChange: "opacity",
-        transition: "all 0.2s",
-        cursor: "pointer",
-        color: theme.color.black,
-        backgroundColor: "#fff",
-        textDecoration: "none",
-        textTransform: "uppercase",
-        letterSpacing: ".025em",
-        fontWeight: 600,
-        boxSizing: "border-box",
-        outline: "none",
-        border: "none",
-        "&:hover": {
-            boxShadow: "0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08)",
-            transform: "translateY(-1px)",
-        },
-        "&:active": {
-            transform: "translateY(1px)",
-        },
-        "img.arrow": {
-            marginLeft: 10,
-        },
+const buttonDefault = css({
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    marginRight: 0,
+    marginLeft: 0,
+    padding: "14px 20px",
+    verticalAlign: "top",
+    textAlign: "center",
+    fontFamily: "Source Sans Pro",
+    fontSize: 14,
+    lineHeight: 1,
+    borderRadius: 4,
+    willChange: "opacity",
+    transition: "all 0.2s",
+    cursor: "pointer",
+    color: theme.color.black,
+    backgroundColor: "#fff",
+    textDecoration: "none",
+    textTransform: "uppercase",
+    letterSpacing: ".025em",
+    fontWeight: 600,
+    boxSizing: "border-box",
+    outline: "none",
+    border: "none",
+    width: "100%",
+
+    "&:hover": {
+        boxShadow: "0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08)",
+        transform: "translateY(-1px)",
     },
-    mq({
-        width: ["100%", "inherit"],
-    }),
-);
+    "&:active": {
+        transform: "translateY(1px)",
+    },
+    "img.arrow": {
+        marginLeft: 10,
+    },
+});
 
 const buttonFullWidthStyle = css({
     width: "100% !important",
