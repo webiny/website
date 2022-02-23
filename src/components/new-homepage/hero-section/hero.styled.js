@@ -1,8 +1,10 @@
 import styled from "react-emotion";
 
 import mq from "../../utils/breakpoints";
+import { css } from "emotion";
 
 import backgroundImg from "../../../assets/new-homepage/hero/home-hero-bg.svg";
+import Button from "../../ui/button";
 
 export const HeroSection = styled("section")(
     {
@@ -17,43 +19,38 @@ export const HeroSection = styled("section")(
         paddingBottom: ["40px", "90px", "100"],
     }),
 );
-
-export const HeroContainer = styled("div")(
+export const ButtonPrimary = styled(Button)(
     {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        margin: "0 auto",
-        "& .orange-button": {
-            fontSize: "14px",
-            fontWeight: "bold",
-            letterSpacing: ".06em",
-            color: "#fff",
-            background: "#FA5A28",
-            border: "none",
-            borderRadius: "4px",
-            textDecoration: "none",
-        },
-        "& .request-link": {
-            display: "flex",
-            alignItems: "center",
-            marginTop: "11px",
-            textDecoration: "underline",
-            border: "none",
-            fontFamily: "Source Sans Pro",
-            fontWeight: "bold",
-            fontSize: "18px",
-            letterSpacing: ".001em",
-            color: "#000",
+        width: "100%",
+        "@media (max-width: 405px)": {
+            transform: "scale(0.9)",
         },
     },
     mq({
-        "& .orange-button": {
-            marginTop: ["51px", "39px", "43px"],
-            padding: ["11px 120px", "13px 31px", "11px 31px"],
-        },
+        maxWidth: ["391px", "211px", "211px"],
+        marginTop: ["51px", "39px", "43px"],
     }),
 );
+
+export const HeroContainer = styled("div")({
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    margin: "0 auto",
+
+    "& .request-link": {
+        display: "flex",
+        alignItems: "center",
+        marginTop: "11px",
+        textDecoration: "underline",
+        border: "none",
+        fontFamily: "Source Sans Pro",
+        fontWeight: "bold",
+        fontSize: "18px",
+        letterSpacing: ".001em",
+        color: "#000",
+    },
+});
 
 export const ImageArrow = styled("img")({
     marginLeft: "6px",
@@ -101,7 +98,7 @@ export const CodeField = styled("div")(
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        backgroundColor: "#000 !important",
+        backgroundColor: "#150B27 ",
         color: "#fff",
         borderRadius: "10px",
         button: {
@@ -114,9 +111,61 @@ export const CodeField = styled("div")(
     }),
 );
 
-export const CopyIcon = styled("img")({
+export const ToolTipText = styled.div(
+    {
+        position: "absolute",
+        transform: "translateY(-50%)",
+        marginLeft: "15px",
+        width: "60px",
+        padding: "10px",
+        whiteSpace: "normal",
+        borderRadius: "10px",
+        background: "#150B27",
+        color: "#fff",
+        textAlign: "center",
+        display: "none",
+    },
+    mq({
+        top: ["-30px", "-40px", "-40px"],
+        fontSize: ["14px", "14px", "18px"],
+        left: ["-75px", "-45px", "-45px"],
+    }),
+);
+export const ToolTip = styled.div({
+    zIndex: "2",
+    marginLeft: "6px",
+    position: "relative",
     cursor: "pointer",
+    display: "flex",
+    alignItems: "center",
+    "&> img": {
+        zIndex: "-2",
+    },
+    "&.stiky-tooltip": {
+        [ToolTipText]: {
+            display: "block",
+        },
+    },
+    "&:hover": {
+        [ToolTipText]: {
+            display: "block",
+        },
+    },
 });
+
+export const CopyIcon = styled("img")(
+    {
+        cursor: "pointer",
+    },
+    mq({
+        "&:hover": {
+            zoom: ["1", "1", "1.2"],
+        },
+        "&.stiky-tooltip": {
+            zoom: ["1", "1", "1.2"],
+        },
+    }),
+);
 
 export const CodeFieldText = styled("span")(
     {
@@ -131,6 +180,9 @@ export const CodeFieldBorder = styled("div")(
     {
         borderRadius: "19px",
         background: "#ffeee9",
+        "@media (max-width: 395px)": {
+            zoom: "0.9",
+        },
     },
     mq({
         border: ["6px solid #ffeee9", "10px solid #ffeee9", "10px solid #ffeee9"],
@@ -169,6 +221,9 @@ export const AdvantagesContainer = styled("div")(
 );
 export const AdvantagesContainerMobile = styled("div")({
     display: "flex",
+    "@media (max-width: 395px)": {
+        zoom: "0.9",
+    },
 });
 
 export const AdvantageTileStyle = styled("div")(
@@ -193,7 +248,7 @@ export const AdvantageTileTitle = styled("h4")(
         fontSize: ["18px", "16px", "20px"],
         fontWeight: ["400", "700", "700"],
         marginTop: ["0px", "5px", "0px"],
-        marginBottom: ["0px", "20Fpx", "10px"],
+        marginBottom: ["0px", "20px", "10px"],
     }),
 );
 export const AdvantageTileImage = styled("img")(

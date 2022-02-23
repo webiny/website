@@ -50,6 +50,7 @@ const AccordionItem = ({
                 open={isOpen}
                 accordionPosition={accordionPosition}
                 handleTriggerClick={onOpenClose}
+                transitionTime={150}
                 trigger={<Trigger isOpen={false} title={title} isComingSoon={isComingSoon} />}
                 triggerWhenOpen={
                     <Trigger isOpen={true} title={title} isComingSoon={isComingSoon} />

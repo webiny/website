@@ -57,6 +57,7 @@ const Submit = styled("button")({
     right: 15,
     top: 12,
     outline: "none",
+    cursor: "pointer",
 });
 
 const EmailIcon = styled("img")({

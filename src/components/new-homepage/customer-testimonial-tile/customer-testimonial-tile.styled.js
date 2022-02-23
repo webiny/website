@@ -29,11 +29,13 @@ export const TileWrapper = styled.div(
     }),
 );
 export const TileName = styled.h5({
+    color: "#000E1A",
     marginTop: "-15px",
     fontSize: "22px",
     fontWeight: "700",
 });
 export const TilePosition = styled.p({
+    color: "#44486C",
     margin: "0px",
     fontSize: "14px",
     fontWeight: "400",
@@ -52,6 +54,7 @@ export const StarBlock = styled.div(
 
 export const TileDescription = styled.p(
     {
+        color: "#000E1A",
         textAlign: "left",
         fontWeight: "400",
         padding: "0px 40px  0px 28px",

@@ -8,12 +8,14 @@ import {
     Frame,
     FrameLink,
     FrameTitle,
+    FrameDescription,
     CodeSection,
     CodeSectionLabel,
     CodeSectionTitle,
     CodeSectionDescription,
     CodeSectionTabs,
     CodeSectionExample,
+    P
 } from "./open-source-benefits.styled";
 
 import ts from "../../../assets/new-homepage/open-source-benefits/frame-icons/ts.svg";
@@ -50,14 +52,14 @@ const FrameContainer = ({ image, title, description, link }) => {
             >
                 {title}
             </FrameTitle>
-            <div>{description}</div>
+            <FrameDescription>{description}</FrameDescription>
             <FrameLink>
                 {link ? (
                     <a href={link}>
                         Explore more <img src={arrow} />
                     </a>
                 ) : (
-                    "(cooming soon)"
+                    "(coming soon)"
                 )}
             </FrameLink>
         </Frame>
@@ -92,36 +94,40 @@ const OpenSourceBenefits = () => {
                         Customize, integrate, embed - harness the{" "}
                         <span>benefits of open source</span>
                     </CodeSectionTitle>
-                    <p>
+                    <P>
                         Being <span>open source is more than having</span> a public repo with a MIT
                         licence. Webiny has been architected with{" "}
-                        <span>hooks, plugins and lifecyrcle events</span> so you can customize{" "}
+                        <span>hooks, plugins and life cycle events</span> so you can customize{" "}
                         <span>every aspect of the platform</span> and make it work exactly how you
                         want it.
-                    </p>
+                    </P>
                 </CodeSectionDescription>
-                <CodeSectionTabs>
-                    <Tabs>
-                        <TabList selectedClassName="isActiveTab">
-                            <Tab selectedClassName="isActiveTab">Page publish event</Tab>
-                            <Tab selectedClassName="isActiveTab">New GraphQL Resolver</Tab>
-                            <Tab selectedClassName="isActiveTab">Change Admin Logo</Tab>
-                            <Tab selectedClassName="isActiveTab">Authenticate user</Tab>
-                        </TabList>
-                        <TabPanel>
-                            <Code language="javascript" code={pagePublishEvent} />
-                        </TabPanel>
-                        <TabPanel>
-                            <Code language="javascript" code={`console.log("hello")`} />
-                        </TabPanel>
-                        <TabPanel>
-                            <Code language="javascript" code={`console.log("hello")`} />
-                        </TabPanel>
-                        <TabPanel>
-                            <Code language="javascript" code={`console.log("hello")`} />
-                        </TabPanel>
-                    </Tabs>
-                </CodeSectionTabs>
+                <div className="code-section-width-wrapper">
+                    <CodeSectionTabs>
+                        <Tabs>
+                            <TabList selectedClassName="isActiveTab">
+                                <Tab selectedClassName="isActiveTab">Page publish event</Tab>
+                                <Tab selectedClassName="isActiveTab">New GraphQL Resolver</Tab>
+                                <Tab selectedClassName="isActiveTab">Change Admin Logo</Tab>
+                                <Tab selectedClassName="isActiveTab">Authenticate user</Tab>
+                            </TabList>
+                            <div className="tabs-code">
+                                <TabPanel>
+                                    <Code language="javascript" code={pagePublishEvent} />
+                                </TabPanel>
+                                <TabPanel>
+                                    <Code language="javascript" code={`console.log("hello")`} />
+                                </TabPanel>
+                                <TabPanel>
+                                    <Code language="javascript" code={`console.log("hello")`} />
+                                </TabPanel>
+                                <TabPanel>
+                                    <Code language="javascript" code={`console.log("hello")`} />
+                                </TabPanel>
+                            </div>
+                        </Tabs>
+                    </CodeSectionTabs>
+                </div>
             </CodeSection>
             <GridFramesContainer>
                 <FrameContainer
@@ -134,16 +140,19 @@ const OpenSourceBenefits = () => {
                     image={okta}
                     title="OKTA integration"
                     description="AWS Cognito is the default IdP, but enterprise users can replace it with OKTA."
+                    link="https://google.com"
                 />
                 <FrameContainer
                     image={multiple}
                     title="Deploy to multiple environment"
                     description="Using Webiny CLI you can propagate code trought different environments, like dev, prod."
+                    link="https://google.com"
                 />
                 <FrameContainer
                     image={graphQL}
                     title="Expandable GraphQL API"
                     description="Change existing GraphQL resolvers, or add new ones in a few lines of code."
+                    link="https://google.com"
                 />
                 <FrameContainer
                     image={rollouts}

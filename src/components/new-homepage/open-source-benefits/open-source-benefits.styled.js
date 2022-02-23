@@ -25,8 +25,14 @@ export const Container = styled.div(
 export const CodeSection = styled.div(
     {
         display: "grid",
+        "& .code-section-width-wrapper": {
+            display: "flex",
+            justifyContent: "center",
+            overflow: "hidden",
+        },
     },
     mq({
+        marginBottom: ["45px", "60px", "70px"],
         gridTemplateColumns: ["1fr", "1fr", "40% auto"],
         gap: ["30px", "30px", "75px"],
     }),
@@ -45,10 +51,16 @@ export const CodeSectionDescription = styled.div(
                 fontWeight: "bold",
             },
         },
+        "@media (max-width: 836px)": {
+            textAlign: "center",
+        },
+        "@media (max-width: 699px)": {
+            textAlign: "start",
+        },
     },
     mq({
         alignItems: ["normal", "center", "normal"],
-        textAlign: ["start", "center", "start"],
+        textAlign: [, "center", "start"],
     }),
 );
 
@@ -76,59 +88,86 @@ export const CodeSectionTitle = styled.div({
     },
 });
 
-export const CodeSectionTabs = styled.div({
-    backgroundColor: "#150B27",
-    border: "10px solid rgba(255, 255, 255, 0.2)",
-    borderRadius: "10px",
-    MozBackgroundClip: ["border", "padding", "content"],
-    WebkitBackgroundClip: ["border", "padding", "content"],
-    backgroundClip: ["border-box", "padding-box", "content-box"],
+export const CodeSectionTabs = styled.div(
+    {
+        backgroundColor: "#150B27",
+        borderRadius: "20px",
+        overflow: "hidden",
+        MozBackgroundClip: ["border", "padding", "content"],
+        WebkitBackgroundClip: ["border", "padding", "content"],
+        backgroundClip: ["border-box", "padding-box", "content-box"],
+        filter: "drop-shadow(0px 0px 26px rgba(255, 255, 255, 0.15))",
+        width: "100%",
+        fontSize: "14px",
+        lineHeight: "18px",
 
-    "& ul": [
-        {
-            display: "grid",
-            textAlign: "center",
+        "& .tabs-code": [
+            {
+                overflowY: "auto",
+            },
+            mq({
+                height: ["300px", "350px", "350px"],
+            }),
+        ],
+
+        "& ul": [
+            {
+                display: "grid",
+                textAlign: "center",
+            },
+            mq({
+                gridTemplateColumns: ["repeat(2, 1fr)", "repeat(4, 1fr)"],
+            }),
+        ],
+
+        "& li:last-child,  li:nth-last-child(2):nth-child(odd)": {
+            borderBottom: "normal",
         },
-        mq({
-            gridTemplateColumns: ["repeat(2, 1fr)", "repeat(4, 1fr)"],
+
+        "& li:nth-child(odd)": mq({
+            borderRight: "1px solid #2B2D52",
         }),
-    ],
 
-    "& li:last-child,  li:nth-last-child(2):nth-child(odd)": {
-        borderBottom: "normal",
+        "& li": [
+            {
+                listStyle: "none",
+                cursor: "pointer",
+                backgroundColor: "#1B1625",
+                padding: "10px",
+            },
+            mq({
+                padding: ["14px 0", "12px 0"],
+                borderLeft: ["0", "1px solid #2B2D52"],
+                borderBottom: ["1px solid #2B2D52", "none"],
+            }),
+        ],
+
+        "& li:first-child": {
+            borderLeft: "0",
+        },
+
+        "& .isActiveTab": {
+            borderBottom: "2px solid #00CCB0 !important",
+        },
     },
-
-    "& li:nth-child(odd)": mq({
-        borderRight: "1px solid #2B2D52",
+    mq({
+        maxWidth: ["100%", "100%", "900px"],
+        border: ["5px solid rgba(255, 255, 255, 0.2)", "10px solid rgba(255, 255, 255, 0.2)"],
     }),
-
-    "& li": [
-        {
-            listStyle: "none",
-            cursor: "pointer",
-            backgroundColor: "#1B1625",
-            padding: "10px",
-        },
-        mq({
-            padding: ["14px 0", "12px 0"],
-            borderLeft: ["0", "1px solid #2B2D52"],
-            borderBottom: ["1px solid #2B2D52", "none"],
-        }),
-    ],
-
-    "& li:first-child": {
-        borderLeft: "0",
-    },
-
-    "& .isActiveTab": {
-        borderBottom: "2px solid #00CCB0 !important",
-    },
-});
+);
 
 export const GridFramesContainer = styled.div(
-    { display: "grid" },
+    {
+        display: "grid",
+        gridTemplateColumns: "repeat(3, 1fr)",
+        "@media (max-width: 836px)": {
+            gridTemplateColumns: "repeat(3, 1fr)",
+        },
+        "@media (max-width: 699px)": {
+            gridTemplateColumns: "repeat(2, 1fr)",
+        },
+    },
     mq({
-        gridTemplateColumns: ["repeat(2, 1fr)", "repeat(3, 1fr)"],
         gap: ["0 20px", "0 20px", "0 100px"],
     }),
 );
@@ -144,7 +183,14 @@ export const FrameTitle = styled.div({
     marginTop: "20px",
     marginBottom: "20px",
 });
-
+export const FrameDescription = styled.p(
+    {
+        margin: "0px",
+    },
+    mq({
+        fontSize: ["14px", "14px", "18px"],
+    }),
+);
 export const FrameLink = styled.div({
     fontWeight: "bold",
     fontSize: "18px",
@@ -161,8 +207,19 @@ export const FrameLink = styled.div({
 export const CodeSectionExample = styled.div(
     props => ({
         opacity: props.show ? "1" : "0",
+        "& pre": {
+            zIndex: "-1",
+        },
     }),
     mq({
         margin: ["13px 0 24px 0", "26px 0 31px 0", "26px 0 52px 0"],
+        fontSize: ["12px", "14px"],
+        lineHeight: ["30px", "20px"],
     }),
+);
+export const P = styled.p(
+  mq( {
+    lineHeight:["26px","26px","32px"],
+    fontSize:["16px","16px","20px",]
+   })
 );

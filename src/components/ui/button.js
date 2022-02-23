@@ -75,6 +75,15 @@ const buttonSecondary = css({
     },
 });
 
+const buttonPurple = css({
+    backgroundColor: theme.color.purple,
+    color: theme.color.white,
+    textTransform: "uppercase",
+    "&:hover, &:active": {
+        background: "#7B49D7",
+    },
+});
+
 const buttonDark = css({
     backgroundColor: theme.color.dark,
     color: theme.color.white,
@@ -111,11 +120,19 @@ const buttonOutline = css({
     padding: "12px 20px",
 });
 
+const buttonOutlineOrange = css({
+    backgroundColor: "#fff",
+    color: "#FA5A28",
+    textTransform: "uppercase",
+    border: "solid 2px #FA5A28",
+    padding: "12px 20px",
+});
+
 const buttonOutlineDark = css({
     backgroundColor: "transparent",
-    color: theme.color.dark,
+    color: theme.color.primaryDark,
     textTransform: "uppercase",
-    border: "solid 2px " + theme.color.dark,
+    border: "solid 2px " + theme.color.primaryDark,
     padding: "12px 20px",
 });
 
@@ -125,11 +142,13 @@ class Button extends React.Component {
         fullWidth: buttonFullWidthStyle,
         primary: buttonPrimary,
         secondary: buttonSecondary,
+        purple: buttonPurple,
         default: buttonDefault,
         dark: buttonDark,
         outline: buttonOutline,
         outlineDark: buttonOutlineDark,
         primaryLink: buttonPrimaryLink,
+        outlineOrange: buttonOutlineOrange,
     };
 
     render() {

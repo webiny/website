@@ -16,7 +16,7 @@ const MultiSiteSupport = () => {
         query MultiSiteSupportQuery {
             file(relativePath: { eq: "new-homepage/text-with-image/multi-site-support.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 650) {
+                    fluid(maxWidth: 650, quality: 100) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -36,7 +36,7 @@ const MultiSiteSupport = () => {
                     </>
                 }
                 arrowLink="/docs"
-                arrowTitle="Checkout the docs"
+                arrowTitle="Check out the docs"
             >
                 You can use a <Bold>single Webiny instance </Bold> to manage content for{" "}
                 <Bold>unlimited number of websites</Bold>. This will drastically <Bold>reduce</Bold>{" "}

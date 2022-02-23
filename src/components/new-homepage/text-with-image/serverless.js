@@ -16,7 +16,7 @@ const Serverless = () => {
         query ServerlessQuery {
             file(relativePath: { eq: "new-homepage/text-with-image/serverless.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 650) {
+                    fluid(maxWidth: 650, quality: 100) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -36,10 +36,10 @@ const Serverless = () => {
                     </>
                 }
                 arrowLink="/docs"
-                arrowTitle="Checkout the docs"
+                arrowTitle="Check out the docs"
             >
                 Don’t spend weeks building and managing a fault-tolerant infrastructure. With Webiny
-                <Bold>that’s included</Bold>. Webiny runs on{" "}
+                <Bold> that’s included</Bold>. Webiny runs on{" "}
                 <Bold>highly-scalable fault-tolerant serverless services</Bold> that scale in and
                 out in seconds. You don’t need to do night shifts anymore.{" "}
                 <Bold>All within your own AWS cloud!</Bold>

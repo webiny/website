@@ -15,7 +15,7 @@ const NoCodeSuite = () => {
         query NoCodeSuiteQuery {
             file(relativePath: { eq: "new-homepage/text-with-image/no-code-suite.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 650) {
+                    fluid(maxWidth: 650, quality: 100) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -34,7 +34,7 @@ const NoCodeSuite = () => {
                     </>
                 }
                 arrowLink="/docs"
-                arrowTitle="Checkout the docs"
+                arrowTitle="Check out the docs"
             >
                 You don’t want your engineers to spend time fixing headlines and moving pixels on
                 the screen. With Webiny, your marketing team has the full control to create and{" "}

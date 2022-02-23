@@ -58,7 +58,7 @@ const handleClick = (item, playVideo) => {
     if (fullLink) {
         window.open(item.actionLink, "_blank", "noopener noreferrer");
     } else {
-        navigate(item.actionLink);
+        navigate("/" + item.actionLink);
     }
 };
 
@@ -298,7 +298,7 @@ const MenuItemList = ({ cards, handleVideoPlay, sticky }) => {
                         trackGoToGithub({ placement: "header-github-star" });
                     }}
                 >
-                    <a href="https://github.com/webiny/webiny-js">
+                    <a href="https://github.com/webiny/webiny-js" target="_blank" rel="noreferrer">
                         <svg
                             width="24"
                             height="24"

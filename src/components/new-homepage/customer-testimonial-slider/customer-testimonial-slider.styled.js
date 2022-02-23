@@ -9,6 +9,7 @@ export const Wrapper = styled.div(
 );
 export const CustomerTestimonialContainer = styled.div(
     {
+        color: "#000E1A",
         alignItems: "center",
         overflow: "hidden",
         gap: "30px",

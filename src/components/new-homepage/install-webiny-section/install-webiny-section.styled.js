@@ -2,6 +2,8 @@ import styled from "react-emotion";
 
 import mq from "../../utils/breakpoints";
 
+import Button from "../../ui/button";
+
 import backgroundImg from "../../../assets/new-homepage/install-webiny-section/instal-webiby-bg.svg";
 
 export const Wrapper = styled.div(
@@ -21,6 +23,12 @@ export const Wrapper = styled.div(
         marginTop: ["4px", "-12px", "-40px"],
     }),
 );
+export const ButtonPrimary = styled(Button)(
+    mq({
+        marginTop: ["21px", "14px", "12px"],
+        maxWidth: ["393px", "211px", "211px"],
+    }),
+);
 
 export const Container = styled.div(
     {
@@ -29,19 +37,8 @@ export const Container = styled.div(
         alignItems: "center",
         justifyContent: "center",
         padding: "0px 17px",
-
-        "& .orange-button": {
-            fontSize: "14px",
-            fontWeight: "bold",
-            letterSpacing: ".06em",
-            color: "#fff",
-            background: "#FA5A28",
-            border: "none",
-            borderRadius: "4px",
-            textDecoration: "none",
-            padding: "11px 0px",
-            width: "100%",
-            textAlign: "center",
+        "@media (max-width: 428px)": {
+            padding: "0px 14px",
         },
         "& .demo-link": {
             display: "flex",
@@ -56,10 +53,6 @@ export const Container = styled.div(
         },
     },
     mq({
-        "& .orange-button": {
-            marginTop: ["21px", "14px", "12px"],
-            maxWidth: ["393px", "211px", "211px"],
-        },
         "& .demo-link": {
             marginTop: ["16px", "15px", "16px"],
         },
@@ -68,9 +61,13 @@ export const Container = styled.div(
 
 export const Title = styled.h2(
     {
+        color: "#000E1A",
         fontWeight: "700",
         textAlign: "center",
         letterSpacing: ".003em",
+        "@media (max-width: 428px)": {
+            letterSpacing: ".0001em",
+        },
     },
     mq({
         maxWidth: ["488px", "366px", "488px"],

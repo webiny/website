@@ -17,11 +17,12 @@ export const ViewBigTilesContainer = styled.div(
 export const ViewTileWrapper = styled.div(
     mq({
         display: ["grid", "grid", "flex"],
-        gap: ["18px", "16px", "50px"],
+        gap: ["18px", "18px", "50px"],
     }),
 );
 export const Title = styled.h2(
     {
+        color: "#000E1A",
         textAlign: "center",
         lineHeight: "44px",
         fontWeight: "700",
@@ -60,18 +61,21 @@ export const TileStyle = styled.div(
 );
 
 export const TileBorder = styled.div(
-    {
-        boxShadow: "0px 1px 10px rgba(0, 0, 0, 0.1)",
-        borderRadius: "10px",
-        maxWidth: ["520px", "550px", ""],
-    },
     mq({
+        maxWidth: ["520px", "550px", ""],
+        borderRadius: ["20px", "16px", "20px"],
+        boxShadow: [
+            "0px 1px 10px rgba(0, 0, 0, 0.1)",
+            "0px 1px 10px rgba(0, 0, 0, 0.1)",
+            "0px 4px 20px rgba(0, 0, 0, 0.1)",
+        ],
         border: ["5px solid #FFFFFF", "5px solid #FFFFFF", "10px solid #FFFFFF"],
         width: ["", "100%", "310px"],
     }),
 );
 export const TileTitle = styled.div(
     {
+        color: "#000E1A",
         fontSize: "20px",
         fontWeight: "700",
     },
@@ -88,12 +92,13 @@ export const TileLink = styled.a({
 });
 export const TileDescription = styled.div(
     {
+        color: "#000E1A",
         fontSize: "14px",
         fontWeight: "400",
-        letterSpacing: "-.1px",
+        letterSpacing: ".01px",
     },
     mq({
-        lineHeight: ["24px", "24px", "17px"],
-        margin: ["18px 0px 18px 0px", "18px 0px 18px 0px", "19px 0px 20px 0px"],
+        lineHeight: ["24px", "24px", "18px"],
+        margin: ["18px 0px 18px 0px", "18px 0px 18px 0px", "19px 20px 16px 0px"],
     }),
 );

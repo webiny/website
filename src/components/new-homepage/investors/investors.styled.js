@@ -78,8 +78,8 @@ export const Content = styled.div(
                 order: ["1", "0"],
                 borderLeft: ["none", "1px solid #E5E5E5"],
                 borderRight: ["none", "1px solid #E5E5E5"],
-                paddingLeft: ["", "20px", "55px"],
-                paddingRight: ["", "", "60px"],
+                paddingLeft: ["", "", "55px"],
+                paddingRight: ["", "", "55px"],
             }),
         ],
         "& .stats-section:nth-child(3)": [
@@ -154,6 +154,9 @@ export const InvestorsImage = styled.div(
         background: "#F6F4F8",
         borderRadius: "6px",
         maxWidth: "608px",
+        "@media (max-width: 405px)": {
+            transform: "scale(0.9)",
+        },
 
         "& > img": [
             {

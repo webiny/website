@@ -12,6 +12,7 @@ const TextWithImageWrapper = styled("div")(
         maxWidth: "1200px",
         marginLeft: "auto",
         marginRight: "auto",
+        color: "#000E1A",
 
         "& .text-with-image-grid": {
             display: "grid",
@@ -35,28 +36,44 @@ const TextWithImageWrapper = styled("div")(
             maxWidth: ["310px", "310px", "650px"],
         },
         "& .text-with-image-grid": {
-            gridTemplateAreas: [
-                `"image"
-                 "content"`,
-                "none",
-            ],
-            gap: ["20px", "5px", "73px"],
+            "@media (max-width: 428px)": {
+                gridTemplateAreas: [
+                    `"image"
+                    "content"`,
+                    "none",
+                ],
+                gap: ["20px", "5px", "73px"],
 
-            "& .image-container": {
-                gridArea: ["image", "auto"],
-            },
+                "& .image-container": {
+                    gridArea: ["image", "auto"],
+                },
 
-            "& .content": {
-                gridArea: ["content", "auto"],
+                "& .content": {
+                    gridArea: ["content", "auto"],
+                },
             },
         },
 
         "& .left-image-grid": {
-            gridTemplateColumns: ["1fr", "auto 402px", "auto 467px"],
+            "@media (max-width: 428px)": {
+                gridTemplateColumns: "1fr",
+            },
+            gridTemplateColumns: [
+                "minmax(200px, 370px) minmax(200px, 402px)",
+                "auto 402px",
+                "auto 467px",
+            ],
         },
 
         "& .right-image-grid": {
-            gridTemplateColumns: ["1fr", "402px auto", "467px auto"],
+            "@media (max-width: 428px)": {
+                gridTemplateColumns: "1fr",
+            },
+            gridTemplateColumns: [
+                "minmax(200px, 402px) minmax(200px, 370px)",
+                "402px auto",
+                "467px auto",
+            ],
         },
     }),
 );

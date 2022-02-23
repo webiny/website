@@ -22,7 +22,7 @@ export const H2 = styled.h2(
         },
     },
     mq({
-        marginTop: ["40px", "40px", "91px"],
+        marginTop: ["40px", "101px", "91px"],
         lineHeight: ["46px", "46px", "58px"],
         fontSize: ["36px", "36px", "48px"],
         marginLeft: [0, 0, "30px"],
@@ -60,7 +60,7 @@ export const CollapsibleTriggerContainer = styled.div({
         lineHeight: "23px",
         marginTop: 0,
         marginBottom: 0,
-        marginLeft: "10px",
+        marginLeft: "9px",
         color: "#000E1A",
     },
 
@@ -81,7 +81,7 @@ export const CollapsibleTriggerContainer = styled.div({
         fontWeight: 600,
         color: "#fff",
         textAlign: "center",
-        marginLeft: "14px",
+        marginLeft: "10px",
         top: "7px",
     },
 });
@@ -90,8 +90,8 @@ export const CollapsibleContainer = styled.div(
     {
         cursor: "pointer",
         paddingTop: "12",
-        paddingRight: "12px",
-        paddingLeft: "12px",
+        paddingRight: "9px",
+        paddingLeft: "8px",
 
         "& .collapsible-content": {
             fontSize: "14px",
@@ -99,7 +99,7 @@ export const CollapsibleContainer = styled.div(
             margin: 0,
             color: "#000E1A",
             paddingLeft: "20px",
-            paddingRight: "14px",
+            paddingRight: "20px",
         },
     },
     props => ({ backgroundColor: props.backgroundColor, paddingBottom: props.paddingBottom }),
@@ -151,6 +151,9 @@ export const ContainerForImage = styled.div(
         position: "relative",
     },
     mq({
+        "&> video": {
+            borderRadius: ["15px", "25px", "25px"],
+        },
         paddingLeft: ["16px", "16px", "30px"],
         paddingRight: ["16px", "16px", "30px"],
         marginTop: ["30px", "30px", "80px"],
@@ -161,11 +164,11 @@ export const ContainerForImage = styled.div(
 export const ProductOverviewImg = styled(Img)(
     {
         boxSizing: "border-box",
-        borderRadius: "25px",
         backgroundColor: "#f9d9cf",
         width: "100%",
     },
     mq({
+        borderRadius: ["15px", "25px", "25px"],
         border: ["5px solid #f9d9cf", "14px solid #f9d9cf", "14px solid #f9d9cf"],
         boxShadow: [
             "0px 4px 10px rgba(0, 0, 0, 0.15)",
@@ -205,7 +208,7 @@ export const ProductsOverviewContainer = styled.div(
             `url(${BackgroundImageMobile})`,
             `url(${BackgroundImageDesktop})`,
         ],
-        backgroundSize: ["1440px 100%", "1440px 100%", "cover"],
+        backgroundSize: ["1440px 100%", "cover", "cover"],
         backgroundPosition: ["top", "top", "top"],
         paddingLeft: ["16px", "16px", 0],
         paddingRight: ["16px", "16px", 0],

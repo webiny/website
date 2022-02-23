@@ -118,22 +118,22 @@ const Footer = () => (
                     <Logo src={webinyLogo} alt="Webiny Logo" />
                     <IconList>
                         <IconItem>
-                            <a href="https://github.com/webiny/webiny-js">
+                            <a href="https://github.com/webiny/webiny-js" target="_blank" rel="noreferrer">
                                 <img src={GitHubIcon} />
                             </a>
                         </IconItem>
                         <IconItem>
-                            <a href="https://www.webiny.com/slack">
+                            <a href="https://www.webiny.com/slack" target="_blank" rel="noreferrer">
                                 <img src={SlackIcon} />
                             </a>
                         </IconItem>
                         <IconItem>
-                            <a href="https://twitter.com/WebinyCMS">
+                            <a href="https://twitter.com/WebinyCMS" target="_blank" rel="noreferrer">
                                 <img src={TwitterIcon} />
                             </a>
                         </IconItem>
                         <IconItem>
-                            <a href="https://www.youtube.com/c/webiny">
+                            <a href="https://www.youtube.com/c/webiny" target="_blank" rel="noreferrer">
                                 <img src={YoutubeIcon} />
                             </a>
                         </IconItem>

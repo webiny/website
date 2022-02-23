@@ -15,7 +15,7 @@ const SelfHosted = () => {
         query SelfHostedQuery {
             file(relativePath: { eq: "new-homepage/text-with-image/self-hosted.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 650) {
+                    fluid(maxWidth: 650, quality: 100) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -34,7 +34,7 @@ const SelfHosted = () => {
                     </>
                 }
                 arrowLink="/docs"
-                arrowTitle="Checkout the docs"
+                arrowTitle="Check out the docs"
             >
                 Don't be a tenant in someone else's system.{" "}
                 <Bold>Keep your data in your own cloud</Bold>, under your own security perimeter,

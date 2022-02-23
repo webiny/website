@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import { Wrapper, Title, Container } from "./install-webiny-section.styled";
+import { Wrapper, Title, Container, ButtonPrimary } from "./install-webiny-section.styled";
 
 const InstallWebinySection = ({ title, buttonLinkLabel, buttonLink, demoLink, demoLinkLabel }) => {
     return (
         <Wrapper>
             <Container>
                 <Title>{title}</Title>
-                <Link className="orange-button" to={buttonLink}>
+                <ButtonPrimary link={buttonLink} type={"primary"}>
                     {buttonLinkLabel}
-                </Link>
+                </ButtonPrimary>
                 <Link className="demo-link" to={demoLink}>
                     {demoLinkLabel}
                 </Link>

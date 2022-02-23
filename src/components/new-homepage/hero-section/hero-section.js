@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "gatsby";
 
 import copyIcon from "../../../assets/new-homepage/hero/copy-icon.svg";
@@ -29,6 +29,9 @@ import {
     ImageArrow,
     AdvantageTileImage,
     AdvantageTileTitle,
+    ButtonPrimary,
+    ToolTip,
+    ToolTipText,
 } from "./hero.styled";
 
 const AdvantageTile = ({ image, title }) => {
@@ -49,6 +52,7 @@ const HeroComponent = ({
     buttonTopLabel,
     buttomBottomLabel,
 }) => {
+    const [copyButtonState, setCopyButtonState] = useState(false);
     return (
         <HeroSection>
             <HeroContainer>
@@ -57,14 +61,23 @@ const HeroComponent = ({
                 <CodeFieldBorder>
                     <CodeField>
                         <CodeFieldText>{codeFieldText}</CodeFieldText>
-                        <CopyIcon
-                            src={copyIcon}
-                            onClick={() =>
+                        <ToolTip
+                            onClick={() => {
+                                setCopyButtonState(true);
+                                setTimeout(() => setCopyButtonState(false), 4000);
                                 navigator.clipboard.writeText(
                                     "npx create-webiny-project my-new-project",
-                                )
-                            }
-                        />
+                                );
+                            }}
+                            className={copyButtonState ? "stiky-tooltip" : ""}
+                        >
+                            <CopyIcon
+                                src={copyIcon}
+                                className={copyButtonState ? "stiky-tooltip" : ""}
+                            />
+
+                            <ToolTipText>{copyButtonState ? "Copied" : "Copy"}</ToolTipText>
+                        </ToolTip>
                     </CodeField>
                 </CodeFieldBorder>
                 <LinesImageDesktop src={linesDesktop} />
@@ -79,9 +92,9 @@ const HeroComponent = ({
                     </AdvantagesContainer>
                     <LinesImageMobile src={rightRines} />
                 </AdvantagesContainerMobile>
-                <Link className="orange-button" to={buttonTopLink}>
+                <ButtonPrimary link={buttonTopLink} type={"primary"}>
                     {buttonTopLabel}
-                </Link>
+                </ButtonPrimary>
                 <Link className="request-link" to={buttonBottomLink}>
                     {buttomBottomLabel} <ImageArrow src={iconArrow} />
                 </Link>
