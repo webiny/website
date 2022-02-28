@@ -15,7 +15,7 @@ import {
     CodeSectionDescription,
     CodeSectionTabs,
     CodeSectionExample,
-    P
+    P,
 } from "./open-source-benefits.styled";
 
 import ts from "../../../assets/new-homepage/open-source-benefits/frame-icons/ts.svg";
@@ -144,7 +144,7 @@ const OpenSourceBenefits = () => {
                 />
                 <FrameContainer
                     image={multiple}
-                    title="Deploy to multiple environment"
+                    title="Deploy to multiple environments"
                     description="Using Webiny CLI you can propagate code trought different environments, like dev, prod."
                     link="https://google.com"
                 />

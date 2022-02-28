@@ -65,7 +65,8 @@ const MainTile = ({ dataTile }) => {
     }, [togglePublishingWorkflow, toggleAdvancedRoles]);
 
     const totalPrice = useMemo(() => {
-        return pricePerUser * usersNumber;
+        // reduce by BASE_PRICE as first user is free
+        return pricePerUser * usersNumber - BASE_PRICE;
     }, [usersNumber, pricePerUser]);
 
     return (
@@ -97,7 +98,7 @@ const MainTile = ({ dataTile }) => {
                             value={usersNumber}
                             step={1}
                             onChange={value => setUsersNumber(value)}
-                            draggableTrack={true}
+                            draggableTrack={false}
                         />
                     </RangeSlider>
                 </GrayBackground>

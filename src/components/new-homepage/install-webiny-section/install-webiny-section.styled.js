@@ -1,4 +1,5 @@
 import styled from "react-emotion";
+import { Link } from "gatsby";
 
 import mq from "../../utils/breakpoints";
 
@@ -30,26 +31,31 @@ export const ButtonPrimary = styled(Button)(
     }),
 );
 
-export const Container = styled.div(
+export const Container = styled.div({
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "0px 17px",
+    "@media (max-width: 428px)": {
+        padding: "0px 14px",
+    },
+});
+
+export const DemoLink = styled(Link)(
     {
         display: "flex",
-        flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
-        padding: "0px 17px",
-        "@media (max-width: 428px)": {
-            padding: "0px 14px",
-        },
-        "& .demo-link": {
-            display: "flex",
-            alignItems: "center",
+        border: "none",
+        fontFamily: "Source Sans Pro",
+        fontWeight: "bold",
+        fontSize: "18px",
+        letterSpacing: ".001em",
+        color: "#000",
+        transition: "100ms all",
+        "&:hover": {
             textDecoration: "underline",
-            border: "none",
-            fontFamily: "Source Sans Pro",
-            fontWeight: "bold",
-            fontSize: "18px",
-            letterSpacing: ".001em",
-            color: "#000",
+            transform: "translateY(-1px)",
         },
     },
     mq({

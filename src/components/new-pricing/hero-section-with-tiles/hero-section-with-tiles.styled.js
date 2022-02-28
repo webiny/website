@@ -422,6 +422,9 @@ export const RangeSlider = styled.div(
                 background: "#FFC1AD",
                 height: "7px",
             },
+            "& .input-range__slider-container": {
+                transition: "unset",
+            },
             "& .input-range__track--active": {
                 background: "transparent",
             },

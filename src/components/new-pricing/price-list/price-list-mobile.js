@@ -4,7 +4,7 @@ import arrow from "../../../assets/new-homepage/table-section/arrow.svg";
 
 import { ItemWrapper, Arrow, ButtonMobile } from "./price-list-mobile.styled";
 
-const CollapsibleItem = ({ priceList, plan, buttonText, collapseName, border }) => {
+const CollapsibleItem = ({ priceList, plan, buttonText, collapseName, border, buttonType }) => {
     const [showMenu, setShowMenu] = useState(false);
     const choosePlan = (function() {
         if (plan === "open source") {
@@ -24,7 +24,7 @@ const CollapsibleItem = ({ priceList, plan, buttonText, collapseName, border }) 
                 </Arrow>
             </div>
             <div className="main-items-wrapper">
-                <ButtonMobile className="button" link="/" type="primary">
+                <ButtonMobile className="button" link="/" type={buttonType}>
                     {buttonText}
                 </ButtonMobile>
                 {priceList.map((item, index) => {
@@ -64,12 +64,14 @@ const PriceListMobile = ({ priceList }) => {
                     plan="open source"
                     buttonText="Get Started"
                     collapseName="Open source"
+                    buttonType="primary"
                 />
                 <CollapsibleItem
                     priceList={priceList}
                     plan="business"
                     buttonText="Try it now for free"
                     collapseName="Business"
+                    buttonType="primary"
                     border
                 />
                 <CollapsibleItem
@@ -77,6 +79,7 @@ const PriceListMobile = ({ priceList }) => {
                     plan="enterprise"
                     buttonText="Contact us"
                     collapseName="Enterprice"
+                    buttonType="outlineOrange"
                     border
                 />
             </div>

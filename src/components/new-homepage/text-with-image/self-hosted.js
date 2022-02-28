@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby";
 
 import TextWithImage from "./text-with-image";
 
-import { Highlight, Bold } from "./text-with-image.styled";
+import { Highlight, Bold, TextContainer } from "./text-with-image.styled";
 
 const Background = styled("div")({
     borderBottom: "1px solid #FAF0F3",
@@ -29,9 +29,9 @@ const SelfHosted = () => {
                 image={image.file.childImageSharp.fluid}
                 subtitle="Self-hosted"
                 title={
-                    <>
+                    <TextContainer>
                         <Highlight>Your data</Highlight> under your terms
-                    </>
+                    </TextContainer>
                 }
                 arrowLink="/docs"
                 arrowTitle="Check out the docs"

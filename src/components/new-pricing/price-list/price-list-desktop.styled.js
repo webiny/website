@@ -87,14 +87,11 @@ export const SubWrapper = styled("div")({
     },
 
     "& .button-border-line": {
+        maxWidth: "200px",
         border: `solid 2px ${theme.color.primaryDark} !important`,
     },
 },
-mq({
-    "&.with-button": {
-        maxWidth: ["200px", "116px", "200px"],
-    },
-}),
+
 );
 
 export const SubWrapperTable = styled("div")({

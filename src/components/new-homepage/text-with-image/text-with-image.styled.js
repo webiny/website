@@ -46,6 +46,9 @@ export const Content = styled("p")(
 export const Bold = styled("span")({
     fontWeight: 700,
 });
+export const TextContainer = styled("div")({
+    maxWidth: "300px",
+});
 
 export const ArrowLinkWrapper = styled(Link)({
     fontWeight: 700,

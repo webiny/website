@@ -73,7 +73,8 @@ export const ItemWrapper = styled.div(props => ({
 
 export const ButtonMobile = styled(Button)({
     width: "200px !important",
-    padding: "14px 0px !important",
+    padding: "12px 0px !important",
+    height: "42px !important",
 });
 
 export const Arrow = styled.div(props => ({

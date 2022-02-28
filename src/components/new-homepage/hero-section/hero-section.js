@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "gatsby";
 
-import copyIcon from "../../../assets/new-homepage/hero/copy-icon.svg";
 import advantageIcon1 from "../../../assets/new-homepage/hero/advantage-icon-1.svg";
 import advantageIcon2 from "../../../assets/new-homepage/hero/advantage-icon-2.svg";
 import advantageIcon3 from "../../../assets/new-homepage/hero/advantage-icon-3.svg";
@@ -25,13 +23,13 @@ import {
     AdvantagesContainer,
     AdvantagesContainerMobile,
     AdvantageTileStyle,
-    CopyIcon,
     ImageArrow,
     AdvantageTileImage,
     AdvantageTileTitle,
     ButtonPrimary,
     ToolTip,
     ToolTipText,
+    RequestLink,
 } from "./hero.styled";
 
 const AdvantageTile = ({ image, title }) => {
@@ -64,18 +62,13 @@ const HeroComponent = ({
                         <ToolTip
                             onClick={() => {
                                 setCopyButtonState(true);
-                                setTimeout(() => setCopyButtonState(false), 4000);
+                                setTimeout(() => setCopyButtonState(false), 2000);
                                 navigator.clipboard.writeText(
                                     "npx create-webiny-project my-new-project",
                                 );
                             }}
                             className={copyButtonState ? "stiky-tooltip" : ""}
                         >
-                            <CopyIcon
-                                src={copyIcon}
-                                className={copyButtonState ? "stiky-tooltip" : ""}
-                            />
-
                             <ToolTipText>{copyButtonState ? "Copied" : "Copy"}</ToolTipText>
                         </ToolTip>
                     </CodeField>
@@ -95,9 +88,9 @@ const HeroComponent = ({
                 <ButtonPrimary link={buttonTopLink} type={"primary"}>
                     {buttonTopLabel}
                 </ButtonPrimary>
-                <Link className="request-link" to={buttonBottomLink}>
+                <RequestLink to={buttonBottomLink}>
                     {buttomBottomLabel} <ImageArrow src={iconArrow} />
-                </Link>
+                </RequestLink>
             </HeroContainer>
         </HeroSection>
     );

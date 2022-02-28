@@ -14,6 +14,9 @@ export const Container = styled.div(
         backgroundRepeat: "no-repeat",
         color: "white",
         backgroundPosition: "bottom",
+        "@media (min-width: 699px)": {
+            padding: "40px 16px 150px 16px",
+        },
     },
     mq({
         backgroundImage: [`url(${bgImageMobile})`, `url(${bgTablet})`, `url(${bgDesktop})`],

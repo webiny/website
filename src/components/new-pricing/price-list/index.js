@@ -258,39 +258,57 @@ const SeeFullPlanButton = styled(Button)({
     lineHeight: "18px",
     letterSpacing: "0.75px",
     textTransform: "uppercase",
+});
 
-    "& .left-arrow": {
+const ArrowIcon = styled("img")({
+    "&.left-arrow": {
         marginRight: "14px",
     },
-    "& .right-arrow": {
+    "&.right-arrow": {
         marginLeft: "14px",
+    },
+    "&.arrow-top": {
+        transform: "rotate(180deg)",
     },
 });
 
-const SeeFullPlan = () => {
+const SeeFullPlan = ({ showPriceListToggler, showPriceList }) => {
     return (
         <SeeFullPlanWrapper>
             <H2>
                 Choose exactly <span>what you need</span>
             </H2>
-            <SeeFullPlanButton type="outlineDark" link="#plan-comparison">
-                <img id="plan-comparison" src={arrowDown} className="left-arrow" />
+            <SeeFullPlanButton type="outlineDark" onClick={showPriceListToggler}>
+                <ArrowIcon
+                    id="plan-comparison"
+                    src={arrowDown}
+                    className={`left-arrow ${showPriceList ? "arrow-top" : ""}`}
+                />
                 See a full plan comparison
-                <img src={arrowDown} className="right-arrow" />
+                <ArrowIcon
+                    src={arrowDown}
+                    className={`right-arrow ${showPriceList ? "arrow-top" : ""}`}
+                />
             </SeeFullPlanButton>
         </SeeFullPlanWrapper>
     );
 };
 
 const PriceList = () => {
+    const [showPriceList, setShowPriceList] = useState(false);
     const isDesktop = useWindowWidth();
-
+    const showPriceListToggler = () => {
+        setShowPriceList(!showPriceList);
+    };
     return (
         <PriceListSection>
-            <SeeFullPlan />
+            <SeeFullPlan
+                showPriceListToggler={showPriceListToggler}
+                showPriceList={showPriceList}
+            />
             <ContentContainer className={containerClass}>
                 {isDesktop > 739 ? (
-                    <Desktop priceList={priceList} />
+                    <Desktop priceList={priceList} showPriceList={showPriceList} />
                 ) : (
                     <Mobile priceList={priceList} />
                 )}

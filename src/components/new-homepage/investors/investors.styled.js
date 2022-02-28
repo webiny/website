@@ -37,6 +37,9 @@ export const H2 = styled.h2(
 export const CurlyBracketsSection = styled.div(
     {
         display: "grid",
+        "@media (max-width: 390px)": {
+            transform: "scale(0.8)",
+        },
     },
     mq({
         gridTemplateColumns: ["50px 1fr 50px", "50px 660px 50px", "50px 700px 50px"],
@@ -154,8 +157,8 @@ export const InvestorsImage = styled.div(
         background: "#F6F4F8",
         borderRadius: "6px",
         maxWidth: "608px",
-        "@media (max-width: 405px)": {
-            transform: "scale(0.9)",
+        "@media (max-width: 400px)": {
+            zoom: "0.8",
         },
 
         "& > img": [

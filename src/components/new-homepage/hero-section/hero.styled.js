@@ -1,10 +1,10 @@
 import styled from "react-emotion";
+import { Link } from "gatsby";
 
 import mq from "../../utils/breakpoints";
-import { css } from "emotion";
+import Button from "../../ui/button";
 
 import backgroundImg from "../../../assets/new-homepage/hero/home-hero-bg.svg";
-import Button from "../../ui/button";
 
 export const HeroSection = styled("section")(
     {
@@ -37,18 +37,21 @@ export const HeroContainer = styled("div")({
     flexDirection: "column",
     alignItems: "center",
     margin: "0 auto",
-
-    "& .request-link": {
-        display: "flex",
-        alignItems: "center",
-        marginTop: "11px",
+});
+export const RequestLink = styled(Link)({
+    display: "flex",
+    alignItems: "center",
+    marginTop: "11px",
+    border: "none",
+    fontFamily: "Source Sans Pro",
+    fontWeight: "bold",
+    fontSize: "18px",
+    letterSpacing: ".001em",
+    color: "#000",
+    transition: "100ms all",
+    "&:hover": {
         textDecoration: "underline",
-        border: "none",
-        fontFamily: "Source Sans Pro",
-        fontWeight: "bold",
-        fontSize: "18px",
-        letterSpacing: ".001em",
-        color: "#000",
+        transform: "translateY(-1px)",
     },
 });
 
@@ -115,20 +118,18 @@ export const ToolTipText = styled.div(
     {
         position: "absolute",
         transform: "translateY(-50%)",
-        marginLeft: "15px",
-        width: "60px",
-        padding: "10px",
+        marginLeft: "-20px",
         whiteSpace: "normal",
-        borderRadius: "10px",
-        background: "#150B27",
+        borderRadius: "5px",
+        background: "#292d3e",
         color: "#fff",
         textAlign: "center",
-        display: "none",
+        top: "0px",
     },
     mq({
-        top: ["-30px", "-40px", "-40px"],
-        fontSize: ["14px", "14px", "18px"],
-        left: ["-75px", "-45px", "-45px"],
+        fontSize: ["10px", "14px", "14px"],
+        right: ["-8px", "-5px", "-5px"],
+        padding: ["4px 8px", "5px 10px", "5px 10px"],
     }),
 );
 export const ToolTip = styled.div({
@@ -152,20 +153,6 @@ export const ToolTip = styled.div({
         },
     },
 });
-
-export const CopyIcon = styled("img")(
-    {
-        cursor: "pointer",
-    },
-    mq({
-        "&:hover": {
-            zoom: ["1", "1", "1.2"],
-        },
-        "&.stiky-tooltip": {
-            zoom: ["1", "1", "1.2"],
-        },
-    }),
-);
 
 export const CodeFieldText = styled("span")(
     {
