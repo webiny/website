@@ -145,6 +145,7 @@ const CustomerTestimonial = () => {
             description:
                 "Webiny really is head and shoulders above any other open source application framework out there. Its superb out-of-the-box marketing-focused applications combined with a great developer experience that's supported by the most responsive core team we've ever worked with, make it the only choice for us when it comes to building custom data-driven applications. And as if that wasn't good enough, it's serverless by design, so it's incredibly cost-effective, even at production scale.",
         },
+        // more to come
     ];
     return (
         <CustomerTestimonialSlider
