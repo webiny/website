@@ -1,263 +1,158 @@
-import React from "react";
-
 // tracking actions
 import { trackGoToGithub, trackJoinSlack } from "../ui/functions";
 
+// product icons
+import HeadlessIcon from "./assets/headlessIcon.svg";
+import FileManagerIcon from "./assets/fileManagerIcon.svg";
+import PageBuilderIcon from "./assets/pageBuilderIcon.svg";
+import ControlPanelIcon from "./assets/controlPanelIcon.svg";
+import advancedPublishingIcon from "./assets/advancedPublishingIcon.svg";
+import TenantManagerIcon from "./assets/tenantManagerIcon.svg";
+import FormBuilderIcon from "./assets/formBuilderIcon.svg";
 // resources
-import imgWebinyPlugins from "./resource-cards/yt-webiny-plugins.jpg";
-import imgApiDevelopment from "./resource-cards/yt-api-development.jpg";
-// community
-import imgContributingOverview from "./resource-cards/yt-contributing-overview.jpg";
-import imgSwag from "./resource-cards/swag.jpg";
-// solutions
-import imgWebinyApps from "./resource-cards/yt-webiny-apps.jpg";
-import imgWebinyApi from "./resource-cards/yt-webiny-api.jpg";
-// product
-import imgGetSTarted from "./resource-cards/yt-get-started.jpg";
-import imgWhyWebiny from "./resource-cards/yt-why-webiny.jpg";
-import imgWebinyOverview from "./resource-cards/yt-webiny-overview.jpg";
+import SlackIcon from "./assets/slackIcon.svg";
+import GitHubIcon from "./assets/gitHubIcon.svg";
+import BlogIcon from "./assets/blogIcon.svg";
+import MeetupIcon from "./assets/meetupIcon.svg";
 
-export const RESOURCES_CARDS = [
-    {
-        id: 0,
-        title: "Webiny Plugins",
-        imgSrc: imgWebinyPlugins,
-        imgAlt: "Webiny Plugins",
-        actionLabel: "learn more",
-        actionLink: "https://www.youtube.com/watch?v=4qcDLzu8kVM",
-        videoId: "4qcDLzu8kVM",
-    },
-    {
-        id: 1,
-        title: "API Development",
-        imgSrc: imgApiDevelopment,
-        imgAlt: "Webiny API Development",
-        actionLabel: "learn more",
-        actionLink: "https://www.youtube.com/watch?v=8aJ_Ja1aTy0",
-        videoId: "8aJ_Ja1aTy0",
-    },
-];
-
-export const COMMUNITY_CARDS = [
-    {
-        id: 0,
-        title: "Contributor's overview",
-        imgSrc: imgContributingOverview,
-        imgAlt: "Development overview for contributors",
-        actionLabel: "learn more",
-        actionLink: "https://www.youtube.com/watch?v=3wlOrcdcxXs",
-        videoId: "3wlOrcdcxXs",
-    },
-    {
-        id: 1,
-        title: "Get Webiny SWAG",
-        imgSrc: imgSwag,
-        imgAlt: "Webiny SWAG",
-        actionLabel: "learn more",
-        actionLink: "/swag",
-    },
-];
-
-export const SOLUTIONS_CARDS = [
-    {
-        id: 0,
-        title: "Webiny Serverless Apps",
-        imgSrc: imgWebinyApps,
-        imgAlt: "Webiny Serverless Apps",
-        actionLabel: "learn more",
-        actionLink: "https://www.youtube.com/watch?v=sF4HRS9nE3s",
-        videoId: "sF4HRS9nE3s",
-    },
-    {
-        id: 1,
-        title: "Serverless GraphQL API",
-        imgSrc: imgWebinyApi,
-        imgAlt: "Webiny Serverless GraphQL API",
-        actionLabel: "learn more",
-        actionLink: "https://www.youtube.com/watch?v=x5lf5xqvOQ4",
-        videoId: "x5lf5xqvOQ4",
-    },
-];
-
-export const PRODUCT_CARDS = [
-    {
-        id: 0,
-        title: "Webiny Overview (7min)",
-        imgSrc: imgWebinyOverview,
-        imgAlt: "Webiny Overview",
-        actionLabel: "learn more",
-        actionLink: "https://www.youtube.com/watch?v=gOGJKHXntiU",
-        videoId: "gOGJKHXntiU",
-    },
-];
-
-export const PRODUCTS_MENU = {
+export const WEBINY_MENU = {
     id: 0,
-    label: "Product",
-    link: null,
-    className: "three-rows-large",
-    primarySection: {
-        menuItems: [
-            {
-                id: 0,
-                label: "Serverless Application Framework",
-                link: "/serverless-application-framework",
-            },
-            {
-                id: 1,
-                label: "Serverless CMS",
-                link: "/serverless-cms",
-            },
-            {
-                id: 11,
-                renderItem: () => <div key={11} className="spacer" />,
-            },
-            {
-                id: 3,
-                label: "For Enterprises",
-                link: "/enterprise",
-            },
-            {
-                id: 4,
-                label: "Why Webiny?",
-                link: "/why-webiny",
-            },
-        ],
-    },
-    secondarySection: {
-        menuItems: [
-            {
-                id: 5,
-                label: "Product Roadmap",
-                link: "/roadmap",
-            },
-            {
-                id: 5,
-                label: "Webiny Partners",
-                link: "/partners",
-            },
-        ],
-        cards: PRODUCT_CARDS,
-    },
+    label: "Why Webiny",
+    link: "https://www.webiny.com/why-webiny/",
 };
 
-export const SOLUTIONS_MENU = {
+export const PRODUCTS_MENU = {
     id: 1,
-    label: "Solutions",
+    label: "Product",
     link: null,
     className: "one-row",
     primarySection: {
+        title: "FEATURES",
         menuItems: [
             {
                 id: 0,
-                label: "Build Serverless Websites",
-                link: "/use-case/serverless-websites",
+                index: 0,
+                label: "Headless CMS",
+                text: "Lorem ipsum dolor sit amet nulleralum",
+                link: "/headless-cms",
+                image: HeadlessIcon,
+            },
+            {
+                id: 4,
+                index: 1,
+                label: "File Manager",
+                text: "Lorem ipsum dolor sit amet nulleralum",
+                link: "/file-manager",
+                image: FileManagerIcon,
             },
             {
                 id: 1,
-                label: "Build Serverless Apps",
-                link: "/use-case/serverless-web-applications",
+                index: 2,
+                label: "Page Builder",
+                text: "Lorem ipsum dolor sit amet nulleralum",
+                link: "/page-builder",
+                image: PageBuilderIcon,
+            },
+            {
+                id: 5,
+                index: 3,
+                label: "Control Panel",
+                text: "Lorem ipsum dolor sit amet nulleralum",
+                link: "/control-panel",
+                image: ControlPanelIcon,
+                isComingSoon: true,
             },
             {
                 id: 2,
-                label: "Build Serverless APIs",
-                link: "/use-case/serverless-graphql-api",
+                index: 4,
+                label: "Advanced Publishing Workflow",
+                text: "Lorem ipsum dolor sit amet nulleralum",
+                link: "/advanced-publishing-workflow",
+                image: advancedPublishingIcon,
+                isComingSoon: true,
+            },
+            {
+                id: 6,
+                index: 5,
+                label: "Tenant Manager",
+                text: "Lorem ipsum dolor sit amet nulleralum",
+                link: "/tenant-manager",
+                image: TenantManagerIcon,
             },
             {
                 id: 3,
-                label: " Build Microservices",
-                link: "/use-case/microservices",
+                index: 6,
+                label: "Form Builder",
+                text: "Lorem ipsum dolor sit amet nulleralum",
+                link: "/form-builder",
+                image: FormBuilderIcon,
             },
         ],
     },
-    secondarySection: {
-        //cards: SOLUTIONS_CARDS,
-    },
+    secondarySection: {},
 };
 
-export const COMMUNITY_MENU = {
+export const PRICING_MENU = {
     id: 2,
-    label: "Community",
+    label: "Pricing",
+    link: "/pricing",
+};
+
+export const DOCUMENTATION_MENU = {
+    id: 3,
+    label: "Documentation",
+    link: "/docs/webiny/introduction/",
+};
+
+export const RESOURCES_MENU = {
+    id: 4,
+    label: "Resources",
+    className: "two-rows",
     link: null,
-    primarySection: {
+    mainSection: {
+        title: "RESOURCES",
         menuItems: [
             {
                 id: 0,
-                label: "GitHub",
-                link: "https://github.com/webiny/webiny-js",
-                action: () => {
-                    trackGoToGithub({ placement: "main-menu" });
-                },
-            },
-            {
-                id: 2,
                 label: "Slack",
                 link: "https://www.webiny.com/slack",
                 action: () => {
                     trackJoinSlack({ placement: "main-menu" });
                 },
+                image: SlackIcon,
             },
-            {
-                id: 4,
-                label: "Events",
-                link: "/events",
-            },
-        ],
-    },
-    secondarySection: {
-        cards: COMMUNITY_CARDS,
-    },
-};
-
-export const RESOURCES_MENU = {
-    id: 3,
-    label: "Resources",
-    className: "one-row",
-    link: null,
-    primarySection: {
-        menuItems: [
             {
                 id: 1,
-                label: "Guides & Tutorials",
-                link: "/docs/tutorials/install-webiny",
+                label: "GitHub",
+                link: "https://github.com/webiny/webiny-js",
+                action: () => {
+                    trackGoToGithub({ placement: "main-menu" });
+                },
+                image: GitHubIcon,
             },
             {
                 id: 2,
                 label: "Blog",
                 link: "/blog",
-            },
-            {
-                id: 4,
-                label: "Serverless Knowledge Base",
-                link: "/serverless-knowledge-base",
+                image: BlogIcon,
             },
             {
                 id: 3,
-                label: "YouTube",
-                link: "https://youtube.com/c/webiny",
-            },
-            {
-                id: 0,
-                label: "Documentation",
-                link: "/docs/webiny/introduction/",
+                label: "Meetup",
+                link: "/",
+                image: MeetupIcon,
             },
         ],
     },
     secondarySection: {
-        //cards: RESOURCES_CARDS,
+        title: "FROM THE BLOG",
     },
 };
 
-export const PRICING_MENU = {
-    id: 4,
-    label: "Pricing",
-    link: "/pricing",
-};
-
 export const DROPDOWN_MENUS = [
+    WEBINY_MENU,
     PRODUCTS_MENU,
-    SOLUTIONS_MENU,
-    COMMUNITY_MENU,
-    RESOURCES_MENU,
     PRICING_MENU,
+    DOCUMENTATION_MENU,
+    RESOURCES_MENU,
 ];

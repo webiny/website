@@ -1,20 +1,22 @@
 import React from "react";
 
 import BaseLayout from "../layouts/base";
-import Hero from "../components/pricing/hero";
-import PriceList from "../components/pricing/price-list";
-import FAQAccordion from "../components/pricing/faq-accordion";
-import HaveMoreQuestoins from "../components/pricing/have-more-questions";
+import HeroSectionPrices from "../components/new-pricing/hero-section-with-tiles/hero-section-prices";
+import PriceList from "../components/new-pricing/price-list";
+import BuildLotsOfSites from "../components/new-pricing/build-lots-of-sites/build-lots-of-sites";
+import FrequentlyAskedQuestions from "../components/new-pricing/frequently-asked-questions/frequently-asked-questions";
+import InstallWebiny from "../components/new-homepage/install-webiny-section/install-webiny";
 
 const PricingPage = () => {
-    return  (
+    return (
         <BaseLayout title="Pricing">
-            <Hero />
+            <HeroSectionPrices />
             <PriceList />
-            <FAQAccordion />
-            <HaveMoreQuestoins />
-        </BaseLayout> 
-    )
-}
+            <BuildLotsOfSites />
+            <FrequentlyAskedQuestions />
+            <InstallWebiny />
+        </BaseLayout>
+    );
+};
 
 export default PricingPage;

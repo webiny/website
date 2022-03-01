@@ -10,6 +10,10 @@ import FooterMenu from "./footerMenu";
 import { trackGoToGithub, trackJoinSlack } from "../ui/functions";
 
 import webinyLogo from "./assets/webiny-logo-with-icon-left-white.svg";
+import GitHubIcon from "./assets/github-icon.svg";
+import SlackIcon from "./assets/slack-icon.svg";
+import TwitterIcon from "./assets/twitter-icon.svg";
+import YoutubeIcon from "./assets/youtube-icon.svg";
 
 const Wrapper = styled("div")(
     {
@@ -18,7 +22,7 @@ const Wrapper = styled("div")(
         "--nl-text-align": "right",
     },
     mq({
-        padding: ["50px 25px 5px 25px", "50px 25px 5px 25px", "50px 0 5px"],
+        padding: ["16px 16px 20px 16px", "16px 25px 20px 25px", "50px 0 5px"],
     }),
 );
 
@@ -29,7 +33,7 @@ const FlexDisplay = css(
         boxSizing: "border-box",
     },
     mq({
-        display: ["block", "flex"],
+        display: ["block", "block", "flex"],
     }),
 );
 
@@ -38,36 +42,43 @@ const Box = styled("div")(
         boxSizing: "border-box",
     },
     mq({
-        width: ["100%", "33%"],
-        padding: [20, 0],
+        width: ["100%", "100%", "33%"],
     }),
 );
 
 const textRight = css(
     {},
     mq({
-        textAlign: ["center", "right"],
+        textAlign: ["center", "center", "right"],
+        marginTop: [20, 20, 0],
     }),
 );
 
 const Logo = styled("img")(
     {},
     mq({
-        margin: ["0 auto 20px auto", "0 0 25px 0"],
-        display: ["block", "inline"],
-        maxHeight: ["50px", "50px"],
+        margin: ["0 auto 30px auto", "0 auto 30px auto", "0 0 25px 0"],
+        display: ["block", "block", "inline"],
+        maxHeight: ["62px", "62px", "50px"],
     }),
 );
 
-const Copy = styled("p")(
+const IconList = styled("ul")(
     {
-        fontSize: theme.fontSize.footer,
-        color: theme.color.darkGray,
+        listStyle: "none",
+        display: "grid",
     },
     mq({
-        textAlign: ["center", "initial"],
+        gridTemplateColumns: ["repeat(4, 1fr)", "repeat(4, 1fr)", "repeat(2, 1fr)"],
+        width: ["190px", "190px", "85px"],
+        margin: ["0 auto 0 auto", "0 auto 0 auto", "0 0 0 0"],
+        columnGap: ["10px", "10px", "15px"],
     }),
 );
+
+const IconItem = styled("li")({
+    width: "40px",
+});
 
 const linkStyle = css({
     color: theme.color.darkGray,
@@ -82,8 +93,18 @@ const Bottom = styled("div")(
         marginBottom: 25,
     },
     mq({
-        borderTop: ["none", "1px solid #3B3E45"],
-        paddingTop: [0, 25],
+        borderTop: ["none", "none", "1px solid #3B3E45"],
+        paddingTop: [0, 0, 25],
+    }),
+);
+
+const Paragraph = styled("span")(
+    {
+        fontSize: "14px",
+        color: "hsl(0,0%,86%)",
+    },
+    mq({
+        display: ["none", "none", "block"],
     }),
 );
 
@@ -95,43 +116,29 @@ const Footer = () => (
             <ContentContainer className={FlexDisplay}>
                 <Box>
                     <Logo src={webinyLogo} alt="Webiny Logo" />
-                    <Copy>
-                        Webiny free to use and released under the MIT open source license.
-                        <br />
-                        <a
-                            onClick={() => {
-                                trackGoToGithub({ placement: "footer" });
-                            }}
-                            className={linkStyle}
-                            href="https://github.com/webiny/webiny-js"
-                        >
-                            GitHub
-                        </a>{" "}
-                        /{" "}
-                        <a className={linkStyle} href="https://twitter.com/WebinyCMS">
-                            Twitter
-                        </a>{" "}
-                        /{" "}
-                        <a className={linkStyle} href="https://www.youtube.com/c/webiny">
-                            YouTube
-                        </a>{" "}
-                        /{" "}
-                        <a
-                            onClick={() => {
-                                trackJoinSlack({ placement: "footer" });
-                            }}
-                            className={linkStyle}
-                            href="https://www.webiny.com/slack"
-                        >
-                            Slack
-                        </a>{" "}
-                        /{" "}
-                        <Link className={linkStyle} to="/blog">
-                            Blog
-                        </Link>
-                        <br />
-                        Webiny Ltd © {new Date().getFullYear()}
-                    </Copy>
+                    <IconList>
+                        <IconItem>
+                            <a href="https://github.com/webiny/webiny-js" target="_blank" rel="noreferrer">
+                                <img src={GitHubIcon} />
+                            </a>
+                        </IconItem>
+                        <IconItem>
+                            <a href="https://www.webiny.com/slack" target="_blank" rel="noreferrer">
+                                <img src={SlackIcon} />
+                            </a>
+                        </IconItem>
+                        <IconItem>
+                            <a href="https://twitter.com/WebinyCMS" target="_blank" rel="noreferrer">
+                                <img src={TwitterIcon} />
+                            </a>
+                        </IconItem>
+                        <IconItem>
+                            <a href="https://www.youtube.com/c/webiny" target="_blank" rel="noreferrer">
+                                <img src={YoutubeIcon} />
+                            </a>
+                        </IconItem>
+                    </IconList>
+                    <Paragraph>Webiny Ltd © 2022</Paragraph>
                 </Box>
                 <Box className={textRight}>
                     <Newsletter />

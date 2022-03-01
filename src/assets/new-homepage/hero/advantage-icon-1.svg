@@ -1,0 +1,30 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="4.50012" width="39" height="30" rx="1.5" stroke="#6A6E7C"/>
+<path d="M31 13.0001H39V33.0001C39 33.5524 38.5523 34.0001 38 34.0001H31V13.0001Z" fill="#F4F4F4"/>
+<rect x="33" y="20.0001" width="4" height="1" rx="0.5" fill="#D1D2D6"/>
+<rect x="33" y="15.0001" width="4" height="1" rx="0.5" fill="#D1D2D6"/>
+<rect x="19" y="10.0001" width="7" height="1" rx="0.5" fill="#6A6E7C"/>
+<rect x="32" y="10.0001" width="6" height="1" rx="0.5" fill="#6A6E7C"/>
+<rect x="33" y="23.0001" width="4" height="1" rx="0.5" fill="#D1D2D6"/>
+<rect x="33" y="26.0001" width="4" height="1" rx="0.5" fill="#D1D2D6"/>
+<rect x="16" y="14.0001" width="12" height="3" rx="1" fill="#EAEAEA"/>
+<rect x="16" y="20.0001" width="12" height="3" rx="1" fill="#EAEAEA"/>
+<rect x="16" y="26.0001" width="12" height="3" rx="1" fill="#FA5A28"/>
+<rect x="18" y="15.0001" width="8" height="1" fill="white"/>
+<rect x="18" y="21.0001" width="8" height="1" fill="white"/>
+<rect x="18" y="27.0001" width="8" height="1" fill="white"/>
+<rect x="16" y="10.0001" width="2" height="1" rx="0.5" fill="#FA5A28"/>
+<rect x="31" y="12.0001" width="8" height="1" fill="#FA5A28"/>
+<path d="M1 8.00024H14V34.0002H2C1.44772 34.0002 1 33.5525 1 33.0002V8.00024Z" fill="#F4F4F4"/>
+<rect x="3" y="11.0002" width="5" height="1" rx="0.5" fill="#FA5A28"/>
+<rect x="3" y="14.0002" width="6" height="1" rx="0.5" fill="#6A6E7C"/>
+<rect x="4" y="17.0002" width="4" height="1" rx="0.5" fill="#6A6E7C"/>
+<rect x="5" y="24.0002" width="5" height="1" rx="0.5" fill="#6A6E7C"/>
+<rect x="4" y="27.0002" width="2" height="1" rx="0.5" fill="#53626C"/>
+<rect x="3" y="30.0002" width="2" height="1" rx="0.5" fill="#53626C"/>
+<rect x="4" y="21.0002" width="8" height="1" rx="0.5" fill="#6A6E7C"/>
+<rect x="1" y="8.00024" width="38" height="0.5" fill="#6A6E7C"/>
+<circle cx="3.5" cy="6.50024" r="0.5" fill="#6A6E7C"/>
+<circle cx="5.5" cy="6.50024" r="0.5" fill="#6A6E7C"/>
+<circle cx="7.5" cy="6.50024" r="0.5" fill="#6A6E7C"/>
+</svg>

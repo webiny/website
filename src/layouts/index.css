@@ -61,3 +61,7 @@ small,
 .font_small {
   font-size: 0.667em;
 }
+
+a {
+  text-decoration: none;
+}
