@@ -136,7 +136,6 @@ const MainTile = ({ dataTile }) => {
                         </TogglerTextContainer>
                         <InputCheckBox
                             type="checkbox"
-                            class="toggle-button"
                             onClick={() => setTogglePublishingWorkflow(!togglePublishingWorkflow)}
                             className={togglePublishingWorkflow ? "toggle-on" : ""}
                         />
@@ -151,7 +150,6 @@ const MainTile = ({ dataTile }) => {
                         </TogglerTextBottomContainer>
                         <InputCheckBox
                             type="checkbox"
-                            class="toggle-button"
                             onClick={() => setToggleAdvancedRoles(!toggleAdvancedRoles)}
                             className={toggleAdvancedRoles ? "toggle-on" : ""}
                         />
