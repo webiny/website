@@ -22,7 +22,8 @@ export const CustomerTestimonialContainer = styled.div(
         display: ["block", "block", "flex"],
         textAlign: ["center", "center", "right"],
         " .slick-track:first-of-type": {
-            marginLeft: ["20px", "18px", "35px"],
+            //marginLeft: ["20px", "18px", "35px"],
+            marginLeft: ["20px", "18px", "10px"],
         },
         " .slick-track": {
             gap: ["16px", "17px", "17px"],
@@ -52,7 +53,7 @@ export const ArrowContainer = styled.div(
         marginBottom: "16px",
     },
     mq({
-        justifyContent: ["center", "center", "end"],
+        justifyContent: ["center", "center", "flex-end"],
         marginTop: ["33px", "33px", "60px"],
     }),
 );

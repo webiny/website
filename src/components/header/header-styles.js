@@ -105,7 +105,7 @@ export const DropDown = styled("div")(
             display: "grid",
             columnGap: "39px",
             rowGap: "10px",
-            gridTemplateColumns: "305px auto",
+            gridTemplateColumns: "320px auto",
 
             "& .spacer": {
                 height: DROPDOWN_LINK_HEIGHT,
@@ -137,7 +137,7 @@ export const DropDown = styled("div")(
             display: ["none", "grid"],
         },
         "&.one-row": {
-            width: ["100%", "720px"],
+            width: ["100%", "740px"],
         },
         "&.two-rows": {
             width: ["550px", "580px", "646px"],
@@ -478,6 +478,14 @@ export const Card = styled("div")({
                 marginRight: "10px",
                 zIndex: "1",
             },
+            img: {
+                transition: "margin 250ms",
+            },
+        },
+        "&:hover": {
+            "& .arrow-container img": {
+                marginLeft: "5px",
+            },
         },
     },
 });
@@ -532,6 +540,18 @@ export const ProductDropdownItem = styled("div")({
         "& img": {
             marginLeft: "10px",
             paddingBottom: "5px",
+            transition: "margin 250ms",
+        },
+        "&:hover": {
+            "span:first-child": {
+                color: "#FA5A28",
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+            },
+            "& img": {
+                marginLeft: "15px",
+                paddingBottom: "5px",
+            },
         },
     },
 
@@ -667,13 +687,26 @@ export const ResourcesDropdownItem = styled("div")({
     "& .image--container": {
         marginRight: "15px",
     },
-    "& .label": {
-        marginRight: "10px",
-        fontFamily: "Source Sans Pro",
-        fontWeight: "700",
-        fontSize: "16px",
-        lineHeight: "20px",
-        color: "#000E1A",
+    "& .label--container": {
+        "& .label": {
+            marginRight: "10px",
+            fontFamily: "Source Sans Pro",
+            fontWeight: "700",
+            fontSize: "16px",
+            lineHeight: "20px",
+            color: "#000E1A",
+        },
+        img: {
+            transition: "margin 250ms",
+        },
+        "&:hover": {
+            "& .label": {
+                color: "#FA5A28",
+            },
+            "& img": {
+                marginLeft: "5px",
+            },
+        },
     },
 });
 

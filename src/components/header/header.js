@@ -156,7 +156,7 @@ const MobileMenuItemList = () => {
                 ))}
             </ul>
             <hr className={verticalLine} />
-            <Button link="/docs/webiny/introduction/" type={"primary"}>
+            <Button link="/pricing" type={"primary"}>
                 TRY IT NOW FOR FREE
             </Button>
         </React.Fragment>
@@ -246,7 +246,7 @@ const MenuItemList = ({ cards, handleVideoPlay, sticky }) => {
                                                                     alt="menu-icon"
                                                                 />
                                                             </div>
-                                                            <div>
+                                                            <div className="label--container">
                                                                 <span className="label">
                                                                     {menuItem.label}
                                                                 </span>
@@ -312,11 +312,7 @@ const MenuItemList = ({ cards, handleVideoPlay, sticky }) => {
                 </li>
                 <hr className={horizontalLine} />
                 <li>
-                    <Button
-                        className={headerButton}
-                        link="/docs/webiny/introduction/"
-                        type={sticky && "primary"}
-                    >
+                    <Button className={headerButton} link="/pricing" type={sticky && "primary"}>
                         TRY IT NOW FOR FREE
                     </Button>
                 </li>

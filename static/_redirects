@@ -1,3 +1,10 @@
 # [2021-09-10] Redirect Serverless Guide
 
 /guides/serverless-guide /serverless-knowledge-base/serverless
+
+# [2022-03-01] New Website
+/serverless-cms /
+/serverless-app/headless-cms /enterprise-serverless-cms/headless-cms 
+/serverless-app/page-builder /enterprise-serverless-cms/page-builder
+/serverless-app/form-builder /enterprise-serverless-cms/form-builder
+/serverless-app/file-manager /enterprise-serverless-cms/file-manager   

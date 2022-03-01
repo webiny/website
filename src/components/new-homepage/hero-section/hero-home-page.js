@@ -6,8 +6,8 @@ import { Bold, OrangeText } from "./hero.styled";
 const HeroHomePage = () => {
     return (
         <HeroComponent
-            buttonTopLink="docs/webiny/introduction/"
-            buttonBottomLink="/"
+            buttonTopLink="/pricing"
+            buttonBottomLink="/call/demo"
             title={
                 <>
                     The Enterprise CMS platform that you can{" "}

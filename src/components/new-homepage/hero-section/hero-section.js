@@ -42,7 +42,7 @@ const AdvantageTile = ({ image, title }) => {
 };
 
 const HeroComponent = ({
-    buttonTopLink,
+    buttonTopLink = "/pricing",
     buttonBottomLink,
     title,
     subTitle,

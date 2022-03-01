@@ -15,6 +15,7 @@ export const TileWrapper = styled.div(
         backgroundImage: "url(" + backgroundImg + ")",
         backgroundPosition: " top -30px right -40px;",
         backgroundSize: "125%",
+        height: "100%",
         "& .tile-image": {
             width: "70px",
             height: "70px",
@@ -25,7 +26,7 @@ export const TileWrapper = styled.div(
         },
     },
     mq({
-        height: ["276px", "276px", "300px"],
+        //height: ["276px", "276px", "300px"],
     }),
 );
 export const TileName = styled.h5({
@@ -57,7 +58,7 @@ export const TileDescription = styled.p(
         color: "#000E1A",
         textAlign: "left",
         fontWeight: "400",
-        padding: "0px 40px  0px 28px",
+        padding: "0px 40px  28px 28px",
         lineHeight: "24px",
         margin: "0px",
     },

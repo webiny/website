@@ -89,6 +89,9 @@ export const TileLink = styled.a({
     fontWeight: "700",
     color: "#FA5A28",
     textDecoration: "none",
+    "&:hover": {
+        textDecoration: "underline",
+    },
 });
 export const TileDescription = styled.div(
     {

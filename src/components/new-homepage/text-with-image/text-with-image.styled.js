@@ -57,6 +57,9 @@ export const ArrowLinkWrapper = styled(Link)({
     color: "#FA5A28",
     marginTop: "30px",
     textDecoration: "none",
+    "&:hover": {
+        textDecoration: "underline",
+    },
 });
 
 export const ArrowImage = styled("img")({

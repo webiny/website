@@ -22,7 +22,7 @@ const CustomerTestimonialSlider = ({ peoples, title }) => {
 
     const settings = {
         dots: true,
-        infinite: false,
+        infinite: true,
         centerMode: false,
         slidesToShow: 1,
         slidesToScroll: 1,

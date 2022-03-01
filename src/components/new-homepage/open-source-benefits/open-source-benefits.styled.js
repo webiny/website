@@ -204,6 +204,9 @@ export const FrameLink = styled.div({
     "& a": {
         textDecoration: "none",
         color: "inherit",
+        "&:hover": {
+            textDecoration: "underline",
+        },
     },
 });
 
@@ -221,8 +224,8 @@ export const CodeSectionExample = styled.div(
     }),
 );
 export const P = styled.p(
-  mq( {
-    lineHeight:["26px","26px","32px"],
-    fontSize:["16px","16px","20px",]
-   })
+    mq({
+        lineHeight: ["26px", "26px", "32px"],
+        fontSize: ["16px", "16px", "20px"],
+    }),
 );

@@ -12,8 +12,8 @@ const InstallWebiny = () => {
                 </>
             }
             buttonLinkLabel="TRY IT NOW FOR FREE"
-            buttonLink="docs/webiny/introduction/"
-            demoLink="/"
+            buttonLink="/pricing"
+            demoLink="/call/demo"
             demoLinkLabel="Or schedule a demo with our team"
         />
     );

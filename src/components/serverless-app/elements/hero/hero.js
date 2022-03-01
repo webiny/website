@@ -191,11 +191,7 @@ const WebinyHallMarkImage = styled("img")(
 );
 
 const HeroComponent = ({ className, backgroundImg, appName, title, features, media }) => {
-    const breadcrumbs = [
-        { link: "/", text: "Home" },
-        { link: "/serverless-cms", text: "Serverless CMS" },
-        { text: appName },
-    ];
+    const breadcrumbs = [{ link: "/", text: "Home" }, { text: appName }];
 
     return (
         <HeroSection

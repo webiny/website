@@ -110,7 +110,7 @@ export const CodeField = styled("div")(
     },
     mq({
         width: ["360px", "515px", "515px"],
-        padding: ["14px 10px 16px 11px", "13px 12px 12px 24px", "13px 12px 12px 24px"],
+        padding: ["14px 10px 16px 11px", "13px 15px 12px 24px", "13px 15px 12px 24px"],
     }),
 );
 
@@ -134,7 +134,6 @@ export const ToolTipText = styled.div(
 );
 export const ToolTip = styled.div({
     zIndex: "2",
-    marginLeft: "6px",
     position: "relative",
     cursor: "pointer",
     display: "flex",
