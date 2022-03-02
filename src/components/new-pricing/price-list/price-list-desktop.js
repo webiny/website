@@ -29,7 +29,7 @@ const PriceListDesktop = ({ priceList, showPriceList }) => {
                                 <h4>Open Source</h4>
                                 <Button
                                     target="_blank"
-                                    link="/docs/webiny/introduction/"
+                                    link="/docs"
                                     type="primary"
                                     className="button-border-line"
                                 >
@@ -39,11 +39,11 @@ const PriceListDesktop = ({ priceList, showPriceList }) => {
                             <SubWrapper className="with-button">
                                 <h4>Business</h4>
                                 <Button
-                                    link="/"
+                                    link="https://docs.google.com/forms/d/1IRniZ3Qevx1LQkMEpOtdOdOLD-DLmMUdKn-_q1huNVs/"
                                     type="primary"
                                     className="try-it-now-for-free_button button-border-line"
                                 >
-                                    Try it now for free
+                                    Join the waiting list
                                 </Button>
                                 <Button
                                     link="/"
@@ -56,7 +56,7 @@ const PriceListDesktop = ({ priceList, showPriceList }) => {
                             <SubWrapper className="with-button">
                                 <h4>Enterprise</h4>
                                 <Button
-                                    link="/"
+                                    link="/call/demo"
                                     type="outline"
                                     className={`${buttonOutlinePrimary} button-border-line`}
                                 >

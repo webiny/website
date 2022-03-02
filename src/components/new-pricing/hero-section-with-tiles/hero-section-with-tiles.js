@@ -82,16 +82,21 @@ const MainTile = ({ dataTile }) => {
                     </BorderContainer>
                     <P>from</P>
                     <TilePrice>
-                        <DollarIcon>$</DollarIcon>
-                        {totalPrice}
+                        {usersNumber >= 100 ? (
+                            "Contact Us"
+                        ) : (
+                            <>
+                                <DollarIcon>$</DollarIcon> {totalPrice}
+                            </>
+                        )}
                     </TilePrice>
                     <P className="mounth">/ month</P>
                     <Span>SELF HOSTED</Span>
                     <PriceWrapper>
-                        <P className="users">{usersNumber} of users</P>
+                        <P className="users">Users: {usersNumber}</P>
                         <PricePerMount>${pricePerUser} per user / month</PricePerMount>
                     </PriceWrapper>
-                    <RangeSlider visibleMaxValue={usersNumber > 80}>
+                    <RangeSlider visibleMaxValue={usersNumber > 0}>
                         <InputRange
                             maxValue={dataTile.maxUsers}
                             minValue={dataTile.minUsers}
@@ -111,16 +116,18 @@ const MainTile = ({ dataTile }) => {
                             return (
                                 <Li key={index}>
                                     {item.benefitName}
-                                    {item.info ? (
-                                        <ToolTip>
+
+                                    <ToolTip>
+                                        {!item.info ? (
+                                            <IconFree>FREE</IconFree>
+                                        ) : (
                                             <img src={infoIcon} alt="icon info" />
-                                            {item.toolTipDecription === "" ? null : (
-                                                <ToolTipText>{item.toolTipDecription}</ToolTipText>
-                                            )}
-                                        </ToolTip>
-                                    ) : (
-                                        <IconFree>FREE</IconFree>
-                                    )}
+                                        )}
+
+                                        {item.toolTipDecription === "" ? null : (
+                                            <ToolTipText>{item.toolTipDecription}</ToolTipText>
+                                        )}
+                                    </ToolTip>
                                 </Li>
                             );
                         })}

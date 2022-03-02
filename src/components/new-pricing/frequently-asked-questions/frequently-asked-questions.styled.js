@@ -9,9 +9,10 @@ export const Wrapper = styled.div(
         paddingLeft: "15px",
         paddingRight: "15px",
         color: "#000E1A",
+        maxWidth: 804,
     },
     mq({
-        maxWidth: ["804px", "1190px", "1190px"],
+        //maxWidth: ["804px", "1035px", "1035px"],
         paddingBottom: ["36px", "52px", "132px"],
     }),
 );
@@ -96,13 +97,19 @@ export const AccordionItemWrapper = styled("div")(
 
         "& .accordion-item": {
             overflow: "hidden",
-            transition: "max-height 0.3s cubic-bezier(1,0,1,0)",
+            //transition: "max-height 0.3s cubic-bezier(1,0,1,0)",
+            //transition: "max-height 0.5s ease-in-out 0s",
+            transition: ".5s ease",
             height: "auto",
-            maxHeight: 9999,
+            opacity: 1,
+            maxHeight: "500px",
 
             "&.collapsed": {
                 maxHeight: 0,
-                transition: "max-height 0.35s cubic-bezier(0,1,0,1)",
+                transition: "0.3s ease",
+                opacity: 0,
+                //transitionTimingFunction: "ease-in",
+                //transition: "max-height 1s",
             },
 
             ".accordion-content": {
@@ -111,7 +118,7 @@ export const AccordionItemWrapper = styled("div")(
                 paddingRight: "11px",
 
                 "& p": {
-                    margin: 0,
+                    margin: "0 0 15px 0",
                     fontSize: "18px",
                     lineHeight: "28px",
                 },

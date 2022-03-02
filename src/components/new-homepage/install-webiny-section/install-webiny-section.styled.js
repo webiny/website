@@ -25,6 +25,9 @@ export const Wrapper = styled.div(
     }),
 );
 export const ButtonPrimary = styled(Button)(
+    {
+        marginBottom: 15,
+    },
     mq({
         marginTop: ["21px", "14px", "12px"],
         maxWidth: ["393px", "211px", "211px"],

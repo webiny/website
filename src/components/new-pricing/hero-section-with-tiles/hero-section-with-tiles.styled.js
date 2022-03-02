@@ -57,7 +57,7 @@ export const MinorTileStyle = styled("div")(
 );
 export const MainTileStyle = styled("div")(
     {
-        height: "581px",
+        height: "535px",
         borderRadius: "6px",
         background: "#fff",
         textAlign: "center",
@@ -102,12 +102,12 @@ export const MainTileBorder = styled("div")(
 );
 export const GrayBackground = styled("div")({
     background: "#F6F4F8",
-    paddingBottom: "57px",
+    paddingBottom: "50px",
     borderRadius: "6px",
     overflow: "hidden",
 
     "&.right-tile": {
-        paddingBottom: "45px",
+        paddingBottom: "40px",
     },
 });
 
@@ -406,7 +406,7 @@ export const IconFree = styled("div")({
     fontSize: "10px",
     fontWeight: "700",
     color: "#fff",
-    marginLeft: "6px",
+    marginLeft: "0px",
     borderRadius: "2px",
     display: "flex",
     alignItems: "center",
@@ -446,6 +446,7 @@ export const RangeSlider = styled.div(
                 top: "39px",
                 left: "-4px",
                 fontSize: "12px",
+                display: "none",
             },
 
             "& .input-range__slider": {

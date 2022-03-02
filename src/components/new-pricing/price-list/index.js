@@ -148,8 +148,8 @@ const priceList = [
             {
                 label: "Cloud cost monitoring",
                 open_source: false,
-                business: true,
-                enterprise: true,
+                business: "Coming soon",
+                enterprise: "Coming soon",
             },
             {
                 label: "Staged rollouts",
@@ -161,13 +161,13 @@ const priceList = [
                 label: "Point in time recovery",
                 open_source: false,
                 business: false,
-                enterprise: true,
+                enterprise: "Coming soon",
             },
             {
                 label: "Audit logs",
                 open_source: false,
                 business: false,
-                enterprise: true,
+                enterprise: "Coming soon",
             },
         ],
     },

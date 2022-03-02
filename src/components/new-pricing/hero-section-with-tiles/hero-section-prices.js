@@ -14,60 +14,56 @@ const heroSectionData = {
     dataLeftTile: {
         title: "Open Source",
         buttonLabel: "GET STARTED",
-        buttonLink: "/",
+        buttonLink: "/docs",
         price: "Free",
         benefits: [
             {
                 benefitName: "Unlimited users",
                 info: true,
-                toolTipDecription:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi proin neque eu, pharetra ultricies.",
+                toolTipDecription: "No limit on number of users.",
             },
             {
                 benefitName: "Unlimited API calls",
                 info: true,
-                toolTipDecription:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi proin neque eu, pharetra ultricies.",
+                toolTipDecription: "No limit on number of API calls.",
             },
             {
                 benefitName: "MIT licence",
                 info: true,
                 toolTipDecription:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi proin neque eu, pharetra ultricies.",
+                    "Webiny Open Source edition is licensed under the standard MIT license. For more details, checkout our GitHub.",
             },
             {
                 benefitName: "Headless CMS + Page Builder",
                 info: true,
                 toolTipDecription:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi proin neque eu, pharetra ultricies.",
+                    "Webiny Open Source includes Headless CMS, Page Builder, Form Builder and File Manager.",
             },
             {
                 benefitName: "Community support ",
                 info: true,
-                toolTipDecription:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi proin neque eu, pharetra ultricies.",
+                toolTipDecription: "Join our slack community of over 1,200 developers.",
             },
         ],
     },
 
     dataMainTile: {
         title: "Business",
-        buttonLabel: "Try it now for free",
-        buttonLink: "/",
-        subtitle: "Free tier included",
+        buttonLabel: "Join the waiting list", // "Try it now for free",
+        buttonLink: "https://docs.google.com/forms/d/1IRniZ3Qevx1LQkMEpOtdOdOLD-DLmMUdKn-_q1huNVs/",
+        subtitle: "Launching soon", //"Free tier included",
         minUsers: 1,
         maxUsers: 100,
         optionalLabel: "OPTIONAL ADD-ONS",
         optional: [
             {
                 optionalName: "Publishing workflow",
-                toolTipDecription:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi proin neque eu, pharetra ultricies.",
+                toolTipDecription: "Get access to the Advanced Publishing Workflow application.",
             },
             {
                 optionalName: "Advanced roles and permissions",
                 toolTipDecription:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi proin neque eu, pharetra ultricies.",
+                    "Get access to advanced options to control user roles and permissions.",
             },
         ],
 
@@ -76,69 +72,67 @@ const heroSectionData = {
                 benefitName: "First user is",
                 info: false,
                 toolTipDecription:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi proin neque eu, pharetra ultricies.",
+                    "Every Webiny CMS Business instance has 1 user included in the free tier.",
             },
             {
                 benefitName: "First 1M API calls p/month are",
                 info: false,
                 toolTipDecription:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi proin neque eu, pharetra ultricies.",
+                    "Every Webiny CMS Business instance has 1M API calls included in the free tier.",
             },
+            /*
             {
                 benefitName: "Advanced features",
                 info: true,
                 toolTipDecription:
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi proin neque eu, pharetra ultricies.",
             },
+            */
             {
                 benefitName: "Webiny Control Panel",
                 info: true,
-                toolTipDecription:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi proin neque eu, pharetra ultricies.",
+                toolTipDecription: "Access to Webiny Control Panel is included in this tier.",
             },
             {
-                benefitName: "Multitenancy",
+                benefitName: "Multi-tenancy",
                 info: true,
                 toolTipDecription:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi proin neque eu, pharetra ultricies.",
+                    "Access to multi-tenancy is included. There is no limits to the number or tenants or projects you can have.",
             },
         ],
     },
     dataRightTile: {
         title: "Enterprise",
         buttonLabel: "Contact Us",
-        buttonLink: "/",
-        price: "1,999",
+        buttonLink: "/call/demo",
+        price: "3,499",
         benefits: [
             {
                 benefitName: "OKTA integration",
                 info: true,
-                toolTipDecription:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi proin neque eu, pharetra ultricies.",
+                toolTipDecription: "Customizable OKTA IdP integration.",
             },
             {
                 benefitName: "Active Directory integration",
                 info: true,
-                toolTipDecription:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi proin neque eu, pharetra ultricies.",
+                toolTipDecription: "Customizable Active Directory IdP integration.",
             },
             {
                 benefitName: "SLA Support",
                 info: true,
-                toolTipDecription:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi proin neque eu, pharetra ultricies.",
+                toolTipDecription: "Several different levels of SLA-support are available.",
             },
             {
-                benefitName: "Infinite customisation capabilities",
+                benefitName: "Infinite customization capabilities",
                 info: true,
                 toolTipDecription:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi proin neque eu, pharetra ultricies.",
+                    "You have full access to the source code and can make any changes you wish.",
             },
             {
                 benefitName: "Consultancy services",
                 info: true,
                 toolTipDecription:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi proin neque eu, pharetra ultricies.",
+                    "Get the professional assistance directly from the team that built Webiny.",
             },
         ],
     },

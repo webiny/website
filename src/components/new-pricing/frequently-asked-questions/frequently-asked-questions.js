@@ -13,36 +13,95 @@ const faqs = [
         title: "Can I use Webiny for free?",
         children: (
             <p>
-                Yes, Webiny is completely free to use. Webiny is open-sourced under the MIT license.
+                Yes, you can! The Webiny Open Source edition is completely free to use, and it comes
+                with an MIT license. The other option is the free tier that's included with the
+                Webiny Business edition.
             </p>
         ),
     },
     {
-        title: "How do I get started?",
+        title: 'What is a "user" and how are they counted?',
         children: (
-            <p>
-                Follow the{" "}
-                <a href="/docs/webiny/introduction/" target="_blank" rel="noreferrer">
-                    get started tutorial
-                </a>
-                .
-            </p>
+            <>
+                <p>
+                    A user is anyone who has access to Webiny CMS to manage content. This includes
+                    users accessing the Admin Area through the user interface or via the API.
+                </p>
+                <p>
+                    Users that only have access to Webiny Control Panel are not counted against your
+                    user quota.
+                </p>
+                <p>
+                    You can see exactly how many user seats are allocated to a specific Webiny
+                    instance at any point in time.
+                </p>
+                <p>
+                    You only pay for unique users. So, for example, if one user has access to 100
+                    different websites inside the same Webiny instance, it will be counted as one
+                    user seat as long as it uses the same credentials.
+                </p>
+                <p>
+                    Additionally, we only count user seats inside the production environment. Usage
+                    in other environments, including personal development environments, is not
+                    counted against your usage.
+                </p>
+            </>
         ),
     },
     {
-        title: "How do I get support for Webiny?",
+        title: "Why do I need to pay for the API calls if I'm self-hosting?",
         children: (
-            <p>
-                For the enterprise users support is available directly from the code-team that built
-                Webiny.
-                <br />
-                <br />
-                For the open-source edition, only community support is available. Checkout our{" "}
-                <a href="/slack" target="_blank" rel="noreferrer">
-                    community slack
-                </a>{" "}
-                channel.
-            </p>
+            <>
+                <p>
+                    Our goal with our pricing is to make Webiny affordable to everyone. Our guiding
+                    thought is that our success is tied to our customer's success. Therefore, we
+                    wanted a fair pricing model, one where the value our product provides is tied to
+                    its cost and at the same time has a very low starting point with a free tier.
+                </p>
+                <p>
+                    To get the price down of the self-hosted option, we opted for a
+                    consumption-based pricing model based on user seats and API calls.
+                </p>
+                <p>
+                    Instead of trying to guess the value of the product to a customer and have a
+                    high starting price, we tied the value to those two factors.
+                </p>
+                <p>
+                    Although you are responsible for paying the AWS hosting costs, if you are using
+                    the product more, in terms of more API calls, you are getting more value from
+                    it, and so are your end-users. It's like leasing a car, you have the car, but
+                    you still pay to drive it per mile and need to put gas in it simultaneously.
+                    Using the car less will mean lower leasing costs, and using it more, will
+                    increase your bill.
+                </p>
+                <p>
+                    The final thing to mention is that Webiny anonymously processes your API calls;
+                    we don't see what data is transmitted; we only track the number of calls and
+                    their performance. Based on that, we can alert you if things go wrong and
+                    provide an overview of your AWS infrastructure cost.
+                </p>
+            </>
+        ),
+    },
+    {
+        title: "How do I know how many API calls I will need?",
+        children: (
+            <>
+                <p>
+                    Calculating the API usage depends on how you use Webiny and your users' access
+                    patterns.
+                </p>
+                <p>
+                    The best way to go about this is to start with the free tier account, which
+                    includes 1M free API calls. Then, based on the initial usage data you gather,
+                    you'll be able to estimate the total amount of API calls you might need over
+                    time.
+                </p>
+                <p>
+                    Webiny uses a GraphQL API, but we don't look at the complexity of your queries.
+                    A single request to the API is always counted as one API request.
+                </p>
+            </>
         ),
     },
     {
@@ -50,7 +109,7 @@ const faqs = [
         children: (
             <p>
                 We don't host a public demo at this time. You're welcome to{" "}
-                <a href="/docs/webiny/introduction/" target="_blank" rel="noreferrer">
+                <a href="/docs" target="_blank" rel="noreferrer">
                     install it yourself
                 </a>
                 , or{" "}
@@ -62,67 +121,30 @@ const faqs = [
         ),
     },
     {
-        title: "What are the main differences between Open source and Enterprise editions?",
+        title: "Can I switch from the Open Source plan to Business, and later to Enterprise?",
         children: (
             <p>
-                Webiny Enterprise is designed for organizations which have a long term plan on
-                using, building and delivering solutions on top of Webiny.
-                <br />
-                <br />
-                Webiny Enterprise offers access to the core Webiny team which will help you with
-                project delivery and Webiny best-practices.
-                <br />
-                <br />
-                Webiny Enterprise ensures long-term product supportability and a safe migration path
-                for each new release.
-                <br />
-                <br />
-                Additional benefits are illustrated in the pricing table above, if you however have
-                any questions, you're welcome{" "}
-                <a href="/call/demo" target="_blank" rel="noreferrer">
-                    book a call
-                </a>{" "}
-                with us.
+                Yes, you can! The switch is easy to do without impacting your existing Webiny
+                instance. You add or upgrade your project within Webiny Control Panel and redeploy
+                your Webiny instance. Once the deployment is done, your instance will have access to
+                the new features.
             </p>
         ),
     },
     {
-        title: "What kind of support do you offer?",
+        title: "Are there any other hidden costs?",
         children: (
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et lacus volutpat,
-                tristique magna sit amet, consequat tortor. Suspendisse faucibus sed velit at
-                congue. In eu massa lobortis, feugiat mauris ut, convallis mi.
+                No, it's just the user seats, API calls and the addons. No other hidden fees or
+                surprises.
             </p>
         ),
     },
     {
-        title: "What is included in Enterprise team training?",
+        title: "What if I have more questions?",
         children: (
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et lacus volutpat,
-                tristique magna sit amet, consequat tortor. Suspendisse faucibus sed velit at
-                congue. In eu massa lobortis, feugiat mauris ut, convallis mi.
-            </p>
-        ),
-    },
-    {
-        title: "Do you offer consulting or professional services?",
-        children: (
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et lacus volutpat,
-                tristique magna sit amet, consequat tortor. Suspendisse faucibus sed velit at
-                congue. In eu massa lobortis, feugiat mauris ut, convallis mi.
-            </p>
-        ),
-    },
-    {
-        title: "What about support regarding security questions?",
-        children: (
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et lacus volutpat,
-                tristique magna sit amet, consequat tortor. Suspendisse faucibus sed velit at
-                congue. In eu massa lobortis, feugiat mauris ut, convallis mi.
+                Just drop as an email: <a href="mailto:sales@webiny.com">sales@webiny.com</a>
             </p>
         ),
     },
