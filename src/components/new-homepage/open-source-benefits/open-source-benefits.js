@@ -26,17 +26,69 @@ import rollouts from "../../../assets/new-homepage/open-source-benefits/frame-ic
 import recovery from "../../../assets/new-homepage/open-source-benefits/frame-icons/recovery.svg";
 import arrow from "../../../assets/new-homepage/open-source-benefits/arrow.svg";
 
-const pagePublishEvent = `// Before doing anything, let’s make sure the user is signed in.
-const { authentication } = this.context;
- const identity = await authentication.getIdentity();
- if (!identity) {
-  throw new Error(“Not Authenticated.”);
-}
+const pagePublishEvent = `// Add a \`ContextPlugin\` plugin to hook into the Page Builder events.
+new ContextPlugin<PbContext>(async (context) => {
+  // After a page was published, send a Slack message.
+  context.pageBuilder.onAfterPagePublish.subscribe(
+    async ({ publishedPage }) => {
+      // Execute a custom function
+      await sendMessageToSlack({
+        id: publishedPage.id,
+        title: publishedPage.title
+      });
+    }
+  );
+});`;
 
-// We use ’mdbid’ (https://www.npmjs.com/package/mdbid) library to
-// generate a random, unique, and sequential (sortable) ID for our  
-// new identity
-const id = mdbid();`;
+const newGraphQlResolver = `// Add a \`GraphQLSchemaPlugin\` plugin to extend the GraphQL schema.
+new GraphQLSchemaPlugin({
+  typeDefs: /* GraphQL */ \`
+    extend type Query {
+      myField: String!
+    }
+  \`,
+  resolvers: {
+    Query: {
+      myField(root, args, context) {
+        return "My field value!";
+      }
+    }
+  }
+});
+`;
+
+const changeAdminLogo = `import React from "react";
+import { Admin, AddLogo } from "@webiny/app-serverless-cms";
+​
+// Import your logo image.
+import logoPng from "./logo.png";
+​
+export const App = () => {
+  return (
+    <Admin>
+      <AddLogo logo={<img src={logoPng} />} />
+    </Admin>
+  );
+};​`;
+
+const userAuthenticator = `// Add a \`ContextPlugin\` plugin to add a custom authenticator.
+new ContextPlugin<SecurityContext>((context) => {
+  context.security.addAuthenticator(async (token) => {
+    // Verify the token.
+    const tokenData = await verifyToken(token);
+​
+    // Return an Identity object.
+    if (tokenData) {
+      return {
+        id: tokenData.sub,
+        type: "custom-identity",
+        displayName: tokenData.name
+      };
+    }
+​
+    return undefined;
+  });
+});`;
 
 const FrameContainer = ({ image, title, description, link }) => {
     return (
@@ -116,13 +168,13 @@ const OpenSourceBenefits = () => {
                                     <Code language="javascript" code={pagePublishEvent} />
                                 </TabPanel>
                                 <TabPanel>
-                                    <Code language="javascript" code={`console.log("hello")`} />
+                                    <Code language="javascript" code={newGraphQlResolver} />
                                 </TabPanel>
                                 <TabPanel>
-                                    <Code language="javascript" code={`console.log("hello")`} />
+                                    <Code language="javascript" code={changeAdminLogo} />
                                 </TabPanel>
                                 <TabPanel>
-                                    <Code language="javascript" code={`console.log("hello")`} />
+                                    <Code language="javascript" code={userAuthenticator} />
                                 </TabPanel>
                             </div>
                         </Tabs>
@@ -145,7 +197,7 @@ const OpenSourceBenefits = () => {
                 <FrameContainer
                     image={multiple}
                     title="Deploy to multiple environments"
-                    description="Using Webiny CLI you can propagate code trought different environments, like dev, prod."
+                    description="Using Webiny CLI, you can propagate code through different environments, like dev, prod."
                     link="https://google.com"
                 />
                 <FrameContainer

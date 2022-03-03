@@ -106,7 +106,18 @@ export const CodeSectionTabs = styled.div(
 
         "& .tabs-code": [
             {
+                overscrollBehavior: "contain",
                 overflowY: "auto",
+                ".line-numbers": {
+                    overscrollBehavior: "contain",
+                    minHeight: "240px",
+                },
+                ".line-numbers-rows": {
+                    left: -40,
+                    "> span": {
+                        whiteSpace: "nowrap",
+                    },
+                },
             },
             mq({
                 height: ["300px", "350px", "350px"],
@@ -218,7 +229,7 @@ export const CodeSectionExample = styled.div(
         },
     }),
     mq({
-        margin: ["13px 0 24px 0", "26px 0 31px 0", "26px 0 52px 0"],
+        margin: ["13px 0 24px 0", "15px 0 31px 0", "15px 0 25px 0"],
         fontSize: ["12px", "14px"],
         lineHeight: ["30px", "20px"],
     }),
