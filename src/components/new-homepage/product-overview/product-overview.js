@@ -19,7 +19,7 @@ import {
 import ArrowClosed from "../../../assets/new-homepage/product-overview/arrow-closed.svg";
 import ArrowOpen from "../../../assets/new-homepage/product-overview/arrow-open.svg";
 import PlusIcon from "../../../assets/new-homepage/product-overview/plus.svg";
-import Video from "../../../assets/new-homepage/product-overview/video1.mp4";
+import PageBuilderVideo from "../../../assets/new-homepage/product-overview/page-builder.mp4";
 
 const Trigger = ({ isOpen, title, isComingSoon }) => {
     return (
@@ -128,17 +128,10 @@ const ProductOverview = () => {
 
     const accordionItems = [
         {
-            title: "Webiny Control Panel",
-            content:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat ex consequat aliquet.",
-            image: images.browserImage.childImageSharp.fluid,
-            isComingSoon: true,
-        },
-        {
             title: "Page Builder",
             content:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat ex consequat aliquet.",
-            image: images.image1.childImageSharp.fluid,
+                "No-code drag&drop page builder for creating static websites. Support for dynamic sites coming soon!",
+            video: PageBuilderVideo,
             isComingSoon: false,
         },
         {
@@ -147,6 +140,13 @@ const ProductOverview = () => {
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat ex consequat aliquet.",
             image: images.image2.childImageSharp.fluid,
             isComingSoon: false,
+        },
+        {
+            title: "Webiny Control Panel",
+            content:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat ex consequat aliquet.",
+            image: images.browserImage.childImageSharp.fluid,
+            isComingSoon: true,
         },
         {
             title: "Advanced Publishing Workflow",
@@ -159,7 +159,7 @@ const ProductOverview = () => {
             title: "Tenant Manager",
             content:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat ex consequat aliquet.",
-            video: Video,
+            video: PageBuilderVideo,
             isComingSoon: false,
         },
     ];

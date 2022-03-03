@@ -20,15 +20,16 @@ const heroSectionData = {
             {
                 benefitName: "Unlimited users",
                 info: true,
-                toolTipDecription: "No limit on number of users.",
+                toolTipDecription: "No need to upgrade to a paid plan if you need more users.",
             },
             {
                 benefitName: "Unlimited API calls",
                 info: true,
-                toolTipDecription: "No limit on number of API calls.",
+                toolTipDecription:
+                    "Unlimited traffic through the API allows you to build scalable products.",
             },
             {
-                benefitName: "MIT licence",
+                benefitName: "MIT license",
                 info: true,
                 toolTipDecription:
                     "Webiny Open Source edition is licensed under the standard MIT license. For more details, checkout our GitHub.",
@@ -58,12 +59,13 @@ const heroSectionData = {
         optional: [
             {
                 optionalName: "Publishing workflow",
-                toolTipDecription: "Get access to the Advanced Publishing Workflow application.",
+                toolTipDecription:
+                    "Enforce content changes to go through approval processes before being published.",
             },
             {
                 optionalName: "Advanced roles and permissions",
                 toolTipDecription:
-                    "Get access to advanced options to control user roles and permissions.",
+                    "Ability to have fine-grain control over user roles and  permissions. ",
             },
         ],
 
@@ -91,13 +93,14 @@ const heroSectionData = {
             {
                 benefitName: "Webiny Control Panel",
                 info: true,
-                toolTipDecription: "Access to Webiny Control Panel is included in this tier.",
+                toolTipDecription:
+                    "Unlocks performance and cost monitoring, deployment logs, and alerting features.",
             },
             {
                 benefitName: "Multi-tenancy",
                 info: true,
                 toolTipDecription:
-                    "Access to multi-tenancy is included. There is no limits to the number or tenants or projects you can have.",
+                    "Unlocks the ability to have an unlimited number of tenants or projects on your Webiny instance",
             },
         ],
     },
@@ -110,7 +113,8 @@ const heroSectionData = {
             {
                 benefitName: "OKTA integration",
                 info: true,
-                toolTipDecription: "Customizable OKTA IdP integration.",
+                toolTipDecription:
+                    "Built-in customizable integration for OKTA IdP. Ability to extend to other IdPs your organization might use. ",
             },
             {
                 benefitName: "Active Directory integration",
@@ -120,7 +124,7 @@ const heroSectionData = {
             {
                 benefitName: "SLA Support",
                 info: true,
-                toolTipDecription: "Several different levels of SLA-support are available.",
+                toolTipDecription: "Custom levels of SLA support aligned with your project needs.",
             },
             {
                 benefitName: "Infinite customization capabilities",
