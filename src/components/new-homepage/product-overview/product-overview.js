@@ -20,6 +20,7 @@ import ArrowClosed from "../../../assets/new-homepage/product-overview/arrow-clo
 import ArrowOpen from "../../../assets/new-homepage/product-overview/arrow-open.svg";
 import PlusIcon from "../../../assets/new-homepage/product-overview/plus.svg";
 import PageBuilderVideo from "../../../assets/new-homepage/product-overview/page-builder.mp4";
+import HeadlessCmsVideo from "../../../assets/new-homepage/product-overview/headless-cms-preview.mp4";
 
 const Trigger = ({ isOpen, title, isComingSoon }) => {
     return (
@@ -128,37 +129,34 @@ const ProductOverview = () => {
 
     const accordionItems = [
         {
-            title: "Page Builder",
-            content:
-                "No-code drag&drop page builder for creating static websites. Support for dynamic sites coming soon!",
-            video: PageBuilderVideo,
+            title: "Headless CMS",
+            content: "Create, organize, distribute and consume your content on any device.",
+            video: HeadlessCmsVideo,
             isComingSoon: false,
         },
         {
-            title: "Headless CMS",
+            title: "Page Builder",
             content:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat ex consequat aliquet.",
-            image: images.image2.childImageSharp.fluid,
+                "Empower your marketing team to manage a website without the support from your development team.",
+            video: PageBuilderVideo,
             isComingSoon: false,
         },
         {
             title: "Webiny Control Panel",
             content:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat ex consequat aliquet.",
+                "Streamline the operations around managing, monitoring and scaling your Webiny CMS self-hosted instance.",
             image: images.browserImage.childImageSharp.fluid,
             isComingSoon: true,
         },
         {
             title: "Advanced Publishing Workflow",
-            content:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat ex consequat aliquet.",
+            content: "Enforce content changes through an approval process before it's published.",
             image: images.image3.childImageSharp.fluid,
             isComingSoon: true,
         },
         {
             title: "Tenant Manager",
-            content:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat ex consequat aliquet.",
+            content: "Manage multiple websites and projects from a single Webiny CMS instance.",
             video: PageBuilderVideo,
             isComingSoon: false,
         },

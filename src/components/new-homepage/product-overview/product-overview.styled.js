@@ -136,6 +136,16 @@ export const PlusImg = styled.img(
 );
 
 export const AccordionContainer = styled("div")(
+    {
+        opacity: 1,
+        transition: "opacity 0.5s ease-in-out",
+        //zIndex: 1,
+        "&:hover": {
+            opacity: "1 !important",
+            transition: "opacity 0.5s ease-in-out",
+            //zIndex: 100,
+        },
+    },
     mq({
         marginTop: ["19px", "38px", "25px"],
         position: ["static", "static", "absolute"],
@@ -149,6 +159,11 @@ export const ContainerForImage = styled.div(
         width: "100%",
         maxWidth: "1203px",
         position: "relative",
+        "&:hover": {
+            [AccordionContainer]: {
+                opacity: "0.3",
+            },
+        },
     },
     mq({
         "&> video": {
