@@ -35,7 +35,7 @@ const MultiSiteSupport = () => {
                         <Highlight>You don't need</Highlight> 10 systems to manage 10 websites
                     </>
                 }
-                arrowLink="/docs"
+                arrowLink="/docs/overview/features/multi-tenancy"
                 arrowTitle="Check out the docs"
             >
                 You can use a <Bold>single Webiny instance </Bold> to manage content for{" "}

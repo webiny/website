@@ -80,7 +80,7 @@ const TextWithImageWrapper = styled("div")(
 
 const ArrowLink = ({ link, title }) => {
     return (
-        <ArrowLinkWrapper to={link}>
+        <ArrowLinkWrapper target="_blank" href={link}>
             {title}
             <ArrowImage src={arrow} alt="arrow" />
         </ArrowLinkWrapper>

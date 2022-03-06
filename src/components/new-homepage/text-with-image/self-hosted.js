@@ -33,7 +33,7 @@ const SelfHosted = () => {
                         <Highlight>Your data</Highlight> under your terms
                     </TextContainer>
                 }
-                arrowLink="/docs"
+                arrowLink="/docs/overview/features/self-hosted"
                 arrowTitle="Check out the docs"
             >
                 Don't be a tenant in someone else's system.{" "}

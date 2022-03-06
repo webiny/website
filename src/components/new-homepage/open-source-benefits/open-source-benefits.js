@@ -107,7 +107,7 @@ const FrameContainer = ({ image, title, description, link }) => {
             <FrameDescription>{description}</FrameDescription>
             <FrameLink>
                 {link ? (
-                    <a href={link}>
+                    <a target="_blank" href={link}>
                         Explore more <img src={arrow} />
                     </a>
                 ) : (
@@ -186,25 +186,25 @@ const OpenSourceBenefits = () => {
                     image={ts}
                     title="Typescript support"
                     description="Type definitions across  the whole project to help you get around."
-                    link="https://google.com"
+                    link="/docs/core-development-concepts/basics/tools-and-libraries"
                 />
                 <FrameContainer
                     image={okta}
                     title="OKTA integration"
                     description="AWS Cognito is the default IdP, but enterprise users can replace it with OKTA."
-                    link="https://google.com"
+                    link="/docs/enterprise/okta-integration"
                 />
                 <FrameContainer
                     image={multiple}
                     title="Deploy to multiple environments"
                     description="Using Webiny CLI, you can propagate code through different environments, like dev, prod."
-                    link="https://google.com"
+                    link="/docs/overview/features/multiple-environments"
                 />
                 <FrameContainer
                     image={graphQL}
                     title="Expandable GraphQL API"
                     description="Change existing GraphQL resolvers, or add new ones in a few lines of code."
-                    link="https://google.com"
+                    link="/docs/core-development-concepts/extending-and-customizing/extend-graphql-api"
                 />
                 <FrameContainer
                     image={rollouts}

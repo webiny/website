@@ -35,7 +35,7 @@ const Serverless = () => {
                         <Highlight>Unlock</Highlight> infinite scalability
                     </>
                 }
-                arrowLink="/docs"
+                arrowLink="/docs/overview/features/serverless-infrastructure"
                 arrowTitle="Check out the docs"
             >
                 Don’t spend weeks building and managing a fault-tolerant infrastructure. With Webiny

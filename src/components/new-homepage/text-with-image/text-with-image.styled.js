@@ -50,7 +50,7 @@ export const TextContainer = styled("div")({
     maxWidth: "300px",
 });
 
-export const ArrowLinkWrapper = styled(Link)({
+export const ArrowLinkWrapper = styled("a")({
     fontWeight: 700,
     fontSize: "20px",
     lineHeight: "23px",

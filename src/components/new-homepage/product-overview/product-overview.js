@@ -89,37 +89,16 @@ const Accordion = ({ accordionItems, openIndex, onOpenClose }) => {
 const ProductOverview = () => {
     const images = useStaticQuery(graphql`
         query ProductOverviewQuery {
-            browserImage: file(relativePath: { eq: "new-homepage/product-overview/browser.png" }) {
+            wcpImage: file(relativePath: { eq: "new-homepage/product-overview/wcp.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 1175) {
+                    fluid(maxWidth: 2500) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
-            image1: file(relativePath: { eq: "new-homepage/product-overview/image1.jpg" }) {
+            apwImage: file(relativePath: { eq: "new-homepage/product-overview/apw-preview.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 1175) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-            image2: file(relativePath: { eq: "new-homepage/product-overview/image2.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 1175) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-            image3: file(relativePath: { eq: "new-homepage/product-overview/image3.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 1175) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-            image4: file(relativePath: { eq: "new-homepage/product-overview/image4.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 1175) {
+                    fluid(maxWidth: 2500) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -145,20 +124,14 @@ const ProductOverview = () => {
             title: "Webiny Control Panel",
             content:
                 "Streamline the operations around managing, monitoring and scaling your Webiny CMS self-hosted instance.",
-            image: images.browserImage.childImageSharp.fluid,
+            image: images.wcpImage.childImageSharp.fluid,
             isComingSoon: true,
         },
         {
             title: "Advanced Publishing Workflow",
             content: "Enforce content changes through an approval process before it's published.",
-            image: images.image3.childImageSharp.fluid,
+            image: images.apwImage.childImageSharp.fluid,
             isComingSoon: true,
-        },
-        {
-            title: "Tenant Manager",
-            content: "Manage multiple websites and projects from a single Webiny CMS instance.",
-            video: PageBuilderVideo,
-            isComingSoon: false,
         },
     ];
 

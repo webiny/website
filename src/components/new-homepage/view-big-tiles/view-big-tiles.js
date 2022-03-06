@@ -25,7 +25,7 @@ const BigTile = ({ title, description, image, link }) => {
                 <div>
                     <TileTitle>{title}</TileTitle>
                     <TileDescription>{description}</TileDescription>
-                    <TileLink href={link}>
+                    <TileLink target="_blank" href={link}>
                         Learn more
                         <img src={iconArrow} />
                     </TileLink>

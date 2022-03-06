@@ -33,7 +33,7 @@ const NoCodeSuite = () => {
                         <Highlight>Decouple</Highlight> marketing needs from engineering
                     </>
                 }
-                arrowLink="/docs"
+                arrowLink="/docs/overview/features/nocode-suite"
                 arrowTitle="Check out the docs"
             >
                 You don’t want your engineers to spend time fixing headlines and moving pixels on
