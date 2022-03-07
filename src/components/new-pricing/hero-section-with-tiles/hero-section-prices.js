@@ -14,7 +14,7 @@ const heroSectionData = {
     dataLeftTile: {
         title: "Open Source",
         buttonLabel: "GET STARTED",
-        buttonLink: "/docs",
+        buttonLink: "/docs/",
         price: "Free",
         benefits: [
             {

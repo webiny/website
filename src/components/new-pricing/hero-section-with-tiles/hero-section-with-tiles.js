@@ -108,7 +108,7 @@ const MainTile = ({ dataTile }) => {
                     </RangeSlider>
                 </GrayBackground>
                 <ListTileContainer>
-                    <ButtonPrimary link={dataTile.buttonLink} type="primary">
+                    <ButtonPrimary link={dataTile.buttonLink} target="_blank" type="primary">
                         {dataTile.buttonLabel}
                     </ButtonPrimary>
                     <Ul>
@@ -181,7 +181,7 @@ const LeftTile = ({ dataTile }) => {
                 <Span>SELF HOSTED</Span>
             </GrayBackground>
             <ListTileContainer className="left-tile">
-                <ButtonPrimary link={dataTile.buttonLink} className="left-tile" type="primary">
+                <ButtonPrimary link={dataTile.buttonLink} target="_blank" className="left-tile" type="primary">
                     {dataTile.buttonLabel}
                 </ButtonPrimary>
                 <Ul className="left-tile">
@@ -230,6 +230,7 @@ const RightTIle = ({ dataTile }) => {
                     className="right-tile"
                     link={dataTile.buttonLink}
                     type="outlineOrange"
+                    target="_blank"
                 >
                     {dataTile.buttonLabel}
                 </ButtonOutline>

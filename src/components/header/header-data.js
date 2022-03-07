@@ -17,8 +17,8 @@ import MeetupIcon from "./assets/meetupIcon.svg";
 
 export const WEBINY_MENU = {
     id: 0,
-    label: "Why Webiny",
-    link: "https://www.webiny.com/why-webiny/",
+    label: "Home",
+    link: "/",
 };
 
 export const PRODUCTS_MENU = {
@@ -27,7 +27,7 @@ export const PRODUCTS_MENU = {
     link: null,
     className: "one-row",
     primarySection: {
-        title: "FEATURES",
+        title: "APPLICATIONS",
         menuItems: [
             {
                 id: 0,
@@ -38,12 +38,13 @@ export const PRODUCTS_MENU = {
                 image: HeadlessIcon,
             },
             {
-                id: 4,
-                index: 1,
-                label: "File Manager",
-                text: "Serverless digital asset management.",
-                link: "/enterprise-serverless-cms/file-manager",
-                image: FileManagerIcon,
+                id: 2,
+                index: 4,
+                label: "Advanced Publishing Workflow",
+                text: "Peer reviewed publishing process.",
+                link: "/docs/webiny-overview/applications/advanced-publishing-workflow",
+                image: advancedPublishingIcon,
+                isComingSoon: true,
             },
             {
                 id: 1,
@@ -63,21 +64,12 @@ export const PRODUCTS_MENU = {
                 isComingSoon: true,
             },
             {
-                id: 2,
-                index: 4,
-                label: "Advanced Publishing Workflow",
-                text: "Peer reviewed publishing process.",
-                link: "/docs/webiny-overview/applications/advanced-publishing-workflow",
-                image: advancedPublishingIcon,
-                isComingSoon: true,
-            },
-            {
-                id: 6,
-                index: 5,
-                label: "Tenant Manager",
-                text: "Multi-site management utility",
-                link: "/docs/webiny-overview/applications/tenant-manager",
-                image: TenantManagerIcon,
+                id: 4,
+                index: 1,
+                label: "File Manager",
+                text: "Serverless digital asset management.",
+                link: "/enterprise-serverless-cms/file-manager",
+                image: FileManagerIcon,
             },
             {
                 id: 3,

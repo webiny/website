@@ -1,5 +1,6 @@
-import React, { Fragment, useContext, useState } from "react";
-import Link, { navigate } from "gatsby-link";
+import React, { Children, Fragment, useContext, useState } from "react";
+import{ navigate } from "gatsby-link";
+import Link from '../utils/link';
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 

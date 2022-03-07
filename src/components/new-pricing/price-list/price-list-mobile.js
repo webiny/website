@@ -65,6 +65,7 @@ const PriceListMobile = ({ priceList }) => {
                     buttonText="Get Started"
                     collapseName="Open source"
                     buttonType="primary"
+                    link={"/docs/"}
                 />
                 <CollapsibleItem
                     priceList={priceList}
@@ -72,6 +73,7 @@ const PriceListMobile = ({ priceList }) => {
                     buttonText="Try it now for free"
                     collapseName="Business"
                     buttonType="primary"
+                    link={"https://docs.google.com/forms/d/1IRniZ3Qevx1LQkMEpOtdOdOLD-DLmMUdKn-_q1huNVs/"}
                     border
                 />
                 <CollapsibleItem
@@ -80,6 +82,7 @@ const PriceListMobile = ({ priceList }) => {
                     buttonText="Contact us"
                     collapseName="Enterprice"
                     buttonType="outlineOrange"
+                    link={"/call/demo"}
                     border
                 />
             </div>

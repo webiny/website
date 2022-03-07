@@ -6,7 +6,7 @@ const BuildLotsOfSites = () => {
         <BuildLotsOfSitesSection
             title="Build lots of sites?"
             buttonLinkLabel="DISCOVER NOW"
-            buttonLink="docs/webiny/introduction/"
+            buttonLink="https://docs.google.com/forms/d/e/1FAIpQLSdgy20luKirQeDbhXGggjXZrQNg2SwlixSAb_XTXi01PyexsQ/viewform"
         />
     );
 };

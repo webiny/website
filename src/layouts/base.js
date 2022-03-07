@@ -5,8 +5,10 @@ import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
 import CookieNotice from "../components/ui/cookie-notice";
 import { ModalProvider } from "../components/ui/layout/video-modal";
+import Chat from "./components/chat";
 import "./index.css";
 import "./reset.css";
+
 class BaseLayout extends React.Component {
     render() {
         return (
@@ -47,6 +49,7 @@ class BaseLayout extends React.Component {
                     {this.props.children}
                     <Footer />
                     <CookieNotice />
+                    <Chat />
                 </ModalProvider>
             </>
         );

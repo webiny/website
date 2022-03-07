@@ -29,7 +29,7 @@ const PriceListDesktop = ({ priceList, showPriceList }) => {
                                 <h4>Open Source</h4>
                                 <Button
                                     target="_blank"
-                                    link="/docs"
+                                    link="/docs/"
                                     type="primary"
                                     className="button-border-line"
                                 >

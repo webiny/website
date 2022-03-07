@@ -559,6 +559,8 @@ export const ProductDropdownItem = styled("div")({
         display: "flex",
         flexDirection: "column",
         position: "relative",
+        whiteSpace: "nowrap",
+                overflow: "hidden",
 
         "& span:first-child": {
             marginBottom: "7px",
