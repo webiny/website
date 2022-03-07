@@ -5,47 +5,44 @@ import theme from "../utils/theme";
 import Link from "gatsby-link";
 import arrowImg from "./assets/btn-arrow.svg";
 
-const buttonDefault = css(
-    {
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        marginRight: 0,
-        marginLeft: 0,
-        padding: "14px 20px",
-        verticalAlign: "top",
-        textAlign: "center",
-        fontFamily: "Source Sans Pro",
-        fontSize: 14,
-        lineHeight: 1,
-        borderRadius: 4,
-        willChange: "opacity",
-        transition: "all 0.2s",
-        cursor: "pointer",
-        color: theme.color.black,
-        backgroundColor: "#fff",
-        textDecoration: "none",
-        textTransform: "uppercase",
-        letterSpacing: ".025em",
-        fontWeight: 600,
-        boxSizing: "border-box",
-        outline: "none",
-        border: "none",
-        "&:hover": {
-            boxShadow: "0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08)",
-            transform: "translateY(-1px)",
-        },
-        "&:active": {
-            transform: "translateY(1px)",
-        },
-        "img.arrow": {
-            marginLeft: 10,
-        },
+const buttonDefault = css({
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    marginRight: 0,
+    marginLeft: 0,
+    padding: "14px 20px",
+    verticalAlign: "top",
+    textAlign: "center",
+    fontFamily: "Source Sans Pro",
+    fontSize: 14,
+    lineHeight: 1,
+    borderRadius: 4,
+    willChange: "opacity",
+    transition: "all 0.2s",
+    cursor: "pointer",
+    color: theme.color.black,
+    backgroundColor: "#fff",
+    textDecoration: "none",
+    textTransform: "uppercase",
+    letterSpacing: ".025em",
+    fontWeight: 600,
+    boxSizing: "border-box",
+    outline: "none",
+    border: "none",
+    width: "100%",
+
+    "&:hover": {
+        boxShadow: "0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08)",
+        transform: "translateY(-1px)",
     },
-    mq({
-        width: ["100%", "inherit"],
-    }),
-);
+    "&:active": {
+        transform: "translateY(1px)",
+    },
+    "img.arrow": {
+        marginLeft: 10,
+    },
+});
 
 const buttonFullWidthStyle = css({
     width: "100% !important",
@@ -75,6 +72,15 @@ const buttonSecondary = css({
         background: "#3FBFB0",
         //boxShadow: '0px 0px 0px 3px #3FBFB0',
         //borderColor: '#3FBFB0',
+    },
+});
+
+const buttonPurple = css({
+    backgroundColor: theme.color.purple,
+    color: theme.color.white,
+    textTransform: "uppercase",
+    "&:hover, &:active": {
+        background: "#7B49D7",
     },
 });
 
@@ -114,11 +120,19 @@ const buttonOutline = css({
     padding: "12px 20px",
 });
 
+const buttonOutlineOrange = css({
+    backgroundColor: "#fff",
+    color: "#FA5A28",
+    textTransform: "uppercase",
+    border: "solid 2px #FA5A28",
+    padding: "12px 20px",
+});
+
 const buttonOutlineDark = css({
     backgroundColor: "transparent",
-    color: theme.color.dark,
+    color: theme.color.primaryDark,
     textTransform: "uppercase",
-    border: "solid 2px " + theme.color.dark,
+    border: "solid 2px " + theme.color.primaryDark,
     padding: "12px 20px",
 });
 
@@ -128,11 +142,13 @@ class Button extends React.Component {
         fullWidth: buttonFullWidthStyle,
         primary: buttonPrimary,
         secondary: buttonSecondary,
+        purple: buttonPurple,
         default: buttonDefault,
         dark: buttonDark,
         outline: buttonOutline,
         outlineDark: buttonOutlineDark,
         primaryLink: buttonPrimaryLink,
+        outlineOrange: buttonOutlineOrange,
     };
 
     render() {

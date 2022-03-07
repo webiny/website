@@ -1,22 +1,13 @@
 import React from "react";
 import Helmet from "react-helmet";
-import styled from "react-emotion";
-import mq from "../components/utils/breakpoints";
 import Head from "./components/head";
-import Header from "../components/header/new-header";
+import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
 import CookieNotice from "../components/ui/cookie-notice";
 import { ModalProvider } from "../components/ui/layout/video-modal";
 import Chat from "./components/chat";
 import "./index.css";
 import "./reset.css";
-
-const Wrapper = styled("div")(
-    {},
-    mq({
-        paddingTop: [55, 90], // 65 if there is no banner, 90 if there is a banner
-    }),
-);
 
 class BaseLayout extends React.Component {
     render() {
@@ -54,13 +45,11 @@ class BaseLayout extends React.Component {
                     </script>
                 </Helmet>
                 <ModalProvider>
-                    <Wrapper>
-                        <Header trackScroll={!this.props.fixedHeader} />
-                        {this.props.children}
-                        <Footer />
-                        <CookieNotice />
-                        <Chat />
-                    </Wrapper>
+                    <Header />
+                    {this.props.children}
+                    <Footer />
+                    <CookieNotice />
+                    <Chat />
                 </ModalProvider>
             </>
         );

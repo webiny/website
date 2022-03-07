@@ -1,37 +1,36 @@
 import React from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 import BaseLayout from "../layouts/base";
-import Hero from "../components/homepage/hero-new/new-hero";
-import FocusBusiness from "../components/homepage/focus-business";
-import ServerlessEasy from "../components/homepage/serverless-easy/serverless-easy";
-import CompleteSection from "../components/homepage/new-complete-serverless";
-import ClientsLogo from "../components/homepage/clients-logo/clients-logo";
-import WhyWebiny from "../components/homepage/why-webiny/why-webiny";
-import CaseStudy from "../components/ui/case-study";
-import FooterCta from "../components/ui/footer-cta";
+import HeroHomePage from "../components/new-homepage/hero-section/hero-home-page";
+import ProductOverview from "../components/new-homepage/product-overview/product-overview";
+import SelfHosted from "../components/new-homepage/text-with-image/self-hosted";
+import Serverless from "../components/new-homepage/text-with-image/serverless";
+import NoCodeSuite from "../components/new-homepage/text-with-image/no-code-suite";
+import MultiSiteSupport from "../components/new-homepage/text-with-image/multi-site-support";
+import Investors from "../components/new-homepage/investors/investors";
+import DeliveryExcellence from "../components/new-homepage/view-big-tiles/delivery-excellence";
+import OpenSourceBenefits from "../components/new-homepage/open-source-benefits/open-source-benefits";
+import CustomerTestimonial from "../components/new-homepage/customer-testimonial-slider/customer-testimonial";
+import InstallWebiny from "../components/new-homepage/install-webiny-section/install-webiny";
 
 class IndexPage extends React.Component {
-    componentDidMount() {
-        AOS.init();
-    }
-
     render() {
         return (
             <BaseLayout
-                title="Open-Source Serverless CMS and Serverless Application Framework"
-                description="Webiny is an open-source framework for building serverless applications with a drop-in CMS. Webiny is powered by React, Node and GraphQL."
-                fixedHeader={false}
+                title="Open-Source Serverless CMS for Enterprises - Headless CMS & Page Builder"
+                description="Webiny is an open source serverless CMS that offers you all the enterprise-grade functionalities, while keeping your data within the security perimeter of your own infrastructure"
             >
-                <Hero />
-                <FocusBusiness />
-                <CompleteSection />
-                <WhyWebiny />
-                <CaseStudy />
-                <ServerlessEasy />
-                {/*<ClientsLogo />*/}
-                <FooterCta />
+                <HeroHomePage />
+                <Investors />
+                <ProductOverview />
+                <SelfHosted />
+                <Serverless />
+                <NoCodeSuite />
+                <MultiSiteSupport />
+                <DeliveryExcellence />
+                <OpenSourceBenefits />
+                <CustomerTestimonial />
+                <InstallWebiny />
             </BaseLayout>
         );
     }
