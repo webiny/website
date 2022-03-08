@@ -73,14 +73,16 @@ const PriceListMobile = ({ priceList }) => {
                     buttonText="Try it now for free"
                     collapseName="Business"
                     buttonType="primary"
-                    link={"https://docs.google.com/forms/d/1IRniZ3Qevx1LQkMEpOtdOdOLD-DLmMUdKn-_q1huNVs/"}
+                    link={
+                        "https://docs.google.com/forms/d/1IRniZ3Qevx1LQkMEpOtdOdOLD-DLmMUdKn-_q1huNVs/"
+                    }
                     border
                 />
                 <CollapsibleItem
                     priceList={priceList}
                     plan="enterprise"
                     buttonText="Contact us"
-                    collapseName="Enterprice"
+                    collapseName="Enterprise"
                     buttonType="outlineOrange"
                     link={"/call/demo"}
                     border

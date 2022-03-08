@@ -45,7 +45,7 @@ export const Container = styled.div({
     },
 });
 
-export const DemoLink = styled(Link)(
+export const DemoLink = styled("a")(
     {
         display: "flex",
         alignItems: "center",

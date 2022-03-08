@@ -16,7 +16,9 @@ const InstallWebinySection = ({ title, buttonLinkLabel, buttonLink, demoLink, de
                 <ButtonPrimary link={buttonLink} type={"primary"}>
                     {buttonLinkLabel}
                 </ButtonPrimary>
-                <DemoLink to={demoLink}>{demoLinkLabel}</DemoLink>
+                <DemoLink target="_blank" href={demoLink}>
+                    {demoLinkLabel}
+                </DemoLink>
             </Container>
         </Wrapper>
     );

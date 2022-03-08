@@ -170,7 +170,8 @@ class Button extends React.Component {
             if (
                 this.props.link.startsWith("http") ||
                 this.props.link.startsWith("mailto:") ||
-                this.props.link.startsWith("/docs/")
+                this.props.link.startsWith("/docs/") ||
+                this.props.link.startsWith("/call/")
             ) {
                 return (
                     <a

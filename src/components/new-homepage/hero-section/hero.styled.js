@@ -38,7 +38,7 @@ export const HeroContainer = styled("div")({
     alignItems: "center",
     margin: "0 auto",
 });
-export const RequestLink = styled(Link)({
+export const RequestLink = styled("a")({
     display: "flex",
     alignItems: "center",
     marginTop: "11px",

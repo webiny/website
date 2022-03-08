@@ -22,7 +22,7 @@ const BuildLotsOfSitesSection = ({ title, buttonLinkLabel, buttonLink }) => {
                             Discover our <PurpleText>Agency Partner Program</PurpleText>
                         </Subtitle>
                     </TitleContainer>
-                    <ButtonPurple link={buttonLink} type={"purple"}>
+                    <ButtonPurple target="_blank" link={buttonLink} type={"purple"}>
                         {buttonLinkLabel}
                     </ButtonPurple>
                 </FlexContainer>

@@ -189,7 +189,11 @@ const FeaturesSection = ({ features }) => (
 
                             {feature.actionLabel && (
                                 <div className={"buttonWrapper"}>
-                                    <Button type={"secondary"} link={feature.actionLink}>
+                                    <Button
+                                        type={"secondary"}
+                                        target="_blank"
+                                        link={feature.actionLink}
+                                    >
                                         {feature.actionLabel}
                                     </Button>
                                 </div>

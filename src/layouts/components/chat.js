@@ -9,7 +9,7 @@ import slackIcon from "./assets/slack-brands.svg";
 const Chat = styled("a")({
     willChange: "all",
     transition: "all 0.25s",
-    backgroundColor: "blue",
+    backgroundColor: "#7B49D7",
     width: 55,
     height: 55,
     borderRadius: "50%",

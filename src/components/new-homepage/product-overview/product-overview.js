@@ -14,6 +14,7 @@ import {
     ProductOverviewImg,
     ProductOverviewVideo,
     ProductsOverviewContainer,
+    Preloader,
 } from "./product-overview.styled";
 
 import ArrowClosed from "../../../assets/new-homepage/product-overview/arrow-closed.svg";
@@ -21,6 +22,7 @@ import ArrowOpen from "../../../assets/new-homepage/product-overview/arrow-open.
 import PlusIcon from "../../../assets/new-homepage/product-overview/plus.svg";
 import PageBuilderVideo from "../../../assets/new-homepage/product-overview/page-builder.mp4";
 import HeadlessCmsVideo from "../../../assets/new-homepage/product-overview/headless-cms-preview.mp4";
+import loadingAnimation from "../../../assets/new-homepage/product-overview/loading.svg";
 
 const Trigger = ({ isOpen, title, isComingSoon }) => {
     return (
@@ -161,7 +163,12 @@ const ProductOverview = () => {
                 ) : (
                     <ProductOverviewVideo
                         autoplay="autoplay"
+                        loop
                         muted
+                        controls
+                        webkit-playsinline
+                        playsinline
+                        poster={loadingAnimation}
                         src={accordionItems[openIndex].video}
                     />
                 )}

@@ -1,7 +1,7 @@
 import React from "react";
 import HeroSectionWithTiles from "./hero-section-with-tiles";
-
 import { OrangeText } from "./hero-section-with-tiles.styled";
+import links from "../links";
 
 const heroSectionData = {
     title: (
@@ -14,7 +14,7 @@ const heroSectionData = {
     dataLeftTile: {
         title: "Open Source",
         buttonLabel: "GET STARTED",
-        buttonLink: "/docs/",
+        buttonLink: links.openSource,
         price: "Free",
         benefits: [
             {
@@ -51,7 +51,7 @@ const heroSectionData = {
     dataMainTile: {
         title: "Business",
         buttonLabel: "Join the waiting list", // "Try it now for free",
-        buttonLink: "https://docs.google.com/forms/d/1IRniZ3Qevx1LQkMEpOtdOdOLD-DLmMUdKn-_q1huNVs/",
+        buttonLink: links.business,
         subtitle: "Launching soon", //"Free tier included",
         minUsers: 1,
         maxUsers: 100,
@@ -107,7 +107,7 @@ const heroSectionData = {
     dataRightTile: {
         title: "Enterprise",
         buttonLabel: "Contact Us",
-        buttonLink: "/call/demo",
+        buttonLink: links.enterprise,
         price: "3,499",
         benefits: [
             {

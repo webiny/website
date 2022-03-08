@@ -44,9 +44,9 @@ const FooterMenu = () => (
     <ContentContainer className={footerMenu}>
         <MenuBlock>
             <SectionTitle>Developers</SectionTitle>
-            <a href="/">Getting Started</a>
-            <a href="/docs/webiny/introduction/">Documentation</a>
+            <a href="/docs/get-started/install-webiny">Install Webiny</a>
             <a
+                target="_blank"
                 onClick={() => {
                     trackGoToGithub({ placement: "footer-menu" });
                 }}
@@ -63,6 +63,7 @@ const FooterMenu = () => (
                 GitHub repository
             </a>
             <a
+                target="_blank"
                 onClick={() => {
                     trackGoToGithub({ placement: "footer-menu" });
                 }}
@@ -72,24 +73,29 @@ const FooterMenu = () => (
             </a>
         </MenuBlock>
         <MenuBlock>
-            <SectionTitle>Webiny</SectionTitle>
-            <Link to="/why-serverless">Why Serverless?</Link>
-            <Link to="/features">Features</Link>
-            <Link to="/roadmap">Roadmap</Link>
+            <SectionTitle>Products</SectionTitle>
+            <Link to="/enterprise-serverless-cms/headless-cms">Headless CMS</Link>
+            <Link to="/enterprise-serverless-cms/page-builder">Page Builder</Link>
+            <Link to="/enterprise-serverless-cms/file-manager">File Manager</Link>
+            <Link to="/enterprise-serverless-cms/form-builder">Form Builder</Link>
+            <Link to="/enterprise-serverless-cms/form-builder">Form Builder</Link>
+            <a target="_blank" href="/docs/overview/applications/control-panel">
+                Control Panel
+            </a>
+            <a target="_blank" href="/docs/overview/applications/apw">
+                Publishing Workflow
+            </a>
         </MenuBlock>
         <MenuBlock>
             <SectionTitle>Community</SectionTitle>
-            <Link to="/forum">Forum</Link>
-            <a href="https://www.webiny.com/slack">Chat</a>
+            <a target="_blank" href="https://www.webiny.com/slack">
+                Slack
+            </a>
             <Link to="/blog">Blog</Link>
+            <a target="_blank" href="http://meetup.com/webiny/events/">
+                Meetup
+            </a>
             <Link to="/swag">SWAG</Link>
-        </MenuBlock>
-        <MenuBlock>
-            <SectionTitle>Included Apps</SectionTitle>
-            <Link to="/">Headless CMS</Link>
-            <Link to="/">Page Builder</Link>
-            <Link to="/">Form Builder</Link>
-            <Link to="/">File Manager</Link>
         </MenuBlock>
         <MenuBlock>
             <SectionTitle>Use Cases & Guides</SectionTitle>
@@ -114,14 +120,13 @@ const FooterMenu = () => (
             <Link rel="prerender" to="/about-us">
                 About Us
             </Link>
-            <a href="https://careers.webiny.com">Careers</a>
+            <a target="_blank" href="https://careers.webiny.com">
+                Careers
+            </a>
             <Link rel="prerender" to="/privacy-policy">
                 Privacy Policy
             </Link>
-            <a href="mailto:sven@webiny.com">Contact Us</a>
-            <Link rel="prerender" to="/">
-                Support
-            </Link>
+            <a href="mailto:contact@webiny.com">Contact Us</a>
         </MenuBlock>
     </ContentContainer>
 );

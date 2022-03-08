@@ -115,8 +115,7 @@ export const FEATURES = [
             </Fragment>
         ),
         actionLabel: "Learn more",
-        actionLink:
-            "https://docs.webiny.com/docs/webiny-apps/headless-cms/features/content-modeling",
+        actionLink: "/docs/overview/applications/headless-cms#content-modeling",
         background: grayRectImg,
         imageOnLeft: false,
     },
@@ -141,7 +140,7 @@ export const FEATURES = [
             </Fragment>
         ),
         actionLabel: "Learn more",
-        actionLink: "https://docs.webiny.com/docs/webiny-apps/headless-cms/features/localization",
+        actionLink: "/docs/overview/applications/headless-cms#multi-language",
         background: false,
         imageOnLeft: true,
     },
@@ -163,8 +162,7 @@ export const FEATURES = [
             </Fragment>
         ),
         actionLabel: "Learn more",
-        actionLink:
-            "https://docs.webiny.com/docs/webiny-apps/headless-cms/features/graphql-playground",
+        actionLink: "/docs/admin-area/basics/api-playground",
         background: grayRectInvertedImg,
         imageOnLeft: false,
     },
@@ -186,7 +184,7 @@ export const FEATURES = [
             </Fragment>
         ),
         actionLabel: "Learn more",
-        actionLink: "http://docs.webiny.com/docs/webiny-apps/headless-cms/features/access-tokens",
+        actionLink: "/docs/overview/applications/file-manager",
         background: grayRectImg,
         imageOnLeft: false,
     },

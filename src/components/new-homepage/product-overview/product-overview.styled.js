@@ -5,6 +5,7 @@ import mq from "../../utils/breakpoints";
 
 import BackgroundImageDesktop from "../../../assets/new-homepage/product-overview/product-overview-bg.svg";
 import BackgroundImageMobile from "../../../assets/new-homepage/product-overview/product-overview-bg.svg";
+import { keyframes } from "styled-components";
 
 export const H2 = styled.h2(
     {
@@ -233,3 +234,13 @@ export const ProductsOverviewContainer = styled.div(
         paddingRight: ["16px", "16px", 0],
     }),
 );
+
+export const Preloader = styled.div({
+    display: "inline-block",
+    fontSize: 0,
+    padding: 0,
+    position: "absolute",
+    top: "calc(50% - 16px)",
+    left: "calc(50% - 16px)",
+    zIndex: 1,
+});

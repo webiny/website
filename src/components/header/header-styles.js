@@ -280,7 +280,7 @@ export const MenuItemMobile = styled("li")({
     lineHeight: "23px",
     marginBottom: "20px",
 
-    "& .mobile-link": {
+    "& .mobile-link, & .link": {
         display: "block",
         color: "#000E1A",
         marginBottom: "16px",
@@ -560,7 +560,7 @@ export const ProductDropdownItem = styled("div")({
         flexDirection: "column",
         position: "relative",
         whiteSpace: "nowrap",
-                overflow: "hidden",
+        overflow: "hidden",
 
         "& span:first-child": {
             marginBottom: "7px",
@@ -736,5 +736,6 @@ export const FromTheBlogCOntainer = styled("div")({
 export const MobileDownArrow = styled("img")({
     position: "absolute",
     top: "6px",
-    left: "-13px",
+    left: "-15px",
+    transform: "rotate(90deg)",
 });

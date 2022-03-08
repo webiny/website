@@ -1,7 +1,6 @@
 import React from "react";
-
 import Button from "../../ui/button";
-
+import links from "../links";
 import {
     buttonOutlinePrimary,
     FlexWrapper,
@@ -29,7 +28,7 @@ const PriceListDesktop = ({ priceList, showPriceList }) => {
                                 <h4>Open Source</h4>
                                 <Button
                                     target="_blank"
-                                    link="/docs/"
+                                    link={links.openSource}
                                     type="primary"
                                     className="button-border-line"
                                 >
@@ -39,24 +38,19 @@ const PriceListDesktop = ({ priceList, showPriceList }) => {
                             <SubWrapper className="with-button">
                                 <h4>Business</h4>
                                 <Button
-                                    link="https://docs.google.com/forms/d/1IRniZ3Qevx1LQkMEpOtdOdOLD-DLmMUdKn-_q1huNVs/"
+                                    target="_blank"
+                                    link={links.business}
                                     type="primary"
                                     className="try-it-now-for-free_button button-border-line"
                                 >
                                     Join the waiting list
                                 </Button>
-                                <Button
-                                    link="/"
-                                    type="primary"
-                                    className="try-it-now_button button-border-line"
-                                >
-                                    Try it now
-                                </Button>
                             </SubWrapper>
                             <SubWrapper className="with-button">
                                 <h4>Enterprise</h4>
                                 <Button
-                                    link="/call/demo"
+                                    link={links.enterprise}
+                                    target="_blank"
                                     type="outline"
                                     className={`${buttonOutlinePrimary} button-border-line`}
                                 >
@@ -116,7 +110,7 @@ const PriceListDesktop = ({ priceList, showPriceList }) => {
                             <SubWrapper className="with-button">
                                 <Button
                                     target="_blank"
-                                    link="/docs/webiny/introduction/"
+                                    link={links.openSource}
                                     type="primary"
                                     className="button-border-line"
                                 >
@@ -124,13 +118,19 @@ const PriceListDesktop = ({ priceList, showPriceList }) => {
                                 </Button>
                             </SubWrapper>
                             <SubWrapper className="with-button">
-                                <Button link="/" type="primary" className="button-border-line">
+                                <Button
+                                    link={links.business}
+                                    target="_blank"
+                                    type="primary"
+                                    className="button-border-line"
+                                >
                                     Try it now for free
                                 </Button>
                             </SubWrapper>
                             <SubWrapper className="with-button">
                                 <Button
-                                    link="/"
+                                    link={links.enterprise}
+                                    target="_blank"
                                     type="outline"
                                     className={`${buttonOutlinePrimary} button-border-line`}
                                 >

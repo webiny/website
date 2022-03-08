@@ -176,12 +176,15 @@ export default () => (
                 ))}
                 <img src={featuresFunnelImg} alt="" className="features__funnel" />
             </BoxList>
+
             <ButtonWrapper>
                 <p className="text">Why go serverless?</p>
+                {/*
                 <Button className={"button"} type={"secondary"} link="/why-webiny">
                     Learn more
                     <img src={rightArrow} alt="" className="icon" />
                 </Button>
+                */}
             </ButtonWrapper>
         </ContentContainer>
     </ServerlessByDesignSection>

@@ -88,7 +88,7 @@ const HeroComponent = ({
                 <ButtonPrimary link={buttonTopLink} type={"primary"}>
                     {buttonTopLabel}
                 </ButtonPrimary>
-                <RequestLink to={buttonBottomLink}>
+                <RequestLink target="_blank" href={buttonBottomLink}>
                     {buttomBottomLabel} <ImageArrow src={iconArrow} />
                 </RequestLink>
             </HeroContainer>
