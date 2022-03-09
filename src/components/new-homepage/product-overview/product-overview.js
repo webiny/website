@@ -162,12 +162,12 @@ const ProductOverview = () => {
                     />
                 ) : (
                     <ProductOverviewVideo
-                        autoplay="autoplay"
+                        autoPlay="autoplay"
                         loop
                         muted
                         controls
                         webkit-playsinline
-                        playsinline
+                        playsInline
                         poster={loadingAnimation}
                         src={accordionItems[openIndex].video}
                     />

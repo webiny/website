@@ -1,6 +1,6 @@
 import React, { Children, Fragment, useContext, useState } from "react";
-import{ navigate } from "gatsby-link";
-import Link from '../utils/link';
+import { navigate } from "gatsby-link";
+import Link from "../utils/link";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 
@@ -23,7 +23,6 @@ import { DROPDOWN_MENUS } from "./header-data";
 import {
     MenuItem,
     parentMenu,
-    linkStyle,
     horizontalLine,
     verticalLine,
     DropDown,
@@ -76,47 +75,39 @@ const MobileMenuItemList = () => {
                             <React.Fragment>
                                 <MobileDownArrow src={MobileDownArrowIcon} alt="menu-arrow" />
                                 <div className="section--primary">
-                                    {menu.primarySection.menuItems
-                                        .sort((a, b) => (a.id > b.id ? 1 : -1))
-                                        .map(menuItem => {
-                                            return (
-                                                <Link
-                                                    key={menuItem.id}
-                                                    className={"link"}
-                                                    rel="prerender"
-                                                    to={menuItem.link}
-                                                >
-                                                    <ProductDropdownItemMobile>
-                                                        <div className="image--container-mobile">
-                                                            {menuItem.isComingSoon && (
-                                                                <div className="coming--soon">
-                                                                    coming soon
-                                                                </div>
-                                                            )}
-                                                            <img
-                                                                src={menuItem.image}
-                                                                alt="menu-icon"
-                                                            />
-                                                        </div>
-                                                        <div
-                                                            className={
-                                                                menuItem.isComingSoon
-                                                                    ? "add-margin" +
-                                                                      " " +
-                                                                      "label-arrow-container"
-                                                                    : "label-arrow-container"
-                                                            }
-                                                        >
-                                                            <span>{menuItem.label}</span>
-                                                            <img
-                                                                src={RightArrow}
-                                                                alt="right-arrow"
-                                                            />
-                                                        </div>
-                                                    </ProductDropdownItemMobile>
-                                                </Link>
-                                            );
-                                        })}
+                                    {menu.primarySection.menuItems.map(menuItem => {
+                                        return (
+                                            <Link
+                                                key={menuItem.id}
+                                                className={"link"}
+                                                rel="prerender"
+                                                to={menuItem.link}
+                                            >
+                                                <ProductDropdownItemMobile>
+                                                    <div className="image--container-mobile">
+                                                        {menuItem.isComingSoon && (
+                                                            <div className="coming--soon">
+                                                                coming soon
+                                                            </div>
+                                                        )}
+                                                        <img src={menuItem.image} alt="menu-icon" />
+                                                    </div>
+                                                    <div
+                                                        className={
+                                                            menuItem.isComingSoon
+                                                                ? "add-margin" +
+                                                                  " " +
+                                                                  "label-arrow-container"
+                                                                : "label-arrow-container"
+                                                        }
+                                                    >
+                                                        <span>{menuItem.label}</span>
+                                                        <img src={RightArrow} alt="right-arrow" />
+                                                    </div>
+                                                </ProductDropdownItemMobile>
+                                            </Link>
+                                        );
+                                    })}
                                 </div>
                             </React.Fragment>
                         )}
@@ -169,7 +160,7 @@ const MenuItemList = ({ cards, handleVideoPlay, sticky }) => {
         <React.Fragment>
             <ul className="menu--left">
                 {DROPDOWN_MENUS.map(menu => (
-                    <MenuItem key={menu.id} className={linkStyle + " " + parentMenu}>
+                    <MenuItem key={menu.id} className={parentMenu}>
                         <Link rel="prerender" to={menu.link}>
                             {menu.label}
                         </Link>
@@ -182,7 +173,7 @@ const MenuItemList = ({ cards, handleVideoPlay, sticky }) => {
                                         {menu.primarySection.menuItems.map(menuItem => {
                                             return (
                                                 <Link
-                                                    key={menuItem.index}
+                                                    key={menuItem.id}
                                                     className={"link"}
                                                     rel="prerender"
                                                     to={menuItem.link}
@@ -263,7 +254,10 @@ const MenuItemList = ({ cards, handleVideoPlay, sticky }) => {
                                         </div>
                                         <FromTheBlogCOntainer>
                                             {cards.map(item => (
-                                                <Card onClick={() => handleClick(item)}>
+                                                <Card
+                                                    key={item.id}
+                                                    onClick={() => handleClick(item)}
+                                                >
                                                     <Img
                                                         className="blog-image"
                                                         fluid={item.imgSrc}

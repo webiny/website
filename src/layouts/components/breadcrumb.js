@@ -35,7 +35,7 @@ const BreadCrumbList = styled("div")(
         alignItems: "center",
 
         "& .breadcrumb-item": {
-            "& a": {
+            "& a, & span": {
                 fontSize: 14,
                 lineHeight: "18px",
 
@@ -72,12 +72,16 @@ const BreadCrumb = props => {
                 <BreadCrumbList>
                     {breadcrumbs.map((item, index) => (
                         <div className="breadcrumb-item" key={index}>
-                            <Link
-                                to={item.link}
-                                className={breadcrumbs.length > index + 1 ? "not-last" : "last"}
-                            >
-                                {item.text}
-                            </Link>{" "}
+                            {item.link ? (
+                                <Link
+                                    to={item.link}
+                                    className={breadcrumbs.length > index + 1 ? "not-last" : "last"}
+                                >
+                                    {item.text}
+                                </Link>
+                            ) : (
+                                <span className={"last"}>{item.text}</span>
+                            )}
                             {breadcrumbs.length > index + 1 ? <img src={arrowIcon} alt="" /> : ""}
                         </div>
                     ))}

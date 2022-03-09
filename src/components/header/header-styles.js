@@ -261,6 +261,22 @@ export const MenuItem = styled("li")(
                 transitionDelay: "0s, 0s, 0.1s",
             },
         },
+        ">a.link": {
+            fontSize: theme.fontSize.sm,
+            fontWeight: theme.fontWeight.bold,
+            textDecoration: "none",
+            color: theme.color.black,
+            display: "inline-block",
+            height: "42px",
+
+            transition: "150ms color",
+            "&:hover": {
+                color: "#FA5A28",
+            },
+            "&:hover .arrow-icon path": {
+                fill: "#FA5A28",
+            },
+        },
     },
     mq({
         marginLeft: [0, -4],
@@ -302,24 +318,9 @@ export const parentMenu = css(
     },
     mq({
         marginBottom: [15, 0],
-        paddingBottom: [15, 35],
+        paddingBottom: [15, 20],
     }),
 );
-
-export const linkStyle = css({
-    fontSize: theme.fontSize.sm,
-    fontWeight: theme.fontWeight.bold,
-    textDecoration: "none",
-    color: theme.color.black,
-
-    transition: "150ms color",
-    "&:hover": {
-        color: "#FA5A28",
-    },
-    "&:hover .arrow-icon path": {
-        fill: "#FA5A28",
-    },
-});
 
 export const DownArrow = styled("div")(
     {

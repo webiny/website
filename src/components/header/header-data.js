@@ -31,7 +31,6 @@ export const PRODUCTS_MENU = {
         menuItems: [
             {
                 id: 0,
-                index: 0,
                 label: "Headless CMS",
                 text: "GraphQL-based Headless CMS.",
                 link: "/enterprise-serverless-cms/headless-cms",
@@ -39,7 +38,6 @@ export const PRODUCTS_MENU = {
             },
             {
                 id: 2,
-                index: 4,
                 label: "Advanced Publishing Workflow",
                 text: "Peer reviewed publishing process.",
                 link: "/docs/overview/applications/apw",
@@ -48,7 +46,6 @@ export const PRODUCTS_MENU = {
             },
             {
                 id: 1,
-                index: 2,
                 label: "Page Builder",
                 text: "No-code, drag&drop page builder.",
                 link: "/enterprise-serverless-cms/page-builder",
@@ -56,7 +53,6 @@ export const PRODUCTS_MENU = {
             },
             {
                 id: 5,
-                index: 3,
                 label: "Control Panel",
                 text: "Site reliability and monitoring.",
                 link: "/docs/overview/applications/control-panel",
@@ -65,7 +61,6 @@ export const PRODUCTS_MENU = {
             },
             {
                 id: 4,
-                index: 1,
                 label: "File Manager",
                 text: "Serverless digital asset management.",
                 link: "/enterprise-serverless-cms/file-manager",
@@ -73,7 +68,6 @@ export const PRODUCTS_MENU = {
             },
             {
                 id: 3,
-                index: 6,
                 label: "Form Builder",
                 text: "No-code, drag&drop form builder.",
                 link: "/enterprise-serverless-cms/form-builder",
