@@ -36,7 +36,7 @@ export const useSyncScroller = (id) => {
 
       for (let elem of elements) {
         let otherEl = elem.current;
-        if (otherEl !== el) {
+        if (otherEl !== el && otherEl) {
           if (
             updateX &&
             Math.round(
