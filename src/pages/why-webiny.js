@@ -7,6 +7,7 @@ import HeroWhyWebiny from "../components/why-webiny/hero-why-webiny/hero-why-web
 import WhyWebinyTable from "../components/why-webiny/why-webiny-table/why-webiny-table";
 
 import BaseLayout from "../layouts/base";
+import TableDisclaimer from "../components/why-webiny/table-disclaimer/table-disclaimer";
 
 const WhyWebinyPage = () => {
     return (
@@ -18,6 +19,7 @@ const WhyWebinyPage = () => {
             <ModernBusinesses />
             <WebinyUnlocks />
             <WhyWebinyTable />
+            <TableDisclaimer />
             <InstallWebiny />
         </BaseLayout>
     );
