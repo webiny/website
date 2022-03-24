@@ -57,19 +57,19 @@ const productFundamentals = [
             image: "yes",
         },
         contentful: {
-            image: "yes",
+            image: "no",
         },
         strapi: {
             image: "no",
         },
         storyblok: {
-            image: "yes",
+            image: "no",
         },
         sanity: {
-            image: "yes",
+            image: "no",
         },
         webflow: {
-            image: "yes",
+            image: "no",
         },
         height: "58px",
     },
@@ -244,7 +244,7 @@ const technicalLimits = [
             text: (
                 <div className="text-center">
                     3950 calls per second 
-                    <br /><a href="docs/performance-and-load-benchmark/headless-cms/write-benchmark">(Read more)</a>
+                    <br /><a style={{ color: '#00CCB0' }} href="https://www.webiny.com/docs/performance-and-load-benchmark/headless-cms/write-benchmark">(Read more)</a>
                 </div>
             )
         },
@@ -271,7 +271,7 @@ const technicalLimits = [
             text: (
                 <div className="text-center">
                     3500 calls per second 
-                    <br /><a href="docs/performance-and-load-benchmark/headless-cms/write-benchmark">(Read more)</a>
+                    <br /><a  style={{ color: '#00CCB0' }} href="https://www.webiny.com/docs/performance-and-load-benchmark/headless-cms/write-benchmark">(Read more)</a>
                 </div>
             ),
         },
