@@ -143,7 +143,8 @@ const WhyWebinyTableDesktop = ({ cmsCompareData, data, mainTitle }) => {
                                     ),
                                 )}
                             </div>
-                            {index === data.length - 1 && (
+                            {/* TODO: Put back once other comparison pages are complete */}
+                            {/* {index === data.length - 1 && (
                                 <div className="why-webiny-table-row-right row-bottom-spacing">
                                     {cmsCompareData.map((cmsItem, cmsIndex) => (
                                         <Link key={cmsIndex}>
@@ -154,7 +155,7 @@ const WhyWebinyTableDesktop = ({ cmsCompareData, data, mainTitle }) => {
                                         </Link>
                                     ))}
                                 </div>
-                            )}
+                            )} */}
                         </React.Fragment>
                     ))}
                 </div>

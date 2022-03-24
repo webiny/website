@@ -58,22 +58,18 @@ const productFundamentals = [
         },
         contentful: {
             image: "yes",
-            text: "(kind of)",
         },
         strapi: {
             image: "no",
         },
         storyblok: {
             image: "yes",
-            text: "(kind of)",
         },
         sanity: {
             image: "yes",
-            text: "(kind of)",
         },
         webflow: {
             image: "yes",
-            text: "(kind of)",
         },
         height: "58px",
     },
@@ -201,16 +197,16 @@ const pricingPlansData = [
             text: "$9 - $27 /user",
         },
         contentful: {
-            text: "$489 - $2,874",
+            text: "$489 - $2,874 / tier",
         },
         strapi: {
             text: "$9 - $29  /user",
         },
         storyblok: {
-            text: "€90 - €411",
+            text: "$90 - $411 /tier",
         },
         sanity: {
-            text: "$99 - $949",
+            text: "$99 - $949 /tier",
         },
         webflow: {
             text: "$12 - $36 /user",
@@ -238,11 +234,68 @@ const pricingPlansData = [
             text: "Pay per user",
         },
         height: "38px",
+    }
+];
+
+const technicalLimits = [
+    {
+        label: "Content Management API calls",
+        webiny: {
+            text: (
+                <div className="text-center">
+                    3950 calls per second 
+                    <br /><a href="docs/performance-and-load-benchmark/headless-cms/write-benchmark">(Read more)</a>
+                </div>
+            )
+        },
+        contentful: {
+            text: "10 calls per second",
+        },
+        strapi: {
+            text: "n/a",
+        },
+        storyblok: {
+            text: "3-6 calls per second",
+        },
+        sanity: {
+            text: "25 call per second",
+        },
+        webflow: {
+            text: "60 per minute",
+        },
+        height: "56px",
+    },
+    {
+        label: "Content Delivery API calls",
+        webiny: {
+            text: (
+                <div className="text-center">
+                    3500 calls per second 
+                    <br /><a href="docs/performance-and-load-benchmark/headless-cms/write-benchmark">(Read more)</a>
+                </div>
+            ),
+        },
+        contentful: {
+            text: "78 calls per second",
+        },
+        strapi: {
+            text: "n/a",
+        },
+        storyblok: {
+            text: "n/a",
+        },
+        sanity: {
+            text: "up to 1000 calls per second",
+        },
+        webflow: {
+            text: "60 per minute"
+        },
+        height: "56px",
     },
     {
         label: "Users limit",
         webiny: {
-            text: "Unlimited",
+            text: "Unlimited"
         },
         contentful: {
             text: "Up to 25",
@@ -254,16 +307,68 @@ const pricingPlansData = [
             text: "Up to 40",
         },
         sanity: {
-            text: "Unlimited",
+            text: "up to 1000 per project",
         },
         webflow: {
-            text: "Up to 9",
+            text: "Up to 9"
         },
         height: "38px",
     },
+    {
+        label: "Content types",
+        webiny: {
+            text: "Unlimited"
+        },
+        contentful: {
+            text: "max 48",
+        },
+        strapi: {
+            text: "Unlimited",
+        },
+        storyblok: {
+            text: (
+                <div className="text-center">
+                    100  / 200 / 300 / Unlimited on enterprise
+                </div>
+            ),
+        },
+        sanity: {
+            text: "unknown",
+        },
+        webflow: {
+            text: "20 / 40 (business tier)"
+        },
+        height: "56px",
+    },
+    {
+        label: "CMS records limit",
+        webiny: {
+            text: "Unlimited"
+        },
+        contentful: {
+            text: "25k / 50k / custom",
+        },
+        strapi: {
+            text: "Unlimited",
+        },
+        storyblok: {
+            text: (
+                <div className="text-center">
+                    1 million (on Enterprise plan)
+                </div>
+            ),
+        },
+        sanity: {
+            text: "1 million",
+        },
+        webflow: {
+            text: "10k"
+        },
+        height: "56px",
+    }
 ];
 
-const contentManagmentData = [
+const contentManagementData = [
     {
         label: "API type",
         webiny: {
@@ -292,7 +397,7 @@ const contentManagmentData = [
             image: "yes",
         },
         contentful: {
-            text: "[Launch feature]",
+            image: "no",
         },
         strapi: {
             image: "no",
@@ -305,11 +410,6 @@ const contentManagmentData = [
         },
         webflow: {
             image: "yes",
-            text: (
-                <div className="text-center">
-                    (customizable in <br /> higher paid plans)
-                </div>
-            ),
         },
         height: "76px",
     },
@@ -335,20 +435,21 @@ const contentManagmentData = [
         },
         height: "38px",
     },
-    {
-        label: "Performance and cost management",
-        webiny: {
-            text: "(coming soon)",
-        },
-        contentful: {
-            text: "Usage dashboard",
-        },
-        strapi: "",
-        storyblok: "",
-        sanity: "",
-        webflow: "",
-        height: "38px",
-    },
+    // TODO: Add back when we have launched WCP
+    // {
+    //     label: "Performance and cost management",
+    //     webiny: {
+    //         text: "(coming soon)",
+    //     },
+    //     contentful: {
+    //         text: "Usage dashboard",
+    //     },
+    //     strapi: "",
+    //     storyblok: "",
+    //     sanity: "",
+    //     webflow: "",
+    //     height: "38px",
+    // },
     {
         label: "Content versioning and rollback",
         webiny: {
@@ -752,8 +853,12 @@ const data = [
         arr: pricingPlansData,
     },
     {
+        label: "Technical Limits",
+        arr: technicalLimits
+    },
+    {
         label: "Content managment",
-        arr: contentManagmentData,
+        arr: contentManagementData,
     },
     {
         label: "Website building",
