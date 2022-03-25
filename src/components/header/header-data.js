@@ -17,7 +17,7 @@ import MeetupIcon from "./assets/meetupIcon.svg";
 
 export const WEBINY_MENU = {
     id: 0,
-    label: "Why webiny",
+    label: "Why Webiny",
     link: "/why-webiny",
 };
 
