@@ -1,39 +1,28 @@
 import React from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+
+import WebinyUnlocks from "../components/why-webiny/webiny-unlocks/webiny-unlocks";
+import ModernBusinesses from "../components/why-webiny/modern-tech-solutions/modern-businesses";
+import InstallWebiny from "../components/new-homepage/install-webiny-section/install-webiny";
+import HeroWhyWebiny from "../components/why-webiny/hero-why-webiny/hero-why-webiny";
+import WhyWebinyTable from "../components/why-webiny/why-webiny-table/why-webiny-table";
 
 import BaseLayout from "../layouts/base";
+import TableDisclaimer from "../components/why-webiny/table-disclaimer/table-disclaimer";
 
-import FooterCta from "../components/ui/footer-cta";
-import ServerlessDIY from "../components/why-webiny/serverless-diy/serverless-diy";
-import Hero from "../components/why-webiny/hero/hero";
-import WebinyOverview from "../components/why-webiny/overview/overview";
-import WhyServerlessComponent from "../components/why-webiny/why-serverless/why-serverless";
-import ServerlessChallenges from "../components/why-webiny/serverless-challenges/serverless-challenges";
-import HereComesWebiny from "../components/why-webiny/here-comes-webiny/here-comes-webiny";
-
-class WhyWebinyPage extends React.Component {
-    componentDidMount() {
-        AOS.init();
-    }
-
-    render() {
-        return (
-            <BaseLayout
-                title="Why Webiny?"
-                description="Discover the serverless benefits, its challenges and how Webiny overcomes them."
-                fixedHeader={false}
-            >
-                <Hero />
-                {/*<WebinyOverview />*/}
-                <WhyServerlessComponent />
-                <ServerlessChallenges />
-                <HereComesWebiny />
-                <ServerlessDIY />
-                <FooterCta />
-            </BaseLayout>
-        );
-    }
-}
+const WhyWebinyPage = () => {
+    return (
+        <BaseLayout
+            title="Why Webiny?"
+            description="Discover the serverless benefits, its challenges and how Webiny overcomes them."
+        >
+            <HeroWhyWebiny />
+            <ModernBusinesses />
+            <WebinyUnlocks />
+            <WhyWebinyTable />
+            <TableDisclaimer />
+            <InstallWebiny />
+        </BaseLayout>
+    );
+};
 
 export default WhyWebinyPage;

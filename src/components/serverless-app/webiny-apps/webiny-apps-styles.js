@@ -5,7 +5,7 @@ import theme from "../../utils/theme";
 import mq from "../../utils/breakpoints";
 // assets
 import heroBg from "./assets/webiny-apps-hero-bg.svg";
-import rectangleBg from "../../why-webiny/why-serverless/assets/serverless-bg.svg";
+import rectangleBg from "./assets/serverless-bg.svg";
 import contributeBg from "./assets/bg.svg";
 import benefitsBg from "./assets/serverless-benefits-rectangle.svg";
 
