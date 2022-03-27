@@ -8,7 +8,7 @@ code span {
 
 code[class*="language-"],
 pre[class*="language-"] {
-  color: #e9e9e9;
+  color: #000;
   background: none;
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   font-size: 1em;
@@ -58,7 +58,7 @@ pre[class*="language-"] {
 }
 
 .token.punctuation {
-  color: #ccc;
+  color: #999;
 }
 
 .token.tag,
@@ -90,7 +90,7 @@ pre[class*="language-"] {
 .token.atrule,
 .token.keyword,
 .token.builtin {
-  color: #cc99cd;
+  color: #07a;
 }
 
 .token.string,
@@ -98,7 +98,7 @@ pre[class*="language-"] {
 .token.attr-value,
 .token.regex,
 .token.variable {
-  color: #7ec699;
+  color: #690;
 }
 
 .token.operator,
