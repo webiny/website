@@ -72,7 +72,7 @@ const PriceListMobile = ({ priceList }) => {
                 <CollapsibleItem
                     priceList={priceList}
                     plan="business"
-                    buttonText="Try it now for free"
+                    buttonText="Join the waiting list"
                     collapseName="Business"
                     buttonType="primary"
                     link={
