@@ -63,7 +63,7 @@ export const SubWrapper = styled("div")({
         justifyContent: "center",
 
         "& .try-it-now-for-free_button": mq({
-            display: ["none", "none", "block"],
+            display: ["none", "block", "block"],
         }),
 
         "& .try-it-now_button": mq({
@@ -157,7 +157,6 @@ export const OddWrapper = styled.div(
 export const ButtonsWrapper = styled.div(props =>
     mq({
         marginBottom: ["8px", "8px", "28px"],
-        display: [props.bottom && "none", props.bottom && "none", "block"],
         marginTop: props.bottom && "50px",
     }),
 );

@@ -251,14 +251,19 @@ const H2 = styled.h2(
 );
 
 const SeeFullPlanButton = styled(Button)({
-    maxWidth: "299px",
-    padding: "12px 19px !important",
-    fontWeight: "bold",
-    fontSize: "14px",
-    lineHeight: "18px",
-    letterSpacing: "0.75px",
-    textTransform: "uppercase",
-});
+        maxWidth: "299px",
+        padding: "12px 19px !important",
+        fontWeight: "bold",
+        fontSize: "14px",
+        lineHeight: "18px",
+        letterSpacing: "0.75px",
+        textTransform: "uppercase",
+    },
+
+    mq({
+        display: ["none", "block", "block"],
+    }),
+);
 
 const ArrowIcon = styled("img")({
     "&.left-arrow": {
@@ -278,24 +283,12 @@ const SeeFullPlan = ({ showPriceListToggler, showPriceList }) => {
             <H2>
                 Choose exactly <span>what you need</span>
             </H2>
-            <SeeFullPlanButton type="outlineDark" onClick={showPriceListToggler}>
-                <ArrowIcon
-                    id="plan-comparison"
-                    src={arrowDown}
-                    className={`left-arrow ${showPriceList ? "arrow-top" : ""}`}
-                />
-                See a full plan comparison
-                <ArrowIcon
-                    src={arrowDown}
-                    className={`right-arrow ${showPriceList ? "arrow-top" : ""}`}
-                />
-            </SeeFullPlanButton>
         </SeeFullPlanWrapper>
     );
 };
 
 const PriceList = () => {
-    const [showPriceList, setShowPriceList] = useState(false);
+    const [showPriceList, setShowPriceList] = useState(true);
     const isDesktop = useWindowWidth();
     const showPriceListToggler = () => {
         setShowPriceList(!showPriceList);

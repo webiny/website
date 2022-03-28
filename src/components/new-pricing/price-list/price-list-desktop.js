@@ -124,7 +124,7 @@ const PriceListDesktop = ({ priceList, showPriceList }) => {
                                     type="primary"
                                     className="button-border-line"
                                 >
-                                    Try it now for free
+                                    Join the waiting list
                                 </Button>
                             </SubWrapper>
                             <SubWrapper className="with-button">
