@@ -209,7 +209,7 @@ const blogStyles = css(
                 fontSize: "0.9em",
                 whiteSpace: "pre-wrap",
                 "&.language-text": {
-                    fontSize: "0.8em",
+                    fontSize: "0.9em",
                     padding: "3px 5px",
                 },
             },

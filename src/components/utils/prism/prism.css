@@ -8,7 +8,7 @@ code span {
 
 code[class*="language-"],
 pre[class*="language-"] {
-  color: #e9e9e9;
+  color: #000;
   background: none;
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   font-size: 1em;
@@ -54,11 +54,11 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #999;
+  color: #708090;
 }
 
 .token.punctuation {
-  color: #ccc;
+  color: #999;
 }
 
 .token.tag,
@@ -75,7 +75,7 @@ pre[class*="language-"] {
 .token.boolean,
 .token.number,
 .token.function {
-  color: #f08d49;
+  color: #905;;
 }
 
 .token.property,
@@ -90,7 +90,7 @@ pre[class*="language-"] {
 .token.atrule,
 .token.keyword,
 .token.builtin {
-  color: #cc99cd;
+  color: #07a;
 }
 
 .token.string,
@@ -98,13 +98,13 @@ pre[class*="language-"] {
 .token.attr-value,
 .token.regex,
 .token.variable {
-  color: #7ec699;
+  color: #690;
 }
 
 .token.operator,
 .token.entity,
 .token.url {
-  color: #67cdcc;
+  color: #9a6e3a;
   background: none;
 }
 
