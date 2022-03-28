@@ -475,11 +475,11 @@ const contentManagementData = [
     {
         label: "Content model definitions",
         webiny: { text: "Via UI, API and Code" },
-        contentful: { text: "?" },
-        strapi: "",
-        storyblok: "",
-        sanity: "",
-        webflow: "",
+        contentful: { text: "Via UI and API" },
+        strapi: { text: "Via UI and API" },
+        storyblok: { text: "Via UI" },
+        sanity: { text: "Via Code" },
+        webflow: { text: "Via UI" },
         height: "38px",
     },
     {
