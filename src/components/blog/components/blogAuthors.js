@@ -75,6 +75,6 @@ export default {
         name: "Ben Read",
         description: "Developer Relations & Software Engineer @ Webiny",
         avatar: BenImg,
-        twitter: "WebinyCMS"
+        twitter: "muzzlehatch_"
     }
 };

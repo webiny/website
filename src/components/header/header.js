@@ -340,7 +340,7 @@ const Header = ({ hasBanner = true }) => {
         return {
             id: index,
             title: card.frontmatter.title,
-            imgSrc: card.frontmatter.featureImage.childImageSharp.fluid,
+            imgSrc: card?.frontmatter?.featureImage?.childImageSharp?.fluid,
             imgAlt: card.frontmatter.title,
             actionLabel: "Read more",
             actionLink: card.frontmatter.slug,
