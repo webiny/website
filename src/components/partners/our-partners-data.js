@@ -131,7 +131,7 @@ export const OUR_PARTNERS_DATA = [
         image: logoGroundfog,
         name: "Groundfog",
         location: "Germany",
-        website: "www.groundfog.cloud",
+        website: "https://www.groundfog.cloud",
         description:
             "Groundfog aims to change the way we are used to work in the industry and challenges the status quo. Our true agile mindset gives us the space to work on the most important things - for our team and our customers. With our addiction to cloud technologies we combine proven and innovative concepts to create future-proof platforms bringing your cloud strategy to live. As strategic partner we are offering a wide range of cloud-native services, reaching from AI-driven personalized experiences and smart services to the operation and support of your cloud applications.",
     },
