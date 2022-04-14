@@ -12,6 +12,7 @@ import logoAspire from "./logos/aspire-logo.png";
 import logoFR from "./logos/fr-logo-.jpeg";
 import logoApeFactory from "./logos/ape-factory-logo.png";
 import logoInneed from "./logos/inneed-logo.png";
+import logoGroundfog from "./logos/groundfog.png";
 
 export const OUR_PARTNERS_DATA = [
     {
@@ -125,5 +126,13 @@ export const OUR_PARTNERS_DATA = [
         website: "https://aspirenxt.com/",
         description:
             "We are a leading IT Solutions provider with offices across India, South East Asia, and USA. We work fast, smart, and in sync with you helping you achieve more across digital transformation, cloud, and workplace transformation.",
+    },
+    {
+        image: logoGroundfog,
+        name: "Groundfog",
+        location: "Germany",
+        website: "www.groundfog.cloud",
+        description:
+            "Groundfog aims to change the way we are used to work in the industry and challenges the status quo. Our true agile mindset gives us the space to work on the most important things - for our team and our customers. With our addiction to cloud technologies we combine proven and innovative concepts to create future-proof platforms bringing your cloud strategy to live. As strategic partner we are offering a wide range of cloud-native services, reaching from AI-driven personalized experiences and smart services to the operation and support of your cloud applications.",
     },
 ];
