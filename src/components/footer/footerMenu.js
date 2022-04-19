@@ -95,6 +95,7 @@ const FooterMenu = () => (
             <a target="_blank" href="http://meetup.com/webiny/events/">
                 Meetup
             </a>
+            <Link to="/partners">Partners</Link>
             <Link to="/swag">SWAG</Link>
         </MenuBlock>
         <MenuBlock>
