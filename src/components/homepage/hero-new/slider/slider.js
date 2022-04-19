@@ -126,7 +126,6 @@ class Slider extends React.Component {
             content: this.tabs[tab].content,
             duration: this.tabs[tab].duration,
         });
-        console.log("Change tab:" + tab);
     };
 
     render() {
@@ -163,7 +162,6 @@ class Slider extends React.Component {
                     <Spinner
                         onClick={() => {
                             this.setState({ isPlaying: !this.state.isPlaying });
-                            console.log(this.state.isPlaying);
                         }}
                     >
                         <CountdownCircleTimer

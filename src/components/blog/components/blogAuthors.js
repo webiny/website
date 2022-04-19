@@ -8,6 +8,7 @@ import pavelImg from "../assets/pavel.png";
 import svenImg from "../assets/sven.png";
 import swapnilImg from "../assets/swapnil.png";
 import IgorImg from "../assets/igor.png";
+import BenImg from "../assets/ben.png";
 
 
 export default {
@@ -69,5 +70,11 @@ export default {
         name: "Igor Bobriakov",
         avatar: IgorImg,
         twitter: "WebinyCMS"
+    },
+    ben: {
+        name: "Ben Read",
+        description: "Developer Relations & Software Engineer @ Webiny",
+        avatar: BenImg,
+        twitter: "muzzlehatch_"
     }
 };
