@@ -181,7 +181,7 @@ const LeftTile = ({ dataTile }) => {
                 <Span>SELF HOSTED</Span>
             </GrayBackground>
             <ListTileContainer className="left-tile">
-                <ButtonPrimary link={dataTile.buttonLink} target="_blank" className="left-tile" type="primary">
+                <ButtonPrimary link={dataTile.buttonLink} className="left-tile" type="primary">
                     {dataTile.buttonLabel}
                 </ButtonPrimary>
                 <Ul className="left-tile">
