@@ -243,47 +243,5 @@ module.exports = {
                 // on every Gatsby route change.
             },
         },
-        {
-            resolve: "gatsby-plugin-sitemap",
-            options: {
-              query: `
-              {
-                allMdx(
-                    limit: 1000,
-                    sort: { fields: frontmatter___date, order: DESC },
-                    filter: { frontmatter: { slug: { regex: "/blog/" } } }
-                ) {
-                    nodes {
-                        id
-                        frontmatter {
-                            date(formatString: "MMMM DD, YYYY")
-                            author
-                            description
-                            slug
-                            title
-                            tags
-                        }
-                    }
-                }
-            }
-            `,
-              resolveSiteUrl: () => "https://www.webiny.com",
-              resolvePages: ({
-                allMdx: { nodes },
-              }) => {
-
-                console.log(nodes)
-                debugger;
-      
-                return nodes
-              },
-              serialize: ({ path, modifiedGmt }) => {
-                return {
-                  url: path,
-                  lastmod: modifiedGmt,
-                }
-              },
-            },
-          },
     ],
 };
