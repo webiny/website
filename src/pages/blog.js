@@ -3,11 +3,13 @@ import { graphql } from "gatsby";
 import BaseLayout from "../layouts/base";
 import Blogs from "../components/blog/blog";
 
+const metaDescription = "Find out the latest news from Webiny"
+
 export default ({ data, location }) => {
     const blogPosts = data.blog.nodes;
 
     return (
-        <BaseLayout title="Webiny Serverless Blog">
+        <BaseLayout title="Webiny Serverless Blog" metaDescription={metaDescription}>
             <Blogs data={blogPosts} location={location} />
         </BaseLayout>
     );

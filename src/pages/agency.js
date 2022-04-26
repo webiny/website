@@ -9,25 +9,12 @@ import WebinyFeatures from "../components/agency/webiny-features/webiny-features
 import DidYouKnow from "../components/agency/did-you-know/did-you-know";
 import Plugins from "../components/agency/plugins/plugins";
 import ForAgencies from "../components/agency/for-agencies/for-agencies";
-// import ScheduleDemo from "../components/agency/schedule-demo/schedule-demo";
 import WhyChooseWebiny from "../components/agency/why-choose-webiny/why-choose-webiny";
 import { trackBookADemo } from "../components/ui/functions";
 
+const metaDescription = "Modern Development Tools to Scale Your Dev Agency Faster."
 class AgencyPage extends React.Component {
     scheduleADemoRef = React.createRef();
-
-    /*
-  goToScheduleDemoSection = () => {
-    if (this.scheduleADemoRef && this.scheduleADemoRef.current) {
-      const {offsetTop} = this.scheduleADemoRef.current
-      window.scrollTo({
-        top: offsetTop,
-        left: 0,
-        behavior: 'smooth'
-      })
-    }
-  }
-  */
 
     bookADemo = () => {
         trackBookADemo({ placement: "agency" });
@@ -40,7 +27,7 @@ class AgencyPage extends React.Component {
 
     render() {
         return (
-            <BaseLayout title="How Agencies can benefit from serverless">
+            <BaseLayout title="How Agencies can benefit from serverless" description={metaDescription}>
                 <Hero handleDemoClick={this.bookADemo} />
                 <WhatIsWebiny />
                 <WhyServerless />

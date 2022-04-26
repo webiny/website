@@ -40,8 +40,8 @@ const Investors = () => {
                     <CurlyBrackets>{"{"}</CurlyBrackets>
                     <Content>
                         <Stats count="60+" text="contributors" />
-                        <Stats count="5000+" text="GITHUB stars" />
-                        <Stats count="1200+" text="DEVELOPERS ON SLACK" />
+                        <Stats count="5500+" text="GITHUB stars" />
+                        <Stats count="1300+" text="DEVELOPERS ON SLACK" />
                     </Content>
                     <CurlyBrackets>{"}"}</CurlyBrackets>
                 </CurlyBracketsSection>
