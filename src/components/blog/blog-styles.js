@@ -209,7 +209,7 @@ export const containerClass = css(
     }),
 );
 
-export const Title = styled("h2")(
+export const Title = styled("h1")(
     {
         margin: "0px 0px 24px",
 
