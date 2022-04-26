@@ -8,7 +8,7 @@ import CaseStudy from "../components/ui/case-study";
 
 const Partners = () => {
     return (
-        <BaseLayout title="Partners - Webiny">
+        <BaseLayout title="Partners - Webiny" description="Meet the great companies that are pushing the boundaries of serverless solutions using Webiny.">
             <Hero />
             <OurPartners />
             <BecomePartner />

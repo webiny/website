@@ -58,6 +58,7 @@ import {
     MediaCardWrapper,
     TeamSection,
 } from "./about-us-styles";
+import { Helmet } from "react-helmet";
 
 const Contributors = () => {
     const [contributors, setContributors] = useState([]);
@@ -227,8 +228,15 @@ const InvestorLogos = styled("div")(
 
 const breadcrumbs = [{ link: "/", text: "Home" }, { text: "About Us" }];
 
+const metaDescription = "At Webiny we have a mission to empower every developer to create serverless applications and websites. We do that by providing tools, processes and ready-made apps, and as a result, developers can create serverless applications with ease."
+
 export default () => (
     <Fragment>
+        <Helmet>
+            <meta name="description" content={metaDescription}></meta>
+            <meta name="og:description" content={metaDescription}></meta>
+            <meta name="twitter:description" content={metaDescription}></meta>
+        </Helmet>
         <SectionWithBackground>
             <Breadcrumb breadcrumbs={breadcrumbs} />
             <ContentContainer className={heroContainerClass}>

@@ -9,7 +9,8 @@ import InstallWebiny from "../components/new-homepage/install-webiny-section/ins
 
 const PricingPage = () => {
     return (
-        <BaseLayout title="Pricing">
+        <BaseLayout title="Pricing" description="Transparent fees, no contracts or long term commitments.
+        ">
             <HeroSectionPrices />
             <PriceList />
             <BuildLotsOfSites />

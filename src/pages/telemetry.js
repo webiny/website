@@ -6,7 +6,7 @@ import Telemetry from "../components/static/telemetry";
 class TelemetryPage extends React.Component {
     render() {
         return (
-            <BaseLayout title="Telemetry">
+            <BaseLayout title="Telemetry" description="Webiny telemetry is a service that collects anonymous usage information.">
                 <Telemetry />
             </BaseLayout>
         );
