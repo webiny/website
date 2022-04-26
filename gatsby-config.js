@@ -242,6 +242,6 @@ module.exports = {
                 // Name of the event that is triggered
                 // on every Gatsby route change.
             },
-        },
+        }
     ],
 };
