@@ -2,25 +2,25 @@
 slug: "blog/learn-how-to-use-lambda-layers"
 title: "Learn How to Use Lambda Layers by Building an Image Resize Function Using Sharp"
 description: "Lambda Layer is a true gem in the Lambda function realm. In this article, you will know how to create and use Lambda Layers. As an example, we will create a sharp library Layer and use it in a Lambda function to create thumbnail images."
-tags: ["Serverless", "Lambda Layers"]
+tags: ["Serverless", "Lambda Layers", "Lambda Function"]
 featureImage: "./assets/learn-how-to-use-lambda-layers/featureImage.png"
 author: swapnil
 date: 2022-05-02
 ---
 
-The <ExternalLink href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-concepts.html#gettingstarted-concepts-layer">Lambda Layer</ExternalLink> is a true gem in the Lambda function realm. It provides a convenient way to package your libraries and other dependencies that can be used with the Lambda functions.
-Our open-source project, <ExternalLink href="https://github.com/webiny/webiny-js/">Webiny</ExternalLink> which has 50k+ downloads and 5.5k stars on GitHub uses Lambda Layers. It helps us reduce our Lambda function size by 12 MB and enable us to share the image processing library <ExternalLink href="https://sharp.pixelplumbing.com/">sharp</ExternalLink> across all the Webiny deployments.  
+Lambda Layer is a true gem in the Lambda function realm. It provides a convenient way to package your libraries and other dependencies that can be used with the Lambda functions.
+Our open-source project, <ExternalLink href="https://github.com/webiny/webiny-js/">Webiny</ExternalLink> which has 50k+ downloads and 5.5k stars on GitHub uses Lambda layers. It helps us reduce our Lambda function size by 12 MB and enable us to share the image processing library <ExternalLink href="https://sharp.pixelplumbing.com/">sharp</ExternalLink> across all the Webiny deployments.
 
-By the time you finish reading this article, you will know how to create and use Lambda Layers. As an example, we will create a sharp library Layer and use it in a Lambda function to create thumbnail images.
-In this tutorial, we will create a Lambda function that will create a thumbnail image using the `sharp` library. This library will be packaged into the Lambda function using a Lambda Layer.
+By the time you finish reading this article, you will know how to create and use Lambda layers. As an example, we will create a sharp library Layer and use it in a Lambda function to create thumbnail images.
+In this tutorial, we will create a Lambda function that will create a thumbnail image using the `sharp` library. This library will be packaged into the Lambda function using a <ExternalLink href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-concepts.html#gettingstarted-concepts-layer">Lambda Layer</ExternalLink>.
 
 The workflow will be like this, for each image file uploaded to an S3 bucket (source bucket), the lambda function will be invoked. It will read the image object from the source S3 bucket, create a thumbnail image, and save it to the target S3 bucket.
 
 
 ## Prerequisites
 
-- AWS account - To use various AWS services, you will need an AWS account. Please follow [this link](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/) to create an AWS account.
-- AWS command line - We will use the AWS command line for creating Lambda Function and Lambda Layer. The AWS CLI installation guide is available [here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+- AWS account - To use various AWS services, you will need an AWS account. Please follow <ExternalLink href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account"> this link</ExternalLink> to create an AWS account.
+- AWS command line - We will use the AWS command line for creating Lambda Function and Lambda Layer. The AWS CLI installation guide is available <ExternalLink href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">here</ExternalLink>.
 
 
 ## Step 1 - Create two S3 buckets
@@ -29,8 +29,10 @@ Let’s start by creating two buckets, the source and the target. As mentioned e
 
 Please follow these steps to create S3 buckets.
 
-1. Open the [Amazon S3 console](https://console.aws.amazon.com/s3).
-2. [Create two S3 buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html) - source and target. The target bucket name should be `<source-bucket-name>` plus suffixed by `-resized` .  For example, if the source bucket is named `mybucket` then the target bucket should be named as `mybucket-resized`. Please follow this naming convention because we will be using this naming logic in the Lambda function. 
+1. Open the <ExternalLink href="https://console.aws.amazon.com/s3">Amazon S3 console</ExternalLink>.
+2. <ExternalLink href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html">Create two S3 buckets</ExternalLink> - source and target.
+
+The target bucket name should be `source-bucket-name` plus suffixed by `-resized` .  For example, if the source bucket is named `mybucket` then the target bucket should be named as `mybucket-resized`. Please follow this naming convention because we will be using this naming logic in the Lambda function.
 
 ## Step 2 - Create the IAM policy
 
@@ -42,7 +44,7 @@ Now let’s create an IAM policy that specifies the permissions for the Lambda f
 
 ### To create an IAM policy
 
-1. Open the [Policies page](https://console.aws.amazon.com/iam/home#/policies) in the IAM console.
+1. Open the <ExternalLink href="https://console.aws.amazon.com/iam/home#/policies">Policies page</ExternalLink> in the IAM console.
 2. Choose **Create policy**.
 3. Choose the **JSON** tab, and then paste the following policy. Be sure to replace `mybucket` with the name of the source bucket that you created previously.
 
@@ -84,11 +86,11 @@ Now let’s create an IAM policy that specifies the permissions for the Lambda f
 
 ## Step 3 - Create the execution role
 
-Create the [execution role](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html) that gives your Lambda function permissions to access AWS resources.
+Create the <ExternalLink href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html">execution role</ExternalLink> that gives your Lambda function permissions to access AWS resources.
 
 ### To create an execution role
 
-1. Open the [Roles page](https://console.aws.amazon.com/iam/home#/roles) in the IAM console.
+1. Open the <ExternalLink href="https://console.aws.amazon.com/iam/home#/roles">Roles page</ExternalLink> in the IAM console.
 2. Choose **Create role**.
 3. Create a role with the following properties:
     - **Trusted entity type** – AWS Service (Allow AWS services like EC2, Lambda, or others to perform actions in this account.)
@@ -99,7 +101,7 @@ Create the [execution role](https://docs.aws.amazon.com/lambda/latest/dg/lambda-
 
 ## Step 4 - Create a sharp Lambda Layer
 
-Here comes the special part of this tutorial. We will create the [sharp](https://sharp.pixelplumbing.com/install#aws-lambda) Lambda Layer in this section. 
+Here comes the special part of this tutorial. We will create the <ExternalLink href="https://sharp.pixelplumbing.com/install#aws-lambda">sharp</ExternalLink> Lambda Layer in this section.
 
 1. Create a directory with the name `nodejs`.
 2. Install the `sharp` dependency in the `nodejs` directory by running the following command:
@@ -241,7 +243,7 @@ exports.handler = async (event, context, callback) => {
 
 ### Step 5.2 Create the deployment package
 
-The deployment package is a [.zip file archive](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip) containing your Lambda function code and its dependencies.
+The deployment package is a <ExternalLink href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip file archive</ExternalLink> containing your Lambda function code and its dependencies.
 
 1. Open a command-line terminal or shell in a Linux environment. 
 2. Save the function code as `index.js` in a directory named `lambda-s3`.
@@ -263,7 +265,7 @@ zip -r function.zip .
 
 We will use the AWS CLI command (`aws lambda create-function`) to create the Lambda function.
 
-Please replace the role parameter `123456789012`with your [AWS account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html) and Layers ARN with the one we got in Step 4 (`LayerVersionArn`)**.**
+Please replace the role parameter `123456789012`with your <ExternalLink href="https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html">AWS account ID</ExternalLink> and layers ARN with the one we got in Step 4 (`LayerVersionArn`).
 
 ```bash
 aws lambda create-function --function-name CreateThumbnail \
@@ -320,7 +322,7 @@ When a file is uploaded to S3, it should trigger the Lambda function that will r
 
 ### To create an Amazon S3 Trigger
 
-1. Open the [Lambda page](https://console.aws.amazon.com/lambda/home) in the AWS console.
+1. Open the <ExternalLink href="https://console.aws.amazon.com/lambda/home">Lambda page</ExternalLink> in the AWS console.
 2. Open the `CreateThumbnail` function. 
 3. Choose **Add trigger** under the Function overview section 
 4. Create a trigger with the following properties:
@@ -334,11 +336,11 @@ When a file is uploaded to S3, it should trigger the Lambda function that will r
 
 Nice, we are all set with our Lambda function, which uses the sharp Layer and creates thumbnail images. Please upload an image (`jpg` or `png`) to the source S3 bucket. Once the upload is complete, you should be able to see the thumbnail version of the image in the target S3 bucket.
 
-Lambda Layer is a very efficient and convenient way to package libraries and other dependencies that you can use with your Lambda functions. It offers great benefits in reducing the deployment archives size and faster deployment. Layers enable code sharing and separation of responsibilities to create maintainable Lambda functions. 
+Lambda Layer is a very efficient and convenient way to package libraries and other dependencies that you can use with your Lambda functions. It offers great benefits in reducing the deployment archives size and faster deployment. layers enable code sharing and separation of responsibilities to create maintainable Lambda functions.
 
-In case you want to explore and learn more about best coding practices and code examples related to Lambda, you can check out the [Webiny code repository](https://github.com/webiny/webiny-js/). Webiny is an open-source enterprise-grade serverless CMS. 
+In case you want to explore and learn more about best coding practices and code examples related to Lambda, you can check out the <ExternalLink href="https://github.com/webiny/webiny-js/">Webiny code repository</ExternalLink>. Webiny is an open-source enterprise-grade serverless CMS.
 
-If you have any questions related to this tutorial or have any feedback, please feel free to ping us on the [Community Slack](webiny.com/slack/)!
+If you have any questions related to this tutorial or have any feedback, please feel free to ping us on the <ExternalLink href="https://webiny.com/slack/">Community Slack</ExternalLink>!
 
 ## Credits
-As this tutorial aims to explain and demonstrate the use of Lambda Layer, we didn't reinvent the wheel and write a new Lambda function to create thumbnail images. The Lambda function code used in this article to create thumbnail images is taken from this <ExternalLink href="https://docs.aws.amazon.com/lambda/latest/dg/with-s3-tutorial.html">official AWS Lambda tutorial</ExternalLink>. Huge thanks to the authors of this great tutorial. 🙏🏻
+As this tutorial aims to explain and demonstrate the use of Lambda Layer, we didn't reinvent the wheel and write a new Lambda function to create thumbnail images. The Lambda function code used in this article to create thumbnail images is taken from this <ExternalLink href="https://docs.aws.amazon.com/lambda/latest/dg/with-s3-tutorial.html">official AWS Lambda tutorial</ExternalLink>. Huge thanks to the authors of this great tutorial on the Lambda function. 🙏🏻
