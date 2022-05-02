@@ -38,7 +38,7 @@ Webiny uses [Gatsby](https://www.gatsbyjs.com/) for its website. Here is how you
 5. Start the dev server
 
     ```sh
-    yarn dev
+    yarn develop
     ```
 
 ## Project structure
