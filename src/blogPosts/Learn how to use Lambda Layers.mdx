@@ -22,7 +22,6 @@ The workflow will be like this, for each image file uploaded to an S3 bucket (so
 - AWS account - To use various AWS services, you will need an AWS account. Please follow <ExternalLink href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account"> this link</ExternalLink> to create an AWS account.
 - AWS command line - We will use the AWS command line for creating Lambda Function and Lambda Layer. The AWS CLI installation guide is available <ExternalLink href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">here</ExternalLink>.
 
-
 ## Step 1 - Create two S3 buckets
 
 Let’s start by creating two buckets, the source and the target. As mentioned earlier, for each image file uploaded to a source bucket, the Lambda function will create a corresponding thumbnail image and save it in the target S3 bucket.
@@ -103,11 +102,16 @@ Create the <ExternalLink href="https://docs.aws.amazon.com/lambda/latest/dg/lamb
 
 Here comes the special part of this tutorial. We will create the <ExternalLink href="https://sharp.pixelplumbing.com/install#aws-lambda">sharp</ExternalLink> Lambda Layer in this section.
 
+You will perform this part of the tutorial on your machine. Please ensure you have `npm` installed (we will need the `npm` to install the `sharp` package).
+
 1. Create a directory with the name `nodejs`.
-2. Install the `sharp` dependency in the `nodejs` directory by running the following command:
+2. Install the `sharp` dependency in the `nodejs` directory by running the following commands:
 
 ```bash
 npm install
+```
+
+```bash
 SHARP_IGNORE_GLOBAL_LIBVIPS=1 npm install --arch=x64 --platform=linux sharp
 ```
 
@@ -272,7 +276,7 @@ aws lambda create-function --function-name CreateThumbnail \
 --zip-file fileb://function.zip --handler index.handler --runtime nodejs14.x \
 --timeout 30 --memory-size 1024 \
 --role arn:aws:iam::123456789012:role/lambda-s3-role \
---region "us-east-1"
+--region "us-east-1" \
 --layers "arn:aws:lambda:us-east-1:400803493251:layer:sharp:1"
 ```
 
@@ -327,10 +331,11 @@ When a file is uploaded to S3, it should trigger the Lambda function that will r
 3. Choose **Add trigger** under the Function overview section 
 4. Create a trigger with the following properties:
     - **Select a trigger** – S3
-    - **Bucket** - mybucket (your source bucket)
+    - **Bucket** - mybucket (your source bucket name)
     - **Event type** – **PUT**
-    - **Role name** – `lambda-s3-role`
     
+
+![S3 Trigger Form](./assets/learn-how-to-use-lambda-layers/s3-trigger-form.png)
 
 ## Step 7 - All set, let’s test it!
 
