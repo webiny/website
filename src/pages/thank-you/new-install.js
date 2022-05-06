@@ -1,6 +1,6 @@
 import React from "react";
 
-import BaseLayout from "../layouts/base";
+import BaseLayout from "../../layouts/base";
 
 class ThankYouNewInstall extends React.Component {
     render() {
