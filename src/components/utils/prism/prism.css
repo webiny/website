@@ -30,6 +30,10 @@ pre[class*="language-"] {
   hyphens: none;
 }
 
+code[class*="language-javascript"] {
+  color: white;
+}
+
 /* Code blocks */
 pre[class*="language-"] {
   padding: 1em;

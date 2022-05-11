@@ -78,7 +78,6 @@ const FooterMenu = () => (
             <Link to="/enterprise-serverless-cms/page-builder">Page Builder</Link>
             <Link to="/enterprise-serverless-cms/file-manager">File Manager</Link>
             <Link to="/enterprise-serverless-cms/form-builder">Form Builder</Link>
-            <Link to="/enterprise-serverless-cms/form-builder">Form Builder</Link>
             <a target="_blank" href="/docs/overview/applications/control-panel">
                 Control Panel
             </a>
