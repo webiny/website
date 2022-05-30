@@ -19,7 +19,7 @@ const WriteWithWebinyPage = () => (
         </p>
         <h2>Why you should apply to the program?</h2>
         <ul>
-          <li>We will compensate you for your time. Depending on the scope and quality of submitted article, we will pay you up to $XXX.</li>
+          <li>We will compensate you for your time. Depending on the scope and quality of submitted article, we will pay you up to $300.</li>
           <li>We will sign you as the author on all your published articles.</li>
           <li>We will promote your article across the web. Twitter, Reddit, Hacker News, Dev.to etc</li>
           <li>You can reach a wider audience and build a name for yourself.</li>
