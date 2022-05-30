@@ -1,13 +1,11 @@
 import React from "react";
 import styled from "react-emotion";
 import { css } from "emotion";
-import { Link } from "gatsby";
 import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 import ContentContainer from "../ui/content-container";
 import Newsletter from "./newsletter";
 import FooterMenu from "./footerMenu";
-import { trackGoToGithub, trackJoinSlack } from "../ui/functions";
 
 import webinyLogo from "./assets/webiny-logo-with-icon-left-white.svg";
 import GitHubIcon from "./assets/github-icon.svg";

@@ -95,6 +95,7 @@ const FooterMenu = () => (
                 Meetup
             </a>
             <Link to="/partners">Partners</Link>
+            <Link to="/write-with-webiny">Write with Webiny</Link>
             <Link to="/swag">SWAG</Link>
         </MenuBlock>
         <MenuBlock>
