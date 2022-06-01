@@ -162,7 +162,38 @@ We've covered the packages used and the folder structure of our `e-commerce-star
 
 Open the `pages/_app.js` file and replace the existing code with the following snippet:
 
-`gist:AlbionaHoti/22688a0c4fac917a17f3ddaec13fc9b5`
+```javascript
+import '../assets/antd-custom.less';
+// Layout Component
+import LayoutComponent from '../components/Layout';
+
+// React Context
+import { CartProvider } from '../context/Context';
+
+// Apollo
+import { ApolloProvider } from '@apollo/client';
+import { useApollo } from '../lib/apolloClient';
+
+export default function App({ Component, pageProps }) {
+    const apolloClient = useApollo(pageProps.initialApolloState);
+    // useApollo hook will initialize our apollo client
+    return (
+        <ApolloProvider client={apolloClient}>
+            {/**
+             *
+             * ApolloProvider will privde the apolloClient
+             * to every single page of our application.
+             *
+             */}
+            <CartProvider>
+                <LayoutComponent>
+                    <Component {...pageProps} />
+                </LayoutComponent>
+            </CartProvider>
+        </ApolloProvider>
+    );
+}
+```
 
 As you can see, the `pages/_app.js` has different external components that act as wrappers to our Next.js app.
 
@@ -174,7 +205,55 @@ Let's go into the actual GraphQL client file.
 
 Go ahead in the root of the project, and create the `lib/apolloClient.js` file, and paste the following snippet:
 
-`gist:AlbionaHoti/3d251625b1665f06c05cc7d6d643764b`
+```javascript
+import { useMemo } from 'react'
+import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client'
+
+let apolloClient
+
+function createApolloClient() {
+    return new ApolloClient({
+        ssrMode: typeof window === 'undefined',
+        link: new HttpLink({
+            uri: process.env.CONTENT_DELIVERY_API_URL,
+		// The CONTENT_DELIVERY_API_URL is comming from the `.env` file that you created on step 2 of the Prerequisites - Content Delivery API URL
+		// Server URL (must be absolute)
+		// credentials: 'same-origin', 
+		// Additional fetch() options like `credentials` or `headers`
+            headers: {
+                authorization: process.env.CONTENT_DELIVERY_API_ACCESS_TOKEN,
+		// The CONTENT_DELIVERY_API_ACCESS_TOKEN is comming from the `.env` file that you created on step 3 of the Prerequisites - Content Delivery API Access Token
+            },
+        }),
+        cache: new InMemoryCache(),
+    })
+}
+
+export function initializeApollo(initialState = null) {
+    const _apolloClient = apolloClient ?? createApolloClient()
+
+    // If your page has Next.js data fetching methods that use Apollo Client, the initial state
+    // gets hydrated here
+    if (initialState) {
+        // Get existing cache, loaded during client side data fetching
+        const existingCache = _apolloClient.extract()
+        // Restore the cache using the data passed from getStaticProps/getServerSideProps
+        // combined with the existing cached data
+        _apolloClient.cache.restore({ ...existingCache, ...initialState })
+    }
+    // For SSG and SSR always create a new Apollo Client
+    if (typeof window === 'undefined') return _apolloClient
+    // Create the Apollo Client once in the client
+    if (!apolloClient) apolloClient = _apolloClient
+
+    return _apolloClient
+}
+
+export function useApollo(initialState) {
+    const store = useMemo(() => initializeApollo(initialState), [initialState])
+    return store
+}
+```
 
 The important bit of the above snippet is the new instance of `ApolloClient`
 which has some options such as the `link` → this is the part where we
@@ -191,7 +270,80 @@ With these two, you can perform queries against our GraphQL API. Let's do that!
 
 Navigate to the `components/ProductList.js` file, and replace the code with the below snippet:
 
-`gist:AlbionaHoti/6de0c012c0041e883f34be3a40db50b9`
+```javascript
+// Apollo
+import { useQuery, gql } from '@apollo/client';
+
+// Ant design
+import { Row, Col } from 'antd';
+
+// Components
+import ProductCard from './Product';
+
+export const QUERY = gql`
+    query listProducts {
+        listProducts {
+            data {
+                id
+                title
+                description
+                price
+                image
+                category {
+                    title
+                }
+            }
+        }
+        listCategories {
+            data {
+                title
+            }
+        }
+    }
+`;
+
+export default function ProductList(props) {
+    const { loading, error, data } = useQuery(QUERY);
+    // if products are returned from the GraphQL query, run the filter query
+    // and set equal to variable searchQuery
+    if (loading) return <h1>Fetching</h1>;
+
+    if (error) return 'Error loading products: ' + error.message;
+
+    let ProductData = data.listProducts.data;
+
+    // Remove the static data that came up with the e-commerce-starter code
+    // let ProductData = [
+    //     ...
+    // ];
+
+    if (ProductData && ProductData.length) {
+        const searchQuery = ProductData.filter((query) =>
+            query.title.toLowerCase().includes(props.search),
+        );
+        if (searchQuery.length != 0) {
+            return (
+                <Row>
+                    {searchQuery.map((res) => (
+                        <Col
+                            xs={24}
+                            md={12}
+                            lg={8}
+                            key={('card: ', res.title)}
+                            // flex={3}
+                        >
+                            <ProductCard {...res} />
+                        </Col>
+                    ))}
+                </Row>
+            );
+        } else {
+            return <h1>No Products Found</h1>;
+        }
+    }
+    return <h5>Visit your Webiny Headless CMS to add your Products</h5>;
+}
+```
 
 We've defined the QUERY, where we fetch the list of products, and it's fields. Besides the products, we also fetch the categories' content model.
 
@@ -213,7 +365,92 @@ Before jumping on the `localhost:3000/` to see the actual data, you need to add 
 
 Navigate to the `pages/index.js` file, and replace its content with the following snippet:
 
-`gist:AlbionaHoti/ff8a1b41a945b8b2e82bba8209fbac24`
+```javascript
+import { Col, Row } from 'antd';
+import React, { useState } from 'react';
+
+// Ant design
+import { Input } from 'antd';
+// Products
+import ProductList from '../components/ProductList';
+import { QUERY } from '../components/ProductList';
+import { Typography } from 'antd';
+// Apollo
+import { initializeApollo } from '../lib/apolloClient';
+
+const { Title } = Typography;
+
+const { Search } = Input;
+
+export default function Home() {
+    const [query, updateQuery] = useState('');
+    return (
+        <>
+            <Row gutter={[16, 24]}>
+                <Col
+                    xs={{ span: 24, offset: 4 }}
+                    lg={{ span: 24, offset: 2 }}
+                    span={24}
+                >
+                    <Title level={2} style={{ color: '#fa5723' }}>
+                        {' '}
+                        E-commerce website build with Webiny Headless CMS,
+                        Next.js, and Stripe
+                    </Title>
+                </Col>
+            </Row>
+            <Row>
+                <Col
+                    xs={{ span: 12, offset: 6 }}
+                    lg={{ span: 24, offset: 8 }}
+                    span={24}
+                >
+                    <Title level={4} type="success">
+                        {' '}
+                        Buy Swag from the best Open Source Projects
+                    </Title>
+                </Col>
+            </Row>
+            <Row>
+                <Col
+                    xs={{ span: 12, offset: 6 }}
+                    lg={{ span: 24, offset: 7 }}
+                    span={24}
+                >
+                    <Search
+                        placeholder="Search for products"
+                        onSearch={(value) => console.log(value)}
+                        style={{
+                            maxWidth: 500,
+                        }}
+                        onChange={(e) =>
+                            updateQuery(e.target.value.toLocaleLowerCase())
+                        }
+                        value={query}
+                    />
+                </Col>
+            </Row>
+            <Row>
+                <Col span={24}>
+                    <ProductList search={query} />
+                </Col>
+            </Row>
+        </>
+    );
+}
+
+export async function getStaticProps() {
+    const apolloClient = initializeApollo();
+    await apolloClient.query({
+        query: QUERY,
+    });
+    return {
+        props: {
+            initialApolloState: apolloClient.cache.extract(),
+        },
+    };
+}
+```
 
 The `getStaticProps` function gets called at build time on server-side.
 It won't be called on client-side, so you can even do direct database queries.
@@ -254,14 +491,194 @@ The `components/CheckoutForm.js` component has the `billingDetails` and an empty
 for the `CardElement` in the `<CardElementContainer></CardElementContainer>` where you are going to add it, and it has a submit button and a
 spot to display some errors. Let's take a look at the existing `components/CheckoutForm.js` file below:
 
-`gist:AlbionaHoti/b3efdb52196d42113b130dace41159f2`
+```javascript
+// Ant design
+import { Button, Form } from 'antd';
+// React context
+import { CartContext, TotalContext } from '../context/Context';
+import { Col, Row } from 'antd';
+import React, { useContext, useState } from 'react';
+
+// Components
+import { BillingDetailsFields } from './BillingDetailsField';
+// styled components
+import styled from 'styled-components';
+
+const iframeStyles = {
+    base: {
+        color: '#ff748c',
+        fontSize: '16px',
+        iconColor: '#ff748c',
+        '::placeholder': {
+            color: '#87bbfd',
+        },
+        border: '1px solid gray',
+    },
+    invalid: {
+        iconColor: '#ff748c',
+        color: '#ff748c',
+    },
+    complete: {
+        iconColor: '#ff748c',
+    },
+};
+
+const cardElementOpts = {
+    iconStyle: 'solid',
+    style: iframeStyles,
+    hidePostalCode: true,
+};
+
+const CardElementContainer = styled.div`
+    height: 40px;
+    display: flex;
+    align-items: center;
+    & .StripeElement {
+        width: 100%;
+        padding: 15px;
+    }
+`;
+
+const CheckoutForm = () => {
+    const [form] = Form.useForm();
+    const [cart, setCart] = useContext(CartContext);
+    const [totalPrice, settotalPrice] = useContext(TotalContext);
+    const [isProcessing, setProcessingTo] = useState(false);
+
+    const [checkoutError, setCheckoutError] = useState();
+    const handleCardDetailsChange = (ev) => {
+        ev.error ? setCheckoutError(ev.error.message) : setCheckoutError();
+    };
+
+    const handleSubmit = async (e) => {
+        // e.preventDefault();
+
+        const billingDetails = {
+            name: e.name.value,
+            email: e.email.value,
+            address: {
+                city: e.city.value,
+                state: e.state.value,
+                postal_code: e.zip.value,
+            },
+        };
+    };
+
+    return (
+        <>
+            <Row>
+                <Col
+                    xs={{ span: 10, offset: 4 }}
+                    lg={{ span: 10, offset: 6 }}
+                    span={24}
+                >
+                    <Form
+                        form={form}
+                        name="checkout"
+                        onFinish={handleSubmit}
+                        scrollToFirstError
+                    >
+                        <BillingDetailsFields />
+                        <CardElementContainer></CardElementContainer>{' '}
+                        {checkoutError && (
+                            <span style={{ color: 'red' }}>
+                                {checkoutError}
+                            </span>
+                        )}
+                        <br />
+                        <Form.Item>
+                            <Button
+                                type="primary"
+                                htmlType="submit"
+                                disabled={isProcessing}
+                            >
+                                {isProcessing
+                                    ? 'Processing...'
+                                    : `Pay ${totalPrice}`}
+                            </Button>
+                        </Form.Item>
+                    </Form>
+                </Col>
+            </Row>
+        </>
+    );
+};
+
+export default CheckoutForm;
+```
 
 For the `components/Layout.js` component, you can think of it as a wrapper component around
 all of our pages on the site. In here you'll load the Stripe library later when we'll start coding.
 
 Have a look at the existing `components/Layout.js` component below:
 
-`gist:AlbionaHoti/dce28e953da3c7c8f8c3a62e3bb0dc4c`
+```javascript
+import { Col, Row } from 'antd';
+import React, { useState } from 'react';
+
+// Header
+import HeaderComponent from './Header';
+// Ant Design
+import { Layout } from 'antd';
+import { Typography } from 'antd';
+
+const { Title } = Typography;
+
+const { Content, Footer } = Layout;
+
+function LayoutComponent(props) {
+    const title = 'Webiny';
+    return (
+        <div>
+            <HeaderComponent title={title} />
+            <Content className="site-layout">
+                <Layout
+                    className="site-layout-background"
+                    style={{
+                        padding: '24px 0',
+                        margin: 100,
+                        display: 'flex',
+                        minHeight: '400px',
+                        background: '#fff',
+                    }}
+                >
+                    <Row gutter={[16, 24]}>
+                        <Col
+                            xs={{ span: 24, offset: 4 }}
+                            lg={{ span: 24, offset: 2 }}
+                            span={24}
+                        >
+                            <Title level={2} style={{ color: '#fa5723' }}>
+                                {' '}
+                                E-commerce website build with Webiny Headless
+                                CMS, Next.js, and Stripe
+                            </Title>
+                        </Col>
+                    </Row>
+                    <Content
+                        style={{
+                            padding: '24px',
+                        }}
+                    >
+                        {props.children}
+                    </Content>
+                </Layout>
+                <Footer style={{ textAlign: 'center', background: '#fff' }}>
+                    <a
+                        href="http://webiny.com/serverless-app/headless-cms?utm_source=Webiny-blog&utm_medium=webiny-website&utm_campaign=webiny-blog-e-commerce-oct-12&utm_content=webiny-blog-e-commerce-nextjs&utm_term=W00176"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Webiny Serverless Headless CMS @ 2020
+                    </a>
+                </Footer>
+            </Content>
+        </div>
+    );
+}
+
+export default LayoutComponent;
+```
 
 One last check regarding the Stripe integration before you can actually start coding, you need to save the two Stripe keys in a `sticky desktop note` or anywhere it's easier for you to grab the data later:
 
@@ -416,7 +833,33 @@ triple down into our component `components/CheckoutForm.js`
 Now, let's check what is happening on the server side,
 navigate to `pages/api/payment_intents.js`. Check out the code snipped below:
 
-`gist:AlbionaHoti/757544d7953962842bfac5a50f9a6010`
+```javascript
+import Stripe from 'stripe';
+
+const stripe = new Stripe(
+    'YOUR_STRIPE_SECRET_KEY',
+);
+
+export default async (req, res) => {
+    if (req.method === 'POST') {
+        try {
+            const { amount } = req.body;
+
+            const paymentIntent = await stripe.paymentIntents.create({
+                amount,
+                currency: 'usd',
+            });
+
+            res.status(200).send(paymentIntent.client_secret);
+        } catch (err) {
+            res.status(500).json({ statusCode: 500, message: err.message });
+        }
+    } else {
+        res.setHeader('Allow', 'POST');
+        res.status(405).end('Method Not Allowed');
+    }
+};
+```
 
 :::note Note:
 Provide your Stripe `secret key` on the 4th line on `pages/api/payment_intents.js`
@@ -513,7 +956,184 @@ We got the `paymentIntent` id, and the `status` which is `succeeded`.
 
 Check out the below snippet, to get the full code for the `components/CheckoutForm.js` file:
 
-`gist:AlbionaHoti/e417c1374d7539e729c06f8bcd42e3bb`
+```javascript
+import React, { useState, useContext } from 'react';
+
+// React context
+import { CartContext, TotalContext } from '../context/Context';
+import { Col, Row } from 'antd';
+
+// Components
+import { BillingDetailsFields } from '../components/BillingDetailsField';
+
+// styled components
+import styled from 'styled-components';
+import axios from 'axios';
+
+// Ant design
+import { Form, Button, Typography } from 'antd';
+const { Title } = Typography;
+
+// Stripe
+import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+
+const iframeStyles = {
+    base: {
+        color: '#ff748c',
+        fontSize: '16px',
+        iconColor: '#ff748c',
+        '::placeholder': {
+            color: '#87bbfd',
+        },
+        border: '1px solid gray',
+    },
+    invalid: {
+        iconColor: '#ff748c',
+        color: '#ff748c',
+    },
+    complete: {
+        iconColor: '#ff748c',
+    },
+};
+
+const cardElementOpts = {
+    iconStyle: 'solid',
+    style: iframeStyles,
+    hidePostalCode: true,
+};
+
+const CardElementContainer = styled.div`
+    height: 40px;
+    display: flex;
+    align-items: center;
+    & .StripeElement {
+        width: 100%;
+        padding: 15px;
+    }
+`;
+
+const CheckoutForm = () => {
+    const [form] = Form.useForm();
+    const [cart, setCart] = useContext(CartContext);
+    const [isProcessing, setProcessingTo] = useState(false);
+
+    const stripe = useStripe();
+    const elements = useElements();
+
+    console.log('stripe');
+
+    const [totalPrice, settotalPrice] = useContext(TotalContext);
+
+    const [checkoutError, setCheckoutError] = useState();
+    const [checkoutSuccess, setCheckoutSuccess] = useState();
+
+    const handleCardDetailsChange = (ev) => {
+        ev.error ? setCheckoutError(ev.error.message) : setCheckoutError();
+    };
+
+    const handleSubmit = async (e) => {
+        // e.preventDefault();
+        const billingDetails = {
+            name: e.name,
+            email: e.email,
+            address: {
+                city: e.city,
+                state: e.state,
+                postal_code: e.zip,
+            },
+        };
+
+        setProcessingTo(true);
+        const cardElement = elements.getElement('card');
+
+        try {
+            const { data: clientSecret } = await axios.post(
+                '/api/payment_intents',
+                {
+                    amount: totalPrice * 100,
+                },
+            );
+
+            const paymentMethodReq = await stripe.createPaymentMethod({
+                type: 'card',
+                card: cardElement,
+                billing_details: billingDetails,
+            });
+
+            if (paymentMethodReq.error) {
+                setCheckoutError(paymentMethodReq.error.message);
+                setProcessingTo(false);
+                return;
+            }
+
+            const {
+                error,
+                paymentIntent: { status },
+            } = await stripe.confirmCardPayment(clientSecret, {
+                payment_method: paymentMethodReq.paymentMethod.id,
+            });
+
+            if (error) {
+                setCheckoutError(error.message);
+                return;
+            }
+
+            if (status === 'succeeded') {
+                setCheckoutSuccess(true);
+                setCart([]);
+                settotalPrice(0);
+            }
+        } catch (err) {
+            setCheckoutError(err.message);
+        }
+    };
+
+    if (checkoutSuccess)
+        return <Title level={4}>Payment was successfull!</Title>;
+
+    return (
+         <>
+            <Row>
+                <Col
+                    xs={{ span: 10, offset: 4 }}
+                    lg={{ span: 10, offset: 6 }}
+                    span={24}
+                >
+                    <Form
+                        form={form}
+                        name="checkout"
+                        onFinish={handleSubmit}
+                        scrollToFirstError
+                    >
+                        <BillingDetailsFields />
+                        <CardElementContainer>
+                            <CardElement
+                                options={cardElementOpts}
+                                onChange={handleCardDetailsChange}
+                            />
+                        </CardElementContainer>{' '}
+                        {checkoutError && (
+                            <span style={{ color: 'red' }}>{checkoutError}</span>
+                        )}
+                        <br />
+                        <Form.Item>
+                            <Button
+                                type="primary"
+                                htmlType="submit"
+                                disabled={isProcessing || !stripe}
+                            >
+                                {isProcessing ? 'Processing...' : `Pay $${totalPrice}`}
+                            </Button>
+                        </Form.Item>
+                    </Form>
+                </Col>
+            </Row>
+        </>
+    );
+};
+
+export default CheckoutForm;
+```
 
 So far, we successfully created a functional payment integration with Stripe. 🎉 We started by
 adding the card input with Stripe javascript libraries, and continued with the set-up of

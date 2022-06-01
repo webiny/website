@@ -175,6 +175,7 @@ const blogStyles = css(
                 background: "rgba(0,0,0,.05)",
                 borderRadius: "2px",
                 fontSize: "0.9em",
+                color: "black!important",
                 whiteSpace: "pre-wrap",
                 "&.language-text": {
                     fontSize: "0.9em",
