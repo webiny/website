@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/base";
 import Body from "../components/static/body";
 
 const WriteWithWebinyPage = () => (
-  <BaseLayout title="Terms of Service" description="Welcome to Webiny's website. Please read on to learn the rules and restrictions that govern your use of our website">
+  <BaseLayout title="Write with Webiny" description="Join our writing community and get paid to write about open source!">
       <Body title="Write with Webiny">
         <p>
           <strong>
