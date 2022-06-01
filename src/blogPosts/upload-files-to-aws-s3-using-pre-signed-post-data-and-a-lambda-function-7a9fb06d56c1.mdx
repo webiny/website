@@ -78,7 +78,81 @@ As we’ve mentioned at the beginning of this post, we’re going to use React o
 
 Let’s take a look:
 
-`gist:doitadrian/e93dc8b06d5e30ca0ce89f2f0e71c717`
+```javascript
+import React from "react";
+import Files from "react-butterfiles";
+/**
+ * Retrieve pre-signed POST data from a dedicated API endpoint.
+ * @param selectedFile
+ * @returns {Promise<any>}
+ */
+const getPresignedPostData = selectedFile => {
+  return new Promise(resolve => {
+    const xhr = new XMLHttpRequest();
+    
+    // Set the proper URL here.
+    const url = "https://mysite.com/api/files";
+    
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(
+      JSON.stringify({
+        name: selectedFile.name,
+        type: selectedFile.type
+      })
+    );
+    xhr.onload = function() {
+      resolve(JSON.parse(this.responseText));
+    };
+  });
+};
+/**
+ * Upload file to S3 with previously received pre-signed POST data.
+ * @param presignedPostData
+ * @param file
+ * @returns {Promise<any>}
+ */
+const uploadFileToS3 = (presignedPostData, file) => {
+  return new Promise((resolve, reject) => {
+    const formData = new FormData();
+    Object.keys(presignedPostData.fields).forEach(key => {
+      formData.append(key, presignedPostData.fields[key]);
+    });
+    // Actual file has to be appended last.
+    formData.append("file", file);
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", presignedPostData.url, true);
+    xhr.send(formData);
+    xhr.onload = function() {
+      this.status === 204 ? resolve() : reject(this.responseText);
+    };
+  });
+};
+/**
+ * Component renders a simple "Select file..." button which opens a file browser.
+ * Once a valid file has been selected, the upload process will start.
+ * @returns {*}
+ * @constructor
+ */
+const FileUploadButton = () => (
+  <Files
+    onSuccess={async ([selectedFile]) => {
+      // Step 1 - get pre-signed POST data.
+      const { data: presignedPostData } = await getPresignedPostData(selectedFile);
+      // Step 2 - upload the file to S3.
+      try {
+        const { file } = selectedFile.src;
+        await uploadFileToS3(presignedPostData, file);
+        console.log("File was successfully uploaded!");
+      } catch (e) {
+        console.log("An error occurred!", e.message);
+      }
+    }}
+  >
+    {({ browseFiles }) => <button onClick={browseFiles}>Select file...</button>}
+  </Files>
+);
+```
 
 For an easier file selection and cleaner code, we’ve utilized a small package called [react-butterfiles](https://github.com/doitadrian/react-butterfiles). The author of the package is actually me, so if you have any questions or suggestions, feel free to let me know! 😉
 
@@ -153,7 +227,75 @@ A quick tip here: for security reasons, when creating roles and defining permiss
 
 Alright, if your role is ready, let’s take a look at our Lambda function:
 
-`gist:doitadrian/bdb9a4b42bf9fd7df7d8dde4e41142b6`
+```javascript
+const S3 = require("aws-sdk/clients/s3");
+const uniqid = require("uniqid");
+const mime = require("mime");
+/**
+ * Use AWS SDK to create pre-signed POST data.
+ * We also put a file size limit (100B - 10MB).
+ * @param key
+ * @param contentType
+ * @returns {Promise<object>}
+ */
+const createPresignedPost = ({ key, contentType }) => {
+  const s3 = new S3();
+  const params = {
+    Expires: 60,
+    Bucket: "presigned-post-data",
+    Conditions: [["content-length-range", 100, 10000000]], // 100Byte - 10MB
+    Fields: {
+      "Content-Type": contentType,
+      key
+    }
+  };
+  return new Promise(async (resolve, reject) => {
+    s3.createPresignedPost(params, (err, data) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      resolve(data);
+    });
+  });
+};
+/**
+ * We need to respond with adequate CORS headers.
+ * @type {{"Access-Control-Allow-Origin": string, "Access-Control-Allow-Credentials": boolean}}
+ */
+const headers = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Credentials": true
+};
+module.exports.getPresignedPostData = async ({ body }) => {
+  try {
+    const { name } = JSON.parse(body);
+    const presignedPostData = await createPresignedPost({
+      key: `${uniqid()}_${name}`,
+      contentType: mime.getType(name)
+    });
+    return {
+      statusCode: 200,
+      headers,
+      body: JSON.stringify({
+        error: false,
+        data: presignedPostData,
+        message: null
+      })
+    };
+  } catch (e) {
+    return {
+      statusCode: 500,
+      headers,
+      body: JSON.stringify({
+        error: true,
+        data: null,
+        message: e.message
+      })
+    };
+  }
+};
+```
 
 Besides passing the basic`key` and `Content-Type` fields (line 18), we also appended the `content-length-range` condition (line 17), which limits the file size to a value from 100B to 10MB. This is very important, because without the condition, users would basically be able to upload a 1TB file if they decided to do it.
 
