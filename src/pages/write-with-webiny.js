@@ -39,7 +39,7 @@ const WriteWithWebinyPage = () => (
         <h2>How does it work?</h2>
         <ul>
           <li><a style={{ display: "inline" }} href="https://www.webiny.com/slack/">Join our dev community</a> to find the latest news and updates on the currently active writing tasks and opportunities </li>
-          <li>Submit your proposal with a topic and an abstract using this form</li>
+          <li>Submit your proposal with a topic and an abstract using this <a style={{ display: "inline" }} href="https://site.webiny.com/forms/write-with-webiny/">form</a></li>
           <li>Once your proposal is accepted, our editors will get in touch and help you refine your title and outline. We will also decide on the mechanisms of the payout at this stage.</li>
           <li>Once have made an agreement, you can go ahead and start working on your article. </li>
           <li>When you have a first draft, you will submit it for initial review. Webiny editors will commit to getting back to you within 14 days with any feedback and you can work with them on polishing the article towards the final version that is ready for publication. </li>
