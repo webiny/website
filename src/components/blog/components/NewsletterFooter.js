@@ -170,9 +170,9 @@ class NewsletterFooter extends React.Component {
                         <Wrapper>
                             <h4>About Webiny</h4>
                             <p>
-                                Webiny is an open-source framework that helps developers and
-                                organizations to build applications that run on top of the
-                                serverless infrastructure.{" "}
+                                Webiny is an open source serverless CMS that offers you all the
+                                enterprise-grade functionalities, while keeping your data within the
+                                security perimeter of your own infrastructure.
                             </p>
                             <Button
                                 className={"button"}
