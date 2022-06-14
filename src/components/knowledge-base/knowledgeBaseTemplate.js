@@ -292,11 +292,20 @@ export default function Template({
         featureImage = frontmatter.featureImage.childImageSharp.fluid.src;
     }
 
-    const breadcrumbs = [
-        { link: "/", text: "Home" },
-        { link: "/serverless-knowledge-base", text: "Serverless Knowledge Base" },
-        { text: frontmatter.title },
-    ];
+    let breadcrumbs = []
+    if (frontmatter.slug.startsWith("serverless-knowledge-base/")) {
+        breadcrumbs = [
+            { link: "/", text: "Home" },
+            { link: "/serverless-knowledge-base", text: "Serverless Knowledge Base" },
+            { text: frontmatter.title },
+        ];
+    } else {
+        breadcrumbs = [
+            { link: "/", text: "Home" },
+            { link: "/knowledge-base", text: "Knowledge Base" },
+            { text: frontmatter.title },
+        ];
+    }
 
     return (
         <BaseLayout

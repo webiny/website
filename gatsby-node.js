@@ -26,8 +26,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                     }
                 }
             }
-            knowledgeBase: allMdx(
+            serverlessKnowledgeBase: allMdx(
                 filter: { frontmatter: { slug: { regex: "/serverless-knowledge-base/" } } }
+            ) {
+                edges {
+                    node {
+                        frontmatter {
+                            slug
+                        }
+                    }
+                }
+            }
+            knowledgeBase: allMdx(
+                filter: { frontmatter: { slug: { regex: "/knowledge-base/" } } }
             ) {
                 edges {
                     node {
@@ -58,6 +69,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
 
     result.data.knowledgeBase.edges.forEach(({ node }) => {
+        createPage({
+            path: node.frontmatter.slug,
+            component: knowledgeBaseTemplate,
+            context: {
+                // additional data can be passed via context
+                slug: node.frontmatter.slug,
+            },
+        });
+    });
+
+    result.data.serverlessKnowledgeBase.edges.forEach(({ node }) => {
         createPage({
             path: node.frontmatter.slug,
             component: knowledgeBaseTemplate,

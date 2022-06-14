@@ -14,10 +14,11 @@ import {
     FeaturedContentSection,
 } from "../blog/blog-styles";
 
-const KnowledgeBase = props => {
+
+const ServerlessKnowledgeBase = props => {
     const { data } = props;
 
-    const breadcrumbs = [{ link: "/", text: "Home" }, { text: "Knowledge Base" }];
+    const breadcrumbs = [{ link: "/", text: "Home" }, { text: "Serverless Knowledge Base" }];
 
     return (
         <Fragment>
@@ -26,7 +27,7 @@ const KnowledgeBase = props => {
                 <ContentContainer className={containerClass}>
                     <TextContentWrapper>
                         <Title>
-                            <TitleHighlight> Knowledge </TitleHighlight> Base
+                            <TitleHighlight> Serverless </TitleHighlight> Knowledge Base
                         </Title>
                     </TextContentWrapper>
                     <div className="post-container">
@@ -40,4 +41,4 @@ const KnowledgeBase = props => {
     );
 };
 
-export default KnowledgeBase;
+export default ServerlessKnowledgeBase;
