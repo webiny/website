@@ -11,7 +11,7 @@ html {
 
 body {
   /* Fix the issue whereby the "overflow" property applied to body automatically,
-    which breaks the "Table Of Contents" design on the `/serverless-knowledge-base/*` pages.
+    which breaks the "Table Of Contents" design on the `/knowledge-base/*` pages.
    */
   overflow: unset !important;
   background-color: white;

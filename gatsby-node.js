@@ -27,7 +27,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                 }
             }
             knowledgeBase: allMdx(
-                filter: { frontmatter: { slug: { regex: "/serverless-knowledge-base/" } } }
+                filter: { frontmatter: { slug: { regex: "/knowledge-base/" } } }
             ) {
                 edges {
                     node {

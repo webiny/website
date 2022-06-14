@@ -294,7 +294,7 @@ export default function Template({
 
     const breadcrumbs = [
         { link: "/", text: "Home" },
-        { link: "/serverless-knowledge-base", text: "Serverless Knowledge Base" },
+        { link: "/knowledge-base", text: "Knowledge Base" },
         { text: frontmatter.title },
     ];
 
@@ -313,7 +313,7 @@ export default function Template({
                 <div className={cx("content", blogStyles)}>
                     <BlogHeader>
                         <div className="blog-header-inner">
-                            <Link to="/serverless-knowledge-base">← Serverless Knowledge Base</Link>
+                            <Link to="/knowledge-base">← Knowledge Base</Link>
                         </div>
                         <h1>{frontmatter.title}</h1>
                     </BlogHeader>

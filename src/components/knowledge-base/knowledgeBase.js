@@ -17,7 +17,7 @@ import {
 const KnowledgeBase = props => {
     const { data } = props;
 
-    const breadcrumbs = [{ link: "/", text: "Home" }, { text: "Serverless Knowledge Base" }];
+    const breadcrumbs = [{ link: "/", text: "Home" }, { text: "Knowledge Base" }];
 
     return (
         <Fragment>
@@ -26,7 +26,7 @@ const KnowledgeBase = props => {
                 <ContentContainer className={containerClass}>
                     <TextContentWrapper>
                         <Title>
-                            <TitleHighlight> Serverless </TitleHighlight> Knowledge Base
+                            <TitleHighlight> Knowledge </TitleHighlight> Base
                         </Title>
                     </TextContentWrapper>
                     <div className="post-container">

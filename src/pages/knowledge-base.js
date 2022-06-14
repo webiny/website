@@ -7,7 +7,7 @@ export default ({ data, location }) => {
     const knowledgeBasePosts = data.knowledgeBase.nodes;
 
     return (
-        <BaseLayout title="Serverless Knowledge Base">
+        <BaseLayout title="Knowledge Base">
             <KnowledgeBase data={knowledgeBasePosts} location={location} />
         </BaseLayout>
     );
@@ -18,7 +18,7 @@ export const listBlogsQuery = graphql`
         knowledgeBase: allMdx(
             limit: 1000
             sort: { fields: frontmatter___date, order: DESC }
-            filter: { frontmatter: { slug: { regex: "/serverless-knowledge-base/" } } }
+            filter: { frontmatter: { slug: { regex: "/knowledge-base/" } } }
         ) {
             nodes {
                 id
