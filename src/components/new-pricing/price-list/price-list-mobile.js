@@ -86,7 +86,7 @@ const PriceListMobile = ({ priceList }) => {
                     buttonText="Contact us"
                     collapseName="Enterprise"
                     buttonType="outlineOrange"
-                    link={"/call/demo"}
+                    link={"https://site.webiny.com/forms/product-demo"}
                     border
                 />
             </div>

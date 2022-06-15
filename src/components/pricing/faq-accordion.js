@@ -102,7 +102,7 @@ const FAQAccordion = () => {
                         install it yourself
                     </a>
                     , or{" "}
-                    <a href="/call/demo" target="_blank">
+                    <a href="https://site.webiny.com/forms/product-demo" target="_blank">
                         book a call
                     </a>{" "}
                     with us and we'll prepare a demo for you.
@@ -127,7 +127,7 @@ const FAQAccordion = () => {
                     <br />
                     Additional benefits are illustrated in the pricing table above, if you however
                     have any questions, you're welcome{" "}
-                    <a href="/call/demo" target="_blank">
+                    <a href="https://site.webiny.com/forms/product-demo" target="_blank">
                         book a call
                     </a>{" "}
                     with us.

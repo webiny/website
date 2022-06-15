@@ -81,7 +81,7 @@ const HaveMoreQuestoins = () => {
                     <Button
                         className={"button"}
                         type={"secondary"}
-                        link="/call/demo"
+                        link="https://site.webiny.com/forms/product-demo"
                         target="_blank"
                     >
                         Book a Call

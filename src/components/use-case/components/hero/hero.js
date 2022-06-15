@@ -130,7 +130,7 @@ const defaultPrimaryCTA = {
 
 const defaultSecondaryCTA = {
     label: "Book a demo",
-    link: "/call/demo",
+    link: "https://site.webiny.com/forms/product-demo",
 };
 
 const HeroComponent = ({
@@ -162,7 +162,7 @@ const HeroComponent = ({
                                     trackBookADemo({ placement: "solutions-page-hero" });
                                 }}
                             >
-                                <Button className={"button"} link={secondaryCTA.link}>
+                                <Button className={"button"} link={secondaryCTA.link} target="_blank">
                                     {secondaryCTA.label}
                                 </Button>
                             </div>

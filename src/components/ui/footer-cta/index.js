@@ -112,7 +112,7 @@ const GoServerless = () => {
                         }}
                     >
                         <Button
-                            link={"/call/demo"}
+                            link={"https://site.webiny.com/forms/product-demo"}
                             target={"_blank"}
                             type={"secondary"}
                             className={ctaButton}

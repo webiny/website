@@ -113,7 +113,7 @@ const faqs = [
                     install it yourself
                 </a>
                 , or{" "}
-                <a href="/call/demo" target="_blank" rel="noreferrer">
+                <a href="https://site.webiny.com/forms/product-demo" target="_blank" rel="noreferrer">
                     book a call
                 </a>{" "}
                 with us and we'll prepare a demo for you.
