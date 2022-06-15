@@ -162,7 +162,7 @@ const HeroComponent = ({
                                     trackBookADemo({ placement: "solutions-page-hero" });
                                 }}
                             >
-                                <Button className={"button"} link={secondaryCTA.link}>
+                                <Button className={"button"} link={secondaryCTA.link} target="_blank">
                                     {secondaryCTA.label}
                                 </Button>
                             </div>
