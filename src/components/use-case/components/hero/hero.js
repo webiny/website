@@ -130,7 +130,7 @@ const defaultPrimaryCTA = {
 
 const defaultSecondaryCTA = {
     label: "Book a demo",
-    link: "/call/demo",
+    link: "https://site.webiny.com/forms/product-demo",
 };
 
 const HeroComponent = ({

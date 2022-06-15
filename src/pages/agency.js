@@ -20,7 +20,7 @@ class AgencyPage extends React.Component {
         trackBookADemo({ placement: "agency" });
 
         if (window) {
-            const win = window.open("/call/demo", "_blank");
+            const win = window.open("https://site.webiny.com/forms/product-demo", "_blank");
             win.focus();
         }
     };

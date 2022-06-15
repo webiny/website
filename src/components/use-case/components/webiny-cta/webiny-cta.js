@@ -141,7 +141,7 @@ const primaryCTA = {
     color: theme.color.purple,
     actionType: "dark",
     actionLabel: "book a call",
-    actionLink: "/call/demo",
+    actionLink: "https://site.webiny.com/forms/product-demo",
 };
 
 const WebinyCTAComponent = ({ className, cta = defaultCTA }) => (

@@ -7,7 +7,7 @@ const HeroHomePage = () => {
     return (
         <HeroComponent
             buttonTopLink="/pricing"
-            buttonBottomLink="/call/demo"
+            buttonBottomLink="https://site.webiny.com/forms/product-demo"
             title={
                 <>
                     The Enterprise CMS platform that you can{" "}
@@ -24,7 +24,7 @@ const HeroHomePage = () => {
             }
             codeFieldText="$ npx create-webiny-project my-new-project"
             buttonTopLabel="TRY IT NOW FOR FREE"
-            buttomBottomLabel="Request a demo "
+            buttomBottomLabel="Schedule a demo with our team"
         />
     );
 };
