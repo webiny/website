@@ -67,8 +67,8 @@ const priceList = [
             {
                 label: "Number of API calls",
                 open_source: "Unlimited",
-                business: { title: "First 1M free", text: "Then $19 per month per 1M" },
-                enterprise: "Volume pricing on request",
+                business: "Unlimited",
+                enterprise: "Unlimited",
             },
         ],
     },
@@ -154,8 +154,8 @@ const priceList = [
             {
                 label: "Staged rollouts",
                 open_source: false,
-                business: "Blue/Green deployments (coming soon)",
-                enterprise: "Multi-stage rollouts (coming soon)",
+                business: "-",
+                enterprise: "Multi-stage rollouts",
             },
             {
                 label: "Point in time recovery",

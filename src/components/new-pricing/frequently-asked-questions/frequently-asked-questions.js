@@ -40,14 +40,10 @@ const faqs = [
                     different websites inside the same Webiny instance, it will be counted as one
                     user seat as long as it uses the same credentials.
                 </p>
-                <p>
-                    Additionally, we only count user seats inside the production environment. Usage
-                    in other environments, including personal development environments, is not
-                    counted against your usage.
-                </p>
             </>
         ),
     },
+    /*
     {
         title: "Why do I need to pay for the API calls if I'm self-hosting?",
         children: (
@@ -83,6 +79,7 @@ const faqs = [
             </>
         ),
     },
+    
     {
         title: "How do I know how many API calls I will need?",
         children: (
@@ -104,6 +101,7 @@ const faqs = [
             </>
         ),
     },
+    */
     {
         title: "Can I see a demo of Webiny in action?",
         children: (
@@ -135,7 +133,7 @@ const faqs = [
         title: "Are there any other hidden costs?",
         children: (
             <p>
-                No, it's just the user seats, API calls and the addons. No other hidden fees or
+                No, it's just the user seats and the addons. No other hidden fees or
                 surprises.
             </p>
         ),

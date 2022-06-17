@@ -76,13 +76,14 @@ const heroSectionData = {
                 toolTipDecription:
                     "Every Webiny CMS Business instance has 1 user included in the free tier.",
             },
+            /*
             {
                 benefitName: "First 1M API calls p/month are",
                 info: false,
                 toolTipDecription:
                     "Every Webiny CMS Business instance has 1M API calls included in the free tier.",
             },
-            /*
+            
             {
                 benefitName: "Advanced features",
                 info: true,

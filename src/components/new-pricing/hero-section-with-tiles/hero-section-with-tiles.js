@@ -43,6 +43,7 @@ import {
     TogglerTextBottomContainer,
 } from "./hero-section-with-tiles.styled";
 
+const FREE_USERS = 1;
 const BASE_PRICE = 9;
 const PUBLISHING_WORKFLOW_PRICE = 9;
 const ADVANCED_ROLES_PRICE = 9;
@@ -65,8 +66,7 @@ const MainTile = ({ dataTile }) => {
     }, [togglePublishingWorkflow, toggleAdvancedRoles]);
 
     const totalPrice = useMemo(() => {
-        // reduce by BASE_PRICE as first user is free
-        return pricePerUser * usersNumber - BASE_PRICE;
+        return (pricePerUser * (usersNumber - 1));
     }, [usersNumber, pricePerUser]);
 
     return (
