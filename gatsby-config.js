@@ -175,7 +175,7 @@ module.exports = {
             resolve: 'gatsby-plugin-fathom',
             options: {
               // Your custom domain, defaults to `cdn.usefathom.com`
-              trackingUrl: 'https://banquet-golden-years.webiny.com',
+              trackingUrl: 'banquet-golden-years.webiny.com',
               // Unique site id
               siteId: 'MZFYOTYQ'
             }
