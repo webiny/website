@@ -76,5 +76,10 @@ export default {
         description: "Developer Relations & Software Engineer @ Webiny",
         avatar: BenImg,
         twitter: "muzzlehatch_"
-    }
+    },
+    josephChege: {
+        name: "Joseph Chege",
+        description: "Writer, Write With Webiny program",
+        avatar: BenImg,
+    },
 };
