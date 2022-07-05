@@ -9,7 +9,7 @@ import svenImg from "../assets/sven.png";
 import swapnilImg from "../assets/swapnil.png";
 import IgorImg from "../assets/igor.png";
 import BenImg from "../assets/ben.png";
-import NobodyImg from "../assets/nobody.png";
+import JoesphImg from "../assets/joseph-chege.png";
 
 
 export default {
@@ -80,8 +80,8 @@ export default {
     },
     josephChege: {
         name: "Joseph Chege",
-        description: "Writer, Write With Webiny program",
-        avatar: NobodyImg,
-        twitter: ""
+        description: "A full-stack developer who writes code and documents blogs to share ideas.",
+        avatar: JoesphImg,
+        twitter: "checkpoint_ke"
     },
 };
