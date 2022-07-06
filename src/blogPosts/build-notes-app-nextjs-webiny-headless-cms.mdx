@@ -11,7 +11,7 @@ date: 2022-06-04
 
 ## What is Webiny?
 
-Webiny is an open-source, developer-friendly serverless CMS powered by modern tools and technologies such as Node, React and a GraphQL API. It also gives you the flexibility to integrate with other tools like Gatsby, Nextjs and Astro. Webiny helps you engineer, build and deploy applications on top of the serverless infrastructure. [check this guide to understand its unique features](https://www.webiny.com/why-webiny/).
+Webiny is an open-source, developer-friendly serverless CMS powered by modern tools and technologies such as Node, React and a GraphQL API. It also gives you the flexibility to integrate with other tools like Gatsby, Nextjs and Astro. Webiny helps you engineer, build and deploy applications on top of the serverless infrastructure. [Check this guide to understand its unique features](https://www.webiny.com/why-webiny/).
 
 Next.js is a React-based frontend web framework. It allows you to perform server-side rendering (SSR) operations which keep API keys safe from prying eyes. It can also generate pages when the site is built using static rendering.
 
@@ -26,7 +26,7 @@ To follow along with this tutorial, ensure you have the following requirements r
 - A Hosted Webiny project on AWS. [Check this guide and learn how to create and deploy a new Webiny project to your AWS account](https://www.webiny.com/docs/get-started/install-webiny).
  - Basic knowledge of working with Next.js.
 
-## Setting up the Notes App content model
+## Setting Up the Notes App Content Model
 
 A model defines the structure of the data that your application will consume. Each application has a different content model. Here, we need to set up the primary inputs that a Note app should have.
 
@@ -198,7 +198,7 @@ Ensure that you have commented out any other mutation on the left pane, and then
 
 ![Result of the step-16-api-keys-new.png note GraphQL mutation](./assets/build-notes-app-nextjs-webiny-headless-cms/step-14-deleted-note-graphql-result.png)
 
-## Generate Webiny API ACCESS KEY
+## Generate Webiny API Access Key
 
 To connect our Next.js Application with the CMS, we need to create a Webiny API ACCESS KEY.
 Click on the top hamburger icon to access Settings and select the API Keys under Access Management. Then create a New API Key.
@@ -242,7 +242,7 @@ If you have different Admin users, Webiny allows you to manage the user access p
 
 Once you have configured the correct API access management, click the Save API Key button. The created API Key should now be listed on the left side. Head over to this newly created API key and copy the token generated. We will use this token key to perform different permission to the API using Next.js.
 
-## Setting up Note App Frontend with Next.js
+## Setting up the Note App Frontend with Next.js
 
 To set up the Next.js application, we will use the create next app tool to bootstrap a basic Next.js application.
 
@@ -274,7 +274,7 @@ From above:
 - To get the **Read URL**, open the Webiny **GraphQL Playground** page, and click on the Read API tab. On the top part, after the history button, copy the URL and paste it to the `NEXT_PUBLIC_WEBINY_API_READ_URL` env variable.
 - To get the **Manage URL**, click on the **Manage API** tab, copy the URL, and paste it to the `NEXT_PUBLIC_WEBINY_API_MANAGE_URL` env variable.
 
-## Establish a Communication between Webiny and Next.js
+## Establish a Communication Between Webiny and Next.js
 
 Next.js need to communicate with Webiny, and we have the env variable ready. Next.js uses Server-Side Rendering (SSR). This way, we can interact with an API directly using Next.js and communicate with the data on the server.
 
@@ -415,7 +415,7 @@ export async function getAllNotesForHome() {
 
 To display the Notes, head over to the **pages/index.js** file and do the following: 
 
-### 1. import the necessary components:
+### 1. Import the Necessary Components:
 
 ```tsx
 import {useState} from 'react';
@@ -424,7 +424,7 @@ import Navbar from '../components/Navbar/Navbar';
 import NoteCard from '../components/NoteCard/NoteCard';
 ```
 
-### 2. Add functionality to fetch the posts on the server side using `getServerSideProps()`.
+### 2. Add Functionality to Fetch the Posts on the Server Side Using `getServerSideProps()`.
 
 `getServerSideProps()` allow your page to fetch external data at page build time. This way, you can export a props function that fetches and returns the data, which will then be passed as props to the `NoteCard` component as follows:
 
@@ -437,7 +437,9 @@ export async function getServerSideProps() {
 }
 ```
 
-### 3. Modify the `Home` function and add a notes state for `allNotes`. Then render the `NoteCard` component with the data that maps to the `allNotes` props.
+### 3. Modify the `Home` Function 
+
+We will also add a notes state for `allNotes`. Then render the `NoteCard` component with the data that maps to the `allNotes` props.
 
 ```tsx
 export default function Home({allNotes}) {
@@ -699,31 +701,31 @@ export default AddNote
 
 To consume this component, head over to the pages/index.js file:
 
-### 1. Import the AddNote component:
+### 1. Import the AddNote Component:
 
 ```tsx
 import AddNote from '../components/AddNote/AddNote';
 ```
 
-### 2. Define a state variable for showing add note form:
+### 2. Define a State Variable for Showing Add Note Form:
 
 ```tsx
 const [showAddNote,toggleShowAddNote] = useState(false);
 ```
 
-### 3. Define a function to be appending notes to the state once added:
+### 3. Define a Function to be Appending Notes to the State Once Added:
 
 ```tsx
 const addNote = (note) => setNotes([...notes,note]);
 ```
 
-### 4. Define a function to toggle the show note form:
+### 4. Define a Function to Toggle the Show Note Form:
 
 ```tsx
 const resetShowAddNote = () => toggleShowAddNote(!showAddNote);
 ```
 
-### 5. Update the render function as follows:
+### 5. Update the Render Function as Follows:
 
 ```tsx
 <div className={styles.main}>
@@ -784,13 +786,13 @@ export async function deleteNote(data){
 
 Then in the **pages/index.js** file:
 
-### 1. Import the function
+### 1. Import the Function
 
 ```tsx
 import {deleteNote} from './lib/api';
 ```
 
-### 2. Add a `deleteNote` handler function:
+### 2. Add a `deleteNote` Handler Function:
 
 ```tsx
 const handleDeleteNote = (id) => {
@@ -803,7 +805,7 @@ const handleDeleteNote = (id) => {
 }
 ```
 
-### 3. Pass the handler as a prop on the NoteCard component
+### 3. Pass the Handler as a Prop on the NoteCard Component
 
 ```tsx
 <NoteCard cardData={note} handleDeleteNote={handleDeleteNote} />
@@ -811,13 +813,13 @@ const handleDeleteNote = (id) => {
 
 Since the `handleDeleteNote` is executed inside the **NoteCard** component, we need to receive this prop. Navigate to the **NoteCard** component:
 
-### 1. Receive the prop
+### 1. Receive the Prop
 
 ```tsx
 function NoteCard({cardData,handleDeleteNote}) 
 ```
 
-### 2. Create a delete button inside the card div:
+### 2. Create a Delete Button Inside the Card Div:
 
 ```tsx
 <div className={styles.cardActions}>
