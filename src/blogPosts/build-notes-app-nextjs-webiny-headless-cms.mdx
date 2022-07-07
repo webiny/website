@@ -283,7 +283,7 @@ Next.js need to communicate with Webiny, and we have the env variable ready. Nex
 
 To establish this server connection, head over to the pages folder and create a lib directory. In the lib directory, create an `api.js` file. We will define the functionalities of communicating to the Webiny Headless CMS. We will start by defining a function for sending requests to the CMS as follows:
 
-```tsx
+```
 async function fetchAPI(query, { variables } = {},read ) {
    const url = read ? process.env.NEXT_PUBLIC_WEBINY_API_READ_URL : process.env.NEXT_PUBLIC_WEBINY_API_MANAGE_URL;
    const res = await fetch(url, {
@@ -329,7 +329,7 @@ Let's create a basic navigation component. In the project folder, create a `comp
 
 In the **Navbar.js** file, add the following basic Next.js navigation:
 
-```tsx
+```
 import React from 'react';
 import styles from './navbar.module.css';
  
@@ -372,7 +372,7 @@ In the `notecard.module.css`, add the following card styling:
 
 Then create a Note Card inside the **Notecard.js** file as follows:
 
-```tsx
+```
 import React from 'react';
 import styles from './notecard.module.css';
  
@@ -396,7 +396,7 @@ The card is ready to receive some data and display Notes. Let’s go ahead and g
 
 In the `lib/api.js` file, add a function to fetch all notes as follows:
 
-```tsx
+```
 export async function getAllNotesForHome() {
    const data = await fetchAPI(
      `query Notes {
@@ -420,7 +420,7 @@ To display the Notes, head over to the `pages/index.js` file and do the followin
 
 ### 1. Import the Necessary Components:
 
-```tsx
+```
 import {useState} from 'react';
 import {getAllNotesForHome} from './lib/api';
 import Navbar from '../components/Navbar/Navbar';
@@ -431,7 +431,7 @@ import NoteCard from '../components/NoteCard/NoteCard';
 
 `getServerSideProps()` allow your page to fetch external data at page build time. This way, you can export a props function that fetches and returns the data, which will then be passed as props to the `NoteCard` component as follows:
 
-```tsx
+```
 export async function getServerSideProps() {
    const allNotes = await getAllNotesForHome();
    return {
@@ -444,7 +444,7 @@ export async function getServerSideProps() {
 
 We will also add a notes state for `allNotes`. Then render the `NoteCard` component with the data that maps to the `allNotes` props.
 
-```tsx
+```
 export default function Home({allNotes}) {
    const [notes,setNotes] = useState(allNotes);
    return (
@@ -498,7 +498,7 @@ This displays the Note record we added earlier when interacting with the Webiny 
 
 Likewise, Next.js should be able to add news note records to your API. Head over to the `/lib/api.js` file, and create a function for adding notes as such:
 
-```tsx
+```unknown
 export async function addNote(data){
   const response = await fetchAPI(`
    mutation createNote($title:String!,$description:String!){
@@ -523,7 +523,7 @@ export async function addNote(data){
 
 Also, we will need a function for publishing these notes to the server:
 
-```tsx
+```
 export async function publishNote(data){
   const response = await fetchAPI(`
    mutation publishNote($id:ID!){
@@ -613,7 +613,7 @@ Add some styling to the `addnote.module.css`:
 
 Then create the components inside the `AddNote.js` file by adding the following:
 
-```tsx
+```
 import React,{useState} from 'react'
 import styles from './addnote.module.css';
 import {addNote,publishNote} from '../../lib/api';
@@ -706,31 +706,31 @@ To consume this component, head over to the pages/index.js file:
 
 ### 1. Import the AddNote Component:
 
-```tsx
+```
 import AddNote from '../components/AddNote/AddNote';
 ```
 
 ### 2. Define a State Variable for Showing Add Note Form:
 
-```tsx
+```
 const [showAddNote,toggleShowAddNote] = useState(false);
 ```
 
 ### 3. Define a Function to be Appending Notes to the State Once Added:
 
-```tsx
+```
 const addNote = (note) => setNotes([...notes,note]);
 ```
 
 ### 4. Define a Function to Toggle the Show Note Form:
 
-```tsx
+```
 const resetShowAddNote = () => toggleShowAddNote(!showAddNote);
 ```
 
 ### 5. Update the Render Function as Follows:
 
-```tsx
+```
 <div className={styles.main}>
   <div className={styles.addNote}>
    <button onClick={resetShowAddNote}>
@@ -770,7 +770,7 @@ Once you have added a note, you will be redirected back to the notes section wit
 To manage the notes, let's create a component that will allow you to delete a note.
 First, go to the `lib/api.js` file, and create a function for deleting a note as follows:
 
-```tsx
+```
 export async function deleteNote(data){
   const response = await fetchAPI(`
    mutation publishNote($id:ID!){
@@ -791,13 +791,13 @@ Then in the `pages/index.js` file:
 
 ### 1. Import the Function
 
-```tsx
+```
 import {deleteNote} from './lib/api';
 ```
 
 ### 2. Add a `deleteNote` Handler Function:
 
-```tsx
+```
 const handleDeleteNote = (id) => {
    let result = deleteNote({id}); // delete the note.
    if(result){
@@ -810,7 +810,7 @@ const handleDeleteNote = (id) => {
 
 ### 3. Pass the Handler as a Prop on the NoteCard Component
 
-```tsx
+```
 <NoteCard cardData={note} handleDeleteNote={handleDeleteNote} />
 ```
 
@@ -818,13 +818,13 @@ Since the `handleDeleteNote` is executed inside the `NoteCard` component, we nee
 
 ### 1. Receive the Prop
 
-```tsx
+```
 function NoteCard({cardData,handleDeleteNote}) 
 ```
 
 ### 2. Create a Delete Button Inside the Card Div:
 
-```tsx
+```
 <div className={styles.cardActions}>
    <button onClick={ () => handleDeleteNote(cardData.id)}>Delete</button>
 </div>
