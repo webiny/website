@@ -7,7 +7,7 @@ featureImage: "./assets/build-notes-app-nextjs-webiny-headless-cms/cover.png"
 author: josephChege
 date: 2022-06-04
 ---
-**Building a notes app with Webiny Headless CMS and Next.js gives you the flexibility to decouple your backend from the frontend. This way, you get the best of both worlds. A highly scalable and secure backend content management application, and at the same time the advantage of choosing the best frontend platform to channel your application to your users.**
+Building a notes app with Webiny Headless CMS and Next.js gives you the flexibility to decouple your backend from the frontend. This way, you get the best of both worlds. A highly scalable and secure backend content management application, and at the same time the advantage of choosing the best frontend platform to channel your application to your users.
 
 ## What is Webiny?
 
@@ -30,7 +30,7 @@ To follow along with this tutorial, ensure you have the following requirements r
 
 A model defines the structure of the data that your application will consume. Each application has a different content model. Here, we need to set up the primary inputs that a Note app should have.
 
-From your AWS deployed Webiny project, head over to the Webiny Admin dashboard page. This guide is creating a Headless Webiny app. Click the **Headless CMS** card, and set up a new **New Content Model**.
+From your AWS deployed Webiny project, head over to the Webiny Admin dashboard page. Click the **Headless CMS** card, and set up a new **New Content Model**.
 
 ![Create a content model](./assets/build-notes-app-nextjs-webiny-headless-cms/step-1-create-content-model.png)
 
@@ -207,7 +207,6 @@ Click on the top hamburger icon to access Settings and select the API Keys under
 
 ![New API Key button](./assets/build-notes-app-nextjs-webiny-headless-cms/step-16-api-keys-new.png)
 
-
 In the resulting form, add the key name and description. In the **Permissions** section, under Content, select **All Locales** that the API can be accessed on.
 
 ![Locales selector](./assets/build-notes-app-nextjs-webiny-headless-cms/step-17-all-locales-selector.png)
@@ -221,6 +220,8 @@ To create a Custom Access:
 - Under the **GraphQL API Types**, check the Access Level your API requires, such as **Read** and **Manage**
 
 The created content model can have different operations such as Read, Write, and Delete. To allow Next.js to perform such actions, head over to Content model Groups and select **All groups**. Then choose Read, Write and Delete **Primary actions**.
+
+**Caution! This will allow anyone who has your API key and API URL to modify the data in your Webiny instance. If you are using Webiny for anything other than this content model, we recommend you assign the To Do content model to a group, and restrict API access to that model and content only.**
 
 ![Custom API access levels](./assets/build-notes-app-nextjs-webiny-headless-cms/step-18-custom-api-access-level.png)
 
@@ -242,6 +243,8 @@ If you have different Admin users, Webiny allows you to manage the user access p
 
 Once you have configured the correct API access management, click the Save API Key button. The created API Key should now be listed on the left side. Head over to this newly created API key and copy the token generated. We will use this token key to perform different permission to the API using Next.js.
 
+
+
 ## Setting up the Note App Frontend with Next.js
 
 To set up the Next.js application, we will use the create next app tool to bootstrap a basic Next.js application.
@@ -258,7 +261,7 @@ This will create a local Next.js app. Once the setup is done, proceed to the new
 cd notes-app-webiny
 ```
 
-To test this out, run the command `npm run dev`. Then open http://localhost:3000 on the browser. You will be served with the Hello world version of Next.js.
+To test this out, run the command `npm run dev`. Then open [http://localhost:3000](http://localhost:3000) on the browser. You will be served with the Hello world version of Next.js.
 
 Now, dive in and consume the Webiny API using this Next.js project. Create a `.env.local` file at the root directory of your project to host the Webiny API configuration as follows:
 
@@ -278,7 +281,7 @@ From above:
 
 Next.js need to communicate with Webiny, and we have the env variable ready. Next.js uses Server-Side Rendering (SSR). This way, we can interact with an API directly using Next.js and communicate with the data on the server.
 
-To establish this server connection, head over to the pages folder and create a lib directory. In the lib directory, create an api.js file. We will define the functionalities of communicating to the Webiny Headless CMS. We will start by defining a function for sending requests to the CMS as follows:
+To establish this server connection, head over to the pages folder and create a lib directory. In the lib directory, create an `api.js` file. We will define the functionalities of communicating to the Webiny Headless CMS. We will start by defining a function for sending requests to the CMS as follows:
 
 ```tsx
 async function fetchAPI(query, { variables } = {},read ) {
@@ -306,7 +309,7 @@ In case of any errors, the function will return them; else, it will return the d
 
 ## Create Notes App Navigation Component
 
-Let's create a basic navigation component. In the project folder, create a **components** folder. In the **components** folder, create a **Navbar** folder and add two files: **Navbar.js**, and **navbar.module.css**. In the **navbar.module.css** file, add the following navbar styles:
+Let's create a basic navigation component. In the project folder, create a `components` folder. In the `components` folder, create a `Navbar` folder and add two files: `Navbar.js`, and `navbar.module.css`. In the `navbar.module.css` file, add the following navbar styles:
 
 ```css
 .navbar {
@@ -343,8 +346,8 @@ export default function Navbar() {
 
 ## Create Notes App Card Component
 
-To display the Notes, we will create a card component that Next.js will use to display and manage the Notes. Create a **NoteCard** folder inside the **components** folder. In the **NoteCard** directory, create two files: **Notecard.js**, and **notecard.module.css**. Then create your card as follows:
-In the **notecard.module.css**, add the following card styling:
+To display the Notes, we will create a card component that Next.js will use to display and manage the Notes. Create a `NoteCard` folder inside the `components` folder. In the `NoteCard` directory, create two files: `Notecard.js`, and `notecard.module.css`. Then create your card as follows:
+In the `notecard.module.css`, add the following card styling:
 
 ```css
 .card {
@@ -391,7 +394,7 @@ export default function NoteCard({cardData,handleDeleteNote}) {
 
 The card is ready to receive some data and display Notes. Let’s go ahead and get this data from Webiny and show it to a Next.js page.
 
-In the **/lib/api.js** file, add a function to fetch all notes as follows:
+In the `lib/api.js` file, add a function to fetch all notes as follows:
 
 ```tsx
 export async function getAllNotesForHome() {
@@ -413,7 +416,7 @@ export async function getAllNotesForHome() {
 }
 ```
 
-To display the Notes, head over to the **pages/index.js** file and do the following: 
+To display the Notes, head over to the `pages/index.js` file and do the following: 
 
 ### 1. Import the Necessary Components:
 
@@ -471,7 +474,7 @@ export default function Home({allNotes}) {
 }
 ```
 
-To format the page, go ahead and update the style for the main class in the **styles/Home.module.css** file as such:
+To format the page, go ahead and update the style for the main class in the `styles/Home.module.css` file as such:
 
 ```css
 .main {
@@ -493,7 +496,7 @@ This displays the Note record we added earlier when interacting with the Webiny 
 
 ## Creating a Note
 
-Likewise, Next.js should be able to add news note records to your API. Head over to the **/lib/api.js** file, and create a function for adding notes as such:
+Likewise, Next.js should be able to add news note records to your API. Head over to the `/lib/api.js` file, and create a function for adding notes as such:
 
 ```tsx
 export async function addNote(data){
@@ -541,9 +544,9 @@ export async function publishNote(data){
 }
 ```
 
-Create a component that will render a Next.js UI to add notes. Inside the **components** folder, create an **AddNote** folder. Inside the **AddNote** folder, add two files: **AddNote.js**, and **addnote.module.css**, and create the component as follows.
+Create a component that will render a Next.js UI to add notes. Inside the `components` folder, create an `AddNote` folder. Inside the `AddNote` folder, add two files: `AddNote.js`, and `addnote.module.css`, and create the component as follows.
 
-Add some styling to the **addnote.module.css**:
+Add some styling to the `addnote.module.css`:
 
 ```css
 .container {
@@ -608,7 +611,7 @@ Add some styling to the **addnote.module.css**:
 
 ```
 
-Then create the components inside the **AddNote.js** file by adding the following:
+Then create the components inside the `AddNote.js` file by adding the following:
 
 ```tsx
 import React,{useState} from 'react'
@@ -765,7 +768,7 @@ Once you have added a note, you will be redirected back to the notes section wit
 ## Deleting a Note
 
 To manage the notes, let's create a component that will allow you to delete a note.
-First, go to the **lib/api.js** file, and create a function for deleting a note as follows:
+First, go to the `lib/api.js` file, and create a function for deleting a note as follows:
 
 ```tsx
 export async function deleteNote(data){
@@ -784,7 +787,7 @@ export async function deleteNote(data){
 }
 ```
 
-Then in the **pages/index.js** file:
+Then in the `pages/index.js` file:
 
 ### 1. Import the Function
 
@@ -811,7 +814,7 @@ const handleDeleteNote = (id) => {
 <NoteCard cardData={note} handleDeleteNote={handleDeleteNote} />
 ```
 
-Since the `handleDeleteNote` is executed inside the **NoteCard** component, we need to receive this prop. Navigate to the **NoteCard** component:
+Since the `handleDeleteNote` is executed inside the `NoteCard` component, we need to receive this prop. Navigate to the `NoteCard` component:
 
 ### 1. Receive the Prop
 
