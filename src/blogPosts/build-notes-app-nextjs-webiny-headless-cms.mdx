@@ -279,9 +279,9 @@ From above:
 
 ## Establish a Communication Between Webiny and Next.js
 
-Next.js need to communicate with Webiny, and we have the env variable ready. Next.js uses Server-Side Rendering (SSR). This way, we can interact with an API directly using Next.js and communicate with the data on the server.
+Next.js needs to communicate with Webiny using the API access token we have ready as an env variable. Because Next.js uses Server-Side Rendering (SSR), we can interact with an API directly using Next.js on the server and avoid exposing our token to the browser, which would be a security risk.
 
-To establish this server connection, head over to the pages folder and create a lib directory. In the lib directory, create an `api.js` file. We will define the functionalities of communicating to the Webiny Headless CMS. We will start by defining a function for sending requests to the CMS as follows:
+To establish this server connection, head over to the `pages` folder and create a `lib` directory. In the `lib` directory, create an `api.js` file. We will define the functionalities of communicating to the Webiny Headless CMS. We will start by defining a function for sending requests to the CMS as follows:
 
 ```
 async function fetchAPI(query, { variables } = {},read ) {
@@ -305,7 +305,7 @@ async function fetchAPI(query, { variables } = {},read ) {
 }
 ```
 The above function receives three parameters the `query` or mutation object, `variables`, and `read`. The `read` parameter will define the URL to be used. The variables will be sent for API mutation requests.
-In case of any errors, the function will return them; else, it will return the data fetched.
+In case of any errors, the function will throw an exception; else, it will return the data fetched.
 
 ## Create Notes App Navigation Component
 
@@ -482,7 +482,7 @@ To format the page, go ahead and update the style for the main class in the `sty
   margin: 0px auto;
 }
 ```
-To test everything is working, start your development server (if the Next.js app is not already up and running) and run the following command from a terminal that points to the Next.js app directory:
+To test everything is working, start your development server (if the Next.js app is not already up and running) and run the following command from a terminal that points to the Next.js `app` directory:
 
 ```bash
 npm run dev
