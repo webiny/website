@@ -38,11 +38,11 @@ On the resulting page, click on **New Model** to create the Notes model:
 
 ![Click on the "New Model" button](./assets/build-notes-app-nextjs-webiny-headless-cms/step-2-click-new-model.png)
 
-Type in the model name and the description on the resulting pop-up and create the model:
+Type in the model name ("Notes") and the description on the resulting pop-up and create the model:
 
 ![Fill out the New Content Model dialog](./assets/build-notes-app-nextjs-webiny-headless-cms/step-3-new-content-model-dialog.png)
 
-Once you have created the model, you will be directed to a fields page to insert the relevant fields/content:
+Once you have created the Notes model, you will be directed to a fields page to insert the relevant fields/content:
 
 ![Fill out the New Content Model dialog](./assets/build-notes-app-nextjs-webiny-headless-cms/step-4-create-notes-model-fields.png)
 
@@ -73,8 +73,8 @@ Then click on API Playground. You will be presented with a GraphQL API Playgroun
 We will run the first query in this playground to check and test the model. Click on the Read API tab. On the left pane, write the following GraphQL query:
 
 ```graphql
-query listSampleNotes {
-  listSampleNotes {
+query listNotes {
+  listNotes {
    data {
     id
     title
@@ -83,12 +83,12 @@ query listSampleNotes {
   }
 }
 ```
-Ensure that you comment on any other pre-existing query and then hit the play button. The results on the right pane should be similar to:
+Ensure that you comment out any other pre-existing query and then hit the play button. The results on the right pane should be similar to:
 
 ```json
 {
   "data": {
-   "listSampleNotes": {
+   "listNotes": {
     "data": []
    }
   },
@@ -103,8 +103,8 @@ The data array is empty because we have not added any sample notes yet.
 To create a sample note, click on the Manage API tab and add the following GraphQL mutation:
 
 ```graphql
-mutation createSampleNote($title:String!,$description:String!){
-  createSampleNotes(data:{title:$title,description:$description}){
+mutation createNote($title:String!,$description:String!){
+  createNotes(data:{title:$title,description:$description}){
    data {
     id
     title
@@ -123,7 +123,7 @@ From above, the title and the description are variables that will be supplied fr
 }
 ```
 
-Ensure you have commented on any other mutation on the pane, and then hit the play button.
+Ensure you have commented out any other mutation on the pane, and then hit the play button.
 On the right pane, you will get a similar result as such:
 
 ![Result of the GraphQL mutation](./assets/build-notes-app-nextjs-webiny-headless-cms/step-10-graphql-mutation-result.png)
@@ -131,8 +131,8 @@ On the right pane, you will get a similar result as such:
 At this stage, the note created is on the preview. It won't be accessed until it is published. To check it out, click on the Preview API tab and add the below query on the left pane:
 
 ```graphql
-query getSampleNotes {
-  listSampleNotes {
+query getNotes {
+  listNotes {
    data{
     id
     title
@@ -142,15 +142,15 @@ query getSampleNotes {
 }
 ```
 
-Ensure that any other query on the pane is commented on, and then hit the play button. On the right pane, you should get the recently created note as below:
+Ensure that any other query on the pane is commented out, and then hit the play button. On the right pane, you should get the recently created note as below:
 
 ![Result of the create note GraphQL mutation](./assets/build-notes-app-nextjs-webiny-headless-cms/step-11-graphql-query-result.png)
 
 The next step is to publish it. Switch to the **Manage API** tab. On the left pane, add the following mutation:
 
 ```graphql
-mutation publishSampleNote($id:ID!){
-  publishSampleNotes(revision:$id){
+mutation publishNote($id:ID!){
+  publishNotes(revision:$id){
    data {
     id
     title
@@ -167,7 +167,7 @@ From the above mutation, we will be passing the ID variable from the query varia
   "id": "id_of_the_note"
 }
 ```
-Replace the value of the id with the id of the recently created note. Ensure that any other mutation is commented. Then click on the play button.
+Replace the value of the id with the id of the recently created note. Ensure that any other mutation is commented out. Then click on the play button.
 
 On the right pane, you should get a response as below to suggest that the note has been successfully published:
 
@@ -180,8 +180,8 @@ Now switch to the **Read API** tab, and hit the play button. You should have the
 To delete a note, switch back to the Manage API tab. On the left pane, add the following mutation:
 
 ```graphql
-mutation deleteSampleNote($id:ID!){
-  deleteSampleNotes(revision:$id){
+mutation deleteNote($id:ID!){
+  deleteNotes(revision:$id){
    data 
   }
 }
@@ -221,7 +221,7 @@ To create a Custom Access:
 
 The created content model can have different operations such as Read, Write, and Delete. To allow Next.js to perform such actions, head over to Content model Groups and select **All groups**. Then choose Read, Write and Delete **Primary actions**.
 
-**Caution! This will allow anyone who has your API key and API URL to modify the data in your Webiny instance. If you are using Webiny for anything other than this content model, we recommend you assign the To Do content model to a group, and restrict API access to that model and content only.**
+**Caution! This will allow anyone who has your API key and API URL to modify the data in your Webiny instance. If you are using Webiny for anything other than this content model, we recommend you assign the Notes content model to a group, and restrict API access to that model and content only.**
 
 ![Custom API access levels](./assets/build-notes-app-nextjs-webiny-headless-cms/step-18-custom-api-access-level.png)
 
@@ -400,7 +400,7 @@ In the `lib/api.js` file, add a function to fetch all notes as follows:
 export async function getAllNotesForHome() {
    const data = await fetchAPI(
      `query Notes {
-      listSampleNotes {
+      listNotes {
        data {
         id
         title
@@ -412,7 +412,7 @@ export async function getAllNotesForHome() {
     {},
     true
    );
-   return data.listSampleNotes.data
+   return data.listNotes.data
 }
 ```
 
@@ -502,7 +502,7 @@ Likewise, Next.js should be able to add news note records to your API. Head over
 export async function addNote(data){
   const response = await fetchAPI(`
    mutation createNote($title:String!,$description:String!){
-    createSampleNotes(data:{title:$title,description:$description}){
+    createNotes(data:{title:$title,description:$description}){
      data {
       id
       title
@@ -517,7 +517,7 @@ export async function addNote(data){
     'description':data.description
    }
   },false);
-  return response.createSampleNotes.data;
+  return response.createNotes.data;
 }
 ```
 
@@ -527,7 +527,7 @@ Also, we will need a function for publishing these notes to the server:
 export async function publishNote(data){
   const response = await fetchAPI(`
    mutation publishNote($id:ID!){
-    publishSampleNotes(revision:$id){
+    publishNotes(revision:$id){
      data {
       id
       title
@@ -540,7 +540,7 @@ export async function publishNote(data){
     id:data.id
    }  
   },false);
-  return response.publishSampleNotes.data;
+  return response.publishNotes.data;
 }
 ```
 
@@ -774,7 +774,7 @@ First, go to the `lib/api.js` file, and create a function for deleting a note as
 export async function deleteNote(data){
   const response = await fetchAPI(`
    mutation publishNote($id:ID!){
-    deleteSampleNotes(revision:$id){
+    deleteNotes(revision:$id){
      data
     }
    }
@@ -783,7 +783,7 @@ export async function deleteNote(data){
     id:data.id
    }  
   },false);
-  return response.deleteSampleNotes.data;
+  return response.deleteNotes.data;
 }
 ```
 
