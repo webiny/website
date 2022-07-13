@@ -496,7 +496,7 @@ This displays the Note record we added earlier when interacting with the Webiny 
 
 ## Creating a Note
 
-Likewise, Next.js should be able to add news note records to your API. Head over to the `/lib/api.js` file, and create a function for adding notes as such:
+Likewise, Next.js should be able to add new note records to your API. Head over to the `/lib/api.js` file, and create a function for adding notes as such:
 
 ```
 export async function addNote(data){
@@ -702,7 +702,7 @@ function AddNote(props) {
 export default AddNote
 ```
 
-To consume this component, head over to the pages/index.js file:
+To consume this component, head over to the `pages/index.js` file:
 
 ### 1. Import the AddNote Component:
 
@@ -716,7 +716,7 @@ import AddNote from '../components/AddNote/AddNote';
 const [showAddNote,toggleShowAddNote] = useState(false);
 ```
 
-### 3. Define a Function to be Appending Notes to the State Once Added:
+### 3. Define a Function to Append Notes to the State Once Added:
 
 ```js
 const addNote = (note) => setNotes([...notes,note]);
