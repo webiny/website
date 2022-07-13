@@ -12,6 +12,9 @@ import ExternalLink from "../utils/ExternalLink";
 import AuthorCard from "./components/AuthorCard";
 import NewsletterFooter from "./components/NewsletterFooter";
 import Breadcrumb from "../../layouts/components/breadcrumb";
+import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
+deckDeckGoHighlightElement();
+
 
 const shortcodes = { ExternalLink };
 
@@ -177,6 +180,7 @@ const blogStyles = css(
                 fontSize: "0.9em",
                 color: "black",
                 whiteSpace: "pre-wrap",
+                "--deckgo-highlight-code-font-size": "10px",
                 "&.language-text": {
                     fontSize: "0.9em",
                     padding: "3px 5px",
@@ -197,6 +201,10 @@ const blogStyles = css(
             ".twitter-tweet": {
                 margin: "0 auto",
             },
+            "deckgo-highlight-code": {
+                "--deckgo-highlight-code-font-size": "0.8em",
+                "--deckgo-highlight-code-carbon-toolbar-display": "none"
+            }
         },
     },
     mq({

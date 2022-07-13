@@ -110,6 +110,7 @@ module.exports = {
                             </svg>`,
                         },
                     },
+                    /*
                     {
                         resolve: `gatsby-remark-prismjs`,
                         options: {
@@ -140,6 +141,10 @@ module.exports = {
                             escapeEntities: {},
                         },
                     },
+                    */
+                    {
+                        resolve: `gatsby-remark-highlight-code`,
+                      },
                 ],
             },
         },
