@@ -10,6 +10,7 @@ import swapnilImg from "../assets/swapnil.png";
 import IgorImg from "../assets/igor.png";
 import BenImg from "../assets/ben.png";
 import JoesphImg from "../assets/joseph-chege.png";
+import TammiImg from "../assets/taminoturoko-briggs.png";
 
 
 export default {
@@ -83,5 +84,11 @@ export default {
         description: "A full-stack developer who writes code and documents blogs to share ideas.",
         avatar: JoesphImg,
         twitter: "checkpoint_ke"
+    },
+    tammi: {
+        name: "Taminoturoko Briggs",
+        description: "Software developer and technical writer. Core languages include JavaScript and Python.",
+        avatar: TammiImg,
+        twitter: "Tammibr25891504"
     },
 };
