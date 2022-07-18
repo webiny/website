@@ -1,6 +1,6 @@
 ---
 slug: "blog/implement-pagination-webiny-headless-cms-react"
-title: "How to implement Pagination with Webiny headless CMS in React"
+title: "How to Implement Pagination with Webiny Headless CMS in React"
 description: "Working with large data sets, fetching and rendering them at once could cause some negative effects. A common practice of mitigating those is using pagination. In this tutorial, we are going to learn how to implement pagination when using Webiny headless CMS in React."
 tags: ["react", "build projects", "pagination", "contributed articles"]
 featureImage: "./assets/implement-pagination-webiny-headless-cms-react/cover.png"
@@ -8,10 +8,8 @@ author: tammi
 date: 2022-07-20
 ---
 
-Working with large data sets, fetching and rendering them at once could cause some negative effects like the slow loading of components which causes a bad user experience.
-A common practice of handling this is using pagination.
+Fetching data and rendering it in a UI built with React is fantastic … until your blog starts to run into tens, or even hundreds of articles. Once it does, you’ll notice your API calls will slow down to a crawl, and rendering will start to become unresponsive. Let’s look at how you can eliminate these issues using Pagination. What is pagination? What different types of pagination methods exist in GraphQL? How do you fetch data using pagination methods with Apollo Client in a React application? These questions will be answered as we dive into building a paginated blog with React and [Webiny Headless CMS](https://www.webiny.com/docs/overview/applications/headless-cms).
 
-In this tutorial, we are going to learn how to implement pagination when using [Webiny headless CMS](https://www.webiny.com/docs/overview/applications/headless-cms) in React.
 
 ## Prerequisite
 
@@ -24,7 +22,7 @@ To follow along with this tutorial, you need to have the following:
 ## Introduction to Webiny headless CMS
 
 A headless CMS is one that deals strictly with the content. It is a backend-only CMS where the content repository is separated from the presentation layer. Once created its content is served via an API giving front-end developers full control over the user experience using tools they are most familiar with.
-The Webiny [headless CMS](https://www.webiny.com/enterprise-serverless-cms/headless-cms/) is GraphQL based, with a powerful content modeling feature and it’s serverless, so optimized for scalability by default.
+The Webiny [Headless CMS](https://www.webiny.com/enterprise-serverless-cms/headless-cms/) is GraphQL based, with a powerful content modeling feature and it’s serverless, so optimized for scalability by default.
 
 ## What is pagination
 
@@ -131,7 +129,7 @@ cd webiny-pagination
 yarn webiny deploy
 ```
 
-If it’s our first deployment it will take over 20 minutes. after it’s done the URL to the Admin App, GraphQL API endpoints and website would be printed out in the terminal. We will use them shortly.
+If it’s our first deployment it will take over 20 minutes. After it’s done the URL to the Admin App, GraphQL API endpoints and website would be printed out in the terminal. We will use them shortly.
 
 ## Defining Content Model in the Admin app
 
@@ -142,7 +140,7 @@ To access the Admin app we can click the URL which was printed in the terminal e
 
 ![successful-deploy.png](./assets/implement-pagination-webiny-headless-cms-react/successful-deploy.png)
 
-(Perhaps you have closed the terminal, to view the URLs you can the `yarn webiny info` command.)
+(Perhaps you have closed the terminal, to view the URLs you can run the `yarn webiny info` command.)
 
 The first time you access the Admin app you will be be prompted to create a default user with our details. After doing that, we will be taken to the welcome page:
 
