@@ -77,6 +77,7 @@ module.exports = {
             options: {
                 extensions: [`.mdx`],
                 gatsbyRemarkPlugins: [
+                    require.resolve("./remark/withTitleCaseHeadings"),
                     {
                         resolve: `gatsby-remark-images`,
                         options: {

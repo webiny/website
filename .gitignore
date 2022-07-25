@@ -24,3 +24,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+# yarn2 files
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
