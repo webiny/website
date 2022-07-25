@@ -11,6 +11,7 @@ import IgorImg from "../assets/igor.png";
 import BenImg from "../assets/ben.png";
 import JoesphImg from "../assets/joseph-chege.png";
 import TammiImg from "../assets/taminoturoko-briggs.png";
+import judemiracleImg from "../assets/jude-miracle.png";
 
 
 export default {
@@ -90,5 +91,11 @@ export default {
         description: "Software developer and technical writer. Core languages include JavaScript and Python.",
         avatar: TammiImg,
         twitter: "Tammibr25891504"
+    },
+    miracleJude: {
+        name: "Jude Miracle",
+        description: "Frontend Engineer @Daabo Inc.",
+        avatar: judemiracleImg,
+        twitter: "miraclejudeiv"
     },
 };
