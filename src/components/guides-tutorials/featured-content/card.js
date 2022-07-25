@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "react-emotion";
+import styled from "@emotion/styled";
 // utils
 import theme from "../../utils/theme";
 import mq from "../../utils/breakpoints";

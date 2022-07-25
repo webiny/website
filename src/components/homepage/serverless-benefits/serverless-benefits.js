@@ -1,8 +1,8 @@
 import React from "react";
-import styled from "react-emotion";
+import styled from "@emotion/styled";
 import theme from "../../utils/theme";
 import mq from "../../utils/breakpoints";
-import { css } from "emotion";
+import { css } from "@emotion/css";
 import ContentContainer from "../../ui/content-container";
 
 import awsLogo from "./assets/aws-logo.svg";

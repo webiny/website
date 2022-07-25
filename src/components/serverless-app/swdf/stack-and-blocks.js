@@ -1,6 +1,6 @@
 import React from "react";
-import styled from "react-emotion";
-import { css } from "emotion";
+import styled from "@emotion/styled";
+import { css } from "@emotion/css";
 import theme from "../../utils/theme";
 import mq from "../../utils/breakpoints";
 import { SubTitle } from "../components/typography";
