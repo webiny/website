@@ -1,6 +1,6 @@
 import React from "react";
-import styled from "react-emotion";
-import { css } from "emotion";
+import styled from "@emotion/styled";
+import { css } from "@emotion/css";
 import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 import ContentContainer from "../ui/content-container";
@@ -116,7 +116,7 @@ const FeatureCard = styled("div")(
             top: "-13%",
             zIndex: 1,
         },
-    }),    
+    }),
     mq({
         width: [360, 360, 352],
         height: ["auto", 380],
@@ -143,7 +143,7 @@ const GreatExperience = () => {
                         <FeatureCard key={item.id} key={index} {...item}>
                             <img
                                 className="feature-card__img"
-                                src={item.imageSrc}                                
+                                src={item.imageSrc}
                             />
                             <h4 className="feature-card__title">{item.title}</h4>
                             <p className="feature-card__body">{item.body}</p>

@@ -2,9 +2,9 @@ import ContentContainer from "../../../ui/content-container";
 import MainContent from "./main-content";
 import React from "react";
 import SideContent from "./side-content";
-import { css } from "emotion";
+import { css } from "@emotion/css";
 import mq from "../../../utils/breakpoints";
-import styled from "react-emotion";
+import styled from "@emotion/styled";
 
 const containerClass = css(
     {

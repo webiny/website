@@ -1,6 +1,6 @@
 import React from "react";
 import mq from "../utils/breakpoints";
-import { css } from "emotion";
+import { css } from "@emotion/css";
 import ContentContainer from "../ui/content-container";
 import Link from "gatsby-link";
 import { Grid, Cell } from "../ui/layout/layout";

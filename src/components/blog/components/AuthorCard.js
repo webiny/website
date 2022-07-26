@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "react-emotion";
+import styled from "@emotion/styled";
 import theme from "../../utils/theme";
 import mq from "../../utils/breakpoints";
 import twitterIcon from "../assets/twitter-icon.svg";
@@ -61,7 +61,7 @@ const DatePublished = styled("div")({
 });
 
 class Author extends React.Component {
-    
+
     render() {
         return (
             <AuthorContainer>

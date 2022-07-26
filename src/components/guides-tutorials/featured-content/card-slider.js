@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
-import styled from "react-emotion";
-import { css } from "emotion";
+import styled from "@emotion/styled";
+import { css } from "@emotion/css";
 // utils
 import mq from "../../utils/breakpoints";
 import Button from "../../ui/button";

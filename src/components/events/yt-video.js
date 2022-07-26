@@ -1,5 +1,5 @@
 import React from "react";
-import { css } from "emotion";
+import { css } from "@emotion/css";
 import YTVideoComponent from "../ui/layout/yt-video";
 import background from "./assets/video-bg.svg";
 

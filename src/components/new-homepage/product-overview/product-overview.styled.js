@@ -1,4 +1,4 @@
-import styled from "react-emotion";
+import styled from "@emotion/styled";
 import Img from "gatsby-image";
 
 import mq from "../../utils/breakpoints";

@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "react-emotion";
+import styled from "@emotion/styled";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { monokai } from "react-syntax-highlighter/styles/hljs";
 

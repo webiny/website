@@ -1,7 +1,7 @@
 import React from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { tomorrow as theme } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { css } from "emotion";
+import { css } from "@emotion/css";
 import mq from "../utils/breakpoints";
 
 const codeStyle = css(
@@ -13,7 +13,7 @@ const codeStyle = css(
         minHeight: 600
     },
     mq({
-        
+
     }),
 );
 

@@ -1,6 +1,6 @@
 import React from "react";
-import styled from "react-emotion";
-import { css } from "emotion";
+import styled from "@emotion/styled";
+import { css } from "@emotion/css";
 import theme from "../../utils/theme";
 import ContentContainer from "../../ui/content-container";
 import mq from "../../utils/breakpoints";
@@ -83,7 +83,7 @@ const DescriptionList = styled("div")(
             },
 
             '& h6': {
-                fontWeight: 'bold',                    
+                fontWeight: 'bold',
                 fontSize: 18,
                 lineHeight: '23px',
                 color: '#000E1A',
@@ -91,7 +91,7 @@ const DescriptionList = styled("div")(
             },
 
             '& p': {
-                fontWeight: 600,                    
+                fontWeight: 600,
                 fontSize: 16,
                 lineHeight: '23px',
                 color: '#000E1A',
@@ -128,11 +128,11 @@ const descriptionList = [
 
 const FocusBusiness = () => {
     return (
-        <FocusBusinessSection>            
+        <FocusBusinessSection>
             <ContentContainer className={contentContainerClass}>
                 <SubTitle>WHAT’S INCLUDED WITH WEBINY</SubTitle>
                 <Title>
-                    Focus on <TitleHighlight>Your Business Requirements,</TitleHighlight> Not Serverless Infrastructure Complexities                    
+                    Focus on <TitleHighlight>Your Business Requirements,</TitleHighlight> Not Serverless Infrastructure Complexities
                 </Title>
                 <DescriptionList>
                     {

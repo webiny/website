@@ -20,7 +20,7 @@ module.exports = {
             resolve: "gatsby-plugin-emotion",
             options: {
                 sourceMap: true,
-                autoLabel: true,
+                autoLabel: "always",
             },
         },
         {
@@ -33,14 +33,6 @@ module.exports = {
             resolve: `gatsby-plugin-twitter-pixel`,
             options: {
                 pixelId: "o4gd9",
-            },
-        },
-        {
-            resolve: "gatsby-plugin-hotjar-tracking",
-            options: {
-                includeInDevelopment: false,
-                id: 637057,
-                sv: 6,
             },
         },
         {
@@ -77,7 +69,13 @@ module.exports = {
             options: {
                 extensions: [`.mdx`],
                 gatsbyRemarkPlugins: [
+<<<<<<< HEAD
                     require.resolve("./plugins/withTitleCaseHeadings"),
+=======
+                    {
+                        resolve: "remark-titlecase-headings",
+                    },
+>>>>>>> f18d25f (feat: upgrade to the latest gatsby (#151))
                     {
                         resolve: `gatsby-remark-images`,
                         options: {
@@ -145,7 +143,7 @@ module.exports = {
                     */
                     {
                         resolve: `gatsby-remark-highlight-code`,
-                      },
+                    },
                 ],
             },
         },
@@ -178,13 +176,13 @@ module.exports = {
             },
         },
         {
-            resolve: 'gatsby-plugin-fathom',
+            resolve: "gatsby-plugin-fathom",
             options: {
-              // Your custom domain, defaults to `cdn.usefathom.com`
-              trackingUrl: 'banquet-golden-years.webiny.com',
-              // Unique site id
-              siteId: 'MZFYOTYQ'
-            }
-          }
+                // Your custom domain, defaults to `cdn.usefathom.com`
+                trackingUrl: "banquet-golden-years.webiny.com",
+                // Unique site id
+                siteId: "MZFYOTYQ",
+            },
+        },
     ],
 };

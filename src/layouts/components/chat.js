@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "react-emotion";
+import styled from "@emotion/styled";
 import theme from "../../components/utils/theme";
 import { trackJoinSlack } from "../../components/ui/functions";
 

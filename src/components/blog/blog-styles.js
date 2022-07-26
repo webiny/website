@@ -1,10 +1,10 @@
 import chevron from "./assets/chevron.svg";
-import { css } from "emotion";
+import { css } from "@emotion/css";
 import heroBg from "./assets/hero-bg.svg";
 import mq from "../utils/breakpoints";
 // assets
 import rectImg from "./assets/featured-rect.svg";
-import styled from "react-emotion";
+import styled from "@emotion/styled";
 import theme from "../utils/theme";
 
 export const SectionWithBackground = styled("section")(
