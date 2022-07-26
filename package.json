@@ -87,7 +87,6 @@
     "serve": "gatsby serve"
   },
   "devDependencies": {
-    "babel-preset-gatsby": "^2.19.0",
     "prettier": "^1.12.0",
     "serverless-offline": "^3.25.6"
   },
