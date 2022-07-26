@@ -1,6 +1,6 @@
 import React from "react";
-import styled from "react-emotion";
-import { css } from "emotion";
+import styled from "@emotion/styled";
+import { css } from "@emotion/css";
 import theme from "../../utils/theme";
 import checkImg from "../assets/circle-check.svg";
 import Button from "../../ui/button";

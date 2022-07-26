@@ -1,5 +1,5 @@
 import React from "react";
-import { css, keyframes } from "emotion";
+import { css, keyframes } from "@emotion/css";
 
 import waveBg from "./assets/wave.svg";
 

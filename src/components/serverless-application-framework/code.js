@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import styled from "react-emotion";
-import { css } from "emotion";
+import styled from "@emotion/styled";
+import { css } from "@emotion/css";
 import mq from "../utils/breakpoints";
 import CodeSample from "./codesample";
 

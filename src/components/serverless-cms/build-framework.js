@@ -1,6 +1,6 @@
 import React from "react";
-import styled from "react-emotion";
-import { css } from "emotion";
+import styled from "@emotion/styled";
+import { css } from "@emotion/css";
 import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 import ContentContainer from "../ui/content-container";
@@ -94,11 +94,11 @@ const BuildList = styled("div")(
             "& .main-logo": {
                 paddingTop: 7
             },
-        
+
             "& img": {
                 marginRight: 20,
             },
-            
+
             "& .main-description": {
                 "& h3": {
                     margin: "0 0 10px",

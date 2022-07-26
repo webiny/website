@@ -3,7 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import BaseLayout from "../layouts/base";
-import styled from "react-emotion";
+import styled from "@emotion/styled";
 
 import FooterCta from "../components/ui/footer-cta";
 import HeroSection from "../components/guides-tutorials/hero/hero";

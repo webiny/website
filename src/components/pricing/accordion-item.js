@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "react-emotion";
+import styled from "@emotion/styled";
 import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 
@@ -33,7 +33,7 @@ const AccordionWrapper = styled("div")(
                     height: 4,
                     backgroundColor: theme.color.black
                 },
-                
+
                 "&.open": {
                     color: theme.color.black,
 
@@ -46,7 +46,7 @@ const AccordionWrapper = styled("div")(
 
                 "& p": {
                     margin: "0 0 0 35px"
-                },          
+                },
             }
         },
 
@@ -81,7 +81,7 @@ const Accordion = ({ item }) => {
                 >
                     <p>{item.title}</p>
                 </div>
-            </div>            
+            </div>
             <div className={`accordion-item ${!isOpen ? "collapsed" : ""}`}>
                 <div className="accordion-content">
                     {item.children}

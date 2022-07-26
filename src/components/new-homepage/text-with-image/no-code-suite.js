@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "react-emotion";
+import styled from "@emotion/styled";
 import { useStaticQuery, graphql } from "gatsby";
 
 import TextWithImage from "./text-with-image";
