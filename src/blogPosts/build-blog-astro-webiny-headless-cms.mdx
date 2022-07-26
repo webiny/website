@@ -149,20 +149,20 @@ Let’s see the data we are fetching from Webiny Headless CMS using their built-
 
 Click on the menu icon then click on **API Playground.**
 
-```js
+```graphql
 {
-	listPosts {
-		data {
-			id
-			title
-			description
-			featuredImage
-			authors {
-				name
-				description
-			}
-		}
-	}
+    listPosts {
+       data {
+         id
+         title
+         description
+         featuredImage
+         authors {
+          name
+          description
+         }
+       }
+    }
 }
 ```
 
@@ -220,7 +220,11 @@ Open up the terminal at the root of the project and run the following commands t
 yarn astro add tailwind
 ```
 
+You should see the Astro CLI add Tailwind dependencies to your project as below:
+
 ![astroTailwind.png](./assets/build-blog-astro-webiny-headless-cms/astroTailwind.png)
+
+Now we have those dependencies installed we can configure Tailwind in our blog:
 
 ```js
 // tailwind.config.cjs
@@ -268,7 +272,7 @@ We will be using dummy text to build out our UI. Later, we will fetch the data f
 In your `/component/card.astro` file replace the content with the following code:
 
 
-```js
+```javascript
 ---
 	export interface Props {
     post: any;
@@ -306,7 +310,7 @@ The code within the `---` block is where we write all the JavaScript and TypeScr
 
 In this section, we will create our app layout. The layout of Astro allows us to create reusable components. We’ll create a navigation layout for all the pages in our application. In our `layouts/layout.astro` in the `src` folder. Replace the content with the following code snippet:
 
-```js
+```javascript
 ---
     const title = 'Astro-Blog with Webiny';
 ---
@@ -345,7 +349,7 @@ As you can see, we created a Navbar with our title and input search. The `<slot 
 
 Astro uses a routing system known as **File-based routing,** meaning that every file with a `.astro` extension in the `src/pages` folder will be a page on our site. Now that we have created our components and layout, replace the content in the `pages/index.astro` file with the code snippet below:
 
-```js
+```javascript
 ---
 import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";

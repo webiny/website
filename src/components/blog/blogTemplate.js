@@ -180,6 +180,7 @@ const blogStyles = css(
                 fontSize: "0.9em",
                 color: "black",
                 whiteSpace: "pre-wrap",
+                marginBottom: "20px",
                 "--deckgo-highlight-code-font-size": "10px",
                 "&.language-text": {
                     fontSize: "0.9em",
@@ -202,6 +203,7 @@ const blogStyles = css(
                 margin: "0 auto",
             },
             "deckgo-highlight-code": {
+                marginBottom: "20px",
                 "--deckgo-highlight-code-font-size": "0.8em",
                 "--deckgo-highlight-code-carbon-toolbar-display": "none"
             }
