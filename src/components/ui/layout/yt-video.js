@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "@emotion/styled";
+import styled from "react-emotion";
 import ModalVideo from "react-modal-video";
 import mq from "../../utils/breakpoints";
 
@@ -84,7 +84,7 @@ class YTVideo extends React.Component {
                     channel="youtube"
                     isOpen={this.state.isOpen}
                     videoId={this.props.id}
-                    onClose={() => this.setState({ isOpen: false })}
+                    onClose={() => this.setState({ isOpen: false })}                    
                 />
             </>
         );

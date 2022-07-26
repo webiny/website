@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "@emotion/styled";
+import styled from "react-emotion";
 import Img from "gatsby-image";
 import { navigate, Link } from "gatsby";
 // utils

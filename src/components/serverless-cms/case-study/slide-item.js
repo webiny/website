@@ -1,6 +1,6 @@
 import React from "react";
-import styled from "@emotion/styled";
-import { css } from "@emotion/css";
+import styled from "react-emotion";
+import { css } from "emotion";
 import theme from "../../utils/theme";
 import mq from "../../utils/breakpoints";
 import Button from "../../ui/button";
@@ -25,17 +25,17 @@ const SlideItemPart = styled("div")(
 );
 
 const Feature = styled("div")(
-    {
-        display: "flex",
-        position: "relative",
+    {        
+        display: "flex",        
+        position: "relative",        
         backgroundColor: theme.color.white,
         boxShadow: "rgba(100,100,100,0.24) 2px 3px 15px",
-        borderRadius: 8
+        borderRadius: 8       
     },
     mq({
         width: ["auto", "100%"],
         alignItems: ["center", "stretch"],
-        flexDirection: ["column", "row"]
+        flexDirection: ["column", "row"]        
     }),
 );
 
@@ -45,7 +45,7 @@ const FeatureImagePart = styled("div")(
         justifyContent: "center",
         flexDirection: "column",
         padding: 20,
-
+        
         "& img": {
             width: "100%",
             height: "100%",
@@ -54,7 +54,7 @@ const FeatureImagePart = styled("div")(
     },
     mq({
         width: ["auto", "50%"],
-        maxWidth: [600, "none"],
+        maxWidth: [600, "none"],        
         marginBottom: [0, 0]
     }),
 
@@ -65,50 +65,50 @@ const FeatureInfo = styled("div")(
         display: "flex",
         justifyContent: "center",
         flexDirection: "column",
-        position: "relative",
+        position: "relative", 
         padding: 20,
-
+        
         "& h5": {
             fontSize: "1.5rem",
             marginBottom: 10
         },
 
         "& .summary": {
-            display: "grid",
+            display: "grid",            
             backgroundColor: "#F9F7FC",
             marginBottom: 25,
             padding: "20px 0",
             borderRadius: 8,
 
             "& .summary-item": {
-                textAlign: "center",
-
+                textAlign: "center",                
+                
                 "&:last-child": {
                     border: "none"
                 },
 
                 "& p": {
-                    maxWidth: 100,
+                    maxWidth: 100,                    
                     margin: "0 auto"
                 },
 
                 "& p:first-child": {
                     fontSize: 25,
-                    fontWeight: 700,
+                    fontWeight: 700,                    
                     color: theme.color.purple
                 },
 
                 "& p:nth-child(2)": {
-                    fontSize: 16
+                    fontSize: 16                    
                 }
             }
         }
     },
     mq({
         width: ["auto", "50%"],
-        maxWidth: [600, "none"],
+        maxWidth: [600, "none"],        
         marginBottom: [30, 0],
-
+        
         "& .summary": {
             gridTemplateColumns: ["repeat(2, 1fr)", "repeat(4, 1fr)"],
             gridGap: [10, 0],
@@ -122,7 +122,7 @@ const FeatureInfo = styled("div")(
 
 const actionPart = css(
     {
-        display: "flex"
+        display: "flex"        
     },
     mq({
         alignItems: ["center", "flex-start"],
@@ -130,7 +130,7 @@ const actionPart = css(
     })
 )
 const summaryList = [
-    {number: "250+", title: "Number of Agents"},
+    {number: "250+", title: "Number of Agents"},    
     {number: "175k+", title: "Monthly Ticket Volume"},
     {number: "90%+", title: "CSAT"},
     {number: "6", title: "Departments Using Zendesk"},
@@ -142,7 +142,7 @@ const SlideItem = () => {
             <Feature>
                 <FeatureImagePart>
                     <img src={caseImg} alt=""/>
-                </FeatureImagePart>
+                </FeatureImagePart>                    
                 <FeatureInfo>
                     <h5>Hipcooks</h5>
                     <p>
@@ -151,7 +151,7 @@ const SlideItem = () => {
                     </p>
                     <div className="summary">
                         {
-                            summaryList.map((summary, index) =>
+                            summaryList.map((summary, index) => 
                                 <div key={index} className="summary-item">
                                     <p>{summary.number}</p>
                                     <p>{summary.title}</p>
@@ -163,10 +163,10 @@ const SlideItem = () => {
                         <Button type="primary" className={ctaBtn}>
                             Read case study <img src={arrowIcon} alt="" className="icon" />
                         </Button>
-                    </div>
+                    </div>                        
                 </FeatureInfo>
             </Feature>
-        </SlideItemPart>
+        </SlideItemPart>        
     )
 }
 

@@ -1,8 +1,8 @@
 import React from "react";
 import { Transition } from "react-transition-group";
 import Swipe from "react-easy-swipe";
-import { css } from "@emotion/css";
-import styled from "@emotion/styled";
+import { css } from "emotion";
+import styled from "react-emotion";
 import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 

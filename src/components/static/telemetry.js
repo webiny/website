@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "@emotion/styled";
+import styled from "react-emotion";
 import Body from "./body";
 
 const Bold = styled("span")({

@@ -1,5 +1,5 @@
 import React from "react";
-import { css } from "@emotion/css";
+import { css } from "emotion";
 import mq from "../utils/breakpoints";
 import Title from "../ui/layout/title";
 import Subtitle from "../ui/layout/subtitle";

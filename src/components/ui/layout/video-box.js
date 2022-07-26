@@ -2,7 +2,7 @@ import React from "react";
 //import {DefaultPlayer as Video} from 'react-html5video';
 import "react-html5video/dist/styles.css";
 import mq from "../../utils/breakpoints";
-import { css } from "@emotion/css";
+import { css } from "emotion";
 
 const videoPlayer = css(
     {

@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
-import styled from "@emotion/styled";
-import { css, cx } from "@emotion/css";
+import styled from "react-emotion";
+import { css, cx } from "emotion";
 
 import "remark-admonitions/styles/classic.css";
 import theme from "../utils/theme";

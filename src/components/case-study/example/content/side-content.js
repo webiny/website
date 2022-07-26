@@ -1,6 +1,6 @@
 import React from "react";
-import styled from "@emotion/styled";
-import { css } from "@emotion/css";
+import styled from "react-emotion";
+import {css} from "emotion";
 import Button from "../../../ui/button";
 import mq from "../../../utils/breakpoints";
 import ArrowImage from "../assets/arrow.svg";
@@ -23,8 +23,8 @@ const button = css(
 );
 
 const SideSection = styled("div")(
-    {
-        paddingLeft: 20,
+    {        
+        paddingLeft: 20,        
         alignItems: "center",
         justifyContent: "center",
         flexDirection: "column"
@@ -67,7 +67,7 @@ const Location = styled("div")(
     {
         display: "flex",
         alignItems: "center",
-
+        
         "& img": {
             marginRight: 15
         }
@@ -79,16 +79,16 @@ const SideContent = () => {
         <SideSection>
             <Logo>
                 <img src={LogoImage} alt="logo"/>
-            </Logo>
+            </Logo>            
             <Title>INSTACART</Title>
             <p>
-                When they started email marketing, the Koia team used Mailchimp, which was a great way to get their feet wet with email campaigns.
+                When they started email marketing, the Koia team used Mailchimp, which was a great way to get their feet wet with email campaigns. 
                 But as Koia experienced tremendous growth, they wanted a platform that could grow with them.
             </p>
             <Location>
                 <img src={LocationImage} alt=""/>
                 <span>United States</span>
-            </Location>
+            </Location>            
             <Button className={button} type="outline">
                 Download PDF
                 <Arrow alt="Submit" src={ArrowImage} />

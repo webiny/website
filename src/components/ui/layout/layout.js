@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "@emotion/styled";
+import styled from "react-emotion";
 import ComingSoon from "../../ui/coming-soon.js";
 import theme from "../../utils/theme";
 import mq from "../../utils/breakpoints";

@@ -1,5 +1,5 @@
 import React from "react";
-import { cx, css } from "@emotion/css";
+import { cx, css } from "emotion";
 import mq from "../utils/breakpoints";
 import theme from "../utils/theme";
 import Link from "gatsby-link";

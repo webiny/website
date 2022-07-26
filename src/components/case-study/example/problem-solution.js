@@ -1,6 +1,6 @@
 import React from "react";
-import styled from "@emotion/styled";
-import { css } from "@emotion/css";
+import styled from "react-emotion";
+import { css } from "emotion";
 import theme from "../../utils/theme";
 import mq from "../../utils/breakpoints";
 import ContentContainer from "../../ui/content-container";
@@ -21,7 +21,7 @@ const ProblemSolutionSection = styled("section")(
 )
 
 const ProblemSolutionPart = styled("div")(
-    {
+    {        
         width: "100%",
         backgroundColor: theme.color.backgroundGray
     },
@@ -35,7 +35,7 @@ const ProblemSolutionPart = styled("div")(
 
 const SolutionItem = styled("div")(
     {
-        width: "100%",
+        width: "100%",        
 
         "& h3": {
             fontWeight: 700,
@@ -92,7 +92,7 @@ const Summary = styled("div")(
 const SummaryItem = styled("div")(
     {
         textAlign: "center",
-        borderRight: "1px solid" + theme.color.purple,
+        borderRight: "1px solid" + theme.color.purple,     
 
         "& h3": {
             color: theme.color.purple,

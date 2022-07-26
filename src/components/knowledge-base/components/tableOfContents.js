@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { css, cx } from "@emotion/css";
+import { css, cx } from "emotion";
 import theme from "../../utils/theme";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 

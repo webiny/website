@@ -1,6 +1,6 @@
 import React from "react";
-import styled from "@emotion/styled";
-import { css } from "@emotion/css";
+import styled from "react-emotion";
+import { css } from "emotion";
 import { Link } from "gatsby";
 import theme from "../../components/utils/theme";
 import mq from "../../components/utils/breakpoints";

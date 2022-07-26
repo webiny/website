@@ -1,5 +1,5 @@
 import React from "react";
-import { css } from "@emotion/css";
+import { css } from "emotion";
 import Hero from "../components/hero";
 import { List, ListItem } from "../components/list";
 import FeatureBox from "../components/feature-box";

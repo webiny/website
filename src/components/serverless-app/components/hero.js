@@ -1,7 +1,7 @@
 import React from "react";
-import styled from "@emotion/styled";
+import styled from "react-emotion";
 import theme from "../../utils/theme";
-import { css, keyframes } from "@emotion/css";
+import { css, keyframes } from "emotion";
 import mq from "../../utils/breakpoints";
 import Button from "../../ui/button";
 import ContentContainer from "../../ui/content-container";

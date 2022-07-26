@@ -1,6 +1,6 @@
-import { css } from "@emotion/css";
+import { css } from "emotion";
 import React from "react";
-import styled from "@emotion/styled";
+import styled from "react-emotion";
 import mq from "../utils/breakpoints";
 import theme from "../utils/theme";
 import { Grid, Cell } from "../ui/layout/layout";

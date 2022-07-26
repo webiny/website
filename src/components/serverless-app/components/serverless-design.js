@@ -1,7 +1,7 @@
 import React from "react";
-import styled from "@emotion/styled";
+import styled from "react-emotion";
 import theme from "../../utils/theme";
-import { css } from "@emotion/css";
+import { css } from "emotion";
 import Link from "gatsby-link";
 import mq from "../../utils/breakpoints";
 

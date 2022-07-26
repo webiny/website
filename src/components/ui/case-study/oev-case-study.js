@@ -1,12 +1,12 @@
 import Button from "../../ui/button";
 import React from "react";
 import arrowIcon from "./assets/arrow-white.svg";
-import { css } from "@emotion/css";
+import { css } from "emotion";
 import highLightImg from "./assets/case-highlight.svg";
 import mq from "../../utils/breakpoints";
 import oevCS1 from "./assets/oev-case-study.jpg";
 import quoteBg from "./assets/quote-bg.svg";
-import styled from "@emotion/styled";
+import styled from "react-emotion";
 import theme from "../../utils/theme";
 
 const ctaBtn = css({

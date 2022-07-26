@@ -1,6 +1,6 @@
 import React from "react";
-import styled from "@emotion/styled";
-import { css } from "@emotion/css";
+import styled from "react-emotion";
+import { css } from "emotion";
 import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 import ContentContainer from "../ui/content-container";
@@ -216,7 +216,7 @@ const Hero = props => {
                         Agile, flexible and scalable solution for your growing content needs.
                     </SubTitle>
 
-                    {/**
+                    {/** 
                     <HeroList>
                         <div className="hero-item">
                             <h3>

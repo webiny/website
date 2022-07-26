@@ -20,7 +20,7 @@ module.exports = {
             resolve: "gatsby-plugin-emotion",
             options: {
                 sourceMap: true,
-                autoLabel: "always",
+                autoLabel: true,
             },
         },
         {
@@ -33,6 +33,14 @@ module.exports = {
             resolve: `gatsby-plugin-twitter-pixel`,
             options: {
                 pixelId: "o4gd9",
+            },
+        },
+        {
+            resolve: "gatsby-plugin-hotjar-tracking",
+            options: {
+                includeInDevelopment: false,
+                id: 637057,
+                sv: 6,
             },
         },
         {
@@ -69,9 +77,7 @@ module.exports = {
             options: {
                 extensions: [`.mdx`],
                 gatsbyRemarkPlugins: [
-                    {
-                        resolve: "remark-titlecase-headings",
-                    },
+                    require.resolve("./remark/withTitleCaseHeadings"),
                     {
                         resolve: `gatsby-remark-images`,
                         options: {
@@ -139,7 +145,7 @@ module.exports = {
                     */
                     {
                         resolve: `gatsby-remark-highlight-code`,
-                    },
+                      },
                 ],
             },
         },
@@ -172,13 +178,13 @@ module.exports = {
             },
         },
         {
-            resolve: "gatsby-plugin-fathom",
+            resolve: 'gatsby-plugin-fathom',
             options: {
-                // Your custom domain, defaults to `cdn.usefathom.com`
-                trackingUrl: "banquet-golden-years.webiny.com",
-                // Unique site id
-                siteId: "MZFYOTYQ",
-            },
-        },
+              // Your custom domain, defaults to `cdn.usefathom.com`
+              trackingUrl: 'banquet-golden-years.webiny.com',
+              // Unique site id
+              siteId: 'MZFYOTYQ'
+            }
+          }
     ],
 };

@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from "react-emotion";
 
 export const ItemWrapper = styled.div(props => ({
     fontWeight: "bold",

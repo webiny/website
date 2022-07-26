@@ -1,7 +1,7 @@
 import { FeaturedBlogWrapper } from "../../blog/blog-styles";
 import Img from "gatsby-image";
 import React from "react";
-import styled from "@emotion/styled";
+import styled from "react-emotion";
 // assets
 import { navigate } from "gatsby";
 import mq from "../../utils/breakpoints";

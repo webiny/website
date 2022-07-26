@@ -1,6 +1,6 @@
 import React from "react";
-import styled from "@emotion/styled";
-import { css } from "@emotion/css";
+import styled from "react-emotion";
+import { css } from "emotion";
 import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 import ContentContainer from "../ui/content-container";
@@ -224,7 +224,7 @@ export default ({ children, ...props }) => (
                 <Cell>
                     <img className={swagImage} src={webinyStickers} alt="Webiny SWAG - Stickers" />
                 </Cell>
-
+                
                 <Cell title="Become a Fan">
                     <p>
                         A fan is someone who loves what we do here. Fans give us support to keep
@@ -238,7 +238,7 @@ export default ({ children, ...props }) => (
                         <a href="https://twitter.com/WebinyCMS">Twitter</a> or{" "}
                         <a href="https://www.youtube.com/c/webiny">YouTube</a>.
                     </p>
-                </Cell>
+                </Cell> 
             </Grid>
             */}
             <Grid right>

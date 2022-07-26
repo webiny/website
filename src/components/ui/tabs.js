@@ -1,7 +1,7 @@
 import React from "react";
 import { Transition } from "react-transition-group";
 import ContentContainer from "./content-container";
-import styled from "@emotion/styled";
+import styled from "react-emotion";
 import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 

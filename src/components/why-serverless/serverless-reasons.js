@@ -1,5 +1,5 @@
 import React from "react";
-import { css } from "@emotion/css";
+import { css } from "emotion";
 import mq from "../utils/breakpoints";
 import ContentContainer from "../ui/content-container";
 import { Grid, Cell } from "../ui/layout/layout";
