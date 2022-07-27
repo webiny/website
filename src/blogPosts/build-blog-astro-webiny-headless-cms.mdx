@@ -1,7 +1,7 @@
 ---
 slug: "blog/build-blog-astro-webiny-headless-cms"
 title: "Build a Blog with Astro and Webiny Headless CMS"
-description: "Webiny’s secure, scalable, high-performance GraphQL API is a great choice to build your next Astro project. Check out this guide to building with Webiny Headless CMS and Next.js."
+description: "Webiny’s secure, scalable, high-performance GraphQL API is a great choice to build your next Astro project. Check out this guide to building with Webiny Headless CMS and Astro."
 tags: ["nextjs", "build projects", "notes app", "contributed articles"]
 featureImage: "./assets/build-blog-astro-webiny-headless-cms/cover.png"
 author: miracleJude
@@ -303,7 +303,7 @@ The code within the `---` block is where we write all the JavaScript and TypeScr
 
 In this section, we will create our app layout. The layout of Astro allows us to create reusable components. We’ll create a navigation layout for all the pages in our application. In our `layouts/layout.astro` in the `src` folder. Replace the content with the following code snippet:
 
-```javascript
+```markup
 ---
     const title = 'Astro-Blog with Webiny';
 ---
@@ -342,7 +342,7 @@ As you can see, we created a Navbar with our title and input search. The `<slot 
 
 Astro uses a routing system known as **File-based routing,** meaning that every file with a `.astro` extension in the `src/pages` folder will be a page on our site. Now that we have created our components and layout, replace the content in the `pages/index.astro` file with the code snippet below:
 
-```javascript
+```markup
 ---
 import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
@@ -396,7 +396,7 @@ We imported the `Card` component and our layout in the above code snippet. Here,
 
 In this section, we look at how to get the individual post for our blog. In our pages folder, create `posts/[slug].astro`. 
 
-```js
+```markup
 ---
 import { RichTextRenderer } from '@webiny/react-rich-text-renderer'
 import Layout from "../../layouts/Layout.astro";
