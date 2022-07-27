@@ -69,13 +69,7 @@ module.exports = {
             options: {
                 extensions: [`.mdx`],
                 gatsbyRemarkPlugins: [
-<<<<<<< HEAD
-                    require.resolve("./plugins/withTitleCaseHeadings"),
-=======
-                    {
-                        resolve: "remark-titlecase-headings",
-                    },
->>>>>>> f18d25f (feat: upgrade to the latest gatsby (#151))
+                    `remark-titlecase-headings`,
                     {
                         resolve: `gatsby-remark-images`,
                         options: {

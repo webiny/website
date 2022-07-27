@@ -11,7 +11,7 @@ date: 2022-07-27
 
 ## **Introduction**
 
-In this tutorial, we will build a simple Blog site with Webiny Headless CMS and Astro from scratch. You will be able to read blog posts with feature images and text and view the author of the Blogpost. We will be creating this project with tools such as Webiny, Astro and TailwindCSS.
+In this tutorial, we will build a simple Blog site with Webiny Headless CMS and Astro from scratch. You will be able to read blog posts with feature images and text and view the author of the Blogpost. We will be creating this project with tools such as Webiny, [Astro](https://astro.build) and [TailwindCSS](https://tailwindcss.com).
 
 Before we dive into building this JAMstack project, let us go through what you will learn.
 
@@ -19,19 +19,9 @@ First, you will learn how to create and set up a back-end using Webiny Headless 
 
 ## **What is Webiny?**
 
-According to the docs:
-
-- *[Webiny](https://www.webiny.com/docs/overview/introduction) is an open-source content management system designed for enterprises. It’s built on top of the serverless infrastructure to enable great scalability and site reliability even in the most demanding periods.*
-
 Webiny is an open-source, developer-friendly serverless CMS powered by modern tools and technologies such as Node, React and a GraphQL API. It also gives you the flexibility to integrate with other tools like Gatsby, Nextjs and Astro through Content Delivery API. Webiny helps developers engineer, build and deploy applications on top of the serverless infrastructure. Webiny comes with a built-in serverless page builder, form builder, file manager, admin area and headless CMS that runs on top of AWS Lambda, DynamoDB, and S3, which allows developers to build and run applications without having to manage servers. Webiny allows users to build websites and web applications in both large and small project without the hassle by providing all the tools you need, which is optimized to work seamlessly together in a performant way.
 
-Refer [here](https://www.webiny.com/features/.) for more features of Webiny.
-
-## **Benefits of using Webiny**
-
-- Webiny allows users to build content types easily using Drag & Drop interface.
-- Webiny is fully documented, free and open-source.
-- Webiny facilitates easy and quick deployment with serverless infrastructure.
+Refer [here](https://www.webiny.com/features/) for more features of Webiny.
 
 ## **What is Astro?**
 
@@ -111,7 +101,7 @@ Once created, you’ll be directed to a new page where we will be making our con
 Using the drag and drop feature Webiny Headless CMS offers, we will be using it to create our content type. Use the drag and drop editor to fill out the following:
 
 - A `text` field with the value **name.**
-- A `text` field with the value **description**.
+- A `long text` field with the value **description**.
 - A `files` field with the value **picture.**
 
 ![Populating the Author content type](./assets/build-blog-astro-webiny-headless-cms/webinyAuthorContent.png)
@@ -121,9 +111,9 @@ Using the same method let’s create our Posts model:
 - A `text` field with the value **title**
 - A `text` field with the value of **slug**.
 - A `files` field with the value **featured image**
+- A `text` field with the value **description**
 - A `rich text` field with the value **body**
 - A `reference` field with the value **authors**
-- A `text` field with the value **description**
 
 ![Creating the Posts content type](./assets/build-blog-astro-webiny-headless-cms/webinyPosts.png)
 
@@ -166,7 +156,7 @@ Click on the menu icon then click on **API Playground.**
 }
 ```
 
-Note that there are four APIs listed in the tabs at the top of the page. Click on **HeadlessCMS - Read API**. From there, you can explore your content structure and schema (via the right-side panel). Directly below the tabs is a URL string. We will be using this URL to fetch data.
+Note that there are four APIs listed in the tabs at the top of the page. Click on **HeadlessCMS - Read API**. From there, you can explore your content structure and schema (via the right-side panel). Directly below the tabs is a URL string. We will be using this URL to fetch data. Copy the URL and keep it somewhere safe for when we come to that step.
 
 ![Headless CMS Read API URL indicator](./assets/build-blog-astro-webiny-headless-cms/graphql-read-api.png)
 
@@ -175,6 +165,8 @@ Note that there are four APIs listed in the tabs at the top of the page. Click o
 Now, head to **Setting > Access Management > API key**. Then create your API key by filling in the name and description. Scroll down to **Content,** click on all locales Then grant **full Access** to both **Headless CMS and File Manager.**
 
 ![Webiny API key generated](./assets/build-blog-astro-webiny-headless-cms/api-key.png)
+
+Once you have saved the settings, an API Key will be generated. Copy that and keep it with your API URL somewhere safe. We will need it to authenticate fetching data with Astro later on.
 
 ## **Setting up our Frontend with Astro**
 
@@ -272,20 +264,22 @@ We will be using dummy text to build out our UI. Later, we will fetch the data f
 In your `/component/card.astro` file replace the content with the following code:
 
 
-```javascript
+```markup
 ---
-	export interface Props {
-    post: any;
-  }
-  const { post } = Astro.props as Props;
-	const slug = 'posts/'+post.slug;
+    export interface Props {
+        post: any;
+    }
+    const { post } = Astro.props as Props;
+    const slug = 'posts/'+post.slug;
 ---
 
 <div class="max-w-md bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 gap-2">
 	<img class="w-full" src={post.featuredImage} alt={post.title} />
 	<div class="p-6 ">
 		<a href={slug}>
-			<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{post.title}</h5>
+			<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                {post.title}
+            </h5>
 		</a>
 		<p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{post.description}</p>
 		<div class="flex justify-between items-center">
@@ -296,8 +290,7 @@ In your `/component/card.astro` file replace the content with the following code
 				<p>{post.author.name}</p>
 			</div>
 			<a href={slug} class="cursor-pointer inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-				Read more
-				<svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+				Read more &nbsp;&rarr;
 			</a>
 		</div>
 	</div>
@@ -470,13 +463,16 @@ const { post } = Astro.props;
 
 Astro allows us to perform dynamic routing using the built in `getStaticPaths()` function. With `getStaticPaths()` we can render the pages defined in params which is our `slug`. 
 
-We also imported `RichTextRenderer` into our application. If you have noticed, we chose a **`rich-text`** field for the **body** of the post when adding fields to our Webiny Headless CMS. We used `RichTextRenderer` to render our post body in Astro. `RichTextRenderer` can be fully customized as you wish, [visit here to learn more](https://www.webiny.com/docs/headless-cms/extending/render-rich-text-content). 
+If you have noticed, we chose a **`rich-text`** field for the **body** of the post when adding fields to our Webiny Headless CMS. We used `RichTextRenderer` to render our post body in Astro. `RichTextRenderer` can be fully customized as you wish, [visit here to learn more](https://www.webiny.com/docs/headless-cms/extending/render-rich-text-content). 
 
 `RichTextRenderer` is a React package. Astro allows you to include frontend frameworks such as React and Vue. To install React into your Astro project run the command below and answer **yes** to all the questions.
 
 ```bash
-yarn astro add react
+yarn astro add React
+yarn add -D  @webiny/react-rich-text-renderer
 ```
+
+Although we're utilizing React, Astro will compile this to HTML at build time. No React bundle will be present in the browser.
 
 By running the command, Astro will install and automatically configure React into your project just as it did with TailwindCSS.
 
