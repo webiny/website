@@ -202,6 +202,7 @@ const blogStyles = css(
                 margin: "0 auto",
             },
             "deckgo-highlight-code": {
+                marginBottom: "20px",
                 "--deckgo-highlight-code-font-size": "0.8em",
                 "--deckgo-highlight-code-carbon-toolbar-display": "none"
             }
