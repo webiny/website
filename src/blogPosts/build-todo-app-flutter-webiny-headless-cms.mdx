@@ -1,7 +1,7 @@
 ---
 slug: "blog/build-todo-app-flutter-webiny-headless-cms"
-title: "Build a Todo App with Flutter and Webiny Headless CMS"
-description: "Webiny’s secure, scalable, high-performance GraphQL API is a great choice to build your next project. Check out this guide to building a to do application with Webiny Headless CMS and Flutter."
+title: "Build a ToDo App with Flutter and Webiny Headless CMS"
+description: "Webiny’s secure, scalable, high-performance GraphQL API is a great choice to build your next project. Check out this guide to building a ToDo application with Webiny Headless CMS and Flutter."
 tags: ["flutter", "build projects", "todo app", "contributed articles"]
 featureImage: "./assets/build-todo-app-flutter-webiny-headless-cms/cover.png"
 author: josephChege
@@ -14,7 +14,7 @@ As a developer who wants to build a full-stack flutter application, you need a s
 
 ### **Goal**
 
-This guide will model the content for todo app using Webiny Headless CMS. We will then build a Flutter-fronted application to manage these ToDo items.
+This guide will model the content for ToDo app using Webiny Headless CMS, which will allow you to add items to your ToDo list, and then check them off when they are completed. We will then build a Flutter-fronted application to manage these ToDo items.
 
 But first, let's briefly learn what a Headless CMS is and why Webiny is a good choice.
 
@@ -84,13 +84,13 @@ Once you **Create Model**, Webiny will allow you to add the relevant fields for
 
 Use this dashboard to drag different elements that fit your content model. These ToDo content model fields will be defined as follows:
 
-- A todo title (`text` field)
+- A title (`text` field)
 
 ![Adding the title field](./assets/build-todo-app-flutter-webiny-headless-cms/todo_title.png)
 
-- A complete todo value (`boolean` field)
+- A completed value (`boolean` field)
 
-![Adding the Todo status field](./assets/build-todo-app-flutter-webiny-headless-cms/todo_status.png)
+![Adding the ToDo status field](./assets/build-todo-app-flutter-webiny-headless-cms/todo_status.png)
 
 Once you have saved these elements, your content should have the following fields:
 
@@ -102,23 +102,23 @@ To connect Flutter with the Webiny CMS, you must create a Webiny API ACCESS KEY.
 
 Click on the top hamburger icon to access **Settings** and select the **API Keys** under **Access Management**.
 
-![Generating an API key](./assets/build-todo-app-flutter-webiny-headless-cms/api_keys_link.png)
+![Location of the API key settings](./assets/build-todo-app-flutter-webiny-headless-cms/api_keys_link.png)
 
 Then create a **New API Key**.
 
-![New API Key](./assets/build-todo-app-flutter-webiny-headless-cms/new_api_key.png)
+![Creating a new API key](./assets/build-todo-app-flutter-webiny-headless-cms/new_api_key.png)
 
 In the resulting form, add the key name and description. In the **Permissions** section, under *Content*, select **All Locales** that the API can be accessed on.
 
-![api_key_content.PNG](./assets/build-todo-app-flutter-webiny-headless-cms/api_key_content.png)
+![The API Key content](./assets/build-todo-app-flutter-webiny-headless-cms/api_key_content.png)
 
 To grant the API Full access, click on the ***Security*** tab, and give Full access to all access levels.
 
-![api_key_security.PNG](./assets/build-todo-app-flutter-webiny-headless-cms/api_key_security.png)
+![API full access screen](./assets/build-todo-app-flutter-webiny-headless-cms/api_key_security.png)
 
 To manage the I18N access permissions, head over to the *I18N* section and grant Full access.
 
-![api_key_i818n.PNG](./assets/build-todo-app-flutter-webiny-headless-cms/api_key_i818n.png)
+![Granting full access to internationalisation](./assets/build-todo-app-flutter-webiny-headless-cms/api_key_i818n.png)
 
 Finally, head over to the **Headless CMS** to grant full access to the API.
 
@@ -151,7 +151,7 @@ flutter run
 
 A basic flutter application will be served within your testing environment as shown below:
 
-![flutter.png](./assets/build-todo-app-flutter-webiny-headless-cms/flutter.png)
+![flutter demo home page](./assets/build-todo-app-flutter-webiny-headless-cms/flutter.png)
 
 For now, you can stop the server and dive into building a more extensive Flutter application.
 
@@ -214,7 +214,7 @@ flutter:
 
 ```
 
-**Note:** when publishing your project on GitHub, ensure you add `*.env` as an entry in your `.gitignore` to keep your project-specific environment variables private.
+**Note:** It's very important that, when publishing your project on GitHub, ensure you add `*.env` as an entry in your `.gitignore` to keep your project-specific environment variables private.
 
 ### **Setting up the Schemas**
 
@@ -224,7 +224,7 @@ Inside the Flutter project `lib` folder, create a `Schemas` folder. We will 
 
 ```dart
 class AddTaskSchema {
-    // For adding a task / todo
+    // For adding a ToDo
     static String addTaskJson = """
     mutation createTodo(\$title: String!) {
         createTodos(data: { title: \$title }){
@@ -237,7 +237,7 @@ class AddTaskSchema {
     }
     """;
 
-    // For publishing a todo / task
+    // For publishing a ToDo
     static String publishTaskJson = """
     mutation publishTodo(\$id: ID!) {
         publishTodos(revision: \$id){
@@ -257,7 +257,7 @@ class AddTaskSchema {
 
 ```dart
 class GetTaskSchema {
-    // Getting tasks
+    // Getting ToDos
     static String getTaskJson = """
     query {
         listTodos{
@@ -274,7 +274,7 @@ class GetTaskSchema {
 
 ```
 
-- To delete a todo create `delete_task_schema.dart` file and add `deleteTodo` mutation as such:
+- To delete a ToDo item create `delete_task_schema.dart` file and add `deleteTodo` mutation as such:
 
 ```dart
 class DeleteTaskSchema {
@@ -289,7 +289,7 @@ class DeleteTaskSchema {
 
 ```
 
-- Finally, set the URL endpoints to instruct the GraphQL Client to send queries and mutation requests. To do so, create the `urlEndpoint.dart` file and add the endpoints as follows:
+- Finally, set the URL endpoints to instruct the GraphQL Client to send queries and mutation requests. To do this, create the `urlEndpoint.dart` file and add the endpoints as follows:
 
 ```dart
 import 'package:flutter/foundation.dart';
@@ -328,15 +328,15 @@ class MutationEndPoint {
 
 ```
 
-The above code will instantiate the GraphQL Client when sending queries and mutations to the CMS. Thus, remember to set your access token from Webiny in the `defaultHeaders` section. Ensure the parameters `your_access_token` have your Webiny access tokes created in the previous steps.
+The above code will instantiate the GraphQL Client when sending queries and mutations to the CMS. Remember to set your access token from Webiny in the `defaultHeaders` section. Ensure the parameters `your_access_token` have your Webiny access tokes created in the previous steps.
 
 ### **Setting up the Providers**
 
-Providers will host the functionalities of communicating to the CMS, i.e., getting a list of the ToDo items, adding a todo, and deleting a todo.
+Providers will host the functionalities of communicating to the CMS, i.e., getting a list of the ToDo items, adding a ToDo, and deleting a ToDo.
 
 Each functionality will be hosted on its own file. Create the `Providers` folder on the project root directory and add these files as follows:
 
-1. A provider to add a todo: create a `get_task_provider.dart` and add a `getTask` Provider as such:
+1. A provider to add a ToDo: create a `get_task_provider.dart` and add a `getTask` Provider:
 
 ```dart
 import 'package:flutter/foundation.dart';
@@ -357,7 +357,7 @@ String get getResponse => _response;
 
 final EndPoint _point = EndPoint();
 
-// Getting the todos
+// Getting the ToDo items
 
 void getTask(bool isLocal) async {
     // client
@@ -416,7 +416,7 @@ void clear() {
 
 ```
 
-2. A provider to add a todo: create a `add_task_provider.dart` and create `AddTask` Provider as such:
+2. A provider to add a ToDo: create a `add_task_provider.dart` and create `AddTask` Provider as such:
 
 ```dart
 import 'package:flutter/foundation.dart';
@@ -462,7 +462,7 @@ void publishTask({ String? id }) async {
     }
 }
 
-///Add task method
+///Add ToDo method
 void addTask({ String? task, String? status }) async {
     _status = true;
     _response = "Please wait...";
@@ -500,7 +500,7 @@ void clear() {
 
 ```
 
-3. A provider to add a todo: create a `delete_task_provider.dart` and create a `deleteTask` Provider as such:
+3. A provider to add a ToDo: create a `delete_task_provider.dart` and create a `deleteTask` Provider:
 
 ```dart
 import 'package:flutter/foundation.dart';
@@ -519,7 +519,7 @@ String get getResponse => _response;
 
 final MutationEndPoint _point = MutationEndPoint();
 
-///Add task method
+///Add ToDo method
 void deleteTask({
     String? todoId,
 }) async {
@@ -567,8 +567,8 @@ void clear() {
 
 The screens will form the UI that will be presented to the user. This app will have two screens:
 
-- Home page - for viewing the todos.
-- Add a todo page - for adding a todo.
+- Home page - for viewing the ToDos.
+- Add a ToDo page - for adding a new ToDo item.
 
 The two screens will be hosted on the *Screens* directory as follows:
 
@@ -594,10 +594,10 @@ bool isFetched = false;
 Widget build(BuildContext context) {
     return Scaffold(
     appBar: AppBar(
-        title: const Text('Todo Home'),
+        title: const Text('ToDo Home'),
     ),
     body: Consumer<GetTaskProvider>(builder: (context, task, child) {
-        // Get task provider.
+        // Get ToDo provider.
         if (isFetched == false) {
         ///Fetch the data
         task.getTask(true);
@@ -620,10 +620,10 @@ Widget build(BuildContext context) {
                     children: [
                     Container(
                         margin: const EdgeInsets.all(20),
-                        child: const Text("Available todo"),
+                        child: const Text("Available ToDo"),
                     ),
                     if (task.getResponseData().isEmpty)
-                        const Text('No Todo found'),
+                        const Text('No ToDo found'),
                     Expanded(
                         child: ListView(
                         children: List.generate(task.getResponseData().length,
@@ -690,7 +690,7 @@ Widget build(BuildContext context) {
 
 ```
 
-- The add todo page: create an `add_todo.dart` file and add the following code block:
+The add ToDo page: create an `add_todo.dart` file and add the following code block:
 
 ```dart
 import 'package:flutter/material.dart';
@@ -710,7 +710,7 @@ final TextEditingController _task = TextEditingController();
 Widget build(BuildContext context) {
     return Scaffold(
     appBar: AppBar(
-        title: const Text('Add New Todo'),
+        title: const Text('Add New ToDo'),
     ),
     body: CustomScrollView(
         slivers: [
@@ -721,10 +721,10 @@ Widget build(BuildContext context) {
                 children: [
                 Container(
                     margin: const EdgeInsets.all(20),
-                    child: const Text('Add your first todo'),
+                    child: const Text('Add your first ToDo'),
                 ),
 
-                ///Add todo task input field
+                ///Add ToDo task input field
                 TextFormField(
                     controller: _task,
                     decoration: const InputDecoration(
@@ -732,7 +732,7 @@ Widget build(BuildContext context) {
                     ),
                 ),
 
-                ///Add task button
+                ///Add ToDo button
                 Consumer<AddTaskProvider>(builder: (context, task, child) {
                     WidgetsBinding.instance!.addPostFrameCallback((_) {
                     if (task.getResponse != '') {
@@ -747,7 +747,7 @@ Widget build(BuildContext context) {
                     onTap: task.getStatus == true
                         ? null
                         : () {
-                            ///Add task button
+                            ///Add ToDo button
                             ///
                             print(_task.text);
                             if (_task.text.isNotEmpty) {
@@ -765,7 +765,7 @@ Widget build(BuildContext context) {
                             borderRadius: BorderRadius.circular(10)),
                         child: Text(task.getStatus == true
                             ? 'Loading...'
-                            : 'Save Task')),
+                            : 'Save ToDo')),
                     );
                 })
                 ],
@@ -823,7 +823,7 @@ class MyApp extends StatelessWidget {
 
 ```
 
-### **Testing the Todo app**
+### **Testing the ToDo app**
 
 Run the application by executing the following command from the terminal that points to the Flutter project folder:
 
@@ -833,18 +833,24 @@ flutter run lib/main.dart
 
 You will see the following output in the terminal as the project begins running:
 
-![flutter-running.png](./assets/build-todo-app-flutter-webiny-headless-cms/flutter-running.png)
+![Flutter environment running](./assets/build-todo-app-flutter-webiny-headless-cms/flutter-running.png)
 
 Once the application runs, it will be launched on your testing device as follows.
 
-The home screen will be launched with the list of todos. You can use the **Add Todo** button to create new todos:
+The home screen will be launched with the list of ToDos. You can use the **Add ToDo** button to create new ToDo items:
 
-![homescreen.jpg](./assets/build-todo-app-flutter-webiny-headless-cms/homescreen.jpg)
+![The application home screen](./assets/build-todo-app-flutter-webiny-headless-cms/homescreen.jpg)
 
-**Add Todo** button will launch a Flutter form to allow you to insert the todo details using the add-todo screen:
+**Add ToDo** button will launch a Flutter form to allow you to insert the ToDo details using the add-todo screen:
 
-![add_todo_scren.jpg](./assets/build-todo-app-flutter-webiny-headless-cms/add_todo_scren.jpg)
+![Add a ToDo screen](./assets/build-todo-app-flutter-webiny-headless-cms/add_todo_scren.jpg)
 
 ### **Conclusion**
 
-This guide helped you build a decoupled full stack ToDos application. We have used Webiny as the CMS. Then consumed the CMS content using Flutter. I hope you find this tutorial helpful. Check the source code used to build this project on [GitHub repository](https://github.com/kimkimani/Todo-app-with-webiny-cms-and-flutter).
+This guide helped you build a decoupled full stack ToDo list application. We have used Webiny as the CMS. Then consumed the CMS content using Flutter. I hope you find this tutorial helpful.
+
+**Full source code:** https://github.com/webiny/write-with-webiny/tree/main/tutorials/todo-app-flutter
+
+---
+
+This article was written by a contributor to the Write with Webiny program. Would you like to write a technical article like this and get paid to do so? [Check out the Write with Webiny GitHub repo](https://github.com/webiny/write-with-webiny/).
