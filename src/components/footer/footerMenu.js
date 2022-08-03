@@ -111,6 +111,9 @@ const FooterMenu = () => (
             <Link rel="prerender" to="/use-case/microservices">
                 Build Microservices
             </Link>
+            <Link rel="prerender" to="/knowledge-base/headless-cms">
+                Headless CMS Explained
+            </Link>
             <Link rel="prerender" to="/knowledge-base">
                 Knowledge Base
             </Link>
