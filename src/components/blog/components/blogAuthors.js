@@ -12,6 +12,7 @@ import BenImg from "../assets/ben.png";
 import JoesphImg from "../assets/joseph-chege.png";
 import TammiImg from "../assets/taminoturoko-briggs.png";
 import judemiracleImg from "../assets/jude-miracle.png";
+import emmanuelImg from "../assets/emmanuel.png";
 
 export default {
     sven: {
@@ -96,5 +97,11 @@ export default {
         description: "Frontend Engineer @Daabo Inc.",
         avatar: judemiracleImg,
         twitter: "miraclejudeiv"
+    },
+    emmanuelAiyenigba: {
+        name: "Emmanuel Aiyenigba",
+        description: "Software Engineer, Technical Writer, and Community Manager",
+        avatar: emmanuelImg,
+        twitter: "EmmanuelCoder"
     },
 };
