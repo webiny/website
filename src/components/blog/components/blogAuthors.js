@@ -13,6 +13,7 @@ import JoesphImg from "../assets/joseph-chege.png";
 import TammiImg from "../assets/taminoturoko-briggs.png";
 import judemiracleImg from "../assets/jude-miracle.png";
 import emmanuelImg from "../assets/emmanuel.png";
+import isaacImg from "../assets/isaac-okoro.png";
 
 export default {
     sven: {
@@ -104,4 +105,10 @@ export default {
         avatar: emmanuelImg,
         twitter: "EmmanuelCoder"
     },
+    isaacOkoro: {
+        name: "Isaac Okoro",
+        description: "Software Engineer and Technical writer with a passion for self-improvement",
+        avatar: isaacImg,
+        twitter: "HomelessDev02"
+    }
 };
