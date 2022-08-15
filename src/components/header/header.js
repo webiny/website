@@ -1,4 +1,4 @@
-import React, { Children, Fragment, useContext, useState } from "react";
+import React, { Children, Fragment, useContext, useEffect, useState } from "react";
 import { navigate } from "gatsby-link";
 import Link from "../utils/link";
 import { useStaticQuery, graphql } from "gatsby";
@@ -8,6 +8,7 @@ import ContentContainer from "../ui/content-container";
 import Button from "../ui/button";
 import { trackGoToGithub } from "../ui/functions";
 import { ModalContext } from "../ui/layout/video-modal";
+import NewsBanner from "../ui/news-banner"
 // assets
 import logo from "./assets/webiny-logo-with-icon-left-white.svg";
 import logoOrange from "./assets/webiny-logo-with-icon-left-orange.svg";
@@ -356,11 +357,31 @@ const Header = ({ hasBanner = true }) => {
         setMobileMenuOpen(!mobileMenuOpen);
     };
 
+    const initBannerListener = () => {
+        this.bannerListnerer = setInterval(() => {
+            if (window.scrollY > 30 && this.state.hideBanner == false) {
+                this.setState({ hideBanner: true });
+            } else if (window.scrollY < 30 && this.state.hideBanner == true) {
+                this.setState({ hideBanner: false });
+            }
+        }, 500);
+    };
+
+    // useEffect(() => {
+    //     initBannerListener()
+    // }, [hasBanner])
+
     const { setVideoId, setModalOpen } = useContext(ModalContext);
 
     return (
         <Fragment>
-            <HeaderContainer isSticky={sticky} hideBanner={hideBanner}>
+            {hasBanner &&
+                <NewsBanner
+                    title="📢 We are hiring a Senior JavaScript Engineer - Click to Apply"
+                    link={'https://careers.webiny.com/senior-javascript-engineer/en'}
+                />
+            }
+            <HeaderContainer isSticky={sticky} hideBanner={hideBanner} hasBanner={hasBanner}>
                 <ContentContainer className={headerInnerContainer}>
                     <NavBar className={mobileMenuOpen ? "mobile-opened" : "mobile-closed"}>
                         <WebinyLogo alt="Webiny Home">
