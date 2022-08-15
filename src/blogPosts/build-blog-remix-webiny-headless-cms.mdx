@@ -1,13 +1,13 @@
 ---
 slug: "blog/build-blog-remix-webiny-headless-cms"
-title: "Build a ToDo App with Remix and Webiny Headless CMS"
+title: "Build a Blog with Remix and Webiny Headless CMS"
 description: "Remix is a full stack web framework that delivers a fast, slick, and resilient user experience. In this article we will create a blog with Remix and Webiny."
-tags: ["flutter", "build projects", "todo app", "contributed articles"]
+tags: ["remix", "build projects", "blog", "contributed articles"]
 featureImage: "./assets/build-blog-remix-webiny-headless-cms/cover.png"
 author: isaacOkoro
 date: 2022-08-17
 ---
-This article will cover how to build a blog with Remix, which is a full-stack framework, and Webiny Headless CMS. We will take a look at how to set up Webiny and how to use it, we will see how to create content models and also how to fetch data from Webiny. We will use Remix for the frontend and TailwindCSS for styling purposes. With further ado, let's get started.
+This article will cover how to build a blog with Remix, which is a full-stack framework, and Webiny Headless CMS. We will take a look at how to set up Webiny and how to use it, we will see how to create content models and also how to fetch data from Webiny. We will use Remix for the frontend and TailwindCSS for styling purposes. Without further ado, let's get started.
 
 ## Prerequisites
 
@@ -79,13 +79,10 @@ We will also create a Posts model and fill it out with the following:
 - A rich text field with the value **body**
 - A reference field with the value **authors**
 
-Creating the Posts content type
 
-![Creating the Posts content model](./assets/build-blog-remix-webiny-headless-cms/posts-content-model.png)
+![Creating the Posts content model](./assets/build-blog-remix-webiny-headless-cms/completed-posts-content-model.png)
 
 Don’t forget to reference the author field by clicking on Content Models as shown in the image below.
-
-Populating the Posts content type
 
 ![Linking the Author with a reference field](./assets/build-blog-remix-webiny-headless-cms/author-reference-field.png)
 
@@ -115,7 +112,9 @@ Head to the **Setting > Access Management > API key** and create your API key by
 
 This section will cover how to create the UI of our blog with Remix. Install Remix by running the command below in the terminal of your choice:
 
-`npx create-remix <NAME OF YOUR APP>`
+```bash 
+npx create-remix webiny-remix-app
+```
 
 You will be prompted to answer some questions, after which a new Remix project will be created for you.
 
@@ -203,9 +202,11 @@ Remix takes an innovative approach to linking stylesheets and other external res
 
 With that, we are done setting up Tailwind for our application. Before we get started with building our application, let’s create a .env file in the root folder of our application that will hold our Webiny Headless CMS URL and our token.
 
-`REMIX_PUBLIC_WEBINY_API_URL=paste-your-apiUrl-here`
+``` bash
+REMIX_PUBLIC_WEBINY_API_URL=your-apiUrl-here
+WEBINY_API_TOKEN=your-API-token-here
+```
 
-`WEBINY_API_TOKEN=paste-your- API token-here`
 
 ## Building our Blog
 
@@ -248,18 +249,20 @@ export const loader = async () => {
       },
       body: JSON.stringify({
         query: `
-    query PostSlugs {
-        listPosts {
-            data {
-                title
-                slug
-                description
-                featuredImage
-                authors{
-                    name
-                    description
-                    picture
-                }}
+          query PostSlugs {
+            listPosts {
+                data {
+                  title
+                  slug
+                  description
+                  featuredImage
+                  authors {
+                      name
+                      description
+                      picture
+                  }
+                }
+              }
             }
           }
         `,
@@ -368,21 +371,23 @@ export const loader = async () => {
   };
   const graphqlQuery = {
     query: `
-  query getPerPost($PostListWhereInput: PostListWhereInput) {
-    listPosts(where: $PostListWhereInput) {
-      data  {
-        title
-          slug
-          description
-          featuredImage
-          body
-          authors{
-              name
+      query getPerPost {
+        listPosts {
+          data {
+            title
+              slug
               description
-              picture
-          }}
+              featuredImage
+              body
+              authors {
+                  name
+                  description
+                  picture
+              }
+            }
+          }
+        }
       }
-    }
   `,
   };
   const data = {
@@ -462,4 +467,8 @@ With that done, our page should look like the image below:
 
 This article has taken a look at Webiny Headless CMS, how to set it up and how to create models. We also looked at Remix and how to connect our Webiny backend to our Remix frontend by building a blog application.
 
-The complete code for this article can be found [here](https://github.com/IsaacThaJunior/Remix-blog-and-Webiny).
+**Full source code:** https://github.com/webiny/write-with-webiny/tree/main/tutorials/remix-blog
+
+---
+
+This article was written by a contributor to the Write with Webiny program. Would you like to write a technical article like this and get paid to do so? [Check out the Write with Webiny GitHub repo](https://github.com/webiny/write-with-webiny/).
