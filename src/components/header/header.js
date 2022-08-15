@@ -1,4 +1,4 @@
-import React, { Children, Fragment, useContext, useEffect, useState } from "react";
+import React, { Fragment, useContext, useState } from "react";
 import { navigate } from "gatsby-link";
 import Link from "../utils/link";
 import { useStaticQuery, graphql } from "gatsby";
@@ -357,28 +357,14 @@ const Header = ({ hasBanner = true }) => {
         setMobileMenuOpen(!mobileMenuOpen);
     };
 
-    const initBannerListener = () => {
-        this.bannerListnerer = setInterval(() => {
-            if (window.scrollY > 30 && this.state.hideBanner == false) {
-                this.setState({ hideBanner: true });
-            } else if (window.scrollY < 30 && this.state.hideBanner == true) {
-                this.setState({ hideBanner: false });
-            }
-        }, 500);
-    };
-
-    // useEffect(() => {
-    //     initBannerListener()
-    // }, [hasBanner])
-
     const { setVideoId, setModalOpen } = useContext(ModalContext);
 
     return (
         <Fragment>
             {hasBanner &&
                 <NewsBanner
-                    title="📢 We are hiring a Senior JavaScript Engineer - Click to Apply"
-                    link={'https://careers.webiny.com/senior-javascript-engineer/en'}
+                    title="🌟  Star us on GitHub 🌟"
+                    link={'https://github.com/webiny/webiny-js'}
                 />
             }
             <HeaderContainer isSticky={sticky} hideBanner={hideBanner} hasBanner={hasBanner}>
