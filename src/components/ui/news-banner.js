@@ -1,33 +1,40 @@
 import React from "react";
 import styled from "react-emotion";
 import theme from "../utils/theme";
+import mq from "../utils/breakpoints";
 
-const NewsBanner = styled("div")({
-    width: "100%",
-    textAlign: "center",
-    marginBottom: 10,
-    fontSize: 14,
-    position: "fixed",
-    top: 0,
-    zIndex: 101,
-    backgroundColor: "#292C33",
-    paddingBottom: 5,
-    paddingTop: 7,
-    display: "block",
-    minHeight: 25,
-    a: {
-        color: theme.color.white,
-        textDecoration: "none",
-        "&:hover": {
+const NewsBanner = styled("div")(
+    {
+        width: "100%",
+        marginBottom: 10,
+        fontSize: 14,
+        position: "fixed",
+        top: 0,
+        zIndex: 101,
+        backgroundColor: "#292C33",
+        paddingBottom: 5,
+        paddingTop: 7,
+        minHeight: 25,
+        a: {
+            color: theme.color.white,
             textDecoration: "underline",
+            "&:hover": {
+                textDecoration: "none",
+            },
+        },
+        p: {
+            color: theme.color.white,
+            margin: "0 auto",
+            marginBottom: 0
         },
     },
-});
+    mq({
+        display: ["flex"],
+    }),
+);
 
 export default ({ ...props }) => (
     <NewsBanner>
-        <a href={props.link} target="_blank">
-            {props.title}
-        </a>
+        {props.children}
     </NewsBanner>
 );

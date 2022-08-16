@@ -362,10 +362,14 @@ const Header = ({ hasBanner = true }) => {
     return (
         <Fragment>
             {hasBanner &&
-                <NewsBanner
-                    title="🌟  Star us on GitHub 🌟"
-                    link={'https://github.com/webiny/webiny-js'}
-                />
+                <NewsBanner>
+                <p>🌟&nbsp;Help others discover us,&nbsp;
+                    <a href="https://github.com/webiny/webiny-js" target="_blank">
+                        star our GitHub repo!
+                    </a>
+                    &nbsp;🌟
+                </p>
+                </NewsBanner>
             }
             <HeaderContainer isSticky={sticky} hideBanner={hideBanner} hasBanner={hasBanner}>
                 <ContentContainer className={headerInnerContainer}>
