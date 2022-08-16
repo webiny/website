@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "react-emotion";
 import theme from "../utils/theme";
-import mq from "../utils/breakpoints";
 
 const NewsBanner = styled("div")(
     {
@@ -9,6 +8,7 @@ const NewsBanner = styled("div")(
         marginBottom: 10,
         fontSize: 14,
         position: "fixed",
+        display: "flex",
         top: 0,
         zIndex: 101,
         backgroundColor: "#292C33",
@@ -27,11 +27,8 @@ const NewsBanner = styled("div")(
             margin: "0 auto",
             marginBottom: 0
         },
-    },
-    mq({
-        display: ["flex"],
-    }),
-);
+    }
+)
 
 export default ({ ...props }) => (
     <NewsBanner>
