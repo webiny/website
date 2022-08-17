@@ -1,4 +1,4 @@
-import React, { Children, Fragment, useContext, useState } from "react";
+import React, { Fragment, useContext, useState } from "react";
 import { navigate } from "gatsby-link";
 import Link from "../utils/link";
 import { useStaticQuery, graphql } from "gatsby";
@@ -8,6 +8,7 @@ import ContentContainer from "../ui/content-container";
 import Button from "../ui/button";
 import { trackGoToGithub } from "../ui/functions";
 import { ModalContext } from "../ui/layout/video-modal";
+import NewsBanner from "../ui/news-banner"
 // assets
 import logo from "./assets/webiny-logo-with-icon-left-white.svg";
 import logoOrange from "./assets/webiny-logo-with-icon-left-orange.svg";
@@ -360,7 +361,17 @@ const Header = ({ hasBanner = true }) => {
 
     return (
         <Fragment>
-            <HeaderContainer isSticky={sticky} hideBanner={hideBanner}>
+            {hasBanner &&
+                <NewsBanner>
+                <p>🌟&nbsp;Help others discover us,&nbsp;
+                    <a href="https://github.com/webiny/webiny-js" target="_blank">
+                        star our GitHub repo!
+                    </a>
+                    &nbsp;🌟
+                </p>
+                </NewsBanner>
+            }
+            <HeaderContainer isSticky={sticky} hideBanner={hideBanner} hasBanner={hasBanner}>
                 <ContentContainer className={headerInnerContainer}>
                     <NavBar className={mobileMenuOpen ? "mobile-opened" : "mobile-closed"}>
                         <WebinyLogo alt="Webiny Home">
