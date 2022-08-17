@@ -14,7 +14,7 @@ This CLI requests over 100 packages which are published to NPM. These all work t
 
 Modifying these packages and testing them could prove to be a challenge if it wasn't for very useful tools like [Lerna](https://lerna.js.org/), which we use to publish new versions to NPM, and [Verdaccio](https://verdaccio.org/). Verdaccio is a proxy registry. That means when configured it intercepts requests to NPM, and serves packages you've published to it locally.
 
-Here's how we use leverage Verdaccio to test packages at Webiny.
+Here's how we use leverage Verdaccio to test packages at Webiny, using [our repository](https://github.com/webiny/webiny-js) as an example.
 
 ## Start Verdaccio
 
@@ -53,7 +53,7 @@ There's more information about this [on Verdaccio's docs site](https://verdaccio
 
 ## Version and Release Packages
 
-The final steps before we test our user project is to create a new Beta version and release the packages. This is where our setup with Lerna steps in:
+The final steps before we test our user project is to create a new Beta version and release the packages. This is where our existing setup in the Webiny project with Lerna steps in. You can see details of how this command works by [looking at the package.json in our repository](https://github.com/webiny/webiny-js/blob/next/package.json#L157).
 
 ```bash
 yarn lerna:version:verdaccio
@@ -73,7 +73,7 @@ yarn lerna publish from-package --dist-tag next --registry=\"http://localhost:{p
 
 ## Create a New User Project
 
-The next step is to create a new user project. You can create it in a subdirectory of the webiny-js repo, or in another folder. We can do this using the following command:
+The next step is to create a new Webiny user project. You can create it in a subdirectory of the webiny-js repo, or in another folder. We can use NPX to do this using the following command:
 
 ```bash
 npx create-webiny-project@next test-project --tag next --no-interactive "unsafeHttpWhitelist":["localhost"]}' --template-options '{"region":"us-east-1","storageOperations":"ddb"}'
