@@ -1,6 +1,6 @@
 ---
 slug: "blog/should-use-gatsby-or-nextjs"
-title: "Should I use Gatsby or Nextjs for my next project?"
+title: "Should I Use Gatsby or Nextjs For My Next Project?"
 description: "Gatsby and Next.js seem to be fiercely competing both in terms of features and for users. But are they the same tool by different names? Is one better than the other? In this article, we will look at a few core features and see if we can decide if Next.JS or Gatsby is more suitable for building with."
 tags: ["technology", "frontend tools"]
 featureImage: "./assets/should-use-gatsby-or-nextjs/cover.png"
@@ -17,7 +17,7 @@ So we decided to do a bit of critical thinking about whether Next.js or Gatsby i
 
 ## Server Generation and Configuration
 
-Generating React code, or any JavaScript, when an application is built, is a critical metric when it comes to frontend frameworks like Gatsby and Next.js. But we don't think it's _speed_ that's critical. It's certainly important, but it's one of those metrics that the developers of these frameworks are acutely aware of, so they're going to make sure they keep making advancement in this area.
+Generating React code, or any JavaScript, when an application is built, is a critical metric when it comes to frontend frameworks like Gatsby and Next.js. But we don't think it's _speed_ that's critical. It's certainly important, but it's one of those metrics that the developers of these frameworks are acutely aware of, so they're going to make sure they keep making advancements in this area.
 
 What's more interesting is what APIs you have access to on server generation. Does the tool make it easier or more difficult to do what you need to? That's what we're assessing here.
 
@@ -25,7 +25,7 @@ Whilst Next.js allows access to customize headers, page initialization, add rewr
 
 Gatsby certainly has a wider variety of configuration open to developers here. But that can also be daunting or unnecessarily complex for someone who just wants to build with React but also have static generation.
 
-Also, sometimes its not clear what the files are for. For example, the [gatsby-node.js](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/) file isn't specifically for APIs that run in the server environment (which would be using Node.js), instead, this is where the internal node transformation happens, allowing you to create dynamic pages and custom GraphQL resolvers to your application.
+Also, sometimes it's not clear what the files are for. For example, the [gatsby-node.js](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/) file isn't specifically for APIs that run in the server environment (which would be using Node.js), instead, this is where the internal node transformation happens, allowing you to create dynamic pages and custom GraphQL resolvers to your application.
 
 Admittedly, once you know that, it's great to have access to all of these APIs to customize your data. But we'll get to that a bit more later.
 
@@ -43,7 +43,7 @@ We generally prefer the darker code blocks and higher contrast on the Next.js we
 
 ![The Next.js documentation site](./assets/should-use-gatsby-or-nextjs/nextjs-docs-site.png)
 
-Next.js' strengths come out clearly in it's focussed approach towards lower-level APIs such as the `getStaticProps()` and `getServerSideProps()` functions, and these are explained very well. But there are also some things that are not mentioned except succinctly in an ["unsupported features" section](https://nextjs.org/docs/advanced-features/static-html-export#unsupported-features). This can be frustrating when you find out you've built your application to use a certain feature, only to realize it's not supported in the environment you intended to deploy to.
+Next.js' strengths come out clearly in it's focused approach towards lower-level APIs such as the `getStaticProps()` and `getServerSideProps()` functions, and these are explained very well. But there are also some things that are not mentioned except succinctly in an ["unsupported features" section](https://nextjs.org/docs/advanced-features/static-html-export#unsupported-features). This can be frustrating when you find out you've built your application to use a certain feature, only to realize it's not supported in the environment you intended to deploy to.
 
 ## Routing
 
@@ -51,7 +51,7 @@ Both frameworks take advantage of file-based routing. [Next.js](https://nextjs.o
 
 What is great about Next.js is the ability to create [API Routes](https://nextjs.org/docs/api-routes/introduction), making it a truly isomorphic application. This could be really useful in a lot of situations, especially if you have a sprawling REST API endpoint and want a minimal set of data returned from it, you could massage that data down to only the content you need on your frontend. In fact, Next.js has it's [own express-like server-side framework called Micro](https://github.com/vercel/micro).
 
-This turns Next.js into a truly isomorphic application, which is meant have components server side and on the client, working in tandem to produce a single application.
+This turns Next.js into a truly isomorphic application, which is meant to have components server side and on the client, working in tandem to produce a single application.
 
 On the other hand, Gatsby seems to keep these concerns clearly separated, even with their own [Gatsby Functions](https://www.gatsbyjs.com/products/cloud/functions), the emphasis is on a separate backend that communicates with the hydrated frontend application.
 
@@ -59,7 +59,7 @@ Do you like to mix these concerns? Or keep them separate? It depends slightly on
 
 ## Conclusion
 
-Gatsby and Next.js are two very different tools with unique value propositions: either a low-level tools to provide fundamental APIs and free developers from unnecessary tooling, or an ecosystem full of plugins of varying quality, together with a data layer to stitch your content together.
+Gatsby and Next.js are two very different tools with unique value propositions: either low-level tools to provide fundamental APIs and free developers from unnecessary tooling, or an ecosystem full of plugins of varying quality, together with a data layer to stitch your content together.
 
 As we said at the start, this isn't a full roundup of all of their features. Maybe what you're building needs something more specific like [Astro](https://astro.build/), [Nuxt](https://nuxtjs.org/) or [SvelteKit](https://kit.svelte.dev/). We only know what we've encountered when building our starters for Next.js and Gatsby.
 
