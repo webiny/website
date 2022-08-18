@@ -5,7 +5,6 @@ import { css } from "emotion";
 import mq from "../utils/breakpoints";
 import theme from "../utils/theme";
 // assets
-import rightArrow from "./assets/arrow-right.svg";
 import downArrowWhite from "./assets/down-arrow-white.svg";
 import { BANNER_HEIGHT } from "./banner";
 import downArrowBlack from "./assets/down-arrow-black.svg";
