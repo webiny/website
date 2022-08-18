@@ -51,6 +51,7 @@ import {
     mobileMenuList,
     headerButton,
 } from "./header-styles";
+import { Helmet } from "react-helmet";
 
 const handleClick = (item, playVideo) => {
     const fullLink = typeof item.actionLink === "string" && item.actionLink.startsWith("http");
@@ -362,14 +363,23 @@ const Header = ({ hasBanner = true }) => {
     return (
         <Fragment>
             {hasBanner &&
-                <NewsBanner>
-                <p>🌟&nbsp;Help others discover us,&nbsp;
-                    <a href="https://github.com/webiny/webiny-js" target="_blank">
-                        star our GitHub repo!
-                    </a>
-                    &nbsp;🌟
-                </p>
-                </NewsBanner>
+                <Fragment>
+                    <Helmet>
+                        <style type="text/css">{`
+                            body {
+                                margin-top: 30px;
+                            }
+                        `}</style>
+                    </Helmet>
+                    <NewsBanner>
+                        <p>🌟&nbsp;Help others discover us,&nbsp;
+                            <a href="https://github.com/webiny/webiny-js" target="_blank">
+                                star our GitHub repo!
+                            </a>
+                            &nbsp;🌟
+                        </p>
+                    </NewsBanner>
+                </Fragment>
             }
             <HeaderContainer isSticky={sticky} hideBanner={hideBanner} hasBanner={hasBanner}>
                 <ContentContainer className={headerInnerContainer}>
