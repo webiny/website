@@ -14,6 +14,7 @@ import TammiImg from "../assets/taminoturoko-briggs.png";
 import judemiracleImg from "../assets/jude-miracle.png";
 import emmanuelImg from "../assets/emmanuel.png";
 import isaacImg from "../assets/isaac-okoro.png";
+import victoryImg from "../assets/victory-tuduo.png";
 
 export default {
     sven: {
@@ -112,4 +113,10 @@ export default {
         avatar: isaacImg,
         twitter: "HomelessDev02",
     },
+    victory: {
+        name: "Victory Tuduo",
+        description: "A software developer and technical writer",
+        avatar: victoryImg,
+        twitter: "@vhicktri"
+    }
 };
