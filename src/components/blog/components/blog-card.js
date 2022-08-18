@@ -39,7 +39,6 @@ const BlogCardWrapper = styled("div")(
         },
 
         "& .media-wrapper": {
-            height: 174,
             "& .gatsby-image-wrapper": {
                 width: "100%",
                 height: "100%",
