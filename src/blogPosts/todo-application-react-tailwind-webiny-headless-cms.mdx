@@ -39,13 +39,13 @@ A Headless CMS is a Content Management System in which content is stored at a ba
 
 To build the ToDo application, we will be using the React JavaScript framework. To install this, on your system, navigate to a project of your choice and open a CLI. Within the CLI, enter the following bash commands:
 
-```
+```bash
 npx create-react-app todo_application
 ```
 
 The above command sets up a React application in the chosen directory. In order to easily style our application, we will be using [TailwindCSS](https://tailwindcss.com/). We can install this in the CLI with the following command:
 
-```
+```bash
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```
@@ -85,10 +85,10 @@ function App() {
   const [todo, setTodo] = useState("");
 
   return (
-    <div className=" h-screen flex justify-center items-center flex-col gap-8">
-      <div className=" flex justify-center items-center gap-6">
+    <div className="h-screen flex justify-center items-center flex-col gap-8">
+      <div className="flex justify-center items-center gap-6">
         <input
-          className=" w-72 border-2  rounded-md px-3 py-3 bg-[#E8ECF4] backdrop-blur-lg"
+          className="w-72 border-2  rounded-md px-3 py-3 bg-[#E8ECF4] backdrop-blur-lg"
           //set value of input field
           value={todo}
           onChange={(e) => {
@@ -98,7 +98,7 @@ function App() {
           placeholder="Enter a new task"
         />
         <button
-          className=" h-full px-5 py-2 bg-[#0264F6] text-white font-medium rounded-md"
+          className="h-full px-5 py-2 bg-[#0264F6] text-white font-medium rounded-md"
           onClick={() => {
             //execute function to add new todo to the list
           }}
@@ -124,14 +124,14 @@ To display the ToDo list items we will create a separate component. To achieve t
 import React from "react";
 const TaskList = () => {
   return (
-    <div className=" w-full text-center flex items-center flex-col gap-5">
-      <h1 className=" text-blue-600 uppercase font-semibold text-2xl">Task List</h1>
-      <div className=" w-1/2 bg-slate-300 backdrop-blur-lg px-3 py-5 rounded-md">
-          <div className=" flex justify-between items-center mb-5">
-            <li className=" list-none w-2/3 text-left break-normal">Task 1</li>
+    <div className="w-full text-center flex items-center flex-col gap-5">
+      <h1 className="text-blue-600 uppercase font-semibold text-2xl">Task List</h1>
+      <div className="w-1/2 bg-slate-300 backdrop-blur-lg px-3 py-5 rounded-md">
+          <div className="flex justify-between items-center mb-5">
+            <li className="list-none w-2/3 text-left break-normal">Task 1</li>
             <div className="flex gap-3">
-                <button className=" bg-blue-600 text-white px-2 py-2 font-medium rounded-md">Completed</button>
-                <button className=" bg-white text-blue-600 px-2 py-2 font-medium rounded-md">Delete</button>
+                <button className="bg-blue-600 text-white px-2 py-2 font-medium rounded-md">Completed</button>
+                <button className="bg-white text-blue-600 px-2 py-2 font-medium rounded-md">Delete</button>
             </div>
           </div>
       </div>
@@ -163,13 +163,13 @@ Running the code now will produce a result similar to the below image:
 
 To get started with Webiny, you will need an AWS account. If you do not already have one, you can follow [this guide](https://www.webiny.com/docs/infrastructure/aws/configure-aws-credentials) to create one. After creating an account and s[etting up the AWS credentials on your device](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html), you can create a Webiny project with the following CLI command:
 
-```
+```bash
 npx create-webiny-project todocms
 ```
 
 Once the installation is complete, we will deploy the Webiny project with the following command:
 
-```
+```bash
 yarn webiny deploy
 ```
 
@@ -213,9 +213,9 @@ To connect Webiny CMS to our application, we will need to create an API key. Thi
 
 For our Webiny CMS access token, we will create a `.env` file in our project directory and key in the following:
 
-```
-REACT_APP_ACCESS_TOKEN =<your access token here>
-REACT_APP_WEBINY_URL =<your Webiny URL instance here>
+```bash
+REACT_APP_ACCESS_TOKEN=your access token here
+REACT_APP_WEBINY_URL=your Webiny URL instance here
 ```
 
 To get the Webiny instance URL, you can use the `yarn webiny info` command in the CLI of the Webiny project folder. The URL to be used looks similar to this format: `https://{your CMS URL}/cms/manage/{Local region}`.
@@ -293,22 +293,22 @@ In `TaskList.js`, we can map through this prop and return our data:
 ```jsx
 const TaskList = ({ todos }) => {
   return (
-    <div className=" w-full text-center flex items-center flex-col gap-5">
-      <h1 className=" text-blue-600 uppercase font-semibold text-2xl">
+    <div className="w-full text-center flex items-center flex-col gap-5">
+      <h1 className="text-blue-600 uppercase font-semibold text-2xl">
         Task List
       </h1>
-      <div className=" w-1/2 bg-slate-300 backdrop-blur-lg px-3 py-5 rounded-md">
+      <div className="w-1/2 bg-slate-300 backdrop-blur-lg px-3 py-5 rounded-md">
         {todos &&
           todos.listTodos.data.map(({ id, todoItem, taskCompleted }) => (
-            <div className=" flex justify-between items-center mb-5" key={id}>
-              <li className=" list-none w-2/3 text-left break-normal">
+            <div className="flex justify-between items-center mb-5" key={id}>
+              <li className="list-none w-2/3 text-left break-normal">
                 {todoItem}
               </li>
               <div className="flex gap-3">
-                <button className=" bg-blue-600 text-white px-2 py-2 font-medium rounded-md">
+                <button className="bg-blue-600 text-white px-2 py-2 font-medium rounded-md">
                   {taskCompleted? "Completed" : "Not Completed"}
                 </button>
-                <button className=" bg-white text-blue-600 px-2 py-2 font-medium rounded-md">
+                <button className="bg-white text-blue-600 px-2 py-2 font-medium rounded-md">
                   Delete
                 </button>
               </div>
@@ -361,7 +361,7 @@ The `useMutation` hook above depends on the `addTodo` function to execute the `A
 
 ```jsx
 <button
-  className=" h-full px-5 py-2 bg-[#0264F6] text-white font-medium rounded-md"
+  className="h-full px-5 py-2 bg-[#0264F6] text-white font-medium rounded-md"
   onClick={() => {
     //execute function to add new todo to the list
     addTodo({ variables: { todoItem: todo } });
@@ -379,9 +379,10 @@ const { loading, error, data, refetch } = useQuery(GET_TODOS)
 
 Now, we can create new ToDo items in our application:
 
-<video>
-<source src="./assets/todo-application-react-tailwind-webiny-headless-cms/create-a-new-todo.mp4" controls type="video/mp4">
+<video width="800px" height="auto" controls autoplay>
+  <source src="./assets/todo-application-react-tailwind-webiny-headless-cms/create-a-new-todo.mp4" type="video/mp4" />
 </video>
+
 
 **Deleting a ToDo Item** 
 
@@ -403,7 +404,7 @@ const TaskList = ({ todos, gettodo }) => {
 In the code above, we defined the mutation to delete a ToDo item. The ToDo item to be deleted is referenced by an `id` variable. We will call the `deleteTodo` function to execute the mutation, and also pass the `id` to the mutation using the `onClick` event handler of the `delete` button:
 
 ```jsx
-<button className=" bg-white text-blue-600 px-2 py-2 font-medium rounded-md"
+<button className="bg-white text-blue-600 px-2 py-2 font-medium rounded-md"
   onClick={() => {
     deleteTodo({ variables: { id: id } });
   }}
@@ -439,8 +440,8 @@ const TaskList = ({ todos, gettodo }) => {
 
 With this done, our delete functionality should work properly:
 
-<video>
-<source src="./assets/todo-application-react-tailwind-webiny-headless-cms/delete-todo-item.mp4" controls type="video/mp4">
+<video width="800px" height="auto" controls autoplay>
+  <source src="./assets/todo-application-react-tailwind-webiny-headless-cms/delete-todo-item.mp4" type="video/mp4" />
 </video>
 
 **Updating ToDo Completion Property** 
@@ -474,7 +475,7 @@ Here the update mutation references the todo item by the `id`. Then we update th
 For the `updateTodo` function, we will call it in the `Task Completed` button and pass in the `id` and `Boolean` values:
 
 ```jsx
-<button className=" bg-blue-600 text-white px-2 py-2 font-medium rounded-md"
+<button className="bg-blue-600 text-white px-2 py-2 font-medium rounded-md"
   onClick={()=>{
     updateTodo({ variables: { id: id, completed: !taskCompleted } });
   }}
@@ -495,9 +496,10 @@ Lastly, we will add a style to apply a `strikethrough` property to to-do items t
 
 Now, if we run our code and open the result in our browser, we have the following result:
 
-<video>
-<source src="./assets/todo-application-react-tailwind-webiny-headless-cms/final-video.mp4" controls type="video/mp4">
+<video width="800px" height="auto" controls autoplay>
+  <source src="./assets/todo-application-react-tailwind-webiny-headless-cms/final-video.mp4" type="video/mp4" />
 </video>
+
 
 ## Conclusion
 
@@ -505,6 +507,7 @@ We have come to the end of this tutorial. In this tutorial, we learned about the
 
 
 **Full source code:** https://github.com/webiny/write-with-webiny/tree/main/tutorials/todo-react-tailwind
+
 ---
 
 This article was written by a contributor to the Write with Webiny program. Would you like to write a technical article like this and get paid to do so? [Check out the Write with Webiny GitHub repo](https://github.com/webiny/write-with-webiny/).
