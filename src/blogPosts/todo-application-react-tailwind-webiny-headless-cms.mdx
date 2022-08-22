@@ -76,7 +76,7 @@ Finally, add the tailwind directives to the top level of `index.css`:
 
 For the to-do application, we will need an input field where we can add new tasks to our ToDo list. For this, we will create an input field and handle changes in the text field with the `useState` hook in `App.js` as shown below:
 
-```jsx
+```tsx
 import "./App.css";
 import { React, useState } from "react";
 
@@ -120,7 +120,7 @@ In the code above, we have a state to manage ToDo inputs from a text field, an i
 
 To display the ToDo list items we will create a separate component. To achieve this, in your project directory create a folder called `components` and a file `TaskList.js` within it. Next, we will define the structure for our to-do items with the following code in `TaskList.js`:
 
-```jsx
+```tsx
 import React from "react";
 const TaskList = () => {
   return (
@@ -143,7 +143,7 @@ export default TaskList;
 
 The code above defines the structure of our ToDo list. Each ToDo item will have two buttons `Completed` and `Delete`. We can import this component into `App.js`:
 
-```jsx
+```tsx
 //Add an import for the TaskList component in App.js
 import TaskList from "./components/TaskList";
   // Then add the TaskList component just below the "Add Todo Item" button
@@ -228,7 +228,7 @@ npm install @apollo/client graphql
 
 Once the installation is complete, we will initialize `ApolloClient` in our `index.js` file:
 
-```jsx
+```tsx
 import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
 
 const client = new ApolloClient({
@@ -242,7 +242,7 @@ const client = new ApolloClient({
 
 Next, we wrap the `App` component with the `ApolloProvider`:
 
-```jsx
+```tsx
 <ApolloProvider client={client}>
   <App />
 </ApolloProvider>
@@ -252,7 +252,7 @@ Next, we wrap the `App` component with the `ApolloProvider`:
 
 With the `Apollo` setup complete, we can create a query in `App.js` to fetch data from the CMS:
 
-```jsx
+```tsx
 import { useQuery, gql } from "@apollo/client";
 
 //query to fetch to-dos
@@ -273,7 +273,7 @@ The query `GET_TODOS` runs a query `listTodos` which returns an array of our to-
 
 Next, we use the `useQuery` hook from `Apollo client` to execute the `GET_TODOS` query in the `App` component:
 
-```jsx
+```tsx
 const { loading, error, data } = useQuery(GET_TODOS)
   if (loading) return <p>Getting to_dos...</p>;
   if (error) return <p>An error occurred :(</p>;
@@ -283,14 +283,14 @@ In the code above, we have defined three states for the data. When the data is i
 
 To display the data returned by this query, we will pass the `data` value to the `TaskList` component and return it:
 
-```jsx
+```tsx
 {/* passing data to TaskList */}
 <TaskList todos={data}/>
 ```
 
 In `TaskList.js`, we can map through this prop and return our data:
 
-```jsx
+```tsx
 const TaskList = ({ todos }) => {
   return (
     <div className="w-full text-center flex items-center flex-col gap-5">
@@ -328,7 +328,7 @@ Here, we map through the `data` and return the `todoItem` and `taskCompleted` pr
 
 To create new ToDo items, we will use the `useMutation` hook from the `Apollo client`. With it, we will pass the value from the input field when the `Add Todo item` button is clicked to create new ToDos. We will do this in `App.js`:
 
-```jsx
+```tsx
 import { useQuery, gql, useMutation } from "@apollo/client";
 
 // then we define the query to create a todo
@@ -353,13 +353,13 @@ The `ADD_TODOS` query defined above executes a mutation `createTodo`. This mutat
 
 We will execute the `ADD_TODOS` mutation in the `App` component using `useMutation`:
 
-```jsx
+```tsx
 const [addTodo] = useMutation(ADD_TODOS);
 ```
 
 The `useMutation` hook above depends on the `addTodo` function to execute the `ADD_TODOS` mutation. When this function is called, the mutation gets executed. We will call this function in the button to `Add new Todo`:
 
-```jsx
+```tsx
 <button
   className="h-full px-5 py-2 bg-[#0264F6] text-white font-medium rounded-md"
   onClick={() => {
@@ -373,7 +373,7 @@ The `useMutation` hook above depends on the `addTodo` function to execute the `A
 
 To re-fetch the `to-dos` when a new ToDo item is added, we will use the `refetch()` hook provided by `useQuery`:
 
-```jsx
+```tsx
 const { loading, error, data, refetch } = useQuery(GET_TODOS)
 ```
 
@@ -388,7 +388,7 @@ Now, we can create new ToDo items in our application:
 
 To delete ToDo items, we will create a new mutation `DELETE_TODO` in `TaskList.js`. Then we will use the `useMutation` hook to execute this mutation when the `Delete` button is clicked:
 
-```jsx
+```tsx
 import { gql, useMutation } from "@apollo/client";
 const TaskList = ({ todos, gettodo }) => {
   const DELETE_TODO = gql`
@@ -403,7 +403,7 @@ const TaskList = ({ todos, gettodo }) => {
 
 In the code above, we defined the mutation to delete a ToDo item. The ToDo item to be deleted is referenced by an `id` variable. We will call the `deleteTodo` function to execute the mutation, and also pass the `id` to the mutation using the `onClick` event handler of the `delete` button:
 
-```jsx
+```tsx
 <button className="bg-white text-blue-600 px-2 py-2 font-medium rounded-md"
   onClick={() => {
     deleteTodo({ variables: { id: id } });
@@ -417,7 +417,7 @@ Within the `onClick` event handler above, we called the `deleteTodo` function an
 
 To re-fetch our data to reflect the changes caused by deleting a ToDo item, we will add a property `refetchQueries` provided by the `useMutation` hook:
 
-```jsx
+```tsx
 const [deleteTodo] = useMutation(DELETE_TODO, {
     refetchQueries: [
       {query: gettodo},
@@ -427,13 +427,13 @@ const [deleteTodo] = useMutation(DELETE_TODO, {
 
 the `query` property will take in the query we want to execute, in this case, is the `GET_TODOS` query defined in `App.js`. To make use of it here, we just need to pass the variable to the `TaskList` component as a prop:
 
-```jsx
+```tsx
 <TaskList todos={data} gettodo={GET_TODOS}/>
 ```
 
 Then we can get this prop in the `TaskList.js` file:
 
-```jsx
+```tsx
 const TaskList = ({ todos, gettodo }) => {
 //....
 ```
@@ -448,7 +448,7 @@ With this done, our delete functionality should work properly:
 
 For the final feature of our ToDo application, we want to be able to update the task when it has been completed. We will create a new mutation for this in our `TaskList.js` file:
 
-```jsx
+```tsx
 const UPDATE_TODO = gql`
     mutation UpdateQuery($id: ID!, $completed: Boolean!) {
       updateTodo(
@@ -474,7 +474,7 @@ Here the update mutation references the todo item by the `id`. Then we update th
 
 For the `updateTodo` function, we will call it in the `Task Completed` button and pass in the `id` and `Boolean` values:
 
-```jsx
+```tsx
 <button className="bg-blue-600 text-white px-2 py-2 font-medium rounded-md"
   onClick={()=>{
     updateTodo({ variables: { id: id, completed: !taskCompleted } });
@@ -488,7 +488,7 @@ In the code above, we pass in the `id` and the opposite value of our `taskComple
 
 Lastly, we will add a style to apply a `strikethrough` property to to-do items that have been completed:
 
-```jsx
+```tsx
  <li className={` ${taskCompleted? "line-through": "" } list-none w-2/3 text-left break-normal`}>
   {todoItem}
 </li>
