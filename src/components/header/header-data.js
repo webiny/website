@@ -7,7 +7,6 @@ import FileManagerIcon from "./assets/fileManagerIcon.svg";
 import PageBuilderIcon from "./assets/pageBuilderIcon.svg";
 import ControlPanelIcon from "./assets/controlPanelIcon.svg";
 import advancedPublishingIcon from "./assets/advancedPublishingIcon.svg";
-import TenantManagerIcon from "./assets/tenantManagerIcon.svg";
 import FormBuilderIcon from "./assets/formBuilderIcon.svg";
 // resources
 import SlackIcon from "./assets/slackIcon.svg";

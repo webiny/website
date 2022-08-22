@@ -6,9 +6,8 @@ import useWindowWidth from "../../../utils/useWindowWidth";
 import WebinyLogo from "./assets/logo.svg";
 import Minus from "./assets/minus.svg";
 import Arrow from "./assets/arrow.svg";
-import ArrowRight from "./assets/arrow-right.svg";
 
-import { H2, H4, H5, P, WhyWebinyTableContainer, Link } from "./why-webiny-table-desktop.styled";
+import { H2, H4, H5, P, WhyWebinyTableContainer } from "./why-webiny-table-desktop.styled";
 
 const CellRendered = ({ cellItem }) => {
     if (cellItem.image === "yes") {

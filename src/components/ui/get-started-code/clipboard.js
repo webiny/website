@@ -84,7 +84,7 @@ class ClipBoard extends React.Component {
 
     render() {
         const FakeButton = ({ text, onMouseOut }) => (
-            <div className="clip-button" onMouseOut={onMouseOut}>
+            <div className="clip-button" onMouseOut={onMouseOut} onBlur={onMouseOut}>
                 {text}
             </div>
         );

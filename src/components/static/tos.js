@@ -1,7 +1,7 @@
 import React from "react";
 import Body from "./body";
 
-export default ({ children, ...props }) => (
+export default () => (
     <Body title={"Terms of Service"}>
         <div>
             <span>
@@ -133,6 +133,7 @@ export default ({ children, ...props }) => (
                     <a
                         href="https://support.webiny.com/en/article/fair-usage-policy-1g4gepe/"
                         target="_blank"
+                        rel="noreferrer"
                         style={{ display: "inline" }}
                     >
                         Fair Usage Policy

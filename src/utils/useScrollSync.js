@@ -68,7 +68,7 @@ export const useSyncScroller = (id) => {
     return () => {
       el.removeEventListener("scroll", onScroll);
     };
-  }, [id, ref.current]);
+  }, [id]);
 
   return ref;
 };

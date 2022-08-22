@@ -1,7 +1,8 @@
 import React from "react";
-import GatsbyLink, { navigate } from "gatsby-link";
+import GatsbyLink from "gatsby-link";
 
 export default ({ children, ...props }) => {
+
     if (props.to !== null && (props.to.startsWith("/docs/") || props.to.startsWith("http"))) {
         return (
             <a key={props.key} className="link" rel="prerender" href={props.to}>
@@ -16,9 +17,9 @@ export default ({ children, ...props }) => {
         );
     } else {
         return (
-            <a key={props.key} className="link" rel="prerender" href="#">
+            <span key={props.key} className="link">
                 {children}
-            </a>
+            </span>
         );
     }
 };

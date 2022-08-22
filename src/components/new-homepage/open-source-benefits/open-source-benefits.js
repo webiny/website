@@ -107,7 +107,7 @@ const FrameContainer = ({ image, title, description, link }) => {
             <FrameDescription>{description}</FrameDescription>
             <FrameLink>
                 {link ? (
-                    <a target="_blank" href={link}>
+                    <a target="_blank" rel="noreferrer" href={link}>
                         Explore more <img src={arrow} />
                     </a>
                 ) : (

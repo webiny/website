@@ -10,7 +10,7 @@ export const WEBINY_APPS_LIBRARIES_FEATURES = [
         body: () => (
             <p className={"feature-card__body"}>
                 When you install Webiny, you will find{" "}
-                <a href={"/serverless-apps"} target={"_blank"}>
+                <a href={"/serverless-apps"} target="_blank" rel="noreferrer">
                     several apps
                 </a>{" "}
                 pre-installed. Apps like Page Builder, Form Builder, File Manager and a Headless CMS

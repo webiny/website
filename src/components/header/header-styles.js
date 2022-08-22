@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "react-emotion";
 import { css } from "emotion";
 // Utils
@@ -260,7 +259,7 @@ export const MenuItem = styled("li")(
                 transitionDelay: "0s, 0s, 0.1s",
             },
         },
-        ">a.link": {
+        "> .link": {
             fontSize: theme.fontSize.sm,
             fontWeight: theme.fontWeight.bold,
             textDecoration: "none",
@@ -308,6 +307,10 @@ export const parentMenu = css(
         marginRight: -5,
         marginTop: "-3px !important",
         a: {
+            color: "inherit",
+            textDecoration: "none",
+        },
+        span: {
             color: "inherit",
             textDecoration: "none",
         },

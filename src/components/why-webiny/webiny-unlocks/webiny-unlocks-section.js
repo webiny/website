@@ -21,7 +21,7 @@ const UnlocksTile = ({ title, image, description, tileWrapClassName }) => {
     return (
         <UnlocksTileWrap className={tileWrapClassName}>
             <TileImage>
-                <img src={image} alt="tile image" />
+                <img src={image} alt="" />
             </TileImage>
             <TileContentWrap>
                 <TileTitle>{title}</TileTitle>

@@ -1,10 +1,6 @@
 import styled from "react-emotion";
-import { Link } from "gatsby";
-
 import mq from "../../utils/breakpoints";
-
 import Button from "../../ui/button";
-
 import backgroundImg from "../../../assets/new-homepage/install-webiny-section/instal-webiby-bg.svg";
 
 export const Wrapper = styled.div(

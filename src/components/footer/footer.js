@@ -1,13 +1,11 @@
 import React from "react";
 import styled from "react-emotion";
 import { css } from "emotion";
-import { Link } from "gatsby";
 import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 import ContentContainer from "../ui/content-container";
 import Newsletter from "./newsletter";
 import FooterMenu from "./footerMenu";
-import { trackGoToGithub, trackJoinSlack } from "../ui/functions";
 
 import webinyLogo from "./assets/webiny-logo-with-icon-left-white.svg";
 import GitHubIcon from "./assets/github-icon.svg";
@@ -80,9 +78,6 @@ const IconItem = styled("li")({
     width: "40px",
 });
 
-const linkStyle = css({
-    color: theme.color.darkGray,
-});
 
 const Bottom = styled("div")(
     {
@@ -118,23 +113,23 @@ const Footer = () => (
                     <Logo src={webinyLogo} alt="Webiny Logo" />
                     <IconList>
                         <IconItem>
-                            <a href="https://github.com/webiny/webiny-js" target="_blank" rel="noreferrer">
-                                <img src={GitHubIcon} />
+                            <a title="GitHub" href="https://github.com/webiny/webiny-js" target="_blank" rel="noreferrer">
+                                <img src={GitHubIcon} alt="" />
                             </a>
                         </IconItem>
                         <IconItem>
-                            <a href="https://www.webiny.com/slack" target="_blank" rel="noreferrer">
-                                <img src={SlackIcon} />
+                            <a title="Slack" href="https://www.webiny.com/slack" target="_blank" rel="noreferrer">
+                                <img src={SlackIcon} alt="" />
                             </a>
                         </IconItem>
                         <IconItem>
-                            <a href="https://twitter.com/WebinyCMS" target="_blank" rel="noreferrer">
-                                <img src={TwitterIcon} />
+                            <a title="Twitter" href="https://twitter.com/WebinyCMS" target="_blank" rel="noreferrer">
+                                <img src={TwitterIcon} alt="" />
                             </a>
                         </IconItem>
                         <IconItem>
-                            <a href="https://www.youtube.com/c/webiny" target="_blank" rel="noreferrer">
-                                <img src={YoutubeIcon} />
+                            <a title="YouTube" href="https://www.youtube.com/c/webiny" target="_blank" rel="noreferrer">
+                                <img src={YoutubeIcon} alt="" />
                             </a>
                         </IconItem>
                     </IconList>

@@ -10,7 +10,6 @@ import Breadcrumb from "../../layouts/components/breadcrumb";
 import heroBg from "./assets/hero-bg.svg";
 import webinyLogo from "./assets/webiny-logo.svg";
 import vectorIcon from "./assets/vector.svg";
-import highlightIcon from "./assets/hero-highlight.svg";
 import webinyGroup from "./assets/webiny-group.svg";
 import arrowImg from "./assets/btn-arrow.svg";
 
@@ -154,52 +153,6 @@ const WebinyHallMarkImage = styled("img")(
     }),
 );
 
-const HeroList = styled("div")(
-    {
-        display: "grid",
-        gridGap: "20px 30px",
-        marginBottom: 30,
-
-        "& .hero-item": {
-            textAlign: "center",
-            background: "rgba(0, 0, 0, 0.1)",
-            boxShadow: "10px 0px 0px rgba(255, 255, 255, 0.1)",
-            borderRadius: 2,
-            padding: 20,
-            maxWidth: 490,
-
-            "& h3": {
-                color: theme.color.white,
-                fontWeight: theme.fontWeight.semiBold,
-                fontSize: 18,
-                lineHeight: "23px",
-                margin: "0 0 5px",
-
-                "& span": {
-                    backgroundImage: "url(" + highlightIcon + ")",
-                    backgroundPositionX: "right",
-                    backgroundPositionY: "bottom",
-                    backgroundRepeat: "no-repeat",
-                },
-            },
-
-            "& p": {
-                color: theme.color.white,
-                fontWeight: theme.fontWeight.regular,
-                fontSize: 14,
-                lineHeight: "18px",
-                margin: 0,
-            },
-        },
-    },
-    mq({
-        gridTemplateColumns: ["repeat(1, 1fr)", "repeat(2, 1fr)"],
-        "& .hero-item": {
-            margin: ["0px 28px 0px 20px", 0],
-        },
-    }),
-);
-
 const Hero = props => {
     const breadcrumbs = props.breadcrumbs;
     return (
@@ -215,48 +168,6 @@ const Hero = props => {
                     <SubTitle>
                         Agile, flexible and scalable solution for your growing content needs.
                     </SubTitle>
-
-                    {/** 
-                    <HeroList>
-                        <div className="hero-item">
-                            <h3>
-                                <span>Serverless</span> and self-hosted
-                            </h3>
-                            <p>
-                                Run the apps in your own cloud on top of the serverless
-                                infrastructure.
-                            </p>
-                        </div>
-                        <div className="hero-item">
-                            <h3>
-                                <span>Quick and easy</span> deployment
-                            </h3>
-                            <p>
-                                Using Webiny CLI each app takes a single command to create and
-                                configure all of its serverless services.
-                            </p>
-                        </div>
-                        <div className="hero-item">
-                            <h3>
-                                Requires <span>zero</span> maintenance
-                            </h3>
-                            <p>
-                                Serverless infrastructure means zero maintenance and you can also
-                                forget about all the scalability headaches.
-                            </p>
-                        </div>
-                        <div className="hero-item">
-                            <h3>
-                                <span>Efficient</span> infrastructure cost
-                            </h3>
-                            <p>
-                                Because with serverless infrastructure you only pay for what you
-                                use, you'll have a very efficient way of controlling the cost of
-                                your infrastructure.
-                            </p>
-                        </div>
-                    </HeroList>
-                    */}
                     <ButtonWrapper>
                         <Button
                             className={getStartedButtonClass}

@@ -1,6 +1,4 @@
 import styled from "react-emotion";
-import { Link } from "gatsby";
-
 import mq from "../../utils/breakpoints";
 import Button from "../../ui/button";
 

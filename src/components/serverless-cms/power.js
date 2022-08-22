@@ -4,7 +4,6 @@ import { css } from "emotion";
 import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 import ContentContainer from "../ui/content-container";
-import Button from "../ui/button";
 
 import powerBg from "./assets/power-bg.svg";
 import vectorIcon from "./assets/power-highlight.svg";

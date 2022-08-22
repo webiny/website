@@ -13,7 +13,7 @@ import smarktLogo from "./assets/smarkt-logo.png";
 import rehaLogo from "./assets/reha-logo.png";
 import screenshot from "./assets/oev-case-study-screenshot.jpg";
 
-const Content = props => {
+const Content = () => {
     return (
         <ContentWrapper>
             <MainContent>

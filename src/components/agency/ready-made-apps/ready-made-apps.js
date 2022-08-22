@@ -12,7 +12,6 @@ import readyMadeAppsBg from "./assets/ready-made-apps-bg.svg";
 import readyMadeAppsTitleBg from "./assets/ready-made-apps-title-bg.svg";
 import demoIcon from "./assets/demo-icon.svg";
 import mackBookAirFrame from "./assets/macbook-air.svg";
-import pageBuilderImage from "./assets/page-builder.png";
 import rightArrowIcon from "./assets/right-arrow.svg";
 import leftArrowIcon from "./assets/left-arrow.svg";
 
@@ -383,7 +382,7 @@ class ReadyMadeApps extends React.Component {
                                 Webiny comes with <HighlightedBg> several FREE </HighlightedBg>
                                 ready-made apps you can use today:
                             </Title>
-                            {this.props.cta == undefined && (
+                            {!this.props.cta && (
                                 <Button className={ctaButton} type="secondary" {...buttonProps}>
                                     <DemoIcon src={demoIcon} />
                                     Schedule a 1:1 Demo
@@ -537,7 +536,7 @@ class ReadyMadeApps extends React.Component {
 export default ReadyMadeApps;
 
 function PrevArrow(props) {
-    const { className, style, onClick } = props;
+    const { style, onClick } = props;
     return (
         <Button type="default" className={leftArrowClass} style={style} onClick={onClick}>
             <LeftArrowImage src={leftArrowIcon} alt="arrow to left" />
@@ -546,7 +545,7 @@ function PrevArrow(props) {
 }
 
 function NextArrow(props) {
-    const { className, style, onClick } = props;
+    const { style, onClick } = props;
     return (
         <Button type="default" className={rightArrowClass} style={style} onClick={onClick}>
             <RightArrowImage src={rightArrowIcon} alt="arrow to right" />

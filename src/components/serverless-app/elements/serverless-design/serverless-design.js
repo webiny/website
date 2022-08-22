@@ -5,9 +5,6 @@ import { css } from "emotion";
 import theme from "../../../utils/theme";
 import mq from "../../../utils/breakpoints";
 import ContentContainer from "../../../ui/content-container";
-import Button from "../../../ui/button";
-// assets
-import rightArrow from "./assets/arrow.svg";
 import designBg from "./assets/design-rect-bg.svg";
 import singleCommandImg from "./assets/use-single-command.svg";
 import forgetAboutScalingImg from "./assets/forget-scalability.svg";

@@ -104,9 +104,9 @@ const ArchitectureTab = () => {
                 ))}
             </TabHeader>
             <TabContent>
-                {selectedTab.id === 1 && <img src={arch1} />}
-                {selectedTab.id === 2 && <img src={arch2} />}
-                {selectedTab.id === 3 && <img src={arch3} />}
+                {selectedTab.id === 1 && <img src={arch1} alt="" />}
+                {selectedTab.id === 2 && <img src={arch2} alt="" />}
+                {selectedTab.id === 3 && <img src={arch3} alt="" />}
                 {selectedTab.id === 4 && <p>Pending</p>}
             </TabContent>
         </CodeTabPart>

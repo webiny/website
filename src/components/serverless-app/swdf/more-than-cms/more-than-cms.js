@@ -23,15 +23,6 @@ const wrapperClass = css(
     }),
 );
 
-const SubTitle = styled("h2")({
-    fontSize: 42,
-    color: theme.color.white,
-    textAlign: "center",
-    paddingTop: 50,
-    marginTop: 25,
-    marginBottom: 25,
-});
-
 const SubTitleText = styled("p")({
     width: "100%",
     textAlign: "center",

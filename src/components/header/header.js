@@ -157,7 +157,7 @@ const MobileMenuItemList = () => {
     );
 };
 
-const MenuItemList = ({ cards, handleVideoPlay, sticky }) => {
+const MenuItemList = ({ cards, sticky = false }) => {
     return (
         <React.Fragment>
             <ul className="menu--left">
@@ -318,7 +318,7 @@ const MenuItemList = ({ cards, handleVideoPlay, sticky }) => {
     );
 };
 
-const Header = ({ hasBanner = true }) => {
+const Header = ({ hasBanner = true, sticky = false }) => {
     const { latestBlockPosts } = useStaticQuery(graphql`
         query HeaderQuery {
             latestBlockPosts: allMdx(sort: { fields: frontmatter___date, order: DESC }, limit: 2) {
@@ -349,9 +349,6 @@ const Header = ({ hasBanner = true }) => {
         };
     });
 
-    // TODO: We'll see what to do with them
-    const [sticky, setSticky] = useState(true);
-    const [hideBanner, setHideBanner] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const toggleMobileMenu = () => {
@@ -373,7 +370,7 @@ const Header = ({ hasBanner = true }) => {
                     </Helmet>
                     <NewsBanner>
                         <p>🌟&nbsp;Help others discover us,&nbsp;
-                            <a href="https://github.com/webiny/webiny-js" target="_blank">
+                            <a href="https://github.com/webiny/webiny-js" target="_blank" rel="noreferrer">
                                 star our GitHub repo!
                             </a>
                             &nbsp;🌟
@@ -381,7 +378,7 @@ const Header = ({ hasBanner = true }) => {
                     </NewsBanner>
                 </Fragment>
             }
-            <HeaderContainer isSticky={sticky} hideBanner={hideBanner} hasBanner={hasBanner}>
+            <HeaderContainer hasBanner={hasBanner}>
                 <ContentContainer className={headerInnerContainer}>
                     <NavBar className={mobileMenuOpen ? "mobile-opened" : "mobile-closed"}>
                         <WebinyLogo alt="Webiny Home">
@@ -397,7 +394,6 @@ const Header = ({ hasBanner = true }) => {
                         <Menu>
                             <MenuItemList
                                 cards={resourcesCards}
-                                sticky={sticky}
                                 handleVideoPlay={videoId => {
                                     setModalOpen(true);
                                     setVideoId(videoId);

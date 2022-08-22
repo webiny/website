@@ -147,7 +147,8 @@ const ExploreCMS = () => {
                         <FeatureCard key={item.id} key={index} {...item}>
                             <img
                                 className="feature-card__img"
-                                src={item.imageSrc}                                
+                                src={item.imageSrc} 
+                                alt=""                               
                             />
                             <h4 className="feature-card__title">{item.title}</h4>
                             <p className="feature-card__body">{item.body}</p>

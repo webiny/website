@@ -3,12 +3,8 @@ import styled from "react-emotion";
 import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 import { css } from "emotion";
-
 import Button from "../ui/button";
 import ContentContainer from "../ui/content-container";
-
-import HeadlessCMSDemoImg from "./assets/youtube-headless-cms.png";
-
 import sectionBg from "./assets/register-to-event.jpg";
 import freeArrowIcon from "./assets/free.svg";
 import demoIcon from "./assets/demo-icon.svg";

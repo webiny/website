@@ -16,14 +16,14 @@ const Content = props => {
     return (
         <ContentWrapper>
             <MainContent>
-                <img src={screenshot} />
+                <img src={screenshot} alt="" />
                 <h3>Project</h3>
                 <p>
                     More than half of those in need of care in Germany are cared for by relatives at
                     home. This is a mammoth task that usually places a great burden on those
                     involved. Instead of leaving caregiving relatives to deal with the flood of
                     information on their own, the insurance company Versicherungskammer created{" "}
-                    <a href="https://pflegepartner.de" target="_blank">
+                    <a href="https://pflegepartner.de" target="_blank" rel="noreferrer">
                         pflegepartner.de
                     </a>{" "}
                     - a platform that bundles the most important information and instructions.
@@ -66,7 +66,7 @@ const Content = props => {
                 <h3>Conclusion</h3>
                 <p>
                     The{" "}
-                    <a href="https://pflegepartner.de" target="_blank">
+                    <a href="https://pflegepartner.de" target="_blank" rel="noreferrer">
                         pflegepartner.de
                     </a>{" "}
                     project for the Versicherungskammer went live at the end of 2020. With this

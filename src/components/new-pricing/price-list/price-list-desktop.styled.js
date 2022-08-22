@@ -31,7 +31,6 @@ export const LeftContainer = styled("div")({
 
 export const MainWrapper = styled("div")({
     "& p": {
-        color: theme.color.blue100,
         fontSize: "14px",
         lineHeight: "18px",
         color: "#44486C",

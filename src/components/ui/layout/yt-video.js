@@ -77,7 +77,7 @@ class YTVideo extends React.Component {
                 <VideoWrapper onClick={this.openModal}>
                     <VideoImage src={this.props.img} />
                     <PlayButtonWrapper>
-                        <img height="75" src={playIcon} />
+                        <img height="75" src={playIcon} alt="" />
                     </PlayButtonWrapper>
                 </VideoWrapper>
                 <ModalVideo

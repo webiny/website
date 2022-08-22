@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styled from "react-emotion";
 import { css } from "emotion";
-import theme from "../../utils/theme";
 import mq from "../../utils/breakpoints";
 import ContentContainer from "../../ui/content-container";
 import Desktop from "./price-list-desktop";
 import Mobile from "./price-list-mobile";
 import Button from "../../ui/button";
-
-import arrowDown from "../../../assets/new-pricing/arrow-down.svg";
 
 function useWindowWidth() {
     const [width, setWidth] = useState();
@@ -250,34 +247,7 @@ const H2 = styled.h2(
     }),
 );
 
-const SeeFullPlanButton = styled(Button)({
-        maxWidth: "299px",
-        padding: "12px 19px !important",
-        fontWeight: "bold",
-        fontSize: "14px",
-        lineHeight: "18px",
-        letterSpacing: "0.75px",
-        textTransform: "uppercase",
-    },
-
-    mq({
-        display: ["none", "block", "block"],
-    }),
-);
-
-const ArrowIcon = styled("img")({
-    "&.left-arrow": {
-        marginRight: "14px",
-    },
-    "&.right-arrow": {
-        marginLeft: "14px",
-    },
-    "&.arrow-top": {
-        transform: "rotate(180deg)",
-    },
-});
-
-const SeeFullPlan = ({ showPriceListToggler, showPriceList }) => {
+const SeeFullPlan = () => {
     return (
         <SeeFullPlanWrapper>
             <H2>

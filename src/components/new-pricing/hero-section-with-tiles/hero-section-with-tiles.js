@@ -43,7 +43,6 @@ import {
     TogglerTextBottomContainer,
 } from "./hero-section-with-tiles.styled";
 
-const FREE_USERS = 1;
 const BASE_PRICE = 9;
 const PUBLISHING_WORKFLOW_PRICE = 9;
 const ADVANCED_ROLES_PRICE = 9;

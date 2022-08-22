@@ -3,7 +3,6 @@ import styled from "react-emotion";
 import theme from "../../utils/theme";
 import mq from "../../utils/breakpoints";
 import { css } from "emotion";
-import Button from "../../ui/button";
 import ContentContainer from "../../ui/content-container";
 
 import whatIsWebinyLogos from "./assets/what-is-webiny-logo.svg";
@@ -86,16 +85,6 @@ const Description = styled("p")(
 const HighlightedText = styled("span")({
     color: theme.color.primaryDark,
 });
-
-const ctaButton = css(
-    {
-        position: "relative",
-        textTransform: "uppercase",
-    },
-    mq({
-        width: ["217px !important"],
-    }),
-);
 
 class WhatIsWebiny extends React.Component {
     render() {

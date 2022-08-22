@@ -49,7 +49,7 @@ const Banner = styled("div")({
 export default props => (
     <Banner>
         <span className="tag">{props.tag}</span>
-        <a href={props.link} target="_blank">
+        <a href={props.link} target="_blank" rel="noreferrer">
             {props.title}
         </a>
     </Banner>

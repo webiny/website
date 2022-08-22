@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "react-emotion";
 import { css } from "emotion";
 import theme from "../../utils/theme";
