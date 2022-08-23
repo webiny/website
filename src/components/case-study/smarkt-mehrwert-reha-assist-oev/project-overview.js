@@ -40,7 +40,7 @@ const RightSide = () => {
     return (
         <React.Fragment>
             <h3>Partner</h3>
-            <a title="OEV Online" href="https://oev-online.de" target="_blank">
+            <a title="OEV Online" href="https://oev-online.de" target="_blank" rel="noreferrer">
                 <img src={partnerLogo} alt="OEV Logo" />
             </a>
             <p>
@@ -52,7 +52,7 @@ const RightSide = () => {
     );
 };
 
-const ProjectOverviewContent = props => {
+const ProjectOverviewContent = () => {
     return (
         <React.Fragment>
             <ProjectOverview left={<LeftSide />} right={<RightSide />} />

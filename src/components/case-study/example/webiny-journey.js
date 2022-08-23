@@ -9,17 +9,17 @@ import sectionBg from "./assets/webiny-journey.svg";
 
 const ctaBtn = css({
     maxWidth: 260,
-    width: "260px !important"
-})
+    width: "260px !important",
+});
 
 const containerClass = css(
     {
-        maxWidth: 1200
+        maxWidth: 1200,
     },
     mq({
         width: ["100%", "100%"],
     }),
-)
+);
 
 const Section = styled("section")(
     {
@@ -33,7 +33,7 @@ const Section = styled("section")(
     mq({
         padding: ["0px 15px 15px", "100px 15px 100px"],
     }),
-)
+);
 
 const WebinyAppsWrapper = styled("div")(
     {
@@ -46,16 +46,14 @@ const WebinyAppsWrapper = styled("div")(
     mq({}),
 );
 
-const Title = styled("h3")(
-    {
-        margin: "30px 0px",
-        color: theme.color.white,
-        fontSize: "3rem",
-        fontWeight: 700,
-        textAlign: "center",
-        maxWidth: 458
-    }
-)
+const Title = styled("h3")({
+    margin: "30px 0px",
+    color: theme.color.white,
+    fontSize: "3rem",
+    fontWeight: 700,
+    textAlign: "center",
+    maxWidth: 458,
+});
 
 const WebinyJourney = () => {
     return (
@@ -69,7 +67,7 @@ const WebinyJourney = () => {
                 </WebinyAppsWrapper>
             </ContentContainer>
         </Section>
-    )
-}
+    );
+};
 
-export default WebinyJourney
+export default WebinyJourney;

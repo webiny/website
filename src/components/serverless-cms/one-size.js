@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "react-emotion";
 import { css } from "emotion";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 import ContentContainer from "../ui/content-container";

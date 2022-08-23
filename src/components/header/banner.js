@@ -2,7 +2,7 @@ import React from "react";
 import styled from "react-emotion";
 import theme from "../utils/theme";
 
-export const BANNER_HEIGHT = 30;
+export const BANNER_HEIGHT = 35;
 export const BANNER_HEIGHT_MOBILE = 40;
 
 const Banner = styled("div")({
@@ -49,7 +49,7 @@ const Banner = styled("div")({
 export default props => (
     <Banner>
         <span className="tag">{props.tag}</span>
-        <a href={props.link} target="_blank">
+        <a href={props.link} target="_blank" rel="noreferrer">
             {props.title}
         </a>
     </Banner>

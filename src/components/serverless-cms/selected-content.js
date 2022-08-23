@@ -210,15 +210,6 @@ const btnWrapper = css(
     }),
 );
 
-const ctaBtn = css({
-    width: "100% !important",
-    backgroundColor: theme.color.primaryDark + "!important",
-
-    "& img": {
-        marginLeft: 15,
-    },
-});
-
 const SelectedContent = props => {
     const selectedNav = props.selectedNav;
     const selectedContent = Data.find(item => item.id === selectedNav.id);

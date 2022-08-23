@@ -87,13 +87,11 @@ const WebinyHallMarkImage = styled("img")(
     }),
 );
 
-const HeroLogoImage = styled("img")(
-    {
-        position: "absolute",
-        left: "calc(50% - 120px)",
-        bottom: -120,
-    }
-)
+const HeroLogoImage = styled("img")({
+    position: "absolute",
+    left: "calc(50% - 120px)",
+    bottom: -120,
+});
 
 const HeroComponent = () => {
     return (
@@ -106,7 +104,7 @@ const HeroComponent = () => {
                     </Title>
                 </HeroSectionWrapper>
             </ContentContainer>
-            <HeroLogoImage src={heroLogo} alt=""/>
+            <HeroLogoImage src={heroLogo} alt="" />
         </HeroSection>
     );
 };

@@ -14,7 +14,6 @@ import {
     ProductOverviewImg,
     ProductOverviewVideo,
     ProductsOverviewContainer,
-    Preloader,
 } from "./product-overview.styled";
 
 import ArrowClosed from "../../../assets/new-homepage/product-overview/arrow-closed.svg";

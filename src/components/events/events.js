@@ -3,7 +3,6 @@ import styled from "react-emotion";
 import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 import { css } from "emotion";
-import Link from "gatsby-link";
 import Slider from "react-slick";
 import Button from "../ui/button";
 import ContentContainer from "../ui/content-container";
@@ -11,11 +10,6 @@ import ContentContainer from "../ui/content-container";
 import "./assets/slider.css";
 
 const wrapperClass = css(
-    {
-        // background: 'url(' + background + ') no-repeat left top',
-        // backgroundSize: "cover",
-        // backgroundColor: '#F7F7F7',
-    },
     mq({
         marginTop: [0, -25],
         paddingBottom: [25, 100],

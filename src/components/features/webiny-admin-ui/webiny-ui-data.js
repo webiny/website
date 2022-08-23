@@ -27,7 +27,7 @@ export const WEBINY_ADMIN_UI_FEATURES = [
         body: () => (
             <p className={"feature-card__body"}>
                 Each UI component is available in our{" "}
-                <a href={"https://storybook.webiny.com"} target={"_blank"}>
+                <a href={"https://storybook.webiny.com"} target="_blank" rel="noreferrer">
                     storybook
                 </a>
                 . You'll find the list of React props, implementation details and examples how to

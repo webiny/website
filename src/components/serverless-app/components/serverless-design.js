@@ -14,7 +14,6 @@ const SlsDesign = styled("div")(
         zIndex: -10,
         borderRadius: "3px",
         overflow: "hidden",
-        display: "block",
         boxSizing: "border-box",
         background: "#292929",
         width: "100%",
@@ -87,7 +86,7 @@ const Box = props => (
     </BoxWrapper>
 );
 
-export default props => (
+export default () => (
     <SlsDesign>
         Serverless by design
         <BoxList>
@@ -98,7 +97,7 @@ export default props => (
             <Box number={3}>DON'T OVERPAY YOUR CLOUD PROVIDER, PAY EXACTLY WHAT YOU'VE USED</Box>
         </BoxList>
         <Link className={linkMore} to="/why-serverless">
-            Why go serverless? - Learn more <img src={rightArrow} />
+            Why go serverless? - Learn more <img src={rightArrow} alt="" />
         </Link>
     </SlsDesign>
 );

@@ -61,7 +61,6 @@ const DatePublished = styled("div")({
 });
 
 class Author extends React.Component {
-    
     render() {
         return (
             <AuthorContainer>
@@ -73,6 +72,7 @@ class Author extends React.Component {
                         <a
                             href={"https://twitter.com/" + authors[this.props.author].twitter}
                             target="_blank"
+                            rel="noreferrer"
                         >
                             <img src={twitterIcon} alt="Twitter" />
                         </a>

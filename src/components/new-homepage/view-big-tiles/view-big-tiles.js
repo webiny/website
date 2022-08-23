@@ -21,13 +21,13 @@ const BigTile = ({ title, description, image, link }) => {
     return (
         <TileBorder>
             <TileStyle>
-                <img src={image} />
+                <img src={image} alt="" />
                 <div>
                     <TileTitle>{title}</TileTitle>
                     <TileDescription>{description}</TileDescription>
                     <TileLink target="_blank" href={link}>
                         Learn more
-                        <img src={iconArrow} />
+                        <img src={iconArrow} alt="" />
                     </TileLink>
                 </div>
             </TileStyle>

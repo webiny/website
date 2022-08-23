@@ -68,47 +68,48 @@ export default {
         name: "Swapnil M Mane",
         description: "Developer Relations @ Webiny",
         twitter: "swapnilmmane",
-        avatar: swapnilImg
+        avatar: swapnilImg,
     },
     igor: {
         name: "Igor Bobriakov",
         avatar: IgorImg,
-        twitter: "WebinyCMS"
+        twitter: "WebinyCMS",
     },
     ben: {
         name: "Ben Read",
         description: "Developer Relations & Software Engineer @ Webiny",
         avatar: BenImg,
-        twitter: "muzzlehatch_"
+        twitter: "muzzlehatch_",
     },
     josephChege: {
         name: "Joseph Chege",
         description: "A full-stack developer who writes code and documents blogs to share ideas.",
         avatar: JoesphImg,
-        twitter: "checkpoint_ke"
+        twitter: "checkpoint_ke",
     },
     tammi: {
         name: "Taminoturoko Briggs",
-        description: "Software developer and technical writer. Core languages include JavaScript and Python.",
+        description:
+            "Software developer and technical writer. Core languages include JavaScript and Python.",
         avatar: TammiImg,
-        twitter: "Tammibr25891504"
+        twitter: "Tammibr25891504",
     },
     miracleJude: {
         name: "Jude Miracle",
         description: "Frontend Engineer @Daabo Inc.",
         avatar: judemiracleImg,
-        twitter: "miraclejudeiv"
+        twitter: "miraclejudeiv",
     },
     emmanuelAiyenigba: {
         name: "Emmanuel Aiyenigba",
         description: "Software Engineer, Technical Writer, and Community Manager",
         avatar: emmanuelImg,
-        twitter: "EmmanuelCoder"
+        twitter: "EmmanuelCoder",
     },
     isaacOkoro: {
         name: "Isaac Okoro",
         description: "Software Engineer and Technical writer with a passion for self-improvement",
         avatar: isaacImg,
-        twitter: "HomelessDev02"
-    }
+        twitter: "HomelessDev02",
+    },
 };

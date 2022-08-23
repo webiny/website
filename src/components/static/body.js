@@ -56,12 +56,15 @@ const Cell = styled("div")(
         boxSizing: "border-box",
         width: "100%",
         h3: {
-            fontSize: theme.fontSize.h4,
             color: theme.color.black,
-            marginTop: 0,
-            fontWeight: theme.fontWeight.bold,
+            marginTop: 45,
+            marginBottom: 16,
+            fontWeight: theme.fontWeight.semiBold,
             display: "flex",
             alignItems: "center",
+            lineHeight: 1.25,
+            fontSize: 20,
+
             img: {
                 marginRight: 20,
                 height: 32,
@@ -72,18 +75,10 @@ const Cell = styled("div")(
             },
         },
         p: {
-            fontSize: theme.fontSize.paragraph,
             color: theme.color.black,
             fontSize: 17,
             lineHeight: "29px",
             fontWeight: 400,
-        },
-        h3: {
-            marginTop: 45,
-            fontWeight: theme.fontWeight.semiBold,
-            lineHeight: 1.25,
-            marginBottom: 16,
-            fontSize: 20,
         },
         "ul, ol": {
             marginBottom: "1em",

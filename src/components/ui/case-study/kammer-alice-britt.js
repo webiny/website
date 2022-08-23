@@ -2,7 +2,6 @@ import Button from "../button";
 import React from "react";
 import arrowIcon from "./assets/arrow-white.svg";
 import { css } from "emotion";
-import highLightImg from "./assets/case-highlight.svg";
 import mq from "../../utils/breakpoints";
 import oevCS2 from "./assets/versicherungskammer-and-alice-and-britt-case-study.jpg";
 import quoteBg from "./assets/quote-bg.svg";
@@ -144,14 +143,6 @@ const actionPart = css(
         justifyContent: ["center", "flex-start"],
     }),
 );
-/*
-const summaryList = [
-    { number: "250+", title: "Number of Agents" },
-    { number: "175k+", title: "Monthly Ticket Volume" },
-    { number: "90%+", title: "CSAT" },
-    { number: "6", title: "Departments Using Zendesk" },
-];
-*/
 
 const SlideItem = () => {
     return (
@@ -166,16 +157,6 @@ const SlideItem = () => {
                         Developing a new highly performant and flexible platform that has the
                         ability to be easily expanded in the future.
                     </p>
-                    {/*
-                    <div className="summary">
-                        {summaryList.map((summary, index) => (
-                            <div key={index} className="summary-item">
-                                <p>{summary.number}</p>
-                                <p>{summary.title}</p>
-                            </div>
-                        ))}
-                    </div>
-                    */}
                     <Quote>
                         We have already used Webiny very successfully in other projects. The system
                         convinced us with its modern architecture and flexibility. For this

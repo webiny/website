@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "react-emotion";
-import { css } from "emotion";
 import mq from "../utils/breakpoints";
 import CodeSample from "./codesample";
 
@@ -100,80 +99,78 @@ const CodeTab = () => {
                 {selectedTab.id === 1 && (
                     <CodeSample language="javascript">
                         {`new aws.lambda.Function("graphql", {
-    runtime: "nodejs12.x",
-    handler: "handler.handler",
-    role: this.role.arn,
-    timeout: 30,
-    memorySize: 512,
-    code: new pulumi.asset.AssetArchive({
-        ".": new pulumi.asset.FileArchive("./code/graphql/build")
-    }),
-    vpcConfig: {
-        subnetIds: vpc.subnets.private.map(subNet => subNet.id),
-        securityGroupIds: [vpc.vpc.defaultSecurityGroupId]
-    }
-})`}
+                            runtime: "nodejs12.x",
+                            handler: "handler.handler",
+                            role: this.role.arn,
+                            timeout: 30,
+                            memorySize: 512,
+                            code: new pulumi.asset.AssetArchive({
+                                ".": new pulumi.asset.FileArchive("./code/graphql/build")
+                            }),
+                            vpcConfig: {
+                                subnetIds: vpc.subnets.private.map(subNet => subNet.id),
+                                securityGroupIds: [vpc.vpc.defaultSecurityGroupId]
+                            }
+                        })`}
                     </CodeSample>
                 )}
                 {selectedTab.id === 2 && (
                     <CodeSample language="shell">{`$ yarn webiny deploy
+                        (...)
 
-(...)
+                        webiny success: Done! Deploy finished in 23.024s.
+                        webiny info: Running "hook-after-deploy" hook...
+                        webiny success: Default Page Builder app's settings updated.
+                        webiny success: Hook "hook-after-deploy" completed.
+                        webiny success: apps/website stack deployed successfully.
 
-webiny success: Done! Deploy finished in 23.024s.
-webiny info: Running "hook-after-deploy" hook...
-webiny success: Default Page Builder app's settings updated.
-webiny success: Hook "hook-after-deploy" completed.
-webiny success: apps/website stack deployed successfully.
-
-➜ Main GraphQL API: https://xxxx.cloudfront.net/graphql
-➜ Admin app: https://xxxx.cloudfront.net
-➜ Public website:
-   - Website URL: https://xxxx.cloudfront.net
-   - Website preview URL: https://xxxx.cloudfront.net
+                        ➜ Main GraphQL API: https://xxxx.cloudfront.net/graphql
+                        ➜ Admin app: https://xxxx.cloudfront.net
+                        ➜ Public website:
+                        - Website URL: https://xxxx.cloudfront.net
+                        - Website preview URL: https://xxxx.cloudfront.net
                     `}</CodeSample>
                 )}
                 {selectedTab.id === 3 && (
                     <CodeSample language="javascript">
                         {`import { GraphQLSchemaPlugin } from "@webiny/handler-graphql/types";
-
-export default {
-    type: "graphql-schema",
-    schema: {
-        typeDefs: "
-            type Product {
-                title: String
-                price: Number
-            }
-            extend Query {  
-                listProducts: [Product]
-            }
-        ",
-        resolvers: {
-            Query: {
-                listProducts: () => {
-                    return [{ title: "A product", price: 129.99 }];
-                }
-            }
-        }
-    }
-} as GraphQLSchemaPlugin;`}
+                        export default {
+                            type: "graphql-schema",
+                            schema: {
+                                typeDefs: "
+                                    type Product {
+                                        title: String
+                                        price: Number
+                                    }
+                                    extend Query {  
+                                        listProducts: [Product]
+                                    }
+                                ",
+                                resolvers: {
+                                    Query: {
+                                        listProducts: () => {
+                                            return [{ title: "A product", price: 129.99 }];
+                                        }
+                                    }
+                                }
+                            }
+                        } as GraphQLSchemaPlugin;`}
                     </CodeSample>
                 )}
                 {selectedTab.id === 4 && (
                     <CodeSample language="javascript">
                         {`import { SecurityContext } from "@webiny/api-security/types";
-import { NotAuthorizedError } from "@webiny/api-security";
+                        import { NotAuthorizedError } from "@webiny/api-security";
 
-export default async (id, context: SecurityContext) => {
-    // Check if the user is allowed to access products
-    const permission = context.security.getPermission("ecommerce.product");
-    if (!permission || !permission.rwd.includes("r")) {
-        throw new NotAuthorizedError();
-    }
-    // Load the product from DB
-    return await context.products.getProduct(id);
-};`}
+                        export default async (id, context: SecurityContext) => {
+                            // Check if the user is allowed to access products
+                            const permission = context.security.getPermission("ecommerce.product");
+                            if (!permission || !permission.rwd.includes("r")) {
+                                throw new NotAuthorizedError();
+                            }
+                            // Load the product from DB
+                            return await context.products.getProduct(id);
+                        };`}
                     </CodeSample>
                 )}
             </TabContent>

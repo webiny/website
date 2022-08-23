@@ -5,8 +5,6 @@ import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 import ContentContainer from "../ui/content-container";
 import { Grid, Cell } from "../ui/layout/layout";
-
-import heroBg from "./assets/swag-hero-bg.svg";
 import webinyShirt from "./assets/webiny-shirt.png";
 import webinyStickers from "./assets/webiny-stickers.png";
 import webinyShirtAndStickers from "./assets/webiny-shirt-and-stickers.png";
@@ -92,10 +90,6 @@ const swagImage = css({
     height: "auto !important",
     display: "block",
     margin: "0 auto",
-});
-
-const swagText = css({
-    fontSize: 20,
 });
 
 const ambassadorBlock = css(
@@ -219,28 +213,6 @@ export default ({ children, ...props }) => (
         <Divider />
         <ContentContainer className={containerStyle}>
             <SubTitle>What’s Available for Grabs</SubTitle>
-            {/*
-            <Grid left>
-                <Cell>
-                    <img className={swagImage} src={webinyStickers} alt="Webiny SWAG - Stickers" />
-                </Cell>
-                
-                <Cell title="Become a Fan">
-                    <p>
-                        A fan is someone who loves what we do here. Fans give us support to keep
-                        going forward. And everything we do, we do it for them. A Webiny fan is
-                        someone who 1.) starred our{" "}
-                        <a href="https://github.com/webiny/webiny-js">GitHub</a> 2.){" "}
-                        <a href="https://webiny.us18.list-manage.com/subscribe/post?u=122d2713f699957c0f043cb42&id=f0173e501c">
-                            subscribed to our newsletter
-                        </a>{" "}
-                        3) follows us on either{" "}
-                        <a href="https://twitter.com/WebinyCMS">Twitter</a> or{" "}
-                        <a href="https://www.youtube.com/c/webiny">YouTube</a>.
-                    </p>
-                </Cell> 
-            </Grid>
-            */}
             <Grid right>
                 <Cell title="Spread the Knowledge">
                     <p>

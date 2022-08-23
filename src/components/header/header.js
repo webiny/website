@@ -8,7 +8,7 @@ import ContentContainer from "../ui/content-container";
 import Button from "../ui/button";
 import { trackGoToGithub } from "../ui/functions";
 import { ModalContext } from "../ui/layout/video-modal";
-import NewsBanner from "../ui/news-banner"
+import NewsBanner from "../ui/news-banner";
 // assets
 import logo from "./assets/webiny-logo-with-icon-left-white.svg";
 import logoOrange from "./assets/webiny-logo-with-icon-left-orange.svg";
@@ -157,7 +157,7 @@ const MobileMenuItemList = () => {
     );
 };
 
-const MenuItemList = ({ cards, handleVideoPlay, sticky }) => {
+const MenuItemList = ({ cards, sticky = true }) => {
     return (
         <React.Fragment>
             <ul className="menu--left">
@@ -318,7 +318,7 @@ const MenuItemList = ({ cards, handleVideoPlay, sticky }) => {
     );
 };
 
-const Header = ({ hasBanner = true }) => {
+const Header = ({ hasBanner = true, sticky = false }) => {
     const { latestBlockPosts } = useStaticQuery(graphql`
         query HeaderQuery {
             latestBlockPosts: allMdx(sort: { fields: frontmatter___date, order: DESC }, limit: 2) {
@@ -349,9 +349,6 @@ const Header = ({ hasBanner = true }) => {
         };
     });
 
-    // TODO: We'll see what to do with them
-    const [sticky, setSticky] = useState(true);
-    const [hideBanner, setHideBanner] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const toggleMobileMenu = () => {
@@ -362,7 +359,7 @@ const Header = ({ hasBanner = true }) => {
 
     return (
         <Fragment>
-            {hasBanner &&
+            {hasBanner && (
                 <Fragment>
                     <Helmet>
                         <style type="text/css">{`
@@ -372,16 +369,21 @@ const Header = ({ hasBanner = true }) => {
                         `}</style>
                     </Helmet>
                     <NewsBanner>
-                        <p>🌟&nbsp;Help others discover us,&nbsp;
-                            <a href="https://github.com/webiny/webiny-js" target="_blank">
+                        <p>
+                            🌟&nbsp;Help others discover us,&nbsp;
+                            <a
+                                href="https://github.com/webiny/webiny-js"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
                                 star our GitHub repo!
                             </a>
                             &nbsp;🌟
                         </p>
                     </NewsBanner>
                 </Fragment>
-            }
-            <HeaderContainer isSticky={sticky} hideBanner={hideBanner} hasBanner={hasBanner}>
+            )}
+            <HeaderContainer isSticky={true} hideBanner={false} hasBanner={hasBanner}>
                 <ContentContainer className={headerInnerContainer}>
                     <NavBar className={mobileMenuOpen ? "mobile-opened" : "mobile-closed"}>
                         <WebinyLogo alt="Webiny Home">
@@ -389,7 +391,7 @@ const Header = ({ hasBanner = true }) => {
                                 <img
                                     alt="Webiny Logo"
                                     className={logoImage}
-                                    src={sticky || mobileMenuOpen ? logoOrange : logo}
+                                    src={logoOrange}
                                 />
                             </Link>
                         </WebinyLogo>
@@ -397,7 +399,6 @@ const Header = ({ hasBanner = true }) => {
                         <Menu>
                             <MenuItemList
                                 cards={resourcesCards}
-                                sticky={sticky}
                                 handleVideoPlay={videoId => {
                                     setModalOpen(true);
                                     setVideoId(videoId);

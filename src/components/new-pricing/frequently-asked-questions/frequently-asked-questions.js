@@ -111,7 +111,11 @@ const faqs = [
                     install it yourself
                 </a>
                 , or{" "}
-                <a href="https://site.webiny.com/forms/product-demo" target="_blank" rel="noreferrer">
+                <a
+                    href="https://site.webiny.com/forms/product-demo"
+                    target="_blank"
+                    rel="noreferrer"
+                >
                     book a call
                 </a>{" "}
                 with us and we'll prepare a demo for you.
@@ -132,10 +136,7 @@ const faqs = [
     {
         title: "Are there any other hidden costs?",
         children: (
-            <p>
-                No, it's just the user seats and the addons. No other hidden fees or
-                surprises.
-            </p>
+            <p>No, it's just the user seats and the addons. No other hidden fees or surprises.</p>
         ),
     },
     {

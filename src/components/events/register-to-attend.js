@@ -83,15 +83,6 @@ const Title = styled("h2")({
     paddingTop: 0,
     margin: 0,
 });
-const ScheduleTalkImage = styled("img")(
-    {
-        position: "relative",
-        marginRight: 8,
-    },
-    mq({
-        display: ["block"],
-    }),
-);
 
 class RegisterToAttend extends React.Component {
     constructor(props) {

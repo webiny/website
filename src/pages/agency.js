@@ -12,7 +12,7 @@ import ForAgencies from "../components/agency/for-agencies/for-agencies";
 import WhyChooseWebiny from "../components/agency/why-choose-webiny/why-choose-webiny";
 import { trackBookADemo } from "../components/ui/functions";
 
-const metaDescription = "Modern Development Tools to Scale Your Dev Agency Faster."
+const metaDescription = "Modern Development Tools to Scale Your Dev Agency Faster.";
 class AgencyPage extends React.Component {
     scheduleADemoRef = React.createRef();
 
@@ -27,7 +27,10 @@ class AgencyPage extends React.Component {
 
     render() {
         return (
-            <BaseLayout title="How Agencies can benefit from serverless" description={metaDescription}>
+            <BaseLayout
+                title="How Agencies can benefit from serverless"
+                description={metaDescription}
+            >
                 <Hero handleDemoClick={this.bookADemo} />
                 <WhatIsWebiny />
                 <WhyServerless />

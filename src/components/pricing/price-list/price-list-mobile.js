@@ -83,7 +83,11 @@ const PriceListMobile = ({ priceList }) => {
                         <p>{item.label}</p>
                     </div>
                 ))}
-                <Button target="_blank" link="https://site.webiny.com/forms/product-demo" type="primary">
+                <Button
+                    target="_blank"
+                    link="https://site.webiny.com/forms/product-demo"
+                    type="primary"
+                >
                     Talk to Us
                 </Button>
             </PriceGroupItem>

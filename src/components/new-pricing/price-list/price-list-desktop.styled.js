@@ -8,12 +8,13 @@ export const buttonOutlinePrimary = css({
     color: `${theme.color.primaryDark} !important`,
 });
 
-export const FlexWrapper = styled.div({
-    display: "grid",
-},
-mq({
-    gridTemplateColumns: ["306px 1fr", "302px 1fr", "350px 1fr"],
-}),
+export const FlexWrapper = styled.div(
+    {
+        display: "grid",
+    },
+    mq({
+        gridTemplateColumns: ["306px 1fr", "302px 1fr", "350px 1fr"],
+    }),
 );
 export const RightContainer = styled("div")(
     {
@@ -31,7 +32,6 @@ export const LeftContainer = styled("div")({
 
 export const MainWrapper = styled("div")({
     "& p": {
-        color: theme.color.blue100,
         fontSize: "14px",
         lineHeight: "18px",
         color: "#44486C",
@@ -90,9 +90,7 @@ export const SubWrapper = styled("div")({
         maxWidth: "200px",
         border: `solid 2px ${theme.color.primaryDark} !important`,
     },
-},
-
-);
+});
 
 export const SubWrapperTable = styled("div")({
     width: "100%",

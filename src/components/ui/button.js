@@ -1,6 +1,5 @@
 import React from "react";
 import { cx, css } from "emotion";
-import mq from "../utils/breakpoints";
 import theme from "../utils/theme";
 import Link from "gatsby-link";
 import arrowImg from "./assets/btn-arrow.svg";
@@ -52,13 +51,8 @@ const buttonPrimary = css({
     backgroundColor: theme.color.primaryDark,
     color: theme.color.white,
     textTransform: "uppercase",
-    //fontSize: 20,
-    //border: '1px solid #ED4005',
-    //boxShadow: '0 2px 3px 0 rgba(160,160,160,0.50)',
     "&:hover, &:active": {
         background: "#ED4005",
-        //boxShadow: '0px 0px 0px 3px #FA5723',
-        //borderColor: '#ED4005',
     },
 });
 
@@ -66,12 +60,8 @@ const buttonSecondary = css({
     backgroundColor: theme.color.secondaryDark,
     color: theme.color.white,
     textTransform: "uppercase",
-    //fontSize: 20,
-    //border: '1px solid #3FBFB0',
     "&:hover, &:active": {
         background: "#3FBFB0",
-        //boxShadow: '0px 0px 0px 3px #3FBFB0',
-        //borderColor: '#3FBFB0',
     },
 });
 

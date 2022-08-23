@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "react-emotion";
 import mq from "../../utils/breakpoints";
 import theme from "../../utils/theme";

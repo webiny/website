@@ -4,12 +4,9 @@ import { css } from "emotion";
 import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 import ContentContainer from "../ui/content-container";
-import Link from "gatsby-link";
-
 import heroBg from "./assets/support-hero-bg.svg";
 import arrow from "./assets/bullet-arrow.svg";
 import docsIcon from "./assets/docs-icon.svg";
-import faqIcon from "./assets/round-question_answer-24px.svg";
 import bugIcon from "./assets/round-bug_report-24px.svg";
 import communityIcon from "./assets/outline-chat_bubble-24px.svg";
 import blogIcon from "./assets/medium-m-2.svg";
@@ -186,10 +183,10 @@ export default ({ children, ...props }) => (
             <Grid>
                 <Cell>
                     <h3>
-                        <img src={docsIcon} />
+                        <img src={docsIcon} alt="" />
                         <a href="/docs/webiny/introduction/">
                             Documentation
-                            <img className={"arrow"} src={arrow} />
+                            <img className={"arrow"} src={arrow} alt="" />
                         </a>
                     </h3>
                     <p>
@@ -197,27 +194,12 @@ export default ({ children, ...props }) => (
                         Exploring the docs is the best way to learn how to use Webiny.
                     </p>
                 </Cell>
-                {/* 
-        <Cell>
-          <h3>
-            <img src={faqIcon} />
-            <a href="https://support.webiny.com/">
-              Help Desk
-              <img className={'arrow'} src={arrow} />
-            </a>
-          </h3>
-          <p>
-            Make sure to check the FAQ section, as we might have already
-            answered your question there.
-          </p>
-        </Cell>
-        */}
                 <Cell>
                     <h3>
-                        <img src={bugIcon} />
+                        <img src={bugIcon} alt="" />
                         <a href="https://github.com/webiny/webiny-js/issues">
                             Found a bug?
-                            <img className={"arrow"} src={arrow} />
+                            <img className={"arrow"} src={arrow} alt="" />
                         </a>
                     </h3>
                     <p>
@@ -229,7 +211,7 @@ export default ({ children, ...props }) => (
                     <PremiumBox>
                         <h3>Premium Support</h3>
                         <div className={"icon"}>
-                            <img src={supportIcon} />
+                            <img src={supportIcon} alt="" />
                         </div>
                         <p>
                             Talk directly to the people that built Webiny. Get your problem resolved
@@ -248,10 +230,10 @@ export default ({ children, ...props }) => (
             <Grid>
                 <Cell>
                     <h3>
-                        <img src={communityIcon} />
+                        <img src={communityIcon} alt="" />
                         <a href="https://community.webiny.com/">
                             Community
-                            <img className={"arrow"} src={arrow} />
+                            <img className={"arrow"} src={arrow} alt="" />
                         </a>
                     </h3>
                     <p>
@@ -262,10 +244,10 @@ export default ({ children, ...props }) => (
                 </Cell>
                 <Cell>
                     <h3>
-                        <img src={blogIcon} />
+                        <img src={blogIcon} alt="" />
                         <a href="https://blog.webiny.com/">
                             Blog
-                            <img className={"arrow"} src={arrow} />
+                            <img className={"arrow"} src={arrow} alt="" />
                         </a>
                     </h3>
                     <p>

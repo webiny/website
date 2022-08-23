@@ -59,6 +59,7 @@ const WebinyAdminUI = props => {
                     <ImageWrapper>
                         <div className={videoPreviewClass}>
                             <iframe
+                                title="youtube"
                                 src="https://www.youtube.com/embed/WMw8eSYB6Zc"
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"

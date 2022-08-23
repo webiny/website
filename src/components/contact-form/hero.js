@@ -3,7 +3,7 @@ import styled from "react-emotion";
 import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 import Newsletter from "../footer/newsletter-formonly";
-import heroBg from '../../assets/new-homepage/hero/price-page-bg.svg'
+import heroBg from "../../assets/new-homepage/hero/price-page-bg.svg";
 
 export const HeroSection = styled("div")(
     {
@@ -18,7 +18,7 @@ export const HeroSection = styled("div")(
             "bottom 183px right 50%",
             "bottom 367px right 50%",
         ],
-        minHeight: ["590px", "590px", "800px"]
+        minHeight: ["590px", "590px", "800px"],
     }),
 );
 
@@ -57,16 +57,17 @@ const SubText = styled("p")(
 
 const FormWrapper = styled("div")({
     ".form": {
-        margin: "0 auto"
-    }
-})
+        margin: "0 auto",
+    },
+});
 
 export default ({ children, ...props }) => (
     <HeroSection>
         <HeroContainer>
             <Title>Sign up for our newsletter</Title>
             <SubText>
-                We send around one email per month exclusively about Webiny. <br /> We don't share your email address with anyone else.
+                We send around one email per month exclusively about Webiny. <br /> We don't share
+                your email address with anyone else.
             </SubText>
             <FormWrapper>
                 <Newsletter />

@@ -13,11 +13,11 @@ import smarktLogo from "./assets/smarkt-logo.png";
 import rehaLogo from "./assets/reha-logo.png";
 import screenshot from "./assets/oev-case-study-screenshot.jpg";
 
-const Content = props => {
+const Content = () => {
     return (
         <ContentWrapper>
             <MainContent>
-                <img src={screenshot} />
+                <img src={screenshot} alt="" />
                 <h3>What was the challenge?</h3>
                 <p>
                     OEV Online was tasked with developing an MVP as a value-added module, but with

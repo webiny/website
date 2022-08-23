@@ -111,41 +111,9 @@ module.exports = {
                             </svg>`,
                         },
                     },
-                    /*
-                    {
-                        resolve: `gatsby-remark-prismjs`,
-                        options: {
-                            classPrefix: "language-",
-                            inlineCodeMarker: null,
-                            aliases: {},
-                            showLineNumbers: false,
-                            noInlineHighlight: false,
-                            languageExtensions: [
-                                {
-                                    language: "superscript",
-                                    extend: "javascript",
-                                    definition: {
-                                        superscript_types: /(SuperType)/,
-                                    },
-                                    insertBefore: {
-                                        function: {
-                                            superscript_keywords: /(superif|superelse)/,
-                                        },
-                                    },
-                                },
-                            ],
-                            prompt: {
-                                user: "root",
-                                host: "localhost",
-                                global: false,
-                            },
-                            escapeEntities: {},
-                        },
-                    },
-                    */
                     {
                         resolve: `gatsby-remark-highlight-code`,
-                      },
+                    },
                 ],
             },
         },
@@ -178,13 +146,11 @@ module.exports = {
             },
         },
         {
-            resolve: 'gatsby-plugin-fathom',
+            resolve: "gatsby-plugin-fathom",
             options: {
-              // Your custom domain, defaults to `cdn.usefathom.com`
-              trackingUrl: 'banquet-golden-years.webiny.com',
-              // Unique site id
-              siteId: 'MZFYOTYQ'
-            }
-          }
+                trackingUrl: "banquet-golden-years.webiny.com",
+                siteId: "MZFYOTYQ",
+            },
+        },
     ],
 };

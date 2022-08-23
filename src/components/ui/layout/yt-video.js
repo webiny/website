@@ -77,14 +77,14 @@ class YTVideo extends React.Component {
                 <VideoWrapper onClick={this.openModal}>
                     <VideoImage src={this.props.img} />
                     <PlayButtonWrapper>
-                        <img height="75" src={playIcon} />
+                        <img height="75" src={playIcon} alt="" />
                     </PlayButtonWrapper>
                 </VideoWrapper>
                 <ModalVideo
                     channel="youtube"
                     isOpen={this.state.isOpen}
                     videoId={this.props.id}
-                    onClose={() => this.setState({ isOpen: false })}                    
+                    onClose={() => this.setState({ isOpen: false })}
                 />
             </>
         );

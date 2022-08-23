@@ -37,5 +37,5 @@ export const useIntersectionObserver = setActiveId => {
 
         // Remove subscriptions on unmount
         return () => observer.disconnect();
-    }, []);
+    }, [setActiveId]);
 };

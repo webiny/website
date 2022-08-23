@@ -7,8 +7,6 @@ import styled from "react-emotion";
 
 import FooterCta from "../components/ui/footer-cta";
 import HeroSection from "../components/guides-tutorials/hero/hero";
-import DidNotFound from "../components/guides-tutorials/did-not-found/did-not-found";
-import FeaturedContent from "../components/guides-tutorials/featured-content/featured-content";
 
 const Notice = styled("h3")({
     margin: "100px 25px",
@@ -30,10 +28,6 @@ const GuidesAndTutorialsPage = () => {
             <Notice>
                 This page has been moved <a href="/docs/tutorials/install-webiny">here</a>.
             </Notice>
-            {/*
-            <FeaturedContent />
-            <DidNotFound />
-            */}
             <FooterCta />
         </BaseLayout>
     );

@@ -2,7 +2,6 @@ import React from "react";
 import styled from "react-emotion";
 import theme from "../../../utils/theme";
 import mq from "../../../utils/breakpoints";
-import { css } from "emotion";
 import MainImg from "../assets/main.svg";
 import QuoteImg from "../assets/quote.svg";
 
@@ -138,9 +137,9 @@ const MainContent = () => {
                     touchpoint.
                 </Quote>
                 <p>
-                    When <a href="#">Koia's</a> founders saw firsthand the toll that stress and poor
-                    nutrition can have on people, they decided to create a product that helped
-                    people live healthier lives.
+                    When <a href="https://webiny.com">Koia's</a> founders saw firsthand the toll
+                    that stress and poor nutrition can have on people, they decided to create a
+                    product that helped people live healthier lives.
                 </p>
                 <p>
                     To do so, they studied regions in the world where people live longer than others

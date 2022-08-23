@@ -63,7 +63,7 @@ const Blogs = props => {
                 });
             }
         }
-    }, [location]);
+    }, [location, search]);
 
     // Filter result based on "search"
     useEffect(() => {
@@ -85,7 +85,7 @@ const Blogs = props => {
         }
         // Save "filtered" results for later use
         setFilteredContent(result);
-    }, [search]);
+    }, [search, data]);
 
     // Update list on "cursor" change
     useEffect(() => {
@@ -99,7 +99,7 @@ const Blogs = props => {
     //  Update "show more" button
     useEffect(() => {
         setShowMore(list.length < filteredContent.length);
-    }, [list]);
+    }, [list, filteredContent.length]);
 
     const clearSearch = useCallback(() => {
         setSearch("");

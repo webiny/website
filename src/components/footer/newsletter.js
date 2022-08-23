@@ -6,8 +6,6 @@ import mq from "../utils/breakpoints";
 import emailIcon from "./assets/email-icon.svg";
 import newsletterBullet from "./assets/newsletter-bullet.svg";
 
-const Form = styled("form")({});
-
 const Title = styled("label")(
     {
         fontSize: theme.fontSize.h3,
@@ -124,18 +122,6 @@ class Newsletter extends React.Component {
         if (this.state.email !== "") {
             this.setState({ email: "Thanks! You're on the list." });
 
-            /*
-      const formData = Object.keys (this.state)
-        .map (key => {
-          return (
-            encodeURIComponent (key) +
-            '=' +
-            encodeURIComponent (this.state[key])
-          );
-        })
-        .join ('&');
-      */
-
             fetch(
                 "https://app.mailerlite.com/webforms/submit/g9f1i1?fields%5Bemail%5D=" +
                     encodeURIComponent(this.state.email) +
@@ -145,7 +131,6 @@ class Newsletter extends React.Component {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded",
                     },
-                    //body: formData,
                 },
             );
         }

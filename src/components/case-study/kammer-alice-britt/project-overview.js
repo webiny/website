@@ -43,7 +43,12 @@ const RightSide = () => {
     return (
         <React.Fragment>
             <h3>Partner</h3>
-            <a title="OEV Online" href="https://digitalcampus360.de/" target="_blank">
+            <a
+                title="OEV Online"
+                href="https://digitalcampus360.de/"
+                target="_blank"
+                rel="noreferrer"
+            >
                 <img src={partnerLogo} alt="OEV Logo" />
             </a>
             <p>

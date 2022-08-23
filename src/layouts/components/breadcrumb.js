@@ -2,7 +2,6 @@ import React from "react";
 import styled from "react-emotion";
 import { css } from "emotion";
 import { Link } from "gatsby";
-import theme from "../../components/utils/theme";
 import mq from "../../components/utils/breakpoints";
 import ContentContainer from "../../components/ui/content-container";
 import arrowIcon from "./assets/breadcrumb-arrow.svg";

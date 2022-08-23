@@ -13,7 +13,7 @@ import {
 const ModernTechSolutionsTile = ({ title, image, description }) => {
     return (
         <TileWrapper>
-            <img src={image} alt="tile image" />
+            <img src={image} alt="" />
             <TileTitle>{title}</TileTitle>
             <TileDescription>{description}</TileDescription>
         </TileWrapper>

@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "react-emotion";
 import { css } from "emotion";
 // Utils
@@ -260,7 +259,7 @@ export const MenuItem = styled("li")(
                 transitionDelay: "0s, 0s, 0.1s",
             },
         },
-        ">a.link": {
+        "> .link": {
             fontSize: theme.fontSize.sm,
             fontWeight: theme.fontWeight.bold,
             textDecoration: "none",
@@ -308,6 +307,10 @@ export const parentMenu = css(
         marginRight: -5,
         marginTop: "-3px !important",
         a: {
+            color: "inherit",
+            textDecoration: "none",
+        },
+        span: {
             color: "inherit",
             textDecoration: "none",
         },
@@ -361,7 +364,7 @@ export const HeaderContainer = styled("header")(
     props => ({
         position: props.isSticky ? "sticky" : "absolute",
         backgroundColor: theme.color.white,
-        boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.297995)",
+        boxShadow: "0px 0px 5px rgb(0 0 0 / 30%)",
         paddingTop: props.isSticky ? 10 : 20,
         paddingBottom: props.isSticky ? 10 : 20,
         top: props.hasBanner ? (props.hideBanner ? 0 : BANNER_HEIGHT) : 0,
