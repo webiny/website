@@ -4,7 +4,15 @@ import arrow from "../../../assets/new-homepage/table-section/arrow.svg";
 
 import { ItemWrapper, Arrow, ButtonMobile } from "./price-list-mobile.styled";
 
-const CollapsibleItem = ({ priceList, plan, buttonText, collapseName, border, buttonType, link = "/" }) => {
+const CollapsibleItem = ({
+    priceList,
+    plan,
+    buttonText,
+    collapseName,
+    border,
+    buttonType,
+    link = "/",
+}) => {
     const [showMenu, setShowMenu] = useState(false);
     const choosePlan = (function() {
         if (plan === "open source") {
@@ -16,7 +24,6 @@ const CollapsibleItem = ({ priceList, plan, buttonText, collapseName, border, bu
         }
     })();
 
-    
     return (
         <ItemWrapper border={border} showMenu={showMenu}>
             <div onClick={() => setShowMenu(!showMenu)} className="collapsible-title-wrapper">

@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import BaseLayout from "../layouts/base";
 import Blogs from "../components/blog/blog";
 
-const metaDescription = "Find out the latest news from Webiny"
+const metaDescription = "Find out the latest news from Webiny";
 
 export default ({ data, location }) => {
     const blogPosts = data.blog.nodes;
@@ -18,8 +18,8 @@ export default ({ data, location }) => {
 export const listBlogsQuery = graphql`
     query MyQuery {
         blog: allMdx(
-            limit: 1000,
-            sort: { fields: frontmatter___date, order: DESC },
+            limit: 1000
+            sort: { fields: frontmatter___date, order: DESC }
             filter: { frontmatter: { slug: { regex: "/blog/" } } }
         ) {
             nodes {

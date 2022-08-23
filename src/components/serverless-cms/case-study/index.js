@@ -11,12 +11,12 @@ import caseBg from "./assets/case-bg.svg";
 
 const containerClass = css(
     {
-        maxWidth: 1200
+        maxWidth: 1200,
     },
     mq({
         width: ["100%", "100%"],
     }),
-)
+);
 
 const Section = styled("section")(
     {
@@ -30,7 +30,7 @@ const Section = styled("section")(
     mq({
         padding: [15, "100px 15px"],
     }),
-)
+);
 
 const Wrapper = styled("div")(
     {
@@ -68,15 +68,13 @@ const TitleHighlight = styled("span")({
     backgroundRepeat: "no-repeat",
 });
 
-const caseStudySlide = css(
-    {
-        ".slick-dots": {
-            "li button:before": {
-                fontSize: 30
-            },
+const caseStudySlide = css({
+    ".slick-dots": {
+        "li button:before": {
+            fontSize: 30,
         },
-    }
-)
+    },
+});
 
 const CaseStudy = () => {
     return (
@@ -84,10 +82,7 @@ const CaseStudy = () => {
             <ContentContainer className={containerClass}>
                 <Wrapper>
                     <Title>
-                        Case {" "}
-                        <TitleHighlight>
-                            Study
-                        </TitleHighlight>
+                        Case <TitleHighlight>Study</TitleHighlight>
                     </Title>
                 </Wrapper>
                 <Slider
@@ -101,15 +96,15 @@ const CaseStudy = () => {
                     className={caseStudySlide}
                     responsive={[
                         {
-                            breakpoint: 1024                            
+                            breakpoint: 1024,
                         },
                         {
-                            breakpoint: 600                            
+                            breakpoint: 600,
                         },
                         {
                             breakpoint: 480,
                             settings: {
-                                dots: false                                
+                                dots: false,
                             },
                         },
                     ]}
@@ -117,11 +112,11 @@ const CaseStudy = () => {
                     <SlideItem />
                     <SlideItem />
                     <SlideItem />
-                    <SlideItem />                    
-                </Slider>                
+                    <SlideItem />
+                </Slider>
             </ContentContainer>
         </Section>
-    )
-}
+    );
+};
 
-export default CaseStudy
+export default CaseStudy;

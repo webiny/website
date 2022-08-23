@@ -61,7 +61,6 @@ const DatePublished = styled("div")({
 });
 
 class Author extends React.Component {
-    
     render() {
         return (
             <AuthorContainer>

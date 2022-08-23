@@ -112,7 +112,11 @@ const PriceListDesktop = ({ priceList }) => {
                 </SubWrapper>
                 <SubWrapper className="with-button">
                     <h3>Custom</h3>
-                    <Button target="_blank" link="https://site.webiny.com/forms/product-demo" type="primary">
+                    <Button
+                        target="_blank"
+                        link="https://site.webiny.com/forms/product-demo"
+                        type="primary"
+                    >
                         Book a Call
                     </Button>
                 </SubWrapper>

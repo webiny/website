@@ -78,7 +78,6 @@ const IconItem = styled("li")({
     width: "40px",
 });
 
-
 const Bottom = styled("div")(
     {
         width: "100%",
@@ -113,22 +112,42 @@ const Footer = () => (
                     <Logo src={webinyLogo} alt="Webiny Logo" />
                     <IconList>
                         <IconItem>
-                            <a title="GitHub" href="https://github.com/webiny/webiny-js" target="_blank" rel="noreferrer">
+                            <a
+                                title="GitHub"
+                                href="https://github.com/webiny/webiny-js"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
                                 <img src={GitHubIcon} alt="" />
                             </a>
                         </IconItem>
                         <IconItem>
-                            <a title="Slack" href="https://www.webiny.com/slack" target="_blank" rel="noreferrer">
+                            <a
+                                title="Slack"
+                                href="https://www.webiny.com/slack"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
                                 <img src={SlackIcon} alt="" />
                             </a>
                         </IconItem>
                         <IconItem>
-                            <a title="Twitter" href="https://twitter.com/WebinyCMS" target="_blank" rel="noreferrer">
+                            <a
+                                title="Twitter"
+                                href="https://twitter.com/WebinyCMS"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
                                 <img src={TwitterIcon} alt="" />
                             </a>
                         </IconItem>
                         <IconItem>
-                            <a title="YouTube" href="https://www.youtube.com/c/webiny" target="_blank" rel="noreferrer">
+                            <a
+                                title="YouTube"
+                                href="https://www.youtube.com/c/webiny"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
                                 <img src={YoutubeIcon} alt="" />
                             </a>
                         </IconItem>

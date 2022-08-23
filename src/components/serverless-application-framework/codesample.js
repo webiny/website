@@ -10,11 +10,9 @@ const codeStyle = css(
         width: "100%",
         padding: "0 !important",
         backgroundColor: "#2b2c55 !important",
-        minHeight: 600
+        minHeight: 600,
     },
-    mq({
-        
-    }),
+    mq({}),
 );
 
 const CodeSample = ({ children, language, ...props }) => (

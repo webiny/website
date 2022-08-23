@@ -181,7 +181,6 @@ const DemoIcon = styled("img")(
 
 class ForAgencies extends React.Component {
     render() {
-
         return (
             <section {...this.props} className={wrapperClass}>
                 <ContentContainer className={contentContainerClass}>

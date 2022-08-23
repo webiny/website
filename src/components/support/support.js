@@ -17,7 +17,7 @@ const Hero = styled("section")(
         width: "100%",
         background: "url(" + heroBg + ") no-repeat center top",
         color: "#fff",
-    boxSizing: "border-box",
+        boxSizing: "border-box",
         textAlign: "center",
     },
     mq({
@@ -186,7 +186,7 @@ export default ({ children, ...props }) => (
                         <img src={docsIcon} alt="" />
                         <a href="/docs/webiny/introduction/">
                             Documentation
-                            <img className={"arrow"} src={arrow} alt=""/>
+                            <img className={"arrow"} src={arrow} alt="" />
                         </a>
                     </h3>
                     <p>
@@ -199,7 +199,7 @@ export default ({ children, ...props }) => (
                         <img src={bugIcon} alt="" />
                         <a href="https://github.com/webiny/webiny-js/issues">
                             Found a bug?
-                            <img className={"arrow"} src={arrow} alt=""/>
+                            <img className={"arrow"} src={arrow} alt="" />
                         </a>
                     </h3>
                     <p>
@@ -233,7 +233,7 @@ export default ({ children, ...props }) => (
                         <img src={communityIcon} alt="" />
                         <a href="https://community.webiny.com/">
                             Community
-                            <img className={"arrow"} src={arrow} alt=""/>
+                            <img className={"arrow"} src={arrow} alt="" />
                         </a>
                     </h3>
                     <p>
@@ -247,7 +247,7 @@ export default ({ children, ...props }) => (
                         <img src={blogIcon} alt="" />
                         <a href="https://blog.webiny.com/">
                             Blog
-                            <img className={"arrow"} src={arrow} alt=""/>
+                            <img className={"arrow"} src={arrow} alt="" />
                         </a>
                     </h3>
                     <p>

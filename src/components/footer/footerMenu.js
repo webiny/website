@@ -46,7 +46,7 @@ const FooterMenu = () => (
             <SectionTitle>Developers</SectionTitle>
             <a href="/docs/get-started/install-webiny">Install Webiny</a>
             <a
-                target="_blank" 
+                target="_blank"
                 rel="noreferrer"
                 onClick={() => {
                     trackGoToGithub({ placement: "footer-menu" });
@@ -64,7 +64,7 @@ const FooterMenu = () => (
                 GitHub repository
             </a>
             <a
-                target="_blank" 
+                target="_blank"
                 rel="noreferrer"
                 onClick={() => {
                     trackGoToGithub({ placement: "footer-menu" });

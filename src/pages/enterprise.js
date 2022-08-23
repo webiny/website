@@ -5,7 +5,8 @@ import SeverlessAdvantage from "../components/enterprise/serverless-advantage";
 import SecurityParameter from "../components/enterprise/security-parameter";
 import WebinyEnterprise from "../components/enterprise/webiny-enterprise";
 
-const metaDescription = "Webiny provides organisations with the technology, processes, knowledge and support to successfully build and deliver solutions on top of serverless infrastructure."
+const metaDescription =
+    "Webiny provides organisations with the technology, processes, knowledge and support to successfully build and deliver solutions on top of serverless infrastructure.";
 
 const Enterprise = () => {
     return (

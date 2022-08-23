@@ -113,7 +113,7 @@ module.exports = {
                     },
                     {
                         resolve: `gatsby-remark-highlight-code`,
-                      },
+                    },
                 ],
             },
         },
@@ -146,11 +146,11 @@ module.exports = {
             },
         },
         {
-            resolve: 'gatsby-plugin-fathom',
+            resolve: "gatsby-plugin-fathom",
             options: {
-              trackingUrl: 'banquet-golden-years.webiny.com',
-              siteId: 'MZFYOTYQ'
-            }
-          }
+                trackingUrl: "banquet-golden-years.webiny.com",
+                siteId: "MZFYOTYQ",
+            },
+        },
     ],
 };

@@ -8,7 +8,6 @@ import { experienceList } from "./great-experience-data";
 
 import rectangleBg from "./assets/great-experience-bg.svg";
 
-
 const Section = styled("section")(
     {
         backgroundColor: theme.color.white,
@@ -17,7 +16,7 @@ const Section = styled("section")(
     },
     mq({
         backgroundSize: ["cover", "auto", "cover"],
-        padding: ["110px 15px", "110px 15px"]
+        padding: ["110px 15px", "110px 15px"],
     }),
 );
 
@@ -55,7 +54,7 @@ const overviewContainerClass = css(
         position: "relative",
     },
     mq({
-        width: ["100%", "100%"]
+        width: ["100%", "100%"],
     }),
 );
 
@@ -65,7 +64,7 @@ const LogosWrapper = styled("div")(
     },
     mq({
         gridTemplateColumns: ["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(4, 1fr)"],
-        paddingTop: [50, 100]
+        paddingTop: [50, 100],
     }),
 );
 
@@ -99,7 +98,7 @@ const FeatureCard = styled("div")(
             color: theme.color.black,
             fontSize: 20,
             fontWeight: theme.fontWeight.bold,
-            lineHeight: "25px"
+            lineHeight: "25px",
         },
         "& .feature-card__body": {
             margin: 0,
@@ -116,7 +115,7 @@ const FeatureCard = styled("div")(
             top: "-13%",
             zIndex: 1,
         },
-    }),    
+    }),
     mq({
         width: [360, 360, 352],
         height: ["auto", 380],
@@ -141,10 +140,7 @@ const GreatExperience = () => {
                 <LogosWrapper>
                     {experienceList.map((item, index) => (
                         <FeatureCard key={item.id} key={index} {...item}>
-                            <img
-                                className="feature-card__img"
-                                src={item.imageSrc}                                
-                            />
+                            <img className="feature-card__img" src={item.imageSrc} />
                             <h4 className="feature-card__title">{item.title}</h4>
                             <p className="feature-card__body">{item.body}</p>
                         </FeatureCard>

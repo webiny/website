@@ -15,7 +15,6 @@ import Breadcrumb from "../../layouts/components/breadcrumb";
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
 deckDeckGoHighlightElement();
 
-
 const shortcodes = { ExternalLink };
 
 const BlogContainer = styled("div")(
@@ -204,8 +203,8 @@ const blogStyles = css(
             "deckgo-highlight-code": {
                 marginBottom: "20px",
                 "--deckgo-highlight-code-font-size": "0.8em",
-                "--deckgo-highlight-code-carbon-toolbar-display": "none"
-            }
+                "--deckgo-highlight-code-carbon-toolbar-display": "none",
+            },
         },
     },
     mq({

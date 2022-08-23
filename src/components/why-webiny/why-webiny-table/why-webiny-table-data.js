@@ -234,7 +234,7 @@ const pricingPlansData = [
             text: "Pay per user",
         },
         height: "38px",
-    }
+    },
 ];
 
 const technicalLimits = [
@@ -243,10 +243,16 @@ const technicalLimits = [
         webiny: {
             text: (
                 <div className="text-center">
-                    3950 calls per second 
-                    <br /><a style={{ color: '#00CCB0' }} href="https://www.webiny.com/docs/performance-and-load-benchmark/introduction">(Read more)</a>
+                    3950 calls per second
+                    <br />
+                    <a
+                        style={{ color: "#00CCB0" }}
+                        href="https://www.webiny.com/docs/performance-and-load-benchmark/introduction"
+                    >
+                        (Read more)
+                    </a>
                 </div>
-            )
+            ),
         },
         contentful: {
             text: "10 calls per second",
@@ -270,8 +276,14 @@ const technicalLimits = [
         webiny: {
             text: (
                 <div className="text-center">
-                    3500 calls per second 
-                    <br /><a  style={{ color: '#00CCB0' }} href="https://www.webiny.com/docs/performance-and-load-benchmark/introduction">(Read more)</a>
+                    3500 calls per second
+                    <br />
+                    <a
+                        style={{ color: "#00CCB0" }}
+                        href="https://www.webiny.com/docs/performance-and-load-benchmark/introduction"
+                    >
+                        (Read more)
+                    </a>
                 </div>
             ),
         },
@@ -288,14 +300,14 @@ const technicalLimits = [
             text: "up to 1000 calls per second",
         },
         webflow: {
-            text: "60 per minute"
+            text: "60 per minute",
         },
         height: "56px",
     },
     {
         label: "Users limit",
         webiny: {
-            text: "Unlimited"
+            text: "Unlimited",
         },
         contentful: {
             text: "Up to 25",
@@ -310,14 +322,14 @@ const technicalLimits = [
             text: "up to 1000 per project",
         },
         webflow: {
-            text: "Up to 9"
+            text: "Up to 9",
         },
         height: "38px",
     },
     {
         label: "Content types",
         webiny: {
-            text: "Unlimited"
+            text: "Unlimited",
         },
         contentful: {
             text: "max 48",
@@ -326,24 +338,20 @@ const technicalLimits = [
             text: "Unlimited",
         },
         storyblok: {
-            text: (
-                <div className="text-center">
-                    100  / 200 / 300 / Unlimited on enterprise
-                </div>
-            ),
+            text: <div className="text-center">100 / 200 / 300 / Unlimited on enterprise</div>,
         },
         sanity: {
             text: "unknown",
         },
         webflow: {
-            text: "20 / 40 (business tier)"
+            text: "20 / 40 (business tier)",
         },
         height: "56px",
     },
     {
         label: "CMS records limit",
         webiny: {
-            text: "Unlimited"
+            text: "Unlimited",
         },
         contentful: {
             text: "25k / 50k / custom",
@@ -352,20 +360,16 @@ const technicalLimits = [
             text: "Unlimited",
         },
         storyblok: {
-            text: (
-                <div className="text-center">
-                    1 million (on Enterprise plan)
-                </div>
-            ),
+            text: <div className="text-center">1 million (on Enterprise plan)</div>,
         },
         sanity: {
             text: "1 million",
         },
         webflow: {
-            text: "10k"
+            text: "10k",
         },
         height: "56px",
-    }
+    },
 ];
 
 const contentManagementData = [
@@ -854,7 +858,7 @@ const data = [
     },
     {
         label: "Technical Limits",
-        arr: technicalLimits
+        arr: technicalLimits,
     },
     {
         label: "Content managment",

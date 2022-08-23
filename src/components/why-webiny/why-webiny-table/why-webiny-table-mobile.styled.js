@@ -108,5 +108,5 @@ export const WhyWebinyTableMobileWrapper = styled.div({
         border: "none",
         background: "#D9E2EC",
         backgroundClip: "content-box",
-    }
+    },
 });

@@ -15,9 +15,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     const result = await graphql(`
         {
-            blog: allMdx(
-                filter: { frontmatter: { slug: { regex: "/blog/" } } }
-            ) {
+            blog: allMdx(filter: { frontmatter: { slug: { regex: "/blog/" } } }) {
                 edges {
                     node {
                         frontmatter {

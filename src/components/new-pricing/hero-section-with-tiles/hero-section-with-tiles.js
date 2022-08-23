@@ -65,7 +65,7 @@ const MainTile = ({ dataTile }) => {
     }, [togglePublishingWorkflow, toggleAdvancedRoles]);
 
     const totalPrice = useMemo(() => {
-        return (pricePerUser * (usersNumber - 1));
+        return pricePerUser * (usersNumber - 1);
     }, [usersNumber, pricePerUser]);
 
     return (

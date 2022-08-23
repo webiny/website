@@ -122,7 +122,7 @@ const WhyWebinyTableMobile = ({ cmsNames, data, mainTitle }) => {
                     border
                 />
             ))}
-            <hr className="hr-line"/>
+            <hr className="hr-line" />
         </WhyWebinyTableMobileWrapper>
     );
 };

@@ -21,13 +21,11 @@ const Title = styled("label")(
     }),
 );
 
-const InputWrapper = styled("form")(
-    {
-        position: "relative",
-        maxWidth: "392px",
-        margin: "0 auto"
-    },
-);
+const InputWrapper = styled("form")({
+    position: "relative",
+    maxWidth: "392px",
+    margin: "0 auto",
+});
 
 const Input = styled("input")({
     background: theme.color.white,

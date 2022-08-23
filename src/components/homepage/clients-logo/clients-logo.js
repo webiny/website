@@ -20,7 +20,7 @@ import teslaLogo from "./assets/tesla.svg";
 const wrapperClass = css(
     {
         //backgroundImage: "url(" + sectionBg + ")",
-        backgroundColor: '#F6F4F8',
+        backgroundColor: "#F6F4F8",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "bottom",

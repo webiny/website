@@ -8,7 +8,7 @@ import ContentContainer from "../ui/content-container";
 import Button from "../ui/button";
 import { trackGoToGithub } from "../ui/functions";
 import { ModalContext } from "../ui/layout/video-modal";
-import NewsBanner from "../ui/news-banner"
+import NewsBanner from "../ui/news-banner";
 // assets
 import logo from "./assets/webiny-logo-with-icon-left-white.svg";
 import logoOrange from "./assets/webiny-logo-with-icon-left-orange.svg";
@@ -359,7 +359,7 @@ const Header = ({ hasBanner = true, sticky = false }) => {
 
     return (
         <Fragment>
-            {hasBanner &&
+            {hasBanner && (
                 <Fragment>
                     <Helmet>
                         <style type="text/css">{`
@@ -369,15 +369,20 @@ const Header = ({ hasBanner = true, sticky = false }) => {
                         `}</style>
                     </Helmet>
                     <NewsBanner>
-                        <p>🌟&nbsp;Help others discover us,&nbsp;
-                            <a href="https://github.com/webiny/webiny-js" target="_blank" rel="noreferrer">
+                        <p>
+                            🌟&nbsp;Help others discover us,&nbsp;
+                            <a
+                                href="https://github.com/webiny/webiny-js"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
                                 star our GitHub repo!
                             </a>
                             &nbsp;🌟
                         </p>
                     </NewsBanner>
                 </Fragment>
-            }
+            )}
             <HeaderContainer hasBanner={hasBanner}>
                 <ContentContainer className={headerInnerContainer}>
                     <NavBar className={mobileMenuOpen ? "mobile-opened" : "mobile-closed"}>
