@@ -157,7 +157,7 @@ const MobileMenuItemList = () => {
     );
 };
 
-const MenuItemList = ({ cards, sticky = false }) => {
+const MenuItemList = ({ cards, sticky = true }) => {
     return (
         <React.Fragment>
             <ul className="menu--left">
@@ -383,7 +383,7 @@ const Header = ({ hasBanner = true, sticky = false }) => {
                     </NewsBanner>
                 </Fragment>
             )}
-            <HeaderContainer hasBanner={hasBanner}>
+            <HeaderContainer isSticky={true} hideBanner={false} hasBanner={hasBanner}>
                 <ContentContainer className={headerInnerContainer}>
                     <NavBar className={mobileMenuOpen ? "mobile-opened" : "mobile-closed"}>
                         <WebinyLogo alt="Webiny Home">
@@ -391,7 +391,7 @@ const Header = ({ hasBanner = true, sticky = false }) => {
                                 <img
                                     alt="Webiny Logo"
                                     className={logoImage}
-                                    src={sticky || mobileMenuOpen ? logoOrange : logo}
+                                    src={logoOrange}
                                 />
                             </Link>
                         </WebinyLogo>

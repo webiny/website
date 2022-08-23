@@ -364,7 +364,7 @@ export const HeaderContainer = styled("header")(
     props => ({
         position: props.isSticky ? "sticky" : "absolute",
         backgroundColor: theme.color.white,
-        boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.297995)",
+        boxShadow: "0px 0px 5px rgb(0 0 0 / 30%)",
         paddingTop: props.isSticky ? 10 : 20,
         paddingBottom: props.isSticky ? 10 : 20,
         top: props.hasBanner ? (props.hideBanner ? 0 : BANNER_HEIGHT) : 0,
