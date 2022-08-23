@@ -93,7 +93,7 @@ new ContextPlugin<SecurityContext>((context) => {
 const FrameContainer = ({ image, title, description, link }) => {
     return (
         <Frame>
-            <img src={image} alt="icon" />
+            <img src={image} alt="" />
             <FrameTitle
                 style={{
                     fontWeight: "bold",
@@ -108,7 +108,7 @@ const FrameContainer = ({ image, title, description, link }) => {
             <FrameLink>
                 {link ? (
                     <a target="_blank" rel="noreferrer" href={link}>
-                        Explore more <img src={arrow} />
+                        Explore more <img src={arrow} alt="" />
                     </a>
                 ) : (
                     "(coming soon)"

@@ -17,7 +17,7 @@ const Content = () => {
     return (
         <ContentWrapper>
             <MainContent>
-                <img src={screenshot} />
+                <img src={screenshot} alt="" />
                 <h3>What was the challenge?</h3>
                 <p>
                     OEV Online was tasked with developing an MVP as a value-added module, but with

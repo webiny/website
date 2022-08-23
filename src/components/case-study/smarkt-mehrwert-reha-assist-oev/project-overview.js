@@ -52,7 +52,7 @@ const RightSide = () => {
     );
 };
 
-const ProjectOverviewContent = props => {
+const ProjectOverviewContent = () => {
     return (
         <React.Fragment>
             <ProjectOverview left={<LeftSide />} right={<RightSide />} />

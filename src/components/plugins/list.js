@@ -209,7 +209,7 @@ class PluginList extends React.Component {
                 <div className="footer">
                     <div className="npm">
                         <a href={plugin.package.links.npm}>
-                            <img src={npmIcon} />
+                            <img src={npmIcon} alt="" />
                         </a>
                     </div>
 

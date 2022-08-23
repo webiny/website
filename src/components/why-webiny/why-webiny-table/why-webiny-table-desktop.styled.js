@@ -122,8 +122,10 @@ export const WhyWebinyTableContainer = styled.div({
     },
 
     "& .sticky-header": {
+        /*eslint-disable */
         position: "-webkit-sticky",
         position: "sticky",
+        /*eslint-enable */
         top: "65px",
 
         "@media (max-width: 836px)": {
