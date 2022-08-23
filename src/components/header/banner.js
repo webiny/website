@@ -2,7 +2,7 @@ import React from "react";
 import styled from "react-emotion";
 import theme from "../utils/theme";
 
-export const BANNER_HEIGHT = 30;
+export const BANNER_HEIGHT = 35;
 export const BANNER_HEIGHT_MOBILE = 40;
 
 const Banner = styled("div")({
