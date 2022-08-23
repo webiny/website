@@ -8,12 +8,14 @@ import WhyWebinyTable from "../components/why-webiny/why-webiny-table/why-webiny
 
 import BaseLayout from "../layouts/base";
 import TableDisclaimer from "../components/why-webiny/table-disclaimer/table-disclaimer";
+import shareCard from "../assets/why-webiny/why-webiny-share-card.png"
 
 const WhyWebinyPage = () => {
     return (
         <BaseLayout
             title="Why Webiny?"
             description="Discover the serverless benefits, its challenges and how Webiny overcomes them."
+            image={shareCard}
         >
             <HeroWhyWebiny />
             <ModernBusinesses />
