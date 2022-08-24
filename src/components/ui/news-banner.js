@@ -9,7 +9,7 @@ const NewsBanner = styled("div")({
     position: "fixed",
     display: "flex",
     top: 0,
-    zIndex: 1,
+    zIndex: 3,
     backgroundColor: "#292C33",
     paddingBottom: 5,
     paddingTop: 7,
