@@ -154,6 +154,9 @@ const blogStyles = css(
                     },
                 },
             },
+            "video": {
+                width: '100%'
+            },
             blockquote: {
                 fontSize: "1.2em",
                 fontStyle: "italic",
