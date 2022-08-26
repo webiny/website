@@ -1,9 +1,9 @@
 ---
-slug: "blog/heroku-open-source-alternatives"
-title: "Open source alternatives to Heroku"
-description: "Depending on your needs, you might need to have a content model that requires a property that doesn't come with Webiny's built-in field types. In this tutorial we will create a custom one."
+slug: "blog/alternatives-herokus-free-tier"
+title: "Alternatives to Heroku’s Free Tier"
+description: "Heroku announced it's free tier plans are being phased out. Is there an alternative to Heroku?"
 date: 2022-08-26
-featureImage: "./assets/heroku-open-source-alternatives/cover.png"
+featureImage: "./assets/alternatives-herokus-free-tier/cover.png"
 tags: ["opinion", "open source", "serverless"]
 author: ben
 ---
@@ -11,7 +11,7 @@ Heroku announced yesterday that it's extremely popular free tier plans are being
 
 ## The Heroku Story
 
-Heroku started as a platform offering hosting to exclusively Ruby-based websites. It's since expanded that option and now a host of "build packs" exist which can deploy infrastructure to Heroku in one click. This was likely the inspiration for similar "one click deploy" buttons that have been adopted by Netlify, Vercel and others.
+Heroku started as a platform offering hosting to exclusively Ruby-based websites. It's since expanded that option and now a host of "build packs" for other languages exist which can deploy infrastructure to Heroku in one click. This was likely the inspiration for similar "one click deploy" buttons that have been adopted by Netlify, Vercel and others.
 
 The unique thing about the way Heroku was built is that it leveraged [AWS' ability to hibernate EC2 instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html). So when you deploy your infrastructure to one of the free-tier "dynos" (a dyno is an environment in which your application can run, similar to containers), after a while of inactivity the dyno would hibernate: it would turn off, or go to sleep. The effect of this was that you couldn't contact the application straight away in that state. It would take around 30 seconds for it to activate, or wake up. This was enough time for Heroku to spin up your dyno again so that it could accept requests.
 
@@ -21,11 +21,13 @@ This was a great help to many people who owned small blogs built on an open sour
 
 ## Alternatives to Heroku
 
-Heroku wasn't only used for blogging: many people had used it to host backend services for small hobby apps that didn't make any money, or for proof-of-concept ideas so they could evaluate tools for their organizations to later use in production. 
+Looking for an alternative to Heroku depends on what you were using for. Many people had used it to host backend services for small hobby apps that didn't make any money, or for proof-of-concept ideas so they could evaluate tools for their organizations to later use in production.
 
-If this is what you're looking for, there are a host of new services like [Fly.io](https://fly.io/) and [Render](https://render.com/) that offer free tiers.
+If this is what you're looking for, there are a host of new services like [Fly.io](https://fly.io/) and [Render](https://render.com/) that offer free tiers. Depending on what you were using, its feasible that you could move your application stack there without too many code changes.
 
-However, we see another problem looming...
+Also, If you were using it for a Headless CMS for a static frontend, most of the open-source Headless CMS platforms offer their own cloud-based infrastructure which will avoid having to re-platform to a different CMS altogether.
+
+There is however potentially another problem looming...
 
 ## Stay in Control of your Application Stack
 
@@ -35,19 +37,23 @@ For that reason, we think the best alternative is to embrace these foundational 
 
 AWS and other providers have a [free tier](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all) which applies to most of its services. These are specific allowances for each of their services that you can use before you start incurring fees.
 
-And whilst you could go ahead and setup an EC2 instance (similar to a virtual machine or VM), and configure it to hibernate in a similar fashion to what Heroku was doing, there's another opportunity here that we would like to highlight.
+With this and similar offerings from other cloud providers like Google Cloud Platform and Microsoft Azure, you could set up an EC2 instance (similar to a virtual machine), configure it to hibernate in a similar fashion to what Heroku was doing, and move your application to it manually.
+
+This would take a bit of work, either [to SSH in and upload your application](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html), or [set up a deployment pipeline](https://aws.amazon.com/getting-started/hands-on/set-up-ci-cd-pipeline/).
+
+But there's also another opportunity here that we would like to highlight.
 
 ## Embrace Serverless
 
-If you notice, the limits on EC2 instances and the like are time-based. You get a certain number of hours of free computing power in traditional "always-on" computing models.
+If you notice, the limits on EC2 instances and the like are time-based. You get a certain number of hours of free computing power in traditional "always-on" computing models. After that you need to pay for them. Even though this is quite a generous offering, you could still leave yourself with a substantial bill if you're not careful.
 
-However, other services are based on the number of invocations. Why not take adantage of these? 
+However, other services are based on the number of invocations. Why not take advantage of these? 
 
 1. **Functions as a service** with AWS Lambda: 1 million free requests per month
 2. **File storage** You get 5GB of S3 static file storage (think images and static website hosting)
 3. AWS' no-sql **Database**, DynamoDB, comes at 25GB of storage for free
 
-If you were to build your solution using a combination of these, you could host it indefinitely. It wouldn't need special configuration to hibernate since that is it's natural state.
+The next time you need to build a proof of concept, or hobby app, you could build your solution using a combination of these and host it indefinitely. It wouldn't need special configuration to hibernate since that is it's natural state.
 
 Why not try serverless in your next proof of concept or hobby project?
 
