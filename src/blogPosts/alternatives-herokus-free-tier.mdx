@@ -1,0 +1,90 @@
+---
+slug: "blog/alternatives-herokus-free-tier"
+title: "Alternatives to Heroku’s Free Tier"
+description: "Heroku announced it's free tier plans are being phased out. Is there an alternative to Heroku?"
+date: 2022-08-26
+featureImage: "./assets/alternatives-herokus-free-tier/cover.png"
+tags: ["opinion", "open source", "serverless"]
+author: ben
+---
+Heroku announced yesterday that it's extremely popular free tier plans are being phased out starting on November 28 this year (2022). It's the end of an era for a lot of people, particularly independent bloggers who have hobby sites, developers evaluating software for use at their organizations, and non-profits who host their Headless CMS backend. But is there an alternative to Heroku?
+
+## The Heroku Story
+
+Heroku started as a platform offering hosting to exclusively Ruby-based websites. It's since expanded that option and now a host of "build packs" for other languages exist which can deploy infrastructure to Heroku in one click. This was likely the inspiration for similar "one click deploy" buttons that have been adopted by Netlify, Vercel and others.
+
+The unique thing about the way Heroku was built is that it leveraged [AWS' ability to hibernate EC2 instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html). So when you deploy your infrastructure to one of the free-tier "dynos" (a dyno is an environment in which your application can run, similar to containers), after a while of inactivity the dyno would hibernate: it would turn off, or go to sleep. The effect of this was that you couldn't contact the application straight away in that state. It would take around 30 seconds for it to activate, or wake up. This was enough time for Heroku to spin up your dyno again so that it can start accepting requests.
+
+This method did come with some complications like ephermeral file storage, meaning you couldn't store things like SQLLite databases or upload images alongside your application. But there were other Heroku services and 3rd party integrations to allow you to use databases and store images and other files.
+
+This was a great help to many people who's main concern was with small blogs built on an open source blogging platform such as Ghost or Strapi. With Heroku you could deploy your application and build a separate, static frontend (which would be hosted on a separate service, such as [Netlify](https://www.netlify.com/) or [Vercel](https://vercel.com/)). That way, you could write an article, rebuild your static site, and afterwards allow the application to hibernate. And it would be free to use.
+
+## Alternatives to Heroku
+
+Looking for an alternative to Heroku depends on what you were using for. Many people had used it to host backend services for small hobby apps that didn't make any money, or for proof-of-concept ideas so they could evaluate tools for their organizations to later use in production.
+
+If this is what you're looking for, there are a plethora of services which deploy containerized applications to a managed environment and that offer free tiers with different pricing models depending on what databases persistent storage and other services you require.
+
+Depending on what you were using, it's feasible that you could move your application stack there without too many code changes. In fact, both Fly and Render offer guides for migrating from Heroku:
+
+- [Speed up a Heroku App with Fly.io](https://fly.io/docs/app-guides/speed-up-a-heroku-app/)
+- [Migrate from Heroku to Render](https://render.com/docs/migrate-from-heroku)
+
+But some other popular alternatives include 
+
+- [Linode Managed Hosting](https://www.linode.com/products/managed/)
+- [Digital Ocean Managed Cloud Hosting](https://www.digitalocean.com/solutions/managed-cloud-hosting)
+- [Firebase Build](https://firebase.google.com/products-build)
+
+You could also get quite far by using the serverless functions that now come with (formerly) static hosting providers like [Vercel](https://vercel.com/docs/concepts/functions/serverless-functions), [Netlify](https://www.netlify.com/products/functions/), and [Gatsby Cloud](https://www.gatsbyjs.com/products/cloud/hosting). There are even complex frameworks like [RedwoodJs](https://redwoodjs.com/) that have been built on top of these providers.
+
+If you were using Heroku for a Headless CMS for a static frontend, most of the open-source Headless CMS platforms offer their own cloud-based infrastructure which will avoid having to re-platform to a different CMS altogether.
+
+There is however potentially another problem looming...
+
+## Stay in Control of your Application Stack
+
+If Heroku can suddenly turn around and kill it's free-for-starters offering, who's to say it won't happen for these other services? Even Vercel and Netlify leverage the raw computing power of cloud providers such as AWS, Azure and Google Cloud, repackaging those services and selling them at a profitable margin.
+
+For that reason, we think the best alternative is to embrace these foundational computing platforms, instead of standing again on the unsteady ground of a reseller.
+
+AWS and other providers have a [free tier](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all) which applies to most of its services. These are specific allowances for each of their services that you can use before you start incurring fees.
+
+With this and similar offerings from other cloud providers like Google Cloud Platform and Microsoft Azure, you could set up an EC2 instance (similar to a virtual machine), configure it to hibernate in a similar fashion to what Heroku was doing, and move your application to it manually.
+
+This would take a bit of work, either [to SSH in and upload your application](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html), or [set up a deployment pipeline](https://aws.amazon.com/getting-started/hands-on/set-up-ci-cd-pipeline/).
+
+But there's also another opportunity here that we would like to highlight.
+
+## Embrace Serverless
+
+If you notice, the limits on EC2 instances for containerized applications are time-based. You get a certain number of free hours in traditional "always-on" computing models. After that you need to pay for them. Even though this is quite a generous offering, you could still leave yourself with a substantial bill if you're not careful.
+
+However, other services are based on the number of invocations. Why not take advantage of these? 
+
+1. **Functions as a service** with AWS Lambda: 1 million free requests per month
+2. **File storage** You get 5GB of S3 static file storage (think images and static website hosting)
+3. AWS' no-sql **Database**, DynamoDB, comes at 25GB of storage for free
+
+The next time you need to build a proof of concept, or hobby app, you could build your solution using a combination of these and host it indefinitely. It wouldn't need special configuration to hibernate since that is it's natural state.
+
+Why not try serverless in your next proof of concept or hobby project?
+
+To do so, you could leverage a framework which allows you to write infrastructure-as-code, such as [AWS Amplify](https://aws.amazon.com/amplify/), [Serverless Stack](https://sst.dev/), the [Serverless framework](https://www.serverless.com/), or [Pulumi](https://www.pulumi.com/). There is a bit of an overhead to learning these tools so you will need to research which one is best for your needs.
+
+But there's an alternative...
+
+## Webiny: Leverage the Power of Serverless
+
+For a little over two years, we have been building Webiny. It's a Headless CMS you can use for your personal blog ... but it's not only a Headless CMS: it's a fully-featured application framework that you can use to scaffold unique applications that will have access to the existing setup we have built via plugins. 
+
+You don't need to reinvent the wheel of how to store files, or how to build a GraphQL API, or how to build an admin interface because we've already done that for you.
+
+And what is more, you get all of that for free when you choose the DynamoDB-only option in your setup. You will eventually pay for the amount of requests, storage and database usage ... but only if you exceed the free tier on AWS.
+
+Once your proof-of-concept has satisfied it's requirements, you can destroy your Webiny instance ... or leave it there for future tinkering!
+
+And if you want a place to write blog articles, [Webiny is built to do that out-of-the-box](https://www.webiny.com/enterprise-serverless-cms/headless-cms).
+
+[Visit our GitHub repo and give us a star today](https://github.com/webiny/webiny-js). And please let us know if you've built something with Webiny, the world's only serverless Headless CMS.
+
