@@ -23,15 +23,22 @@ This was a great help to many people who's main concern was with small blogs bui
 
 Looking for an alternative to Heroku depends on what you were using for. Many people had used it to host backend services for small hobby apps that didn't make any money, or for proof-of-concept ideas so they could evaluate tools for their organizations to later use in production.
 
-If this is what you're looking for, there are a host of new services like [Fly.io](https://fly.io/), and [Render](https://render.com/), both of which deploy containerized applications and that offer free tiers with different pricing models depending on what services and persistent storage you require.
+If this is what you're looking for, there are a plethora of services which deploy containerized applications to a managed environment and that offer free tiers with different pricing models depending on what databases persistent storage and other services you require.
 
 Depending on what you were using, it's feasible that you could move your application stack there without too many code changes. In fact, both Fly and Render offer guides for migrating from Heroku:
 
-- [Speed up a Heroku App with Fly](https://fly.io/docs/app-guides/speed-up-a-heroku-app/)
+- [Speed up a Heroku App with Fly.io](https://fly.io/docs/app-guides/speed-up-a-heroku-app/)
 - [Migrate from Heroku to Render](https://render.com/docs/migrate-from-heroku)
 
+But some other popular alternatives include 
 
-Also, If you were using it for a Headless CMS for a static frontend, most of the open-source Headless CMS platforms offer their own cloud-based infrastructure which will avoid having to re-platform to a different CMS altogether.
+- [Linode Managed Hosting](https://www.linode.com/products/managed/)
+- [Digital Ocean Managed Cloud Hosting](https://www.digitalocean.com/solutions/managed-cloud-hosting)
+- [Firebase Build](https://firebase.google.com/products-build)
+
+You could also potentially get quite far by using the serverless functions that now come with (formerly) static hosting providers like [Vercel](https://vercel.com/docs/concepts/functions/serverless-functions), [Netlify](https://www.netlify.com/products/functions/), and [Gatsby Cloud](https://www.gatsbyjs.com/products/cloud/hosting). There are even complex frameworks like [RedwoodJs](https://redwoodjs.com/) that have been built on top of these providers.
+
+If you were using Heroku for a Headless CMS for a static frontend, most of the open-source Headless CMS platforms offer their own cloud-based infrastructure which will avoid having to re-platform to a different CMS altogether.
 
 There is however potentially another problem looming...
 
