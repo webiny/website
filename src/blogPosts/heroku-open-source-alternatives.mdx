@@ -1,0 +1,71 @@
+---
+slug: "blog/heroku-open-source-alternatives"
+title: "Open source alternatives to Heroku"
+description: "Depending on your needs, you might need to have a content model that requires a property that doesn't come with Webiny's built-in field types. In this tutorial we will create a custom one."
+date: 2022-08-26
+featureImage: "./assets/heroku-open-source-alternatives/cover.png"
+tags: ["opinion", "open source", "serverless"]
+author: ben
+---
+Heroku announced yesterday that it's extremely popular free tier plans are being phased out starting on November 28 this year (2022). It's the end of an era for a lot of people, particularly independent bloggers who have hobby sites, developers evaluating software for use at their organizations, and non-profits who host their Headless CMS backend. But is there an alternative to Heroku?
+
+## The Heroku Story
+
+Heroku started as a platform offering hosting to exclusively Ruby-based websites. It's since expanded that option and now a host of "build packs" exist which can deploy infrastructure to Heroku in one click. This was likely the inspiration for similar "one click deploy" buttons that have been adopted by Netlify, Vercel and others.
+
+The unique thing about the way Heroku was built is that it leveraged [AWS' ability to hibernate EC2 instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html). So when you deploy your infrastructure to one of the free-tier "dynos" (a dyno is an environment in which your application can run, similar to containers), after a while of inactivity the dyno would hibernate: it would turn off, or go to sleep. The effect of this was that you couldn't contact the application straight away in that state. It would take around 30 seconds for it to activate, or wake up. This was enough time for Heroku to spin up your dyno again so that it could accept requests.
+
+It did come with some complications like ephermeral file storage, meaning you couldn't store things like SQLLite databases or upload images alongside your application. But there were other Heroku services and 3rd party integrations to allow you to use databases and store images and other files.
+
+This was a great help to many people who owned small blogs built on an open source blogging platform such as Ghost or Strapi. With Heroku you could deploy your application and build a separate, static frontend (which would be hosted on a separate service, such as [Netlify](https://www.netlify.com/) or [Vercel](https://vercel.com/)). That way, you could write an article, rebuild your static site, and afterwards allow the application to hibernate. And it would be free to use.
+
+## Alternatives to Heroku
+
+Heroku wasn't only used for blogging: many people had used it to host backend services for small hobby apps that didn't make any money, or for proof-of-concept ideas so they could evaluate tools for their organizations to later use in production. 
+
+If this is what you're looking for, there are a host of new services like [Fly.io](https://fly.io/) and [Render](https://render.com/) that offer free tiers.
+
+However, we see another problem looming...
+
+## Stay in Control of your Application Stack
+
+If Heroku can suddenly turn around and kill it's free-for-starters offering, who's to say it won't happen for these other services? Even Vercel and Netlify leverage the raw computing power of cloud providers such as AWS, Azure and Google Cloud, repackaging those services and selling them at a profitable margin.
+
+For that reason, we think the best alternative is to embrace these foundational computing platforms, instead of standing again on the unsteady ground of a reseller.
+
+AWS and other providers have a [free tier](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all) which applies to most of its services. These are specific allowances for each of their services that you can use before you start incurring fees.
+
+And whilst you could go ahead and setup an EC2 instance (similar to a virtual machine or VM), and configure it to hibernate in a similar fashion to what Heroku was doing, there's another opportunity here that we would like to highlight.
+
+## Embrace Serverless
+
+If you notice, the limits on EC2 instances and the like are time-based. You get a certain number of hours of free computing power in traditional "always-on" computing models.
+
+However, other services are based on the number of invocations. Why not take adantage of these? 
+
+1. **Functions as a service** with AWS Lambda: 1 million free requests per month
+2. **File storage** You get 5GB of S3 static file storage (think images and static website hosting)
+3. AWS' no-sql **Database**, DynamoDB, comes at 25GB of storage for free
+
+If you were to build your solution using a combination of these, you could host it indefinitely. It wouldn't need special configuration to hibernate since that is it's natural state.
+
+Why not try serverless in your next proof of concept or hobby project?
+
+To do so, you could leverage a framework which allows you to write infrastructure-as-code, such as [AWS Amplify](https://aws.amazon.com/amplify/), [Serverless Stack](https://sst.dev/), the [Serverless framework](https://www.serverless.com/), or [Pulumi](https://www.pulumi.com/) There is a bit of an overhead to learning these tools so you will need to research which one is best for your needs.
+
+But there's an alternative...
+
+## Webiny: Leverage the Power of Serverless
+
+For a little over two years, we have been building Webiny. It's a Headless CMS you can use for your personal blog ... but it's not only a Headless CMS: it's a fully-featured application framework that you can use to scaffold unique applications that will have access to the existing setup we have built via plugins. 
+
+You don't need to reinvent the wheel of how to store files, or how to build a GraphQL API, or how to build an admin interface because we've already done that for you.
+
+And what is more, you get all of that for free when you choose the DynamoDB-only option in your setup. You will eventually pay for the amount of requests, storage and database usage ... but only if you exceed the free tier on AWS.
+
+Once your proof-of-concept has satisfied it's requirements, you can destroy your Webiny instance ... or leave it there for future tinkering!
+
+And if you want a place to write blog articles, [Webiny is built to do that out-of-the-box](https://www.webiny.com/enterprise-serverless-cms/headless-cms).
+
+[Visit our GitHub repo and give us a star today](https://github.com/webiny/webiny-js). And please let us know if you've built something with Webiny, the world's only serverless Headless CMS.
+
