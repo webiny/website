@@ -78,7 +78,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         });
     });
     
-    result.data.knowledgeBase.edges.forEach(({ node }) => {
+    result.data.techIntergation.edges.forEach(({ node }) => {
         createPage({
             path: node.frontmatter.slug,
             component: techIntegrationTemplate,
