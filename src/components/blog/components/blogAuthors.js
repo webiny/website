@@ -15,7 +15,7 @@ import judemiracleImg from "../assets/jude-miracle.png";
 import emmanuelImg from "../assets/emmanuel.png";
 import isaacImg from "../assets/isaac-okoro.png";
 import victoryImg from "../assets/victory-tuduo.png";
-import nobodyImg from "../assets/nobody.png";
+import menardImg from "../assets/menard.png";
 
 export default {
     sven: {
@@ -122,8 +122,8 @@ export default {
     },
     menardMaranan: {
         name: "Menard Maranan",
-        description: "",
-        avatar: nobodyImg,
-        twitter: "",
+        description: "Full-stack Developer & Technical Writer",
+        avatar: menardImg,
+        twitter: "menard_codes",
     },
 };
