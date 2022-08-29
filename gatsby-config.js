@@ -54,14 +54,14 @@ module.exports = {
         {
             resolve: "gatsby-source-filesystem",
             options: {
-                path: `${__dirname}/src/blogPosts`,
+                path: `${__dirname}/data/blogPosts`,
                 name: "blogPosts",
             },
         },
         {
             resolve: "gatsby-source-filesystem",
             options: {
-                path: `${__dirname}/src/knowledgeBase`,
+                path: `${__dirname}/data/knowledgeBase`,
                 name: "knowledgeBase",
             },
         },

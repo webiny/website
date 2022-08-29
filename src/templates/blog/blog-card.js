@@ -3,8 +3,8 @@ import styled from "react-emotion";
 import Img from "gatsby-image";
 import { navigate, Link } from "gatsby";
 // utils
-import theme from "../../utils/theme";
-import mq from "../../utils/breakpoints";
+import theme from "../../components/utils/theme";
+import mq from "../../components/utils/breakpoints";
 import authors from "./blogAuthors";
 
 const BlogCardWrapper = styled("div")(

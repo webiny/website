@@ -2,8 +2,8 @@ import React, { Fragment } from "react";
 import Breadcrumb from "../../layouts/components/breadcrumb";
 
 // utils
-import ContentContainer from "../ui/content-container";
-import PostCard from "./components/postCard";
+import ContentContainer from "../../components/ui/content-container";
+import PostCard from "./postCard";
 
 // styles
 import {

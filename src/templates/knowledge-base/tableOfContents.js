@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { css, cx } from "emotion";
-import theme from "../../utils/theme";
-import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
+
+import theme from "../../components/utils/theme";
+import { useIntersectionObserver } from "./hooks/useIntersectionObserver";
 
 const styles = css`
   --size: 0.5rem;

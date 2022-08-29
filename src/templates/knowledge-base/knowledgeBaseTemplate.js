@@ -1,19 +1,19 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import styled from "react-emotion";
-import { css } from "emotion";
-import "remark-admonitions/styles/classic.css";
-import theme from "../utils/theme";
-import mq from "../utils/breakpoints";
-import BaseLayout from "../../layouts/base";
-import { MDXProvider } from "@mdx-js/react";
+import { css, cx } from "emotion";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import ExternalLink from "../utils/ExternalLink";
-import AuthorCard from "./components/AuthorCard";
-import NewsletterFooter from "./components/NewsletterFooter";
+import { MDXProvider } from "@mdx-js/react";
+
+import theme from "../../components/utils/theme";
+import mq from "../../components/utils/breakpoints";
+import BaseLayout from "../../layouts/base";
+import ExternalLink from "../../components/utils/ExternalLink";
 import Breadcrumb from "../../layouts/components/breadcrumb";
-import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
-deckDeckGoHighlightElement();
+import TableOfContents from "./tableOfContents";
+import NewsletterFooter from "./NewsletterFooter";
+
+import "remark-admonitions/styles/classic.css";
 
 const shortcodes = { ExternalLink };
 
@@ -34,8 +34,8 @@ const BlogContainer = styled("div")(
 
 const BlogHeader = styled("div")(
     {
+        boxSizing: "border-box",
         width: "100%",
-        maxWidth: 1200,
         marginTop: 25,
         margin: "0 auto",
         ".blog-header-inner": {
@@ -66,11 +66,22 @@ const blogStyles = css(
         h1: {
             fontSize: "4em",
             fontWeight: theme.fontWeight.bold,
-            textAlign: "center",
             margin: "75px 0 50px 0",
             lineHeight: "1em",
+            textAlign: "center",
         },
         ".blog-post-content": {
+            h1: {
+                "&::after": {
+                    position: "absolute",
+                    bottom: -20,
+                    left: 0,
+                    content: `""`,
+                    width: "100%",
+                    height: 2,
+                    backgroundColor: theme.color.primaryDark,
+                },
+            },
             h2: {
                 fontSize: "2.3em",
                 fontWeight: theme.fontWeight.semiBold,
@@ -104,13 +115,33 @@ const blogStyles = css(
                     textDecoration: "none",
                 },
             },
-            /*
-             * We're using `gatsby-remark-autolink-headers` plugin to generate heading links.
-             * Because it works on all ".mdx" files, so, we can't just disable it for "/blog/*".
-             * Therefore, we're removing the heading links via CSS.
-             */
+            "h1,h2,h3,h4,h5,h6": {
+                // Add an offset when we jump to a heading by clicking the link from Table of Contents (TOC)
+                // The value depends upon the height of sticky header
+                // banner height + header height + breadcrumb height - margin top on heading(s)
+                scrollMarginTop: 100,
+
+                display: "flex",
+                // Make link anchor visible
+                "&:hover": {
+                    "a.heading-link-anchor": {
+                        opacity: 1,
+                    },
+                },
+            },
             "a.heading-link-anchor": {
-                display: "none",
+                display: "flex",
+                alignItems: "center",
+                // Hide link anchor by default
+                opacity: 0,
+                transition: "opacity 200ms ease-in-out",
+                "& svg": {
+                    width: "min(1em, 48px)",
+                    height: "min(1em, 48px)",
+                },
+                "&:hover": {
+                    textDecoration: "underline",
+                },
             },
             img: {
                 margin: "0 auto",
@@ -154,9 +185,6 @@ const blogStyles = css(
                     },
                 },
             },
-            "video": {
-                width: '100%'
-            },
             blockquote: {
                 fontSize: "1.2em",
                 fontStyle: "italic",
@@ -180,9 +208,7 @@ const blogStyles = css(
                 background: "rgba(0,0,0,.05)",
                 borderRadius: "2px",
                 fontSize: "0.9em",
-                color: "black",
                 whiteSpace: "pre-wrap",
-                "--deckgo-highlight-code-font-size": "10px",
                 "&.language-text": {
                     fontSize: "0.9em",
                     padding: "3px 5px",
@@ -202,11 +228,6 @@ const blogStyles = css(
             },
             ".twitter-tweet": {
                 margin: "0 auto",
-            },
-            "deckgo-highlight-code": {
-                marginBottom: "20px",
-                "--deckgo-highlight-code-font-size": "0.8em",
-                "--deckgo-highlight-code-carbon-toolbar-display": "none",
             },
         },
     },
@@ -231,39 +252,30 @@ const HorizontalLine = styled("div")({
     backgroundColor: theme.color.darkGray,
 });
 
-const TagList = styled("div")(
+const wrapperGridStyle = css(
     {
-        "& .tag": {
-            boxSizing: "border-box",
-            padding: "2px 10px",
-            border: "1px solid #EAEAEA",
-            backgroundColor: "#FAFAFC",
-            textTransform: "uppercase",
-            fontSize: 9,
-            fontWeight: theme.fontWeight.semiBold,
-            color: "#313097",
-            marginRight: 8,
-            marginBottom: 5,
-            display: "inline-block",
-            cursor: "pointer",
-            transition: "transform 200ms ease-in",
+        "--sidebar-width": "300px",
+        display: "flex",
+        maxWidth: 1440,
+        margin: "0 auto",
 
-            "&:hover": {
-                transform: "translateY(-2px)",
-            },
+        "& .sidebar": {
+            width: "var(--sidebar-width)",
+        },
+        "& .content": {
+            flexGrow: 1,
+            boxSizing: "border-box",
         },
     },
     mq({
-        "& .text": {
-            fontSize: [theme.fontSize.base, theme.fontSize.xl],
-            display: ["block", "inline-block"],
-            marginRight: [0, 16],
-            marginBottom: [8, 0],
+        paddingTop: [30, 0],
+        paddingBottom: [30, 100],
+        "& .sidebar": {
+            display: ["none", "block"],
         },
-        "& .tag": {
-            fontSize: [9, 12],
-            marginRight: [8, 12],
-            letterSpacing: ["0", "0.025em"],
+        "& .content": {
+            maxWidth: ["100%", "calc(min(100% - var(--sidebar-width), 1140px))"],
+            padding: ["0px 16px", "0px 16px 0px 24px"],
         },
     }),
 );
@@ -272,7 +284,7 @@ export default function Template({
     data, // this prop will be injected by the GraphQL query below.
 }) {
     const {
-        mdx: { frontmatter, body },
+        mdx: { frontmatter, body, tableOfContents },
     } = data; // data.markdownRemark holds your post data
 
     // handle image transformation exceptions
@@ -283,7 +295,7 @@ export default function Template({
 
     const breadcrumbs = [
         { link: "/", text: "Home" },
-        { link: "/blog", text: "Blog" },
+        { link: "/knowledge-base", text: "Knowledge Base" },
         { text: frontmatter.title },
     ];
 
@@ -295,35 +307,30 @@ export default function Template({
             image={featureImage}
         >
             <Breadcrumb theme="dark" breadcrumbs={breadcrumbs} />
-            <div className={blogStyles}>
-                <BlogHeader>
-                    <div className="blog-header-inner">
-                        <Link to="/blog">← blog</Link>
-                    </div>
-                    <h1>{frontmatter.title}</h1>
-                    <AuthorCard author={frontmatter.author} publishedDate={frontmatter.date} />
-                </BlogHeader>
-                <BlogContainer>
-                    <div className="blog-post">
-                        <div className="blog-post-content">
-                            <MDXProvider components={shortcodes}>
-                                <MDXRenderer>{body}</MDXRenderer>
-                            </MDXProvider>
+            <div className={wrapperGridStyle}>
+                <div className="sidebar">
+                    <TableOfContents tableOfContents={tableOfContents} />
+                </div>
+                <div className={cx("content", blogStyles)}>
+                    <BlogHeader>
+                        <div className="blog-header-inner">
+                            <Link to="/knowledge-base">← Knowledge Base</Link>
                         </div>
-                    </div>
-                    <HorizontalLine />
-                    <TagList>
-                        <span className={"text"}>Find more articles on the topic of:</span>
-                        {Array.isArray(frontmatter.tags) &&
-                            frontmatter.tags.map((tag, index) => (
-                                <Link key={index} className="tag" to={`/blog/?query=${tag}`}>
-                                    {tag}
-                                </Link>
-                            ))}
-                    </TagList>
-                </BlogContainer>
-                <NewsletterFooter />
+                        <h1>{frontmatter.title}</h1>
+                    </BlogHeader>
+                    <BlogContainer>
+                        <div className="blog-post">
+                            <div className="blog-post-content">
+                                <MDXProvider components={shortcodes}>
+                                    <MDXRenderer>{body}</MDXRenderer>
+                                </MDXProvider>
+                            </div>
+                        </div>
+                        <HorizontalLine />
+                    </BlogContainer>
+                </div>
             </div>
+            <NewsletterFooter />
         </BaseLayout>
     );
 }
@@ -348,6 +355,7 @@ export const pageQuery = graphql`
                     }
                 }
             }
+            tableOfContents
         }
     }
 `;

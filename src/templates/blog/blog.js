@@ -3,14 +3,15 @@ import { DelayInput } from "react-delay-input";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import queryString from "query-string";
 import { navigate } from "gatsby-link";
+
 import Breadcrumb from "../../layouts/components/breadcrumb";
 
 // utils
-import ContentContainer from "../ui/content-container";
-import BlogCard from "./components/blog-card";
-import FeaturedBlog from "./components/featured-blog";
-import Button from "../ui/button";
-import { usePrevious } from "../utils/hooks";
+import ContentContainer from "../../components/ui/content-container";
+import BlogCard from "./blog-card";
+import FeaturedBlog from "./featured-blog";
+import Button from "../../components/ui/button";
+import { usePrevious } from "../../components/utils/hooks";
 
 // assets
 import CloseIcon from "./assets/cross.inline.svg";

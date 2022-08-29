@@ -1,20 +1,20 @@
-import adrianImg from "../assets/adrian.png";
-import albionaImg from "../assets/albiona.png";
-import ashuImg from "../assets/ashu.png";
-import brunoImg from "../assets/bruno.png";
-import mislavImg from "../assets/mislav.png";
-import nicoImg from "../assets/nico.png";
-import pavelImg from "../assets/pavel.png";
-import svenImg from "../assets/sven.png";
-import swapnilImg from "../assets/swapnil.png";
-import IgorImg from "../assets/igor.png";
-import BenImg from "../assets/ben.png";
-import JoesphImg from "../assets/joseph-chege.png";
-import TammiImg from "../assets/taminoturoko-briggs.png";
-import judemiracleImg from "../assets/jude-miracle.png";
-import emmanuelImg from "../assets/emmanuel.png";
-import isaacImg from "../assets/isaac-okoro.png";
-import victoryImg from "../assets/victory-tuduo.png";
+import adrianImg from "./assets/adrian.png";
+import albionaImg from "./assets/albiona.png";
+import ashuImg from "./assets/ashu.png";
+import brunoImg from "./assets/bruno.png";
+import mislavImg from "./assets/mislav.png";
+import nicoImg from "./assets/nico.png";
+import pavelImg from "./assets/pavel.png";
+import svenImg from "./assets/sven.png";
+import swapnilImg from "./assets/swapnil.png";
+import IgorImg from "./assets/igor.png";
+import BenImg from "./assets/ben.png";
+import JoesphImg from "./assets/joseph-chege.png";
+import TammiImg from "./assets/taminoturoko-briggs.png";
+import judemiracleImg from "./assets/jude-miracle.png";
+import emmanuelImg from "./assets/emmanuel.png";
+import isaacImg from "./assets/isaac-okoro.png";
+import victoryImg from "./assets/victory-tuduo.png";
 
 export default {
     sven: {

@@ -2,13 +2,13 @@ import React from "react";
 import styled from "react-emotion";
 import { css } from "emotion";
 
-import theme from "../../utils/theme";
-import mq from "../../utils/breakpoints";
+import theme from "../../components/utils/theme";
+import mq from "../../components/utils/breakpoints";
 
-import Button from "../../ui/button";
-import ContentContainer from "../../ui/content-container";
+import Button from "../../components/ui/button";
+import ContentContainer from "../../components/ui/content-container";
 // assets
-import sectionBg from "../assets/bgwaves.svg";
+import sectionBg from "./assets/bgwaves.svg";
 
 const Section = styled("section")(
     {

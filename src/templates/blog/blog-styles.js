@@ -1,11 +1,12 @@
 import chevron from "./assets/chevron.svg";
 import { css } from "emotion";
+import styled from "react-emotion";
+
 import heroBg from "./assets/hero-bg.svg";
-import mq from "../utils/breakpoints";
+import mq from "../../components/utils/breakpoints";
+import theme from "../../components/utils/theme";
 // assets
 import rectImg from "./assets/featured-rect.svg";
-import styled from "react-emotion";
-import theme from "../utils/theme";
 
 export const SectionWithBackground = styled("section")(
     {

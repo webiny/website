@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import BaseLayout from "../layouts/base";
-import Blogs from "../components/blog/blog";
+import Blogs from "../templates/blog/blog";
 
 const metaDescription = "Find out the latest news from Webiny";
 
