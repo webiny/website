@@ -12,6 +12,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const knowledgeBaseTemplate = require.resolve(
         `./src/templates/knowledge-base/knowledgeBaseTemplate.js`,
     );
+    const techIntegrationTemplate = require.resolve(
+        `./src/templates/tech-integration/techIntegrationTemplate.js`,
+    );
 
     const result = await graphql(`
         {
@@ -26,6 +29,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             }
             knowledgeBase: allMdx(
                 filter: { frontmatter: { slug: { regex: "/knowledge-base/" } } }
+            ) {
+                edges {
+                    node {
+                        frontmatter {
+                            slug
+                        }
+                    }
+                }
+            }
+            techIntergation: allMdx(
+                filter: { frontmatter: { slug: { regex: "/tech-integration/" } } }
             ) {
                 edges {
                     node {
@@ -58,6 +72,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         createPage({
             path: node.frontmatter.slug,
             component: knowledgeBaseTemplate,
+            context: {
+                slug: node.frontmatter.slug,
+            },
+        });
+    });
+    
+    result.data.knowledgeBase.edges.forEach(({ node }) => {
+        createPage({
+            path: node.frontmatter.slug,
+            component: techIntegrationTemplate,
             context: {
                 slug: node.frontmatter.slug,
             },
