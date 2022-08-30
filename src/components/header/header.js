@@ -301,9 +301,7 @@ const MenuItemList = ({ cards, sticky = true }) => {
                         data-show-count="true"
                         data-size="large" 
                         aria-label="Star webiny/webiny-js on GitHub"
-                        >
-                        Star us on GitHub
-                        </GitHubButton>
+                    />
                 </li>
                 <hr className={horizontalLine} />
                 <li>
