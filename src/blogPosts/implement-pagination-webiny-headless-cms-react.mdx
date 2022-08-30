@@ -7,17 +7,19 @@ featureImage: "./assets/implement-pagination-webiny-headless-cms-react/cover.png
 author: tammi
 date: 2022-07-20
 ---
+import OnPagePromo from "../components/ui/on-page-promo/on-page-promo"
 
 Fetching data and rendering it in a UI built with React is fantastic … until your blog starts to run into tens, or even hundreds of articles. Once it does, you’ll notice your API calls will slow down to a crawl, and rendering will start to become unresponsive. Let’s look at how you can eliminate these issues using Pagination. What is pagination? How do you fetch data using pagination with Apollo Client in a React application? These questions will be answered as we dive into building a paginated blog with React and [Webiny Headless CMS](https://www.webiny.com/enterprise-serverless-cms/headless-cms).
 
 
-## Prerequisite
+## Prerequisites
 
 To follow along with this tutorial, you need to have the following:
 
-- [AWS account and user credentials](https://www.webiny.com/docs/infrastructure/aws/configure-aws-credentials) are set up on your system.
-- Basic knowledge of React and GraphQL.
-- Node.js >=14 and yarn ^1.22.0 || >=2 installed in your system.
+- [AWS account and user credentials](https://www.webiny.com/docs/infrastructure/aws/configure-aws-credentials) are set up on your system
+- Basic knowledge of React and GraphQL
+- Node.js >=14 and yarn ^1.22.0 || >=2 installed in your system
+- Star our [GitHub Repo](https://github.com/webiny/webiny-js) 😉
 
 ## Introduction to Webiny Headless CMS
 
@@ -196,6 +198,8 @@ After that, click on **SAVE & PUBLISH** at the top-right of the page, then click
 To test and introspect GraphQL queries and mutations on our content models before using them from a client-side application we can use the GraphQL playground. To access the playground, click on **API Playground** in the sidebar of the Admin app.
 
 Now that we have set up a Webiny project and created our Content model, we are left with consuming the GraphQL API in the front-end and using it to create the pagination functionality.
+
+<OnPagePromo />
 
 ## Implementing Pagination
 

@@ -60,4 +60,7 @@ export default {
         "6xl": "4rem",
     },
     contentWidth: 1200,
+    borderRadius: {
+        base: "4px"
+    }
 };
