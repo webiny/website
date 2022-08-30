@@ -2,7 +2,7 @@ import React from 'react'
 import styled from "react-emotion";
 import theme from "../../utils/theme";
 
-const Container = styled("div")`
+const Container = styled("aside")`
   background-color: ${theme.color.gray100};
   padding: 1rem;
   border-radius: ${theme.borderRadius.base};
