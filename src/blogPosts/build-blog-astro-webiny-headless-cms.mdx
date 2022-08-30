@@ -7,6 +7,7 @@ featureImage: "./assets/build-blog-astro-webiny-headless-cms/cover.png"
 author: miracleJude
 date: 2022-07-27
 ---
+import OnPagePromo from "../components/ui/on-page-promo/on-page-promo"
 
 ## **Introduction**
 
@@ -52,7 +53,8 @@ To follow along with this tutorial, we’re going to assume you have already don
 - [Set up your AWS credentials locally](https://www.webiny.com/docs/infrastructure/aws/configure-aws-credentials)
 - Ensure that you have [Node.js](https://nodejs.org/en/download/) >= 14.15.0 installed.
 - Ensure that you have yarn ^1.22.0 || >=2 installed - Webiny works with both yarn versions.
-- Basic understanding of [React](https://reactjs.org/) and [javascript](https://www.javascript.com/).
+- Basic understanding of [React](https://reactjs.org/) and [javascript](https://www.javascript.com/)
+- Star our [GitHub Repo](https://github.com/webiny/webiny-js) 😉
 
 ## **Setting up our Webiny Headless CMS**
 
@@ -166,6 +168,8 @@ Now, head to **Setting > Access Management > API key**. Then create your API key
 ![Webiny API key generated](./assets/build-blog-astro-webiny-headless-cms/api-key.png)
 
 Once you have saved the settings, an API Key will be generated. Copy that and keep it with your API URL somewhere safe. We will need it to authenticate fetching data with Astro later on.
+
+<OnPagePromo />
 
 ## **Setting up our Frontend with Astro**
 
