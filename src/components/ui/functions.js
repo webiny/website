@@ -1,4 +1,5 @@
 function trackGoToGithub() {
+    console.log('tracked')
     if (window.wts) {
         window.wts.trackEvent("website-action", { action: "Go to GitHub" });
     }
