@@ -15,11 +15,8 @@ import judemiracleImg from "../assets/jude-miracle.png";
 import emmanuelImg from "../assets/emmanuel.png";
 import isaacImg from "../assets/isaac-okoro.png";
 import victoryImg from "../assets/victory-tuduo.png";
-<<<<<<< HEAD
 import menardImg from "../assets/menard.png";
-=======
-import calebImg from "../assets/nobody.png"
->>>>>>> c772f4f (chore(blogposts): add frontmatter info, author details)
+import nobodyImg from "../assets/nobody.png"
 
 export default {
     sven: {
