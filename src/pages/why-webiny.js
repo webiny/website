@@ -8,7 +8,7 @@ import WhyWebinyTable from "../components/why-webiny/why-webiny-table/why-webiny
 
 import BaseLayout from "../layouts/base";
 import TableDisclaimer from "../components/why-webiny/table-disclaimer/table-disclaimer";
-import shareCard from "../assets/why-webiny/why-webiny-share-card.png"
+import shareCard from "../assets/why-webiny/why-webiny-share-card.png";
 
 const WhyWebinyPage = () => {
     return (

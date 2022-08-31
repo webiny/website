@@ -3,7 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import BaseLayout from "../../layouts/base";
 import PageBuilder from "../../components/serverless-app/page-builder/page-builder";
-import shareCard from "../../components/serverless-app/page-builder/assets/pagebuilder-share-card.png"
+import shareCard from "../../components/serverless-app/page-builder/assets/pagebuilder-share-card.png";
 
 export default () => {
     useEffect(() => {

@@ -384,11 +384,7 @@ const Header = ({ hasBanner = true, sticky = false }) => {
                     <NavBar className={mobileMenuOpen ? "mobile-opened" : "mobile-closed"}>
                         <WebinyLogo alt="Webiny Home">
                             <Link rel="prerender" to="/">
-                                <img
-                                    alt="Webiny Logo"
-                                    className={logoImage}
-                                    src={logoOrange}
-                                />
+                                <img alt="Webiny Logo" className={logoImage} src={logoOrange} />
                             </Link>
                         </WebinyLogo>
 

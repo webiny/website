@@ -3,7 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import BaseLayout from "../../layouts/base";
 import HeadlessCMS from "../../components/serverless-app/headless-cms/headless-cms";
-import shareCard from "../../components/serverless-cms/assets/headless-cms-sharecard.png"
+import shareCard from "../../components/serverless-cms/assets/headless-cms-sharecard.png";
 
 export default () => {
     useEffect(() => {
