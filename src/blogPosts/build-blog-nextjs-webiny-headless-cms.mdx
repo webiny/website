@@ -76,55 +76,55 @@ You’ll get a result like this in the terminal
 ```bash
 Environment: dev
 -------------------------
-➜ Main GraphQL API: https://d1f3sx31upp5p.cloudfront.net/graphql
+➜ Main GraphQL API: https://your-unique-id.cloudfront.net/graphql
 ➜ Headless CMS GraphQL API:
-   - Manage API: https://d1f3sx31u5p5p.cloudfront.net/cms/manage/{LOCALE_CODE}
-   - Read API: https://d1f3sx31u5p5p.cloudfront.net/cms/read/{LOCALE_CODE}
-   - Preview API: https://d1f3s31up5p5p.cloudfront.net/cms/preview/{LOCALE_CODE}
-➜ Admin app: https://d3ie6dkp5cqkv.cloudfront.net
+   - Manage API: https://your-unique-id.cloudfront.net/cms/manage/{LOCALE_CODE}
+   - Read API: https://your-unique-id.cloudfront.net/cms/read/{LOCALE_CODE}
+   - Preview API: https://your-unique-id.cloudfront.net/cms/preview/{LOCALE_CODE}
+➜ Admin app: https://your-unique-id.cloudfront.net
 ➜ Public website:
-   - Website URL: https://d15psgz3owtqo.cloudfront.net
-   - Website preview URL: https://d2cfl8dxk3nc.cloudfront.net
+   - Website URL: https://your-unique-id.cloudfront.net
+   - Website preview URL: https://your-unique-id.cloudfront.net
 -------------------------
 ```
 
 When the deployment is done, you can click on the admin `Admin app` will redirect you to the admin area where you’d be required to create an admin user. The admin page looks like the image below.
 
-![create-admin-user.png](./assets/build-blog-nextjs-webiny-headless-cms/create-admin-user.png)
+![Creating an admin user](./assets/build-blog-nextjs-webiny-headless-cms/create-admin-user.png)
 
 In the admin area, you’ll also be requested to install some additional services or functions like **18N** which is short for **Internationalization**, **File Manager**, **Page Builder**, **Form Builder**, and the **Headless CMS.**
 
 When all the installation is done, you’ll be redirected to the dashboard, it looks like the image below.
 
-![webiny-dashboard.png](./assets/build-blog-nextjs-webiny-headless-cms/webiny-dashboard.png)
+![Webiny's dashboard](./assets/build-blog-nextjs-webiny-headless-cms/webiny-dashboard.png)
 
 You can click on the **NEW CONTENT MODEL** button in the **Headless CMS** card, and it’ll take you to the area where you can create your content models. You can read more about the fields that you will add as you create your content models [here](https://www.webiny.com/docs/headless-cms/integrations/nextjs#authors)
 
 The content model of the authors looks like the image below. You can choose to make it exactly like this or customize it in a way that suits your need.
 
-![author-model.png](./assets/build-blog-nextjs-webiny-headless-cms/author-model.png)
+![Creating the author model](./assets/build-blog-nextjs-webiny-headless-cms/author-model.png)
 
 This is what the **posts** content model looks like, below.
 
-![posts-model.png](./assets/build-blog-nextjs-webiny-headless-cms/posts-model.png)
+![Creating the posts content model](./assets/build-blog-nextjs-webiny-headless-cms/posts-model.png)
 
 When you’re done with the processes above, we’ll need to connect our Next.js application to the Headless CMS, so we can always perform requests to the GraphQL API. To start with this step, you’ll head to the **ACCESS MANAGEMENT** tab in the dashboard.
 
-![access-management.png](./assets/build-blog-nextjs-webiny-headless-cms/access-management.png)
+![Access Management section](./assets/build-blog-nextjs-webiny-headless-cms/access-management.png)
 
 Click on **API Keys**, and you’ll be redirected to a new UI like the one below.
 
-![new-api-key.png](./assets/build-blog-nextjs-webiny-headless-cms/new-api-key.png)
+![Generating a new API key](./assets/build-blog-nextjs-webiny-headless-cms/new-api-key.png)
 
 You can fill the form fields with all the necessary information. In the **Headless CMS** section, you should select **Custom Access** option in the Access Level dropdown. Since you selected the “Custom Access” option, you’ll be able to customize the types of GraphQL operations you want to perform.
 
-![headless-API-config.png](./assets/build-blog-nextjs-webiny-headless-cms/headless-API-config.png)
+![Headless API config](./assets/build-blog-nextjs-webiny-headless-cms/headless-API-config.png)
 
 In the **Access Scope** dropdown of the **CONTENT MODEL GROUPS**, select **All groups.** You’ll repeat the same thing for the **CONTENT MODELS** then you’ll select **All models** in the Access Scope dropdown. In the **CONTENT ENTRIES**, select **All entries** in the dropdown.
 
 The image below shows all the appropriate settings for the **File Manager** 
 
-![file-manager-config.png](./assets/build-blog-nextjs-webiny-headless-cms/file-manager-config.png)
+![File Manager API config](./assets/build-blog-nextjs-webiny-headless-cms/file-manager-config.png)
 
 When you’re done, you can click on the **SAVE API KEY** button, and copy it to a safe location. We will use this later to authenticate with the GraphQL API.
 
@@ -526,8 +526,8 @@ Because we have a file named `[slug.js]`, the `Link` component of Next.js will t
 ```jsx
 <Link href={`/${post}`} passHref>
   <Card>
-		card content
-	</Card>
+    card content
+  </Card>
 </Link>
 ```
 
@@ -619,7 +619,7 @@ In the next few lines below, we're mapping through the result from the API endpo
 
 With that step out of the way, you can take a look at what the index page looks like below. 
 
-[](https://res.cloudinary.com/meje/image/upload/v1661001634/article%20assets/disrupt-home_eqhzgx.pn)
+![Blog list page](./assets/build-blog-nextjs-webiny-headless-cms/blog-list-page.png)
 
 ### Building the slug page
 
@@ -736,7 +736,7 @@ The rich text component takes in the `body` object as a prop and renders it nice
 
 The image below shows what the slug page looks like.
 
-[](https://www.notion.so/webiny/Build-a-blog-with-Next-js-and-Webiny-Headless-CMS-217ac71776bd483599cc6b5ef15d4286#c728f85f52ab41fb9881da4c84ce644c)
+![Single page](./assets/build-blog-nextjs-webiny-headless-cms/single-page.png)
 
 ### Building the Author's page
 
@@ -780,7 +780,7 @@ export async function getStaticProps(context) {
 
 You can decide to build any layout that feels right or at least anyone that you're comfortable with making. This is what my own author's page looks like when it was built, take a look at it below.
 
-[](https://www.notion.so/webiny/Build-a-blog-with-Next-js-and-Webiny-Headless-CMS-217ac71776bd483599cc6b5ef15d4286#4af52dabd08240c4adafbeab76963702)
+![Authors page](./assets/build-blog-nextjs-webiny-headless-cms/author-page.png)
 
 The image above shows the authors' page without the number of articles they've published. You can decide to add that to your content model if you want to.
 
