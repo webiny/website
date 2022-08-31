@@ -1,0 +1,441 @@
+---
+slug: "blog/implement-pagination-webiny-headless-cms-vue"
+title: "How to Implement Pagination with Webiny Headless CMS in Vue"
+description: "In this tutorial, we are going to learn how to implement cursor-based pagination when using Webiny headless CMS in Vue."
+tags: ["vue", "build projects", "pagination", "contributed articles"]
+featureImage: "./assets/implement-pagination-webiny-headless-cms-vue/cover.png"
+author: tammi
+date: 2022-09-14
+---
+import OnPagePromo from "../components/ui/on-page-promo/on-page-promo"
+
+When you're working with large data sets that from an API, fetching and rendering them at once could cause some negative effects like the slow loading of components which causes a bad user experience. A common practice of mitigating this issue is by using pagination.
+
+In this tutorial, we are going to learn how to implement pagination when using [Webiny headless CMS](https://www.webiny.com/docs/overview/applications/headless-cms) in Vue.
+
+## Prerequisite
+
+To follow along with this tutorial, you need to have the following:
+
+- [AWS account and user credentials](https://www.webiny.com/docs/infrastructure/aws/configure-aws-credentials) are set up on your system.
+- Vue CLI installed
+- Basic knowledge of Vue and GraphQL.
+- Any IDE of your choice. I recommend VS Code
+- Node.js >=14 and yarn ^1.22.0 || >=2 installed in your system.
+
+## Introduction to Webiny headless CMS
+
+A headless CMS is one that deals strictly with the content. It is a backend-only CMS where the content repository is separated from the presentation layer. Once created its content is served via an API giving front-end developers full control over the user experience using their native tools.
+The Webiny [headless CMS](https://www.webiny.com/enterprise-serverless-cms/headless-cms/) is GraphQL based, with a powerful content modeling feature and it’s serverless, so optimized for scalability by default.
+
+## What is pagination?
+
+Pagination is the method of splitting digital content into different pages where site visitors can navigate between these pages by clicking on links often located at the bottom of a page.
+
+This pattern is used so site visitors do not get overwhelmed by a mass of data on one page which would make it difficult for identifying a target item. By splitting large data sets into chunks, it can also help solve performance issues both on the client and server side.
+
+There are two strategies mainly used to achieve pagination and they are:
+
+- Offset-based pagination
+- Cursor-based pagination
+
+In this article, we are only going to cover the cursor-based pagination since it’s the one implemented on Webiny headless CMS.
+
+## Cursor-based Pagination
+
+Cursor-based pagination works by returning a pointer (cursor) to the last items on a page which will then be used on subsequent requests to get the next result after the given pointer.
+
+The returned cursor must be unique for all items in the dataset for this, IDs are often used as the cursor because it is sequential and unique although this is not the case for Webiny’s headless CMS. We will discuss more on this shortly.
+
+Let’s look at an example of how cursor-based pagination works using ID as the cursor. Say we have the following datasets:
+
+```json
+[
+  { id: 1, author: 'author1'},
+  { id: 2, author: 'author2'},
+  { id: 3, author: 'author3'},
+  { id: 4, author: 'author4'},
+  { id: 5, author: 'author5'},
+  { id: 6, author: 'author6'},
+  { id: 7, author: 'author7'},
+  { id: 8, author: 'author8'},
+]
+
+```
+
+To get only four results for every page the first request will look like this:
+
+```json
+cursor: 0
+limit: 4
+
+// OR
+
+after: 0
+limit: 4
+
+```
+
+Which will return four (4) results starting with an ID of one (1)
+
+```json
+[
+  { id: 1, author: 'author1'},
+  { id: 2, author: 'author2'},
+  { id: 3, author: 'author3'},
+  { id: 4, author: 'author4'},
+]
+
+```
+
+The next request will be:
+
+```json
+cursor: 4
+limit: 4
+
+// OR
+
+after: 4
+limit: 4
+
+```
+
+With results:
+
+```json
+[
+  { id: 5, author: 'author5'},
+  { id: 6, author: 'author6'},
+  { id: 7, author: 'author7'},
+  { id: 8, author: 'author8'},
+]
+
+```
+
+## Create And Deploy a new Webiny Project
+
+To get started, we need to first create a Webiny project, deploy it and then model our content in the headless CMS using the generated Admin app.
+
+To deploy a new Webiny project, enter the following command in the terminal:
+
+```bash
+npx create-webiny-project webiny-pagination
+```
+
+After running the above command you will be asked several questions one of which is to choose a database, for that, select **DynamoDB** which is suitable for our use case. The above command will create a Webiny project called **webiny-pagination** which consists of three applications: a GraphQL API, an Admin app, and also a website.
+
+Once the new project has been created, it’s time to deploy it into our AWS account. We can do this with the following commands.
+
+```bash
+cd webiny-pagination
+
+yarn webiny deploy
+```
+
+If it’s our first deployment it will take over 20 minutes. after it’s done the URL to the Admin App, GraphQL API endpoints and website would be printed out in the terminal. We will use them shortly.
+
+## Defining Content Model in the Admin app
+
+Content model defines the structure of the content we want to store in the CMS. We can do this using the generated Admin app. For our use case, we will define a Book model which will hold the book entries we will use to implement pagination.
+
+To access the Admin app we can click the URL which was printed in the terminal earlier when we deployed our project.
+
+![Links](./assets/implement-pagination-webiny-headless-cms-vue/links.png)
+
+If you have closed the terminal, to view the URLs again you can the `yarn webiny info` command.
+
+
+For the first time accessing the Admin app we would be prompted to create a default user with our details. After doing that, we will be taken to the welcome page:
+
+![Webiny home page](./assets/implement-pagination-webiny-headless-cms-vue/home.png)
+
+Next, navigate to the **Content Models** page by clicking on the **New Content Model** button within the **Headless CMS** card, and on the next page click on **New Modal** at the top of the page and we will see a prompt with a form to add some information for the new Content Model.
+
+![Content model](./assets/implement-pagination-webiny-headless-cms-vue/content-model.png)
+
+In the name input enter **Book,** then click on the **CREATE MODEL** button. On the next page, we will see different field types we can add for our **Book** model:
+
+![Content fields](./assets/implement-pagination-webiny-headless-cms-vue/content-fields.png)
+
+To add a field, we need to drag and drop it in the drop zone, then in the prompt that appears supply a Label(required) and click on the **SAVE FIELD** button. Below is a Video showing how a **TEXT** field labeled **title** is added:
+
+[Creating fields](./assets/implement-pagination-webiny-headless-cms-vue/creating-fields.mp4)
+
+Now following the process in the Video above let’s create **TEXT** fields with labels: **authors, image, publishDate, publisher, and title**. For the field with a label of **authors** make to turn on the **Use as a list of texts** switch. We are doing this so that it can hold more than one text (Array of strings).
+
+![Authors field](./assets/implement-pagination-webiny-headless-cms-vue/authors-field.png)
+
+Below are all the fields for the Book model. After creation, click on the **SAVE** button at the top right of the page.
+
+![Created fields](./assets/implement-pagination-webiny-headless-cms-vue/created-fields.png)
+
+Here is what the object of the fields we created will look like:
+
+```jsx
+{
+    authors: ['Accomazzo Anthony', 'Murray Nathaniel', 'Ari Lerner'],
+    image: "<http://books.google.com/books/content?id=ppjUtAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api>",
+    publishDate: "2017-03",
+    publisher: "Fullstack.IO",
+    title: "Fullstack React"
+}
+```
+
+Now that we have added fields to define the structure of contents for our Book model, we can start adding content to it. For example to add the object above as content to our model, in the sidebar, expand the **Headless CMS** tab, under the **UNGROUPED** section click on **Books** and we will see a page like this:
+
+![Book model page](./assets/implement-pagination-webiny-headless-cms-vue/book-model-page.png)
+
+Next, click on the **NEW ENTRY** button, and on the prompt that appears enter the value of the properties of the above object in the corresponding input like this:
+
+![Entering content](./assets/implement-pagination-webiny-headless-cms-vue/entering-content.png)
+
+After that, click on **SAVE & PUBLISH** at the top-right of the page, then click **CONFIRM** on the pop-up that appears. With this, we have added our first content to our Book model.
+
+To test and introspect GraphQL queries and mutations on our content models before using them from a client-side application we can use the GraphQL playground. To access the playground, click on **API Playground** in the sidebar of the Admin app.
+
+Now that we have set up a Webiny project and created our Content model. We are now left with consuming the GraphQL API in the front-end and using it to create the pagination functionality.
+
+## Implementing Pagination
+
+We will start by setting up our Vue app, then using the GraphQL API we will fetch our book data to be used for the pagination functionality.
+
+**Setting up Vue**
+I have already created a starter repo containing the template and data to be added to Webiny which I fetched from the [Google book API](https://developers.google.com/books/docs/v1/using). The next step is to clone the GitHub repo. We can do this with the following commands:
+
+```bash
+git clone -b starter <https://github.com/Tammibriggs/webiny-vue-pagination.git>
+
+cd webiny-vue-pagination
+
+npm install
+```
+
+For working with GraphQL in our frontend we will be using Apollo client. I have included `@vue/apollo-composable`, `@apollo/client`, `graphql-tag`, and `graphql` in the dependency object of the `package.json` file. So by running the `npm install` command the needed packages will be installed.
+
+Now when we start the app with `npm run server`, we should see the following screen in our browser:
+
+![The books rendered UI](./assets/implement-pagination-webiny-headless-cms-vue/books.png)
+
+Right now we are getting our book data from the **data.js** file in the **src** directory of the cloned app. We will be moving it over to Webiny and fetching it from there shortly.
+
+**Initialize Apollo Client**
+Before initializing Apollo we need to first get an API token to enable us to gain access to our GraphQL API and the correct Headless CMS GraphQL API URL.
+
+To get the API token, head over to the Admin app, and in the sidebar expand the **Settings** tab and we will see **API keys** under the **ACCESS MANAGEMENT** section.
+
+![apikey-tab.png](./assets/implement-pagination-webiny-headless-cms-vue/apikey-tab.png)
+
+Select **API keys,** and on the next screen click on **New API key.** we will see a prompt where we can set the name, description, and access control options for our KEY.
+
+![Control setup](./assets/implement-pagination-webiny-headless-cms-vue/control-setup.png)
+
+Enter a name and description then scroll down the page, expand the **Content** tab and select **All locales.**
+
+![Content local](./assets/implement-pagination-webiny-headless-cms-vue/content-local.png)
+
+Next, expand the **Headless CMS** tab which contains options to control which operations the API token can, or cannot, perform.
+
+![Headless CMS](./assets/implement-pagination-webiny-headless-cms-vue/headless-cms.png)
+
+For our use case we only need read access to the Headless CMS GraphQL API to perform queries on the Book model so here is how we will set the controls.
+
+![Control1](./assets/implement-pagination-webiny-headless-cms-vue/access-control-headless-cms-api.png)
+
+![Control2](./assets/implement-pagination-webiny-headless-cms-vue/api-key-content-models.png)
+
+After setting the controls, click on the **SAVE API KEY** button at the bottom of the page and our API token will be created.
+
+![The API Token](./assets/implement-pagination-webiny-headless-cms-vue/token.png)
+
+Now we can copy the token and store it in a **.env** file in our Vue app.
+
+Next, to get the URL, go to the API playground in the Admin app, click on the **Headless CMS - Read API** tab at the top of the page and copy the URL directly below the tab.
+
+![API Playground showing the Read API URL](./assets/implement-pagination-webiny-headless-cms-vue/read-api-url.png)
+
+After copying the URL we should also store it in the **.env** file in our Vue app.
+
+Now, to initialize Apollo client, modify **main.js** file in the **src** directory to look like this:
+
+```jsx
+import App from './App.vue'
+import { ApolloClient, InMemoryCache } from '@apollo/client/core'
+import { createApp, provide, h } from 'vue'
+import { DefaultApolloClient } from '@vue/apollo-composable'
+
+const cache = new InMemoryCache()
+
+const apolloClient = new ApolloClient({
+  uri: process.env.VUE_APP_WEBINY_GRAPHQL_URL,
+  cache,
+  headers: {
+    Authorization : `Bearer ${process.env.VUE_APP_WEBINY_GRAPHQL_TOKEN}`
+  }
+})
+
+const app = createApp({
+  setup () {
+    provide(DefaultApolloClient, apolloClient)
+  },
+
+  render: () => h(App),
+})
+app.mount('#app')
+```
+
+Notice we have passed the **URL** and **API token** to the configuration object of `ApolloClient`. This will enable us to start working with our CMS in our Vue app.
+
+Now, what we need to do is populate our Book model with content that we will use for the pagination. In the **data.js** file in the **src** directory of our app, there are over 54 book data. We can move them over to our CMS by manually adding them as entries to our Book model on the Admin page.
+
+**Implement Cursor-based pagination**
+For implementing Cursor-based pagination Webiny headless CMS GraphQL API includes a `limit` and `after` argument. `limit` takes an integer that indicates the number of contents we wich to return in every request and `after` take a string which is the cursor of the last content returned. By specifying a cursor in the `after` argument, the returned result will be the contents after the specified cursor.
+
+Using the above, we need to create a query that will be able to receive a `limit` and `after` argument and also return the cursor of the last returned content.
+
+In the **App.vue** file, first, add the following imports within the `<script>` tag:
+
+```jsx
+import {ref, watch} from 'vue'
+import gql from 'graphql-tag'
+import { useQuery } from '@vue/apollo-composable'
+```
+
+Next, add the following query after the imports:
+
+```jsx
+const LIST_BOOKS = gql`
+  query GetBooks ($limit: Int, $after: String){
+    listBooks (limit: $limit, after: $after){
+      data {
+        id
+        authors
+        image
+        publishDate
+        publisher
+        title
+      }
+      meta {
+        cursor
+        hasMoreItems
+      }
+    }
+  }
+`
+```
+
+Above, we have added a **data** field for getting content in our Book model and **meta** for working with pagination.
+
+Next, in the `setup()` hook after the `books` variable, add the following reactive states, and `useQuery` hooks for sending query requests and returning the result and properties needed for working with GraphQL.
+
+```jsx
+const cursors = ref([null])
+const page = ref(0)
+const variables = ref({
+  limit: 10,
+  after: null
+})
+
+const {result, loading, error} = useQuery(LIST_BOOKS, variables)
+```
+
+Above we have set `limit` to 10 and `after` to `null`. By doing this, when our app loads which means we are on the first page(`page.value` = 0), the returned results will be the first ten(10) contents in our Book model.  To get the appropriate results on subsequent pages (`page.value` > 0) we will be setting `after` to the cursor returned in the request which can be accessed with `result.listBooks.meta.cursor`.
+
+Notice that above, `variables` is a reactive state. It is so in order to make the `useQuery` hook re-run when one of the properties of `variables` is changed.  Moving forward, we will be taking advantage of this to fetch and display the appropriate results after modifying the `after` property.
+
+Next, let’s expose the state to be used in our template by modifying the `return` statement in the `setup()` hook to look like the following:
+
+```jsx
+return {
+  result,
+  loading,
+  error,
+  page
+}
+```
+
+Next, let's replace the currently displayed data in our app with the one coming from our CMS and also handle errors that might occur. To do this, modify the `<template>` element to look like the following:
+
+```jsx
+<template>
+  <div class='books' v-if="!loading && result?.listBooks.data">
+    <Book
+      :key="book.id" 
+      v-for="book in result?.listBooks.data"
+      :title="book.title"
+      :image="book.image"
+      :authors="book.authors"
+      :publisher="book.publisher"
+      :publishDate="book.publishedDate"
+      :id="book.id"
+    />
+  </div>
+  <div v-else class='center'>
+    <div v-if="loading">Loading...</div>
+    <p v-else-if="error">
+      UNABLE TO FETCH DATA
+    </p>
+  </div>
+</template>
+```
+
+Now to set the `cursors` array state with the cursor needed to get the next page results and to get the results for the next, previous page, add the following lines of code after the `useQuery` hook:
+
+```jsx
+watch(result, (result) => {
+  const pointer = result?.listBooks?.meta?.cursor
+  if(!loading.value && pointer !== cursors.value[page.value]){
+    cursors.value = [...cursors.value, pointer]
+  }
+})
+
+watch(page, (page) => {
+  variables.value.after = cursors.value[page]
+})
+```
+
+Next, let’s add the button needed to navigate between pages. Add the following lines of code before closing `</template>` tag:
+
+```jsx
+<div class='buttons' v-if="!loading">
+  <button @click="page--">Prev</button>
+  <button @click="page++">Next</button>
+</div>
+```
+
+In the above code, we have included a previous button that decreases the `page` state by one and a next button to increase it by one. By modifying the `page` state the `watch()` function used to keep tabs on the page state will run, setting the value of `after` to the cursor needed to get the appropriate results which will then make the `useQuery` hook to re-run.
+
+Now, when we head over to our app in the browser we will see the following button for navigating between pages:
+
+Now, when we head over to our app in the browser we will see the following button for navigating between pages:
+
+![Pagination buttons](./assets/implement-pagination-webiny-headless-cms-vue/pagination-buttons.png)
+
+Although the pagination feature works right now, we will notice that when we are on the first page, the previous button is still enabled and doesn't indicate that there is no previous page. This is the same for the next button when we are on the last page.
+
+To fix this, modify the `div` with `class='buttons'` to look like the following:
+
+```jsx
+<div class='buttons' v-if="!loading">
+    <button 
+      :disabled="page === 0 && true"
+      :style="{backgroundColor: `${page === 0 ? 'gray' : '#6796ec'}`}"
+      @click="page--">Prev</button>
+    <button 
+      :disabled="!result?.listBooks.meta?.hasMoreItems && true"
+      :style="{backgroundColor: `${result?.listBooks.meta?.hasMoreItems ? '#6796ec' : 'gray'}`}"
+      @click="page++">Next</button>
+  </div>
+```
+
+With this, the buttons should now be working properly.
+
+## Conclusion
+
+In this tutorial, we have covered how pagination can be implemented with Webiny headless CMS in a Vue app. 
+
+**Full source code:** https://github.com/webiny/write-with-webiny/tree/main/tutorials/pagination-vue
+
+---
+
+This article was written by a contributor to the Write with Webiny program. Would you like to write a technical article like this and get paid to do so? [Check out the Write with Webiny GitHub repo](https://github.com/webiny/write-with-webiny/).
