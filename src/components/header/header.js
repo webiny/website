@@ -317,7 +317,7 @@ const MenuItemList = ({ cards, sticky = true }) => {
 const Header = ({ hasBanner = true, sticky = false }) => {
     const { latestBlockPosts } = useStaticQuery(graphql`
         query HeaderQuery {
-            latestBlockPosts: allMdx(sort: { fields: frontmatter___date, order: DESC }, limit: 2) {
+            latestBlockPosts: allMdx(sort: {fields: frontmatter___date, order: DESC}, limit: 2, filter: {slug: {regex: "/blog/"}}) {
                 nodes {
                     frontmatter {
                         title
