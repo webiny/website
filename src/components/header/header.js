@@ -317,7 +317,7 @@ const MenuItemList = ({ cards, sticky = true }) => {
 const Header = ({ hasBanner = true, sticky = false }) => {
     const { latestBlockPosts } = useStaticQuery(graphql`
         query HeaderQuery {
-            latestBlockPosts: allMdx(sort: {fields: frontmatter___date, order: DESC}, limit: 2, filter: {slug: {regex: "/blog/"}}) {
+            latestBlockPosts: allMdx(sort: {fields: frontmatter___date, order: DESC}, limit: 2, filter: {frontmatter: {type: {eq: "blog"}}}) {
                 nodes {
                     frontmatter {
                         title
@@ -333,6 +333,7 @@ const Header = ({ hasBanner = true, sticky = false }) => {
                 }
             }
         }
+
     `);
     const resourcesCards = latestBlockPosts.nodes.map((card, index) => {
         return {
