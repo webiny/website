@@ -28,6 +28,8 @@ export const Container = styled.div(
 export const CodeSection = styled.div(
     {
         display: "grid",
+        maxWidth: "1900px",
+        
         "& .code-section-width-wrapper": {
             display: "flex",
             justifyContent: "center",
