@@ -32,35 +32,29 @@ Webiny is an open source serverless Content Management System that gives you a l
 
 ### Setting up a Webiny project
 
-The first you need to do is install the `aws-cli` on your machine, you'll be creating and deploying your Webiny instance to a dev environment in your AWS account.
+#### Prerequisites
 
-The command below shows you how to do that, if you're on a Linux PC, the command below does that for you. But, you can also read more about the installation process [here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html), if you're on Windows or macOS.
+To follow along with this tutorial, you need to have the following:
 
-```bash
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" unzip awscliv2.zip sudo ./aws/install
-```
+- [AWS account and configure your AWS credentials for programmatic access](https://www.webiny.com/docs/infrastructure/aws/configure-aws-credentials)
+- Make sure you have Node.js >=14 and Yarn ^1.22.0 || >=2 installed on your system
+- Star our [GitHub Repo](https://github.com/webiny/webiny-js)! 😉
 
-When you're done with the step above, you can find the instructions on how you can move the AWS-CLI folder that you have successfully downloaded into the right directory.
-
-From the prerequisites of this guide, you should have obtained your AWS credentials and have them stored somewhere, either on your PC or you’ve written it on a piece of paper, it is more of your choice.
-
-The next thing is to create a Webiny project, and you can do that by typing the command below. The installation takes some time, so I’ll recommend that you’re on a stable internet connection.
-
-When you run the command you’ll be prompted to answer some questions in the terminal, one of which is related to the type of storage options you want to use.
-
-The two options available are **Dynamo DB** and **DynamoDB + Elasticsearch**. We’ll be selecting the first option since the use case of the project we’re building doesn’t require a large database like **Dynamo DB + Elasticsearch**
+Let's create a Webiny project, and you can do that by typing the command below in your terminal.
 
 ```bash
 npx create-webiny-project webiny-cms
 ```
+
+When you run the command you’ll be prompted to answer some questions in the terminal, one of which is related to the type of storage options you want to use.
+
+The two options available are **Dynamo DB** and **DynamoDB + Elasticsearch**. We’ll be selecting the first option since the use case of the project we’re building doesn’t require a large database like **Dynamo DB + Elasticsearch**
 
 The command will install the project locally. But, to be able to use the service, you need to deploy the project with the command below, into your AWS account
 
 ```bash
 yarn webiny deploy
 ```
-
-This command may also take time, approximately 20mins if you’re on a good internet connection, so please you may have to be patient here.
 
 Once the project is deployed, you’ll get information about your project in the terminal. The information includes the link to the admin app, the preview website, etc.
 
