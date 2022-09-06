@@ -16,6 +16,7 @@ import emmanuelImg from "../assets/emmanuel.png";
 import isaacImg from "../assets/isaac-okoro.png";
 import victoryImg from "../assets/victory-tuduo.png";
 import menardImg from "../assets/menard.png";
+import calebImg from "../assets/caleb.png";
 import nobodyImg from "../assets/nobody.png"
 
 export default {
@@ -130,7 +131,7 @@ export default {
     caleb: {
         name: "Caleb Olojo",
         description: "Frontend Developer and Technical Writer",
-        avatar: nobodyImg,
+        avatar: calebImg,
         twitter: "calebolojo"
     }
 };

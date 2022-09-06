@@ -18,10 +18,8 @@ Inasmuch as this approach seems a little bit direct, it includes a lot of config
 
 A Content Management System, as the name implies does the heavy-lifting of managing content on your blog for you, so you don't end up going through the process of formatting, and continuously adjusting the content style or format on your blog, to suit your audience.
 
-In this article, we'll learn how to build a blog with Next.js and the Webiny CMS. But, before you proceed to read this article any further, you should
+In this article, we'll learn how to build a blog with Next.js and the Webiny CMS. But, before you proceed, it would be great to have the following prerequisite information.
 
-- [Have setup your AWS credentials locally](https://www.webiny.com/docs/headless-cms/integrations/nextjs)
-- [Deployed a Webiny instance to a development environment](https://www.webiny.com/docs/core-development-concepts/basics/project-deployment)
 - Know how to set up a Next.js project
 - Have an understanding of React, in general
 - Have a basic understanding of object destructuring operations in JavaScript
@@ -99,7 +97,7 @@ When all the installation is done, you’ll be redirected to the dashboard, it l
 
 ![Webiny's dashboard](./assets/build-blog-nextjs-webiny-headless-cms/webiny-dashboard.png)
 
-You can click on the **NEW CONTENT MODEL** button in the **Headless CMS** card, and it’ll take you to the area where you can create your content models. You can read more about the fields that you will add as you create your content models [here](https://www.webiny.com/docs/headless-cms/integrations/nextjs#authors)
+You can click on the **NEW CONTENT MODEL** button in the **Headless CMS** card, and it’ll take you to the area where you can create your content models. You can read more about the fields that you will add as you create your content models [here](https://www.webiny.com/docs/headless-cms/integrations/nextjs#authors).
 
 The content model of the authors looks like the image below. You can choose to make it exactly like this or customize it in a way that suits your need.
 
@@ -483,7 +481,7 @@ const BlogCard = ({
           <p className="description">{excerpt}</p>
           <div className="author-date">
             <p className="date">
-							<time dateTime={createdOn}>
+              <time dateTime={createdOn}>
                 {dayjs(createdOn).format("MMMM, D, YYYY")}
               </time>
 						</p>
