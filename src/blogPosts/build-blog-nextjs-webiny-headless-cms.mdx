@@ -8,17 +8,10 @@ tags: ["nextjs", "build projects", "blog site", "contributed articles"]
 type: blog
 author: caleb
 ---
-The idea of having a place where you can share tips, perhaps the mistakes you made in the past while learning a particular language, or a framework, so that people who will embark on that same path that you took in the past, do not have to go through the same issues you faced.
 
-The first thing that may pop up into the mind of most developers would be to have a blog where they can share their knowledge with people in the tech community, or document their process, some may even see this process as a way to learn in public.
+## **Introduction**
 
-Although, there are tons of approaches to implement this idea. One and the most common one is to build a blog with Next.js by compiling some markdown files and rendering them onto the blog page.
-
-Inasmuch as this approach seems a little bit direct, it includes a lot of configurations and it is a little bit time-consuming as well. But, there's another approach that involves the use of a CMS (Content Management System).
-
-A Content Management System, as the name implies does the heavy-lifting of managing content on your blog for you, so you don't end up going through the process of formatting, and continuously adjusting the content style or format on your blog, to suit your audience.
-
-In this article, we'll learn how to build a blog with Next.js and the Webiny CMS. But, before you proceed, it would be great to have the following prerequisite information.
+In this tutorial, we will build a simple blog site with Next.js and Webiny Headless CMS. We will look at how to set up Webiny and Next.js project. We will create content models & data in Webiny CMS and learn how to consume this data in the Next.js application. Before you proceed, it would be great to have the following prerequisite information.
 
 - Know how to set up a Next.js project
 - Have an understanding of React, in general
@@ -26,9 +19,7 @@ In this article, we'll learn how to build a blog with Next.js and the Webiny CMS
 - Know how to fetch data from an API
 - Have an understanding of how data is shared between components as props
 
-Now that you have an idea of the prerequisites of what you'd need to read this article, let's move on to what Webiny CMS is all about.
-
-Webiny is an open source serverless Content Management System that gives you a lot of functionalities, at the same time you're the one in charge of how your data is being stored or managed
+Now that you have an idea of the prerequisites of what you'd need to read this article. Let's start by setting up Webiny CMS.
 
 ### Setting up a Webiny project
 
@@ -46,11 +37,11 @@ Let's create a Webiny project, and you can do that by typing the command below i
 npx create-webiny-project webiny-cms
 ```
 
-When you run the command you’ll be prompted to answer some questions in the terminal, one of which is related to the type of storage options you want to use.
+When you run the command, you’ll be prompted to answer some questions in the terminal, one of which is related to the type of storage options you want to use.
 
 The two options available are **Dynamo DB** and **DynamoDB + Elasticsearch**. We’ll be selecting the first option since the use case of the project we’re building doesn’t require a large database like **Dynamo DB + Elasticsearch**
 
-The command will install the project locally. But, to be able to use the service, you need to deploy the project with the command below, into your AWS account
+The command will install the project locally. But, to be able to use the service, you need to deploy the project with the command below into your AWS account.
 
 ```bash
 yarn webiny deploy
@@ -64,7 +55,7 @@ In case you did not notice the information on the first trial, you can always ge
 yarn webiny info 
 ```
 
-You’ll get a result like this in the terminal
+You’ll get a result like this in the terminal.
 
 ```bash
 Environment: dev
@@ -85,7 +76,7 @@ When the deployment is done, you can click on the admin `Admin app` will redirec
 
 ![Creating an admin user](./assets/build-blog-nextjs-webiny-headless-cms/create-admin-user.png)
 
-In the admin area, you’ll also be requested to install some additional services or functions like **18N** which is short for **Internationalization**, **File Manager**, **Page Builder**, **Form Builder**, and the **Headless CMS.**
+In the admin area, you’ll also be requested to install some additional services or functions like **18N**, which is short for **Internationalization**, **File Manager**, **Page Builder**, **Form Builder**, and the **Headless CMS.**
 
 When all the installation is done, you’ll be redirected to the dashboard, it looks like the image below.
 
@@ -97,7 +88,7 @@ The content model of the authors looks like the image below. You can choose to m
 
 ![Creating the author model](./assets/build-blog-nextjs-webiny-headless-cms/author-model.png)
 
-This is what the **posts** content model looks like, below.
+This is what the **posts** content model looks like below.
 
 ![Creating the posts content model](./assets/build-blog-nextjs-webiny-headless-cms/posts-model.png)
 
@@ -113,19 +104,19 @@ You can fill the form fields with all the necessary information. In the **Headle
 
 ![Headless API config](./assets/build-blog-nextjs-webiny-headless-cms/headless-API-config.png)
 
-In the **Access Scope** dropdown of the **CONTENT MODEL GROUPS**, select **All groups.** You’ll repeat the same thing for the **CONTENT MODELS** then you’ll select **All models** in the Access Scope dropdown. In the **CONTENT ENTRIES**, select **All entries** in the dropdown.
+In the **Access Scope** dropdown of the **CONTENT MODEL GROUPS**, select **All groups.** You’ll repeat the same thing for the **CONTENT MODELS**, then you’ll select **All models** in the Access Scope dropdown. In the **CONTENT ENTRIES**, select **All entries** in the dropdown.
 
 The image below shows all the appropriate settings for the **File Manager** 
 
 ![File Manager API config](./assets/build-blog-nextjs-webiny-headless-cms/file-manager-config.png)
 
-When you’re done, you can click on the **SAVE API KEY** button, and copy it to a safe location. We will use this later to authenticate with the GraphQL API.
+When you’re done, you can click on the **SAVE API KEY** button and copy it to a safe location. We will use this later to authenticate with the GraphQL API.
 
 ### Installing Next.js
 
-With that step out of the way, let us begin building the blog by setting up a Next.js project. Shortly before we start, I'm assuming that you've gone through the process of spinning a running `dev` environment of the Webiny platform which gives you access to the admin panel where you can create your content models, and test them in the GraphQL playground. 
+With that step out of the way, let us begin building the blog by setting up a Next.js project. Shortly before we start, I'm assuming that you've gone through the process of spinning a running `dev` environment of the Webiny platform, which gives you access to the admin panel where you can create your content models and test them in the GraphQL playground. 
 
-To install Next.js we'll use the command below to get us up and running. The command does the heavy lifting of setting up a project folder — webiny-blog — for us with the necessary files.
+To install Next.js, we'll use the command below to get us up and running. The command does the heavy lifting of setting up a project folder — webiny-blog — for us with the necessary files.
 
 ```bash
 npx create-next-app webiny-blog
@@ -133,7 +124,7 @@ npx create-next-app webiny-blog
 
 ### Overview of the files in the project
 
-Now that we have a project structure already, let me walk you through the folders and the files that we'll be working with, in this project. Take a look at the directory structure below.
+Now that we have a project structure already. Let me walk you through the folders and the files that we'll be working with in this project. Take a look at the directory structure below.
 
 ```bash
 .
@@ -165,7 +156,7 @@ https://localhost:3000/hello-world
 
 Any article that has a `slug` with the string "hello-world" is rendered on the page. We'll get into this in full as we progress.
 
-`_app.js` is the root folder in a Next.js project. Its function is a little bit similar to Create-React-App, the difference here is that instead of appending the React app to a DOM node called `"root"`, Next.js receives all the other pages, components, styles, etc, as props. Take a look at the syntax below.
+`_app.js` is the root folder in a Next.js project. Its function is a little bit similar to Create-React-App. The difference here is that instead of appending the React app to a DOM node called `"root"`, Next.js receives all the other pages, components, styles, etc., as props. Take a look at the syntax below.
 
 ```jsx
 // pages/_app.js
@@ -178,11 +169,11 @@ function MyApp({ Component, pageProps }) {
 export default MyApp;
 ```
 
-The `author` route is quite different from all the other files in the `pages` route, as it is both a static and dynamic route. If you navigate to "https://localhost:3000/author" you'll get a 404 error because there's no static index route, but a dynamic route present in the directory.
+The `author` route is quite different from all the other files in the `pages` route, as it is both a static and dynamic route. If you navigate to "https://localhost:3000/author" you'll get a 404 error because there's no static index route but a dynamic route present in the directory.
 
-So, navigating to that route without appending the author's slug to the URL would result in that error. Instead of doing that, you can just navigate to the author's route by doing something similar, below.
+So, navigating to that route without appending the author's slug to the URL would result in that error. Instead of doing that, you can just navigate to the author's route by doing something similar below.
 
-This approach of having a string, “author”, in the URL parameter of the blog page improves the UX of your application, in situations where people do not have to wonder where a certain link is taking them to because the URL is a little bit self-descriptive 
+This approach of having a string, “author”, in the URL parameter of the blog page improves the UX of your application in situations where people do not have to wonder where a certain link is taking them because the URL is a little bit self-descriptive 
 
 ```bash
 https://webiny-blog.netlify.app/author/codebeast
@@ -194,13 +185,13 @@ https://webiny-blog.netlify.app/author/codebeast
 
 `styles/` is where the global styling and CSS variables reside.
 
-Now that you have seen the basic functions of the files in the structure, let's start by taking a look at the `fetcher` and GraphQL query functions.
+Now that you have seen the basic functions of the files in the structure let's start by taking a look at the `fetcher` and GraphQL query functions.
 
 ### Overview of the GraphQL queries and fetcher
 
 In the last section, we walked through the architecture of this project. Now, we'll start by understanding how the `fetcher()` and each query function work. 
 
-We saw in the previous section that the `fetcher` function makes a `POST` request to the API endpoint, which in turn, returns the data from our content models which we've created in the Webiny Admin panel
+We saw in the previous section that the `fetcher` function makes a `POST` request to the API endpoint, which in turn, returns the data from our content models which we've created in the Webiny Admin panel.
 
 ```jsx
 // src/utils/helpers.js
@@ -230,7 +221,7 @@ async function fetcher(query, { variables } = {}) {
 
 The snippet above shows the `fetcher` function. Let's take a moment to break down what is going on in that function block. Initially, the function itself takes in two arguments, `query` and `variables`. 
 
-The `variables` argument receives a JavaScript object which is used when we want to get dynamic data, for example, a specific article, or the slug of an author.
+The `variables` argument receives a JavaScript object which is used when we want to get dynamic data, for example, a specific article or the slug of an author.
 
 The variable is a little different for obtaining the profile of a particular author or a specific blog post. The syntax remains the same though, take a look at an example below.
 
@@ -258,7 +249,7 @@ process.env.WEBINY_API_SECRET
 
 Furthermore, we're sending the queries and the variables that a query contains (if there are any), as payload to the `body` method in the fetcher. 
 
-If there's any error during the process of getting this data, we'd catch it in the `if()` block and log it to the console in the terminal, since we'll be using the data-fetching methods of Next.js, all `console.log`s will be displayed in the terminal.
+If there's any error during the process of getting this data, we will catch it in the `if()` block and log it to the console in the terminal. Since we'll be using the data-fetching methods of Next.js, all `console.log`s will be displayed in the terminal.
 
 Now, let's take a look at the queries. The snippet below shows all the queries, the first one gets all the slugs in the blog post from the content model that we created in the admin panel.
 
@@ -430,13 +421,13 @@ This same process is repeated for the `getAuthorByName()` function. But this tim
 }
 ```
 
-Now, that we've got an idea of the functions of our queries, let's move on to create a UI component that will hold the data we're getting from the API.
+Now that we've got an idea of the functions of our queries, let's move on to create a UI component that will hold the data we're getting from the API.
 
 ### Building the BlogCard component
 
 The last section walked us through the process of writing and understanding the functions of our queries and the `fetcher` function itself. 
 
-With that out of the way, let's take a look at the structure of the blog card component, and see how we would map the content from the API endpoint onto the blog page.
+With that out of the way, let's take a look at the structure of the blog card component and see how we would map the content from the API endpoint onto the blog page.
 
 ```jsx
 // src/components/BlogCard
@@ -478,7 +469,7 @@ const BlogCard = ({
               <time dateTime={createdOn}>
                 {dayjs(createdOn).format("MMMM, D, YYYY")}
               </time>
-						</p>
+	    </p>
             <p className="author">{name}</p>
           </div>
         </div>
@@ -494,7 +485,7 @@ The snippet above represents the layout of the blog card, and the first thing yo
 
 The destructuring assignment of JavaScript helped us to overcome the pain of doing some like `data.title`, `data.excerpt` repeatedly.
 
-Instead of that, we destructured the result. Initially, some developers would've passed only the `data` prop in the component, but we used the approach below, instead.
+Instead of that, we destructured the result. Initially, some developers would've passed only the `data` prop in the component, but we used the approach below instead.
 
 ```jsx
 // src/components/BlogCard
@@ -524,7 +515,7 @@ Because we have a file named `[slug.js]`, the `Link` component of Next.js will t
 </Link>
 ```
 
-The `propTypes` module that we imported can be used to validate the type of data that is being sent to the component. The snippet below carries out a check on the component's prop, if the type of data that it receives is not `typeOfArray`, React throws an error.
+The `propTypes` module that we imported can be used to validate the type of data that is being sent to the component. The snippet below carries out a check on the component's prop. If the type of data that it receives is not `typeOfArray`, React throws an error.
 
 ```jsx
 BlogCard.propTypes = {
@@ -534,7 +525,7 @@ BlogCard.propTypes = {
 
 ### Building the index page
 
-Now that we've seen the structure of the `BlogCard` component, let's see how we can map the data from the API endpoint onto the index page. 
+Now that we've seen the structure of the `BlogCard` component. Let's see how we can map the data from the API endpoint onto the index page. 
 
 To do that, we'll be using the data-fetching methods of Next.js to get the result from our API endpoint and pass it as props to the index page.
 
@@ -596,7 +587,7 @@ function BlogPage({ posts }) {
 export default BlogPage;
 ```
 
-In the snippet above, you'll see that we've received the `posts` props and we're using it in the `<Container/>`, which is a flex-container, based on the styles that we've indicated in the styled-component block. We're also using the default `Head` component of Next.js to wrap the meta-data of the index page.
+In the snippet above, you'll see that we've received the `posts` props, and we're using them in the `<Container/>`, which is a flex-container, based on the styles that we've indicated in the styled-component block. We're also using the default `Head` component of Next.js to wrap the meta-data of the index page.
 
 The `Head` component lets us add SEO to our blog. Although the scope of this article does not revolve around the SEO of a Next.js blog, you can learn about it [here](https://seven.hashnode.dev/seo-in-nextjs-apps).
 
@@ -616,7 +607,7 @@ With that step out of the way, you can take a look at what the index page looks 
 
 ### Building the slug page
 
-The slug page of the blog takes the same approach that we used during the process of building the index page, the only difference here is that we'll be needing another data-fetching method — `getStaticPaths()` — of Next.js, to implement the functionality of this page.
+The slug page of the blog takes the same approach that we used during the process of building the index page. The only difference here is that we'll be needing another data-fetching method — `getStaticPaths()` — of Next.js to implement the functionality of this page.
 
 What we'll be doing here is to render a unique article whenever it is clicked on from the homepage, or someone from any part of the world visits the link to a particular page, it should statically generate the content of that page. The next step will be the usage of the appropriate data-fetching method, which is `getStaticPaths()`
 
@@ -771,7 +762,7 @@ export async function getStaticProps(context) {
 }
 ```
 
-You can decide to build any layout that feels right or at least anyone that you're comfortable with making. This is what my own author's page looks like when it was built, take a look at it below.
+You can decide to build any layout that feels right or at least anyone that you're comfortable with making. This is what my own author's page looks like when it was built. Take a look at it below.
 
 ![Authors page](./assets/build-blog-nextjs-webiny-headless-cms/author-page.png)
 
@@ -781,7 +772,7 @@ The image above shows the authors' page without the number of articles they've p
 
 Having a CMS that helps you manage how content is structured is of a great advantage when you set out to build your blog, and Webiny's CMS is a great tool to start with. 
 
-If you want to deploy the project on a platform like netlify, do not forget to add your environment variables in the dashboard so the project can work fine in a production environment.
+If you want to deploy the project on a platform like Netlify, do not forget to add your environment variables in the dashboard so the project can work fine in a production environment.
 
 I hope this article has helped you gain some fundamental knowledge of how JavaScript can be used to build practical and real-life solutions to problems. Thank you for reading!
 
