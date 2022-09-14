@@ -131,6 +131,9 @@ const FooterMenu = () => (
             <Link rel="prerender" to="/privacy-policy">
                 Privacy Policy
             </Link>
+            <Link rel="prerender" to="/terms-of-service">
+                Terms of Service
+            </Link>
             <a href="mailto:contact@webiny.com">Contact Us</a>
         </MenuBlock>
     </ContentContainer>
