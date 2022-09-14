@@ -10,7 +10,9 @@ date: 2022-09-14
 ---
 import OnPagePromo from "../components/ui/on-page-promo/on-page-promo"
 
-When you're working with large data sets that from an API, fetching and rendering them at once could cause some negative effects like the slow loading of components which causes a bad user experience. A common practice of mitigating this issue is by using pagination.
+Working with large data sets that from an API, fetching and rendering them at once could cause negative effects you want to avoid, for example, your components could start loading very slowly. Your users might not stay long enough to see the content you wish them to, causing higher bounce rates, and of course, a bad user experience.
+
+Pagination mitigates this problem by splitting digital content up into separate requests. It means that you fetch a much smaller data set initially. You get a faster render time and your users get a much better experience.
 
 In this tutorial, we are going to learn how to implement pagination when using [Webiny headless CMS](https://www.webiny.com/docs/overview/applications/headless-cms) in Vue.
 
@@ -31,7 +33,7 @@ The Webiny [headless CMS](https://www.webiny.com/enterprise-serverless-cms/headl
 
 ## What is pagination?
 
-Pagination is the method of splitting digital content into different pages where site visitors can navigate between these pages by clicking on links often located at the bottom of a page.
+Pagination splits digital content into different pages. Site visitors can then navigate between these pages by clicking on links often located at the bottom of a page.
 
 This pattern is used so site visitors do not get overwhelmed by a mass of data on one page which would make it difficult for identifying a target item. By splitting large data sets into chunks, it can also help solve performance issues both on the client and server side.
 
