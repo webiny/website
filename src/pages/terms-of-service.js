@@ -1,5 +1,6 @@
 import React from "react";
-
+import {MDXProvider} from '@mdx-js/react'
+import Terms from './terms.mdx'
 import BaseLayout from "../layouts/base";
 import Tos from "../components/static/tos";
 
@@ -10,7 +11,11 @@ class TosPage extends React.Component {
                 title="Terms of Service"
                 description="Welcome to Webiny's website. Please read on to learn the rules and restrictions that govern your use of our website"
             >
-                <Tos />
+                <MDXProvider>
+                    <Tos>
+                        <Terms/>
+                    </Tos>
+                </MDXProvider>
             </BaseLayout>
         );
     }
