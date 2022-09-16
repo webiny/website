@@ -4,9 +4,9 @@ slug: "tech-integration/gatsby"
 featuredImage: ./assets/webiny-plus-gatsby.png
 logo: ./assets/gatsby-logo.png
 description: "Gatsby is a React-based open source framework for creating websites."
-introduction: "It allows you to source content from a range of different APIs and combine them into one single GraphQL API which ou can then query in pages, templates or components."
-integrationTitle: "Using Webiny for a Headless CMS using Gatsby is an easy, cost-effective and scalable solution"
-integrationCopy: "You have virtually no limit on the amount of records you store, or even the amount of images you store inside Webiny. You can also have multiple locales to support multiple languages, and other apps are included such as the Page Builder."
+introduction: "Building a dynamic, content-heavy site with <strong>Gatsby</strong> and <strong>Webiny</strong> is easy to build, simple to use, secure and scalable."
+whyThisTech: "<p>The world's top-performing teams use <span class=hilightText>Gatsby</span> to deliver dynamic web pages with performance and security that scales.</p><p>Build a fast, secure, and powerful website using a React-based open-source framework and integrate different content, APIs and services seamlessly into one experience.</p>"
+integrationCopy: "<span class=hilightText>You can easily build a dynamic, content-heavy site with Gatsby and use Webiny</span> to decouple engineering needs from your marketing team using a highly-scalable, fault-tolerant Serverless service that scales in and out in seconds. Use a single Webiny instance to manage content for an unlimited number of websites. All under one tenant in your own security perimeter."
 techBenefits:
   - "Build rich web experiences by combining data from anywhere"
   - "Utilize a rich ecosystem of plugins instead of building from scratch"
@@ -17,13 +17,89 @@ techBenefits:
 quotes:
   - sysiphus
 ---
-# Building a Frontend with Gatsby
 
-## Learn how to build a frontend for Webiny Headless CMS with our Gatsby starter
+<h2>Building a Frontend With <span class="hilightText">GatsbyJS</span></h2>
 
+### Learn how to build a frontend for Webiny Headless CMS with Gatsby starter. 
 
-This starter ships with the main Gatsby configuration files you might need to gat up and running with Gatsby, the blazingly fast site generator for React.
+<span class="hilightText">
 
-![Gatsby code to connect to Webiny's GraphQL API](./assets/gatsby-node.png)
+![Step one](./assets/step-1.svg)
 
-Kick off your project with this blog boilerplate and 1-click deploy your Gatsby site to Gatsby's Cloud infrastructure platform.
+#### Step 1: Install and Deploy Webiny
+
+</span>
+
+Skip this step if you already have Webiny installed and deployed. Be sure to check out the [prerequisites](https://www.webiny.com/docs/get-started/install-webiny#prerequisites) for installing Webiny on your local machine.
+
+Then, create a new Webiny project by running
+
+```bash
+npx create-webiny-project my-webiny-project
+```
+
+If you get stuck or for more details, please see our documentation.
+
+<span class="hilightText">
+
+![Step two](./assets/step-2.svg)
+
+#### Step 2: Create a new Gatsby site
+
+</span>
+
+Either click the button below to deploy to Gatsby Cloud, or follow the instructions below:
+
+![One click Gatsby install button](./assets/1-click-gatsby-cloud.svg)
+
+Instead, if you want to start locally, create a new Gatsby project by running the following command:
+
+```bash
+npm init gatsby
+```
+
+Create a new `.env` file in the root of your project and add the following values:
+
+```bash
+WEBINY_API_TOKEN=<your-url-here>
+WEBINY_API_URL=<your-token-here>
+```
+
+Next, add the plugin `gatsby-source-graphql` to fetch data from Webiny:
+
+```bash
+npm install gatsby-source-graphql
+```
+
+Open the file `gatsby-config.js` and add the following:
+
+```javascript
+require("dotenv").config({
+    path: `.env`,
+  })
+
+  module.exports = {
+    // other config
+    plugins: [
+      {
+        resolve: `gatsby-source-graphql`,
+        options: {
+          typeName: "Webiny",
+          fieldName: "webiny",
+          url: process.env.WEBINY_API_URL,
+          headers: {
+            Authorization: `Bearer ${process.env.WEBINY_API_TOKEN}`
+          }
+        }
+      }
+   ]
+}
+```
+
+Now run the following command:
+
+```bash
+npm run develop
+```
+
+Open the browser at the url [http://localhost:8000/___graphql](http://localhost:8000/___graphql). You should see the webiny content source listed.
