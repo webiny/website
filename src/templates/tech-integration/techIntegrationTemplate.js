@@ -8,6 +8,7 @@ import RoundCheck from "../../assets/round-check.svg"
 import theme from "../../components/utils/theme";
 import mq from "../../components/utils/breakpoints";
 import backgroundImg from "../../assets/why-webiny/hero-section.svg";
+import bgSwish from "./assets/bg-swish.svg"
 
 import ExternalLink from "../../components/utils/ExternalLink";
 import BaseLayout from "../../layouts/base";
@@ -58,7 +59,16 @@ const Article = styled.article`
         }
     }
     .body {
-        background: linear-gradient(180.16deg, #190930 10.29%, #311C57 33.91%);
+        background: 
+            url(${bgSwish}),
+            linear-gradient(
+                180.16deg,
+                #190930 10.29%,
+                #311C57 33.91%
+            )
+        ;
+        background-repeat: no-repeat;
+        background-size: cover;
         color: white;
         padding: 40px 0;
 
@@ -72,6 +82,9 @@ const Article = styled.article`
         }
         code {
             margin-bottom: 25px;
+        }
+        .step-icon {
+            max-width: 75px;
         }
     }
 `
