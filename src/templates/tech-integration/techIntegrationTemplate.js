@@ -3,15 +3,16 @@ import { graphql, Link } from "gatsby";
 import styled from "react-emotion";
 import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import RoundCheck from "../../assets/round-check.svg"
 
+import RoundCheck from "../../assets/round-check.svg"
+import ExternalLink from "../../components/utils/ExternalLink";
+import BaseLayout from "../../layouts/base";
 import theme from "../../components/utils/theme";
 import mq from "../../components/utils/breakpoints";
 import backgroundImg from "../../assets/why-webiny/hero-section.svg";
-import bgSwish from "./assets/bg-swish.svg"
 
-import ExternalLink from "../../components/utils/ExternalLink";
-import BaseLayout from "../../layouts/base";
+import bgSwish from "./assets/bg-swish.svg"
+import WebinyWindow from "./assets/window-webiny.svg"
 
 const shortcodes = { ExternalLink };
 
@@ -84,6 +85,7 @@ const Article = styled.article`
             margin-bottom: 25px;
         }
         .step-icon {
+            margin-top: 24px;
             max-width: 75px;
         }
     }
@@ -92,6 +94,14 @@ const Article = styled.article`
 const BlogContainer = styled("div")(
     {
         maxWidth: 960,
+
+        "deckgo-highlight-code": {
+            borderRadius: "28px",
+            border: "16px solid rgba(255, 255, 255, 0.25)",
+            marginBottom: "20px",
+            "--deckgo-highlight-code-carbon-toolbar-display": "none",
+            "--deckgo-highlight-code-font-size": "1.4em",
+        },
     },
     mq({
         margin: [25, "25px auto 100px auto"],
@@ -112,7 +122,7 @@ export default function Template({
       mdx: { frontmatter, body },
   } = data;
 
-  const { title, introduction, whyThisTech, integrationCopy, techBenefits } = frontmatter
+  const { title, introduction, whyThisTech, integrationCopy, techBenefits, logo } = frontmatter
 
   // handle image transformation exceptions
   let featureImage = frontmatter.featuredImage.publicURL;
@@ -137,9 +147,11 @@ export default function Template({
             <BlogContainer>
                 <h2><span className="hilightText">Why</span> {title}?</h2>
                 <div dangerouslySetInnerHTML={{ __html: whyThisTech }}/>
+                <img src={logo.publicURL} alt="Stylized Gatsby logo" />
                 <h2><span className="hilightText">Why</span> Webiny?</h2>
                 <p><span className="hilightText">Webiny Headless CMS</span> contains everything an enterprise needs to build, manage and deliver content at scale.</p>
                 <p>Webiny doesn't just manage your content, it also allows you to manage all of your projects centrally using built-in internationalization and multi-site features, and use advanced processes that support organization-wide collaboration.</p>
+                <img src={WebinyWindow} alt="Stylized Webiny logo" />
                 <h2><span className="hilightText">{title} + Webiny</span> integration</h2>
                 <p dangerouslySetInnerHTML={{ __html: integrationCopy }} />
                 <h2>{title} <span className="hilightText">Benefits</span></h2>
