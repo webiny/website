@@ -8,7 +8,7 @@ import RoundCheck from "../../assets/round-check.svg"
 import ExternalLink from "../../components/utils/ExternalLink";
 import BaseLayout from "../../layouts/base";
 import theme from "../../components/utils/theme";
-import mq from "../../components/utils/breakpoints";
+import mq, { breakpoints } from "../../components/utils/breakpoints";
 import backgroundImg from "../../assets/why-webiny/hero-section.svg";
 
 import bgSwish from "./assets/bg-swish.svg"
@@ -47,18 +47,6 @@ const Article = styled.article`
     li {
         font-size: 20px;
     }
-    ul {
-        text-align: left;
-    }
-    ul > li {
-        padding-inline-start: 16px;
-        margin-block-end: 16px;
-
-        ::marker {
-            margin-block-start: 5px;
-            content: url(${RoundCheck});
-        }
-    }
     .body {
         background: 
             url(${bgSwish}),
@@ -89,7 +77,57 @@ const Article = styled.article`
             max-width: 75px;
         }
     }
+    .benefits {
+        ul {
+            text-align: left;
+            list-style-position: inside;
+        }
+        ul > li {
+            padding-inline-start: 16px;
+            margin-block-end: 16px;
+
+            ::marker {
+                margin-block-start: 5px;
+                content: url(${RoundCheck});
+            }
+        }
+    }
+    @media (min-width: ${breakpoints[0]}px) {
+        .why {
+            display: flex;
+            flex-direction: row;
+            gap: 8rem;
+
+            &.why-webiny {
+                flex-direction: row-reverse;
+            }
+        }
+        .benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+    }
 `
+
+const HeaderContainer = styled("div")(
+    {
+        textAlign: "center",
+    },
+    mq({
+        margin: ["100px auto", "140px auto"],
+        width: ["auto", "100%"],
+        maxWidth: [960, 960, 738],
+        h2: {
+            textAlign: ["center"]
+        },
+        img: {
+            width: ["100%", "auto"],
+            boxSizing: ["border-box", "border-box"],
+            maxWidth: ["100vw", "100%"],
+        },
+    }),
+);
 
 const BlogContainer = styled("div")(
     {
@@ -106,7 +144,7 @@ const BlogContainer = styled("div")(
     mq({
         margin: [25, "25px auto 100px auto"],
         width: ["auto", "100%"],
-        textAlign: ["center", "center", "left"],
+        textAlign: ["center", "left", "left"],
         img: {
             width: ["100%", "auto"],
             boxSizing: ["border-box", "border-box"],
@@ -139,33 +177,45 @@ export default function Template({
     >
         <Article>
             <HeroWhyContainer>
-                <BlogContainer>
+                <HeaderContainer>
                     <h1>Integrate { title } with <span className="hilightText">Webiny Headless CMS</span></h1>
                     <p dangerouslySetInnerHTML={{ __html: introduction }}/>
-                </BlogContainer>
+                </HeaderContainer>
             </HeroWhyContainer>
             <BlogContainer>
                 <h2><span className="hilightText">Why</span> {title}?</h2>
-                <div dangerouslySetInnerHTML={{ __html: whyThisTech }}/>
-                <img src={logo.publicURL} alt="Stylized Gatsby logo" />
-                <h2><span className="hilightText">Why</span> Webiny?</h2>
-                <p><span className="hilightText">Webiny Headless CMS</span> contains everything an enterprise needs to build, manage and deliver content at scale.</p>
-                <p>Webiny doesn't just manage your content, it also allows you to manage all of your projects centrally using built-in internationalization and multi-site features, and use advanced processes that support organization-wide collaboration.</p>
-                <img src={WebinyWindow} alt="Stylized Webiny logo" />
+                <div className="why why-tech">
+                    <div className="content" dangerouslySetInnerHTML={{ __html: whyThisTech }}/>
+                    <img src={logo.publicURL} alt="Stylized Gatsby logo" />
+                </div>
+                <div className="why why-webiny">
+                    <div className="content">
+                        <h2><span className="hilightText">Why</span> Webiny?</h2>
+                        <p><span className="hilightText">Webiny Headless CMS</span> contains everything an enterprise needs to build, manage and deliver content at scale.</p>
+                        <p>Webiny doesn't just manage your content, it also allows you to manage all of your projects centrally using built-in internationalization and multi-site features, and use advanced processes that support organization-wide collaboration.</p>
+                    </div>
+                    <img src={WebinyWindow} alt="Stylized Webiny logo" />
+                </div>
                 <h2><span className="hilightText">{title} + Webiny</span> integration</h2>
                 <p dangerouslySetInnerHTML={{ __html: integrationCopy }} />
-                <h2>{title} <span className="hilightText">Benefits</span></h2>
-                <ul>{techBenefits.map((benefit, i) => (
-                    <li key={i}>{benefit}</li>
-                ))}</ul>
-                <h2>Webiny Headless CMS <span class="hilightText">Benefits</span></h2>
-                <ul>
-                    <li>Keep your data in your cloud, under your own security perimeter</li>
-                    <li>Unlock greater performance by storing and delivering content closer to your users</li>
-                    <li>Webiny runs on highly-scalable fault-tolerant serverless services that scale in and out in seconds</li>
-                    <li>Marketing teams have full control to create and manage content, landing pages, files, and forms across multiple web properties</li>
-                    <li>Webiny is open source, released under an MIT license, and architected for extensibility</li>
-                </ul>
+                <div className="benefits">
+                    <div className="col1">
+                        <h2>{title} <span className="hilightText">Benefits</span></h2>
+                        <ul>{techBenefits.map((benefit, i) => (
+                            <li key={i}>{benefit}</li>
+                        ))}</ul>
+                    </div>
+                    <div className="col2">
+                        <h2>Webiny Headless CMS <span class="hilightText">Benefits</span></h2>
+                        <ul>
+                            <li>Keep your data in your cloud, under your own security perimeter</li>
+                            <li>Unlock greater performance by storing and delivering content closer to your users</li>
+                            <li>Webiny runs on highly-scalable fault-tolerant serverless services that scale in and out in seconds</li>
+                            <li>Marketing teams have full control to create and manage content, landing pages, files, and forms across multiple web properties</li>
+                            <li>Webiny is open source, released under an MIT license, and architected for extensibility</li>
+                        </ul>
+                    </div>
+                </div>
                 </BlogContainer>
                 <div className="body">
                     <BlogContainer>
