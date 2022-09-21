@@ -149,34 +149,14 @@ const ProductOverview = () => {
                 <span>build, manage and deliver</span> content at scale
             </H2>
             <P>
-                Webiny doesn’t just manage your content. It allows you to also build and deploy
+                Webiny doesn't just manage your content. It allows you to also build and deploy
                 sites and forms, manage all your projects centrally and use advanced processes that
                 support organization-wide collaboration.
             </P>
             <ContainerForImage>
-                {accordionItems[openIndex].image ? (
-                    <ProductOverviewImg
-                        fluid={accordionItems[openIndex].image}
-                        alt={accordionItems[openIndex].title}
-                    />
-                ) : (
-                    <ProductOverviewVideo
-                        autoPlay="autoplay"
-                        loop
-                        muted
-                        controls
-                        webkit-playsinline
-                        playsInline
-                        poster={loadingAnimation}
-                        src={accordionItems[openIndex].video}
-                    />
-                )}
-
-                <Accordion
-                    accordionItems={accordionItems}
-                    openIndex={openIndex}
-                    onOpenClose={onOpenClose}
-                />
+                <ProductOverviewVideo>
+                    <iframe src="https://www.youtube-nocookie.com/embed/-KWwVtRUhOQ?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </ProductOverviewVideo>
             </ContainerForImage>
         </ProductsOverviewContainer>
     );
