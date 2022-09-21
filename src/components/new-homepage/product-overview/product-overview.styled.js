@@ -198,12 +198,17 @@ export const ProductOverviewImg = styled(Img)(
     }),
 );
 
-export const ProductOverviewVideo = styled("video")(
+export const ProductOverviewVideo = styled("div")(
     {
         boxSizing: "border-box",
         borderRadius: "10px",
         backgroundColor: "#f9d9cf",
-        width: "100%",
+        aspectRatio: "16 / 9",
+
+        "> iframe": {
+            width: "100%",
+            height: "100%"
+        }
     },
     mq({
         border: ["5px solid #f9d9cf", "14px solid #f9d9cf", "14px solid #f9d9cf"],
