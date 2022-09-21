@@ -17,6 +17,7 @@ import isaacImg from "../assets/isaac-okoro.png";
 import victoryImg from "../assets/victory-tuduo.png";
 import menardImg from "../assets/menard.png";
 import calebImg from "../assets/caleb.png";
+import chrissyImg from "../assets/chrissy.png"
 import nobodyImg from "../assets/nobody.png"
 
 export default {
@@ -133,5 +134,11 @@ export default {
         description: "Frontend Developer and Technical Writer",
         avatar: calebImg,
         twitter: "calebolojo"
+    },
+    chrissy: {
+        name: "Christina Petit",
+        description: "Freelance Web Developer  & Tech Writer",
+        avatar: chrissyImg,
+        twitter: "petitpois24"
     }
 };
