@@ -6,6 +6,7 @@ import BlogCard from "../../blog/components/blog-card"
 import { breakpoints } from "../../utils/breakpoints";
 import { H2 } from "../product-overview/product-overview.styled";
 import { ButtonPrimary } from "../hero-section/hero.styled";
+import BlogTile from "./blog-tile";
 
 const Background = styled.div`
     padding-bottom: 6rem;
@@ -33,7 +34,7 @@ const BlogGrid = styled.div`
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        row-gap: 4rem;
+        gap: 4rem;
     }
 `
 
@@ -45,20 +46,10 @@ const BlogTutorials = () => {
                     node {
                         id
                         frontmatter {
-                            author
-                            date
                             description
                             slug
-                            tags
-                            title
-                            featureImage {
-                                publicURL
-                                childImageSharp {
-                                    fluid(maxWidth: 800) {
-                                        ...GatsbyImageSharpFluid
-                                    }
-                                }
-                            }
+                            tech
+                            project
                         }
                     }
                 }
@@ -80,7 +71,7 @@ const BlogTutorials = () => {
             </ButtonContainer>
             <BlogGrid>
                 {allMdx.edges.map(({ node }) => (
-                    <BlogCard key={node.id} {...node.frontmatter} />
+                    <BlogTile key={node.id} {...node.frontmatter} />
                 ))}
             </BlogGrid>
         </Background>
