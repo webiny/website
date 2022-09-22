@@ -6,6 +6,7 @@ import NextLogo from "../../../assets/nextjs.svg"
 import ReactLogo from "../../../assets/react.svg"
 import RemixLogo from "../../../assets/remix.svg"
 import { ButtonPrimary } from '../hero-section/hero.styled'
+import GitHub from "../../../assets/github.svg"
 
 const technologies = {
   "vuejs": {
@@ -37,21 +38,26 @@ const TileOuter = styled.div`
     box-shadow: 0px 4px 20px rgb(0 0 0 / 10%);
     border: 10px solid #FFFFFF;
     background: #fff7f4;
+
+    ${ButtonPrimary} {
+      margin-top: unset;
+    }
 `
 
 const BlogTile = ({
   slug,
   tech,
   project,
-  description
+  description,
 }) => {
-  console.log(slug)
   return (
     <TileOuter>
       <img src={technologies[tech[0]].image} width="100px" />
-      <h4>{project}</h4>
-      <p>{description}</p>
-      <ButtonPrimary type="dark" href={slug}>View Tutorial</ButtonPrimary>
+      <div>
+        <h4>{project}</h4>
+        <p>{description}</p>
+      </div>
+      <ButtonPrimary type="defaultOrangeText" link={slug}>Learn More &rarr;</ButtonPrimary>
     </TileOuter>
   )
 }

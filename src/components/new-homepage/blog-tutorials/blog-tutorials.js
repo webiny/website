@@ -2,7 +2,6 @@ import React from "react";
 import styled from "react-emotion";
 import { useStaticQuery, graphql } from "gatsby";
 
-import BlogCard from "../../blog/components/blog-card"
 import { breakpoints } from "../../utils/breakpoints";
 import { H2 } from "../product-overview/product-overview.styled";
 import { ButtonPrimary } from "../hero-section/hero.styled";
@@ -30,6 +29,8 @@ const ButtonContainer = styled.div`
 `
 
 const BlogGrid = styled.div`
+    max-width: 1200px;
+
     @media (min-width: ${breakpoints[0]}px) {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
