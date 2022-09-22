@@ -118,27 +118,12 @@ const buttonOutlineOrange = css({
     padding: "12px 20px",
 });
 
-const buttonOrangeText = css({
-    backgroundColor: "#fff",
-    color: "#FA5A28",
-    fontWeight: "bold",
-    border: "solid 2px transparent",
-    padding: "12px 20px",
-    textTransform: "initial",
-    
-    "&:hover, &:active, &:focus-visible": {
-        backgroundColor: "#FA5A28",
-        color: "white",
-    }
-});
-
 const buttonOutlineDark = css({
     backgroundColor: "transparent",
     color: theme.color.primaryDark,
     textTransform: "uppercase",
     border: "solid 2px " + theme.color.primaryDark,
     padding: "12px 20px",
-
 });
 
 class Button extends React.Component {
@@ -154,7 +139,6 @@ class Button extends React.Component {
         outlineDark: buttonOutlineDark,
         primaryLink: buttonPrimaryLink,
         outlineOrange: buttonOutlineOrange,
-        defaultOrangeText: buttonOrangeText
     };
 
     render() {

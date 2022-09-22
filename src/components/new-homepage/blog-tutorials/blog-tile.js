@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'react-emotion'
+import { Link } from 'gatsby'
 
 import VueLogo from "../../../assets/vuejs.svg"
 import NextLogo from "../../../assets/nextjs.svg"
 import ReactLogo from "../../../assets/react.svg"
 import RemixLogo from "../../../assets/remix.svg"
 import { ButtonPrimary } from '../hero-section/hero.styled'
-import GitHub from "../../../assets/github.svg"
+
 
 const technologies = {
   "vuejs": {
@@ -27,7 +28,22 @@ const technologies = {
   }
 }
 
+const TileLink = styled(Link)`
+    display: flex;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #FA5A28;
+    textDecoration: none;
+    padding: 5px 10px 5px 0;
 
+    &:hover,
+    &:active,
+    &:focus-visible {
+      text-decoration: underline;
+    }
+
+`
 const TileOuter = styled.div`
     display: flex;
     flex-direction: column;
@@ -57,7 +73,7 @@ const BlogTile = ({
         <h4>{project}</h4>
         <p>{description}</p>
       </div>
-      <ButtonPrimary type="defaultOrangeText" link={slug}>Learn More &rarr;</ButtonPrimary>
+      <TileLink to={slug}>Learn More &rarr;</TileLink>
     </TileOuter>
   )
 }
