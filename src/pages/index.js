@@ -12,6 +12,7 @@ import DeliveryExcellence from "../components/new-homepage/view-big-tiles/delive
 import OpenSourceBenefits from "../components/new-homepage/open-source-benefits/open-source-benefits";
 import CustomerTestimonial from "../components/new-homepage/customer-testimonial-slider/customer-testimonial";
 import InstallWebiny from "../components/new-homepage/install-webiny-section/install-webiny";
+import BlogTutorials from "../components/new-homepage/blog-tutorials/blog-tutorials";
 
 class IndexPage extends React.Component {
     render() {
@@ -29,6 +30,7 @@ class IndexPage extends React.Component {
                 <MultiSiteSupport />
                 <DeliveryExcellence />
                 <OpenSourceBenefits />
+                <BlogTutorials />
                 <CustomerTestimonial />
                 <InstallWebiny />
             </BaseLayout>
