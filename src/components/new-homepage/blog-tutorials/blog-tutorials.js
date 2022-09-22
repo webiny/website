@@ -5,15 +5,26 @@ import { useStaticQuery, graphql } from "gatsby";
 import BlogCard from "../../blog/components/blog-card"
 import { breakpoints } from "../../utils/breakpoints";
 import { H2 } from "../product-overview/product-overview.styled";
+import { ButtonPrimary } from "../hero-section/hero.styled";
 
 const Background = styled.div`
     padding-bottom: 6rem;
     border-bottom: 1px solid #FAF0F3;
 
-    > h2 {
+    > * {
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 5rem;
+    }
+`
+
+const ButtonContainer = styled.div`
+    display: flex;
+    gap: 2rem;
+    max-width: 422px;
+    margin-bottom: 6rem;
+
+    > * {
+        flex: 1 1 0;
     }
 `
 
@@ -58,6 +69,15 @@ const BlogTutorials = () => {
     return (
         <Background>
             <H2 align="center">What can you <span>build</span> <br/>with Webiny Headless CMS?</H2>
+            <ButtonContainer>
+                <ButtonPrimary link="/blog/?query=build%20projects" type={"primary"}>
+                        See all
+                </ButtonPrimary>
+                <ButtonPrimary type={"outlineOrange"} link="https://github.com/webiny/write-with-webiny/tree/main/tutorials/">
+                        View code
+                </ButtonPrimary>
+
+            </ButtonContainer>
             <BlogGrid>
                 {allMdx.edges.map(({ node }) => (
                     <BlogCard key={node.id} {...node.frontmatter} />
