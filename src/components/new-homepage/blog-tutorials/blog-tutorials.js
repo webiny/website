@@ -10,22 +10,40 @@ import BlogTile from "./blog-tile";
 const Background = styled.div`
     padding-bottom: 6rem;
     border-bottom: 1px solid #FAF0F3;
+`
 
-    > * {
-        margin-left: auto;
-        margin-right: auto;
+const HeaderContainer = styled.div`
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > ${H2} {
+        margin-top: unset;
     }
 `
 
 const ButtonContainer = styled.div`
     display: flex;
     gap: 2rem;
-    max-width: 422px;
+    justify-content: center;
     margin-bottom: 6rem;
 
     > * {
         flex: 1 1 0;
     }
+
+`
+
+export const SubTitle = styled.p`
+    background: #ffEFEa;
+    color: #FA5A28;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 20px 5px 13px;
+    border-radius: 6px;
+    letter-spacing: .1px;
+    text-transform: uppercase;
 `
 
 const BlogGrid = styled.div`
@@ -66,7 +84,10 @@ const BlogTutorials = () => {
 
     return (
         <Background>
-            <H2 align="center">What can you <span>build</span> <br/>with Webiny Headless CMS?</H2>
+            <HeaderContainer>
+                <SubTitle>Use Cases</SubTitle>
+                <H2 align="center">What can you <span>build</span> <br/>with Webiny Headless CMS?</H2>
+            </HeaderContainer>
             <ButtonContainer>
                 <ButtonPrimary link="/blog/?query=build%20projects" type={"primary"}>
                         See all
