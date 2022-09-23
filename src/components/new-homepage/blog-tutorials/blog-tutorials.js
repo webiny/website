@@ -30,31 +30,37 @@ const ButtonContainer = styled.div`
 
 const BlogGrid = styled.div`
     max-width: 1200px;
+    margin: 0 15px;
+    display: grid;
+    gap: 2rem;
 
     @media (min-width: ${breakpoints[0]}px) {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
         gap: 4rem;
+    }
+    @media (min-width: ${breakpoints[1]}px) {
+        margin: 0 auto;
+        grid-template-columns: repeat(3, 1fr);
     }
 `
 
 const BlogTutorials = () => {
     const { allMdx } = useStaticQuery(graphql`
         query BlogTutorialsQuery {
-            allMdx(filter: {fileAbsolutePath: {regex: "/blogPosts/"}, frontmatter: {tags: {in: "build projects"}}}, limit: 6, sort: {fields: frontmatter___date, order: DESC}) {
-                edges {
-                    node {
-                        id
-                        frontmatter {
-                            description
-                            slug
-                            tech
-                            project
-                        }
-                    }
+        allMdx(filter: {fileAbsolutePath: {regex: "/blogPosts/"}, frontmatter: {tags: {in: "build projects"}, featured: {eq: true}}}, limit: 6, sort: {fields: frontmatter___date, order: DESC}) {
+            edges {
+            node {
+                id
+                frontmatter {
+                description
+                slug
+                tech
+                project
                 }
             }
+            }
+        }
         }
     `);
 

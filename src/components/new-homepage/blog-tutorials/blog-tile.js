@@ -6,6 +6,8 @@ import VueLogo from "../../../assets/vuejs.svg"
 import NextLogo from "../../../assets/nextjs.svg"
 import ReactLogo from "../../../assets/react.svg"
 import RemixLogo from "../../../assets/remix.svg"
+import FlutterLogo from "../../../assets/flutter.svg"
+import AstroLogo from "../../../assets/astro.svg"
 import { ButtonPrimary } from '../hero-section/hero.styled'
 
 
@@ -25,6 +27,14 @@ const technologies = {
   "nextjs": {
     title: "Next.js",
     image: NextLogo
+  },
+  "flutter": {
+    title: "Flutter",
+    image: FlutterLogo
+  },
+  "astro": {
+    title: "Astro",
+    image: AstroLogo
   }
 }
 
@@ -48,7 +58,6 @@ const TileOuter = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 10px;
     padding: 30px 20px 37px 30px;
     border-radius: 20px;
     box-shadow: 0px 4px 20px rgb(0 0 0 / 10%);
@@ -57,6 +66,9 @@ const TileOuter = styled.div`
 
     ${ButtonPrimary} {
       margin-top: unset;
+    }
+    > div {
+      line-height: 1.2;
     }
 `
 
