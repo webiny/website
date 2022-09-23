@@ -85,7 +85,7 @@ const BlogTutorials = () => {
     return (
         <Background>
             <HeaderContainer>
-                <SubTitle>Use Cases</SubTitle>
+                <SubTitle>Build with Webiny</SubTitle>
                 <H2 align="center">What can you <span>build</span> <br/>with Webiny Headless CMS?</H2>
             </HeaderContainer>
             <ButtonContainer>
