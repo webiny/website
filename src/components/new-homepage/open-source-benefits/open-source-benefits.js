@@ -157,11 +157,11 @@ const OpenSourceBenefits = () => {
                 <div className="code-section-width-wrapper">
                     <CodeSectionTabs>
                         <Tabs>
-                            <TabList selectedClassName="isActiveTab">
-                                <Tab selectedClassName="isActiveTab">Page publish event</Tab>
-                                <Tab selectedClassName="isActiveTab">New GraphQL Resolver</Tab>
-                                <Tab selectedClassName="isActiveTab">Change Admin Logo</Tab>
-                                <Tab selectedClassName="isActiveTab">Authenticate user</Tab>
+                            <TabList selectedclassname="isActiveTab">
+                                <Tab selectedclassname="isActiveTab">Page publish event</Tab>
+                                <Tab selectedclassname="isActiveTab">New GraphQL Resolver</Tab>
+                                <Tab selectedclassname="isActiveTab">Change Admin Logo</Tab>
+                                <Tab selectedclassname="isActiveTab">Authenticate user</Tab>
                             </TabList>
                             <div className="tabs-code">
                                 <TabPanel>

@@ -323,10 +323,11 @@ const Header = ({ hasBanner = true, sticky = false }) => {
                         title
                         slug
                         featureImage {
-                            childImageSharp {
-                                fluid(maxWidth: 100) {
-                                    ...GatsbyImageSharpFluid
-                                }
+                          publicURL
+                          childImageSharp {
+                            fluid(maxWidth: 800) {
+                                ...GatsbyImageSharpFluid
+                            }
                             }
                         }
                     }
