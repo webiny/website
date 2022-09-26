@@ -144,7 +144,7 @@ export default {
     },
     miracleOnyemma: {
         name: "Miracle Onyemma",
-        description: "Freelance Web Developer  & Tech Writer",
+        description: "I'm a designer and front-end developer obsessed with crafting and sharing beautiful experiences.",
         avatar: miracleOnyemmaImg,
         twitter: "miracleio"  
     }
