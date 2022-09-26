@@ -13,6 +13,7 @@ import {
   CodeFieldBorder } from "../../components/new-homepage/hero-section/hero.styled"
   import BlogCard from "../../components/blog/components/blog-card"
   import FeaturedBlog from "../../components/blog/components/featured-blog"
+  import Button from "../../components/ui/button"
 
 import RoundCheck from "../../assets/round-check.svg";
 import backgroundImg from "../../assets/why-webiny/hero-section.svg";
@@ -23,6 +24,7 @@ import Step2 from "../../assets/step-2.svg";
 import ClickInstall from "../../assets/1-click-gatsby-cloud.svg";
 import bgSwish from "../../assets/bg-swish.svg";
 import WebinyWindow from "../../assets/window-webiny.svg";
+import BookDemoBG from "../../assets/book-demo-bg.svg";
 
 const Article = styled.article`
   .hilightText {
@@ -166,6 +168,9 @@ const BlogContainer = styled.div`
   .lead {
     text-align: left;
   }
+  div[class*="FeaturedBlogWrapper"] {
+    margin-top: 4rem;
+  }
 
   @media (min-width: ${breakpoints[0]}px) {
     margin: 25px 15px 100px 15px;
@@ -205,8 +210,22 @@ const BlogContainer = styled.div`
   }
 `;
 
-const TutorialsGrid = styled.div`
 
+const TutorialsGrid = styled.div`
+  margin-block-start: 4rem;
+  display: grid;
+  gap: 2rem;
+
+  @media (min-width: ${breakpoints[0]}px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: ${breakpoints[1]}px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+`
+
+const BookADemo = styled.aside`
+  background-image: url(${BookDemoBG}) no-repeat center center;
 `
 
 export const HeroWhyContainer = styled.div(
@@ -270,6 +289,7 @@ const techBenefits = [
 ];
 
 const gatsby = ({ data }) => {
+  console.log(data)
   const hasOnlyOneArticle = data.allMdx.edges.length === 1
   const [copyButtonState, setCopyButtonState] = useState(false);
   return (
@@ -422,23 +442,29 @@ const gatsby = ({ data }) => {
           </div>
         </BlogContainer>
         </div>
-        <div className="postbody">
-          <BlogContainer>
-            <h2>
-              Check out these tutorials on using<br/>
-              <span className="hilightText">Webiny + {title}</span> on our blog
-            </h2>
-            {hasOnlyOneArticle ? (
-                <FeaturedBlog data={data.allMdx.edges[0].node.frontmatter} key={data.allMdx.edges[0].node.id} />
-            ) : (
-              <TutorialsGrid>
-                {data.allMdx.edges.map(({node}) => (
-                <BlogCard {...node.frontmatter} />
-              ))}
-              </TutorialsGrid>
-            )}
-          </BlogContainer>
-        </div>
+        {data.allMdx.edges.length && (
+          <div className="postbody">
+            <BlogContainer>
+              <h2>
+                Check out these tutorials on using<br/>
+                <span className="hilightText">Webiny + {title}</span> on our blog
+              </h2>
+              {hasOnlyOneArticle ? (
+                  <FeaturedBlog data={data.allMdx.edges[0].node.frontmatter} />
+              ) : (
+                <TutorialsGrid>
+                  {data.allMdx.edges.map(({node}) => (
+                  <BlogCard {...node.frontmatter} key={node.id} />
+                ))}
+                </TutorialsGrid>
+              )}
+            </BlogContainer>
+          </div>
+        )}
+        <BookADemo>
+          <h2>Working on a larger project that requires a Headless CMS?</h2>
+          <Button type="purple">Book a Demo</Button>
+        </BookADemo>
       </Article>
     </BaseLayout>
   );
