@@ -224,8 +224,30 @@ const TutorialsGrid = styled.div`
   }
 `
 
-const BookADemo = styled.aside`
-  background-image: url(${BookDemoBG}) no-repeat center center;
+const BookADemoContainer = styled.aside`
+  background: url(${BookDemoBG}) no-repeat center center;
+  padding: 4rem;
+  align-items: center;
+
+  > a {
+    max-width: 220px;
+    margin: 1rem auto 0 auto;
+  }
+
+  @media(min-width: ${breakpoints[1]}px) {
+    display: flex;
+    flex-direction: row;
+
+    > a {
+      margin: 0 auto;
+    }
+  > h2 {
+      margin-top: unset;
+      margin-block-end: unset;
+      max-width: 60rem;
+      text-align: left;
+    }
+  }
 `
 
 export const HeroWhyContainer = styled.div(
@@ -442,7 +464,7 @@ const gatsby = ({ data }) => {
           </div>
         </BlogContainer>
         </div>
-        {data.allMdx.edges.length && (
+        {data.allMdx.edges.length > 0 && (
           <div className="postbody">
             <BlogContainer>
               <h2>
@@ -461,10 +483,12 @@ const gatsby = ({ data }) => {
             </BlogContainer>
           </div>
         )}
-        <BookADemo>
-          <h2>Working on a larger project that requires a Headless CMS?</h2>
-          <Button type="purple">Book a Demo</Button>
-        </BookADemo>
+        <BlogContainer>
+          <BookADemoContainer>
+            <h2>Working on a larger project that requires a Headless CMS?</h2>
+            <Button type="purple" link="https://site.webiny.com/forms/product-demo/">Book a Demo</Button>
+          </BookADemoContainer>
+        </BlogContainer>
       </Article>
     </BaseLayout>
   );
