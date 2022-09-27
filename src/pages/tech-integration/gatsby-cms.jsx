@@ -293,7 +293,7 @@ const HeaderContainer = styled("div")(
   }),
 );
 
-const title = "Gatsby";
+const title = "Gatsby CMS";
 const description = "Gatsby is a React-based open source framework for creating websites.";
 const introduction =
   "Building a dynamic, content-heavy site with <strong>Gatsby</strong> and <strong>Webiny</strong> is easy to build, simple to use, secure and scalable.";
@@ -302,12 +302,10 @@ const whyThisTech =
 const integrationCopy =
   "<span className=hilightText>You can easily build a dynamic, content-heavy site with Gatsby and use Webiny</span> to decouple engineering needs from your marketing team using a highly-scalable, fault-tolerant Serverless service that scales in and out in seconds. Use a single Webiny instance to manage content for an unlimited number of websites. All under one tenant in your own security perimeter.";
 const techBenefits = [
-  "Build rich web experiences by combining data from anywhere",
-  "Utilize a rich ecosystem of plugins instead of building from scratch",
-  "Query data in components",
-  "Load images progressively by displaying a placeholder image before loading the full heavyweight asset",
-  "Scale high traffic sites safely across the world",
-  "Enable modern browsers to load the right size of image assets given the viewport size through responsive images",
+  "Combines static-site generation, deferred static generation, and intelligent page rendering",
+  "Unified data layer that enables developers to easily combine data from different sources and render them alongside each other.",
+  "Deploy and host on Content Delivery Networks, delivering content to visitors faster than traditional servers",
+  "Statically generated sites have fewer vulnerabilities than traditional websites and monolithic platforms.",
 ];
 
 const gatsby = ({ data }) => {
