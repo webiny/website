@@ -68,7 +68,7 @@ export const Article = styled.article`
     text-align: center;
   }
   .action img {
-    max-width: 200px;
+    max-height: 80px;
     margin: 0 auto;
   }
   @media (min-width: ${breakpoints[0]}px) {
