@@ -1,297 +1,33 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
-import styled from "react-emotion";
 
 import BaseLayout from "../../layouts/base";
-import theme from "../../components/utils/theme";
-import mq, { breakpoints } from "../../components/utils/breakpoints";
+import { 
+  Article,
+  BlogContainer,
+  TutorialsGrid,
+  BookADemoContainer,
+  HeroWhyContainer,
+  HeaderContainer,
+  CodeFieldBorder,
+  CodeField
+} from '../../components/tech-integration/TechIntegration.styled'
 import {
   ToolTip,
   ToolTipText,
-  CodeField,
-  CodeFieldText,
-  CodeFieldBorder } from "../../components/new-homepage/hero-section/hero.styled"
+  CodeFieldText } from "../../components/new-homepage/hero-section/hero.styled"
   import BlogCard from "../../components/blog/components/blog-card"
   import FeaturedBlog from "../../components/blog/components/featured-blog"
   import Button from "../../components/ui/button"
 
-import RoundCheck from "../../assets/round-check.svg";
-import backgroundImg from "../../assets/why-webiny/hero-section.svg";
 import featuredImage from "../../assets/webiny-plus-gatsby.png";
 import logo from "../../assets/window-gatsby.svg";
 import Step1 from "../../assets/step-1.svg";
 import Step2 from "../../assets/step-2.svg";
 import ClickInstall from "../../assets/1-click-gatsby-cloud.svg";
-import bgSwish from "../../assets/bg-swish.svg";
 import WebinyWindow from "../../assets/window-webiny.svg";
-import BookDemoBG from "../../assets/book-demo-bg.svg";
-
-const Article = styled.article`
-  .hilightText {
-    color: ${theme.color.primaryDark};
-  }
-  .heading-link-anchor {
-    display: none;
-  }
-  p,
-  li {
-    font-size: 20px;
-  }
-  .body {
-    background: url(${bgSwish}), linear-gradient(180.16deg, #190930 10.29%, #311c57 33.91%);
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-    padding: 40px 0;
-
-    .hilightText {
-      color: ${theme.color.lightGreen};
-    }
-    a {
-      color: ${theme.color.lightGreen};
-      font-weight: bold;
-      text-decoration: underline;
-      text-decoration-skip-ink: auto;
-    }
-    code {
-      margin-bottom: 25px;
-    }
-    .step-icon {
-      margin-top: 24px;
-      max-width: 75px;
-    }
-    .lead {
-      font-size: 24px;
-    }
-  }
-  .benefits {
-    ul {
-      text-align: left;
-      margin-inline-start: 20px;
-    }
-    ul > li {
-      padding-inline-start: 16px;
-      margin-block-end: 16px;
-
-      ::marker {
-        margin-block-start: 5px;
-        content: url(${RoundCheck});
-      }
-    }
-  }
-  .step {
-    text-align: center;
-
-    img:not(.step-icon) {
-      width: 20rem;
-      border: 3px solid white;
-      border-radius: 10px;
-    }
-  }
-  @media (min-width: ${breakpoints[0]}px) {
-    .why {
-      display: flex;
-      flex-direction: row;
-      gap: 8rem;
-      margin-bottom: 40px;
-
-      & > * {
-        flex: 1 1 0;
-      }
-
-      &.why-webiny {
-        flex-direction: row-reverse;
-      }
-    }
-    .benefits {
-      display: flex;
-      flex-direction: row;
-      gap: 4rem;
-
-      & > * {
-        flex: 1 1 0;
-      }
-    }
-    .step {
-      display: flex;
-      flex-direction: row;
-      gap: 2rem;
-      text-align: left;
-
-      & > * {
-        flex: 1 1 0;
-      }
-      & > *:not(:last-child) {
-        align-self: flex-start;
-      }
-      & > *:last-child {
-        align-self: center;
-      }
-    }
-  }
-`;
-
-const BlogContainer = styled.div`
-  max-width: 1200px;
-  margin: 25px;
-  width: auto;
-  text-align: left;
-
-  deckgo-highlight-code: {
-    border-radius: 28px;
-    border: 16px solid rgba(255, 255, 255, 0.25);
-    margin-bottom: "20px";
-    --deckgo-highlight-code-carbon-toolbar-display: none;
-    --deckgo-highlight-code-font-size: 1.4em;
-  }
-  p {
-    text-align: center;
-  }
-  h2,
-  h3,
-  h4 {
-    font-weight: bold;
-    text-align: center;
-  }
-  h2 {
-    font-size: 36px;
-  }
-  h3 {
-    font-size: 36px;
-  }
-  h4 {
-    font-size: 28px;
-  }
-  img {
-    width: 100%;
-  }
-  .lead {
-    text-align: left;
-  }
-  div[class*="FeaturedBlogWrapper"] {
-    margin-top: 4rem;
-  }
-
-  @media (min-width: ${breakpoints[0]}px) {
-    margin: 25px 15px 100px 15px;
-    width: 100%;
-
-    p {
-      text-align: left;
-    }
-    h4 {
-      font-size: 28px;
-      text-align: left;
-    }
-    img {
-      width: auto;
-    }
-    --deckgo-highlight-code-font-size: 1em;
-  }
-  @media (min-width: ${breakpoints[1]}px) {
-    margin: 25px auto 100px auto;
-
-    h2 {
-      font-size: 48px;
-    }
-    h3 {
-      font-size: 42px;
-      text-align: left;
-    }
-    h4 {
-      font-size: 28px;
-    }
-    img {
-      width: 20rem;
-    }
-    .lead {
-      text-align: center;
-    }
-  }
-`;
 
 
-const TutorialsGrid = styled.div`
-  margin-block-start: 4rem;
-  display: grid;
-  gap: 2rem;
-
-  @media (min-width: ${breakpoints[0]}px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media (min-width: ${breakpoints[1]}px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-`
-
-const BookADemoContainer = styled.aside`
-  background: url(${BookDemoBG}) no-repeat center center;
-  padding: 4rem;
-  align-items: center;
-
-  > a {
-    max-width: 220px;
-    margin: 1rem auto 0 auto;
-  }
-
-  @media(min-width: ${breakpoints[1]}px) {
-    display: flex;
-    flex-direction: row;
-
-    > a {
-      margin: 0 auto;
-    }
-  > h2 {
-      margin-top: unset;
-      margin-block-end: unset;
-      max-width: 60rem;
-      text-align: left;
-    }
-  }
-`
-
-export const HeroWhyContainer = styled.div(
-  {
-    textAlign: "center",
-    margin: "0 auto",
-    backgroundImage: `url(${backgroundImg})`,
-    backgroundRepeat: "no-repeat",
-    overflow: "hidden",
-    backgroundPosition: "bottom",
-  },
-  mq({
-    backgroundSize: ["none", "none", "cover"],
-    marginBottom: ["50px", "50px", "50px"],
-
-    h1: {
-      fontSize: ["36px", "46px", "56px"],
-      fontWeight: "bold",
-    },
-    p: {
-      fontSize: ["20px", "24px"],
-    },
-  }),
-);
-
-const HeaderContainer = styled("div")(
-  {
-    textAlign: "center",
-  },
-  mq({
-    margin: ["100px auto", "140px auto"],
-    width: ["auto", "100%"],
-    maxWidth: [960, 960, 738],
-    h2: {
-      textAlign: ["center"],
-      fontSize: ["36px", "36px", "48px"],
-    },
-    img: {
-      width: ["100%", "auto"],
-      boxSizing: ["border-box", "border-box"],
-      maxWidth: ["100vw", "100%"],
-    },
-  }),
-);
 
 const title = "Gatsby CMS";
 const description = "Gatsby is a React-based open source framework for creating websites.";
@@ -410,7 +146,11 @@ const gatsby = ({ data }) => {
                 </a>{" "}
                 for installing Webiny on your local machine.
               </p>
-              <p>Then, create a new Webiny project by running</p>
+              <p>Then, create a new Webiny project by running the following command. If you get stuck or for more details,{" "}
+                <a href="https://www.webiny.com/docs/get-started/install-webiny">
+                  please see our documentation.
+                </a>
+              </p>
             </div>
             <div className="action">
               <CodeFieldBorder>
@@ -430,12 +170,6 @@ const gatsby = ({ data }) => {
                         </ToolTip>
                     </CodeField>
                 </CodeFieldBorder>
-              <p>
-                If you get stuck or for more details,{" "}
-                <a href="https://www.webiny.com/docs/get-started/install-webiny">
-                  please see our documentation.
-                </a>
-              </p>
             </div>
           </div>
           <div className="step">

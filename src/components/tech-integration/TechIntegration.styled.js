@@ -1,0 +1,291 @@
+import styled from "react-emotion";
+import theme from "../utils/theme";
+import mq, { breakpoints } from "../utils/breakpoints";
+
+import RoundCheck from "../../assets/round-check.svg";
+import backgroundImg from "../../assets/why-webiny/hero-section.svg";
+import bgSwish from "../../assets/bg-swish.svg";
+import BookDemoBG from "../../assets/book-demo-bg.svg"
+
+export const Article = styled.article`
+  .hilightText {
+    color: ${theme.color.primaryDark};
+  }
+  .heading-link-anchor {
+    display: none;
+  }
+  p,
+  li {
+    font-size: 20px;
+  }
+  .body {
+    background: url(${bgSwish}), linear-gradient(180.16deg, #190930 10.29%, #311c57 33.91%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 40px 0;
+
+    .hilightText {
+      color: ${theme.color.lightGreen};
+    }
+    a {
+      color: ${theme.color.lightGreen};
+      font-weight: bold;
+      text-decoration: underline;
+      text-decoration-skip-ink: auto;
+    }
+    code {
+      margin-bottom: 25px;
+    }
+    .step-icon {
+      margin-top: 24px;
+      max-width: 75px;
+    }
+    .lead {
+      font-size: 24px;
+    }
+  }
+  .benefits {
+    ul {
+      text-align: left;
+      margin-inline-start: 20px;
+    }
+    ul > li {
+      padding-inline-start: 16px;
+      margin-block-end: 16px;
+
+      ::marker {
+        margin-block-start: 5px;
+        content: url(${RoundCheck});
+      }
+    }
+  }
+  .step {
+    text-align: center;
+  }
+  @media (min-width: ${breakpoints[0]}px) {
+    .why {
+      display: flex;
+      flex-direction: row;
+      gap: 8rem;
+      margin-bottom: 40px;
+
+      & > * {
+        flex: 1 1 0;
+      }
+
+      &.why-webiny {
+        flex-direction: row-reverse;
+      }
+    }
+    .benefits {
+      display: flex;
+      flex-direction: row;
+      gap: 4rem;
+
+      & > * {
+        flex: 1 1 0;
+      }
+    }
+    .step {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      text-align: left;
+
+      & > * {
+        flex: 1 1 0;
+      }
+      & > *:not(:last-child) {
+        align-self: flex-start;
+      }
+      & > *:last-child {
+        align-self: center;
+      }
+    }
+  }
+  @media (min-width: ${breakpoints[1]}px) {
+    .step .action {
+      min-width: 580px;
+    }
+  }
+`;
+
+export const BlogContainer = styled.div`
+  max-width: 1200px;
+  margin: 25px;
+  width: auto;
+  text-align: left;
+
+  deckgo-highlight-code: {
+    border-radius: 28px;
+    border: 16px solid rgba(255, 255, 255, 0.25);
+    margin-bottom: "20px";
+    --deckgo-highlight-code-carbon-toolbar-display: none;
+    --deckgo-highlight-code-font-size: 1.4em;
+  }
+  p {
+    text-align: center;
+  }
+  h2,
+  h3,
+  h4 {
+    font-weight: bold;
+    text-align: center;
+  }
+  h2 {
+    font-size: 36px;
+  }
+  h3 {
+    font-size: 36px;
+  }
+  h4 {
+    font-size: 28px;
+  }
+  img {
+    width: 100%;
+  }
+  .lead {
+    text-align: left;
+  }
+  div[class*="FeaturedBlogWrapper"] {
+    margin-top: 4rem;
+  }
+
+  @media (min-width: ${breakpoints[0]}px) {
+    margin: 25px 15px 100px 15px;
+    width: 100%;
+
+    p {
+      text-align: left;
+    }
+    h4 {
+      font-size: 28px;
+      text-align: left;
+    }
+    img {
+      width: auto;
+    }
+    --deckgo-highlight-code-font-size: 1em;
+  }
+  @media (min-width: ${breakpoints[1]}px) {
+    margin: 25px auto 100px auto;
+
+    h2 {
+      font-size: 48px;
+    }
+    h3 {
+      font-size: 42px;
+      text-align: left;
+    }
+    h4 {
+      font-size: 28px;
+    }
+    .lead {
+      text-align: center;
+    }
+  }
+`;
+
+
+export const TutorialsGrid = styled.div`
+  margin-block-start: 4rem;
+  display: grid;
+  gap: 2rem;
+
+  @media (min-width: ${breakpoints[0]}px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: ${breakpoints[1]}px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+`
+
+export const BookADemoContainer = styled.aside`
+  background: url(${BookDemoBG}) no-repeat center center;
+  padding: 4rem;
+  align-items: center;
+
+  > a {
+    max-width: 220px;
+    margin: 1rem auto 0 auto;
+  }
+
+  @media(min-width: ${breakpoints[1]}px) {
+    display: flex;
+    flex-direction: row;
+
+    > a {
+      margin: 0 auto;
+    }
+  > h2 {
+      margin-top: unset;
+      margin-block-end: unset;
+      max-width: 60rem;
+      text-align: left;
+    }
+  }
+`
+
+export const HeroWhyContainer = styled.div(
+  {
+    textAlign: "center",
+    margin: "0 auto",
+    backgroundImage: `url(${backgroundImg})`,
+    backgroundRepeat: "no-repeat",
+    overflow: "hidden",
+    backgroundPosition: "bottom",
+  },
+  mq({
+    backgroundSize: ["none", "none", "cover"],
+    marginBottom: ["50px", "50px", "50px"],
+
+    h1: {
+      fontSize: ["36px", "46px", "56px"],
+      fontWeight: "bold",
+    },
+    p: {
+      fontSize: ["20px", "24px"],
+    },
+  }),
+);
+
+export const HeaderContainer = styled("div")(
+  {
+    textAlign: "center",
+  },
+  mq({
+    margin: ["100px auto", "140px auto"],
+    width: ["auto", "100%"],
+    maxWidth: [960, 960, 738],
+    h2: {
+      textAlign: ["center"],
+      fontSize: ["36px", "36px", "48px"],
+    },
+    img: {
+      width: ["100%", "auto"],
+      boxSizing: ["border-box", "border-box"],
+      maxWidth: ["100vw", "100%"],
+    },
+  }),
+);
+
+export const CodeFieldBorder = styled.div`
+      border-radius: 19px;
+      background-color: #150B27;
+      border: 10px solid rgba(255, 255, 255, 0.28);
+      padding: 14px 10px 16px 11px;
+`
+
+export const CodeField = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #150B27 ;
+  color: #fff;
+  borderRadius: 10px;
+
+  div[class*="ToolTipText"] {
+    margin-right: 10px;
+  }
+`
