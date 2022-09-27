@@ -1,11 +1,15 @@
 import styled from "react-emotion";
 import theme from "../utils/theme";
+import Link from "gatsby-link";
+
 import mq, { breakpoints } from "../utils/breakpoints";
+import { ButtonPrimary } from "../new-homepage/hero-section/hero.styled";
 
 import RoundCheck from "../../assets/round-check.svg";
 import backgroundImg from "../../assets/why-webiny/hero-section.svg";
 import bgSwish from "../../assets/bg-swish.svg";
 import BookDemoBG from "../../assets/book-demo-bg.svg"
+
 
 export const Article = styled.article`
   .hilightText {
@@ -110,6 +114,68 @@ export const Article = styled.article`
     }
   }
 `;
+
+export const IntegrationsGrid = styled.div`
+  display: grid;
+  gap: 2rem;
+
+  @media (min-width: ${breakpoints[1]}px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+`
+
+export const TileLink = styled(Link)`
+    font-size: 16px;
+    font-weight: 700;
+    display: block;
+    color: #FA5A28;
+    textDecoration: none;
+    padding: 5px 10px 5px 0;
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+      text-decoration: underline;
+    }
+
+`
+export const Tile = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 20px 37px 30px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 20px rgb(0 0 0 / 10%);
+    border: 10px solid #FFFFFF;
+    background: #fff7f4;
+
+    > img {
+      max-width: 150px;
+      margin: 0 auto;
+    }
+    > .content a {
+      text-align: center;
+    }
+    @media (min-width: ${breakpoints[0]}px) {
+      text-align: left;
+      flex-direction: row;
+      gap: 3rem;
+
+      > .content {
+        > h3 {
+          margin-top: unset;
+          margin-bottom: 1rem;
+          text-align: left;
+        }
+        > a {
+          text-align: left;
+        }
+      }
+    }
+    @media (min-width: ${breakpoints[1]}px) {
+
+    }
+`
 
 export const BlogContainer = styled.div`
   max-width: 1200px;

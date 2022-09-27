@@ -18,29 +18,31 @@ import {
 import {
   ToolTip,
   ToolTipText,
-  CodeFieldText } from "../../components/new-homepage/hero-section/hero.styled"
+  CodeFieldText 
+} from "../../components/new-homepage/hero-section/hero.styled"
   import BlogCard from "../../components/blog/components/blog-card"
   import FeaturedBlog from "../../components/blog/components/featured-blog"
   import Button from "../../components/ui/button"
-import { 
-  whyThisTech as NextJSIntro,
-  title as NextJSTitle
- } from "./nextjs-cms"
+  import { 
+    whyThisTech as GatsbyIntro,
+    title as GatsbyTitle
+} from "./gatsby-cms"
+
 import NextJSLogo from "../../assets/nextjs.svg"
 import GatsbyLogo from "../../assets/gatsby.svg"
-import featuredImage from "../../assets/webiny-plus-gatsby.png";
+import featuredImage from "../../assets/nextjs-cms-integration-webiny.png";
 import logo from "../../assets/window-gatsby.svg";
 import Step1 from "../../assets/step-1.svg";
 import Step2 from "../../assets/step-2.svg";
 import ClickInstall from "../../assets/1-click-gatsby-cloud.svg";
 import WebinyWindow from "../../assets/window-webiny.svg";
 
-export const title = "Gatsby";
+export const title = "Next.js";
 const description = "Gatsby is a React-based open source framework for creating websites.";
 const introduction =
-  "Building a dynamic, content-heavy site with <strong>Gatsby</strong> and <strong>Webiny</strong> is easy to build, simple to use, secure and scalable.";
+  "Building a dynamic, content-heavy site with <strong>Next.js</strong> and <strong>Webiny</strong> is easy to build, simple to use, secure and scalable.";
 export const whyThisTech =
-  "<p>The world's top-performing teams use <span className=hilightText>Gatsby</span> to deliver dynamic web pages with performance and security that scales.</p><p>Build a fast, secure, and powerful website using a React-based open-source framework and integrate different content, APIs and services seamlessly into one experience.</p>";
+  "<p>Next.js is a React framework that lets you build hybrid static and server rendered applications with smart bundling, route pre-fetching, and TypeScript support built-in.</p>";
 const integrationCopy =
   "<span className=hilightText>You can easily build a dynamic, content-heavy site with Gatsby and use Webiny</span> to decouple engineering needs from your marketing team using a highly-scalable, fault-tolerant Serverless service that scales in and out in seconds. Use a single Webiny instance to manage content for an unlimited number of websites. All under one tenant in your own security perimeter.";
 const techBenefits = [
@@ -50,7 +52,7 @@ const techBenefits = [
   "Statically generated sites have fewer vulnerabilities than traditional websites and monolithic platforms.",
 ];
 
-const gatsby = ({ data }) => {
+const NextJS = ({ data }) => {
   const hasOnlyOneArticle = data.allMdx.edges.length === 1
   const [copyButtonState, setCopyButtonState] = useState(false);
   return (
@@ -135,7 +137,7 @@ const gatsby = ({ data }) => {
             Building a Frontend With <span className="hilightText">{title}</span>
           </h2>
           <p className="lead">
-            Learn how to build a frontend for Webiny Headless CMS with Gatsby starter.{" "}
+            Learn how to build a frontend for Webiny Headless CMS with Next.JS starter.{" "}
           </p>
           <div className="step">
             <img src={Step1} alt="Step 1" className="step-icon" />
@@ -226,37 +228,37 @@ const gatsby = ({ data }) => {
             <Button type="purple" link="https://site.webiny.com/forms/product-demo/">Book a Demo</Button>
           </BookADemoContainer>
         </BlogContainer>
-        <BlogContainer>
-          <h2>Other <span className="hilightText">Integrations</span></h2>
-          <IntegrationsGrid>
+      </Article>
+      <BlogContainer>
+        <h2>Other <span className="hilightText">Integrations</span></h2>
+        <IntegrationsGrid>
             <Tile>
               <img src={NextJSLogo} alt="Next logo" />
               <div className="content">
-                <h3>{NextJSTitle}</h3>
-                <div dangerouslySetInnerHTML={{ __html: NextJSIntro }}/>
+                <h3>{title}</h3>
+                <div dangerouslySetInnerHTML={{ __html: whyThisTech }}/>
                 <TileLink href="/tech-integration/next-cms">Discover more &rarr;</TileLink>
               </div>
             </Tile>
             <Tile>
               <img src={GatsbyLogo} alt="Gatsby logo" />
               <div className="content">
-                <h3>{title}</h3>
-                <div dangerouslySetInnerHTML={{ __html: introduction }}/>
+                <h3>{GatsbyTitle}</h3>
+                <div dangerouslySetInnerHTML={{ __html: GatsbyIntro }}/>
                 <TileLink href="/tech-integration/next-cms">Discover more &rarr;</TileLink>
               </div>
             </Tile>
           </IntegrationsGrid>
       </BlogContainer>
-      </Article>
     </BaseLayout>
   );
 };
 
-export default gatsby;
+export default NextJS;
 
 export const pageQuery = graphql`
-  query TechGatsbyQuery {
-      allMdx(filter: {frontmatter: {tech: {in: "gatsby"}}}) {
+  query TechNextQuery {
+      allMdx(filter: {frontmatter: {tech: {in: "nextjs"}}}) {
         edges {
           node {
             id
