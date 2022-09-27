@@ -14,6 +14,9 @@ import {
   Tile,
   TileLink,
   IntegrationsGrid,
+  OtherIntegrationsTitle,
+  OtherIntegrationsContainer,
+  Hr,
 } from '../../components/tech-integration/TechIntegration.styled'
 import {
   ToolTip,
@@ -24,7 +27,7 @@ import {
   import FeaturedBlog from "../../components/blog/components/featured-blog"
   import Button from "../../components/ui/button"
   import { 
-    whyThisTech as GatsbyIntro,
+    introduction as GatsbyIntro,
     title as GatsbyTitle
 } from "./gatsby-cms"
 
@@ -34,22 +37,23 @@ import featuredImage from "../../assets/nextjs-cms-integration-webiny.png";
 import logo from "../../assets/window-gatsby.svg";
 import Step1 from "../../assets/step-1.svg";
 import Step2 from "../../assets/step-2.svg";
-import ClickInstall from "../../assets/1-click-gatsby-cloud.svg";
+import ClickInstall from "../../assets/deploy-to-vercel.svg";
 import WebinyWindow from "../../assets/window-webiny.svg";
 
 export const title = "Next.js";
 const description = "Gatsby is a React-based open source framework for creating websites.";
-const introduction =
+export const introduction =
   "Building a dynamic, content-heavy site with <strong>Next.js</strong> and <strong>Webiny</strong> is easy to build, simple to use, secure and scalable.";
 export const whyThisTech =
   "<p>Next.js is a React framework that lets you build hybrid static and server rendered applications with smart bundling, route pre-fetching, and TypeScript support built-in.</p>";
 const integrationCopy =
-  "<span className=hilightText>You can easily build a dynamic, content-heavy site with Gatsby and use Webiny</span> to decouple engineering needs from your marketing team using a highly-scalable, fault-tolerant Serverless service that scales in and out in seconds. Use a single Webiny instance to manage content for an unlimited number of websites. All under one tenant in your own security perimeter.";
+  "<span className=hilightText>You can easily build a dynamic, content-heavy site with Next.js and use Webiny</span> to decouple engineering needs from your marketing team using a highly-scalable, fault-tolerant Serverless service that scales in and out in seconds. Use a single Webiny instance to manage content for an unlimited number of websites. All under one tenant in your own security perimeter.";
 const techBenefits = [
-  "Combines static-site generation, deferred static generation, and intelligent page rendering",
-  "Unified data layer that enables developers to easily combine data from different sources and render them alongside each other.",
-  "Deploy and host on Content Delivery Networks, delivering content to visitors faster than traditional servers",
-  "Statically generated sites have fewer vulnerabilities than traditional websites and monolithic platforms.",
+  "Automatic image optimization with instant builds.",
+  "Pre-render pages at build time or request time.",
+  "File system routing",
+  "Create API endpoints to provide backend functionality.",
+  "Dynamic routing defined by code instead of configuration.",
 ];
 
 const NextJS = ({ data }) => {
@@ -67,11 +71,13 @@ const NextJS = ({ data }) => {
           </HeaderContainer>
         </HeroWhyContainer>
         <BlogContainer>
-          <h3>
-            <span className="hilightText">Why</span> {title}?
-          </h3>
           <div className="why why-tech">
-            <div className="content" dangerouslySetInnerHTML={{ __html: whyThisTech }} />
+            <div className="content">
+              <h3>
+                <span className="hilightText">Why</span> {title}?
+              </h3>
+              <div dangerouslySetInnerHTML={{ __html: whyThisTech }} />
+            </div>
             <img src={logo} alt={`Stylized ${title} logo`} />
           </div>
           <div className="why why-webiny">
@@ -91,6 +97,9 @@ const NextJS = ({ data }) => {
             </div>
             <img src={WebinyWindow} alt="Stylized Webiny logo" />
           </div>
+          </BlogContainer>
+          <Hr />
+          <BlogContainer>
           <h2>
             <span className="hilightText">{title} + Webiny</span> integration
           </h2>
@@ -183,21 +192,21 @@ const NextJS = ({ data }) => {
             <img src={Step2} alt="Step 2" className="step-icon" />
             <div className="content">
               <span className="hilightText">
-                <h4>Create a new Gatsby site</h4>
+                <h4>Create a new {title} site</h4>
               </span>
               <p>
-                Click on the button to deploy the project to Gatsby Cloud. Or follow the link to
+                Click on the button to deploy the project to Vercel. Or follow the link to
                 full instructions if you want to start locally.
               </p>
               <p>
-                <a href="https://www.webiny.com/docs/headless-cms/integrations/gatsby">
+                <a href="https://www.webiny.com/docs/headless-cms/integrations/nextjs">
                   Full instructions →
                 </a>
               </p>
             </div>
             <div className="action">
-              <a href="#">
-                <img src={ClickInstall} alt="One click Gatsby install button" />
+              <a href="https://vercel.com/new/git/external?repository-url=https://github.com/webiny/nextjs-starter-webiny&project-name=cms-webiny&repository-name=cms-webiny&env=PREVIEW_API_SECRET,WEBINY_API_SECRET,NEXT_PUBLIC_WEBINY_API_URL,NEXT_PUBLIC_WEBINY_PREVIEW_API_URL&envDescription=Required%20to%20connect%20the%20app%20with%20Webiny&envLink=https://vercel.link/cms-webiny-env">
+                <img src={ClickInstall} alt="One click Vercel install button" />
               </a>
             </div>
           </div>
@@ -228,28 +237,30 @@ const NextJS = ({ data }) => {
             <Button type="purple" link="https://site.webiny.com/forms/product-demo/">Book a Demo</Button>
           </BookADemoContainer>
         </BlogContainer>
+        <OtherIntegrationsContainer>
+          <BlogContainer>
+            <OtherIntegrationsTitle>Other <span className="hilightText">Integrations</span></OtherIntegrationsTitle>
+            <IntegrationsGrid>
+                <Tile>
+                  <img src={NextJSLogo} alt="Next logo" />
+                  <div className="content">
+                    <h3>{title}</h3>
+                    <p dangerouslySetInnerHTML={{ __html: whyThisTech }}/>
+                    <TileLink href="/tech-integration/next-cms">Discover more &rarr;</TileLink>
+                  </div>
+                </Tile>
+                <Tile>
+                  <img src={GatsbyLogo} alt="Gatsby logo" />
+                  <div className="content">
+                    <h3>{GatsbyTitle}</h3>
+                    <p dangerouslySetInnerHTML={{ __html: GatsbyIntro }}/>
+                    <TileLink href="/tech-integration/gatsby-cms">Discover more &rarr;</TileLink>
+                  </div>
+                </Tile>
+              </IntegrationsGrid>
+          </BlogContainer>
+        </OtherIntegrationsContainer>
       </Article>
-      <BlogContainer>
-        <h2>Other <span className="hilightText">Integrations</span></h2>
-        <IntegrationsGrid>
-            <Tile>
-              <img src={NextJSLogo} alt="Next logo" />
-              <div className="content">
-                <h3>{title}</h3>
-                <div dangerouslySetInnerHTML={{ __html: whyThisTech }}/>
-                <TileLink href="/tech-integration/next-cms">Discover more &rarr;</TileLink>
-              </div>
-            </Tile>
-            <Tile>
-              <img src={GatsbyLogo} alt="Gatsby logo" />
-              <div className="content">
-                <h3>{GatsbyTitle}</h3>
-                <div dangerouslySetInnerHTML={{ __html: GatsbyIntro }}/>
-                <TileLink href="/tech-integration/next-cms">Discover more &rarr;</TileLink>
-              </div>
-            </Tile>
-          </IntegrationsGrid>
-      </BlogContainer>
     </BaseLayout>
   );
 };

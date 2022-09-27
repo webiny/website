@@ -14,6 +14,9 @@ import {
   Tile,
   TileLink,
   IntegrationsGrid,
+  OtherIntegrationsTitle,
+  Hr,
+  OtherIntegrationsContainer,
 } from '../../components/tech-integration/TechIntegration.styled'
 import {
   ToolTip,
@@ -37,9 +40,9 @@ import WebinyWindow from "../../assets/window-webiny.svg";
 
 export const title = "Gatsby";
 const description = "Gatsby is a React-based open source framework for creating websites.";
-const introduction =
+export const introduction =
   "Building a dynamic, content-heavy site with <strong>Gatsby</strong> and <strong>Webiny</strong> is easy to build, simple to use, secure and scalable.";
-export const whyThisTech =
+const whyThisTech =
   "<p>The world's top-performing teams use <span className=hilightText>Gatsby</span> to deliver dynamic web pages with performance and security that scales.</p><p>Build a fast, secure, and powerful website using a React-based open-source framework and integrate different content, APIs and services seamlessly into one experience.</p>";
 const integrationCopy =
   "<span className=hilightText>You can easily build a dynamic, content-heavy site with Gatsby and use Webiny</span> to decouple engineering needs from your marketing team using a highly-scalable, fault-tolerant Serverless service that scales in and out in seconds. Use a single Webiny instance to manage content for an unlimited number of websites. All under one tenant in your own security perimeter.";
@@ -65,13 +68,18 @@ const gatsby = ({ data }) => {
           </HeaderContainer>
         </HeroWhyContainer>
         <BlogContainer>
-          <h3>
-            <span className="hilightText">Why</span> {title}?
-          </h3>
           <div className="why why-tech">
-            <div className="content" dangerouslySetInnerHTML={{ __html: whyThisTech }} />
+            <div className="content">
+              <h3>
+                <span className="hilightText">Why</span> {title}?
+              </h3>
+              <div dangerouslySetInnerHTML={{ __html: whyThisTech }} />
+            </div>
             <img src={logo} alt={`Stylized ${title} logo`} />
           </div>
+          </BlogContainer>
+          <Hr />
+          <BlogContainer>
           <div className="why why-webiny">
             <div className="content">
               <h3>
@@ -181,20 +189,20 @@ const gatsby = ({ data }) => {
             <img src={Step2} alt="Step 2" className="step-icon" />
             <div className="content">
               <span className="hilightText">
-                <h4>Create a new Gatsby site</h4>
+                <h4>Create a new {title} site</h4>
               </span>
               <p>
-                Click on the button to deploy the project to Gatsby Cloud. Or follow the link to
+                Click on the button to deploy the project to Vercel. Or follow the link to
                 full instructions if you want to start locally.
               </p>
               <p>
-                <a href="https://www.webiny.com/docs/headless-cms/integrations/gatsby">
+                <a href="https://www.webiny.com/docs/headless-cms/integrations/nextjs">
                   Full instructions →
                 </a>
               </p>
             </div>
             <div className="action">
-              <a href="#">
+              <a href="https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/webiny/gatsby-starter-webiny">
                 <img src={ClickInstall} alt="One click Gatsby install button" />
               </a>
             </div>
@@ -226,27 +234,29 @@ const gatsby = ({ data }) => {
             <Button type="purple" link="https://site.webiny.com/forms/product-demo/">Book a Demo</Button>
           </BookADemoContainer>
         </BlogContainer>
-        <BlogContainer>
-          <h2>Other <span className="hilightText">Integrations</span></h2>
-          <IntegrationsGrid>
-            <Tile>
-              <img src={NextJSLogo} alt="Next logo" />
-              <div className="content">
-                <h3>{NextJSTitle}</h3>
-                <div dangerouslySetInnerHTML={{ __html: NextJSIntro }}/>
-                <TileLink href="/tech-integration/next-cms">Discover more &rarr;</TileLink>
-              </div>
-            </Tile>
-            <Tile>
-              <img src={GatsbyLogo} alt="Gatsby logo" />
-              <div className="content">
-                <h3>{title}</h3>
-                <div dangerouslySetInnerHTML={{ __html: introduction }}/>
-                <TileLink href="/tech-integration/next-cms">Discover more &rarr;</TileLink>
-              </div>
-            </Tile>
-          </IntegrationsGrid>
-      </BlogContainer>
+        <OtherIntegrationsContainer>
+          <BlogContainer>
+            <OtherIntegrationsTitle>Other <span className="hilightText">Integrations</span></OtherIntegrationsTitle>
+            <IntegrationsGrid>
+              <Tile>
+                <img src={NextJSLogo} alt="Next logo" />
+                <div className="content">
+                  <h3>{NextJSTitle}</h3>
+                  <p dangerouslySetInnerHTML={{ __html: NextJSIntro }}/>
+                  <TileLink href="/tech-integration/next-cms">Discover more &rarr;</TileLink>
+                </div>
+              </Tile>
+              <Tile>
+                <img src={GatsbyLogo} alt="Gatsby logo" />
+                <div className="content">
+                  <h3>{title}</h3>
+                  <p dangerouslySetInnerHTML={{ __html: introduction }}/>
+                  <TileLink href="/tech-integration/gatsby-cms">Discover more &rarr;</TileLink>
+                </div>
+              </Tile>
+            </IntegrationsGrid>
+          </BlogContainer>
+        </OtherIntegrationsContainer>
       </Article>
     </BaseLayout>
   );

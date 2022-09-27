@@ -3,11 +3,11 @@ import theme from "../utils/theme";
 import Link from "gatsby-link";
 
 import mq, { breakpoints } from "../utils/breakpoints";
-import { ButtonPrimary } from "../new-homepage/hero-section/hero.styled";
 
 import RoundCheck from "../../assets/round-check.svg";
 import backgroundImg from "../../assets/why-webiny/hero-section.svg";
-import bgSwish from "../../assets/bg-swish.svg";
+import bg from "../../assets/bg-raggedbottom-purple.svg";
+import bg2 from "../../assets/bg-lightorange-ragged-top.svg"
 import BookDemoBG from "../../assets/book-demo-bg.svg"
 
 
@@ -23,11 +23,11 @@ export const Article = styled.article`
     font-size: 20px;
   }
   .body {
-    background: url(${bgSwish}), linear-gradient(180.16deg, #190930 10.29%, #311c57 33.91%);
+    background: url(${bg});
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
-    padding: 40px 0;
+    padding: 40px 0 120px;
 
     .hilightText {
       color: ${theme.color.lightGreen};
@@ -66,6 +66,10 @@ export const Article = styled.article`
   }
   .step {
     text-align: center;
+  }
+  .action img {
+    max-width: 200px;
+    margin: 0 auto;
   }
   @media (min-width: ${breakpoints[0]}px) {
     .why {
@@ -118,6 +122,7 @@ export const Article = styled.article`
 export const IntegrationsGrid = styled.div`
   display: grid;
   gap: 2rem;
+  margin-bottom: 5rem;
 
   @media (min-width: ${breakpoints[1]}px) {
     grid-template-columns: repeat(2, 1fr);
@@ -219,7 +224,7 @@ export const BlogContainer = styled.div`
   }
 
   @media (min-width: ${breakpoints[0]}px) {
-    margin: 25px 15px 100px 15px;
+    margin: 25px 15px 25px 15px;
     width: 100%;
 
     p {
@@ -235,7 +240,7 @@ export const BlogContainer = styled.div`
     --deckgo-highlight-code-font-size: 1em;
   }
   @media (min-width: ${breakpoints[1]}px) {
-    margin: 25px auto 100px auto;
+    margin: 25px auto 25px auto;
 
     h2 {
       font-size: 48px;
@@ -269,12 +274,17 @@ export const TutorialsGrid = styled.div`
 
 export const BookADemoContainer = styled.aside`
   background: url(${BookDemoBG}) no-repeat center center;
+  background-size: cover;
   padding: 4rem;
   align-items: center;
 
   > a {
     max-width: 220px;
     margin: 1rem auto 0 auto;
+  }
+
+  > h2 {
+    margin-top: unset;
   }
 
   @media(min-width: ${breakpoints[1]}px) {
@@ -285,7 +295,6 @@ export const BookADemoContainer = styled.aside`
       margin: 0 auto;
     }
   > h2 {
-      margin-top: unset;
       margin-block-end: unset;
       max-width: 60rem;
       text-align: left;
@@ -354,4 +363,20 @@ export const CodeField = styled.div`
   div[class*="ToolTipText"] {
     margin-right: 10px;
   }
+`
+
+export const OtherIntegrationsTitle = styled.h2`
+  margin-top: unset;
+`
+
+export const Hr = styled.hr`
+  margin-top: 4rem;
+  border: 1px solid #ccc;;
+`
+
+
+export const OtherIntegrationsContainer = styled.section`
+  background: url(${bg2}) no-repeat center top;
+  background-size: cover;
+  padding: 8rem 0;
 `
