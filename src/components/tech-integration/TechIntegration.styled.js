@@ -127,7 +127,16 @@ export const IntegrationsGrid = styled.div`
   margin: 3rem 0 5rem;
 
   @media (min-width: ${breakpoints[1]}px) {
-    grid-template-columns: repeat(2, 1fr);
+    &:has(> div + div) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &:not(:has(> div + div)) {
+      > div {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
   }
 `
 
