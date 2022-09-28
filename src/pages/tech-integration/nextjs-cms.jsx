@@ -27,25 +27,25 @@ import {
   import FeaturedBlog from "../../components/blog/components/featured-blog"
   import Button from "../../components/ui/button"
   import { 
-    introduction as GatsbyIntro,
+    description as GatsbyIntro,
     title as GatsbyTitle
 } from "./gatsby-cms"
 
 import NextJSLogo from "../../assets/nextjs.svg"
 import GatsbyLogo from "../../assets/gatsby.svg"
 import featuredImage from "../../assets/nextjs-cms-integration-webiny.png";
-import logo from "../../assets/window-gatsby.svg";
+import logo from "../../assets/window-nextjs.svg";
 import Step1 from "../../assets/step-1.svg";
 import Step2 from "../../assets/step-2.svg";
 import ClickInstall from "../../assets/deploy-to-vercel.svg";
 import WebinyWindow from "../../assets/window-webiny.svg";
 
 export const title = "Next.js";
-const description = "Gatsby is a React-based open source framework for creating websites.";
+export const description = "Next.js is a React framework that lets you build hybrid static and server rendered applications.";
 export const introduction =
-  "Building a dynamic, content-heavy site with <strong>Next.js</strong> and <strong>Webiny</strong> is easy to build, simple to use, secure and scalable.";
+  "Building a website or app with <strong>Next.js</strong> and <strong>Webiny</strong> will allow your isomorphic applications to scale as much as needed.";
 export const whyThisTech =
-  "<p>Next.js is a React framework that lets you build hybrid static and server rendered applications with smart bundling, route pre-fetching, and TypeScript support built-in.</p>";
+  "<p>Next.js is a React framework that lets you build hybrid static and server rendered applications with smart bundling, route pre-fetching, and TypeScript support built-in.</p><p>Next.js has all the tools you need to make the Web. Faster.</p>";
 const integrationCopy =
   "<span className=hilightText>You can easily build a dynamic, content-heavy site with Next.js and use Webiny</span> to decouple engineering needs from your marketing team using a highly-scalable, fault-tolerant Serverless service that scales in and out in seconds. Use a single Webiny instance to manage content for an unlimited number of websites. All under one tenant in your own security perimeter.";
 const techBenefits = [
@@ -240,19 +240,12 @@ const NextJS = ({ data }) => {
         <OtherIntegrationsContainer>
           <BlogContainer>
             <OtherIntegrationsTitle>Other <span className="hilightText">Integrations</span></OtherIntegrationsTitle>
+            <p className="integrations-lead">Webiny also supports other frontend technologies.</p>
             <IntegrationsGrid>
-                <Tile>
-                  <img src={NextJSLogo} alt="Next logo" />
-                  <div className="content">
-                    <h3>{title}</h3>
-                    <p dangerouslySetInnerHTML={{ __html: whyThisTech }}/>
-                    <TileLink href="/tech-integration/next-cms">Discover more &rarr;</TileLink>
-                  </div>
-                </Tile>
                 <Tile>
                   <img src={GatsbyLogo} alt="Gatsby logo" />
                   <div className="content">
-                    <h3>{GatsbyTitle}</h3>
+                    <h3 className="tiletitle">{GatsbyTitle}</h3>
                     <p dangerouslySetInnerHTML={{ __html: GatsbyIntro }}/>
                     <TileLink href="/tech-integration/gatsby-cms">Discover more &rarr;</TileLink>
                   </div>

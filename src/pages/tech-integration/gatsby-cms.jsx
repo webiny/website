@@ -26,7 +26,7 @@ import {
   import FeaturedBlog from "../../components/blog/components/featured-blog"
   import Button from "../../components/ui/button"
 import { 
-  whyThisTech as NextJSIntro,
+  description as NextJSIntro,
   title as NextJSTitle
  } from "./nextjs-cms"
 import NextJSLogo from "../../assets/nextjs.svg"
@@ -39,7 +39,7 @@ import ClickInstall from "../../assets/1-click-gatsby-cloud.svg";
 import WebinyWindow from "../../assets/window-webiny.svg";
 
 export const title = "Gatsby";
-const description = "Gatsby is a React-based open source framework for creating websites.";
+export const description = "Gatsby integrates different content, APIs and services seamlessly into one experience.";
 export const introduction =
   "Building a dynamic, content-heavy site with <strong>Gatsby</strong> and <strong>Webiny</strong> is easy to build, simple to use, secure and scalable.";
 const whyThisTech =
@@ -237,21 +237,14 @@ const gatsby = ({ data }) => {
         <OtherIntegrationsContainer>
           <BlogContainer>
             <OtherIntegrationsTitle>Other <span className="hilightText">Integrations</span></OtherIntegrationsTitle>
+            <p className="integrations-lead">Webiny also supports other frontend technologies.</p>
             <IntegrationsGrid>
               <Tile>
                 <img src={NextJSLogo} alt="Next logo" />
                 <div className="content">
-                  <h3>{NextJSTitle}</h3>
+                  <h3 className="tiletitle">{NextJSTitle}</h3>
                   <p dangerouslySetInnerHTML={{ __html: NextJSIntro }}/>
                   <TileLink href="/tech-integration/next-cms">Discover more &rarr;</TileLink>
-                </div>
-              </Tile>
-              <Tile>
-                <img src={GatsbyLogo} alt="Gatsby logo" />
-                <div className="content">
-                  <h3>{title}</h3>
-                  <p dangerouslySetInnerHTML={{ __html: introduction }}/>
-                  <TileLink href="/tech-integration/gatsby-cms">Discover more &rarr;</TileLink>
                 </div>
               </Tile>
             </IntegrationsGrid>

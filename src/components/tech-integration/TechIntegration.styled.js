@@ -52,16 +52,15 @@ export const Article = styled.article`
   .benefits {
     ul {
       text-align: left;
-      margin-inline-start: 20px;
+      margin-left: 0;
+      padding-left: 1em;
     }
     ul > li {
-      padding-inline-start: 16px;
-      margin-block-end: 16px;
-
-      ::marker {
-        margin-block-start: 5px;
-        content: url(${RoundCheck});
-      }
+      padding-inline-start: 32px;
+      background: url(${RoundCheck}) no-repeat left 20%;
+      list-style: none;
+      margin-bottom: 20px;
+      vertical-align: middle;
     }
   }
   .step {
@@ -111,6 +110,9 @@ export const Article = styled.article`
         align-self: center;
       }
     }
+    .integrations-lead {
+      text-align: center;
+    }
   }
   @media (min-width: ${breakpoints[1]}px) {
     .step .action {
@@ -122,7 +124,7 @@ export const Article = styled.article`
 export const IntegrationsGrid = styled.div`
   display: grid;
   gap: 2rem;
-  margin-bottom: 5rem;
+  margin: 3rem 0 5rem;
 
   @media (min-width: ${breakpoints[1]}px) {
     grid-template-columns: repeat(2, 1fr);
@@ -149,22 +151,30 @@ export const Tile = styled.div`
     flex-direction: column;
     justify-content: space-between;
     padding: 30px 20px 37px 30px;
-    border-radius: 20px;
+    border-radius: 4px;
     box-shadow: 0px 4px 20px rgb(0 0 0 / 10%);
-    border: 10px solid #FFFFFF;
-    background: #fff7f4;
+    background: #ffffff;
 
     > img {
-      max-width: 150px;
+      max-width: 86px;
       margin: 0 auto;
     }
-    > .content a {
-      text-align: center;
+    > .content {
+      a {
+        text-align: center;
+      }
+      h3.tiletitle {
+        font-weight: 500;
+        font-size: 24px;
+      }
+      p {
+        font-size: 18px;
+      }
     }
     @media (min-width: ${breakpoints[0]}px) {
       text-align: left;
       flex-direction: row;
-      gap: 3rem;
+      gap: 30px;
 
       > .content {
         > h3 {
@@ -277,6 +287,7 @@ export const BookADemoContainer = styled.aside`
   background-size: cover;
   padding: 4rem;
   align-items: center;
+  margin: 4rem 0;
 
   > a {
     max-width: 220px;
@@ -378,5 +389,9 @@ export const Hr = styled.hr`
 export const OtherIntegrationsContainer = styled.section`
   background: url(${bg2}) no-repeat center top;
   background-size: cover;
-  padding: 8rem 0;
+  padding: 4rem 0;
+
+  @media (min-width: ${breakpoints[0]}px) {
+    padding: 8rem 0;
+  }
 `
