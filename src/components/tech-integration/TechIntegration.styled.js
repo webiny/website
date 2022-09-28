@@ -71,6 +71,9 @@ export const Article = styled.article`
     margin: 0 auto;
   }
   @media (min-width: ${breakpoints[0]}px) {
+    .body {
+      padding: 40px 0 300px;
+    }
     .why {
       display: flex;
       flex-direction: row;
@@ -127,16 +130,7 @@ export const IntegrationsGrid = styled.div`
   margin: 3rem 0 5rem;
 
   @media (min-width: ${breakpoints[1]}px) {
-    &:has(> div + div) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    &:not(:has(> div + div)) {
-      > div {
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-    }
+    grid-template-columns: repeat(auto-fit, minmax(50%,400px))
   }
 `
 
@@ -310,6 +304,7 @@ export const BookADemoContainer = styled.aside`
   @media(min-width: ${breakpoints[1]}px) {
     display: flex;
     flex-direction: row;
+    margin: 8rem 0;
 
     > a {
       margin: 0 auto;
