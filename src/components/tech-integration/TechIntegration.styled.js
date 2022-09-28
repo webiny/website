@@ -84,6 +84,11 @@ export const Article = styled.article`
       & > * {
         flex: 1 1 0;
       }
+      a {
+        &:hover,&:active, &:focus-visible {
+          text-decoration: underline;
+        }
+      }
 
       &.why-webiny {
         flex-direction: row-reverse;

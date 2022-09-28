@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
+import GatsbyLink from "gatsby-link";
 
 import BaseLayout from "../../layouts/base";
 import { 
@@ -86,7 +87,7 @@ const NextJS = ({ data }) => {
                 <span className="hilightText">Why</span> Webiny?
               </h3>
               <p>
-                <span className="hilightText">Webiny Headless CMS</span> contains everything an
+                <GatsbyLink to="/enterprise-serverless-cms/headless-cms" className="hilightText">Webiny Headless CMS</GatsbyLink> contains everything an
                 enterprise needs to build, manage and deliver content at scale.
               </p>
               <p>
