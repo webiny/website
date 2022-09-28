@@ -46,6 +46,7 @@ export const Article = styled.article`
       max-width: 75px;
     }
     .lead {
+      text-align: center;
       font-size: 24px;
     }
   }
@@ -56,7 +57,8 @@ export const Article = styled.article`
     }
     ul > li {
       padding-inline-start: 32px;
-      background: url(${RoundCheck}) no-repeat left 20%;
+      background: url(${RoundCheck}) no-repeat left 5px;
+      line-height: 145%;
       list-style: none;
       margin-bottom: 20px;
       vertical-align: middle;

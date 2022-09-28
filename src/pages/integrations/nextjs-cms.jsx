@@ -247,7 +247,7 @@ const NextJS = ({ data }) => {
                   <div className="content">
                     <h3 className="tiletitle">{GatsbyTitle}</h3>
                     <p dangerouslySetInnerHTML={{ __html: GatsbyIntro }}/>
-                    <TileLink href="/tech-integration/gatsby-cms">Discover more &rarr;</TileLink>
+                    <TileLink to="/tech-integration/gatsby-cms">Discover more &rarr;</TileLink>
                   </div>
                 </Tile>
               </IntegrationsGrid>
