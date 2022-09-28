@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="584px" height="480px" viewBox="0 0 584 480" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>terminal.scg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-6.0%" y="-8.9%" width="112.1%" height="117.8%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0920290647 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-152.000000, -174.000000)" fill-rule="nonzero">
+            <g id="Hero" transform="translate(-48.000000, 21.000000)">
+                <g id="terminal.scg" filter="url(#filter-1)" transform="translate(215.000000, 166.000000)">
+                    <g id="Group" fill="#FFFFFF" stroke="#EAEAEA" stroke-opacity="0.3">
+                        <rect id="Rectangle" x="0.567622951" y="0.567975831" width="552.864754" height="435" rx="8"></rect>
+                    </g>
+                    <path d="M28,23.5 C28,27.0889286 25.3141818,30 22,30 C18.6869091,30 16,27.0889286 16,23.5 C16,19.9110714 18.6869091,17 22,17 C25.3141818,17 28,19.9110714 28,23.5" id="Path" fill="#FD5750"></path>
+                    <path d="M54.7647059,23.5 C54.7647059,27.0889286 51.6837059,30 47.8823529,30 C44.0821471,30 41,27.0889286 41,23.5 C41,19.9110714 44.0821471,17 47.8823529,17 C51.6837059,17 54.7647059,19.9110714 54.7647059,23.5 M80,23.5 C80,27.0889286 77.1759412,30 73.6911765,30 C70.2064118,30 67.3823529,27.0889286 67.3823529,23.5 C67.3823529,19.9110714 70.2064118,17 73.6911765,17 C77.1759412,17 80,19.9110714 80,23.5" id="Shape" fill="#EAEAEA"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
