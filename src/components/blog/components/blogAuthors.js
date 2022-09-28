@@ -19,6 +19,7 @@ import menardImg from "../assets/menard.png";
 import calebImg from "../assets/caleb.png";
 import chrissyImg from "../assets/chrissy.png"
 import nobodyImg from "../assets/nobody.png"
+import miracleOnyemmaImg from "../assets/miracle-onyemma.png"
 
 export default {
     sven: {
@@ -140,5 +141,11 @@ export default {
         description: "Freelance Web Developer  & Tech Writer",
         avatar: chrissyImg,
         twitter: "petitpois24"
+    },
+    miracleOnyemma: {
+        name: "Miracle Onyemma",
+        description: "I'm a designer and front-end developer obsessed with crafting and sharing beautiful experiences.",
+        avatar: miracleOnyemmaImg,
+        twitter: "miracleio"  
     }
 };

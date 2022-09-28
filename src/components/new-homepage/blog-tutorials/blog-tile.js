@@ -8,6 +8,7 @@ import ReactLogo from "../../../assets/react.svg"
 import RemixLogo from "../../../assets/remix.svg"
 import FlutterLogo from "../../../assets/flutter.svg"
 import AstroLogo from "../../../assets/astro.svg"
+import NuxtLogo from "../../../assets/nuxtjs.svg"
 import { ButtonPrimary } from '../hero-section/hero.styled'
 
 
@@ -35,6 +36,10 @@ const technologies = {
   "astro": {
     title: "Astro",
     image: AstroLogo
+  },
+  "nuxtjs": {
+    title: "Nuxt.js",
+    image: NuxtLogo
   }
 }
 
@@ -70,6 +75,10 @@ const TileOuter = styled.div`
     > div {
       line-height: 1.2;
     }
+    > img {
+      height: 24px;
+      align-self: flex-start;
+    }
 `
 
 const BlogTile = ({
@@ -80,7 +89,7 @@ const BlogTile = ({
 }) => {
   return (
     <TileOuter>
-      <img src={technologies[tech[0]].image} width="100px" />
+      <img src={technologies[tech[0]].image} alt=""/>
       <div>
         <h4>{project}</h4>
         <p>{description}</p>
