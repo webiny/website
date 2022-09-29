@@ -12,7 +12,12 @@ import {
   HeaderContainer,
   CodeFieldBorder,
   CodeField,
+  Tile,
+  TileLink,
+  IntegrationsGrid,
+  OtherIntegrationsTitle,
   Hr,
+  OtherIntegrationsContainer,
 } from '../../components/tech-integration/TechIntegration.styled'
 import {
   ToolTip,
@@ -21,7 +26,16 @@ import {
   import BlogCard from "../../components/blog/components/blog-card"
   import FeaturedBlog from "../../components/blog/components/featured-blog"
   import Button from "../../components/ui/button"
-
+import { 
+  description as NextJSIntro,
+  title as NextJSTitle
+ } from "./nextjs-cms"
+ import { 
+  description as GatsbyIntro,
+  title as GatsbyTitle
+ } from "./gatsby-cms"
+import NextJSLogo from "../../assets/nextjs.svg"
+import GatsbyLogo from "../../assets/gatsby.svg"
 import featuredImage from "../../assets/webiny-plus-gatsby.png";
 import logo from "../../assets/window-gatsby.svg";
 import Step1 from "../../assets/step-1.svg";
@@ -45,7 +59,6 @@ const techBenefits = [
 ];
 
 const gatsby = ({ data }) => {
-  console.log(data)
   const hasOnlyOneArticle = data?.allMdx?.edges?.length === 1
   const [copyButtonState, setCopyButtonState] = useState(false);
   return (
@@ -270,6 +283,30 @@ const gatsby = ({ data }) => {
             <Button type="purple" link="https://site.webiny.com/forms/product-demo/">Book a Demo</Button>
           </BookADemoContainer>
         </BlogContainer>
+        <OtherIntegrationsContainer>
+          <BlogContainer>
+            <OtherIntegrationsTitle>Other <span className="hilightText">Integrations</span></OtherIntegrationsTitle>
+            <p className="integrations-lead">Webiny also supports other frontend technologies.</p>
+            <IntegrationsGrid>
+                <Tile>
+                  <img src={GatsbyLogo} alt="Gatsby logo" />
+                  <div className="content">
+                    <h3 className="tiletitle">{GatsbyTitle}</h3>
+                    <p dangerouslySetInnerHTML={{ __html: GatsbyIntro }}/>
+                    <TileLink to="/integrations/gatsby-cms">Discover more &rarr;</TileLink>
+                  </div>
+                </Tile>
+                <Tile>
+                  <img src={NextJSLogo} alt="Gatsby logo" />
+                  <div className="content">
+                    <h3 className="tiletitle">{NextJSTitle}</h3>
+                    <p dangerouslySetInnerHTML={{ __html: NextJSIntro }}/>
+                    <TileLink to="/integrations/nextjs-cms">Discover more &rarr;</TileLink>
+                  </div>
+                </Tile>
+              </IntegrationsGrid>
+          </BlogContainer>
+        </OtherIntegrationsContainer>
       </Article>
     </BaseLayout>
   );

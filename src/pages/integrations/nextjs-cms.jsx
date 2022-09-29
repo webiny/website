@@ -24,16 +24,21 @@ import {
   ToolTipText,
   CodeFieldText 
 } from "../../components/new-homepage/hero-section/hero.styled"
-  import BlogCard from "../../components/blog/components/blog-card"
-  import FeaturedBlog from "../../components/blog/components/featured-blog"
-  import Button from "../../components/ui/button"
-  import { 
+
+import BlogCard from "../../components/blog/components/blog-card"
+import FeaturedBlog from "../../components/blog/components/featured-blog"
+import Button from "../../components/ui/button"
+import { 
     description as GatsbyIntro,
     title as GatsbyTitle
 } from "./gatsby-cms"
+import { 
+  description as ReactIntro,
+  title as ReactTitle
+} from "./react-cms"
 
-import NextJSLogo from "../../assets/nextjs.svg"
 import GatsbyLogo from "../../assets/gatsby.svg"
+import ReactLogo from "../../assets/react-logotype.svg"
 import featuredImage from "../../assets/nextjs-cms-integration-webiny.png";
 import logo from "../../assets/window-nextjs.svg";
 import Step1 from "../../assets/step-1.svg";
@@ -248,6 +253,14 @@ const NextJS = ({ data }) => {
                   <div className="content">
                     <h3 className="tiletitle">{GatsbyTitle}</h3>
                     <p dangerouslySetInnerHTML={{ __html: GatsbyIntro }}/>
+                    <TileLink to="/integrations/gatsby-cms">Discover more &rarr;</TileLink>
+                  </div>
+                </Tile>
+                <Tile>
+                  <img src={ReactLogo} alt="Gatsby logo" />
+                  <div className="content">
+                    <h3 className="tiletitle">{ReactTitle}</h3>
+                    <p dangerouslySetInnerHTML={{ __html: ReactIntro }}/>
                     <TileLink to="/integrations/gatsby-cms">Discover more &rarr;</TileLink>
                   </div>
                 </Tile>

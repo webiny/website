@@ -173,6 +173,10 @@ export const Tile = styled.div`
     box-shadow: 0px 4px 20px rgb(0 0 0 / 10%);
     background: #ffffff;
 
+    > * {
+      flex: 1 1 0;
+    }
+
     > img {
       max-width: 86px;
       margin: 0 auto;
