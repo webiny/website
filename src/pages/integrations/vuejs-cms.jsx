@@ -55,7 +55,7 @@ import Step3 from "../../assets/step-3.svg";
 import WebinyWindow from "../../assets/window-webiny.svg";
 
 export const title = "Vue.js";
-export const description = "Gatsby integrates different content, APIs and services seamlessly into one experience.";
+export const description = "Vue.js is an approachable, performant and versatile framework for building web user interfaces.";
 export const introduction =
   "Using the performant and versatile framework <strong>Vue.js</strong> with <strong>Webiny</strong> as a data source makes for a formidable duo of efficiently updating components as well as stable, scalable and secure content delivery.";
 const whyThisTech =

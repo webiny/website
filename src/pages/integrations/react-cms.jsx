@@ -56,7 +56,7 @@ import Step3 from "../../assets/step-3.svg";
 import WebinyWindow from "../../assets/window-webiny.svg";
 
 export const title = "React";
-export const description = "Gatsby integrates different content, APIs and services seamlessly into one experience.";
+export const description = "A declarative, component-based JavaScript library for building user interfaces.  ";
 export const introduction =
   "Building user interfaces with <strong>React</strong> using <strong>Webiny</strong> as a data source using our GraphQL APIs makes for a declarative, clean and efficient codebase.";
 const whyThisTech =
