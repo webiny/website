@@ -36,7 +36,12 @@ import {
   description as ReactIntro,
   title as ReactTitle
 } from "./react-cms"
+import { 
+  description as VueJSIntro,
+  title as VueJSTitle
+ } from "./vuejs-cms"
 
+import VueJSLogo from "../../assets/vuejs-logotype.svg"
 import GatsbyLogo from "../../assets/gatsby.svg"
 import ReactLogo from "../../assets/react-logotype.svg"
 import featuredImage from "../../assets/nextjs-cms-integration-webiny.png";
@@ -257,11 +262,19 @@ const NextJS = ({ data }) => {
                   </div>
                 </Tile>
                 <Tile>
-                  <img src={ReactLogo} alt="Gatsby logo" />
+                  <img src={ReactLogo} alt="React logo" />
                   <div className="content">
                     <h3 className="tiletitle">{ReactTitle}</h3>
                     <p dangerouslySetInnerHTML={{ __html: ReactIntro }}/>
                     <TileLink to="/integrations/gatsby-cms">Discover more &rarr;</TileLink>
+                  </div>
+                </Tile>
+                <Tile>
+                  <img src={VueJSLogo} alt="Vue logo" />
+                  <div className="content">
+                    <h3 className="tiletitle">{VueJSTitle}</h3>
+                    <p dangerouslySetInnerHTML={{ __html: VueJSIntro }}/>
+                    <TileLink to="/integrations/vuejs-cms">Discover more &rarr;</TileLink>
                   </div>
                 </Tile>
               </IntegrationsGrid>

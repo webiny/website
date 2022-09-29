@@ -26,21 +26,20 @@ import {
   import BlogCard from "../../components/blog/components/blog-card"
   import FeaturedBlog from "../../components/blog/components/featured-blog"
   import Button from "../../components/ui/button"
-
 import { 
   description as NextJSIntro,
   title as NextJSTitle
  } from "./nextjs-cms"
-import { 
+ import { 
   description as GatsbyIntro,
   title as GatsbyTitle
  } from "./gatsby-cms"
  import { 
-  description as VueJSIntro,
-  title as VueJSTitle
- } from "./vuejs-cms"
+  description as ReactIntro,
+  title as ReactTitle
+} from "./react-cms"
 
-import VueJSLogo from "../../assets/vuejs-logotype.svg"
+import ReactLogo from "../../assets/react-logotype.svg"
 import NextJSLogo from "../../assets/nextjs.svg"
 import GatsbyLogo from "../../assets/gatsby.svg"
 import featuredImage from "../../assets/webiny-plus-gatsby.png";
@@ -50,22 +49,22 @@ import Step2 from "../../assets/step-2.svg";
 import Step3 from "../../assets/step-3.svg";
 import WebinyWindow from "../../assets/window-webiny.svg";
 
-export const title = "React";
+export const title = "Vue.js";
 export const description = "Gatsby integrates different content, APIs and services seamlessly into one experience.";
 export const introduction =
-  "Building user interfaces with <strong>React</strong> using <strong>Webiny</strong> as a data source using our GraphQL APIs makes for a declarative, clean and efficient codebase.";
+  "Using the performant and versatile framework <strong>Vue.js</strong> with <strong>Webiny</strong> as a data source makes for a formidable duo of efficiently updating components as well as stable, scalable and secure content delivery.";
 const whyThisTech =
-  "<p>React is so ubiquitous to the frontend development scene these days that the technology hardly needs an introduction. React makes it easy to create interactive UIs. It does this by creating a representation of the DOM, called the Virtual DOM, and updating only the right components when your data changes.</p>";
+  "<p>Vue.js is an approachable, performant and versatile framework for building user interfaces on the web. It builds on top of standard HTML, CSS and JavaScript and utilizes a virtual DOM in order to efficiently update only components that have changed. It is a compiler-optimized rendering system that rarely requires manual optimization.</p>";
 const integrationCopy =
-  "<span className=hilightText>You can easily build a dynamic site or complex application with React and use Webiny</span> to decouple engineering needs from your marketing team using a highly-scalable, fault-tolerant Serverless service that scales in and out in seconds. Use a single Webiny instance to manage content for an unlimited number of websites. All under one tenant in your own security perimeter.";
+  "<span className=hilightText>You can easily build dynamic content-heavy sites or complex multi-flow applications with Vue.js and use Webiny</span> to deliver a highly-scalable, fault-tolerant application that scales effortlessly. Use a single Webiny instance to manage content for an unlimited number of websites. All under one tenant in your own security perimeter.";
 const techBenefits = [
-  "Declaratively create interactive UIs",
-  "Build encapsulated components that manage their own state",
+  "Declarative rendering that extends HTML with a template syntax",
+  "Automatically tracks JavaScript state changes and efficiently updates the DOM when changes happen",
   "Easily pass rich data through your app and keep state out of the DOM",
-  "Also render your UI on the server using Node",
+  "Designed to be flexible and incrementally adoptable",
 ];
 
-const GatsbyCMS = ({ data }) => {
+const VueCMS = ({ data }) => {
   const hasOnlyOneArticle = data?.allMdx?.edges?.length === 1
   const [copyButtonState, setCopyButtonState] = useState(false);
   return (
@@ -204,20 +203,20 @@ const GatsbyCMS = ({ data }) => {
                 <h4>Create a new {title} site</h4>
               </span>
               <p>
-                Run the following command to create a React application bootstrapped with Facebook's Create React App tool.
+                Run the following command to install and execute the official Vue project scaffolding tool.
               </p>
-              <p><a href="https://reactjs.org/docs/create-a-new-react-app.html">Visit the React documentation to find out more</a>.</p>
+              <p><a href="https://vuejs.org/guide/quick-start.html#creating-a-vue-application">Visit the documentation for more information</a>.</p>
             </div>
             <div className="action">
               <CodeFieldBorder>
                         <CodeField>
-                            <CodeFieldText>npx create-react-app my-react-app</CodeFieldText>
+                            <CodeFieldText>npm init vue@latest</CodeFieldText>
                             <ToolTip
                                 onClick={() => {
                                     setCopyButtonState(true);
                                     setTimeout(() => setCopyButtonState(false), 2000);
                                     navigator.clipboard.writeText(
-                                        "npx create-react-app my-react-app",
+                                        "npm init vue@latest",
                                     );
                                 }}
                                 className={copyButtonState ? "stiky-tooltip" : ""}
@@ -232,10 +231,10 @@ const GatsbyCMS = ({ data }) => {
             <img src={Step3} alt="Step 3" className="step-icon" />
             <div className="content">
               <span className="hilightText">
-                <h4>Add and Configure React Apollo</h4>
+                <h4>Add and Configure Vue Apollo</h4>
               </span>
               <p>
-                Add Apollo Client and <a href="https://www.apollographql.com/docs/react/get-started/">follow the instructions in the docs</a> to configure it to connect to Webiny's GraphQL API using the API URL and your API Token.
+                Add Apollo Client and <a href="https://apollo.vuejs.org/guide/installation.html#manual-installation">follow the instructions in the docs</a> to configure it to connect to Webiny's GraphQL API using the API URL and your API Token.
               </p>
               <p>
                 <a href="https://www.webiny.com/docs/headless-cms/basics/using-graphql-api">
@@ -246,13 +245,13 @@ const GatsbyCMS = ({ data }) => {
             <div className="action">
               <CodeFieldBorder>
                       <CodeField>
-                          <CodeFieldText>npm install @apollo/client graphql</CodeFieldText>
+                          <CodeFieldText>npm install --save vue-apollo graphql apollo-boost</CodeFieldText>
                           <ToolTip
                               onClick={() => {
                                   setCopyButtonState(true);
                                   setTimeout(() => setCopyButtonState(false), 2000);
                                   navigator.clipboard.writeText(
-                                      "npm install @apollo/client graphql",
+                                      "npm install --save vue-apollo graphql apollo-boost",
                                   );
                               }}
                               className={copyButtonState ? "stiky-tooltip" : ""}
@@ -304,7 +303,7 @@ const GatsbyCMS = ({ data }) => {
                   </div>
                 </Tile>
                 <Tile>
-                  <img src={NextJSLogo} alt="Next.JS logo" />
+                  <img src={NextJSLogo} alt="Gatsby logo" />
                   <div className="content">
                     <h3 className="tiletitle">{NextJSTitle}</h3>
                     <p dangerouslySetInnerHTML={{ __html: NextJSIntro }}/>
@@ -312,11 +311,11 @@ const GatsbyCMS = ({ data }) => {
                   </div>
                 </Tile>
                 <Tile>
-                  <img src={VueJSLogo} alt="Vue logo" />
+                  <img src={ReactLogo} alt="Gatsby logo" />
                   <div className="content">
-                    <h3 className="tiletitle">{VueJSTitle}</h3>
-                    <p dangerouslySetInnerHTML={{ __html: VueJSIntro }}/>
-                    <TileLink to="/integrations/vuejs-cms">Discover more &rarr;</TileLink>
+                    <h3 className="tiletitle">{ReactTitle}</h3>
+                    <p dangerouslySetInnerHTML={{ __html: ReactIntro }}/>
+                    <TileLink to="/integrations/react-cms">Discover more &rarr;</TileLink>
                   </div>
                 </Tile>
               </IntegrationsGrid>
@@ -327,11 +326,11 @@ const GatsbyCMS = ({ data }) => {
   );
 };
 
-export default GatsbyCMS;
+export default VueCMS;
 
 export const pageQuery = graphql`
-  query TechReactQuery {
-      allMdx(filter: {frontmatter: {tech: {in: "react"}}}) {
+  query TechVuejsQuery {
+      allMdx(filter: {frontmatter: {tech: {in: "vuejs"}}}) {
         edges {
           node {
             id
