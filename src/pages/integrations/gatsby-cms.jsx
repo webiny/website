@@ -39,9 +39,13 @@ import {
   description as VueJSIntro,
   title as VueJSTitle
  } from "./vuejs-cms"
+ import { 
+  description as FlutterIntro,
+  title as FlutterTitle
+} from "./flutter-cms"
 
+import FlutterLogo from "../../assets/flutter-logotype.svg"
 import VueJSLogo from "../../assets/vuejs-logotype.svg"
-
 import NextJSLogo from "../../assets/nextjs.svg"
 import ReactLogo from "../../assets/react-logotype.svg"
 import featuredImage from "../../assets/webiny-plus-gatsby.png";
@@ -274,6 +278,14 @@ const gatsby = ({ data }) => {
                     <h3 className="tiletitle">{VueJSTitle}</h3>
                     <p dangerouslySetInnerHTML={{ __html: VueJSIntro }}/>
                     <TileLink to="/integrations/vuejs-cms">Discover more &rarr;</TileLink>
+                  </div>
+                </Tile>
+                <Tile>
+                  <img src={FlutterLogo} alt="Flutter logo" />
+                  <div className="content">
+                    <h3 className="tiletitle">{FlutterTitle}</h3>
+                    <p dangerouslySetInnerHTML={{ __html: FlutterIntro }}/>
+                    <TileLink to="/integrations/flutter-cms">Discover more &rarr;</TileLink>
                   </div>
                 </Tile>
             </IntegrationsGrid>

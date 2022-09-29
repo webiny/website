@@ -38,7 +38,12 @@ import {
   description as ReactIntro,
   title as ReactTitle
 } from "./react-cms"
+import { 
+  description as FlutterIntro,
+  title as FlutterTitle
+} from "./flutter-cms"
 
+import FlutterLogo from "../../assets/flutter-logotype.svg"
 import ReactLogo from "../../assets/react-logotype.svg"
 import NextJSLogo from "../../assets/nextjs.svg"
 import GatsbyLogo from "../../assets/gatsby.svg"
@@ -316,6 +321,14 @@ const VueCMS = ({ data }) => {
                     <h3 className="tiletitle">{ReactTitle}</h3>
                     <p dangerouslySetInnerHTML={{ __html: ReactIntro }}/>
                     <TileLink to="/integrations/react-cms">Discover more &rarr;</TileLink>
+                  </div>
+                </Tile>
+                <Tile>
+                  <img src={FlutterLogo} alt="Flutter logo" />
+                  <div className="content">
+                    <h3 className="tiletitle">{FlutterTitle}</h3>
+                    <p dangerouslySetInnerHTML={{ __html: FlutterIntro }}/>
+                    <TileLink to="/integrations/flutter-cms">Discover more &rarr;</TileLink>
                   </div>
                 </Tile>
               </IntegrationsGrid>

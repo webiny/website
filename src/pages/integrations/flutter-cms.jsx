@@ -55,7 +55,7 @@ import Step3 from "../../assets/step-3.svg";
 import WebinyWindow from "../../assets/window-webiny.svg";
 
 export const title = "Flutter";
-export const description = "Gatsby integrates different content, APIs and services seamlessly into one experience.";
+export const description = "Build apps for any screen with Flutter. Compiles to mobile, web, desktop and JavaScript runtimes.";
 export const introduction =
   "Speed up your mobile development workflow by using Webiny Headless CMS as a content store for Flutter.";
 const whyThisTech =
