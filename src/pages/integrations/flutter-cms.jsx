@@ -38,7 +38,12 @@ import {
   description as ReactIntro,
   title as ReactTitle
 } from "./react-cms"
+import { 
+  description as VueJSIntro,
+  title as VueJSTitle
+} from "./vuejs-cms"
 
+import VueJSLogo from "../../assets/vuejs-logotype.svg"
 import ReactLogo from "../../assets/react-logotype.svg"
 import NextJSLogo from "../../assets/nextjs.svg"
 import GatsbyLogo from "../../assets/gatsby.svg"
@@ -49,19 +54,18 @@ import Step2 from "../../assets/step-2.svg";
 import Step3 from "../../assets/step-3.svg";
 import WebinyWindow from "../../assets/window-webiny.svg";
 
-export const title = "Vue.js";
+export const title = "Flutter";
 export const description = "Gatsby integrates different content, APIs and services seamlessly into one experience.";
 export const introduction =
-  "Using the performant and versatile framework <strong>Vue.js</strong> with <strong>Webiny</strong> as a data source makes for a formidable duo of efficiently updating components as well as stable, scalable and secure content delivery.";
+  "Speed up your mobile development workflow by using Webiny Headless CMS as a content store for Flutter.";
 const whyThisTech =
-  "<p>Vue.js is an approachable, performant and versatile framework for building user interfaces on the web. It builds on top of standard HTML, CSS and JavaScript and utilizes a virtual DOM in order to efficiently update only components that have changed. It is a compiler-optimized rendering system that rarely requires manual optimization.</p>";
+  "<p>Flutter is an open source framework from Google that allows developers to build, test and deploy beautiful mobile, web, desktop and embedded apps from a single codebase. Leveraging Webiny Headless CMS as a database and GraphQL API allows you to persist data for use in your Flutter application.</p>";
 const integrationCopy =
-  "<span className=hilightText>You can easily build dynamic content-heavy sites or complex multi-flow applications with Vue.js and use Webiny</span> to deliver a highly-scalable, fault-tolerant application that scales effortlessly. Use a single Webiny instance to manage content for an unlimited number of websites. All under one tenant in your own security perimeter.";
+  "Flutter transforms the app development process. Build, test, and deploy beautiful mobile, web, desktop, and embedded apps from a single codebase. Combine that with the benefits of Serverless architecture with Webiny to ensure your content is available everywhere, to everyone, all of the time.";
 const techBenefits = [
-  "Declarative rendering that extends HTML with a template syntax",
-  "Automatically tracks JavaScript state changes and efficiently updates the DOM when changes happen",
-  "Easily pass rich data through your app and keep state out of the DOM",
-  "Designed to be flexible and incrementally adoptable",
+  "Compiles to ARM or Intel machine code as well as JavaScript for fast performance on any device",
+  "Deploy from a single codebase to multiple environments including mobile phones, web and embedded devices.",
+  "Includes automated testing, developer tooling and other features",
 ];
 
 const VueCMS = ({ data }) => {
@@ -203,20 +207,20 @@ const VueCMS = ({ data }) => {
                 <h4>Create a new {title} site</h4>
               </span>
               <p>
-                Run the following command to install and execute the official Vue project scaffolding tool.
+                First, <a href="https://docs.flutter.dev/get-started/install">download and install Flutter</a>, then run the following command to initialize a new application.
               </p>
-              <p><a href="https://vuejs.org/guide/quick-start.html#creating-a-vue-application">Visit the documentation for more information</a>.</p>
+              <p><a href="https://flutter.dev/learn">Visit the Flutter docs site for more information</a>.</p>
             </div>
             <div className="action">
               <CodeFieldBorder>
                         <CodeField>
-                            <CodeFieldText>npm init vue@latest</CodeFieldText>
+                            <CodeFieldText>flutter create my-app</CodeFieldText>
                             <ToolTip
                                 onClick={() => {
                                     setCopyButtonState(true);
                                     setTimeout(() => setCopyButtonState(false), 2000);
                                     navigator.clipboard.writeText(
-                                        "npm init vue@latest",
+                                        "flutter create my-app",
                                     );
                                 }}
                                 className={copyButtonState ? "stiky-tooltip" : ""}
@@ -231,10 +235,10 @@ const VueCMS = ({ data }) => {
             <img src={Step3} alt="Step 3" className="step-icon" />
             <div className="content">
               <span className="hilightText">
-                <h4>Add and Configure Vue Apollo</h4>
+                <h4>Add and Configure GraphQL</h4>
               </span>
               <p>
-                Add Apollo Client and <a href="https://apollo.vuejs.org/guide/installation.html#manual-installation">follow the instructions in the docs</a> to configure it to connect to Webiny's GraphQL API using your API Token.
+                Add the Flutter wrapper for graphql/client.dart and <a href="https://pub.dev/packages/graphql_flutter">follow the instructions in the docs</a> to configure it to connect to Webiny's GraphQL API using your API Token.
               </p>
               <p>
                 <a href="https://www.webiny.com/docs/headless-cms/basics/using-graphql-api">
@@ -245,7 +249,7 @@ const VueCMS = ({ data }) => {
             <div className="action">
               <CodeFieldBorder>
                       <CodeField>
-                          <CodeFieldText>npm install --save vue-apollo graphql apollo-boost</CodeFieldText>
+                          <CodeFieldText>flutter pub add graphql_flutter</CodeFieldText>
                           <ToolTip
                               onClick={() => {
                                   setCopyButtonState(true);
@@ -318,6 +322,14 @@ const VueCMS = ({ data }) => {
                     <TileLink to="/integrations/react-cms">Discover more &rarr;</TileLink>
                   </div>
                 </Tile>
+                <Tile>
+                  <img src={VueJSLogo} alt="Vue logo" />
+                  <div className="content">
+                    <h3 className="tiletitle">{VueJSTitle}</h3>
+                    <p dangerouslySetInnerHTML={{ __html: VueJSIntro }}/>
+                    <TileLink to="/integrations/vuejs-cms">Discover more &rarr;</TileLink>
+                  </div>
+                </Tile>
               </IntegrationsGrid>
           </BlogContainer>
         </OtherIntegrationsContainer>
@@ -329,8 +341,8 @@ const VueCMS = ({ data }) => {
 export default VueCMS;
 
 export const pageQuery = graphql`
-  query TechVuejsQuery {
-      allMdx(filter: {frontmatter: {tech: {in: "vuejs"}}}) {
+  query TechFlutterQuery {
+      allMdx(filter: {frontmatter: {tech: {in: "flutter"}}}) {
         edges {
           node {
             id

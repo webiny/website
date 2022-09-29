@@ -239,7 +239,7 @@ const GatsbyCMS = ({ data }) => {
               </p>
               <p>
                 <a href="https://www.webiny.com/docs/headless-cms/basics/using-graphql-api">
-                  Full instructions →
+                Webiny API instructions →
                 </a>
               </p>
             </div>
