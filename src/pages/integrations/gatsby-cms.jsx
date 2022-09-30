@@ -30,8 +30,24 @@ import {
   description as NextJSIntro,
   title as NextJSTitle
  } from "./nextjs-cms"
+
+ import { 
+  description as ReactIntro,
+  title as ReactTitle
+} from "./react-cms"
+import { 
+  description as VueJSIntro,
+  title as VueJSTitle
+ } from "./vuejs-cms"
+ import { 
+  description as FlutterIntro,
+  title as FlutterTitle
+} from "./flutter-cms"
+
+import FlutterLogo from "../../assets/flutter-logotype.svg"
+import VueJSLogo from "../../assets/vuejs-logotype.svg"
 import NextJSLogo from "../../assets/nextjs.svg"
-import GatsbyLogo from "../../assets/gatsby.svg"
+import ReactLogo from "../../assets/react-logotype.svg"
 import featuredImage from "../../assets/webiny-plus-gatsby.png";
 import logo from "../../assets/window-gatsby.svg";
 import Step1 from "../../assets/step-1.svg";
@@ -248,6 +264,30 @@ const gatsby = ({ data }) => {
                   <TileLink to="/integrations/next-cms">Discover more &rarr;</TileLink>
                 </div>
               </Tile>
+              <Tile>
+                  <img src={ReactLogo} alt="React logo" />
+                  <div className="content">
+                    <h3 className="tiletitle">{ReactTitle}</h3>
+                    <p dangerouslySetInnerHTML={{ __html: ReactIntro }}/>
+                    <TileLink to="/integrations/gatsby-cms">Discover more &rarr;</TileLink>
+                  </div>
+                </Tile>
+                <Tile>
+                  <img src={VueJSLogo} alt="Vue logo" />
+                  <div className="content">
+                    <h3 className="tiletitle">{VueJSTitle}</h3>
+                    <p dangerouslySetInnerHTML={{ __html: VueJSIntro }}/>
+                    <TileLink to="/integrations/vuejs-cms">Discover more &rarr;</TileLink>
+                  </div>
+                </Tile>
+                <Tile>
+                  <img src={FlutterLogo} alt="Flutter logo" />
+                  <div className="content">
+                    <h3 className="tiletitle">{FlutterTitle}</h3>
+                    <p dangerouslySetInnerHTML={{ __html: FlutterIntro }}/>
+                    <TileLink to="/integrations/flutter-cms">Discover more &rarr;</TileLink>
+                  </div>
+                </Tile>
             </IntegrationsGrid>
           </BlogContainer>
         </OtherIntegrationsContainer>

@@ -16,27 +16,26 @@ import {
   TileLink,
   IntegrationsGrid,
   OtherIntegrationsTitle,
-  OtherIntegrationsContainer,
   Hr,
+  OtherIntegrationsContainer,
 } from '../../components/tech-integration/TechIntegration.styled'
 import {
   ToolTip,
   ToolTipText,
-  CodeFieldText 
-} from "../../components/new-homepage/hero-section/hero.styled"
+  CodeFieldText } from "../../components/new-homepage/hero-section/hero.styled"
+  import BlogCard from "../../components/blog/components/blog-card"
+  import FeaturedBlog from "../../components/blog/components/featured-blog"
+  import Button from "../../components/ui/button"
 
-import BlogCard from "../../components/blog/components/blog-card"
-import FeaturedBlog from "../../components/blog/components/featured-blog"
-import Button from "../../components/ui/button"
 import { 
-    description as GatsbyIntro,
-    title as GatsbyTitle
-} from "./gatsby-cms"
+  description as NextJSIntro,
+  title as NextJSTitle
+ } from "./nextjs-cms"
 import { 
-  description as ReactIntro,
-  title as ReactTitle
-} from "./react-cms"
-import { 
+  description as GatsbyIntro,
+  title as GatsbyTitle
+ } from "./gatsby-cms"
+ import { 
   description as VueJSIntro,
   title as VueJSTitle
  } from "./vuejs-cms"
@@ -47,33 +46,32 @@ import {
 
 import FlutterLogo from "../../assets/flutter-logotype.svg"
 import VueJSLogo from "../../assets/vuejs-logotype.svg"
+import NextJSLogo from "../../assets/nextjs.svg"
 import GatsbyLogo from "../../assets/gatsby.svg"
-import ReactLogo from "../../assets/react-logotype.svg"
-import featuredImage from "../../assets/nextjs-cms-integration-webiny.png";
-import logo from "../../assets/window-nextjs.svg";
+import featuredImage from "../../assets/webiny-plus-gatsby.png";
+import logo from "../../assets/window-reactjs.svg";
 import Step1 from "../../assets/step-1.svg";
 import Step2 from "../../assets/step-2.svg";
-import ClickInstall from "../../assets/deploy-to-vercel.svg";
+import Step3 from "../../assets/step-3.svg";
 import WebinyWindow from "../../assets/window-webiny.svg";
 
-export const title = "Next.js";
-export const description = "Next.js is a React framework that lets you build hybrid static and server rendered applications.";
+export const title = "React";
+export const description = "A declarative, component-based JavaScript library for building user interfaces.  ";
 export const introduction =
-  "Building a website or app with <strong>Next.js</strong> and <strong>Webiny</strong> will allow your isomorphic applications to scale as much as needed.";
-export const whyThisTech =
-  "<p>Next.js is a React framework that lets you build hybrid static and server rendered applications with smart bundling, route pre-fetching, and TypeScript support built-in.</p><p>Next.js has all the tools you need to make the Web. Faster.</p>";
+  "Building user interfaces with <strong>React</strong> using <strong>Webiny</strong> as a data source using our GraphQL APIs makes for a declarative, clean and efficient codebase.";
+const whyThisTech =
+  "<p>React is so ubiquitous to the frontend development scene these days that the technology hardly needs an introduction. React makes it easy to create interactive UIs. It does this by creating a representation of the DOM, called the Virtual DOM, and updating only the right components when your data changes.</p>";
 const integrationCopy =
-  "<span className=hilightText>You can easily build a dynamic, content-heavy site with Next.js and use Webiny</span> to decouple engineering needs from your marketing team using a highly-scalable, fault-tolerant Serverless service that scales in and out in seconds. Use a single Webiny instance to manage content for an unlimited number of websites. All under one tenant in your own security perimeter.";
+  "<span className=hilightText>You can easily build a dynamic site or complex application with React and use Webiny</span> to decouple engineering needs from your marketing team using a highly-scalable, fault-tolerant Serverless service that scales in and out in seconds. Use a single Webiny instance to manage content for an unlimited number of websites. All under one tenant in your own security perimeter.";
 const techBenefits = [
-  "Automatic image optimization with instant builds.",
-  "Pre-render pages at build time or request time.",
-  "File system routing",
-  "Create API endpoints to provide backend functionality.",
-  "Dynamic routing defined by code instead of configuration.",
+  "Declaratively create interactive UIs",
+  "Build encapsulated components that manage their own state",
+  "Easily pass rich data through your app and keep state out of the DOM",
+  "Also render your UI on the server using Node",
 ];
 
-const NextJS = ({ data }) => {
-  const hasOnlyOneArticle = data.allMdx.edges.length === 1
+const GatsbyCMS = ({ data }) => {
+  const hasOnlyOneArticle = data?.allMdx?.edges?.length === 1
   const [copyButtonState, setCopyButtonState] = useState(false);
   return (
     <BaseLayout title={`${title} CMS`} description={description} fixedHeader={false} image={featuredImage}>
@@ -96,13 +94,16 @@ const NextJS = ({ data }) => {
             </div>
             <img src={logo} alt={`Stylized ${title} logo`} />
           </div>
+          </BlogContainer>
+          <Hr />
+          <BlogContainer>
           <div className="why why-webiny">
             <div className="content">
               <h3>
                 <span className="hilightText">Why</span> Webiny?
               </h3>
               <p>
-                <GatsbyLink to="/enterprise-serverless-cms/headless-cms" className="hilightText">Webiny Headless CMS</GatsbyLink> contains everything an
+              <GatsbyLink to="/enterprise-serverless-cms/headless-cms" className="hilightText">Webiny Headless CMS</GatsbyLink> contains everything an
                 enterprise needs to build, manage and deliver content at scale.
               </p>
               <p>
@@ -113,9 +114,6 @@ const NextJS = ({ data }) => {
             </div>
             <img src={WebinyWindow} alt="Stylized Webiny logo" />
           </div>
-          </BlogContainer>
-          <Hr />
-          <BlogContainer>
           <h2>
             <span className="hilightText">{title} + Webiny</span> integration
           </h2>
@@ -162,7 +160,7 @@ const NextJS = ({ data }) => {
             Building a Frontend With <span className="hilightText">{title}</span>
           </h2>
           <p className="lead">
-            Learn how to build a frontend for Webiny Headless CMS with Next.JS starter.{" "}
+            Learn how to build a frontend for Webiny Headless CMS using React.{" "}
           </p>
           <div className="step">
             <img src={Step1} alt="Step 1" className="step-icon" />
@@ -193,7 +191,7 @@ const NextJS = ({ data }) => {
                                 setCopyButtonState(true);
                                 setTimeout(() => setCopyButtonState(false), 2000);
                                 navigator.clipboard.writeText(
-                                    "npx create-webiny-project my-new-project",
+                                    "npx create-webiny-project my-webiny-project",
                                 );
                             }}
                             className={copyButtonState ? "stiky-tooltip" : ""}
@@ -211,19 +209,63 @@ const NextJS = ({ data }) => {
                 <h4>Create a new {title} site</h4>
               </span>
               <p>
-                Click on the button to deploy the project to Vercel. Or follow the link to
-                full instructions if you want to start locally.
+                Run the following command to create a React application bootstrapped with Facebook's Create React App tool.
+              </p>
+              <p><a href="https://reactjs.org/docs/create-a-new-react-app.html">Visit the React documentation to find out more</a>.</p>
+            </div>
+            <div className="action">
+              <CodeFieldBorder>
+                        <CodeField>
+                            <CodeFieldText>npx create-react-app my-react-app</CodeFieldText>
+                            <ToolTip
+                                onClick={() => {
+                                    setCopyButtonState(true);
+                                    setTimeout(() => setCopyButtonState(false), 2000);
+                                    navigator.clipboard.writeText(
+                                        "npx create-react-app my-react-app",
+                                    );
+                                }}
+                                className={copyButtonState ? "stiky-tooltip" : ""}
+                            >
+                                <ToolTipText>{copyButtonState ? "Copied" : "Copy"}</ToolTipText>
+                            </ToolTip>
+                        </CodeField>
+                    </CodeFieldBorder>
+            </div>
+          </div>
+          <div className="step">
+            <img src={Step3} alt="Step 3" className="step-icon" />
+            <div className="content">
+              <span className="hilightText">
+                <h4>Add and Configure React Apollo</h4>
+              </span>
+              <p>
+                Add Apollo Client and <a href="https://www.apollographql.com/docs/react/get-started/">follow the instructions in the docs</a> to configure it to connect to Webiny's GraphQL API using the API URL and your API Token.
               </p>
               <p>
-                <a href="https://www.webiny.com/docs/headless-cms/integrations/nextjs">
-                  Full instructions →
+                <a href="https://www.webiny.com/docs/headless-cms/basics/using-graphql-api">
+                Webiny API instructions →
                 </a>
               </p>
             </div>
             <div className="action">
-              <a href="https://vercel.com/new/git/external?repository-url=https://github.com/webiny/nextjs-starter-webiny&project-name=cms-webiny&repository-name=cms-webiny&env=PREVIEW_API_SECRET,WEBINY_API_SECRET,NEXT_PUBLIC_WEBINY_API_URL,NEXT_PUBLIC_WEBINY_PREVIEW_API_URL&envDescription=Required%20to%20connect%20the%20app%20with%20Webiny&envLink=https://vercel.link/cms-webiny-env">
-                <img src={ClickInstall} alt="One click Vercel install button" />
-              </a>
+              <CodeFieldBorder>
+                      <CodeField>
+                          <CodeFieldText>npm install @apollo/client graphql</CodeFieldText>
+                          <ToolTip
+                              onClick={() => {
+                                  setCopyButtonState(true);
+                                  setTimeout(() => setCopyButtonState(false), 2000);
+                                  navigator.clipboard.writeText(
+                                      "npm install @apollo/client graphql",
+                                  );
+                              }}
+                              className={copyButtonState ? "stiky-tooltip" : ""}
+                          >
+                              <ToolTipText>{copyButtonState ? "Copied" : "Copy"}</ToolTipText>
+                          </ToolTip>
+                      </CodeField>
+                  </CodeFieldBorder>
             </div>
           </div>
         </BlogContainer>
@@ -267,11 +309,11 @@ const NextJS = ({ data }) => {
                   </div>
                 </Tile>
                 <Tile>
-                  <img src={ReactLogo} alt="React logo" />
+                  <img src={NextJSLogo} alt="Next.JS logo" />
                   <div className="content">
-                    <h3 className="tiletitle">{ReactTitle}</h3>
-                    <p dangerouslySetInnerHTML={{ __html: ReactIntro }}/>
-                    <TileLink to="/integrations/gatsby-cms">Discover more &rarr;</TileLink>
+                    <h3 className="tiletitle">{NextJSTitle}</h3>
+                    <p dangerouslySetInnerHTML={{ __html: NextJSIntro }}/>
+                    <TileLink to="/integrations/nextjs-cms">Discover more &rarr;</TileLink>
                   </div>
                 </Tile>
                 <Tile>
@@ -298,11 +340,11 @@ const NextJS = ({ data }) => {
   );
 };
 
-export default NextJS;
+export default GatsbyCMS;
 
 export const pageQuery = graphql`
-  query TechNextQuery {
-      allMdx(filter: {frontmatter: {tech: {in: "nextjs"}}}) {
+  query TechReactQuery {
+      allMdx(filter: {frontmatter: {tech: {in: "react"}}}) {
         edges {
           node {
             id
