@@ -48,7 +48,7 @@ import ReactLogo from "../../assets/react-logotype.svg"
 import NextJSLogo from "../../assets/nextjs.svg"
 import GatsbyLogo from "../../assets/gatsby.svg"
 import featuredImage from "../../assets/webiny-plus-gatsby.png";
-import logo from "../../assets/window-gatsby.svg";
+import logo from "../../assets/window-flutter.svg";
 import Step1 from "../../assets/step-1.svg";
 import Step2 from "../../assets/step-2.svg";
 import Step3 from "../../assets/step-3.svg";

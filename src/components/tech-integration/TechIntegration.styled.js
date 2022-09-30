@@ -136,16 +136,7 @@ export const IntegrationsGrid = styled.div`
   margin: 3rem 0 5rem;
 
   @media (min-width: ${breakpoints[1]}px) {
-    &:has(> div + div) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    &:not(:has(> div + div)) {
-      > div {
-        max-width: 500px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-    })
+    grid-template-columns: repeat(2, 1fr);
   }
 `
 
@@ -300,8 +291,7 @@ export const TutorialsGrid = styled.div`
     grid-template-columns: repeat(2, 1fr);
   }
   @media (min-width: ${breakpoints[1]}px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
+    grid-template-columns: repeat(auto-fit, minmax(326px, 1fr));
 `
 
 export const BookADemoContainer = styled.aside`
@@ -405,9 +395,8 @@ export const OtherIntegrationsTitle = styled.h2`
 
 export const Hr = styled.hr`
   margin-top: 4rem;
-  border: 1px solid #ccc;;
+  border: 1px solid #eee;
 `
-
 
 export const OtherIntegrationsContainer = styled.section`
   background: url(${bg2}) no-repeat center top;
