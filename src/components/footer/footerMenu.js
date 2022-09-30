@@ -100,6 +100,14 @@ const FooterMenu = () => (
             <Link to="/swag">SWAG</Link>
         </MenuBlock>
         <MenuBlock>
+            <SectionTitle>Integrations</SectionTitle>
+            <Link to="/integrations/react-cms">React</Link>
+            <Link to="/integrations/vuejs-cms">Vue.js</Link>
+            <Link to="/integrations/gatsby-cms">Gatsby</Link>
+            <Link to="/integrations/nextjs-cms">Next.js</Link>
+            <Link to="/integrations/flutter-cms">Flutter</Link>
+        </MenuBlock>
+        <MenuBlock>
             <SectionTitle>Use Cases & Guides</SectionTitle>
             <Link rel="prerender" to="/use-case/serverless-websites">
                 Build Serverless Websites
