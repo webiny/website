@@ -58,7 +58,7 @@ const priceList = [
             {
                 label: "Number of users",
                 open_source: "Unlimited",
-                business: { title: "First user free", text: "Then $9 per user per month" },
+                business: { title: "First user free", text: "Then $9 per user per month. Max 100 users." },
                 enterprise: "Volume pricing on request",
             },
             {
@@ -103,11 +103,12 @@ const priceList = [
                 enterprise: true,
             },
             {
-                label: "Advanced roles and permissions",
+                label: "Headless Pages",
                 open_source: false,
                 business: "Paid add-on",
                 enterprise: true,
             },
+            
         ],
     },
     {
@@ -127,6 +128,30 @@ const priceList = [
             },
             {
                 label: "Active Directory integration",
+                open_source: false,
+                business: false,
+                enterprise: true,
+            },
+            {
+                label: "Auth0 integration",
+                open_source: false,
+                business: false,
+                enterprise: true,
+            },
+            {
+                label: "Custom SSO integration",
+                open_source: false,
+                business: false,
+                enterprise: true,
+            },
+            {
+                label: "Advanced roles and permissions",
+                open_source: false,
+                business: true,
+                enterprise: true,
+            },
+            {
+                label: "Team management",
                 open_source: false,
                 business: false,
                 enterprise: true,

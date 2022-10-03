@@ -10,6 +10,7 @@ import {
     HeroContainer,
     TilesContainer,
     MainTileStyle,
+    MainTitleSubtitle,
     MinorTileStyle,
     MainTileBorder,
     BorderContainer,
@@ -45,24 +46,24 @@ import {
 
 const BASE_PRICE = 9;
 const PUBLISHING_WORKFLOW_PRICE = 9;
-const ADVANCED_ROLES_PRICE = 9;
+const HEADLESS_PAGES_PRICE = 14;
 
 const MainTile = ({ dataTile }) => {
     const [usersNumber, setUsersNumber] = useState(1);
     const [togglePublishingWorkflow, setTogglePublishingWorkflow] = useState(false);
-    const [toggleAdvancedRoles, setToggleAdvancedRoles] = useState(false);
+    const [toggleHeadlessPages, setToggleHeadlessPages] = useState(false);
 
     const pricePerUser = useMemo(() => {
         let calculatedPrice = BASE_PRICE;
         if (togglePublishingWorkflow) {
             calculatedPrice += PUBLISHING_WORKFLOW_PRICE;
         }
-        if (toggleAdvancedRoles) {
-            calculatedPrice += ADVANCED_ROLES_PRICE;
+        if (toggleHeadlessPages) {
+            calculatedPrice += HEADLESS_PAGES_PRICE;
         }
 
         return calculatedPrice;
-    }, [togglePublishingWorkflow, toggleAdvancedRoles]);
+    }, [togglePublishingWorkflow, toggleHeadlessPages]);
 
     const totalPrice = useMemo(() => {
         return pricePerUser * (usersNumber - 1);
@@ -71,9 +72,12 @@ const MainTile = ({ dataTile }) => {
     return (
         <MainTileBorder>
             <MainTileStyle>
-                <GreenLabel>{dataTile.subtitle}</GreenLabel>
+                <GreenLabel>{dataTile.label}</GreenLabel>
                 <GrayBackground>
-                    <MainTileTitle>{dataTile.title}</MainTileTitle>
+                    <MainTileTitle>
+                        {dataTile.title}
+                        <MainTitleSubtitle>{dataTile.subTitle}</MainTitleSubtitle>
+                        </MainTileTitle>
                     <BorderContainer className="main-border">
                         <GrayBorder />
                         <OrangerBorder />
@@ -156,8 +160,8 @@ const MainTile = ({ dataTile }) => {
                         </TogglerTextBottomContainer>
                         <InputCheckBox
                             type="checkbox"
-                            onClick={() => setToggleAdvancedRoles(!toggleAdvancedRoles)}
-                            className={toggleAdvancedRoles ? "toggle-on" : ""}
+                            onClick={() => setToggleHeadlessPages(!toggleHeadlessPages)}
+                            className={toggleHeadlessPages ? "toggle-on" : ""}
                         />
                     </TogglerWrapper>
                 </ListTileContainer>
@@ -169,7 +173,10 @@ const LeftTile = ({ dataTile }) => {
     return (
         <MinorTileStyle>
             <GrayBackground>
-                <MinorTileTitle>{dataTile.title}</MinorTileTitle>
+                <MinorTileTitle>
+                    {dataTile.title}
+                    <MainTitleSubtitle>{dataTile.subTitle}</MainTitleSubtitle>
+                    </MinorTileTitle>
                 <BorderContainer className="gray-orange-border">
                     <GrayBorder />
                     <OrangerBorder />
@@ -210,7 +217,10 @@ const RightTIle = ({ dataTile }) => {
     return (
         <MinorTileStyle>
             <GrayBackground className="right-tile">
-                <MinorTileTitle>{dataTile.title}</MinorTileTitle>
+                <MinorTileTitle>
+                    {dataTile.title}
+                    <MainTitleSubtitle>{dataTile.subTitle}</MainTitleSubtitle>
+                    </MinorTileTitle>
                 <BorderContainer className="orange-border">
                     <GrayBorder />
                     <OrangerBorder />

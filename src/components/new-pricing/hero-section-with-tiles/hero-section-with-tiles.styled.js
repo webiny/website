@@ -52,12 +52,12 @@ export const MinorTileStyle = styled("div")(
     mq({
         maxWidth: ["392px", "260px", "300px"],
         marginTop: ["0px", "56px", "65px"],
-        height: ["411px", "420px", "411px"],
+        height: ["500px", "420px", "500px"],
     }),
 );
 export const MainTileStyle = styled("div")(
     {
-        height: "535px",
+        height: "550px",
         borderRadius: "6px",
         background: "#fff",
         textAlign: "center",
@@ -119,6 +119,12 @@ export const MainTileTitle = styled("h4")({
     fontWeight: "600",
     background: "#fff",
 });
+export const MainTitleSubtitle = styled("p")({
+    fontWeight: 'normal',
+    fontSize: 14,
+    marginBottom: 0
+});
+
 export const MinorTileTitle = styled("h4")({
     textAlign: "center",
     padding: "16px 0px 14px 0px",
@@ -206,7 +212,7 @@ export const Li = styled("li")(
         display: "flex",
         alignItems: "center",
         textAlign: "left",
-        whiteSpace: "nowrap",
+        //whiteSpace: "nowrap",
 
         "::before": {
             content: "url(" + doneIcon + ")",
