@@ -5,7 +5,7 @@ description: "In this tutorial, we will learn about the Webiny CMS and how we ca
 tags: ["react", "build projects", "job board", "contributed articles"]
 featureImage: "./assets/build-job-board-react-graphql/cover.png"
 author: tammi
-date: 2022-10-03
+date: 2022-10-05
 tech: ["react"]
 featured: true
 project: "Job Board with React"
@@ -17,7 +17,7 @@ A job board is an app or section of a website where job vacancies are advertised
 
 In this tutorial, we will learn about the Webiny CMS and how we can use it in React by building a job board application.
 
-## Prerequisite
+## Prerequisites
 
 To follow along with this tutorial, you need to have the following:
 
@@ -37,7 +37,7 @@ To get started, we need to first create a Webiny project, deploy it and then mod
 
 To deploy a new Webiny project, enter the following command in the terminal:
 
-```
+```bash
 npx create-webiny-project webiny-backend
 ```
 
@@ -45,7 +45,7 @@ After running the above command you will be asked several questions, one of whic
 
 Once the new project has been created, it’s time to deploy it into our AWS account. We can do this with the following commands:
 
-```
+```bash
 cd webiny-backend
 
 yarn webiny deploy
@@ -61,35 +61,37 @@ A content model defines the structure of the content we want to store in the CMS
 
 To access the Admin app, we can click the URL printed in the terminal earlier when we deployed our project.
 
-> Perhaps you have closed the terminal, to view the URLs you can the `yarn webiny info` command.
-> 
+**Note:** Perhaps you have closed the terminal, to view the URLs you can the `yarn webiny info` command.
+ 
 
-![https://paper-attachments.dropbox.com/s_20AA0363416B2597CD52A5F1142B0C29E289122B237444691E81CC43826351EF_1656674841861_links.png](https://paper-attachments.dropbox.com/s_20AA0363416B2597CD52A5F1142B0C29E289122B237444691E81CC43826351EF_1656674841861_links.png)
+![Output of the "yarn webiny info" command](./assets/build-job-board-react-graphql/s_20AA0363416B2597CD52A5F1142B0C29E289122B237444691E81CC43826351EF_1656674841861_links.png)
 
 For the first time accessing the Admin app we would be prompted to create a default user with our details. After doing that, we will be taken to the welcome page:
 
-![https://paper-attachments.dropbox.com/s_20AA0363416B2597CD52A5F1142B0C29E289122B237444691E81CC43826351EF_1656676466331_home.png](https://paper-attachments.dropbox.com/s_20AA0363416B2597CD52A5F1142B0C29E289122B237444691E81CC43826351EF_1656676466331_home.png)
+![Webiny admin panel welcome screen](./assets/build-job-board-react-graphql/s_20AA0363416B2597CD52A5F1142B0C29E289122B237444691E81CC43826351EF_1656676466331_home.png)
 
 Next, navigate to the **Content Models** page by clicking on the **New Content Model** button within the **Headless CMS** card, and on the next page click on **New Modal** at the top of the page and we will see a prompt with a form to add some information for a new Content Model. 
 
-![new content model.png](Build%20a%20Job%20Board%20with%20React%20and%20Webiny%20Headless%20C%206056432ce14f495395f479c0475122c6/new_content_model.png)
+![new content model](./assets/build-job-board-react-graphql/new_content_model.png)
 
 For the **Job** model, in the name field enter **Job** then click on the **CREATE MODEL** button. Following thesame process let’s also create the **Application** model. Each model has a page where we can add different field types to it which are the representation of the data to be held by the model. 
 
-![model-field-types.png](Build%20a%20Job%20Board%20with%20React%20and%20Webiny%20Headless%20C%206056432ce14f495395f479c0475122c6/model-field-types.png)
+![model field types](./assets/build-job-board-react-graphql/model-field-types.png)
 
 After creating a model we will be taken to this page. We can navigate to it by clicking on the edit icon of a model on the **Content Models** page. 
 
 To add a field, we need to drag and drop it in the drop zone, then in the prompt that appears supply a Label (required) and click on the **SAVE FIELD** button. Below is a video showing how a **TEXT** field labeled **title** is added:
 
-[Untitled.mp4](Build%20a%20Job%20Board%20with%20React%20and%20Webiny%20Headless%20C%206056432ce14f495395f479c0475122c6/Untitled.mp4)
+<video width="800px" height="auto" controls autoplay>
+  <source src="./assets/build-job-board-react-graphql/Untitled.mp4" type="video/mp4" />
+</video>
 
 Now following the process in the Video above let’s create the following fields for the **Job** model:
 
 - Four(4) **TEXT** fields with the labels: **title, type, station,** and **level**.
 - **LONG TEXT** field with the label **description.**
 
-![job-content-model.png](Build%20a%20Job%20Board%20with%20React%20and%20Webiny%20Headless%20C%206056432ce14f495395f479c0475122c6/job-content-model.png)
+![job content model](./assets/build-job-board-react-graphql/job-content-model.png)
 
 After creation, click on the **SAVE** button at the top right of the page.
 
@@ -99,7 +101,7 @@ For the **Application** model:
 - **NUMBER** field with the label **phoneNumber.**
 - **REFERENCE** field with the label **ref** and Content Models **Job**. This field will be used to hold the **ID** of a **JOB** entry.
 
-![application-content-model.png](Build%20a%20Job%20Board%20with%20React%20and%20Webiny%20Headless%20C%206056432ce14f495395f479c0475122c6/application-content-model.png)
+![application content model](./assets/build-job-board-react-graphql/application-content-model.png)
 
 Then, click on the **SAVE** button. 
 
@@ -117,10 +119,10 @@ I have already created a job board template so we can solely focus on working wi
 
 We can do this with the following commands:
 
-```
-git clone -b starter https://github.com/Tammibriggs/webiny-job-board.git
+```bash
+git clone https://github.com/write-with-webiny.git
 
-cd webiny-job-board
+cd write-with-webiny/tutorials/react-job-board
 
 npm install
 ```
@@ -129,23 +131,23 @@ For working with GraphQL in our frontend we will be using [Apollo client](https:
 
 Now when we start the app with `npm start`, we should see the following screen in our browser:
 
-![job-list.png](Build%20a%20Job%20Board%20with%20React%20and%20Webiny%20Headless%20C%206056432ce14f495395f479c0475122c6/job-list.png)
+![List of available jobs](./assets/build-job-board-react-graphql/job-list.png)
 
 Right now a job manually added to the app is being displayed, later on this will be replaced with the one coming from the CMS.
 
 When we click the **Apply** button on a job card, we will see the following:
 
-![apply-for-job.png](Build%20a%20Job%20Board%20with%20React%20and%20Webiny%20Headless%20C%206056432ce14f495395f479c0475122c6/apply-for-job.png)
+![Interface for applying for a job](./assets/build-job-board-react-graphql/apply-for-job.png)
 
 And when we click on the **Post Job** button at the top-right of the page, we will see the following:
 
-![post-job.png](Build%20a%20Job%20Board%20with%20React%20and%20Webiny%20Headless%20C%206056432ce14f495395f479c0475122c6/post-job.png)
+![Submit a new job](./assets/build-job-board-react-graphql/post-job.png)
 
 ### Initialize Apollo client
 
 To initializing Apollo we need to get an API token to enable us to gain access to the Webiny GraphQL API and the correct Headless CMS GraphQL API endpoints. After getting the above we will be storing them in a **.env** file in our app which will look like the following:
 
-```
+```bash
 REACT_APP_WEBINY_GRAPHQL_TOKEN = your-token-here
 REACT_APP_WEBINY_GRAPHQL_READ_URL = your-read-url-here
 REACT_APP_WEBINY_GRAPHQL_MANAGE_URL = your-manage-url-here
@@ -153,25 +155,25 @@ REACT_APP_WEBINY_GRAPHQL_MANAGE_URL = your-manage-url-here
 
 To get the API token, head over to the Admin app and in the sidebar expand the **Settings** tab and we will see **API keys** under the **ACCESS MANAGEMENT** section.
 
-![apikey-tab.png](Build%20a%20Job%20Board%20with%20React%20and%20Webiny%20Headless%20C%206056432ce14f495395f479c0475122c6/apikey-tab.png)
+![api key menu item](./assets/build-job-board-react-graphql/apikey-tab.png)
 
 Select **API keys,** and on the next screen click on **New API key.** we will see a prompt where we can set the name, description, and access control options for our KEY.
 
-![https://paper-attachments.dropbox.com/s_20AA0363416B2597CD52A5F1142B0C29E289122B237444691E81CC43826351EF_1657106220880_control-setup.png](https://paper-attachments.dropbox.com/s_20AA0363416B2597CD52A5F1142B0C29E289122B237444691E81CC43826351EF_1657106220880_control-setup.png)
+![Create API Key interface](./assets/build-job-board-react-graphql/s_20AA0363416B2597CD52A5F1142B0C29E289122B237444691E81CC43826351EF_1657106220880_control-setup.png)
 
 Enter a name and description then scroll down the page, expand the **Content** tab and select **All locales.**
 
-![https://paper-attachments.dropbox.com/s_20AA0363416B2597CD52A5F1142B0C29E289122B237444691E81CC43826351EF_1657203550176_content-local.png](https://paper-attachments.dropbox.com/s_20AA0363416B2597CD52A5F1142B0C29E289122B237444691E81CC43826351EF_1657203550176_content-local.png)
+![API Key all locales radio button](./assets/build-job-board-react-graphql/s_20AA0363416B2597CD52A5F1142B0C29E289122B237444691E81CC43826351EF_1657203550176_content-local.png)
 
 Next, expand the **Headless CMS** tab which contains options to control which operations the API token can, or cannot, perform.
 
-![https://paper-attachments.dropbox.com/s_20AA0363416B2597CD52A5F1142B0C29E289122B237444691E81CC43826351EF_1657104359315_headless-cms.png](https://paper-attachments.dropbox.com/s_20AA0363416B2597CD52A5F1142B0C29E289122B237444691E81CC43826351EF_1657104359315_headless-cms.png)
+![Headless CMS permissions](./assets/build-job-board-react-graphql/s_20AA0363416B2597CD52A5F1142B0C29E289122B237444691E81CC43826351EF_1657104359315_headless-cms.png)
 
 For our use case, here is how we will set the controls.
 
-![headless-cms-controls-1.png](Build%20a%20Job%20Board%20with%20React%20and%20Webiny%20Headless%20C%206056432ce14f495395f479c0475122c6/headless-cms-controls-1.png)
+![Setting read & manage API controls](./assets/build-job-board-react-graphql/headless-cms-controls-1.png)
 
-![captures_chrome-capture-2022-9-1.png](Build%20a%20Job%20Board%20with%20React%20and%20Webiny%20Headless%20C%206056432ce14f495395f479c0475122c6/captures_chrome-capture-2022-9-1.png)
+![Setting content models API controls](./assets/build-job-board-react-graphql/captures_chrome-capture-2022-9-1.png)
 
 Webiny Headless CMS includes different API types, each of which has a separate endpoint and different purpose. You can read more about it [here](https://www.webiny.com/docs/headless-cms/basics/graphql-api#graph-ql-api-types). Above, under the **GRAPHQL API TYPES** heading we have enabled the **Read** and **Manage** type to give the API token to be generated permissions to use the endpoint of both types. We are doing this so that while sending requests to read data we can use the **Read** endpoint and for creating, editing and publishing we can use the **Manage** endpoint.
 
@@ -179,7 +181,7 @@ Above, under the **PUBLISHING ACTIONS** heading**,** we have also enabled **Publ
 
 After setting the controls, click on the **SAVE API KEY** button at the bottom of the page and our API token will be created.
 
-![API-token.png](Build%20a%20Job%20Board%20with%20React%20and%20Webiny%20Headless%20C%206056432ce14f495395f479c0475122c6/API-token.png)
+![Completed API token](./assets/build-job-board-react-graphql/API-token.png)
 
 Now we can copy the token and store it in a **.env** file in our React app.
 
@@ -187,11 +189,11 @@ Now we can copy the token and store it in a **.env** file in our React app.
 
 Next, let’s get the endpoint for the Manage API and Read API. Go to the API playground in the Admin app, click on the **Headless CMS - Manage API** tab at the top of the page copy the URL directly below the tab and supply it to the appropriate variable in the **.env** file.
 
-![graphql-url.png](Build%20a%20Job%20Board%20with%20React%20and%20Webiny%20Headless%20C%206056432ce14f495395f479c0475122c6/graphql-url.png)
+![Where to find the GraphQL URL](./assets/build-job-board-react-graphql/graphql-url.png)
 
 Then, for the Read endpoint, click on the **Headless CMS - READ API** tab, copy the URL directly below the tab and supply it to the appropriate variable in the **.env** file.
 
-![read-api-endpoint.png](Build%20a%20Job%20Board%20with%20React%20and%20Webiny%20Headless%20C%206056432ce14f495395f479c0475122c6/read-api-endpoint.png)
+![read api endpoint](./assets/build-job-board-react-graphql/read-api-endpoint.png)
 
 Now, to initialize Apollo client, modify **index.js** file in the **src** directory to look like this:
 
@@ -235,7 +237,7 @@ root.render(
 
 ```
 
-Above, we have initialized Apollo client to be able to interchangeably ****use the Read and Manage endpoint using the `split` method in `ApolloLink`. This method receives three arguments. The first is a test to check the value of `endpointType` supplied while sending requests. If the test passes (i.e when `endpointType === "manage"`) the second argument which is the Manage endpoint will be supplied as the link for the GraphQL request, but if it fails the third argument which is the Read endpoint will be supplied as the link.
+Above, we have initialized Apollo client to be able to interchangeably use the Read and Manage endpoint using the `split` method in `ApolloLink`. This method receives three arguments. The first is a test to check the value of `endpointType` supplied while sending requests. If the test passes (i.e when `endpointType === "manage"`) the second argument which is the Manage endpoint will be supplied as the link for the GraphQL request, but if it fails the third argument which is the Read endpoint will be supplied as the link.
 
 ### Posting new jobs
 
@@ -258,7 +260,7 @@ const POST_JOB = gql`
   createJob(data: {
     title: $title
     description: $description
-  	type: $type
+    type: $type
     station: $station
     level: $level
   }) {
@@ -331,7 +333,7 @@ For fetching all jobs we will be using the `listJobs` Webiny query and `useQuery
 
 Head over to **src/App.js** and add the following import and query:
 
-```
+```jsx
 // src/App.js
 import { gql, useQuery } from '@apollo/client';
 
@@ -381,8 +383,8 @@ With this:
 // src/App.js
 {data?.listJobs?.data.map((job) => (
   <JobCard 
-		key={job.id}
-		id={job.id}
+    key={job.id}
+    id={job.id}
     title={job.title}
     station={job.station}
     type={job.type}
@@ -394,7 +396,7 @@ With this:
 
 With this, when we open our app in the browser we will see all the posted jobs like this:
 
-![posted-jobs.png](Build%20a%20Job%20Board%20with%20React%20and%20Webiny%20Headless%20C%206056432ce14f495395f479c0475122c6/posted-jobs.png)
+![Complete list of jobs rendered from the API](./assets/build-job-board-react-graphql/posted-jobs.png)
 
 Right now if we post a new job it won’t be displayed unless we refresh the page. Let’s fix that.
 
@@ -402,7 +404,7 @@ There are a few ways we can do this using Apollo client but the best is to inclu
 
 ```jsx
 useMutation(POST_JOB, {
-	context: {endpointType: 'manage'},
+  context: {endpointType: 'manage'},
   refetchQueries: [
     {query: LIST_JOBS}
   ],
@@ -428,7 +430,7 @@ Next, head over to **src/PostJob.js** and modify the `useMutation` hook to the f
 ```jsx
 // src/PostJob.js
 const [postJob, { loading }] = useMutation(POST_JOB, {
-	context: {endpointType: 'manage'},
+  context: {endpointType: 'manage'},
   refetchQueries: [
     {query: queryToRefresh}
   ],
@@ -474,7 +476,7 @@ Next, let’s add controls to display what’s being rendered using this state. 
   {filteredJobs.map((job) => (
     <JobCard 
       key={job.id}
-			id={job.id}
+      id={job.id}
       title={job.title}
       station={job.station}
       type={job.type}
@@ -502,7 +504,7 @@ The above function will set the `filteredJobs` state with the jobs whose title i
 
 I have already added a prop in the starter app tp for this. To use it modify the rendered `Hero` component to include the following:
 
-```
+```jsx
 // src/App.js
 <Hero 
   //...
@@ -689,7 +691,7 @@ Also modify the rendered `Job` component by adding the following prop:
 
 ```jsx
 <Job 
-	// ...
+  // ...
   noOfApplicants={noOfApplicants}
 />
 ```
