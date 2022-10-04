@@ -99,13 +99,13 @@ const priceList = [
             {
                 label: "Advanced publishing workflow",
                 open_source: false,
-                business: "Paid add-on",
+                business: { title: "Optional Add-on", text: "$9/user/mo" },
                 enterprise: true,
             },
             {
                 label: "Headless Pages",
                 open_source: false,
-                business: "Paid add-on",
+                business: { title: "Optional Add-on", text: "$14/user/mo" },
                 enterprise: true,
             },
             

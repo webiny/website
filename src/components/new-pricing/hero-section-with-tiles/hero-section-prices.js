@@ -24,7 +24,7 @@ const heroSectionData = {
                 toolTipDecription: "No need to upgrade to a paid plan if you need more users.",
             },
             {
-                benefitName: "Basic user permissions",
+                benefitName: "Basic roles & permissions",
                 info: true,
                 toolTipDecription:
                     "Users either have full access or no access to a particular application.",
@@ -91,10 +91,10 @@ const heroSectionData = {
                     "Unlocks the ability to have an unlimited number of tenants or projects on your Webiny instance",
             },
             {
-                benefitName: "Users with fine-grain permissions",
+                benefitName: "Advanced roles & permissions without team management",
                 info: true,
                 toolTipDecription:
-                "Ability to assign a single fine-grain permission per application to individual users.",
+                "Associate a single role containing a set of fine-grain pemissions to an individual user. You can have one role per user.",
             },
         ],
     },
@@ -106,10 +106,10 @@ const heroSectionData = {
         price: "3,499",
         benefits: [
             {
-                benefitName: "OKTA, Auth0, AD integration",
+                benefitName: "OKTA, Auth0 integration",
                 info: true,
                 toolTipDecription:
-                    "Built-in customizable integration for OKTA, Auth0 and ActiveDirectory IdP. ",
+                    "Built-in customizable integration for OKTA and Auth0 IdP. ",
             },
             {
                 benefitName: "Custom SSO implementation",
@@ -117,9 +117,10 @@ const heroSectionData = {
                 toolTipDecription: "Enterprise customers can bring in any other SSO into Webiny where our core development team will support you in building the integration.",
             },
             {
-                benefitName: "Team management with fine-grain permissions",
+                benefitName: "Advanced roles & permissions with team management",
                 info: true,
-                toolTipDecription: "Allocate people into teams, where each team has a set of multiple fine-grain permissions.",
+                toolTipDecription:
+                "Users are managed inside teams which have one or more roles associated.",
             },
             {
                 benefitName: "SLA Support",
@@ -136,7 +137,7 @@ const heroSectionData = {
                 benefitName: "Consultancy services",
                 info: true,
                 toolTipDecription:
-                    "Get the professional assistance directly from the team that built Webiny.",
+                    "Get the professional assistance directly from the team that built Webiny. Enterprise package includes 10h as standard, more can be purchased on request.",
             },
         ],
     },
