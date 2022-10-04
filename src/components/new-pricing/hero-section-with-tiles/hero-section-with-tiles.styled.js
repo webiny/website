@@ -57,7 +57,7 @@ export const MinorTileStyle = styled("div")(
 );
 export const MainTileStyle = styled("div")(
     {
-        height: "550px",
+        height: "570px",
         borderRadius: "6px",
         background: "#fff",
         textAlign: "center",
