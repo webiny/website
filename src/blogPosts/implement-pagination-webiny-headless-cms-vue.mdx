@@ -166,7 +166,10 @@ In the name input enter **Book,** then click on the **CREATE MODEL** button. On 
 
 To add a field, we need to drag and drop it in the drop zone, then in the prompt that appears supply a Label(required) and click on the **SAVE FIELD** button. Below is a Video showing how a **TEXT** field labeled **title** is added:
 
-[Creating fields](./assets/implement-pagination-webiny-headless-cms-vue/creating-fields.mp4)
+
+<video width="800px" height="auto" controls autoplay>
+  <source src="./assets/implement-pagination-webiny-headless-cms-vue/creating-fields.mp4" type="video/mp4" />
+</video>
 
 Now following the process in the Video above let’s create **TEXT** fields with labels: **authors, image, publishDate, publisher, and title**. For the field with a label of **authors** make to turn on the **Use as a list of texts** switch. We are doing this so that it can hold more than one text (Array of strings).
 
@@ -206,7 +209,8 @@ Now that we have set up a Webiny project and created our Content model. We are n
 
 We will start by setting up our Vue app, then using the GraphQL API we will fetch our book data to be used for the pagination functionality.
 
-**Setting up Vue**
+### Setting up Vue
+
 I have already created a starter repo containing the template and data to be added to Webiny which I fetched from the [Google book API](https://developers.google.com/books/docs/v1/using). The next step is to clone the GitHub repo. We can do this with the following commands:
 
 ```bash
@@ -225,7 +229,8 @@ Now when we start the app with `npm run server`, we should see the following scr
 
 Right now we are getting our book data from the **data.js** file in the **src** directory of the cloned app. We will be moving it over to Webiny and fetching it from there shortly.
 
-**Initialize Apollo Client**
+### Initialize Apollo Client
+
 Before initializing Apollo we need to first get an API token to enable us to gain access to our GraphQL API and the correct Headless CMS GraphQL API URL.
 
 To get the API token, head over to the Admin app, and in the sidebar expand the **Settings** tab and we will see **API keys** under the **ACCESS MANAGEMENT** section.
@@ -294,7 +299,8 @@ Notice we have passed the **URL** and **API token** to the configuration object 
 
 Now, what we need to do is populate our Book model with content that we will use for the pagination. In the **data.js** file in the **src** directory of our app, there are over 54 book data. We can move them over to our CMS by manually adding them as entries to our Book model on the Admin page.
 
-**Implement Cursor-based pagination**
+### Implement Cursor-based pagination
+
 For implementing Cursor-based pagination Webiny headless CMS GraphQL API includes a `limit` and `after` argument. `limit` takes an integer that indicates the number of contents we wich to return in every request and `after` take a string which is the cursor of the last content returned. By specifying a cursor in the `after` argument, the returned result will be the contents after the specified cursor.
 
 Using the above, we need to create a query that will be able to receive a `limit` and `after` argument and also return the cursor of the last returned content.
@@ -440,7 +446,8 @@ With this, the buttons should now be working properly.
 
 In this tutorial, we have covered how pagination can be implemented with Webiny headless CMS in a Vue app. 
 
-**Full source code:** https://github.com/webiny/write-with-webiny/tree/main/tutorials/pagination-vue
+**Full source code:** https://github.com/webiny/write-with-webiny/tree/main/tutorial
+pagination-vue
 
 ---
 
