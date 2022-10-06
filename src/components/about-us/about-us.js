@@ -8,6 +8,7 @@ import YTVideoComponent from "../ui/layout/yt-video";
 import VideoCover from "./assets/hi-from-founders-cover.png";
 import ContentContainer from "../ui/content-container";
 import Button from "../ui/button";
+import Investors from '../new-homepage/investors/investors';
 
 import Breadcrumb from "../../layouts/components/breadcrumb";
 
@@ -290,6 +291,7 @@ export default () => (
                 </StoryText>
             </ContentContainer>
         </Section>
+        {/*
         <TeamSection>
             <ContentContainer className={welcomeContainerClass}>
                 <TeamPath src={teamPathImg} alt={""} />
@@ -328,6 +330,7 @@ export default () => (
                 </TeamWrapper>
             </ContentContainer>
         </TeamSection>
+        */}
         <SectionWithGrayRectangle>
             <ContentContainer className={contributorsContainerClass}>
                 <ContributorsText>
@@ -377,7 +380,12 @@ export default () => (
                         <img src={circleBgImg} alt={""} />
                     </div>
                     <More>
+                        
+                        <Investors/>
+
+                        {/*
                         <InvestorTitle>Our Investors</InvestorTitle>
+                        
                         <InvestorText>
                             We are proud to be backed by visionary investors
                         </InvestorText>
@@ -385,6 +393,7 @@ export default () => (
                             <img src={investorE1Img} alt="Episode 1" className="img" />
                             <img src={investorYCImg} alt="Y Combinator" className="img" />
                         </InvestorLogos>
+                         */}
                     </More>
                 </ImageWrapper>
             </ContentContainer>
