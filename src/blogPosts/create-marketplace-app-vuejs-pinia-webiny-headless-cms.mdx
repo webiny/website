@@ -926,25 +926,11 @@ Here's the finished cart:
 
 ## Creating a Product
 
-This is where we will add a new product to the Webiny CMS. As a standard practice we will test the mutation on the Webiny API Playground.
+This is where we will add a new product to the Webiny CMS. As a standard practice we will test the mutation on the Webiny API Playground shown below:
 
-This is the GraphQL syntax we will use to create a new project:
+![Webiny API Playground - mutation test results](./assets/create-marketplace-app-vuejs-pinia-webiny-headless-cms/untitled-20.png)
 
-```graphql
-query {
-  listCategories {
-    data {
-      id
-      title
-      iconName
-    }
-  }
-}
-```
-
-![Webiny API Playground - query test and result](./assets/create-marketplace-app-vuejs-pinia-webiny-headless-cms/untitled-21.png)
-
-Webiny API Playground - query test and result
+Here is the full mutation:
 
 ```graphql
 mutation createProducts(
@@ -977,7 +963,27 @@ mutation createProducts(
 }
 ```
 
-## Create.vue
+This is the GraphQL syntax we will use to create a new project. We will also make a query on our Categories Model so that we can use the results as option in our form. Test it as shown below:
+
+![Webiny API Playground - query test and result](./assets/create-marketplace-app-vuejs-pinia-webiny-headless-cms/untitled-21.png)
+
+Here is the GraphQL query for all categories:
+
+```graphql
+query {  
+  listCategories {
+    data {
+      id
+      title
+      iconName   
+    }
+  }
+}
+```
+
+## Creating new products
+
+Now that we have successfully tested our GraphQL queries and mutations we will implement the GraphQL mutation for create new products. The code below is the entire syntax for the Create.vue file:
 
 ```jsx
 <script setup>
@@ -992,7 +998,7 @@ const product = ref({
   title: 'Product Name',
   price: 0.00,
   desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, dolore omnis deserunt unde sapiente quasi delectus magni? Placeat consequuntur veritatis nobis. Ad nobis iste repellat voluptatum quam eveniet libero ullam!',
-  link: "hhtp://www.webiny.com"
+  link: "https://www.webiny.com"
 })
 const category = ref('article')
 const categories = reactive([])
@@ -1003,7 +1009,8 @@ query {
     data{
       id
       title
-    iconName   }
+      iconName   
+    }
   }
 }`
 
@@ -1118,15 +1125,19 @@ function uploadProduct() {
 
 ```
 
-![Untitled](./assets/create-marketplace-app-vuejs-pinia-webiny-headless-cms/untitled-22.png)
+Now you should be able to view a single product as below:
+
+![Finished product view](./assets/create-marketplace-app-vuejs-pinia-webiny-headless-cms/untitled-22.png)
+
+In the next step we will create functions and UI elements to allow users to manage their products.
 
 ## Managing Products
 
 The application is created so that only the seller who uploaded the product can manage it. If they did not then the can only purchase the item. The following code is already inside the **products.js** and the **Products.vue** file, however I wanted to explicitly extract the functions here.
 
-## Delete Product
+## Deleting Products
 
-In order to delete a product from the CMS we need the products id as shown below:
+In order to delete a product from the CMS we need to pass the product's `id` as shown below:
 
 ```graphql
   const DELETE_PRODUCT = gql`
@@ -1144,11 +1155,11 @@ In order to delete a product from the CMS we need the products id as shown below
   }));
 ```
 
+Here is the shop page with the ability to manage a product:
+
 ![shop page with the ability to manage a product.](./assets/create-marketplace-app-vuejs-pinia-webiny-headless-cms/untitled-23.png)
 
-shop page with the ability to manage a product.
-
-## Update Product
+## Update a Product
 
 The application only allows the seller to update the *title*, *description* and the *price*. So in our GraphQL mutation we will only capture those and mutate them.
 
@@ -1172,14 +1183,93 @@ The application only allows the seller to update the *title*, *description* and 
     }
 ```
 
+UI for editing a product:
+
 ![updating a product](./assets/create-marketplace-app-vuejs-pinia-webiny-headless-cms/untitled-24.png)
 
-updating a product
+Now we have all of the functionality needed to create, update and delete products, we can create a header to tie the application together and allow users to navigate.
 
-In the terminal run this code:
+## Creating a persistent Header
 
-```bash
-npm run dev
+All the pages are ready to be viewed in our Application so let’s create a Header that will be a component on every page. Under components create a new file called Header.vue and add the following code:
+
+```jsx
+<template>
+    <header class="bg-black p-2 flex flex-wrap justify-between">
+        <h1 class="font-bold text-3xl text-white">{} Markt </h1>
+        <ul class="flex font-bold">
+            <router-link 
+              to="/" 
+              class="p-2 text-blue-400 uppercase hover:text-white" 
+              active-class="text-white"
+            >
+                {{userStore.user.username ? "Profile":"Home" }}
+            </router-link>
+            <router-link 
+              to="/new" 
+              class="p-2 text-blue-400 uppercase hover:text-white" 
+              active-class="text-white"
+            >
+                Sell
+            </router-link>
+            <router-link 
+              to="/products" 
+              class="p-2 text-blue-400 uppercase hover:text-white" 
+              active-class="text-white"
+            >
+                Shop
+            </router-link>
+            <router-link 
+              to="/cart" 
+              class="p-2 text-blue-400 hover:text-white uppercase" 
+              active-class="text-white"
+            >
+                <span class="material-icons">
+                    shopping_cart
+                </span> 
+                <span class="inline-flex absolute -top-0 -right-0 justify-center items-center w-6 h-6 text-xs font-bold text-black bg-white rounded-full border-2 border-white text-center">
+                    {{cartStore.cart.length}}
+                </span>
+            </router-link>
+        </ul>
+    </header>
+</template>
+
+<script setup>
+import router from "../router";
+import { useUserStore } from "../stores/users";
+import { useCartStore } from "../stores/cart";
+const userStore = useUserStore();
+const cartStore = useCartStore();
+</script>
+```
+
+Now in our `App.vue` file we can add the header on every page by placing it above our router-view write the following code:
+
+```javascript
+<script setup>
+
+import { onBeforeMount } from "@vue/runtime-core";
+
+import Header from './components/Header.vue';
+import { useProductStore } from "./stores/products";
+
+import { useUserStore } from "./stores/users";
+const products = useProductStore();
+const store = useUserStore();
+onBeforeMount(() => {
+  store.loadSellers()
+})
+</script>
+
+<template>
+  <div class="flex flex-col min-h-screen">
+    <Header />
+    <router-view></router-view>
+    <div class="flex-1"></div>
+  </div>
+
+</template>
 ```
 
 ## Conclusion
