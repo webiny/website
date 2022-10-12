@@ -11,19 +11,19 @@ const NewsBanner = styled("div")({
     display: "flex",
     top: 0,
     zIndex: 3,
-    backgroundColor: "#00CCB0",
+    backgroundColor: theme.color.primaryDark,
     paddingBottom: 5,
     paddingTop: 7,
     minHeight: 25,
     a: {
-        color: theme.color.dark,
+        color: theme.color.white,
         textDecoration: "underline",
         "&:hover": {
             textDecoration: "none",
         },
     },
     p: {
-        color: theme.color.dark,
+        color: theme.color.white,
         margin: "0 auto",
         marginBottom: 0,
     },
