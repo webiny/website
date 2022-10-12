@@ -13,8 +13,6 @@ ghLink: "https://github.com/webiny/write-with-webiny/tree/main/tutorials/vue-mar
 ---
 import OnPagePromo from "../components/ui/on-page-promo/on-page-promo"
 
-## Introduction
-
 Marketplace applications give users the ability to share and sell products online. In this tutorial we will build a marketplace application for software developers to sell code, tech articles and full applications. We'll be using [Tailwind](https://tailwindcss.com) to style the app, and state management library [Pinia](https://pinia.vuejs.org) to create type safe Vue Stores.
 
 ## What we will build
@@ -74,12 +72,12 @@ In the Webiny Headless CMS menu choose **Models** then **New Model,** give your 
 
 Once created we must now flesh out our model with the information we need to create a category. You will be presented with the drag and drop user interface for the model. The category content model will have two **text** fields: 
 
-![Untitled](./assets/create-marketplace-app-vuejs-pinia-webiny-headless-cms/untitled-2.png)
-
 - **Title [text] -** Name of the category
 - **Icon [text] -** the icon name that corresponds to our **Google Material Icons**
 
-**Save** the Model
+![Untitled](./assets/create-marketplace-app-vuejs-pinia-webiny-headless-cms/untitled-2.png)
+
+Once you have added these, **Save** the Model
 
 Under the **Headless CMS** scroll down until you find the **Categories** model you just created.
 
@@ -105,11 +103,9 @@ Once you have saved the **Sellers** Model, create an entry.
 
 ![Creating a seller](./assets/create-marketplace-app-vuejs-pinia-webiny-headless-cms/untitled-6.png)
 
-# Creating Products Model
+## Creating the Products Model
 
-Let’s create the **Content Model** for our Products. This will house all the information we need for each product in our App. 
-
-Create a new Content Model called **Products**
+Let’s create the **Content Model** for our Products. This will house all the information we need for each product in our App. Create a new Content Model called **Products**
 
 ![Creating the Products content model](./assets/create-marketplace-app-vuejs-pinia-webiny-headless-cms/untitled-7.png)
 
@@ -152,7 +148,7 @@ Once you have saved the API it will provide you with a token. Copy this token an
 
 <OnPagePromo />
 
-# Creating our Vue Application
+## Creating our Vue Application
 
 We will be using Vite.js to create our project. In a separate location to your webiny application, using the Command prompt terminal, create a new **Vue** project and following the prompts to create a vue application using javascript.
 
@@ -162,9 +158,7 @@ cd markt-webiny
 npm install
 ```
 
-## Installing the dependencies
-
-We need to install a few dependencies for our app, Vue Router, Vue Apollo and Tailwind CSS. 
+We will next need to install a few dependencies for our app, Vue Router, Vue Apollo and Tailwind CSS. 
 
 ### Adding Vue Router
 
@@ -239,7 +233,7 @@ Let’s also add Tailwind CSS to our Vite application the documentation for this
 
 *You could add you own styling and skip this step if you want.*
 
-## Installing **Vue Router & Vue Apollo**
+### Installing **Vue Router & Vue Apollo**
 
 ```bash
 npm i vue-router@4
@@ -358,17 +352,15 @@ Open the **index.html** and add link the Material Icons stylesheet
 </html>
 ```
 
-## Pinia
+## State management with Pinia
 
 [Pinia 🍍](https://pinia.vuejs.org/) is a state management library that makes it easy to manage data across our application. [You can learn more about Pinia library on their website](https://pinia.vuejs.org/introduction.html).
 
-## Webiny API Playground
-
-Another great feature of Webiny is the API Playground you can learn more about [from the Webiny Documentation](https://www.webiny.com/docs/headless-cms/basics/using-graphql-api). We will use it to test our GraphQL syntax to access and manage the data from our Content Models.
-
-## Sellers Model
+### Sellers Model
 
 First we will load all of them into our **Pinia Store** and then we will add the functionality in our Home.vue file to check if the username in the input field matches one the **Sellers Model**. We will make the query to list all the data in the **Sellers Model** then we will test the syntax in the API Playground.
+
+The API Playground is one of the great features of Webiny &mdash; you can learn more about it [from the Webiny Documentation](https://www.webiny.com/docs/headless-cms/basics/using-graphql-api). We will use it to test our GraphQL syntax to access and manage the data from our Content Models.
 
 In the **API Playground** we have a **GraphQL** editor where we can test any GraphQL syntax on our Models. There are four different APIs listed: **Main**, **Manage**, **Read** and **Preview**. We are going to be using the Manage API for this tutorial.
 
@@ -403,12 +395,12 @@ export const useUserStore = defineStore("user", () => {
   const sellers = reactive([]);
   let allSellers;
   let user = ref({});
-/* Check if we already are logged in*/
+  /* Check if we already are logged in*/
   if (localStorage.getItem("user")) {
     user = JSON.parse(localStorage.getItem("user"));
   }
 
-/* List all the sellers in the Webiny CMS*/
+  /* List all the sellers in the Webiny CMS*/
   const loadSellers = () => {
     const ALL_SELLER_QUERY = gql`
       query {
@@ -428,7 +420,7 @@ export const useUserStore = defineStore("user", () => {
     }
   };
 
-/* Update the sellers array with Webiny CMS data*/
+  /* Update the sellers array with Webiny CMS data*/
   const updateSellers = () => {
     sellers.value = allSellers.value.listSelles.data;
   };
@@ -461,7 +453,7 @@ export const useUserStore = defineStore("user", () => {
 });
 ```
 
-## Cart Store
+### Keeping Track of the User's Cart
 
 We will create our cart store to keep track of the user’s cart and their purchases through our application. We will store all of these into `localStorage`.
 
@@ -531,9 +523,9 @@ export const useCartStore = defineStore("useCartStore", () => {
 });
 ```
 
-## Home Page
+## Building the Home Page
 
-Now that we have both the user and cart Pinia stores we can create our Home page of our application.  This will show a login screen if there is no user in the localStorage or the User’s profile and purchases if logged in. Reminder: don't use this method of authentication in a production application.
+Now that we have both the user and cart Pinia stores we can create our Home page of our application. This will show a login screen if there is no user in the localStorage or the User’s profile and purchases if logged in. Reminder: don't use this method of authentication in a production application.
 
 ```jsx
 /** views/Home.vue */
@@ -633,7 +625,7 @@ As before, run this query in the GraphQL Playground to verify we have all the da
 
 ![Testing the GraphQL](./assets/create-marketplace-app-vuejs-pinia-webiny-headless-cms/untitled-17.png)
 
-## Product data Store
+### Product data Store
 
 This is the **products.js** file with our Pinia Product Store, where we will put all the code related to our Products model. We will handle GraphQL queries and mutations here.
 
@@ -704,7 +696,7 @@ export const useProductStore = defineStore("products", () => {
 });
 ```
 
-## Products view
+### Products view
 
 We will add the code to view all the products and if the user is logged in they cannot buy their own items but they will be able to update or delete them.
 
@@ -781,9 +773,12 @@ const cartStore = useCartStore();
 
 <!-- POPUP -->
   <div v-if="openView" class="shadow-md  rounded-lg fixed top-0 right-0 left-0  w-full md:inset-1 bg-white h-1/2">
-    <button @click="openView=false"
-      class="inline-flex items-center  p-2 m-1 text-sm font-medium text-center text-white bg-blue-300 rounded-lg hover:bg-black">
-      <span class="material-icons">close</span></button>
+    <button 
+      @click="openView=false"
+      class="inline-flex items-center  p-2 m-1 text-sm font-medium text-center text-white bg-blue-300 rounded-lg hover:bg-black"
+    >
+      <span class="material-icons">close</span>
+    </button>
     <h1 class="text-3xl font-bold m-2">{{loadedProduct.title}}</h1>
     <div class="p-2">
       <p>{{loadedProduct.desc}}</p>
@@ -869,7 +864,7 @@ const cartStore = useCartStore();
     </div>
   </div>
   <div v-else>
-    No Products
+    No Products to display.
   </div>
 </template>
 ```
@@ -924,11 +919,7 @@ Here's the finished cart:
 
 ## Creating a Product
 
-This is where we will add a new product to the Webiny CMS. As a standard practice we will test the mutation on the Webiny API Playground shown below:
-
-![Webiny API Playground - mutation test results](./assets/create-marketplace-app-vuejs-pinia-webiny-headless-cms/untitled-20.png)
-
-Here is the full mutation:
+This is where we will add a new product to the Webiny CMS using a GraphQL `mutation`. Here is the full mutation:
 
 ```graphql
 mutation createProducts(
@@ -960,12 +951,11 @@ mutation createProducts(
   }
 }
 ```
+As a standard practice we will test the mutation on the Webiny API Playground shown below:
 
-This is the GraphQL syntax we will use to create a new project. We will also make a query on our Categories Model so that we can use the results as option in our form. Test it as shown below:
+![Webiny API Playground - mutation test results](./assets/create-marketplace-app-vuejs-pinia-webiny-headless-cms/untitled-20.png)
 
-![Webiny API Playground - query test and result](./assets/create-marketplace-app-vuejs-pinia-webiny-headless-cms/untitled-21.png)
-
-Here is the GraphQL query for all categories:
+This is the GraphQL syntax we will use to create a new project. We will also make a query on our Categories Model so that we can use the results as option in our form. 
 
 ```graphql
 query {  
@@ -978,6 +968,11 @@ query {
   }
 }
 ```
+
+You should see results similar to this:
+
+![Webiny API Playground - query test and result](./assets/create-marketplace-app-vuejs-pinia-webiny-headless-cms/untitled-21.png)
+
 
 ## Creating new products
 
@@ -1159,7 +1154,7 @@ Here is the shop page with the ability to manage a product:
 
 ## Update a Product
 
-The application only allows the seller to update the *title*, *description* and the *price*. So in our GraphQL mutation we will only capture those and mutate them.
+The application only allows the seller to update the `title`, `description` and the `price`. So in our GraphQL mutation we will only capture those and mutate them.
 
 ```graphql
  mutation updateProduct(
