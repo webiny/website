@@ -368,15 +368,15 @@ const Header = ({ hasBanner = true, sticky = false }) => {
                     </Helmet>
                     <NewsBanner>
                         <p>
-                            🚀 We're live on&nbsp;
+                            🌟&nbsp;Help others discover us,&nbsp;
                             <a
-                                href="https://www.producthunt.com/posts/webiny-enterprise-cms"
+                                href="https://github.com/webiny/webiny-js"
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                Product Hunt
+                                star our GitHub repo!
                             </a>
-                            &nbsp;today!
+                            &nbsp;🌟
                         </p>
                     </NewsBanner>
                 </Fragment>
