@@ -52,7 +52,7 @@ export const MinorTileStyle = styled("div")(
     mq({
         maxWidth: ["392px", "260px", "300px"],
         marginTop: ["0px", "56px", "65px"],
-        height: ["500px", "420px", "500px"],
+        height: ["500px", "auto", "500px"],
     }),
 );
 export const MainTileStyle = styled("div")(
