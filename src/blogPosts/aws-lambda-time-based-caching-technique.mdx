@@ -59,7 +59,7 @@ export const handler = async () => {
 
 And while this would work, there is still one question we need to ask ourselves here. With the caching technique we've implemented above, what happens if for some reason the license has changed on the remote REST API?
 
-## The Benefits and Hazards of Scaling Instances
+## The Benefits and Hazards of AWS Lambda Scaling
 
 Well, if you were familiar with [how AWS Lambda works](https://www.youtube.com/watch?v=QdzV04T_kec), you would know that the service can spawn multiple instances of your function, each operating in its own isolated environment (container). How many instances are spawned, essentially, depends on the amount of work there is to be done. The more work needs to be done, the more instances will be spawned. And only if an instance hasn't been active for some time (10-15minutes), the instance is terminated.
 
@@ -74,7 +74,7 @@ For us, this presents two issues.
 
 First, if the license were to change, all existing instances would be working with a cached but outdated license. We would basically have to wait for these instances to be terminated, and only then we would have our application code retrieving the latest license from the mentioned remote REST API. 
 
-### 2. Race Condition
+### 2. A Mix of Different Licences
 
 More importantly, since AWS Lambda function instances are spawned at different times, we could end up in a situation where some of the instances hold the latest version of the license and some don't. 
 
