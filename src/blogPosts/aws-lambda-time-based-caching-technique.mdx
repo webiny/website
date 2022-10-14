@@ -74,13 +74,13 @@ For us, this presents two issues.
 
 First, if the license were to change, all existing instances would be working with a cached but outdated license. We would basically have to wait for these instances to be terminated, and only then we would have our application code retrieving the latest license from the mentioned remote REST API. 
 
-### 2. A Mix of Different Licences
+### 2. Different Licences
 
 More importantly, since AWS Lambda function instances are spawned at different times, we could end up in a situation where some of the instances hold the latest version of the license and some don't. 
 
 ![Scaling issues](./assets/aws-lambda-time-based-caching-technique/scaling-issues.png)
 
-Based on the flow chart we've shown at the beginning of this article, depending on the cached licenses, we could even end up in a situation where some AWS Lambda function instances throw an error at the start of the function invocation, while others allow for the rest of the code to be executed.
+Based on the diagram we've shown at the beginning of this article, depending on the cached licenses, we could even end up in a situation where some AWS Lambda function instances throw an error at the start of the function invocation, while others allow for the rest of the code to be executed.
 
 If you ask me, pretty much sounds like a debugging hell.
 
