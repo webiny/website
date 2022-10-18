@@ -147,5 +147,11 @@ export default {
         description: "I'm a designer and front-end developer obsessed with crafting and sharing beautiful experiences.",
         avatar: miracleOnyemmaImg,
         twitter: "miracleio"  
-    }
+    },
+    davidIgheose: {
+        name: "David Igheose",
+        description: "",
+        avatar: nobodyImg,
+        twitter: ""  
+    },
 };
