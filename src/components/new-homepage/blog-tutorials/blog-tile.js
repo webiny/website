@@ -9,6 +9,7 @@ import RemixLogo from "../../../assets/remix.svg"
 import FlutterLogo from "../../../assets/flutter.svg"
 import AstroLogo from "../../../assets/astro.svg"
 import NuxtLogo from "../../../assets/nuxtjs.svg"
+import SvelteLogo from "../../../assets/svelte.svg"
 import { ButtonPrimary } from '../hero-section/hero.styled'
 
 
@@ -40,6 +41,10 @@ const technologies = {
   "nuxtjs": {
     title: "Nuxt.js",
     image: NuxtLogo
+  },
+  "svelte": {
+    title: "Svelte",
+    image: SvelteLogo
   }
 }
 
