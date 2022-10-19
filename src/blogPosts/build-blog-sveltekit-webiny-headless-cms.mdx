@@ -1,10 +1,10 @@
 ---
 slug: "blog/build-blog-sveltekit-webiny-headless-cms"
 title: "Build a Blog with Next.js and Webiny Headless CMS"
-description: "Next.js is a popular tool for building isomorphic React apps. Here's how to build a blog with Next.js and Webiny."
+description: "Svelte is a radical new approach to building user interfaces. It's compiler writes code that updates the DOM when the state of your app changes."
 date: 2022-10-18
 featureImage: "./assets/build-blog-sveltekit-webiny-headless-cms/cover.png"
-tags: ["sveltekit", "build projects", "blog site", "contributed articles"]
+tags: ["svelte", "build projects", "blog site", "contributed articles"]
 type: blog
 author: davidIgheose
 featured: true
@@ -94,7 +94,7 @@ If you have not setup your AWS account credentials, [check here.](https://www.we
 
 Alternatively, if you’re having trouble with any of these steps, [complete this form to access](https://webiny.typeform.com/to/VYffkZlR) a demo instance.
 
-The project will consist of his three applications: a  Headless CMS GraphQL API, a management app, and a public website.
+The project will consist of these three parts: Creating the content in the Headless CMS, Setting up authentication for the GraphQL API, and a public website.
 
 If you didn't notice your credentials information after deploying successfully, you can always get it by running this command below:
 
@@ -133,11 +133,18 @@ Then click the **New Content Model button** inside the **headless CMS** card to 
 
 ![3.jpg](./assets/build-blog-sveltekit-webiny-headless-cms/3.jpg)
 
-Enter `svelte-blog` at the name prompt and click the Create Model button. On the next page you can see the different field types we can add to our **svelte-blog model.**
+Enter `svelte-blog` at the name prompt and click the Create Model button. Below you can see the different field types we can add to our **svelte-blog model.**
 
 ![4.jpg](./assets/build-blog-sveltekit-webiny-headless-cms/4.jpg)
 
-This is what the **post-**content model looks like:
+We will add the following content types:
+
+- Title (`text` field)
+- Description (`long text` field)
+- Slug (`text` field)
+- Author (`text` field)
+- Image (`files` field)
+- Body (`long text` field)
 
 ![Screen Shot 2022-10-10 at 2.27.07 PM.png](./assets/build-blog-sveltekit-webiny-headless-cms/Screen_Shot_2022-10-10_at_2.27.07_PM.png)
 
@@ -161,7 +168,7 @@ Create a new API key and give our headless CMS all the permissions it needs to r
 
 Select API Keys from the Settings menu:
 
-![15.jpg](./assets/build-blog-sveltekit-webiny-headless-cms/15.jpg)
+![15.jpg](./assets/build-blog-sveltekit-webiny-headless-cms/15.png)
 
 ![9.jpg](./assets/build-blog-sveltekit-webiny-headless-cms/9.jpg)
 
@@ -189,10 +196,13 @@ Now we can copy the **URL**  and save it in our Svelte app's  .env file.
 
 Create a .env file in the root of your Sveltekit project and add the data below:
 
-```jsx
-VITE_PUBLIC_CMS_ENPOINT: YOUR WEBINY CMS URL HERE
-VITE_PREVIEW_API_CMS_ENPOINT: YOUR WEBINY CMS PREVIEW ENPOINT
-VITE_PUBLIC_TOKEN_SECRET:  YOUR WEBINY CMS TOKEN API HERE
+```bash
+# Private
+SECRET_API_KEY=YOUR WEBINY CMS TOKEN API HERE
+
+# Public
+VITE_PUBLIC_CMS_ENPOINT=YOUR WEBINY CMS URL HERE
+VITE_PREVIEW_API_CMS_ENPOINT=YOUR WEBINY CMS PREVIEW ENPOINT
 ```
 
 ## Fetching data for pages using Webiny Headless CMS
@@ -200,7 +210,7 @@ VITE_PUBLIC_TOKEN_SECRET:  YOUR WEBINY CMS TOKEN API HERE
 We will be using graphql-request to Fetch the Webiny CMS data to our Svelte application.
 Webiny provides a great API playground for testing our backend. Open a browser, go to Webiny admin dashboard, and open API Playground.
 
-![16.jpg](./assets/build-blog-sveltekit-webiny-headless-cms/16.jpg)
+![16.jpg](./assets/build-blog-sveltekit-webiny-headless-cms/16.png)
 
 Go to Webiny Manage API and enter the value in the bottom left. Run your code and see the results.
 
@@ -238,9 +248,27 @@ Now we already have a project structure. Describes the folders and files used in
 
 Heres how it might look in your code editor:
 
-![18.jpg](./assets/build-blog-sveltekit-webiny-headless-cms/18.jpg)
+![18.jpg](./assets/build-blog-sveltekit-webiny-headless-cms/18.png)
 
-Open the `+page.svelte` file inside the routes folder and enter the code below :
+Before then let’s set up our **secret token key** from our **.env** file using the  `$env/static/private`, if you want to access environment variables loaded from your `.env`.
+
+To do this create a **page.server.ts** file inside the **routes folder**.  Enter the code below :
+
+```jsx
+//  routes/+page.server.ts
+
+import { SECRET_API_KEY } from '$env/static/private';
+
+/** @type {import('./$types').PageServerLoad} */
+export function load() {
+    const data = SECRET_API_KEY
+
+    return {
+        token: data
+    };
+  }
+```
+Open the +page.svelte file inside the routes folder and enter the code below :
 
 ```jsx
 //  routes/+page.svelte
@@ -262,7 +290,7 @@ Open the `+page.svelte` file inside the routes folder and enter the code below :
   const graphQLClient = new GraphQLClient(endpoint, {
    headers: {
     'Content-Type': 'application/json',
-    Authorization: `Bearer ${import.meta.env.VITE_PUBLIC_TOKEN_SECRET}`
+    Authorization: `Bearer ${secret_token}`
    }
   });
 
@@ -312,6 +340,8 @@ Open the `+page.svelte` file inside the routes folder and enter the code below :
 ```
 
 ## Page Styles
+
+Create a `<style>` section below that and add the following code:
 
 ```css
 <style>
@@ -370,6 +400,8 @@ We need to create a component folder in the src folder, then create a Card.svelt
 In the snippet above, you'll see that we've received the blog props, by importing them from our route page +page.svelte file and mapping the data.
 
 ## Card Styles
+
+Here are the full styles for the card, which you can add below the HTML inside a `<style>` tag:
 
 ```css
 <style>
@@ -447,7 +479,25 @@ In the snippet above, you'll see that we've received the blog props, by importin
 
 ## Using the Preview API to fetch draft data
 
-The blog slug page follows the same approach used to create the index page. Create a blog folder in the route folder and also create a +page.svelte file in the blog folder where the [slug] folder is. Enter the code below
+The blog slug page follows the same approach used to create the index page.  Before then let’s set up our secret token key from our .env file, which we also did for the index page inside the routes folder.
+
+To do this create a blog folder in the route folder and also create a +page.server.ts file in the blog folder where the [slug] folder is.  Enter the code below :
+
+```jsx
+//  routes/blog/[slug]/+page.server.ts
+
+import { SECRET_API_KEY } from '$env/static/private';
+
+/** @type {import('./$types').PageServerLoad} */
+export function load() {
+    const data = SECRET_API_KEY
+
+    return {
+        token: data
+    };
+  }
+```
+Create a +page.svelte file inside the blog folder where the [slug] folder is.  Enter the code below :
 
 ```jsx
 //  routes/blog/[slug]/+page.svelte
@@ -471,7 +521,7 @@ The blog slug page follows the same approach used to create the index page. Crea
   const graphQLClient = new GraphQLClient(endpoint, {
    headers: {
     'Content-Type': 'application/json',
-    Authorization: `Bearer ${import.meta.env.VITE_PUBLIC_TOKEN_SECRET}`
+    Authorization: `Bearer ${secret_token}`
    }
   });
 
@@ -534,6 +584,8 @@ The blog slug page follows the same approach used to create the index page. Crea
 ```
 
 ## Page Styles
+
+The following styles are for the page and can be added to the page inside a style block:
 
 ```css
 <style>
