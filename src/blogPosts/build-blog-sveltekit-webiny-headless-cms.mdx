@@ -236,7 +236,7 @@ Now we already have a project structure. Describes the folders and files used in
 │   └── component/
 │       ├── Card.svelte
 |    └── routes
-│        └── +page.svelt
+│        └── +page.svelte
 │       └── blog/
 │           └── [slug]                  
                  └── +page.svelte
@@ -397,7 +397,7 @@ We need to create a component folder in the src folder, then create a Card.svelt
 </main>
 ```
 
-In the snippet above, you'll see that we've received the blog props, by importing them from our route page +page.svelte file and mapping the data.
+In the snippet above, you'll see that we've received the blog props, by importing them from our route page `+page.svelte` file and mapping the data.
 
 ## Card Styles
 
@@ -481,7 +481,7 @@ Here are the full styles for the card, which you can add below the HTML inside a
 
 The blog slug page follows the same approach used to create the index page.  Before then let’s set up our secret token key from our .env file, which we also did for the index page inside the routes folder.
 
-To do this create a blog folder in the route folder and also create a +page.server.ts file in the blog folder where the [slug] folder is.  Enter the code below :
+To do this create a blog folder in the route folder and also create a `+page.server.ts` file in the blog folder where the [slug] folder is.  Enter the code below :
 
 ```jsx
 //  routes/blog/[slug]/+page.server.ts
@@ -497,7 +497,7 @@ export function load() {
     };
   }
 ```
-Create a +page.svelte file inside the blog folder where the [slug] folder is.  Enter the code below :
+Create a `+page.svelte` file inside the blog folder where the [slug] folder is.  Enter the code below :
 
 ```jsx
 //  routes/blog/[slug]/+page.svelte
