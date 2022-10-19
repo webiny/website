@@ -160,15 +160,13 @@ Then click **SAVE & PUBLISH** at the top right of the page and click CONFIRM in 
 
 ## Authenticating with Webiny Headless CMS GraphQL API
 
-To get our API token, go to your Admin app and expand the Settings tab in the sidebar. We will see our API key in the Access Management section.
-
-Before we can access our headless CMS from Sveltekit, we need a token and an API URL. How to get the URL:
-
-Create a new API key and give our headless CMS all the permissions it needs to read the content.
+To get our API token, go to your Admin app and expand the Settings tab in the sidebar. We will see our API key in the Access Management section. Before we can access our headless CMS from Sveltekit, we need a token and an API URL. How to get the URL:
 
 Select API Keys from the Settings menu:
 
 ![15.jpg](./assets/build-blog-sveltekit-webiny-headless-cms/15.png)
+
+Create a new API key and give our headless CMS all the permissions it needs to read the content.
 
 ![9.jpg](./assets/build-blog-sveltekit-webiny-headless-cms/9.jpg)
 
@@ -192,7 +190,7 @@ Then, to get the URL, go to API Playground in the Admin app, click the Headless 
 
 ![14.jpg](./assets/build-blog-sveltekit-webiny-headless-cms/14.jpg)
 
-Now we can copy the **URL**  and save it in our Svelte app's  .env file.
+Now we can copy the URL and save it in our Svelte app's .env file.
 
 Create a .env file in the root of your Sveltekit project and add the data below:
 
@@ -250,9 +248,9 @@ Heres how it might look in your code editor:
 
 ![18.jpg](./assets/build-blog-sveltekit-webiny-headless-cms/18.png)
 
-Before then let’s set up our **secret token key** from our **.env** file using the  `$env/static/private`, if you want to access environment variables loaded from your `.env`.
+Before then let’s set up our secret token key from our .env file using the  $env/static/private, if you want to access environment variables loaded from your .env.
 
-To do this create a **page.server.ts** file inside the **routes folder**.  Enter the code below :
+To do this create a `page.server.ts` file inside the **routes folder**.  Enter the code below :
 
 ```jsx
 //  routes/+page.server.ts
@@ -268,7 +266,7 @@ export function load() {
     };
   }
 ```
-Open the +page.svelte file inside the routes folder and enter the code below :
+Open the `+page.svelte` file inside the routes folder and enter the code below :
 
 ```jsx
 //  routes/+page.svelte
@@ -338,6 +336,8 @@ Open the +page.svelte file inside the routes folder and enter the code below :
 
 </section>
 ```
+
+This will fetch data from the Webiny API and render it on the page.
 
 ## Page Styles
 
