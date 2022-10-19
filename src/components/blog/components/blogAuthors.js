@@ -20,6 +20,7 @@ import calebImg from "../assets/caleb.png";
 import chrissyImg from "../assets/chrissy.png"
 import nobodyImg from "../assets/nobody.png"
 import miracleOnyemmaImg from "../assets/miracle-onyemma.png"
+import davidIgheoseImg from "../assets/david-igheose.jpg"
 
 export default {
     sven: {
@@ -147,5 +148,11 @@ export default {
         description: "I'm a designer and front-end developer obsessed with crafting and sharing beautiful experiences.",
         avatar: miracleOnyemmaImg,
         twitter: "miracleio"  
-    }
+    },
+    davidIgheose: {
+        name: "David Igheose",
+        description: "Software Engineer & Technical Writer",
+        avatar: davidIgheoseImg,
+        twitter: "DavidIgheose"  
+    },
 };
