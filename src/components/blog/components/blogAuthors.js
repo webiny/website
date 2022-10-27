@@ -21,6 +21,7 @@ import chrissyImg from "../assets/chrissy.png"
 import nobodyImg from "../assets/nobody.png"
 import miracleOnyemmaImg from "../assets/miracle-onyemma.png"
 import davidIgheoseImg from "../assets/david-igheose.png"
+import samarpitImg from "../assets/samarpit-shrivastava.png"
 
 export default {
     sven: {
@@ -139,7 +140,7 @@ export default {
     },
     chrissy: {
         name: "Christina Petit",
-        description: "Freelance Web Developer  & Tech Writer",
+        description: "Web Developer & Tech Writer",
         avatar: chrissyImg,
         twitter: "petitpois24"
     },
@@ -154,5 +155,11 @@ export default {
         description: "Software Engineer & Technical Writer",
         avatar: davidIgheoseImg,
         twitter: "DavidIgheose"  
+    },
+    samarpitShrivastava: {
+        name: "Samarpit Shrivastava",
+        description: "Web Engineer & Technical Writer",
+        avatar: samarpitImg,
+        twitter: "ItsSamarpit"  
     },
 };
