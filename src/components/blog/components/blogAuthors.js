@@ -140,7 +140,7 @@ export default {
     },
     chrissy: {
         name: "Christina Petit",
-        description: "Web Developer & Tech Writer",
+        description: "Freelance Web Developer  & Tech Writer",
         avatar: chrissyImg,
         twitter: "petitpois24"
     },
