@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "react-emotion";
-import { css } from "emotion";
+import {
+    css
+} from "emotion";
 import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
 import ContentContainer from "../ui/content-container";
 
 import heroBg from "./assets/hero-bg.svg";
 
-const Hero = styled("section")(
-    {
+const Hero = styled("section")({
         width: "100%",
         background: "url(" + heroBg + ") no-repeat center top",
         color: "#fff",
@@ -29,8 +30,7 @@ const Title = styled("h1")({
     marginBottom: 25,
 });
 
-const Grid = styled("div")(
-    {
+const Grid = styled("div")({
         width: "100%",
         display: "flex",
         justifyContent: "space-between",
@@ -51,8 +51,7 @@ const Grid = styled("div")(
     }),
 );
 
-const Cell = styled("div")(
-    {
+const Cell = styled("div")({
         boxSizing: "border-box",
         width: "100%",
         h3: {
@@ -97,7 +96,7 @@ const Cell = styled("div")(
             letterSpacing: 0.5,
             fontWeight: theme.fontWeight.regular,
             textDecoration: "none",
-            display: "flex",
+            // display: "flex",
             alignItems: "center",
             "&:hover": {
                 textDecoration: "underline",
@@ -116,8 +115,7 @@ const Cell = styled("div")(
     }),
 );
 
-const bodyStyle = css(
-    {
+const bodyStyle = css({
         color: "#4A4A4A",
         marginBottom: 100,
         h2: {
@@ -133,17 +131,31 @@ const bodyStyle = css(
     }),
 );
 
-export default ({ children, ...props }) => (
-    <React.Fragment>
-        <Hero>
-            <ContentContainer>
-                <Title>{props.title}</Title>
-            </ContentContainer>
-        </Hero>
-        <ContentContainer className={bodyStyle}>
-            <Grid>
-                <Cell>{children}</Cell>
-            </Grid>
-        </ContentContainer>
-    </React.Fragment>
+export default ({
+    children,
+    ...props
+}) => ( <
+    React.Fragment >
+    <
+    Hero >
+    <
+    ContentContainer >
+    <
+    Title > {
+        props.title
+    } < /Title> <
+    /ContentContainer> <
+    /Hero> <
+    ContentContainer className = {
+        bodyStyle
+    } >
+    <
+    Grid >
+    <
+    Cell > {
+        children
+    } < /Cell> <
+    /Grid> <
+    /ContentContainer> <
+    /React.Fragment>
 );
