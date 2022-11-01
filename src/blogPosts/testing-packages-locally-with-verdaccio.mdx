@@ -1,0 +1,131 @@
+---
+slug: "blog/testing-packages-locally-with-verdaccio-lerna"
+title: "Testing Packages Locally Using Lerna & Verdaccio"
+description: "Webiny uses Lerna to publish our packages. But what happens we have some changes to the Webiny project which we need to have tested thoroughly before publishing to NPM? In this case, we see how we can use Verdaccio to publish packages locally."
+tags: ["Serverless", "Web development", "Javascript", "Software Development", "Monorepos"]
+featureImage: "./assets/testing-packages-locally-with-verdaccio-lerna/cover.png"
+author: ben
+type: blog
+date: 2022-11-01
+---
+
+We want to provide the easiest way for developers to get started when building a new Webiny project. So we have a `create-webiny-project` command line interface (CLI) that creates a new user project with their chosen AWS region and some other preferences they need.
+
+This CLI requests over 100 packages which are published to NPM. These all work together to create GraphQL APIs, the Admin interface, and infrastructure-as-code that allow our four interrelated applications to work together.
+
+Modifying these packages and testing them could prove to be a challenge if it wasn't for very useful tools like [Lerna](https://lerna.js.org/), which we use to publish new versions to NPM, and [Verdaccio](https://verdaccio.org/). Verdaccio is a proxy registry. That means when configured it intercepts requests to NPM, and serves packages you've published to it locally.
+
+Here's how we use leverage Verdaccio to test packages at Webiny, using [our repository](https://github.com/webiny/webiny-js) as an example.
+
+## Start Verdaccio
+
+First of all, edit something in a package and build it. Then start Verdaccio. We can do this from the webiny-js project root directory using the following command:
+
+```bash
+yarn verdaccio -c .verdaccio.yml
+```
+
+The flag `-c` tells it to accept the config file we already have set up in the project.
+
+Next we need to set the registry address to use the port Verdaccio is running on instead of NPM's (https://registry.npmjs.org) By default this is port `4873`. Run this command to change the registry address:
+
+```bash
+npm config set registry http://localhost:4873
+```
+
+Did it work? To check, you can `cat ~/.npmrc`, you will hopefully see the following:
+
+```bash ~/.npmrc
+registry=http://localhost:4873
+```
+
+### Tricks with yarn
+
+If you're running Yarn v2 or greater, Yarn no longer recognizes this config file. Instead you will also need to create a `.yarnrc.yml` in the user root folder with the following parameters:
+
+```bash ~/.yarnrc.yml
+npmRegistryServer: "http://localhost:4873"
+
+unsafeHttpWhitelist:
+  - localhost
+```
+
+There's more information about this [on Verdaccio's docs site](https://verdaccio.org/docs/setup-yarn/#yarn-berry-2x).
+
+## Version and Release Packages
+
+The final steps before we test our user project is to create a new Beta version and release the packages. This is where our existing setup in the Webiny project with Lerna steps in. You can see details of how this command works by [looking at the package.json in our repository](https://github.com/webiny/webiny-js/blob/next/package.json#L157).
+
+```bash
+yarn lerna:version:verdaccio
+```
+
+Under the hood this runs the Lerna version command but doesn't push or create a changelog. It also creates a new tag for the release. If this is the first time you've run the command, the tag will be `v{version}-beta.0`, then `v{version}-beta.1`, and so on. Once this has completed you will see a new release commit on the branch which you will need to roll back afterwards. Now we can release the new version to Verdaccio.
+
+```bash
+yarn lerna:publish:verdaccio
+```
+
+This takes the existing packages with the appropriate tag and publishes them to our local Verdaccio registry. Please note that if you are running Verdaccio on anything other than the default port you'll need to run the full command:
+
+```bash
+yarn lerna publish from-package --dist-tag next --registry=\"http://localhost:{port}\" --no-verify-access --no-verify-registry --yes
+```
+
+## Create a New User Project
+
+The next step is to create a new Webiny user project. You can create it in a subdirectory of the webiny-js repo, or in another folder. We can use NPX to do this using the following command:
+
+```bash
+npx create-webiny-project@next test-project --tag next --no-interactive "unsafeHttpWhitelist":["localhost"]}' --template-options '{"region":"us-east-1","storageOperations":"ddb"}'
+```
+
+You can of course replace `test-project` with something more relevant, and set it to deploy to a different AWS region other than `us-east-1` if you wish.
+
+Once this has finished you should be able to run `yarn webiny --version` and see your newly published beta tag.
+
+You can now deploy your project as normal and test any changes you made.
+
+## Tear Down and Roll back
+
+Once you have some changes you need to make, or you're satisfied that your changes won't break anything, you need to roll back your system and the webiny-js repo to it's previous state.
+
+1. Stop Verdaccio
+
+2. Point local registry back to npmjs.org:
+
+```bash
+npm config set registry https://registry.npmjs.org
+```
+
+3. Remove yarn config files
+  
+```bash
+rm ~/.yarnrc.yml
+
+# if you think you might need this file later, you can instead do 
+
+mv ~/.yarnrc.yml ~/.yarnrc.yml.bkup
+```
+
+4. Roll back the release commit
+
+```bash
+git reset --hard HEAD~
+```
+
+5. Delete the prerelease tag
+
+```bash
+git tag -d ${tag}
+```
+
+## Verdaccio: A Great Solution to a Common Problem
+
+As you can see, Verdaccio is very easy to use, and in fact we have hardly spent any time configuring Verdaccio since it has been set up. For the most part, we've used the [default configuration](https://github.com/webiny/webiny-js/blob/next/.verdaccio.yaml). Leveraging Lerna's ability to publish packages quickly and easy has meant that we can concentrate on delivering great software instead of spending more time on our tooling.
+
+If it helps, we also created a video of this process:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BJgabYXPbo4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Happy coding!
