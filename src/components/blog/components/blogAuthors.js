@@ -22,6 +22,7 @@ import nobodyImg from "../assets/nobody.png"
 import miracleOnyemmaImg from "../assets/miracle-onyemma.png"
 import davidIgheoseImg from "../assets/david-igheose.png"
 import samarpitImg from "../assets/samarpit-shrivastava.png"
+import samWilliamsImg from "../assets/sam-williams.png"
 
 export default {
     sven: {
@@ -161,5 +162,11 @@ export default {
         description: "Web Engineer & Technical Writer",
         avatar: samarpitImg,
         twitter: "ItsSamarpit"  
+    },
+    samWilliams: {
+        name: "Sam Williams",
+        description: "Serverless Obsessive and AWS Community Builder",
+        avatar: samWilliamsImg,
+        twitter: "SamCompleteCode"  
     },
 };
