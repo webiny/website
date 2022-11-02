@@ -16,7 +16,7 @@ const ProductOverview = () => {
                 Everything an enterprise needs to <br />
                 <span>build, manage and deliver</span> content at scale
             </H2>
-            <P>
+            <P id="product-video">
                 Webiny doesn't just manage your content. It allows you to also build and deploy
                 sites and forms, manage all your projects centrally and use advanced processes that
                 support organization-wide collaboration.
