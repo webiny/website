@@ -203,7 +203,7 @@ export const ProductOverviewVideo = styled("div")(
         boxSizing: "border-box",
         borderRadius: "10px",
         backgroundColor: "#f9d9cf",
-        aspectRatio: "16 / 9",
+        aspectRatio: "15.70 / 9",
 
         "> iframe": {
             width: "100%",
