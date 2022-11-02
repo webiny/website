@@ -23,6 +23,7 @@ import miracleOnyemmaImg from "../assets/miracle-onyemma.png"
 import davidIgheoseImg from "../assets/david-igheose.png"
 import samarpitImg from "../assets/samarpit-shrivastava.png"
 import samWilliamsImg from "../assets/sam-williams.png"
+import monikaImg from "../assets/monika.png"
 
 export default {
     sven: {
@@ -168,5 +169,11 @@ export default {
         description: "Serverless Obsessive and AWS Community Builder",
         avatar: samWilliamsImg,
         twitter: "SamCompleteCode"  
+    },
+    monika: {
+        name: "Monika Zapryanova",
+        description: "Product Manager for Webiny",
+        avatar: monikaImg,
+        twitter: "monzapryanova"  
     },
 };
