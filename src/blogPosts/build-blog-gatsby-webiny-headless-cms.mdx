@@ -1,22 +1,22 @@
 ---
-slug: "blog/build-blog-astro-webiny-headless-cms"
-title: "Build a Blog with Astro and Webiny Headless CMS"
-description: "Astro compiles to HTML, so little to no JavaScript is sent to the client by default. We will build a blog with Astro and Webiny."
+slug: "blog/build-blog-gatsby-webiny-headless-cms"
+title: "Build a Blog with Gatsby and Webiny Headless CMS"
+description: "In this tutorial, we will build a blog site with Gatsby and Webiny Headless CMS. We will look at how to set up Webiny and consume that data in a Gatsby project."
 tags: ["gatsby", "build projects", "blog site", "contributed articles"]
-featureImage: "./assets/build-blog-astro-webiny-headless-cms/cover.png"
-author: miracleJude
-date: 2022-07-27
+featureImage: "./assets/build-blog-gatsby-webiny-headless-cms/cover.png"
+author: caleb
+date: 2022-11-09
 featured: true
 tech: ["gatsby"]
 project: "Blog with Gatsby"
-ghLink: "https://github.com/webiny/write-with-webiny/tree/main/tutorials/astro-blog"
+ghLink: "https://github.com/webiny/write-with-webiny/tree/main/tutorials/gatsby-blog"
 ---
-In this tutorial, we will build a blog site with Gatsby and Webiny Headless CMS. We will look at how to set up Webiny and Gatsby projects. We will create content models & data in Webiny CMS and learn how to consume this data in a Gatsby application. Before you proceed, it would be great to have the following prerequisite information.
+In this tutorial, we will build a blog site with Gatsby and Webiny Headless CMS. We will look at how to set up Webiny and Gatsby projects. We will create content models & data in Webiny CMS and learn how to consume this data in a Gatsby application. Before you proceed, please make sure you have the following prerequisite information.
 
 - Have a fundamental knowledge of React
 - You should have a basic understanding of how data is shared among React components
 - You can go over how to set up a Webiny project in this [section](https://www.webiny.com/blog/build-blog-nextjs-webiny-headless-cms#setting-up-a-webiny-project)
-- Alternatively, you request a [live demo account](http://webiny.typeform.com/to/VYffkZlR), if you don’t want to go through the hassle of setting up a Webiny project from scratch
+- Alternatively, you request a [live demo account](https://webiny.typeform.com/to/VYffkZlR), if you don’t want to go through the hassle of setting up a Webiny project from scratch
 
 ## Creating a Gatsby project
 
@@ -25,16 +25,16 @@ Please make sure you go over the prerequisites in the section above. The third i
 The command below does that for us. Alternatively, you can use `gatsby init [project name]`
 
 ```bash
-### install gatsby's CLI tool first
+# install gatsby's CLI tool first
 npm i -g gatsby-cli
 
-### create a new gatsby-site
+# create a new gatsby-site
 gatsby new webiny-blog
 ```
 
 When you run the command below, you see something similar to the image below in your terminal. If you don't want to answer these questions, you skip them by adding the `-y` flag to the commands above
 
-![gatsby-new.png](Build%20a%20Blog%20with%20Gatsby%20and%20Webiny%20Headless%20CMS%2076541479a07342d985afcc3b2c2ffbbd/gatsby-new.png)
+![gatsby-new.png](./assets/build-blog-gatsby-webiny-headless-cms/gatsby-new.png)
 
 Gatsby uses a file-based API for its routing technique, which in turn reduces the amount of time spent when creating traditional react applications with create-react-app. Now let's take a look at the files in the project folder. In this guide, we'll be using some plugins to create a blog with Webiny's Headless CMS.
 
@@ -100,7 +100,7 @@ export const wrapRootElement = ({ element }) => {
 
 In the previous section, we walked through the project structure of the application and the role that every file plays. We'll start by installing and setting up the `gatsby-config.js` file in this section, Let's start by installing the dependencies. 
 
-If you type the command in the [first section](https://www.notion.so/Build-a-Blog-with-Gatsby-and-Webiny-Headless-CMS-76541479a07342d985afcc3b2c2ffbbd) above and say, you selected the images options, plugins like `gatsby-source-filesystem` and `gatsby-plugin-image` will be pre-installed for you.
+If you type the command in the first section above and say, you selected the images options, plugins like `gatsby-source-filesystem` and `gatsby-plugin-image` will be pre-installed for you.
 
 ```bash
 npm i styled-components dayjs gatsby-source-filesystem gatsby-plugin-styled-components gatsby-source-graphql dotenv gatsby-plugin-google-fonts
@@ -158,7 +158,7 @@ module.exports = {
 In the snippet above, we're using the `dotenv` library to access the node object — `process()` —  so we can use it to access the credentials we have stored in our `.env` file
 
 ```bash
-// .env
+# .env
 
 API_URL=https://XxxxxxxX.cloudfront.net/cms/preview/en-US
 WEBINY_API_SECRET=XXXXXX
@@ -185,7 +185,7 @@ You can decide to change the value you assign to your `typeName` key to whatever
 
 To access the GraphiQL playground, you can navigate to `[localhost:8000/___graphql](http://localhost:8000/___graphql)` Note: after the forward slash, we have three underscore signs, then, the spelling of `graphql`
 
-![webiny-instace.png](Build%20a%20Blog%20with%20Gatsby%20and%20Webiny%20Headless%20CMS%2076541479a07342d985afcc3b2c2ffbbd/webiny-instace.png)
+![webiny-instace.png](./assets/build-blog-gatsby-webiny-headless-cms/webiny-instace.png)
 
 The process of setting up the `gatsby-config` file with the appropriate configs is crucial when you're creating a Gatbsy site. You have to make sure that all the necessary plugins you want to use are appropriately placed in that array.
 
@@ -195,7 +195,7 @@ You'll find out that the styles you've written perfectly well, worked fine in de
 
 But when you navigate to another page and return to the homepage everything works fine. Below, you'll see how the blog looks like when the styled-components plugin was omitted from `gatsby-config.js`
 
-![no-styled-component-plugin.png](Build%20a%20Blog%20with%20Gatsby%20and%20Webiny%20Headless%20CMS%2076541479a07342d985afcc3b2c2ffbbd/no-styled-component-plugin.png)
+![no-styled-component-plugin.png](./assets/build-blog-gatsby-webiny-headless-cms/no-styled-component-plugin.png)
 
 Just to be on the safer side and prevent your blog from having unnecessary layout shifts, you should make sure that the configs you're setting up are done meticulously.
 
@@ -244,7 +244,7 @@ Data fetched from the `posts` GraphQL function is passed through the context par
 Take a look at the GraphQL query below, you can decide to simply copy the snippet below if your content models are quite similar to the one being used in this guide or you can just go ahead and make use of the GraphiQL playground to generate yours.
 
 ```jsx
-export const posts = graphl`
+export const posts = graphql`
  query posts {
     webiny {
       listPosts(sort: createdOn_DESC) {
@@ -467,7 +467,7 @@ In the `createPage` object above, you'll notice that we've assigned the slug of 
 
 So, a blog post with an initial URL of `https://example-blog.com/sequel-to-graphql` will be similar to something below.
 
-```jsx
+```bash
 https://example-blog.com/sequel-to-graphql7ad449a2053b34ea24cc4e79c745f
 ```
 
@@ -516,12 +516,17 @@ export default function BlogPost({ pageContext }) {
 
 In the snippet above, you'll notice how the destructuring assignment operation is used. If you have not installed the `RichTextRenderer`, you can do that by typing the command below.
 
-```jsx
+```bash
 npm i @webiny/react-rich-text-renderer
 ```
 
 ## Wrapping up
 
-You've read this guide up to this point, now you can view the project in the browser by typing this command `npm run develop`. If everything works fine, you should see a page running on `localhost:8000`
+You've read this guide up to this point, now you can view the project in the browser by typing this command `npm run develop`. If everything works fine, you should see a page running on `localhost:8000`. Thank you for reading!
 
-You can check this [repository](https://github.com/kaf-lamed-beyt) out for the source code of this guide, and the live [demo](https://gatsby-webiny-blog.netlify.app/)
+You can check this [repository](https://github.com/webiny/write-with-webiny/tree/main/tutorials/gatsby-blog) out for the source code of this guide, and the live [demo](https://gatsby-webiny-blog.netlify.app/)
+
+
+---
+
+This article was written by a contributor to the Write with Webiny program. Would you like to write a technical article like this and get paid to do so? [Check out the Write with Webiny GitHub repo](https://github.com/webiny/write-with-webiny/).
