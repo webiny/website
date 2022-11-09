@@ -10,6 +10,7 @@ import FlutterLogo from "../../../assets/flutter.svg"
 import AstroLogo from "../../../assets/astro.svg"
 import NuxtLogo from "../../../assets/nuxtjs.svg"
 import SvelteLogo from "../../../assets/svelte.svg"
+import GatsbyLogo from "../../../assets/gatsby-logo.svg"
 import { ButtonPrimary } from '../hero-section/hero.styled'
 
 
@@ -45,6 +46,10 @@ const technologies = {
   "svelte": {
     title: "Svelte",
     image: SvelteLogo
+  },
+  "gatsby": {
+    title: "Gatsby",
+    image: GatsbyLogo
   }
 }
 
