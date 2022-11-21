@@ -7,9 +7,7 @@ import mq from "../../utils/breakpoints";
 import ContentContainer from "../../ui/content-container";
 import Button from "../../ui/button";
 import { trackJoinSlack } from "../../ui/functions";
-
-import { TASKS } from "./intro-data";
-import ArrowLeftIcon from "./assets/arrow.svg";
+import roadmap from "./assets/publicroadmap.png"
 
 const ProductRoadmapIntroSection = styled("section")(
     {
@@ -73,74 +71,12 @@ const Title = styled("h3")(
     }),
 );
 
-const Grid = styled("div")(
-    {
-        display: "grid",
-        gridTemplateRows: ["repeat(2, 1fr)", "repeat(2, 1fr)"],
-        gap: "40px 40px",
-    },
-    mq({
-        gridTemplateColumns: ["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(3, 1fr)"],
-    }),
-);
-
-const Card = styled("div")(
-    props => ({
-        boxSizing: "border-box",
-
-        backgroundColor: theme.color.white,
-        boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.0941176)",
-        borderRadius: 8,
-        padding: "24px 30px",
-
-        "& .tag": {
-            display: "flex",
-            marginBottom: 12,
-
-            "& .tag__content": {
-                backgroundColor: props.accent,
-
-                color: theme.color.white,
-                textTransform: "uppercase",
-                fontSize: 12,
-                fontWeight: theme.fontWeight.bold,
-
-                padding: "4px 14px",
-                borderRadius: 10,
-            },
-        },
-
-        "& .content": {
-            ".content__title": {
-                margin: "0px 0px 6px",
-                fontSize: theme.fontSize["2xl"],
-                fontWeight: theme.fontWeight.bold,
-            },
-            ".content__body": {
-                margin: "0px 0px 20px",
-                fontSize: theme.fontSize["lg"],
-                fontWeight: theme.fontWeight.regular,
-            },
-            ".content__action": {
-                display: "flex",
-                alignItems: "center",
-                a: {
-                    color: theme.color.purple,
-                    fontSize: 14,
-                    textTransform: "uppercase",
-                    marginRight: 4,
-                },
-            },
-        },
-    }),
-    mq({
-        width: ["100%", 380],
-        height: ["263px", 263],
-    }),
-);
-
 const ButtonWrapper = styled("div")({
-    margin: "55px 0px",
+    display: "block",
+    marginBottom: "55px",
+    "&.first-child": {
+        marginTop: "55px",
+    }
 });
 
 const IntroComponent = props => {
@@ -154,42 +90,24 @@ const IntroComponent = props => {
                         see implemented in future releases.
                     </Title>
                     <Title>
-                        We identified the following features as priorities by our community and our
-                        team is currently reviewing them.
+                        We identified the following features as priorities thanks to the initial feedback we gathered from our clients, team and community. Roadmaps are living documents and ours is no difference. Now we are asking all of you to give us thumbs up or down and comment on these items to understand better what is important for you today. 
                     </Title>
+                        <a href="https://github.com/orgs/webiny/projects/5/views/1"><img src={roadmap} alt="Public roadmap on GitHub" width="100%"/></a>
                 </IntroWrapper>
-                <Grid>
-                    {TASKS.map(task => (
-                        <Card key={task.id} accent={task.tag.accent}>
-                            <div className={"tag"}>
-                                <div className="tag__content">{task.tag.text}</div>
-                            </div>
-                            <div className="content">
-                                <h3 className="content__title">{task.title}</h3>
-                                <p className="content__body">{task.body}</p>
-                                <div className="content__action">
-                                    <a
-                                        href={task.action.link}
-                                        target={"_blank"}
-                                        rel={"noopener noreferrer"}
-                                    >
-                                        {task.action.label}
-                                    </a>
-                                    <img src={ArrowLeftIcon} alt={""} />
-                                </div>
-                            </div>
-                        </Card>
-                    ))}
-                </Grid>
 
+                <ButtonWrapper>
+                    <Button type={"primary"} link="https://github.com/webiny/webiny-js/discussions/categories/ideas">
+                        Submit an idea for a new feature
+                    </Button>
+                </ButtonWrapper>
                 <ButtonWrapper>
                     <div
                         onClick={() => {
                             trackJoinSlack({ placement: "roadmap" });
                         }}
                     >
-                        <Button type={"primary"} link={"/slack"}>
-                            Join the Community and suggest what we should prioritise next
+                        <Button type={"outlineOrange"} link={"/slack"}>
+                            Join the Community
                         </Button>
                     </div>
                 </ButtonWrapper>
