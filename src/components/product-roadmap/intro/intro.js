@@ -90,7 +90,7 @@ const IntroComponent = props => {
                         see implemented in future releases.
                     </Title>
                     <Title>
-                        WWe identified the following features as priorities thanks to the initial feedback we gathered from our clients, team and community. Roadmaps are living documents and ours is no difference. Now we are asking all of you to give us thumbs up or down and comment on these items to understand better what is important for you today. 
+                        We identified the following features as priorities thanks to the initial feedback we gathered from our clients, team and community. Roadmaps are living documents and ours is no difference. Now we are asking all of you to give us thumbs up or down and comment on these items to understand better what is important for you today. 
                     </Title>
                         <a href="https://github.com/orgs/webiny/projects/5/views/1"><img src={roadmap} alt="Public roadmap on GitHub" width="100%"/></a>
                 </IntroWrapper>
@@ -107,7 +107,7 @@ const IntroComponent = props => {
                         }}
                     >
                         <Button type={"outlineOrange"} link={"/slack"}>
-                            Join the Community and suggest what we should prioritise next
+                            Join the Community
                         </Button>
                     </div>
                 </ButtonWrapper>
