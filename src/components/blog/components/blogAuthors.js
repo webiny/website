@@ -23,6 +23,7 @@ import miracleOnyemmaImg from "../assets/miracle-onyemma.png"
 import davidIgheoseImg from "../assets/david-igheose.png"
 import samarpitImg from "../assets/samarpit-shrivastava.png"
 import samWilliamsImg from "../assets/sam-williams.png"
+import fredrickEImg from "../assets/fredrick-emmanuel.png"
 import monikaImg from "../assets/monika.png"
 
 export default {
@@ -175,5 +176,11 @@ export default {
         description: "Product Manager for Webiny",
         avatar: monikaImg,
         twitter: "monzapryanova"  
+    },
+    fredrick: {
+        name: "Fredrick Emmanuel",
+        description: "Technical Writer",
+        avatar: fredrickEImg,
+        twitter: ""  
     },
 };
