@@ -334,33 +334,33 @@ Create a folder in the NextJS directory called `lib` and create a file in it nam
 // Path: chat-app/lib/apollo.js
 
 import {
-    ApolloClient,
-    InMemoryCache,
-    ApolloLink,
-    HttpLink,
+  ApolloClient,
+  InMemoryCache,
+  ApolloLink,
+  HttpLink,
 } from '@apollo/client';
 
 const readURL = new HttpLink({
-    uri: process.env.WEBINY_READ_URL,
-    headers: {
-        Authorization: `Bearer ${process.env.WEBINY_READ_TOKEN}`, //Passing the read token
-    },
+  uri: process.env.WEBINY_READ_URL,
+  headers: {
+    Authorization: `Bearer ${process.env.WEBINY_READ_TOKEN}`, //Passing the read token
+  },
 });
 
 const manageURL = new HttpLink({
-    uri: process.env.WEBINY_MANAGE_URL,
-    headers: {
-        Authorization: `Bearer ${process.env.WEBINY_MANAGE_TOKEN}`, //Passing the manage token
-    },
+  uri: process.env.WEBINY_MANAGE_URL,
+  headers: {
+    Authorization: `Bearer ${process.env.WEBINY_MANAGE_TOKEN}`, //Passing the manage token
+  },
 });
 
 const client = new ApolloClient({
-    link: ApolloLink.split(
-        operation => operation.getContext().endpointType === 'manage', //picking the endpoint to use
-        manageURL,
-        readURL
-    ),
-    cache: new InMemoryCache(),
+  link: ApolloLink.split(
+    operation => operation.getContext().endpointType === 'manage', //picking the endpoint to use
+    manageURL,
+    readURL
+  ),
+  cache: new InMemoryCache(),
 });
 
 export default client;
@@ -380,14 +380,15 @@ import { ApolloProvider } from '@apollo/client';
 import client from '../lib/apollo'; //
 
 function MyApp({ Component, pageProps }) {
-    return (
-        <ApolloProvider client={client}>
-            <Component {...pageProps} />
-        </ApolloProvider>
-    );
+  return (
+    <ApolloProvider client={client}>
+      <Component {...pageProps} />
+    </ApolloProvider>
+  );
 }
 
 export default MyApp;
+
 ```
 
 In the `_app.js` file, we wrapped our entire component in an Apollo [Provider](https://react-redux.js.org/api/provider#react-18-ssr-usage) and passed the instance of our `ApolloClient` as a `prop`.
@@ -407,21 +408,21 @@ import { useState } from 'react';
 ...
 
 export default function App() {
-    const router = useRouter();
-    const [username, setUsername] = useState('');
+  const router = useRouter();
+  const [username, setUsername] = useState('');
 
-    const handleClick = e => {
-        e.preventDefault();
-        if (!username) {
-            //Verifying if the username was provided
-            alert('Username not provided');
-            return;
-        }
-        router.push({
-            //Redirecting the user to the chat page
-            pathname: '/chat',
-            query: { username }, //Passing the username to the URL
-        });
+  const handleClick = e => {
+    e.preventDefault();
+    if (!username) {
+    //Verifying if the username was provided
+      alert('Username not provided');
+      return;
+    }
+    router.push({
+    //Redirecting the user to the chat page
+      pathname: '/chat',
+      query: { username }, //Passing the username to the URL
+      });
     };
 return (
   ...
@@ -466,16 +467,16 @@ import { useRouter } from 'next/router';
 ...
 
 export default function App() {
-    const [username, setUsername] = useState('');
-    const router = useRouter();
-    useEffect(() => {
-        if (router.isReady) {
-            if (!router.query.username) {
-                console.log('Not Available');
-                router.push('/');
-            }
-            setUsername(router.query.username);//Storing the username
-        }
+  const [username, setUsername] = useState('');
+  const router = useRouter();
+  useEffect(() => {
+    if (router.isReady) {
+      if (!router.query.username) {
+        console.log('Not Available');
+         router.push('/');
+      }
+      setUsername(router.query.username);//Storing the username
+      }
     }, [router.isReady]);
 }
 ```
@@ -492,17 +493,18 @@ Now, create a file in the `pages/api` folder named `socket.js` and add the code 
 import { Server } from 'socket.io';
 
 export default function chatSocket(req, res) {
-    if (res.socket.server.io) {
-        console.log('Socket is already running');
-    } else {
-        console.log('Socket is initializing');
-        const io = new Server(res.socket.server);
-        res.socket.server.io = io; //Creating a new Server instance
-        io.on('connection', socket => {// Listening for a connection
-            console.log('Connected');
-        });
-    }
-    res.end();
+  if (res.socket.server.io) {
+    console.log('Socket is already running');
+  } else {
+    console.log('Socket is initializing');
+    const io = new Server(res.socket.server);
+    res.socket.server.io = io; //Creating a new Server instance
+    io.on('connection', socket => {
+      // Listening for a connection
+      console.log('Connected');
+    });
+  }
+  res.end();
 }
 ```
 
@@ -518,20 +520,20 @@ let socket;
 export default function App() {
   ...
   useEffect(() => {
-        username && socketInitializer();
-    }, [username]);
+    username && socketInitializer();
+  }, [username]);
 
-    const socketInitializer = async () => {
-        await fetch('/api/socket');
-        socket = io();
+  const socketInitializer = async () => {
+    await fetch('/api/socket');
+    socket = io();
 
     socket.on('connect', () => {
-            console.log('connected');
-        });
-    };
+      console.log('connected');
+    });
+   };
 
     return (
-        ..
+      ...
     )
 }
 ```
@@ -550,50 +552,45 @@ Add the following code to the `ActiveUsers.js` file.
 import { MDBCol, MDBCard, MDBCardBody, MDBTypography } from 'mdb-react-ui-kit';
 
 const ActiveUsers = () => {
-    return (
-        <MDBCol md="6" lg="5" xl="4" className="mb-4 mb-md-0">
-            <h5 className="font-weight-bold mb-3 text-center text-lg-start">
-                Active Users
-            </h5>
+  return (
+    <MDBCol md="6" lg="5" xl="4" className="mb-4 mb-md-0">
+      <h5 className="font-weight-bold mb-3 text-center text-lg-start">
+        Active Users
+      </h5>
 
-            <MDBCard>
-                <MDBCardBody>
-                    <MDBTypography listUnStyled className="mb-0">
-                        <li className="p-2">
-                            <a
-                                href="#!"
-                                className="d-flex justify-content-between"
-                            >
-                                <div className="d-flex flex-row">
-                                    <img
-                                        src="https://i.postimg.cc/85nKtgFz/user.png"
-                                        alt="avatar"
-                                        className="rounded-circle d-flex align-self-center me-3 shadow-1-strong"
-                                        width="60"
-                                    />
-                                    <div className="pt-1">
-                                        <p
-                                            className="fw-bold mb-0"
-                                            style={{
-                                                color: '#e7653d',
-                                            }}
-                                        >
-                                            User
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="pt-1">
-                                    <p className="small text-muted mb-1">
-                                        Active
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-                    </MDBTypography>
-                </MDBCardBody>
-            </MDBCard>
-        </MDBCol>
-    );
+      <MDBCard>
+        <MDBCardBody>
+          <MDBTypography listUnStyled className="mb-0">
+            <li className="p-2">
+              <a href="#!" className="d-flex justify-content-between">
+                <div className="d-flex flex-row">
+                  <img
+                    src="https://i.postimg.cc/85nKtgFz/user.png"
+                    alt="avatar"
+                    className="rounded-circle d-flex align-self-center me-3 shadow-1-strong"
+                    width="60"
+                  />
+                  <div className="pt-1">
+                    <p
+                      className="fw-bold mb-0"
+                      style={{
+                        color: '#e7653d',
+                      }}
+                    >
+                      User
+                    </p>
+                  </div>
+                </div>
+                <div className="pt-1">
+                  <p className="small text-muted mb-1">Active</p>
+                </div>
+              </a>
+            </li>
+          </MDBTypography>
+        </MDBCardBody>
+      </MDBCard>
+    </MDBCol>
+  );
 };
 
 export default ActiveUsers;
@@ -606,67 +603,59 @@ Add the following code to the `Messages.js` file.
 //Path: chat-app/components/Messages.js
 
 import {
-    MDBCol,
-    MDBCard,
-    MDBCardBody,
-    MDBIcon,
-    MDBBtn,
-    MDBTypography,
-    MDBTextArea,
-    MDBCardHeader,
+  MDBCol,
+  MDBCard,
+  MDBCardBody,
+  MDBIcon,
+  MDBBtn,
+  MDBTypography,
+  MDBTextArea,
+  MDBCardHeader,
 } from 'mdb-react-ui-kit';
 
 const Messages = () => {
-    return (
-        <MDBCol md="6" lg="7" xl="8">
-            <MDBTypography listUnStyled>
-                <li className="d-flex justify-content-between mb-4">
-                    <img
-                        src="https://i.postimg.cc/85nKtgFz/user.png"
-                        alt="avatar"
-                        className="rounded-circle d-flex align-self-start me-3 shadow-1-strong"
-                        width="60"
-                    />
-                    <MDBCard>
-                        <MDBCardHeader className="d-flex justify-content-between p-3">
-                            <p
-                                className="fw-bold mb-0"
-                                style={{ color: '#e7653d' }}
-                            >
-                                Brad Pitt
-                            </p>
-                            <p className="text-muted small mb-0">
-                                <MDBIcon far icon="clock" /> 12 mins ago
-                            </p>
-                        </MDBCardHeader>
-                        <MDBCardBody>
-                            <p className="mb-0">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                            </p>
-                        </MDBCardBody>
-                    </MDBCard>
-                </li>
-                <li className="bg-white mb-3">
-                    <MDBTextArea
-                        label="Message"
-                        id="textAreaExample"
-                        rows={3}
-                    />
-                </li>
-                <MDBBtn
-                    rounded
-                    className="float-end"
-                    style={{
-                        backgroundColor: '#e7653d',
-                    }}
-                >
-                    Send
-                </MDBBtn>
-            </MDBTypography>
-        </MDBCol>
-    );
+  return (
+    <MDBCol md="6" lg="7" xl="8">
+      <MDBTypography listUnStyled>
+        <li className="d-flex justify-content-between mb-4">
+          <img
+            src="https://i.postimg.cc/85nKtgFz/user.png"
+            alt="avatar"
+            className="rounded-circle d-flex align-self-start me-3 shadow-1-strong"
+            width="60"
+          />
+          <MDBCard>
+            <MDBCardHeader className="d-flex justify-content-between p-3">
+              <p className="fw-bold mb-0" style={{ color: '#e7653d' }}>
+                Brad Pitt
+              </p>
+              <p className="text-muted small mb-0">
+                <MDBIcon far icon="clock" /> 12 mins ago
+              </p>
+            </MDBCardHeader>
+            <MDBCardBody>
+              <p className="mb-0">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </MDBCardBody>
+          </MDBCard>
+        </li>
+        <li className="bg-white mb-3">
+          <MDBTextArea label="Message" id="textAreaExample" rows={3} />
+        </li>
+        <MDBBtn
+          rounded
+          className="float-end"
+          style={{
+            backgroundColor: '#e7653d',
+          }}
+        >
+          Send
+        </MDBBtn>
+      </MDBTypography>
+    </MDBCol>
+  );
 };
 
 export default Messages;
@@ -684,15 +673,17 @@ import ActiveUsers from '../components/ActiveUsers';
 import Messages from '../components/Messages';
 ...
 export default function App() {
+  ...
+  return (
+    ....
+    <MDBRow>
+      <ActiveUsers />
+      <Messages />
+    </MDBRow>
+    
     ...
-        return (
-            ....
-            <MDBRow>
-                    <ActiveUsers />
-                    <Messages />
-            </MDBRow>
-            ...
-        );
+
+   );
 }
 ```
 
@@ -708,19 +699,19 @@ Open the `socket.js` file to create the `join` listening event
 //Path: chat-app/pages/api/socket.js
 ...
 export default function chatSocket(req, res) {
-    ...
-    let activeUsers = [];
-        io.on('connection', socket => {
-            // Listening for a connection
-            socket.on('join', ({ username }) => { // Listening for a join event
-                console.log('a user connected');
-                socket.join('group'); // Adding the user to group
-                activeUsers.push(username); // Adding the user to the list of active users
-                console.log(activeUsers);
-            });
+  ...
+  let activeUsers = [];
+    io.on('connection', socket => {
+      // Listening for a connection
+      socket.on('join', ({ username }) => { // Listening for a join event
+        console.log('a user connected');
+        socket.join('group'); // Adding the user to group
+        activeUsers.push(username); // Adding the user to the list of active users
+        console.log(activeUsers);
         });
-    }
-    res.end();
+    });
+  }
+  res.end();
 }
 ```
 
@@ -730,17 +721,17 @@ Add the following code to the `chat.js` file.
 ...
 
 export default function App() {
-    ...
-    const socketInitializer = async () => {
-        await fetch('/api/socket');
-        socket = io();
+  ...
+  const socketInitializer = async () => {
+    await fetch('/api/socket');
+    socket = io();
 
-        socket.on('connect', () => {
-            socket.emit('join', { username }, err => {//Sending the join event
-                if (err) alert(err);
-            });
-        });
-    };
+    socket.on('connect', () => {
+      socket.emit('join', { username }, err => {//Sending the join event
+      if (err) alert(err);
+      });
+    });
+  };
 }
 ```
 
@@ -761,25 +752,24 @@ Open the `chat.js` file and add the following.
 import { gql, useMutation } from '@apollo/client';
 
 const POST_ACTIVE_USER = gql`
-    mutation CreateActiveUser($activeUsers: String!) {
-        createActiveUsers(data: { activeUsers: $activeUsers }) {
-            data {
-                id
-            }
-        }
+  mutation CreateActiveUser($activeUsers: String!) {
+    createActiveUsers(data: { activeUsers: $activeUsers }) {
+      data {
+        id
+      }
     }
+  }
 `;
 
 const PUBLISH_ACTIVE_USER = gql`
-    mutation PublishActiveUsers($revision: ID!) {
-        publishActiveUsers(revision: $revision) {
-            data {
-                id
-            }
-        }
+  mutation PublishActiveUsers($revision: ID!) {
+    publishActiveUsers(revision: $revision) {
+      data {
+        id
+      }
     }
+  }
 `;
-
 ```
 
 To store data in Webiny, we need to create the data first and then publish the created data. As seen above, we created two mutations, `POST_ACTIVE_USER` and `PUBLISH_ACTIVE_USER`, which will be responsible for creating and publishing an active user, respectively.
@@ -792,17 +782,17 @@ Once we have created the two mutations, we need to use them to make the request.
 ...
 
 export default function App() {
-    const [postActiveUsers] = useMutation(POST_ACTIVE_USER, {
-        context: { endpointType: 'manage' },
-    });
+  const [postActiveUsers] = useMutation(POST_ACTIVE_USER, {
+    context: { endpointType: 'manage' },
+  });
 
-    const [publishActiveUsers] = useMutation(PUBLISH_ACTIVE_USER, {
-        context: { endpointType: 'manage' },
-    });
+  const [publishActiveUsers] = useMutation(PUBLISH_ACTIVE_USER, {
+    context: { endpointType: 'manage' },
+  });
+  ...
+  return (
     ...
-    return (
-        ...
-    )
+  )
 }
 ```
 
@@ -816,46 +806,43 @@ Still in the `chat.js` file, add the following code to add the user to the `Acti
 ...
 
 export default function App() {
+  ...
+  const socketInitializer = async () => {
+    await fetch('/api/socket');
+    socket = io();
 
-    ...
-    const socketInitializer = async () => {
-        await fetch('/api/socket');
-        socket = io();
-
-        socket.on('connect', async () => {
-            await postActiveUsers({
-                variables: {
-                    activeUsers: username, //Passing the username
-                },
-            })
-                .then(({ data }) => {
-                    if (data.createActiveUsers.data === null) {
-                        alert('Username taken');
-                        router.push('/');
-                        return;
-                    }
-                    publishActiveUsers({
-                        variables: {
-                            revision: data.createActiveUsers.data.id, //Publishing the username
-                        },
-                    });
-                    socket.emit('join', { username }, err => {
-                        if (err) alert(err);
-                    });
-                    console.log('Done');
-                })
-                .catch(err => {
-                    alert(err.message);
-                    console.log(err);
-                });
+    socket.on('connect', async () => {
+      await postActiveUsers({
+        variables: {
+          activeUsers: username, //Passing the username
+        },
+      })
+      .then(({ data }) => {
+        if (data.createActiveUsers.data === null) {
+          alert('Username taken');
+          router.push('/');
+          return;
+        }
+        publishActiveUsers({
+          variables: {
+            revision: data.createActiveUsers.data.id, //Publishing the username
+          },
         });
-    };
+        socket.emit('join', { username }, err => {
+          if (err) alert(err);
+        });
+        console.log('Done');
+      })
+      .catch(err => {
+        alert(err.message);
+        console.log(err);
+      });
+    });
+  };
 
-    return (
-
-        ...
-
-    )
+  return (
+     ...
+  )
 }
 ```
 
@@ -873,51 +860,54 @@ To get the list of active users from the Webiny CMS, open your `socket.js` file 
 import { Server } from 'socket.io';
 
 export default async function chatSocket(req, res) {
+  ...
 
-    ...
+ import { Server } from 'socket.io';
 
-    io.on('connection', socket => {
-            // Listening for a connection
-            socket.on('join', async ({ username }) => {
-                //Listening for a join event
-                console.log('a user connected');
-                socket.join('group'); //Adding the user to group
+export default async function chatSocket(req, res) {
+  ...
 
-                await fetch(process.env.WEBINY_READ_URL, {//Fetching the active users
-                    method: 'POST',
-                    headers: {
-                        Authorization: `Bearer ${process.env.WEBINY_READ_TOKEN}`,//Passing the token
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({//Adding the graphql query
-                        query: `
-                {
-                               listActiveUsers (limit: 20) {
-                             data {
-                              activeUsers
-                            }
-                        }
-                }
-`,
-                    }),
-                })
-                    .then(res => res.json())
-                    .then(result => {
-                        activeUsers = result.data.listActiveUsers.data;//Storing the users got from Webiny in the activeUsers array
-                        let check = activeUsers
-                            .map(item => item.activeUsers)
-                            .includes(username);
-                        check
-                            ? null
-                            : activeUsers.push({ activeUsers: username })//Storing just-joined user
-                    })
-                    })
-                    .catch(err => console.log(err.message));
-                console.log(activeUsers);
-            });
-        });
-    }
-    res.end();
+  io.on('connection', socket => {
+    // Listening for a connection
+    socket.on('join', async ({ username }) => {
+      //Listening for a join event
+      console.log('a user connected');
+      socket.join('group'); //Adding the user to group
+
+      await fetch(process.env.WEBINY_READ_URL, {//Fetching the active users
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${process.env.WEBINY_READ_TOKEN}`,//Passing the token
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({//Adding the graphql query
+        query: `
+          {
+            listActiveUsers (limit: 20) {
+              data {
+                activeUsers
+              }
+            }
+          }`,
+        }),
+      })
+      .then(res => res.json())
+      .then(result => {
+      activeUsers = result.data.listActiveUsers.data;//Storing the users got from Webiny in the activeUsers array
+      let check = activeUsers
+      .map(item => item.activeUsers)
+      .includes(username);
+      check
+      ? null
+      : activeUsers.push({ activeUsers: username })//Storing just-joined user
+      })
+    })
+    .catch(err => console.log(err.message));
+      console.log(activeUsers);
+    });
+   });
+  }
+  res.end();
 }
 ```
 
@@ -931,14 +921,16 @@ Now, we need to serve this `activeUsers` array to the client.
 ...
 
 io.on('connection', socket => {
-    socket.on('join', async ({ username }) => {
-        ...
-        socket.emit('activeusers', { activeUsers });
-        socket.emit('activeusers', { activeUsers });//Sending the list of active users to the just-joined user
-        socket.broadcast.to('group').emit('activeusers', {//Sending the list of active users to existing users
-                    activeUsers,
-                });
-                console.log('hola', activeUsers);
+  socket.on('join', async ({ username }) => {
+    ...
+    socket.emit('activeusers', { activeUsers });
+    socket.emit('activeusers', { activeUsers });//Sending the list of active users to the just-joined user
+    socket.broadcast.to('group').emit('activeusers', {//Sending the list of active users to existing users
+      activeUsers,
+    });
+    console.log('hola', activeUsers);
+
+    ...
 ```
 
 Once the list of active users is sent, we need to receive it from the `chat.js` file
@@ -949,15 +941,14 @@ Once the list of active users is sent, we need to receive it from the `chat.js` 
 ...
 
 const socketInitializer = async () => {
-    await fetch('/api/socket');
-    socket = io();
+  await fetch('/api/socket');
+  socket = io();
 
-    socket.on('connect', async () => {
+  socket.on('connect', async () => {
+    ...
 
-        ...
-
-        socket.on('activeusers', data => console.log(data));//Waiting to receive activeUsers
-    });
+    socket.on('activeusers', data => console.log(data));//Waiting to receive activeUsers
+  });
 };
 
 ```
@@ -976,36 +967,32 @@ import ActiveUsers from '../components/ActiveUsers';
 ...
 
 export default function App() {
+  ...
 
+  const [activeUsers, setActiveUsers] = useState([]);
+  ...
+
+  socket.on('connect', async () => {
     ...
 
-    const [activeUsers, setActiveUsers] = useState([]);
+    socket.on('activeusers', data => {
+      console.log(data);
+      setActiveUsers(data);
+      console.log(activeUsers);
+    }); //Waiting to receive activeUsers
+  })
 
-    ...
+  ...
 
-    socket.on('connect', async () => {
+  return (
+    <>
+      ...
 
-        ...
+      <ActiveUsers activeUsers={activeUsers} />
+      ...
 
-        socket.on('activeusers', data => {
-                console.log(data);
-                setActiveUsers(data);
-                console.log(activeUsers);
-            }); //Waiting to receive activeUsers
-    })
-
-    ...
-
-    return (
-        <>
-
-        ...
-
-        <ActiveUsers activeUsers={activeUsers} />
-
-        ...
-
-        </>
+   </>
+ )
 
 ```
 
@@ -1017,57 +1004,53 @@ Let's get the `activeUsers` from the `props` and display them.
 import { MDBCol, MDBCard, MDBCardBody, MDBTypography } from 'mdb-react-ui-kit';
 
 const ActiveUsers = props => {
-    const { activeUsers } = props;
-    return (
-        <MDBCol md="6" lg="5" xl="4" className="mb-4 mb-md-0">
-            <h5 className="font-weight-bold mb-3 text-center text-lg-start">
-                Active Users
-            </h5>
-            {activeUsers.activeUsers
-                ? activeUsers.activeUsers.map(item => (
-                    <MDBCard>
-                        <MDBCardBody>
-                            <MDBTypography listUnStyled className="mb-0">
-                                <li className="p-2">
-                                    <a
-                                        href="#!"
-                                        className="d-flex justify-content-between"
-                                    >
-                                        <div className="d-flex flex-row">
-                                            <img
-                                                    src="https://i.postimg.cc/85nKtgFz/user.png"
-                                                alt="avatar"
-                                                className="rounded-circle d-flex align-self-center me-3 shadow-1-strong"
-                                                width="60"
-                                            />
-                                            <div className="pt-1">
-                                                <p
-                                                    className="fw-bold mb-0"
-                                                    style={{
-                                                        color: '#e7653d',
-                                                    }}
-                                                >
-                                                    {item.activeUsers}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div className="pt-1">
-                                                <p className="small text-muted mb-1">
-                                                    Active
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </MDBTypography>
-                            </MDBCardBody>
-                        </MDBCard>
-                  ))
-                : null}
-        </MDBCol>
-    );
+  const { activeUsers } = props;
+  return (
+    <MDBCol md="6" lg="5" xl="4" className="mb-4 mb-md-0">
+      <h5 className="font-weight-bold mb-3 text-center text-lg-start">
+        Active Users
+      </h5>
+      {activeUsers.activeUsers
+        ? activeUsers.activeUsers.map(item => (
+            <MDBCard>
+              <MDBCardBody>
+                <MDBTypography listUnStyled className="mb-0">
+                  <li className="p-2">
+                    <a href="#!" className="d-flex justify-content-between">
+                      <div className="d-flex flex-row">
+                        <img
+                          src="https://i.postimg.cc/85nKtgFz/user.png"
+                          alt="avatar"
+                          className="rounded-circle d-flex align-self-center me-3 shadow-1-strong"
+                          width="60"
+                        />
+                        <div className="pt-1">
+                          <p
+                            className="fw-bold mb-0"
+                            style={{
+                              color: '#e7653d',
+                            }}
+                          >
+                            {item.activeUsers}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="pt-1">
+                        <p className="small text-muted mb-1">Active</p>
+                      </div>
+                    </a>
+                  </li>
+                </MDBTypography>
+              </MDBCardBody>
+            </MDBCard>
+          ))
+        : null}
+    </MDBCol>
+  );
 };
 
 export default ActiveUsers;
+
 ```
 
 Go over to the [home page](http://localhost:3000/), enter a username, hit enter and view all your active users, as the output is shown below.
@@ -1088,26 +1071,24 @@ import Messages from '../components/Messages';
 ...
 
 export default function App() {
+  ...
 
+  const [message, setMessage] = useState('');
+  const handleMessage = value => {
+    setMessage(value);
+  };
+  ...
+
+  return (
     ...
 
-    const [message, setMessage] = useState('');
-    const handleMessage = value => {
-        setMessage(value);
-    };
-
+    <Messages
+      handleMessage={handleMessage}
+      message={message}
+    />
     ...
 
-    return (
-        ...
-
-            <Messages
-                handleMessage={handleMessage}
-                message={message}
-            />
-        ...
-
-    )
+  )
 }
 ```
 
@@ -1119,27 +1100,27 @@ In the `Messages.js` file, Let's retrieve the `handleMessage` and `message` from
 ...
 
 const Messages = ({ handleMessage, message, handleSubmit }) => {
-    return (
-        ...
+  return (
+    ...
 
-        <li className="bg-white mb-3">
-            <MDBTextArea
-                label="Message"
-                id="textAreaExample"
-                rows={3}
-                value={message}//Setting value to the message props received
-                onChange={e => handleMessage(e.target.value)}//Sending the input in the Text Area
-            />
-        </li>
-        <MDBBtn
-            rounded
-            className="float-end"
-            style={{
-                backgroundColor: '#e7653d',
-            }}
-        >
-            Send
-        </MDBBtn>
+      <li className="bg-white mb-3">
+        <MDBTextArea
+          label="Message"
+          id="textAreaExample"
+          rows={3}
+          value={message}//Setting value to the message props received
+          onChange={e => handleMessage(e.target.value)}//Sending the input in the Text Area
+        />
+      </li>
+      <MDBBtn
+        rounded
+        className="float-end"
+        style={{
+          backgroundColor: '#e7653d',
+        }}
+      >
+        Send
+      </MDBBtn>
 ```
 
 ## **Storing messages**
@@ -1154,75 +1135,73 @@ After we have stored the message in a state value, we will then store it in Webi
 import { gql, useMutation } from '@apollo/client';
 
 const POST_CHAT = gql`
-    mutation ($chats: String!, $time: DateTime!, $user: String!) {
-        createChats(data: { chats: $chats, time: $time, $user: String! }) {
-            data {
-                id
-            }
-        }
-    }
-`;
+  mutation ($chats: String!, $time: DateTime!, $user: String!) {
+    createChats(data: { chats: $chats, time: $time, $user: String! }) {
+      data {
+        id
+      }
+   }
+ }`;
 
 const PUBLISH_CHAT = gql`
-    mutation ($revision: ID!) {
-        publishChats(revision: $revision) {
-            data {
-                id
-                chats
-                time
-                user
-            }
-        }
+  mutation ($revision: ID!) {
+    publishChats(revision: $revision) {
+      data {
+        id
+        chats
+        time
+        user
+      }
     }
-`;
+  }`;
 
 export default function App() {
-    const [postChat] = useMutation(POST_CHAT, {
-        context: { endpointType: 'manage' },
-    });
-    const [publishChat] = useMutation(PUBLISH_CHAT, {
-        context: { endpointType: 'manage' },
-    });
+  const [postChat] = useMutation(POST_CHAT, {
+  context: { endpointType: 'manage' },
+});
+  const [publishChat] = useMutation(PUBLISH_CHAT, {
+    context: { endpointType: 'manage' },
+  });
 
     ...
 
     const handleSubmit = async () => {//OnSubmit event handler
-       await postChat({
-            variables: {
-                chats: message, //Passing the message
-                time: new Date().toISOString(), //Passing the current Date
-            },
-        })
-            .then(({ data }) => {
-                publishChat({
-                    variables: {
-                        revision: data.createChats.data.id, //Publishing the message
-                    },
-                })then(data => {
-                    socket.emit(
-                        'send-message',
-                        { message: data.publishChats.data }, //Emiting the message
-                        err => {
-                            if (err) alert(err);
-                        }
-                    );
-                    console.log('Done', data);
-                });
-            })
-            .catch(err => {
-                alert(err.message);
-                console.log(err);
-            });
+      await postChat({
+        variables: {
+          chats: message, //Passing the message
+          time: new Date().toISOString(), //Passing the current Date
+        },
+      })
+      .then(({ data }) => {
+        publishChat({
+          variables: {
+            revision: data.createChats.data.id, //Publishing the message
+          },
+        }).then(data => {
+          socket.emit(
+            'send-message',
+            { message: data.publishChats.data }, //Emiting the message
+            err => {
+              if (err) alert(err);
+            }
+          );
+          console.log('Done', data);
+        });
+      })
+      .catch(err => {
+        alert(err.message);
+        console.log(err);
+      });
     }
 
     ...
 
     return (
-        <Messages
-            handleMessage={handleMessage}
-            message={message}
-            handleSubmit={handleSubmit}//Passing the onClick handler
-        />
+      <Messages
+       handleMessage={handleMessage}
+       message={message}
+       handleSubmit={handleSubmit}//Passing the onClick handler
+     />
     )
 ```
 
@@ -1236,24 +1215,21 @@ Now, let's receive the `handSubmit` prop and add an `onClick` event on the butto
 ...
 
 const Messages = ({ handleMessage, message, handleSubmit }) => {
-    return (
+  return (
+   ...
+   <MDBBtn
+     rounded
+     className="float-end"
+     style={{
+       backgroundColor: '#e7653d',
+     }}
+     onClick={handleSubmit}
+   >
+     Send
+   </MDBBtn>
+   ...
 
-        ...
-
-        <MDBBtn
-            rounded
-            className="float-end"
-            style={{
-                backgroundColor: '#e7653d',
-                }}
-            onClick={handleSubmit}
-        >
-            Send
-        </MDBBtn>
-
-        ...
-
-    )
+  )
 }
 ```
 
@@ -1268,59 +1244,55 @@ To get the all messages from the Webiny CMS, open your `socket.js` file and add 
 
 let messages = [];
 const getRequest = async () => {
-    await fetch(process.env.WEBINY_READ_URL, {
-        //Fetching the active users
-        method: 'POST',
-        headers: {
-            Authorization: `Bearer ${process.env.WEBINY_READ_TOKEN}`, //Passing the token
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            //Adding the graphql query
-            query: `
-                {
-         listChats(sort: createdOn_ASC, limit: 20) {
-        data {
-            chats
-            time
-            user
-        }
-  }
-            }
-
-        `,
-        }),
+  await fetch(process.env.WEBINY_READ_URL, {
+    //Fetching the active users
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${process.env.WEBINY_READ_TOKEN}`, //Passing the token
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ //Adding the graphql query
+      query: `
+        {
+          listChats(sort: createdOn_ASC, limit: 20) {
+            data {
+              chats
+              time
+              user
+            }
+          }
+        }`,
+      }),
     })
-        .then(res => res.json())
-        .then(result => {
-            messages = result.data.listChats.data;
-            //Storing the messages got from Webiny in the messages array
-        })
-        .catch(err => console.log(err.message));
+    .then(res => res.json())
+    .then(result => {
+      messages = result.data.listChats.data;
+      //Storing the messages got from Webiny in the messages array
+    })
+    .catch(err => console.log(err.message));
 };
 export default async function chatSocket(req, res) {
+  ...
+
+  io.on('connection', socket => {
+  ...
+
+  socket.on('join', async ({ username }) => {
     ...
 
-    io.on('connection', socket => {
-    ...
-
-    socket.on('join', async ({ username }) => {
-        ...
-
-        await getRequest();
-        socket.emit('messages', { messages });//Emiting all the messages to just-joined users
-        socket.emit('activeusers', { activeUsers }); //Sending the list of active users to the just-joined user
-    })
-    socket.on('send-message', async ({ message }) => {
-            await getRequest()
-            socket.emit('messages', { messages });
-            socket.broadcast.to('group').emit('messages', { //Sending the messages
-                messages,
-            });
-            console.log(messages);
-        });
+    await getRequest();
+    socket.emit('messages', { messages });//Emiting all the messages to just-joined users
+    socket.emit('activeusers', { activeUsers }); //Sending the list of active users to the just-joined user
+  })
+  socket.on('send-message', async ({ message }) => {
+    await getRequest()
+    socket.emit('messages', { messages });
+    socket.broadcast.to('group').emit('messages', { //Sending the messages
+      messages,
+    });
+    console.log(messages);
+  });
 )}
-
 ```
 
 From the above lines of code, we created a function that will handle getting all messages from Webiny and store these messages in a `messages` array. Once we need to make a get request, we call the `getRequest()` function and emit the messages to the client.
@@ -1333,28 +1305,26 @@ Now open the `chat.js` file to receive all messages.
 ...
 
 export default function App() {
-    const socketInitializer = async () => {
-        await fetch('/api/socket');
-        socket = io();
+  const socketInitializer = async () => {
+    await fetch('/api/socket');
+    socket = io();
     socket.on('connect', async () => {
-        ...
+      ...
 
-        socket.on('activeusers', data => {
-            setActiveUsers(data);
-        }); //Waiting to receive activeUsers
-        socket.on('messages', data => {
-            //Waiting to receive the messages
-        console.log(data);
-        });
-    }
-}
+      socket.on('activeusers', data => {
+        setActiveUsers(data);
+      }); //Waiting to receive activeUsers
+      socket.on('messages', data => {
+        //Waiting to receive the messages
+       console.log(data);
+      });
+    }
+  }
+  ...
+
+  return (
     ...
-
-    return (
-
-        ...
-
-    )
+  )
 }
 ```
 
@@ -1368,41 +1338,38 @@ Now that we have received all the messages, let's store them in a state variable
 ...
 
 export default function App() {
-    ...
+  ...
 
-    const [message, setMessage] = useState('');
+  const [message, setMessage] = useState('');
     const [messages, setMessages] = useState('');
 
+  ...
+
+  const socketInitializer = async () => {
+    await fetch('/api/socket');
+    socket = io();
+    socket.on('connect', async () => {
+      ...
+      socket.on('activeusers', data => {
+        setActiveUsers(data);
+      }); //Waiting to receive activeUsers
+      socket.on('messages', data => { //Waiting to receive the messages
+      setMessages(data.messages)
+    });
+   }
+  }
+  return(
     ...
+    <Messages
+      handleMessage={handleMessage}
+      messages={messages}
+      handleSubmit={handleSubmit}
+      username={username}
+    />
 
-    const socketInitializer = async () => {
-        await fetch('/api/socket');
-        socket = io();
-        socket.on('connect', async () => {
-            ...
-
-            socket.on('activeusers', data => {
-                setActiveUsers(data);
-            }); //Waiting to receive activeUsers
-            socket.on('messages', data => { //Waiting to receive the messages
-                setMessages(data.messages)
-            });
-        }
-    }
-    return(
-        ....
-
-        <Messages
-            handleMessage={handleMessage}
-            messages={messages}
-            handleSubmit={handleSubmit}
-            username={username}
-        />
-
-        ...
-    )
+    ...
+  )
 }
-
 ```
 
 After we've passed the `messages` array as props, we will retrieve them and display them in their rightful position.
@@ -1411,134 +1378,123 @@ After we've passed the `messages` array as props, we will retrieve them and disp
 //Path: chat-app/components/Messages.js
 
 import {
-    MDBCol,
-    MDBCard,
-    MDBCardBody,
-    MDBIcon,
-    MDBBtn,
-    MDBTypography,
-    MDBTextArea,
-    MDBCardHeader,
+  MDBCol,
+  MDBCard,
+  MDBCardBody,
+  MDBIcon,
+  MDBBtn,
+  MDBTypography,
+  MDBTextArea,
+  MDBCardHeader,
 } from 'mdb-react-ui-kit';
 import { useRef, useEffect } from 'react';
 
 const Messages = ({
-    handleMessage,
-    message,
-    handleSubmit,
-    messages,
-    username,
+  handleMessage,
+  message,
+  handleSubmit,
+  messages,
+  username,
 }) => {
-    const messagesEndRef = useRef(null);
-    const scrollToBottom = () => {
-        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' }); //Scroll to bottom functionality.
-    };
-    useEffect(() => {
-        scrollToBottom();
-    }, [messages]);
+  const messagesEndRef = useRef(null);
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' }); //Scroll to bottom functionality.
+  };
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
-    return (
-        <MDBCol md="6" lg="7" xl="8">
-            <MDBTypography listUnStyled>
-                {messages.map(item => {
-                    if (item.user === username) {
-                        return (
-                            <li
-                                className="d-flex justify-content-between mb-4"
-                                ref={messagesEndRef}
-                            >
-                                <img
-                                    src="https://i.postimg.cc/85nKtgFz/user.png"
-                                    alt="avatar"
-                                    className="rounded-circle d-flex align-self-start ms-3 shadow-1-strong"
-                                    width="60"
-                                />
-                                <MDBCard className="w-100">
-                                    <MDBCardHeader className="d-flex justify-content-between p-3">
-                                        <p
-                                            className="fw-bold mb-0"
-                                            style={{ color: '#e7653d' }}
-                                        >
-                                            {item.user}
-                                        </p>
-                                        <p className="text-muted small mb-0">
-                                            <MDBIcon far icon="clock" />
-                                            {new Date(
-                                                item.time
-                                            ).toLocaleTimeString('en', {
-                                                timeStyle: 'short',
-                                                hour12: false,
-                                                timeZone: 'UTC',
-                                            })}
-                                        </p>
-                                    </MDBCardHeader>
-                                    <MDBCardBody>
-                                        <p className="mb-0">{item.chats}</p>
-                                    </MDBCardBody>
-                                </MDBCard>
-                            </li>
-                        );
-                    }
-                    return (
-                        <li
-                            className="d-flex justify-content-between mb-4"
-                            ref={messagesEndRef}
-                        >
-                            <MDBCard className="w-100">
-                                <MDBCardHeader className="d-flex justify-content-between p-3">
-                                    <p
-                                        className="fw-bold mb-0"
-                                        style={{ color: '#e7653d' }}
-                                    >
-                                        {item.user}
-                                    </p>
-                                    <p className="text-muted small mb-0">
-                                        <MDBIcon far icon="clock" />
-                                        {new Date(item.time).toLocaleTimeString(
-                                            'en',
-                                            {
-                                                timeStyle: 'short',
-                                                hour12: false,
-                                                timeZone: 'UTC',
-                                            }
-                                        )}
-                                    </p>
-                                </MDBCardHeader>
-                                <MDBCardBody>
-                                    <p className="mb-0">{item.chats}</p>
-                                </MDBCardBody>
-                            </MDBCard>
-                            <img
-                                src="https://i.postimg.cc/85nKtgFz/user.png"
-                                alt="avatar"
-                                className="rounded-circle d-flex align-self-start ms-3 shadow-1-strong"
-                                width="60"
-                            />
-                        </li>
-                    );
-                })}
-                <li className="bg-white mb-3">
-                    <MDBTextArea
-                        label="Message"
-                        id="textAreaExample"
-                        rows={3}
-                        value={message} //Setting value to the message props received
-                        onChange={e => handleMessage(e.target.value)} //Sending the input in the Text Area
-                    />
-                </li>
-                <MDBBtn
-                    rounded
-                    className="float-end"
-                    style={{
-                        backgroundColor: '#e7653d',
-                    }}
-                    onClick={handleSubmit}
-                >
-                    Send
-                </MDBBtn>
-            </MDBTypography>
-        </MDBCol>
-    );
+  return (
+    <MDBCol md="6" lg="7" xl="8">
+      <MDBTypography listUnStyled>
+        {messages.map(item => {
+          if (item.user === username) {
+            return (
+              <li
+                className="d-flex justify-content-between mb-4"
+                ref={messagesEndRef}
+              >
+                <img
+                  src="https://i.postimg.cc/85nKtgFz/user.png"
+                  alt="avatar"
+                  className="rounded-circle d-flex align-self-start ms-3 shadow-1-strong"
+                  width="60"
+                />
+                <MDBCard className="w-100">
+                  <MDBCardHeader className="d-flex justify-content-between p-3">
+                    <p className="fw-bold mb-0" style={{ color: '#e7653d' }}>
+                      {item.user}
+                    </p>
+                    <p className="text-muted small mb-0">
+                      <MDBIcon far icon="clock" />
+                      {new Date(item.time).toLocaleTimeString('en', {
+                        timeStyle: 'short',
+                        hour12: false,
+                        timeZone: 'UTC',
+                      })}
+                    </p>
+                  </MDBCardHeader>
+                  <MDBCardBody>
+                    <p className="mb-0">{item.chats}</p>
+                  </MDBCardBody>
+                </MDBCard>
+              </li>
+            );
+          }
+          return (
+            <li
+              className="d-flex justify-content-between mb-4"
+              ref={messagesEndRef}
+            >
+              <MDBCard className="w-100">
+                <MDBCardHeader className="d-flex justify-content-between p-3">
+                  <p className="fw-bold mb-0" style={{ color: '#e7653d' }}>
+                    {item.user}
+                  </p>
+                  <p className="text-muted small mb-0">
+                    <MDBIcon far icon="clock" />
+                    {new Date(item.time).toLocaleTimeString('en', {
+                      timeStyle: 'short',
+                      hour12: false,
+                      timeZone: 'UTC',
+                    })}
+                  </p>
+                </MDBCardHeader>
+                <MDBCardBody>
+                  <p className="mb-0">{item.chats}</p>
+                </MDBCardBody>
+              </MDBCard>
+              <img
+                src="https://i.postimg.cc/85nKtgFz/user.png"
+                alt="avatar"
+                className="rounded-circle d-flex align-self-start ms-3 shadow-1-strong"
+                width="60"
+              />
+            </li>
+          );
+        })}
+        <li className="bg-white mb-3">
+          <MDBTextArea
+            label="Message"
+            id="textAreaExample"
+            rows={3}
+            value={message} //Setting value to the message props received
+            onChange={e => handleMessage(e.target.value)} //Sending the input in the Text Area
+          />
+        </li>
+        <MDBBtn
+          rounded
+          className="float-end"
+          style={{
+            backgroundColor: '#e7653d',
+          }}
+          onClick={handleSubmit}
+        >
+          Send
+        </MDBBtn>
+      </MDBTypography>
+    </MDBCol>
+  );
 };
 
 export default Messages;
