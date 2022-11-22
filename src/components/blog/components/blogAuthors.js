@@ -24,6 +24,7 @@ import davidIgheoseImg from "../assets/david-igheose.png"
 import samarpitImg from "../assets/samarpit-shrivastava.png"
 import samWilliamsImg from "../assets/sam-williams.png"
 import monikaImg from "../assets/monika.png"
+import mandahImg from "../assets/mandah-israel.png"
 
 export default {
     sven: {
@@ -176,4 +177,10 @@ export default {
         avatar: monikaImg,
         twitter: "monzapryanova"  
     },
+    mandahIsrael: {
+        name: "Mandah Israel",
+        description: "Technical writer",
+        avatar: mandahImg,
+        twitter: ""
+    }
 };
