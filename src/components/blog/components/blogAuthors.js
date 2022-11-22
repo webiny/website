@@ -23,6 +23,7 @@ import miracleOnyemmaImg from "../assets/miracle-onyemma.png"
 import davidIgheoseImg from "../assets/david-igheose.png"
 import samarpitImg from "../assets/samarpit-shrivastava.png"
 import samWilliamsImg from "../assets/sam-williams.png"
+import fredrickEImg from "../assets/fredrick-emmanuel.png"
 import monikaImg from "../assets/monika.png"
 import mandahImg from "../assets/mandah-israel.png"
 
@@ -182,5 +183,11 @@ export default {
         description: "Technical writer",
         avatar: mandahImg,
         twitter: ""
-    }
+    },
+    fredrick: {
+        name: "Fredrick Emmanuel",
+        description: "Technical Writer",
+        avatar: fredrickEImg,
+        twitter: ""  
+    },
 };
