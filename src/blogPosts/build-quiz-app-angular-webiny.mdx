@@ -77,8 +77,8 @@ After creating a model we will be taken to this page. You can navigate to it by 
 
 Let’s create the field for our models. For the **Quiz** model, create the following fields:
 
-- **TEXT** field with label: name.
-- **LONG TEXT** field with label: description.
+- **TEXT** field with label: `name`.
+- **LONG TEXT** field with label: `description`.
     
 ![image (3).png](./assets/build-quiz-app-angular-webiny/image_(3).png)
     
@@ -140,9 +140,9 @@ Next, let’s install [Apollo Client](https://www.apollographql.com/docs/react/#
 ng add apollo-angular
 ```
 
-When prompted to add a URL, leave it blank. We will set that up later. Since we are using the `ng-add` command, all the required packages will be installed and the module for initializing Apollo client will be created in the **app** folder named **graphql-module.ts.**
+When prompted to add a URL, leave it blank. We will set that up later. Since we are using the `ng-add` command, all the required packages will be installed and the module for initializing Apollo client will be created in the **app** folder named `graphql-module.ts`.
 
-Now let’s clean up the app a little, removing codes that are not needed. Open the created app in a code editor and first modify **src/app/app.component.html** to the following:
+Now let’s clean up the app a little, removing codes that are not needed. Open the created app in a code editor and first modify `src/app/app.component.html` to the following:
 
 ```jsx
 <div></div>
@@ -177,20 +177,20 @@ Let’s start by creating the pages and components we will be using and setting 
 For pages, in the terminal, make sure you are in the root directory of the app and enter the following commands:
 
 ```bash
-// For Bash
+# For Bash
 for page in quizzes quiz score; do ng g c --module app "pages/${page}"; done
 
-// For Windows
+# For Windows
 for %n in (quizzes, quiz, score) do ng g c --module app pages/%n
 ```
 
 And for the components, enter the following commands in the terminal:
 
 ```bash
-// For Bash
+# For Bash
 for comp in quizCard question; do ng g c --module app "components/${comp}"; done
 
-// For Windows
+# For Windows
 for %n in (quizCard, question) do ng g c --module app components/%n
 ```
 
@@ -207,7 +207,7 @@ app
  ┃ ┗ score
 ```
 
-Now, let’s define the routes. In **src/app/app-routing.module.ts,** add the following imports and modify the `routes` variable:
+Now, let’s define the routes. In `src/app/app-routing.module.ts` add the following imports and modify the `routes` variable:
 
 ```jsx
 import { QuizComponent } from './pages/quiz/quiz.component';
@@ -221,7 +221,7 @@ const routes: Routes = [
 ];
 ```
 
-Next, modify **src/app/app.component.html** to the following:
+Next, modify `src/app/app.component.html` to the following:
 
 ```jsx
 <div>
@@ -233,7 +233,7 @@ Now, let’s build the interface. For now, in the interface, we will be using mo
 
 We will start with the **quizzes** page. On the **quizzes** page, each quiz will be displayed in the form of a card which will be a component on its own. Let’s create the UI for that component.
 
-Head over to the **app/components/quiz-card/quiz-card.component.ts** file and add the following import:
+Head over to the `app/components/quiz-card/quiz-card.component.ts` file and add the following import:
 
 ```jsx
 import { Input } from '@angular/core';
@@ -246,7 +246,7 @@ Next, let’s add the properties we will use later on in this tutorial. Add the 
 questionsLength = 0
 ```
 
-Next, modify its HTML file **quiz-card.component.html** file to the following:
+Next, modify its HTML file `quiz-card.component.html` file to the following:
 
 ```jsx
 <div class="quizCard">
@@ -257,7 +257,7 @@ Next, modify its HTML file **quiz-card.component.html** file to the following:
 </div>
 ```
 
-Then add the following styling to **quiz-card.component.css:**
+Then add the following styling to `quiz-card.component.css`:
 
 ```css
 .quizCard {
@@ -300,7 +300,7 @@ Then add the following styling to **quiz-card.component.css:**
 }
 ```
 
-Now, let’s render the **quizCard** component on the **quizzes** page. Head over to the **app/pages/quizzes/quizzes-component.html** file and modify it to the following:
+Now, let’s render the **quizCard** component on the **quizzes** page. Head over to the `app/pages/quizzes/quizzes-component.html` file and modify it to the following:
 
 ```jsx
 <div class="quizzes container">
@@ -312,7 +312,7 @@ Now, let’s render the **quizCard** component on the **quizzes** page. Head ove
 </div>
 ```
 
-Next, add the following styling to **quizzes.component.css:**
+Next, add the following styling to `quizzes.component.css`:
 
 ```css
 .quizzes {
@@ -344,7 +344,7 @@ With this, when we open our app in the browser, we will see the following:
 
 ![image.png](./assets/build-quiz-app-angular-webiny/image_3.png)
 
-Next, let’s work on the interface for the **quiz** page. Head over to the **app/components/question.component.ts** file and add the following import:
+Next, let’s work on the interface for the **quiz** page. Head over to the `app/components/question.component.ts` file and add the following import:
 
 ```jsx
 import { Input, Output, EventEmitter } from '@angular/core';
@@ -362,7 +362,7 @@ selectedOption = ''
 @Output() prevQuestion: EventEmitter<any> = new EventEmitter();
 ```
 
-Next, in its HTML file **question.component.html**, add the following lines of code:
+Next, in its HTML file `question.component.html`, add the following lines of code:
 
 ```jsx
 <div class="question container">
@@ -386,7 +386,7 @@ Next, in its HTML file **question.component.html**, add the following lines of c
 
 ```
 
-Next, add the following styles to the **question.component.css** file:
+Next, add the following styles to the `question.component.css` file:
 
 ```css
 .question {
@@ -463,7 +463,7 @@ Next, add the following styles to the **question.component.css** file:
 }
 ```
 
-Then head over to the **app/pages/quiz/quiz.component.html** file and modify it to the following:
+Then head over to the `app/pages/quiz/quiz.component.html` file and modify it to the following:
 
 ```jsx
 <div class="quiz">
@@ -475,7 +475,7 @@ With this, when you navigate to [http://localhost:4200/quiz/1](http://localhost:
 
 ![image (1).png](./assets/build-quiz-app-angular-webiny/image_(1)_3.png)
 
-Next, let’s work on the interface for the **score** page. Head over the **app/pages/score/score.component.html** file and modify it to the following:
+Next, let’s work on the interface for the **score** page. Head over the `app/pages/score/score.component.html` file and modify it to the following:
 
 ```jsx
 <div class="score container">
@@ -552,7 +552,7 @@ With this, when we navigate to [http://localhost:4200/score](http://localhost:42
 
 ### **Initializing Apollo Client**
 
-To initialize Apollo Client so that we can start using it to interact with Webiny, we need to get the API token and the correct Headless CMS API endpoint. Once we get them we will store them as environment variables in the **app/environments/environment.ts** file as follows:
+To initialize Apollo Client so that we can start using it to interact with Webiny, we need to get the API token and the correct Headless CMS API endpoint. Once we get them we will store them as environment variables in the `app/environments/environment.ts` file as follows:
 
 ```jsx
 export const environment = {
@@ -592,7 +592,7 @@ Next, let's get the endpoint. in the sidebar click on **API Playground,** then i
 
 ![image (6).png](./assets/build-quiz-app-angular-webiny/image_(6).png)
 
-Now to initialize Apollo Client, head over to the **src/app/graphql-module.ts** file and modify it to the following:
+Now to initialize Apollo Client, head over to the `src/app/graphql-module.ts` file and modify it to the following:
 
 ```jsx
 import {NgModule} from '@angular/core';
@@ -631,7 +631,7 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
 export classOnChanges GraphQLModule {}
 ```
 
-Next, in the ********src/app/app.module.ts******** file, add the following import:
+Next, in the `src/app/app.module.ts` file, add the following import:
 
 ```jsx
 import { ApolloModule } from 'apollo-angular';
@@ -657,7 +657,7 @@ ng g s services/quiz
 ```
 
 This will create a quiz service in a **services** folder in **app.**
-Now, let’s write our first query which will be for fetching all quizzes in our CMS. In **app/services/quiz.service.ts,** add the following import and query.
+Now, let’s write our first query which will be for fetching all quizzes in our CMS. In `app/services/quiz.service.ts` add the following import and query.
 
 ```jsx
 import { Apollo, gql } from 'apollo-angular'
@@ -690,7 +690,7 @@ getQuizzes() {
 }
 ```
 
-To use this function, head over to **app/pages/quizzes/quizzes.component.ts** and add the following import:
+To use this function, head over to `app/pages/quizzes/quizzes.component.ts` and add the following import:
 
 ```jsx
 import { QuizService } from 'src/app/services/quiz.service';
@@ -714,7 +714,7 @@ export class QuizzesComponent implements OnInit {
 
 In the above code, we fetch our quizzes and store them in a `quizzes` array variable which will be iterated over in the template to display the quizzes.
 
-Head over to the **quizzes.component.html** file and modify it to the following:
+Head over to the `quizzes.component.html` file and modify it to the following:
 
 ```jsx
 <div class="quizzes container">
@@ -726,7 +726,7 @@ Head over to the **quizzes.component.html** file and modify it to the following:
 </div>
 ```
 
-Next, modify the **app/components/quiz-card/quiz-card.component.html** file to the following:
+Next, modify the `app/components/quiz-card/quiz-card.component.html` file to the following:
 
 ```jsx
 <div class="quizCard">
@@ -739,7 +739,7 @@ Next, modify the **app/components/quiz-card/quiz-card.component.html** file to t
 
 With this, quizzes in our CMS should now be displayed. Right now if you notice the length of the questions displayed in the quiz card is 0 which is static. Let’s fix that.
 
-To fix this, we will use the ID of a quiz to fetch all its questions and then display their length. Head over to **app/services/quiz.services** and add the following query after `GET_QUIZZES`:
+To fix this, we will use the ID of a quiz to fetch all its questions and then display their length. Head over to `app/services/quiz.services` and add the following query after `GET_QUIZZES`:
 
 ```jsx
 const GET_QUESTIONS = gql`
@@ -758,7 +758,7 @@ const GET_QUESTIONS = gql`
 `
 ```
 
-Next, add the following method for fetching all the questions of a quiz when the quiz id is passed to it `getQuizzes`**:**
+Next, add the following method for fetching all the questions of a quiz when the quiz id is passed to it `getQuizzes`:
 
 ```jsx
 getQuestions(id:string) {
@@ -771,7 +771,7 @@ getQuestions(id:string) {
 }
 ```
 
-Next, head over **app/components/quiz-card/quiz-card.component.ts** and import the quiz service:
+Next, head over `app/components/quiz-card/quiz-card.component.ts` and import the quiz service:
 
 ```jsx
 import { QuizService } from 'src/app/services/quiz.service';
@@ -797,8 +797,8 @@ If we click on the **Take quiz** button on a quiz in our app we will be taken to
 
 First, let’s replace the mock data with the one from our CMS and add the pagination functionality where we can go to the next or previous question if it exists by clicking a button.
 
-Head over to the **app/services/quiz.service.ts** file let’s create a function to fetch the data for a single quiz so it can be used to replace the static on the quiz page.
-Add the following query after `GET_QUESTIONS`**:**
+Head over to the `app/services/quiz.service.ts` file let’s create a function to fetch the data for a single quiz so it can be used to replace the static on the quiz page.
+Add the following query after `GET_QUESTIONS`:
 
 ```jsx
 const GET_QUIZ = gql`
@@ -826,7 +826,7 @@ getQuiz(id:string) {
 }
 ```
 
-Next, head over to the **app/pages/quiz/quiz.component.ts** and add the following imports:
+Next, head over to the `app/pages/quiz/quiz.component.ts` and add the following imports:
 
 ```jsx
 import { QuizService } from 'src/app/services/quiz.service';
@@ -878,7 +878,7 @@ Above, in the `ngOnInit` method, we are fetching all questions and the quiz whos
 
 We have also created a `goToNext` and `goToPrevious` method for increasing and decreasing the `questionNumber` property respectively. We are doing this because we will be using the `questionNumber` property to get a single question object in the `questions` array (`questions[questionNumber]`) which will be displayed in the UI. This way when one (1) is added `questionNumber` the next question will be displayed and when one (1) is subtracted, the previous question will be displayed creating the pagination functionality.
 
-Next, modify its HTML file **quiz.component.html** to the following:
+Next, modify its HTML file `quiz.component.html` to the following:
 
 ```jsx
 <div class="quiz">
@@ -893,7 +893,7 @@ Next, modify its HTML file **quiz.component.html** to the following:
 </div>
 ```
 
-Now head over to the **app/components/question.component.html** file and modify it to the following:
+Now head over to the `app/components/question.component.html` file and modify it to the following:
 
 ```jsx
 <div class="question container">
@@ -932,7 +932,7 @@ Now head over to the **app/components/question.component.html** file and modify 
 
 With the above code, we are replacing the mock data with the one from our CMS, disabling the previous button when the first question is displayed and replacing the next button with a submit button when the last question is displayed.
 
-Now let’s work on highlighting the selected option for a question. Head over the **app/services/quiz/services.ts** file and add the following property to the class:
+Now let’s work on highlighting the selected option for a question. Head over the `app/services/quiz/services.ts` file and add the following property to the class:
 
 ```jsx
 answers: any[] = []
@@ -959,7 +959,7 @@ pickedAnswer(selectedOption:string, correctAnswer:string, questionNumber:number)
 The above method will be called whenever a question is answered. It will be used to store the selected option for the question, the correct answer to the question, and the question’s number as an object in the `answers` array property. So each answered question will be represented as an object in the `answers` array.
 Doing it this way will enable us to highlight the selected option for any question,  by using its number to filter out the right object from `answers` then highlighting the option that is equal to the one in the object. Also, when we want to calculate the total score for a quiz we can compare the selected option for a question and the answer to the question present in every object in the `answers` array to find out which question was answered correctly.
 
-Now to call the above function Head over to **app/component/question/question.components.ts** and first import the quiz service:
+Now to call the above function Head over to `app/component/question/question.components.ts` and first import the quiz service:
 
 ```jsx
 import { QuizService } from 'src/app/services/quiz.service';
@@ -976,7 +976,7 @@ selectOption(selectedOption:string, correctAnswer:string, questionNumber:number)
 }
 ```
 
-Next, in its HTML file **question.component.html** modify the `div` with the class name of `question__bodyOpt` to the following:
+Next, in its HTML file `question.component.html` modify the `div` with the class name of `question__bodyOpt` to the following:
 
 ```jsx
 <div class="question__bodyOpt">
@@ -1018,7 +1018,7 @@ With this, the selected options will stay highlighted.
 
 The score page will display the score of a question, the wrong answers, correct answers, and attempted questions. To get all these values and make them accessible in the score page, we will create a method in the quiz service that calculates these values and store them as properties in the service, then for accessing these properties in the score page we will create another method for that.
 
-Head over to **app/services/quiz.service.ts** and add the following properties after the `answers` property:
+Head over to `app/services/quiz.service.ts` and add the following properties after the `answers` property:
 
 ```jsx
 attempts = 0
@@ -1054,7 +1054,7 @@ getScore() {
 }
 ```
 
-Next, head over **app/components/question/question.component.ts** and import router which will use to navigate to the score page when the a quiz is submitted :
+Next, head over `app/components/question/question.component.ts` and import router which will use to navigate to the score page when the a quiz is submitted :
 
 ```jsx
 import { Router } from '@angular/router';
@@ -1075,7 +1075,7 @@ score() {
 }
 ```
 
-Now to call the above method, in the **question.component.html** file modify the **Submit** button into the following:
+Now to call the above method, in the `question.component.html` file modify the`<Submit>` button into the following:
 
 ```jsx
 <button
@@ -1086,7 +1086,7 @@ Now to call the above method, in the **question.component.html** file modify the
 </button>
 ```
 
-Next, let’s display the scores and other values in the score page when a quiz is submitted. Head over to **app/pages/score/component.ts** and first import the quiz service:
+Next, let’s display the scores and other values in the score page when a quiz is submitted. Head over to `app/pages/score/component.ts` and first import the quiz service:
 
 ```jsx
 import { QuizService } from 'src/app/services/quiz.service';
@@ -1104,7 +1104,7 @@ ngOnInit(): void {
 }
 ```
 
-Finally, modify the **score.component.html** file to the following:
+Finally, modify the `score.component.html` file to the following:
 
 ```jsx
 <div class="score container">
@@ -1136,3 +1136,9 @@ With this, when we take a quiz and click on the submit button, we will be taken 
 ## Conclusion
 
 Quiz apps include features that require one to think logically in order to create them which makes it a great coding challenge for those starting out. In this tutorial, we have learned about Webiny CMS and how we can use it to build a quiz app where our data will be coming from a CMS rather than being hardcoded, giving us the liberty to update the questions and answers for a quiz by using a ready-to-use Admin page without having to update and redeploy our code.
+
+**Full source code:** https://github.com/webiny/write-with-webiny/tree/main/tutorials/angular-quiz-app
+
+---
+
+This article was written by a contributor to the Write with Webiny program. Would you like to write a technical article like this and get paid to do so? [Check out the Write with Webiny GitHub repo](https://github.com/webiny/write-with-webiny/).
