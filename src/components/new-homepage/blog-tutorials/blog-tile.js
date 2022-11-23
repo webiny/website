@@ -11,6 +11,7 @@ import AstroLogo from "../../../assets/astro.svg"
 import NuxtLogo from "../../../assets/nuxtjs.svg"
 import SvelteLogo from "../../../assets/svelte.svg"
 import GatsbyLogo from "../../../assets/gatsby-logo.svg"
+import AngularLogo from "../../../assets/angular-logo.svg"
 import { ButtonPrimary } from '../hero-section/hero.styled'
 
 
@@ -50,6 +51,10 @@ const technologies = {
   "gatsby": {
     title: "Gatsby",
     image: GatsbyLogo
+  },
+  "angular": {
+    title: "Angular",
+    image: AngularLogo
   }
 }
 
