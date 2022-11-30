@@ -5,15 +5,15 @@ description: "How to build a real-time chat application using Webiny, using Sock
 tags: ["nextjs", socketio", "build projects", "chat app", "contributed articles"]
 featureImage: "./assets/build-chat-application-nextjs-socketio/cover.png"
 author: fredrick
-date: 2022-12-01
+date: 2022-11-30
 featured: true
 tech: ["nextjs"]
 project: "Chat app with NextJS"
 ghLink: "https://github.com/webiny/write-with-webiny/tree/main/tutorials/astro-blog"
 ---
-Communication is a vital part of our human existence; but sometimes distance can be an obstacle. This is where chat applications come into play. Chat applications make it easy to communicate with various people worldwide in real-time. Follow through to discover how to build a real-time chat application using Webiny.
+Communication is a vital part of our human existence; but sometimes distance can be an obstacle. This is where chat applications come into play. Chat applications make it easy to communicate with various people worldwide in real-time. Follow through to discover how to build a real-time chat application using Webiny Headless CMS.
 
-We’ll build a group chat application with Webiny, NextJS and Socket.io, where users can join a specific group and communicate with users in the group.
+We’ll first explain what a Headless CMS is, then build a group chat application with Webiny, NextJS and Socket.io, where users can join a specific group and communicate with users in the group.
 
 Before we get started with the chat application, let’s briefly discuss what Webiny is and how it can be of significant benefit to you.
 
@@ -96,8 +96,6 @@ yarn webiny info
 As seen below, executing the `webiny info` command displays all APIs and URLs for our Webiny project.
 
 ![Webiny info](./assets/build-chat-application-nextjs-socketio/webiny_info.jpg)
-
-Webiny info
 
 ## Creating a Webiny admin account
 
@@ -227,14 +225,14 @@ Now create the API key using:
 
 - **Headless CMS**:
     - **Access Level**: Custom access
-    - **GRAPHQL API TYPES**: Read ✅ ****
+    - **GRAPHQL API TYPES**: Read ✅
     
     ![Setting up the read API key](./assets/build-chat-application-nextjs-socketio/Untitled_15.png)
     
     - **CONTENT MODELS**: Only specific models.
     - **Ungrouped**:
-        - Active users✅
-        - Chats✅
+      - Active users ✅
+      - Chats ✅
     
     ![Setting the read API key](./assets/build-chat-application-nextjs-socketio/Untitled_16.png)
     
@@ -259,14 +257,14 @@ Now create a new API key using:
 
 - **Headless CMS**:
     - **Access Level**: Custom access
-    - **GRAPHQL API TYPES**: Manage✅ ****
+    - **GRAPHQL API TYPES**: Manage ✅ 
 
 ![Setting up the manage API key](./assets/build-chat-application-nextjs-socketio/Untitled_18.png)
 
 - **CONTENT MODELS**: Only specific models.
     - **Ungrouped**:
-        - Active users✅
-        - Chats✅
+        - Active users ✅
+        - Chats ✅
 - **CONTENT ENTRIES**:
     - **Primary Actions:** Read, write, delete.
 - **PUBLISHING ACTIONS:** Publish
