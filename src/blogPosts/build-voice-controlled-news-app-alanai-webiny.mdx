@@ -1,0 +1,413 @@
+---
+slug: "blog/build-voice-controlled-news-app-alanai-webiny"
+title: "Building a Voice Controlled News Application using React, Alan Ai, and Webiny CMS"
+description: "In this tutorial, we'll be building an Trello clone with Next.js and Webiny Headless CMS."
+date: 2022-10-25
+featureImage: "./assets/build-voice-controlled-news-app-alanai-webiny/cover.png"
+tags: ["Alan.ai", "React, "headless CMS", "contributed articles"]
+type: blog
+author: chrisOkoro
+featured: false
+tech: ["react"]
+project: "Voice Controlled News Application with React"
+ghLink: "https://github.com/webiny/write-with-webiny/tree/main/tutorials/react-voice-control-news-app"
+---
+With serverless infrastructure, developers can create and run services without having to worry about maintaining the underlying infrastructure. While a cloud provider sets up servers to operate their apps, databases, and storage systems at any size, developers can focus on deliverables, writing and distributing code more quickly than in traditional environments.
+
+We will demonstrate in this tutorial how to use Webiny Headless CMS capabilities while creating a news application powered by Alan Ai. We'll get a full grasp of how Webiny works as a serverless CMS and we’ll go through creating and setting it up, configuring it, and deploying it into our project using a GraphQL API. 
+
+We’ll also be integrating a [Voice user interface (VUIs)](https://www.interaction-design.org/literature/topics/voice-user-interfaces#:~:text=Voice%20user%20interfaces%20(VUIs)%20allow,Alexa%2C%20are%20examples%20of%20VUIs.) that allows voice or speech instructions to be used by the user to communicate with the system. VUIs include virtual assistants like Siri, Google Assistant, Alan Ai, and Alexa. For this tutorial, we will be using Alan Ai as our VUI.
+
+## What is a Headless CMS
+
+A Headless CMS is simply any form of back-end content management system in which the content repository, the "body," is detached or divorced from the presentation layer, the "head.” What this implies is that a headless CMS enables you to manage content in a single location while also enabling you to deploy that content across any front end of your choice. In order to integrate content into any system, piece of software, or website, you just need to contact the APIs the headless CMS exposes. This is essential for omnichannel strategies.
+
+## Why use Webiny?
+
+- Webiny is self-hosted and is hosted on your own AWS cloud. You decide the rules for your data.
+- It is designed to be extensible, open-source, and released under an MIT license.
+- Scale that is limitless, responsive, and adaptive while yet being economical and fully regulated.
+- A unified encounter that connects developers and content producers.
+- Enterprise-grade features are available to anyone.
+
+## Prerequisites
+
+We will be creating a news application that allows you to view images, title text with descriptions, date of publishing, the authors, and a link that can be clicked manually to navigate to the full story or can be navigated for you by sending speech commands using the Alan Ai. To follow along, the following are required: 
+
+- Set up your local [AWS credentials](https://www.webiny.com/docs/infrastructure/aws/configure-aws-credentials).
+    - You are required to have a properly configured AWS account to successfully deploy your Webiny project
+- Ensure you have [Node.js](https://nodejs.org/en/download/) installed
+- Make sure yarn version 1.22.0 or older is installed because Webiny is compatible with both yarn versions.
+- An understanding of ReactJs and JavaScript
+- A basic understanding of [Alan Ai](https://alan.app/docs/)
+- Star our [GitHub Repo](https://github.com/webiny/webiny-js) 😉
+
+## Putting our Webiny CMS together
+
+The first thing required to do is to create a new Webiny project by entering the commands below: 
+
+```jsx
+npx create-webiny-app news-app
+```
+
+This should automatically set up your project. You will be requested to select an AWS region and a database your project will be deployed with. For this project, we will be using DynamoDB as we are building a small project.  Once created, navigate to the folder and input the command below.
+
+```jsx
+cd news-app && yarn webiny-deploy
+```
+
+This builds your project and deploys the application to your AWS account. Once deployed, you should view some links in your terminal as seen below.
+
+![Screenshot (83).png](./assets/build-voice-controlled-news-app-alanai-webiny/Screenshot_(83).png)
+
+Now click on the **Admin App** link. You will now be redirected to the Admin area front page where you will be required to fill out the registration form and complete all registrations. 
+
+![Screenshot (82).png](./assets/build-voice-controlled-news-app-alanai-webiny/Screenshot_(82).png)
+
+We have successfully deployed and registered for our Webiny project. We must now develop our models.
+
+## Creating our Content Models
+
+First, we will need to create the models for our application. In the Webiny dashboard, click on the **New Content  Model** button 
+
+![Screenshot (87).png](./assets/build-voice-controlled-news-app-alanai-webiny/Screenshot_(87).png)
+
+Once clicked, you will be directed to the next page where we can create our content model. Click on the **New Model** button to give the model a name and a group if required, but for this tutorial, we’ll leave that as ungrouped and a description if necessary, then click on create.
+
+In this project, we will be having two models, the **author model**, and the **post model**. In the author’s model, we will need to add a content type using the drag-and-drop feature Webiny provides us, we will be adding just one content type
+
+- A **text** field with the value **name**.
+
+![Screenshot (105).png](./assets/build-voice-controlled-news-app-alanai-webiny/Screenshot_(105).png)
+
+We will validate the text field as **required.**
+
+![Screenshot (106).png](./assets/build-voice-controlled-news-app-alanai-webiny/Screenshot_(106).png)
+
+Using the same method, we will create our Post model and attach the following fields:
+
+- A **file** field with the label **cover image**
+- A **text** field with the label **title**
+- A **long text** field with the label **description**
+- A **date/time** field with the label **publishedAt**
+- A **text** field with the label **slug** (which will have a validation pattern enabled and set to URL only)
+
+![Screenshot (92).png](./assets/build-voice-controlled-news-app-alanai-webiny/Screenshot_(92).png)
+
+- A **reference** field with label **authors** (This also includes the values inside the author’s model).
+
+The **post model** should look like the one below after creating all fields
+
+![Screenshot (97).png](./assets/build-voice-controlled-news-app-alanai-webiny/Screenshot_(97).png)
+
+## Inputting data into our models
+
+Once all models are created properly with all required fields for the application to function well, the next thing to do is to add some data inside the models that will be displayed later in the front end. To do this, click on the **menu button** on the left, then the **Headless CMS** dropdown > **Ungrouped** > **authors**, and finally, click on create the **New entry** button.
+
+![Screenshot (95).png](./assets/build-voice-controlled-news-app-alanai-webiny/Screenshot_(95).png)
+
+Now fill out the entry field and click on **save and publish** as seen above. You can add as many entries as you feel like as seen in mine above. Now we will use the same procedure to populate our **posts model**.
+
+ 
+
+![Screenshot (96).png](./assets/build-voice-controlled-news-app-alanai-webiny/Screenshot_(96).png)
+
+## Testing Our GraphQL API
+
+We have successfully populated our fields and we can now view the data we are fetching from the CMS. Click on the menu button, then click on the **API Playground** and inside the **Headless CMS - Read API tab** execute the following query to list all posts
+
+```graphql
+{
+  listPosts {
+    data {
+      coverImage
+      title
+      description
+      publishedAt
+      slug
+      authors {
+        name
+      }
+    }
+  }
+}
+```
+
+Once the query has been inputted, click on the play button beside it and you should get the list of all posts. 
+
+![Screenshot (98).png](./assets/build-voice-controlled-news-app-alanai-webiny/Screenshot_(98).png)
+
+You can see in the image above that at the click of the play button, you should get a full list of all the data you populated the fields with. If you didn’t get the data, go back and ensure all fields are carefully **saved and published**.  
+
+## Creating an API key
+
+The GraphQL API is concealed behind a security layer that prohibits unauthorized access, as can be observed in the documentation on using it. Consequently, we must pass the value of an API key in order to connect to it. This can be done by opening the **API Keys** area of the Security Webiny application.
+
+![Screenshot (99).png](./assets/build-voice-controlled-news-app-alanai-webiny/Screenshot_(99).png)
+
+Once opened, click on the **New API Key** button. Now input your name and description, then head into the permissions section. For the content section, set access to **All locales.**
+
+![Screenshot (107).png](./assets/build-voice-controlled-news-app-alanai-webiny/Screenshot_(107).png)
+
+Next, scroll down to the **Headless CMS** section and set the Access Level to **Custom access.** Below the **GRAPHQL API TYPES,** select the **Read** option. 
+
+Then below the Content Model Groups, select the **Only specific group** option and click on the checkbox below showing your group name.
+
+![Screenshot (109).png](./assets/build-voice-controlled-news-app-alanai-webiny/Screenshot_(109).png)
+
+Also, change the Content Models to **Only specific models** and select all the required content models below. In this case, we will be selecting the following:
+
+- Author
+- Post
+
+![Screenshot (108).png](./assets/build-voice-controlled-news-app-alanai-webiny/Screenshot_(108).png)
+
+We are all done. Now, click the **SAVE API KEY** button and copy the token.
+
+## Setting up the frontend
+
+We have successfully set up our CMS and passed on some data. We are now expected to display this data on our webpage. To start, we will head into our terminal and create a react folder and give this folder a name. 
+
+```jsx
+npx create-react-app news-application
+```
+
+This command sets up a react folder with all the related files needed for this project. Once the installation is completed, we are then required to add our Alan AI button.
+
+## Adding the Alan AI Button
+
+It is necessary to add the Alan AI button at the top of your code to function properly. [To add the Alan button](https://alan.app/docs/usage/guides/projects/) to contribute to our project, you must create an account with Alan Studio. You can click on the [embedded link](https://studio.alan.app/register) to get started. Once you have registered and signed it, you are then required to create an account for this project. Click on the **create voice assistant** button to add/create a new project as seen below.
+
+![Screenshot (55).png](./assets/build-voice-controlled-news-app-alanai-webiny/Screenshot_(55).png)
+
+Once the new project is open, look at the top right and click on the **integrations button,** then scroll to the bottom view, select react, and copy the **SDK web package**.
+
+![Screenshot (57).png](./assets/build-voice-controlled-news-app-alanai-webiny/Screenshot_(57).png)
+
+To install the package, return to your code editor and paste the embedded code into the terminal. Import the Alan package into your file after the package has been installed, then paste the button command into the document's body. 
+
+```jsx
+import "./App.css";
+//import the alan SDK package
+import alanBtn from "@alan-ai/alan-sdk-web";
+
+function App() {
+  //integrating Alan Ai into the project
+  useEffect(() => {
+    alanBtn({
+      key: process.env.REACT_APP_ALAN_KEY,
+      onCommand: (commandData) => {},
+    });
+  }, []);
+
+  return (
+    <div className="container"> </div>
+  );
+}
+export default App;
+```
+
+Now, if you open your web browser, the Alan button should be shown below.
+
+![Screenshot (116).png](./assets/build-voice-controlled-news-app-alanai-webiny/Screenshot_(116).png)
+
+We have successfully added the Alan button to our project. We will now fetch our data from the CMS and display it, and once we are done with that, we will head back here to add some functionalities to the button.
+
+## Connecting and displaying CMS data in our application
+
+We will require the Access key/token we created earlier and the read API URL for our project. To use them, we will need to install a **.env** file in our directory, and then inside the file, we attach them
+
+```jsx
+REACT_APP_ALAN_KEY = Contains our alan key used earlier 
+REACT_APP_READ_WEBINY_URL = Contains your read API url 
+REACT_APP_ACCESS_KEY = Contains your Access token
+```
+
+You can use the yarn Webiny info command in the CLI of the Webiny project folder to obtain the Webiny instance URL. This is how the URL should be formatted: https://your CMS URL>/cms/read/your local region.
+
+In our application, we will use the [Apollo client](https://www.apollographql.com/docs/react/get-started/) to communicate with the Webiny CMS using GraphQL. The CLI command below can be used to install this:
+
+```jsx
+npm install @apollo/client graphql
+```
+
+Once the installation is complete, we will need to initialize **ApolloClient** In our **index.js** file, sending a configuration object with the **uri** and **cache** properties to its constructor:
+
+```jsx
+import {ApolloClient, InMemoryCache, ApolloProvider, gql} from "@apollo/client";
+
+const client = new ApolloClient({
+  uri: process.env.REACT_APP_READ_WEBINY_URL,
+  cache: new InMemoryCache(),
+  headers: {
+    Authorization: `Bearer ${process.env.REACT_APP_ACCESS_KEY}`,
+  },
+});
+```
+
+The **uri** specifies the URL of our GraphQL server while the **cache** is an instance of **InMemoryCache**, which Apollo Client uses to cache query results after fetching them. 
+
+Next we will wrap the **App** component in our **index.js** file with the **ApolloProvider**
+
+```jsx
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>
+);
+```
+
+**Extracting our data** 
+
+Once the Apollo client setup is completed, will now need to add a query to our **App.js** file. This is to fetch data from our CMS, to do that, simply import **useQuery** and then add the query as seen below.
+
+```jsx
+import { useQuery, gql } from "@apollo/client";
+
+// add a query list
+  const GET_NEWS = gql`
+    query {
+      listPosts {
+        data {
+          coverImage
+          title
+          description
+          publishedAt
+          slug
+          authors {
+            name
+          }
+        }
+      }
+    }
+  `;
+```
+
+The **GET_NEWS** list seen above runs a listPosts which returns an array of our posts containing the properties defined in the **data** object above: **coverImage**, **title**, **description**, **publishedAt**, **slug**, and the **authors name.**
+
+The **GET_NEWS**  query is then executed in the **App** component using the **useQuery** hook from the Apollo client:
+
+```jsx
+// Add instances for the data
+  const { loading, error, data } = useQuery(GET_NEWS);
+  if (loading) return <p className="container">Getting all news...</p>;
+  if (error) return <p className="container">An error occurred:(</p>;
+```
+
+As seen above, we have added three instances/states for the data we are expecting. Whenever the data is in a loading state or an error occurs, the corresponding message seen above will be displayed.
+
+The next step is to get the data value returned based on the query. To do that, we will loop through the data and send the results as a prop to our **posts.js**  component file
+
+```jsx
+{/* mapping through the data and sending its result to the component file */}
+      
+      {data?.listPosts?.data?.map((data) => {
+        return (
+          <div>
+            <Posts news={data} />
+          </div>
+        );
+      })}
+```
+
+Now in the **Posts.js** file, we can receive this prop, display the data and add some styling
+
+```jsx
+export default function Posts({ news }) {
+  return (
+    // displaying all the data received
+      <div className="blog-block">
+      <img alt="" src={news.coverImage} className="images" />
+      <p className="title">{news.title}</p>
+      <p>{news.description}</p>
+      <span className="article-details">
+        <p>{news.publishedAt}</p>
+        <p>{news.authors.name}</p>
+      </span>
+      <a href={news.slug}>Read More</a>
+      </div>
+  );
+}
+```
+
+If you head back into the browser, you should see all the data from the Webiny CMS displayed.
+
+![Screenshot (117).png](./assets/build-voice-controlled-news-app-alanai-webiny/Screenshot_(117).png)
+
+We have successfully fetched and displayed our data from Webiny CMS. The next step would be to make our Alan button functional.
+
+## Adding Functionalities to the Alan Button
+
+We'll be giving our Alan button some new features in this section. Heading back into the Alan studio and into the project we created earlier. we are going to add some commands as seen below.
+
+![Screenshot (121).png](./assets/build-voice-controlled-news-app-alanai-webiny/Screenshot_(121).png)
+
+We have included two voice commands, as can be seen in the image above. The first is programmed to announce the author's name anytime the Alan button is pressed, while the second is programmed to explain the app's functionality when prompted. As seen above, a spot is provided for you to test the code. Next, make sure you **save the code**. 
+
+Now that we are all done in Alan's studio, we will head into our **App.js** file and inside the Alan button **useEffect hook**, we’ll receive the **command** and **author** function we created in Alan's studio, then add a conditional statement. 
+
+```jsx
+useEffect(() => {
+    alanBtn({
+      key: ALAN_KEY,
+      onCommand: ({ command, author }) => {
+        if (command === "open") {
+          console.log(author);
+        }
+      },
+    });
+  }, []);
+```
+
+The conditional statement is set to check if the **command** is “open” and if that is true, we console-logged the **author** to see our result.
+
+![Screenshot (119).png](./assets/build-voice-controlled-news-app-alanai-webiny/Screenshot_(119).png)
+
+When we ask Alan AI to "**open the article by (author's name)**," as seen in the image above, Alan responds with the author's name which is our desired result. 
+
+The next step is to save the result in a state and then replace the console log in the **useEffect hook** with the state function.
+
+```jsx
+//create a state to store our results 
+const [input, setInput] = useState("");
+
+  useEffect(() => {
+    alanBtn({
+      key: ALAN_KEY,
+      onCommand: ({ command, author }) => {
+        if (command === "open") {
+          setInput(author);
+        }
+      },
+    });
+  }, []);
+```
+
+We are now done with that. Now, anytime any author is called, we want our Alan AI to fetch each news link and navigate to it. To do this, we are going to create a new **useEffect hook** and in it, we will get the authors name from our CMS data and compare it with our input state in a conditional statement as seen below.build
+```jsx
+//mapping through the CMS data and comparing it with the input state 
+useEffect(() => {
+    data?.listPosts?.data?.map((data) => {
+      if (data.authors.name === input) {
+        window.open(data.slug, "_blank");
+      }
+    });
+  }, [input]);
+```
+
+Once we loop through the CMS data, get the authors name and then make the comparison with the input state, if the condition is true, we then run a **window.open** function to load the authors corresponding **slug** link in a blank page.
+
+[React App - Google Chrome 2022-10-13 01-26-27_Trim.mp4](./assets/build-voice-controlled-news-app-alanai-webiny/React_App_-_Google_Chrome_2022-10-13_01-26-27_Trim.mp4)
+
+As can be seen in the image above, when I asked the Alan AI to open a piece by Riley Cardoza, it took in the author's name right away, matched it to information from the CMS, and then fetched and went to the appropriate slug link.
+
+## Conclusion
+
+We learned about Webiny Headless CMS in this lesson. How simple and straightforward it is to store data in it, retrieve the data, and show the data. By including a voice user experience, we learned how to modify this data and make our product highly accessible to everyone.
+
+**Full source code:** https://github.com/webiny/write-with-webiny/tree/main/tutorials/react-voice-control-news-app
+
+---
+
+This article was written by a contributor to the Write with Webiny program. Would you like to write a technical article like this and get paid to do so? [Check out the Write with Webiny GitHub repo](https://github.com/webiny/write-with-webiny/).
