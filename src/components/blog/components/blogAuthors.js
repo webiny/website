@@ -182,12 +182,12 @@ export default {
         name: "Mandah Israel",
         description: "Technical writer",
         avatar: mandahImg,
-        twitter: ""
+        twitter: "IsraelMandah"
     },
     fredrick: {
         name: "Fredrick Emmanuel",
         description: "Technical Writer",
         avatar: fredrickEImg,
-        twitter: ""  
+        twitter: "divofred"  
     },
 };
