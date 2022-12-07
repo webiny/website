@@ -196,5 +196,11 @@ export default {
         description: "Technical Writer",
         avatar: zaccheausImg,
         twitter: ""  
-    }
+    },
+    ath: {
+        name: "Ath Tripathi",
+        description: "Technical Writer",
+        avatar: nobodyImg,
+        twitter: ""  
+    },
 };
