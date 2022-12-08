@@ -26,6 +26,7 @@ import samWilliamsImg from "../assets/sam-williams.png"
 import fredrickEImg from "../assets/fredrick-emmanuel.png"
 import monikaImg from "../assets/monika.png"
 import mandahImg from "../assets/mandah-israel.png"
+import zaccheausImg from "../assets/zaccheaus-amenya.png"
 
 export default {
     sven: {
@@ -190,4 +191,10 @@ export default {
         avatar: fredrickEImg,
         twitter: "divofred"  
     },
+    zaccheusAmenya: {
+        name: "Zaccheaus Amenya",
+        description: "Technical Writer",
+        avatar: zaccheausImg,
+        twitter: ""  
+    }
 };
