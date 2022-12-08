@@ -25,11 +25,8 @@ import samarpitImg from "../assets/samarpit-shrivastava.png"
 import samWilliamsImg from "../assets/sam-williams.png"
 import fredrickEImg from "../assets/fredrick-emmanuel.png"
 import monikaImg from "../assets/monika.png"
-<<<<<<< HEAD
 import mandahImg from "../assets/mandah-israel.png"
-=======
 import zaccheausImg from "../assets/zaccheaus-amenya.png"
->>>>>>> 476ca2d (feat(blogposts): init www zach hugo blog article)
 
 export default {
     sven: {

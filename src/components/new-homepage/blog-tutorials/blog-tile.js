@@ -13,13 +13,8 @@ import AstroLogo from "../../../assets/astro.svg"
 import NuxtLogo from "../../../assets/nuxtjs.svg"
 import SvelteLogo from "../../../assets/svelte.svg"
 import GatsbyLogo from "../../../assets/gatsby-logo.svg"
-<<<<<<< HEAD
 import AngularLogo from "../../../assets/angular-logo.svg"
-import { ButtonPrimary } from '../hero-section/hero.styled'
-
-=======
 import GolangLogo from "../../../assets/golang-logo.svg"
->>>>>>> 476ca2d (feat(blogposts): init www zach hugo blog article)
 
 const technologies = {
   "vuejs": {
@@ -58,15 +53,13 @@ const technologies = {
     title: "Gatsby",
     image: GatsbyLogo
   },
-<<<<<<< HEAD
   "angular": {
     title: "Angular",
     image: AngularLogo
-=======
+  },
   "golang": {
     title: "Golang",
     image: GolangLogo
->>>>>>> 476ca2d (feat(blogposts): init www zach hugo blog article)
   }
 }
 
