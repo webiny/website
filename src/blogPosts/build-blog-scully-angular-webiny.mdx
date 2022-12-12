@@ -222,9 +222,9 @@ export interface ArticlePost{
 
 Then add this to configure the api url and token key in our app.
 
-Content.service.ts
+```jsx 
+// Content.service.ts
 
-```jsx
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { isScullyGenerated } from '@scullyio/ng-lib';
@@ -314,9 +314,9 @@ export const DefaultWebinyConfig = new WebinyConfig(
 
 Next, we need an interceptor to authenticate our backend. So add this to the interceptor file.
 
- post-auth.interceptor.ts
-
 ```jsx
+// post-auth.interceptor.ts
+
 import { Injectable } from '@angular/core';
 import {
   HttpRequest,
@@ -431,9 +431,9 @@ const routes: Routes = [{
 
 We can inject our service in the home component to load our data
 
-Open home.component.ts
-
 ```jsx
+// home.component.ts
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -464,9 +464,10 @@ export class HomeComponent implements OnInit {
 
 The add this in our home template
 
-home.component.html
 
 ```jsx
+// home.component.html
+
 <<div>
 <ul>
   <li *ngFor="let post of posts">
@@ -523,9 +524,10 @@ export class AppModule { }
 
 Modify plugin in Scully default plugin to fetch our data
 
-routerPlugin
 
 ```jsx
+// routerPlugin
+
 import { registerPlugin, getPluginConfig, httpGetJson,
   routeSplit, } from '@scullyio/scully';
 
@@ -585,6 +587,8 @@ registerPlugin('postProcessByHtml', myPlugin, myFunctionPlugin, validator);
 Configure this in the scully.config file
 
 ```jsx
+// scully.config.ts
+
 import { ScullyConfig } from '@scullyio/scully';
 
 /** this loads the default render plugin, remove when switching to something else. */
@@ -655,6 +659,8 @@ Depending on where you acquire the data from, there are many ways to construct r
 Here is how to configure this in scully.config.ts
 
 ```jsx
+// scully.config.ts
+
 export const config: ScullyConfig = {
   projectRoot: './src',
   projectName: 'scully-blog-starter',
