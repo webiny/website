@@ -196,5 +196,11 @@ export default {
         description: "Technical Writer",
         avatar: zaccheausImg,
         twitter: ""  
+    },
+    grace: {
+        name: "Grace Gitt",
+        description: "Technical Writer",
+        avatar: nobodyImg,
+        twitter: ""  
     }
 };
