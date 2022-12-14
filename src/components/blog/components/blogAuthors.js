@@ -27,6 +27,7 @@ import fredrickEImg from "../assets/fredrick-emmanuel.png"
 import monikaImg from "../assets/monika.png"
 import mandahImg from "../assets/mandah-israel.png"
 import zaccheausImg from "../assets/zaccheaus-amenya.png"
+import athImg from "../assets/ath-tripathi.png"
 
 export default {
     sven: {
@@ -196,5 +197,11 @@ export default {
         description: "Technical Writer",
         avatar: zaccheausImg,
         twitter: ""  
-    }
+    },
+    ath: {
+        name: "Ath Tripathi",
+        description: "I am Ath tripathi, a 17-year-old full-stack developer, part-time artist, and AI enthusiast.",
+        avatar: athImg,
+        twitter: ""  
+    },
 };
