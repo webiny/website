@@ -199,7 +199,7 @@ export default {
     },
     ath: {
         name: "Ath Tripathi",
-        description: "Technical Writer",
+        description: "I am Ath tripathi, a 17-year-old full-stack developer, part-time artist, and AI enthusiast.",
         avatar: nobodyImg,
         twitter: ""  
     },
