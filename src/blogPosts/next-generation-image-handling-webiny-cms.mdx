@@ -5,7 +5,7 @@ description: "In this tutorial, we will learn about the Webiny CMS and how we ca
 tags: ["contributed articles"]
 featureImage: "./assets/next-generation-image-handling-webiny-cms/cover.png"
 author: ath
-date: 2023-01-18
+date: 2022-12-14
 ---
 Today we will learn about one of the main features of Webiny, its file manager. We will go in depth about its use and demonstrate why it is superior to file managers in other content management systems. We will talk about how to use its features in detail, along with how to render images using the GraphQL API and in a simple HTML document.
 
@@ -37,27 +37,27 @@ These features, along with the file manager, make a great starting point for a w
 
 ## Introduction to Webiny File manager and its benefits:
 
-Webiny includes a scalable and serverless asset management system. It is a built-in Webiny part that you can easily access directly or via it’s API. While dealing with file data types, the file manager is used for inputting and uploading files. The infrastructure helps to keep a single version of each image in your project or web pages and provide it to different users on the basis of their devices.
+Webiny includes a scalable and serverless asset management system. It is a built-in Webiny app that you can easily access via the UI in a web browser, or via it’s API. While dealing with file data types, the file manager is used for inputting and uploading files. The infrastructure helps to keep a single version of each image in your project or web pages and provide it to different users on the basis of their devices.
 
 Dynamic serverless image editing allows you to create images on the fly and serve them to multiple devices without much headache or issue. You can flip, filter, crop images, and perform many other functions for different use cases.
 
-Let's talk about some features of the Webiny file manager.
+Let's talk about some of it's key features.
 
-### Structure and organization:
+### 1. Structure and organization:
 
 You can add different tags to a single image. These tags help you to find that image even if you have hundreds of image assets. Along with tags, you also get a searching feature, which is powered by elastic search in the DynamoDB + ElasticSearch version of Webiny.
 
 Webiny is built to be modified, so you can tweak React components to make changes in the File Manager UI, upload and delete files via the API, and you can also make changes to the GraphQL schema for delivering images.
 
-### Large data handling:
+### 2. Large data handling:
 
 Webiny uses an S3 bucket for storing all files; this architecture is mainly for scalability and easy handling of data. The S3 bucket is Amazon’s cloud storage resource, which is like files and folders and stores simple data and descriptive metadata.
 
-### Image editor:
+### 3. Image editor:
 
 The built-in image editor is my favorite feature of the file manager. You can crop, flip, rotate, and apply filters to images. It is a collection of features that can help you save time, resources, and effort in a variety of tasks.
 
-### Image API:
+### 4. Image API:
 
 The best part of the image API is that the CDN caches the images. So you will be getting a CDN link for images, and by default, every uploaded image is set to some preset sizes.
 
@@ -67,7 +67,7 @@ This is a graphQL API, so you can choose very specific data to render images in 
 
 I am assuming that you are done with creating your Webiny project and deploying it. I also assume that you also made yourself an admin user, and now you are on the home page of your application.
 
-It will be looking like this:
+It will look like this:
 
 ![capture](./assets/next-generation-image-handling-webiny-cms/Capture_copy.png)
 
@@ -201,9 +201,7 @@ Now you will see a bunch of filters there and you can tweak them and see real-ti
 
 ![](./assets/next-generation-image-handling-webiny-cms/27filter2.png)
 
-Now exactly as before just click on apply and save. (i increase noise, sepia, and clip in my case).
-
-Now let’s see all our results:
+Now exactly as before just click on apply and save. Now let’s see all our results:
 
 ![](./assets/next-generation-image-handling-webiny-cms/Background.png)
 
@@ -239,7 +237,7 @@ Now after it is all done go to the API playground and shift to the Read API tab:
 
 That link in the red box will be where we are going to send the request.
 
-Now open any API request-sending software like Postman; I am going to use Insomnia.
+Now open any your API inspection software of choice, such as Postman; I am going to use Insomnia.
 
 Now set the POST request to the link and switch to authentication and set it to "Bearer" and paste the token that I asked you to copy:
 
@@ -283,7 +281,6 @@ Copy the given link into the red box and we will use it. Now create an HTML file
 <!DOCTYPE html>
 <html>
     <head>
-
     </head>
     <body>
         <h2>IMAGE:</h2>
@@ -414,3 +411,7 @@ There are other benefits as well, such as AWS CloudFront’s built-in DDoS prote
 We hope this article has helped you decide why to choose Webiny, the benefits of it’s infrastructure, and how it saves costs and resources. We’ve also learned about the file manager and its built-in tools.
 
 If you would like to learn more about Webiny or talk to one of our advisers, [please contact us today](https://site.webiny.com/forms/enterprise-requirements?_gl=1*q0okcf*_ga*MTMzNzgyMTczMi4xNjY3NDcyNTYy*_ga_7JWHE1EE2Z*MTY3MDQwNTAyMi4yMy4xLjE2NzA0MDU5MzUuMC4wLjA.).
+
+---
+
+This article was written by a contributor to the Write with Webiny program. Would you like to write a technical article like this and get paid to do so? [Check out the Write with Webiny GitHub repo](https://github.com/webiny/write-with-webiny/).
