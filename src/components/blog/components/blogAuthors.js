@@ -198,9 +198,9 @@ export default {
         twitter: ""  
     },
     grace: {
-        name: "Grace Gitt",
-        description: "Technical Writer",
+        name: "Grace Njeri",
+        description: "Passionate technical writer with a solid background in python, php, angular, react and machine learning.",
         avatar: nobodyImg,
-        twitter: ""  
+        twitter: "Zione96453263"  
     }
 };
