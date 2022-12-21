@@ -209,6 +209,6 @@ export default {
         name: "Christopher Okoro",
         description: "Technical Writer",
         avatar: christofaImg,
-        twitter: ""  
+        twitter: "WebinyCMS"
     },
 };

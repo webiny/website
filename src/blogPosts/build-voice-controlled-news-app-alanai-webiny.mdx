@@ -1,10 +1,10 @@
 ---
 slug: "blog/build-voice-controlled-news-app-alanai-webiny"
-title: "Building a Voice Controlled News Application using React, Alan Ai, and Webiny CMS"
-description: "In this tutorial, we'll be building an Trello clone with Next.js and Webiny Headless CMS."
-date: 2022-12-14
+title: "Building a Voice Controlled News Application using React, Alan AI, and Webiny CMS"
+description: "In this tutorial, we'll be building a voice-controlled news application using React, Alan AI, and Webiny CMS."
+date: 2022-12-21
 featureImage: "./assets/build-voice-controlled-news-app-alanai-webiny/cover.png"
-tags: ["Alan.ai", "React", "headless CMS", "contributed articles"]
+tags: ["Alan AI", "React", "headless CMS", "contributed articles"]
 type: blog
 author: chrisOkoro
 featured: false
@@ -14,9 +14,9 @@ ghLink: "https://github.com/webiny/write-with-webiny/tree/main/tutorials/react-v
 ---
 With serverless infrastructure, developers can create and run services without having to worry about maintaining the underlying infrastructure. While a cloud provider sets up servers to operate their apps, databases, and storage systems at any size, developers can focus on deliverables, writing and distributing code more quickly than in traditional environments.
 
-We will demonstrate in this tutorial how to use Webiny Headless CMS capabilities while creating a news application powered by Alan Ai. We'll get a full grasp of how Webiny works as a serverless CMS and we’ll go through creating and setting it up, configuring it, and deploying it into our project using a GraphQL API. 
+We will demonstrate in this tutorial how to use Webiny Headless CMS capabilities while creating a news application powered by Alan AI. We'll get a full grasp of how Webiny works as a serverless CMS and we’ll go through creating and setting it up, configuring it, and deploying it into our project using a GraphQL API. 
 
-We’ll also be integrating a [Voice user interface (VUIs)](https://www.interaction-design.org/literature/topics/voice-user-interfaces#:~:text=Voice%20user%20interfaces%20(VUIs)%20allow,Alexa%2C%20are%20examples%20of%20VUIs.) that allows voice or speech instructions to be used by the user to communicate with the system. VUIs include virtual assistants like Siri, Google Assistant, Alan Ai, and Alexa. For this tutorial, we will be using Alan Ai as our VUI.
+We’ll also be integrating a [Voice user interface (VUIs)](https://www.interaction-design.org/literature/topics/voice-user-interfaces#:~:text=Voice%20user%20interfaces%20(VUIs)%20allow,Alexa%2C%20are%20examples%20of%20VUIs.) that allows voice or speech instructions to be used by the user to communicate with the system. VUIs include virtual assistants like Siri, Google Assistant, Alan AI, and Alexa. For this tutorial, we will be using Alan AI as our VUI.
 
 ## What is a Headless CMS
 
@@ -32,17 +32,17 @@ A Headless CMS is simply any form of back-end content management system in which
 
 ## Prerequisites
 
-We will be creating a news application that allows you to view images, title text with descriptions, date of publishing, the authors, and a link that can be clicked manually to navigate to the full story or can be navigated for you by sending speech commands using the Alan Ai. To follow along, the following are required: 
+We will be creating a news application that allows you to view images, title text with description, publish date, author, and a link that can be clicked manually to navigate to the full story or can be navigated for you by sending speech commands using the Alan AI. To follow along, the following are prerequisites: 
 
 - Set up your local [AWS credentials](https://www.webiny.com/docs/infrastructure/aws/configure-aws-credentials).
     - You are required to have a properly configured AWS account to successfully deploy your Webiny project
 - Ensure you have [Node.js](https://nodejs.org/en/download/) installed
 - Make sure yarn version 1.22.0 or older is installed because Webiny is compatible with both yarn versions.
 - An understanding of ReactJs and JavaScript
-- A basic understanding of [Alan Ai](https://alan.app/docs/)
+- A basic understanding of [Alan AI](https://alan.app/docs/)
 - Star our [GitHub Repo](https://github.com/webiny/webiny-js) 😉
 
-## Putting our Webiny CMS together
+## Create a Webiny Project
 
 The first thing required to do is to create a new Webiny project by entering the commands below: 
 
@@ -50,7 +50,7 @@ The first thing required to do is to create a new Webiny project by entering the
 npx create-webiny-app news-app
 ```
 
-This should automatically set up your project. You will be requested to select an AWS region and a database your project will be deployed with. For this project, we will be using DynamoDB as we are building a small project.  Once created, navigate to the folder and input the command below.
+This command will set up your Webiny project. You will be requested to select an AWS region and a database your project will be deployed with. For this project, we will be using DynamoDB as we are building a small project.  Once created, navigate to the folder and input the command below.
 
 ```jsx
 cd news-app && yarn webiny-deploy
@@ -66,7 +66,7 @@ Now click on the **Admin App** link. You will now be redirected to the Admin are
 
 We have successfully deployed and registered for our Webiny project. We must now develop our models.
 
-## Creating our Content Models
+## Creating Content Models
 
 First, we will need to create the models for our application. In the Webiny dashboard, click on the **New Content  Model** button 
 
@@ -100,7 +100,7 @@ The **post model** should look like the one below after creating all fields
 
 ![Screenshot (97).png](./assets/build-voice-controlled-news-app-alanai-webiny/Screenshot_(97).png)
 
-## Inputting data into our models
+## Inserting data into models
 
 Once all models are created properly with all required fields for the application to function well, the next thing to do is to add some data inside the models that will be displayed later in the front end. To do this, click on the **menu button** on the left, then the **Headless CMS** dropdown > **Ungrouped** > **authors**, and finally, click on create the **New entry** button.
 
@@ -112,7 +112,7 @@ Now fill out the entry field and click on **save and publish** as seen above. Yo
 
 ![Screenshot (96).png](./assets/build-voice-controlled-news-app-alanai-webiny/Screenshot_(96).png)
 
-## Testing Our GraphQL API
+## Testing GraphQL API
 
 We have successfully populated our fields and we can now view the data we are fetching from the CMS. Click on the menu button, then click on the **API Playground** and inside the **Headless CMS - Read API tab** execute the following query to list all posts
 
@@ -192,7 +192,7 @@ import "./App.css";
 import alanBtn from "@alan-ai/alan-sdk-web";
 
 function App() {
-  //integrating Alan Ai into the project
+  //integrating Alan AI into the project
   useEffect(() => {
     alanBtn({
       key: process.env.REACT_APP_ALAN_KEY,
