@@ -1,0 +1,417 @@
+---
+slug: "blog/next-generation-image-handling-webiny-cms"
+title: "Next-generation Image Handling with Webiny File Manager"
+description: "In this tutorial, we will learn about the Webiny CMS and how we can use it in React by building a job board application."
+tags: ["contributed articles"]
+featureImage: "./assets/next-generation-image-handling-webiny-cms/cover.png"
+author: ath
+date: 2022-12-14
+---
+Today we will learn about one of the main features of Webiny, its file manager. We will go in depth about its use and demonstrate why it is superior to file managers in other content management systems. We will talk about how to use its features in detail, along with how to render images using the GraphQL API and in a simple HTML document.
+
+Today we are going to cover the following topics:
+
+- What is the Webiny File Manager and what are its benefits?
+- How to do file manipulation in the file manager (uploading, deleting, renaming)
+- How to use the Webiny image editor for general tasks (cropping, flipping, filtering, and rotating)
+- How to render image data through the GraphQL API
+- How to set an image in an HTML file using the `srcset` attribute
+- Accessing image data from the API using third-party software like Insomnia
+- Mitigating cumulative layout shift (CLS) issues
+
+### What is Webiny?
+
+Webiny is an open-source content management system designed for enterprises. It uses serverless architecture for cost-effective performance and better scalability.
+
+Serverless architecture is a way to develop services without worrying about infrastructure. Simply write your code and deploy it to the cloud. It has lower latency, lower cost, quick deployment, high speed, and less mental fuss. Building on top of those services, Webiny makes building advanced applications easier, quicker, and more enjoyable.
+
+Some features of Webiny which make it a really great CMS for projects:
+
+- [Headless CMS](https://www.webiny.com/docs/overview/applications/headless-cms)
+- [Page Builder](https://www.webiny.com/docs/overview/applications/page-builder)
+- [Form Builder](https://www.webiny.com/docs/overview/applications/form-builder)
+- [Advanced Publishing Workflow](https://www.webiny.com/docs/overview/applications/apw)
+- [Admin interface](https://www.webiny.com/docs/overview/applications/admin) dashboard
+
+These features, along with the file manager, make a great starting point for a wide range of uses.
+
+## Introduction to Webiny File manager and its benefits:
+
+Webiny includes a scalable and serverless asset management system. It is a built-in Webiny app that you can easily access via the UI in a web browser, or via it’s API. While dealing with file data types, the file manager is used for inputting and uploading files. The infrastructure helps to keep a single version of each image in your project or web pages and provide it to different users on the basis of their devices.
+
+Dynamic serverless image editing allows you to create images on the fly and serve them to multiple devices without much headache or issue. You can flip, filter, crop images, and perform many other functions for different use cases.
+
+Let's talk about some of it's key features.
+
+### 1. Structure and organization:
+
+You can add different tags to a single image. These tags help you to find that image even if you have hundreds of image assets. Along with tags, you also get a searching feature, which is powered by elastic search in the DynamoDB + ElasticSearch version of Webiny.
+
+Webiny is built to be modified, so you can tweak React components to make changes in the File Manager UI, upload and delete files via the API, and you can also make changes to the GraphQL schema for delivering images.
+
+### 2. Large data handling:
+
+Webiny uses an S3 bucket for storing all files; this architecture is mainly for scalability and easy handling of data. The S3 bucket is Amazon’s cloud storage resource, which is like files and folders and stores simple data and descriptive metadata.
+
+### 3. Image editor:
+
+The built-in image editor is my favorite feature of the file manager. You can crop, flip, rotate, and apply filters to images. It is a collection of features that can help you save time, resources, and effort in a variety of tasks.
+
+### 4. Image API:
+
+The best part of the image API is that the CDN caches the images. So you will be getting a CDN link for images, and by default, every uploaded image is set to some preset sizes.
+
+This is a graphQL API, so you can choose very specific data to render images in a UI.
+
+## How to upload an image in the file manager
+
+I am assuming that you are done with creating your Webiny project and deploying it. I also assume that you also made yourself an admin user, and now you are on the home page of your application.
+
+It will look like this:
+
+![capture](./assets/next-generation-image-handling-webiny-cms/Capture_copy.png)
+
+Now click on the upper left hamburger icon, and it will open a sidebar. For manageability, we will be creating both "groups" and "models." Click on the hamburger icon, and on the left sidebar, under "Content Model," click on the group:
+
+![](./assets/next-generation-image-handling-webiny-cms/2.1.png)
+
+Now you will be redirected to the Group page, where you will see a button that says "Save Group." Enter the data as shown in the photo below and click on "Save content model group":
+
+![](./assets/next-generation-image-handling-webiny-cms/3.1.png)
+
+A new group with the name "Photo" will be created; now click on the hamburger icon again and choose models from the option that was below the group:
+
+![](./assets/next-generation-image-handling-webiny-cms/4.1.png)
+
+You will arrive at the model's page; click the "New model" button, and a popup will appear; fill in the details (in my case, I filled in the name "Image," and chose the group "Photo":
+
+![](./assets/next-generation-image-handling-webiny-cms/5.png)
+
+You will reach the model editing page, where you will see a UI like this:
+
+![](./assets/next-generation-image-handling-webiny-cms/6.png)
+
+Now we will be needing to drop the Files and Text data type; hold "FILES" and drop it in the blue dotted box. A new popup will appear as follows:
+
+![](./assets/next-generation-image-handling-webiny-cms/7.png)
+
+In Label, put "File name," toggle the "Image only" option, and click on the Save Files button.
+
+Now click on the Save button on the top right corner to save the model:
+
+![](./assets/next-generation-image-handling-webiny-cms/8.png)
+
+Now you are ready to start uploading your files. For that, click on the hamburger icon again and scroll down. You will see a star icon and a "PHOTO" group written below it. You will find "Images." Click on it:
+
+![](./assets/next-generation-image-handling-webiny-cms/9.1-1.png)
+
+On clicking it, you will reach a new page. Click on the "NEW ENTRY" button, and it will be something like this:
+
+![](./assets/next-generation-image-handling-webiny-cms/10.1.png)
+
+Click on the area covered in the red box and choose an image; it will open a new window; then click on "Upload":
+
+![](./assets/next-generation-image-handling-webiny-cms/11.png)
+
+Now click on “SAVE AND PUBLISH” and you successfully uploaded your first file on Webiny.
+
+### Duplicating, renaming, and deleting file in the file manager:
+
+Now we learned how to upload files now let’s learn about file manipulation. Let’s start with renaming the image.
+
+Come to this page again:
+
+![](./assets/next-generation-image-handling-webiny-cms/12-1.png)
+
+Click on the image and the file manager interface will open:
+
+![](./assets/next-generation-image-handling-webiny-cms/13.png)
+
+When you hover over the image you will see a gear icon, click on it and it will open a right sidebar, where you can change the image name:
+
+![](./assets/next-generation-image-handling-webiny-cms/11.1.png)
+
+In the red box, I marked write any name and click anywhere, it will change the name. Like following:
+
+![](./assets/next-generation-image-handling-webiny-cms/12.2.png)
+
+Now let's duplicate the image. For that click on the gear icon again and edit image button:
+
+![](./assets/next-generation-image-handling-webiny-cms/22.png)
+
+It will open a new page and just click on save without doing anything, it will duplicate your file:
+
+![edited3.png](./assets/next-generation-image-handling-webiny-cms/edited3.png)
+
+It will have duplicated the image:
+
+![](./assets/next-generation-image-handling-webiny-cms/18.png)
+
+Now for deleting, again click on the gear icon and click on the delete button:
+
+![edited2.png](./assets/next-generation-image-handling-webiny-cms/edited2.png)
+
+It will delete the image. Now we are all done with basic file manipulation, now let's jump to the image editing part.
+
+### Editing images in the image editor:
+
+Getting back to the same page:
+
+![](./assets/next-generation-image-handling-webiny-cms/21.png)
+
+Click on the gear icon and choose the edit button:
+
+![](./assets/next-generation-image-handling-webiny-cms/22.png)
+
+Click on the pencil icon and it will open a new window, we will start with cropping:
+
+![](./assets/next-generation-image-handling-webiny-cms/23Cropping.png)
+
+Now  click on the cropping option between the red box for cropping the image, now you will be on a new page:
+
+![](./assets/next-generation-image-handling-webiny-cms/24Crop.png)
+
+Click on apply button then the save button and it will save the cropped image.
+
+Next, we will flip the image:
+
+![](./assets/next-generation-image-handling-webiny-cms/24Flipping.png)
+
+Click on the function inbox and you will reach a new page:
+
+![](./assets/next-generation-image-handling-webiny-cms/25flip.png)
+
+Click on “FLIPX” or “FLIPY” and then “APPLY” and hit save. (i do FLIPX, which will show all results in end.)
+
+Let's go with Rotate now, click on the function in the red box:
+
+![](./assets/next-generation-image-handling-webiny-cms/26.png)
+
+Now you will see a new page, you will get a range of input(i am rotating at 90 degrees):
+
+![](./assets/next-generation-image-handling-webiny-cms/26rot2.png)
+
+Now again click on Apply button and then save.
+
+Now let’s move on to the last function and most interesting one, which is the filter, so click on the function between the red box:
+
+![](./assets/next-generation-image-handling-webiny-cms/27.png)
+
+Now you will see a bunch of filters there and you can tweak them and see real-time changes on the image:
+
+![](./assets/next-generation-image-handling-webiny-cms/27filter2.png)
+
+Now exactly as before just click on apply and save. Now let’s see all our results:
+
+![](./assets/next-generation-image-handling-webiny-cms/Background.png)
+
+Here are all our results, hope you understood how each function for image editing work.
+
+## Connecting to and fetching images from the GraphQL API:
+
+Now that we already know about image and file manipulation, let's learn how to get those images through the GraphQL API.
+
+First let’s create the API key for authentication purposes so our third-party software or application can access our models through graphQL APIs, so first click on the hamburger menu icon, and on the left sidebar scroll down and under "settings," find "API keys":
+
+![](./assets/next-generation-image-handling-webiny-cms/28Api.png)
+
+Now you will be on the API keys page, now click on the “NEW API KEY” button and fill in the following in Name and description:
+
+![](./assets/next-generation-image-handling-webiny-cms/29.png)
+
+Now scroll down and under Permissions and under Content select “All locales”:
+
+![](./assets/next-generation-image-handling-webiny-cms/30.png)
+
+Now scroll down and under “Headless CMS” set the access level to “custom access” and select “read”:
+
+![](./assets/next-generation-image-handling-webiny-cms/31.png)
+
+Now scroll down more and click on  “Save API KEY”. After you have done that scroll upward and under the token copy the token:
+
+![Background (8).png](./assets/next-generation-image-handling-webiny-cms/Background_8.png)
+
+Now after it is all done go to the API playground and shift to the Read API tab:
+
+![Background (7).png](./assets/next-generation-image-handling-webiny-cms/Background_(7).png)
+
+That link in the red box will be where we are going to send the request.
+
+Now open any your API inspection software of choice, such as Postman; I am going to use Insomnia.
+
+Now set the POST request to the link and switch to authentication and set it to "Bearer" and paste the token that I asked you to copy:
+
+![Background (8).png](./assets/next-generation-image-handling-webiny-cms/Background_8_1.png)
+
+Now in the data structure set it to graphQL and put these queries:
+
+```graphql
+{
+  listImages {
+    data {
+      fileName
+    }
+ }
+}
+```
+
+Before making a query, make sure to play in the API playground. I'm not going to explain how to make queries in Playground, but it should be the same as above if you followed exactly like mine, now paste it in as follows:
+
+![Background (5).png](./assets/next-generation-image-handling-webiny-cms/Background_(5).png)
+
+Now click on send and you will get the following results:
+
+![Background (4).png](./assets/next-generation-image-handling-webiny-cms/Background_(4).png)
+
+Now I think we are done with the connection with API now let’s learn about setting images using `srcset` in HTML.
+
+### Setting image in HTML:
+
+Now let’s create an HTML file where we would render our Webiny pics in our file while using the `srcset` attribute.
+
+Make sure to upload different sizes of images. I am using one image at 499x320 pixels, and the a copy at 998x640 pixels.
+
+We will be needing the URL that we get in our experiment above:
+
+![Background (4).png](./assets/next-generation-image-handling-webiny-cms/Background_(4).png)
+
+Copy the given link into the red box and we will use it. Now create an HTML file and write the code below:
+
+```jsx
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h2>IMAGE:</h2>
+        <body>
+        <img 
+          alt="planets"
+          src="https://xxxxxx.cloudfront.net/files/9l9ftcskb-bg.jpg" 
+          srcset="
+            https://d22c5199iq663l.cloudfront.net/files/9l9ftcskb-bg.jpg 1x,
+            https://xxxxx.cloudfront.net/files/8lafh4zr8-download.v1.png 2x
+            "
+          />
+</body>
+</html>
+```
+
+We are using `src` as a fallback because [some older browsers don’t understand the newer `srcset` api](https://caniuse.com/?search=srcset).
+
+It is simple to understand we set the width of the image using sizes and etc, here is the result:
+
+![](./assets/next-generation-image-handling-webiny-cms/23Cropping.png)
+
+Using this method, you can use the file manager to store image for a range of uses, including embedding in online documentation and for use in CRMs or other tools your organization already uses.
+
+## Mitigating Content Layout Shift issues:
+
+First, let's understand what a CLS issue is. It is a layout shift of the image when content like an image or text moves around when it loads in. The simplest way to avoid CLS for images is by adding aspect ratios and using width and height attributes in our HTML.
+
+Now we will simply make some changes to our image model and add the default width and height of the image manually.
+
+First, go to the  model list and choose edit model:
+
+![](./assets/next-generation-image-handling-webiny-cms/cls.png)
+
+Click on edit model and add two number fields:
+
+![](./assets/next-generation-image-handling-webiny-cms/cls2.png)
+
+Add the following details in the field:
+
+![](./assets/next-generation-image-handling-webiny-cms/cls3.png)
+
+Similarly, add one for height and everything will look like the following:
+
+![](./assets/next-generation-image-handling-webiny-cms/cls4.png)
+
+Hit on save and you are done with defining aspect ratios.
+
+Now get to the entry page of the image from the left sidebar:
+
+![](./assets/next-generation-image-handling-webiny-cms/9.1-1.png)
+And then add the width and height as follow:
+
+![Capture.PNG](./assets/next-generation-image-handling-webiny-cms/Capture.png)
+
+Now you can quickly get the width and height of the image to avoid the CLS issue from API:
+
+![Background (2).png](./assets/next-generation-image-handling-webiny-cms/Background_(2).png)
+
+Like above we are getting width and height also as the parameter, we can use them when we call API from a JS script and then add default width and height as follows:
+
+```jsx
+<!DOCTYPE html>
+
+<html>
+  <head>
+  </head>
+  <body>
+    <h2>IMAGE:</h2>
+    <img 
+      width="499" 
+      height="320"
+      srcset="https://xxxxx.cloudfront.net/files/9l9ftcskb-bg.jpg 120w" 
+      alt=""
+    />
+  </body>
+</html>
+```
+
+Result for this:
+
+![res2.PNG](./assets/next-generation-image-handling-webiny-cms/res2.png)
+
+By creating a content model for your image we can solve the layout shift issues by defining the aspect ratio of the image. This method can be used to create alternative text for screen readers too.
+
+##  File managers compared: Webiny vs Strapi
+
+Strapi, an open-source headless CMS is a name that often comes into my mind when we talk about CMS. Strapi's file manager provides you with some features similar to Webiny, including multiple file uploading, live editing, responsive formatting etc.
+
+Both CMS have many similarities between them along with some key differences in their offerings and working style which can be big factors when deciding the CMS for your project.
+
+ We are going to compare factors like hosting, storage services, CDN, scalability, and multi-tenancy.
+
+Let’s now talk about them in detail.
+
+### 1. Hosting and setting up image storage
+
+Webiny is hosted on AWS, making the application completely serverless. Create your project file and deploy it without any configuration by using a simple deployment command. You won’t need to worry about configuring the database or the image hosting. All services are built-in.
+
+Strapi, on the other hand, can be hosted by any provider. With Strapi, setting up different databases and storage services will cost you extra money and time. If we talk about hosting on AWS, you will have to create an S3 bucket separately that stores files that can be served through your application. You will need to connect the AWS RDS service for managing and hosting databases separately. Suppose you want to use another service, like MongoDB. In that case, it will again need extra configuration.
+
+### 2. CDN services
+
+In Webiny, when you upload any image, it is automatically cached in the CDN as it is a built-in feature of Webiny. With the Webiny image serving API, you can get the CDN link for any image that you upload. It uses Amazon’s CloudFront for this purpose.
+
+To provide efficient image delivery with Strapi, you will need to set up a CDN service yourself, like Cloudinary or CloudFront, separately.
+
+### 3. Multiple project support
+
+With Webiny, you can host the backend once and use it for many projects. This is because Webiny supports multi-tenancy without extra configuration.
+
+Strapi at the time of writing doesn’t support multi-tenancy. Because of this, you need to host different backends separately for different projects.
+
+### 4. Scalability and other indirect costs
+
+When you are developing a large project, you will be needing to manage large amounts of data and files. In case of scaling the project, you will be needing to hire DevOps and engineers for handling your infrastructure. This means extra time on human resources and more time building configuration tools. Webiny has the advantage of built-in scaling, both to increase it’s capacity and to reduce it to zero automatically, facilitating efficient use of funds and time. On the other hand, scaling Strapi needs to be managed by your internal team, whether it’s increasing Kubernetes pods, allocating extra resources, or adding extra layers of read/write capacity.
+
+### 5. Security
+
+Webiny utilizes the AWS user authentication system AWS Cognito, by default. It doesn’t depend on it’s own internal tools, like Strapi does by default. Webiny also has pre-built configuration for Okta and Auth0 which is available on the Enterprise plan.
+
+Leveraging existing systems for authentication means that security is delegated to the experts who work on these issues 24/7, and avoids having to quickly patch a system once a security flaw is detected.
+
+There are other benefits as well, such as AWS CloudFront’s built-in DDoS protection, which means even whilst under attack, the system can still continue to function.
+
+## Summary:
+
+We hope this article has helped you decide why to choose Webiny, the benefits of it’s infrastructure, and how it saves costs and resources. We’ve also learned about the file manager and its built-in tools.
+
+If you would like to learn more about Webiny or talk to one of our advisers, [please contact us today](https://site.webiny.com/forms/enterprise-requirements?_gl=1*q0okcf*_ga*MTMzNzgyMTczMi4xNjY3NDcyNTYy*_ga_7JWHE1EE2Z*MTY3MDQwNTAyMi4yMy4xLjE2NzA0MDU5MzUuMC4wLjA.).
+
+---
+
+This article was written by a contributor to the Write with Webiny program. Would you like to write a technical article like this and get paid to do so? [Check out the Write with Webiny GitHub repo](https://github.com/webiny/write-with-webiny/).
