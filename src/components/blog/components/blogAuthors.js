@@ -26,6 +26,7 @@ import samWilliamsImg from "../assets/sam-williams.png"
 import fredrickEImg from "../assets/fredrick-emmanuel.png"
 import monikaImg from "../assets/monika.png"
 import mandahImg from "../assets/mandah-israel.png"
+import christofaImg from "../assets/chris-okoro.png"
 import zaccheausImg from "../assets/zaccheaus-amenya.png"
 import athImg from "../assets/ath-tripathi.png"
 
@@ -203,5 +204,11 @@ export default {
         description: "I am Ath tripathi, a 17-year-old full-stack developer, part-time artist, and AI enthusiast.",
         avatar: athImg,
         twitter: ""  
+    },
+    chrisOkoro: {
+        name: "Christopher Okoro",
+        description: "Technical Writer",
+        avatar: christofaImg,
+        twitter: "WebinyCMS"
     },
 };
