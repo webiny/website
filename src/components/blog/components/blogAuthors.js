@@ -26,7 +26,7 @@ import samWilliamsImg from "../assets/sam-williams.png"
 import fredrickEImg from "../assets/fredrick-emmanuel.png"
 import monikaImg from "../assets/monika.png"
 import mandahImg from "../assets/mandah-israel.png"
-import mauriceImg from "../assets/nobody.png"
+import mauriceImg from "../assets/maurice-king.png"
 
 export default {
     sven: {
@@ -129,7 +129,7 @@ export default {
         name: "Victory Tuduo",
         description: "A software developer and technical writer",
         avatar: victoryImg,
-        twitter: "@vhicktri",
+        twitter: "vhicktri",
     },
     menardMaranan: {
         name: "Menard Maranan",
@@ -183,18 +183,18 @@ export default {
         name: "Mandah Israel",
         description: "Technical writer",
         avatar: mandahImg,
-        twitter: ""
+        twitter: "WebinyCMS"
     },
     fredrick: {
         name: "Fredrick Emmanuel",
         description: "Technical Writer",
         avatar: fredrickEImg,
-        twitter: ""  
+        twitter: "WebinyCMS"  
     },
     maurice: {
         name: "Maurice King",
         description: "Technical Writer",
         avatar: mauriceImg,
-        twitter: ""  
+        twitter: "reecebyron012"  
     },
 };

@@ -1,29 +1,27 @@
 ---
 slug: "blog/build-blog-eleventy-webiny-headless-cms"
-title: "Build a Blog with Gatsby and Webiny Headless CMS"
-description: "In this tutorial, we will build a blog site with Gatsby and Webiny Headless CMS. We will look at how to set up Webiny and consume that data in a Gatsby project."
+title: "Build a Blog with Eleventy (11ty) and Webiny Headless CMS"
+description: "In this tutorial, we will build a blog site with Eleventy (11ty) and Webiny Headless CMS. We will look at how to set up Webiny and consume that data in a Eleventy (11ty) project."
 tags: ["eleventy", "build projects", "blog site", "contributed articles"]
 featureImage: "./assets/build-blog-eleventy-webiny-headless-cms/cover.png"
 author: maurice
-date: 2022-12-24
+date: 2023-01-18
 featured: false
 ---
-In this tutorial, we will use Eleventy and Webiny to create a blog website, we'll learn how to connect to Webiny and use it as a source of data for our front end created with Eleventy. To learn how to use this data in the application, we will develop content models and data in the Webiny CMS. It would be nice if you have the following background knowledge before continuing.
+In this tutorial, we will use Eleventy (11ty) and Webiny to create a blog website, we'll learn how to connect to Webiny and use it as a source of data for our front end created with Eleventy. To learn how to use this data in the application, we will develop content models and data in the Webiny CMS. It would be nice if you have the following background knowledge before continuing.
 
 - Have a basic understanding of JavaScript object [destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) procedures.
 - Know how to access data from an API.
 - Know the methods used to transfer data between components.
 
-## What is Webiny
+## What is Webiny?
 
 Webiny is a [serverless CMS](/why-serverless) that is open source and built with advanced tools and technologies. The Content Delivery API also allows you to interact with other technologies such as Gatsby, Next.js, and Astro.
-
 Webiny enables users to build websites and web apps in both large and small projects with minimal effort by providing all of the necessary tools, all of which are tuned to work together.
 
-## What is Eleventy
+## What is Eleventy?
 
 Eleventy, usually known as 11ty, is an easy yet effective [static site generator](https://www.cloudflare.com/learning/performance/static-site-generator/). It converts data and templates into HTML pages using JavaScript.
-
 It builds quick sites by default, has quick construction times, and is user-friendly for beginners. It also offers a vibrant, welcoming community.
 
 ### Setting up an Eleventy site
@@ -64,7 +62,7 @@ build //-builds the website's files
 start //-runs the web server locally on http://localhost:8080.
 ```
 
-We will use the [`Nunjucks`](https://mozilla.github.io/nunjucks/) `[templating language](https://stackoverflow.com/questions/4026597/what-is-a-templating-language#:~:text=A%20templating%20language%20basically%20is,for%20designing%20a%20web%20page.)` for this project. [`Nunjucks`](https://mozilla.github.io/nunjucks/) is a common choice for many Eleventy projects. (Depending on your preference, you could also choose a different `templating language.`)
+We will use the [Nunjucks](https://mozilla.github.io/nunjucks/) templating language for this project. Nunjucks is a common choice for many Eleventy projects. (Depending on your preference, you could also choose a different templating language.)
 
 In the root directory of your project, create an `index.njk` file and add the following code inside.
 
@@ -88,7 +86,7 @@ By hitting the keys Ctrl + C on your keyboard, you can exit the server at any ti
 
 You’ll need to create a base template that will be applied to all the pages of the site to make your project more flexible  from the start. This is referred to as the base layout, and it needs to go into a `layouts` directory inside the `_includes` directory.
 
-Use the following command to make the _includes/layouts directory:
+Use the following command to make the `_includes/layouts` directory:
 
 ```jsx
 mkdir -p _includes/layouts
@@ -479,17 +477,17 @@ layout: layouts/base.njk
 
 After saving the file, go to the homepage in the browser to see the results. It should look similar to the screenshot below.
 
-![Comp17.jpg](./assets/build-blog-eleventy-webiny-headless-cms/Comp17.jpg)
+![Eleventy Blog](./assets/build-blog-eleventy-webiny-headless-cms/EleventyBlog.png)
 
 ### Setting up and deploying a Webiny project
 
-*Prerequisites*
+#### Prerequisites
 
 Before we proceed make sure you have the following:
 
 1. Node version 14 or greater. If you don't have `Node.js` installed you can download it using the link below. [Node js](https://nodejs.org/en/).
 2. Yarn version `^1.22.0 || >=2`
-3. AWS account and user credentials-In order to deploy `webiny`, you must have a valid [AWS account and user credentials](https://www.webiny.com/docs/infrastructure/aws/configure-aws-credentials) set up on your system.
+3. AWS account and user credentials-In order to deploy Webiny, you must have a valid [AWS account and user credentials](https://www.webiny.com/docs/infrastructure/aws/configure-aws-credentials) set up on your system.
 
      Click the link above to set up your AWS Account.
 
@@ -501,11 +499,11 @@ Once you have put all the necessary things in place, run the following command :
 npx create-webiny-project my-new-project
 ```
 
-`Webiny` currently supports two storage types: DynamoDB and DynamoDB+Elasticsearch. Choose the option that best meets your needs.
+Webiny currently supports two storage types: DynamoDB and DynamoDB+Elasticsearch. Choose the option that best meets your needs.
 
 ## Deploy Webiny
 
-Once the `webiny` project is created, we are going to deploy it into your AWS account. The following command should take care of that.
+Once the Webiny project is created, we are going to deploy it into your AWS account. The following command should take care of that.
 
 ```bash
 cd my-new-project
@@ -524,7 +522,7 @@ After creating the **admin user** and all the installations are done, you’ll b
 
 ![Webi.jpg](./assets/build-blog-eleventy-webiny-headless-cms/Webi.jpg)
 
-In the Headless `CMS` card, click the NEW CONTENT MODEL button to go to the area where we will create our content models.
+In the Headless CMS card, click the NEW CONTENT MODEL button to go to the area where we will create our content models.
 
 Next, We are going to create a new Module named “Authors”
 
@@ -536,9 +534,9 @@ Create another model named **Posts** and its contents should look like the image
 
 ![Reference.jpg](./assets/build-blog-eleventy-webiny-headless-cms/Reference.jpg)
 
-After you've completed the preceding processes, we'll need to connect our Eleventy application to the Headless `CMS` so that we can always perform `GraphQL` API requests. To begin this step, navigate to the **ACCESS MANAGEMENT** tab on the dashboard.
+After you've completed the preceding processes, we'll need to connect our Eleventy application to the Headless CMS so that we can always perform `GraphQL` API requests. To begin this step, navigate to the **ACCESS MANAGEMENT** tab on the dashboard.
 
-![Screenshot17-04-06.png](./assets/build-blog-eleventy-webiny-headless-cms/Screenshot17-04-06.png)
+![Token](./assets/build-blog-eleventy-webiny-headless-cms/token.png)
 
 Click on API Keys, it should redirect you to a page similar to the one below.
 
@@ -570,9 +568,9 @@ Fill in the entries for the Post model in the same way. Then press the save and 
 
 ## API Playground
 
-To view the data that we will be fetching on the front end of our application, we can use the built-in API from `Webiny` Headless `CMS`. Click the menu icon, then select API Playground.
+To view the data that we will be fetching on the front end of our application, we can use the built-in API from Webiny Headless CMS. Click the menu icon, then select API Playground.
 
-The tabs at the top of the page contain four APIs. Headless `CMS` - Read API should be selected. After that, you can look into your content structure and schema (via the right-side panel). Directly beneath the tabs is a URL string. Data will be retrieved using this URL. Keep the URL somewhere safe in case we need it later.
+The tabs at the top of the page contain four APIs. Headless CMS - Read API should be selected. After that, you can look into your content structure and schema (via the right-side panel). Directly beneath the tabs is a URL string. Data will be retrieved using this URL. Keep the URL somewhere safe in case we need it later.
 
 ![Api Playground.png](./assets/build-blog-eleventy-webiny-headless-cms/Api_Playground.png)
 
@@ -580,7 +578,7 @@ The tabs at the top of the page contain four APIs. Headless `CMS` - Read API sho
 
 At this point, we have a definite understanding of how these two tools work, but how do we integrate them? This question seems daunting until you find out that `webiny’s GraphQL` APIs
 
-are non-agnostic, they are just like any `graphql API`, all that is needed is a client that can query the `graphql` endpoint that `webiny` defines.
+are non-agnostic, they are just like any `graphql API`, all that is needed is a client that can query the `graphql` endpoint that Webiny defines.
 
 To obtain the endpoint, enter this command in your console.
 
@@ -763,12 +761,12 @@ To get the posts we call the file in which the `getPosts` function is called  wh
 
 We loop through the posts using a for loop and display the title author name and body of the blog post and also a button that should redirect you to that particular blog post.
 
-![Final.jpg](./assets/build-blog-eleventy-webiny-headless-cms/Final.jpg)
+![Eleventy Webiny Blog](./assets/build-blog-eleventy-webiny-headless-cms/EleventyWebinyBlog.png)
 
 ### Conclusion
 
-When you start building your blog, having a `CMS` that helps you manage how content is structured is a huge help, and `Webiny Headless CMS` is a great place to start.
+When you start building your blog, having a CMS that helps you manage how content is structured is a huge help, and `Webiny Headless CMS` is a great place to start.
 
 I hope this article has given you a basic understanding of how JavaScript can be used to create practical and real-world solutions to problems. Thank you for your time!
 
-**Full source code:  `**[https://github.com/kmaurice012/EleventyBlog](https://github.com/kmaurice012/EleventyBlog)`
+**Full source code:** [https://github.com/webiny/write-with-webiny/tree/main/tutorials/EleventyWebinyBlog](https://github.com/webiny/write-with-webiny/tree/main/tutorials/EleventyWebinyBlog)
