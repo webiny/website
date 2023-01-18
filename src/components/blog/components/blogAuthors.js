@@ -26,6 +26,7 @@ import samWilliamsImg from "../assets/sam-williams.png"
 import fredrickEImg from "../assets/fredrick-emmanuel.png"
 import monikaImg from "../assets/monika.png"
 import mandahImg from "../assets/mandah-israel.png"
+import mauriceImg from "../assets/maurice-king.png"
 import christofaImg from "../assets/chris-okoro.png"
 import zaccheausImg from "../assets/zaccheaus-amenya.png"
 import athImg from "../assets/ath-tripathi.png"
@@ -131,7 +132,7 @@ export default {
         name: "Victory Tuduo",
         description: "A software developer and technical writer",
         avatar: victoryImg,
-        twitter: "@vhicktri",
+        twitter: "vhicktri",
     },
     menardMaranan: {
         name: "Menard Maranan",
@@ -193,6 +194,12 @@ export default {
         avatar: fredrickEImg,
         twitter: "divofred"  
     },
+    maurice: {
+        name: "Maurice King",
+        description: "Technical Writer",
+        avatar: mauriceImg,
+        twitter: "reecebyron012"
+    },
     zaccheusAmenya: {
         name: "Zaccheaus Amenya",
         description: "Technical Writer",
@@ -203,7 +210,7 @@ export default {
         name: "Ath Tripathi",
         description: "I am Ath tripathi, a 17-year-old full-stack developer, part-time artist, and AI enthusiast.",
         avatar: athImg,
-        twitter: ""  
+        twitter: "WebinyCMS"
     },
     chrisOkoro: {
         name: "Christopher Okoro",
