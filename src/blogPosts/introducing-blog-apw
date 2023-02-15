@@ -3,12 +3,12 @@ slug: "blog/introducing-advanced-publishing-workflow"
 title: "Introducing the Advanced Publishing Workflow"
 description: "The Advanced Publishing Workflow helps organizations streamline their review and approval workflow. This is how you set it up and use it."
 tags: ["cms", "enterprise", "product news"]
-featureImage: "./assets/introducing-blog-apw/cover.png"
+featureImage: "./assets/introducing-blog-apw/apw-cover.png"
 author: monika
-date: 2023-02-14
+date: 2023-02-15
 featured: false
 ---
-*Creating engaging content, quality control, approval and publishing could take a long time, a luxury which organisations cannot afford. The ever more sophisticated needs of their customers put the price of delayed delivery way too high.* 
+*Creating engaging content, quality control, approval and publishing could take a long time, a luxury which organizations cannot afford. The ever more sophisticated needs of their customers put the price of delayed delivery way too high.* 
 
 *Companies cannot compromise quality for speed so we have created the the Advanced Publishing Workflow to streamline the numerous content reviews and approvals which are required to ensure the high quality of the final published content.*
 
@@ -46,7 +46,7 @@ If you are planning on having multiple approval workflows, e.g. “Main review p
 
 ![define-steps.png](./assets/introducing-blog-apw/process.png)
 
-Steps could be ordered in a sequential order to fit the organisational procedure, e.g. Legal Team always review first, then Marketing. To avoid unnecessary delays, however, the review process steps could be running concurrently, i.e. multiple steps at the same time, by using the “**mandatory, non-blocking**” or the “**optional**” step.
+Steps could be ordered in a sequential order to fit the organizational procedure, e.g. Legal Team always review first, then Marketing. To avoid unnecessary delays, however, the review process steps could be running concurrently, i.e. multiple steps at the same time, by using the “**mandatory, non-blocking**” or the “**optional**” step.
 
 A step can be marked as "mandatory, blocking", "mandatory, non-blocking" or "optional":
 
