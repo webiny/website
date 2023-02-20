@@ -152,7 +152,7 @@ const Footer = () => (
                             </a>
                         </IconItem>
                     </IconList>
-                    <Paragraph>Webiny Ltd © 2022</Paragraph>
+                    <Paragraph>Webiny Inc © {(new Date().getFullYear())}</Paragraph>
                 </Box>
                 <Box className={textRight}>
                     <Newsletter />
