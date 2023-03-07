@@ -117,7 +117,7 @@ const priceList = [
             {
                 label: "Tenants / projects / websites",
                 open_source: "1",
-                business: "Unlimited",
+                business: "Up to 100",
                 enterprise: "Unlimited",
             },
             {
