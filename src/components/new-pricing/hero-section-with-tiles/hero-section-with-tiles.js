@@ -96,7 +96,7 @@ const MainTile = ({ dataTile }) => {
                     <P className="mounth">/ month</P>
                     <Span>SELF HOSTED</Span>
                     <PriceWrapper>
-                        <P className="users">Users: {usersNumber}</P>
+                        <P className="users">Users: {usersNumber} (Tenants: {(usersNumber-1)+5})</P>
                         <PricePerMount>${pricePerUser} per user / month</PricePerMount>
                     </PriceWrapper>
                     <RangeSlider visibleMaxValue={usersNumber > 0}>
