@@ -7,6 +7,7 @@ import { ButtonPrimary } from '../hero-section/hero.styled'
 import VueLogo from "../../../assets/vuejs.svg"
 import NextLogo from "../../../assets/nextjs.svg"
 import ReactLogo from "../../../assets/react.svg"
+import ReactNativeLogo from "../../../assets/react-native.svg"
 import RemixLogo from "../../../assets/remix.svg"
 import FlutterLogo from "../../../assets/flutter.svg"
 import AstroLogo from "../../../assets/astro.svg"
@@ -24,6 +25,10 @@ const technologies = {
   "react": {
     title: "React",
     image: ReactLogo
+  },
+  "react-native": {
+    title: "React Native",
+    image: ReactNativeLogo
   },
   "remix": {
     title: "Vue.js",
