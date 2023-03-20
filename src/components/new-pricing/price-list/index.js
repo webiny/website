@@ -117,7 +117,7 @@ const priceList = [
             {
                 label: "Tenants / projects / websites",
                 open_source: "1",
-                business: { title: "5 included", text: "You get an additional tenant for each additional user" },
+                business: { title: "5 included / 100 max", text: "Number of tenants scales with number of users" },
                 enterprise: "Volume-based pricing on request",
             },
             {
