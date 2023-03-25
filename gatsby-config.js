@@ -1,5 +1,5 @@
 module.exports = {
-    pathPrefix: "/blog",
+    pathPrefix: "/blog_build",
     siteMetadata: {
         title: "Webiny",
     },
