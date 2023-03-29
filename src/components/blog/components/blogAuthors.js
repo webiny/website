@@ -30,6 +30,7 @@ import mauriceImg from "../assets/maurice-king.png"
 import christofaImg from "../assets/chris-okoro.png"
 import zaccheausImg from "../assets/zaccheaus-amenya.png"
 import athImg from "../assets/ath-tripathi.png"
+import graceNjeriImg from "../assets/graceNjeriImg.png"
 
 export default {
     sven: {
@@ -220,8 +221,8 @@ export default {
     },
     graceNjeri: {
         name: "Grace Njeri",
-        description: "Technical Writer",
-        avatar: nobodyImg,
-        twitter: "WebinyCMS"
+        description: "Software Developer & Technical Writer",
+        avatar: graceNjeriImg,
+        twitter: "Zione96453263"
     },
 };
