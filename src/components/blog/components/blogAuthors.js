@@ -218,4 +218,10 @@ export default {
         avatar: christofaImg,
         twitter: "WebinyCMS"
     },
+    graceNjeri: {
+        name: "Grace Njeri",
+        description: "Technical Writer",
+        avatar: nobodyImg,
+        twitter: "WebinyCMS"
+    },
 };

@@ -1,18 +1,18 @@
 ---
 slug: "blog/build-blog-scully-webiny-headless-cms"
-title: "Build a blog with Scully, the Angular Static Site Generator, and Webiny"
-description: "In this tutorial, we will build a blog with Scully and Webiny Headless CMS. We will look at how to set up Webiny and consume that data in a Scully app."
-tags: ["react-native", "build projects", "contributed articles"]
+title: "Build a blog with Scully, the Angular Static Site Generator and Webiny"
+description: "In this tutorial, we will build a blog site with Scully and Webiny Headless CMS. We will look at how to set up Webiny and consume that data in a Scully app."
+tags: ["scully", "angular", build projects", "contributed articles"]
 featureImage: "./assets/build-blog-scully-webiny-headless-cms/cover.png"
-author: josephChege
-date: 2023-03-30
+author: graceNjeri
+date: 2023-03-31
 featured: false
 ---
 
 
-Are you interested in learning how to set up a blog site? Look no further! We'll guide you through a detailed process on how to build a blog site with Webiny Headless CMS and Scully, a static site generator for Angular. This includes rendering static content, such as HTML, CSS, and Javascript, from Angular templates so you can host your website on Netlify, Vercel, or any other infrastructure of your choice.
+Are you interested in learning how to set up a blog site? Look no further! We'll guide you through a detailed process on how to build a blog site with Webiny Headless CMS and [Scully](https://scully.io/), a static site generator for Angular. This includes rendering static content, such as HTML, CSS, and Javascript, from Angular templates so you can host your website on Netlify, Vercel, or any other infrastructure of your choice.
 
-## What Is Scully
+## What Is Scully?
 
 Scully is an excellent static site generator for Angular projects. It analyzes the route structure of your Angular application to create a list of routes, and then generates an index.html for each of them. This approach allows your application to show up instantly for the user. Scully is essentially a Jamstack solution for Angular developers. Jamstack stands for JavaScript/API/Markup, and Scully.io is one of the vendors outside of the popular NextJS and Gatsby frameworks.
 
@@ -30,165 +30,122 @@ Webiny CMS is perfect for creating a site that is completely responsive to mobil
 
 ## Prerequisites
 
-Before we get our hands dirty, ensure you have done the following:
+To follow along with this tutorial, we’re going to assume you have already done the following:
 
-- Set up an AWS account
-- Node.js: 14 or higher.
-- Ensure that you have yarn 1.22.0 || >2 installed – Webiny works with both yarn versions.
-- For Angular versions, 9, 10, and 11 use Scully V1.1.1 (this version will only receive security updates) for Angular V12 and above use Scully from V2.0.0 on.
-- Star our GitHub repo
+- [Set up your AWS credentials locally](https://www.webiny.com/docs/infrastructure/aws/configure-aws-credentials)
+- Ensure that you have [Node.js](https://nodejs.org/en/download/) >= 14.15.0 installed.
+- Ensure that you have yarn ^1.22.0 || >=2 installed - Webiny works with both yarn versions.
+- Basic understanding of [Scully](https://scully.io/) and [Javascript](https://www.javascript.com/).
+- For Angular 9, 10, and 11, use Scully v1.1.1 and for Angular 12 and above, use Scully from v2.0.0 onward.
+- Star our [GitHub Repo](https://github.com/webiny/webiny-js)! 😉
 
-## Setting up Webiny CMS
+## Set up a Webiny Project
 
-Grab a cup of coffee, and let’s get started.
+To [create a Webiny project](https://www.webiny.com/docs/get-started/install-webiny), you need an AWS account and Node.js installed on your system.
 
-Setting up Webiny CMS is easy and can be done by using the command below:
+Go to the directory where you want to set up your project, open the terminal, and type in the command: 
 
-```jsx
-npx create-webiny-project
+```bash
+npx create-webiny-project [your project name]
 ```
 
-This command will:
+And run the following command to deploy the project:
 
-- Prepare a project folder
-- Install dependencies
-- Scaffold a Webiny application
-- Initialize git and make an initial commit
-
-![Setup](./assets/build-blog-scully-webiny-headless-cms/setup.png)
-
-After that, follow the prompts to:
-
-- Choose the region where our app will be deployed
-- Choose the database set up for our Webiny project.
-
-The installation may take some minutes.
-
-**Note**: Ensure you have followed the instructions from the prerequisites and have set up your AWS account completely.
-
-Once the installation is complete, this is what you should get:
-
-![Installation](./assets/build-blog-scully-webiny-headless-cms/installation.png)
-
-In case of any issue, you can reach out to the Webiny Community on Slack.
-
-Now, we can go ahead and deploy our Webiny project
-
-Use the command below, to set up your project
-
-```jsx
-cd swblog && yarn webiny deploy
+```bash
+yarn webiny deploy
 ```
 
-This command will build our application and deploy it to our AWS account.
+After the deployment is complete, you will be presented with the URL for your Webiny project, where you can enter the Admin Dashboard and begin developing the project's backend.
 
-***Note**: The first deployment can take up to 20 minutes. So, patience is key here, let the process finish. It will display an error in case something goes wrong.*
+You can find out all the relevant URLs at any time by running the following command inside the Webiny project directory:
 
-Then you will be provided with a URL that will be used to access your Webiny dashboard.
+```bash
+yarn webiny info
+```
 
-Fill out your information to create your Admin user. Once we’ve created the admin account, we can proceed to go through the remaining steps and install all the applications.
+Also, the in-depth guide on Webiny installtion can be found [here](https://www.webiny.com/docs/get-started/install-webiny).
 
-![Admin Setup](./assets/build-blog-scully-webiny-headless-cms/admin-setup.png)
+Once installation and deployment are done, you can access Admin and start managing and modeling your CMS content models immediately.
 
-Click the FINISH INSTALL button to be taken to the Webiny dashboard.
+## Create Content Model
 
-**Remember**: You can always run: `yarn webiny info`  to view all of the relevant project URLs, including the URL of your GraphQL API:
-
-Now we have our Webiny application deployed, we can get started on structuring our content
-
-## Content Structure
-
-So, let’s create our blog model
-
-To create our content models
-
-Let’s click on New content model under Headless CMS app.
+Now, let’s create our blog model. To create content models, click on New content model under Headless CMS app.
 
 ![Dashboard](./assets/build-blog-scully-webiny-headless-cms/dashboard.png)
 
-We are going to name our model Article Post, add a description and click on create.
-Then we can access the model by clicking on Article Post as shown in the arrow.
+We are going to name our model **Article Post**, add some description and click on create.
+Then we can access the model by clicking on Article Post from the side menu.
 
 ![Article Post.png](./assets/build-blog-scully-webiny-headless-cms/article-post.png)
 
-This is what our generated content models looks like:
+Our generated content model will look something like:
 
 ![Article Post Model](./assets/build-blog-scully-webiny-headless-cms/article-post-model.png)
 
-Let’s add our fields: image, title and body as shown:
+Let’s add fields to our model as shown:
 
-- Image - File
-- Title - Text
-- Body - Rich Text
-
-This will Match every blog. Click on save.
+- Image - `File` type
+- Title - `Text` type
+- Body - `Rich Text` type
 
 ![Model](./assets/build-blog-scully-webiny-headless-cms/model.png)
 
 Now it’s time to create the actual content
-Navigate to  Headless CMS > Ungrouped > Article Post
-Now let’s create our individual articles. Feel free to unleash your creativity
+Navigate to  Headless CMS > Ungrouped > Article Post, and create individual articles. Feel free to unleash your creativity.
 
-Once you are happy with the post, click on the save button then the save and publish button to publish.
+Once you are happy with the post, click on the **Save and Publish** button to publish.
 
 ![Content Entry](./assets/build-blog-scully-webiny-headless-cms/content-entry.png)
 
 Now that we are done with creating models so that we can modify our articles, we can move on to the  remaining part of our blog.
 
-Here is my final blog content for my models:
+Once you create multiple blogs (content entries), it will look something like this:
 
 ![Article Content Entries](./assets/build-blog-scully-webiny-headless-cms/article-content-entries.jpg)
 
-## Building a Blog
+## Building a Blog site with Scully
 
-We'll be using Scully, to build out the front-end part of our blog application. Scully is a static site generator that provides a schematic that enables Angular applications to use markdown files for your blog's content.
+We'll be using Scully, to build out the front-end part of our blog application. Scully is a static site generator that provides a schematic that enables Angular applications to use markdown files for your blog's content. Here, we will add a home page to list all the articles and an article detail page.
 
-Here, we will add a home page and individual articles.
+## Installing dependencies
 
-### Installing dependencies
-
-Let’s first install dependencies,
-
-- Node JS
-- Angular CLI. You can install CLI globally with:
+Install Angular CLI. You can install CLI globally with following command:
 
 ```jsx
 npm install –g @angular/cli
 ```
 
-To create a new angular project run the CLI command ng new and provide the name of your app blog-app, as shown below:
+To create a new angular project run the CLI command `ng new` and provide the name of your app `blog-app`, as shown below:
 
 ```jsx
 ng new blog-app
 ```
 
-Go the src/app.component.html and replace the content with
+Go the `src/app.component.html` and replace the content with
 
 ```jsx
 <router-outlet></router-outlet>
 ```
 
-We are going to use Materialize for styling purposes
-
-So open the index.html file and add  the following:
+We are going to use Materialize for styling purposes, so open the `index.html` file and add the following:
 
 ```jsx
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 ```
 
-### Connecting CMS to the application
+## Connecting the Angular application to Webiny CMS
 
 To connect the Webiny CMS to our application, we will first access GraphQL API playground.
 
 ![API Playground](./assets/build-blog-scully-webiny-headless-cms/api-playground.png)
 
-Navigate to API Key under headless CMS to access the token. In the headless CMS, grant custom access to read as shown below:
+Navigate to API Key under Headless CMS to access the token. In the headless CMS, grant custom access to read as shown below:
 
 ![API Key](./assets/build-blog-scully-webiny-headless-cms/api-key.png)
 
-Create a new API key and copy the actual token and save it
+Create a new API key and copy the actual token and save it.
 
-Create a .env file at the base of your project and add the below code.
+Create a `.env` file at the base of your project and add the below code.
 
 ```jsx
 CMS_BASE_URL=https://your-webiny-base-url
@@ -196,7 +153,7 @@ GRAPHQL_API_URL=https://yourgrapgql-url/graphql
 GRAPHQL_API_TOKEN=your-api-token
 ```
 
-We will first access our schema.json file to define our interface such as:
+We will first access our `schema.json` file to define our interface such as:
 
 ```jsx
 export interface ArticlePost{
@@ -207,7 +164,7 @@ export interface ArticlePost{
 }
 ```
 
-Create an authentication folder and name the file webiny.config.ts
+Create an authentication folder and name the file `webiny.config.ts`
 
 ```jsx
 importimport { Injectable } from '@angular/core';
@@ -242,9 +199,7 @@ export const DefaultWebinyConfig = new WebinyConfig(
 );
 ```
 
-Next, we need an interceptor to authenticate our backend. So add this to the interceptor file.
-
- post-auth.interceptor.ts
+Next, we need an interceptor to authenticate our backend. So add the following content to the interceptor file (`post-auth.interceptor.ts`).
 
 ```jsx
 import { Injectable } from '@angular/core';
@@ -298,34 +253,33 @@ export class ContentAuthInterceptor implements HttpInterceptor {
         })
     );
   }
-    private getToken(next: HttpHandler) {
-      // Check if we have already a bearer token in local store.
-      const cachedToken = getBearerToken();
+  private getToken(next: HttpHandler) {
+    // Check if we have already a bearer token in local store.
+    const cachedToken = getBearerToken();
 
-      if (cachedToken) {
-          return of(cachedToken);
-      }
+    if (cachedToken) {
+        return of(cachedToken);
+    }
 
-      // tslint:disable-next-line: max-line-length
-      const body = `token_key=${this.config.GRAPHQL_API_URL}`;
+    // tslint:disable-next-line: max-line-length
+    const body = `token_key=${this.config.GRAPHQL_API_URL}`;
 
-      const tokenRequest = new HttpRequest('POST', this.config.buildUrl('identity-server/connect/token'), body, {
-          responseType: 'json',
-          headers: new HttpHeaders({
-              'Content-Type': 'application/x-www-form-urlencoded'
-          })
-      });
+    const tokenRequest = new HttpRequest('POST', this.config.buildUrl('identity-server/connect/token'), body, {
+        responseType: 'json',
+        headers: new HttpHeaders({
+            'Content-Type': 'application/x-www-form-urlencoded'
+        })
+    });
 
-      return next.handle(tokenRequest).pipe(
-          filter (x => x instanceof HttpResponse),
-          map((response: HttpResponse<any>) => {
-              const token = response.body.access_token;
+    return next.handle(tokenRequest).pipe(
+      filter (x => x instanceof HttpResponse),
+      map((response: HttpResponse<any>) => {
+      const token = response.body.access_token;
 
-              // Cache the bearer token in the local store.
-              setBearerToken(token);
-
-              return token;
-          }));
+      // Cache the bearer token in the local store.
+      setBearerToken(token);
+      return token;
+    }));
   }
 }
 
@@ -348,13 +302,13 @@ Let’s add apollo-angular to our app to fetch our data from the graphql api.  T
 ng add apollo-angular
 ```
 
-In graphql module.ts, replace uri variable with the following
+In graphql `module.ts`, replace uri variable with the following:
 
 ```jsx
 const uri = environment.webiny.GRAPHQLAPI;
 ```
 
-Also, add the access token as follows
+Also, add the access token as follows:
 
 ```jsx
 const authLink = setContext((_, { headers }) => {
@@ -368,7 +322,7 @@ const authLink = setContext((_, { headers }) => {
 });
 ```
 
-The graphql module.ts file will look like this
+The graphql `module.ts` file will look like this:
 
 ```jsx
 import {NgModule} from '@angular/core';
@@ -418,15 +372,14 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
 export class GraphQLModule {}
 ```
 
-Before we get started on creating components, we will first access our data. We will use the generate a service that will call our api to access our posts data. 
+Before we get started on creating components, we will first access our data.
+We will use the generate a service that will call our api to access our posts data. 
 
-Create a service to access data
+Create a service (`Content.service.ts`) to access data:
 
 ```jsx
 ng g s content 
 ```
-
-Content.service.ts
 
 ```jsx
 import { Injectable } from '@angular/core';
@@ -477,23 +430,21 @@ export class PostService {
 }
 ```
 
-For further configuration,let’s add add authentication for our CMS
+## Creating a list article page
 
-### Creating a list article page
-
-The first component that we are going to create is list module that will contain all the blog post links.  Add a home component .
+The first component that we are going to create is list module that will contain all the blog post links. Add a `home` component.
 
 ```jsx
 ng g list
 ```
 
-Generate a home component
+Generate a `home` component:
 
 ```jsx
 ng g m home
 ```
 
-In the app-routing.module.ts, configure the routes
+In the `app-routing.module.ts`, configure the routes:
 
 ```jsx
 const routes: Routes = [{
@@ -506,7 +457,7 @@ const routes: Routes = [{
 
 We can inject our service in the home component to load our data
 
-Open list.component.ts
+Open `list.component.ts` and update it with following content:
 
 ```jsx
 import { Component, OnInit } from '@angular/core';
@@ -520,9 +471,8 @@ import { ArticlePost } from 'src/app/models/post';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-
   posts!: Observable<ArticlePost[]>;
-  
+
   constructor(private postService: PostService) {
 
   }
@@ -534,9 +484,7 @@ export class ListComponent implements OnInit {
 }
 ```
 
-Then add this in our home template
-
-list.component.html
+Then add this in our home template (`list.component.html`):
 
 ```jsx
 <div class="intro">
@@ -553,24 +501,22 @@ list.component.html
 </div>
 ```
 
-### Creating a single list post
+## Creating a single list post
 
-We need to read the id from the URL and display the correct article in the angular post component. It should import the ActivatedRoute and ArticleService modules and uses the ngOnInit() method to subscribe to route parameters and retrieve the article details from the ArticleService. First, we are going to create a Post component
+We need to read the id from the URL and display the correct article in the Angular post component. It should import the `ActivatedRoute` and `ArticleService` modules and uses the `ngOnInit()` method to subscribe to route parameters and retrieve the article details from the `ArticleService`. First, we are going to create a Post component:
 
 ```jsx
 ng g c Post
 ```
 
-Then, add content for both html and ts file
-
-post.component.html
+Add following content to (`post.component.html`) file:
 
 ```jsx
 <h1 [innerHTML]="title"></h1>
 <div [innerHTML]="body"></div>
 ```
 
-post.component.ts
+Add following content to (`post.component.ts`) file:
 
 ```jsx
 import { Component, OnInit } from '@angular/core';
@@ -613,7 +559,7 @@ export class BlogPostComponent implements OnInit {
 }
 ```
 
-Ensure the routes are configured correctly in the app-routing module.ts
+Ensure the routes are configured correctly in the app-routing `module.ts`
 
 ```jsx
 import { NgModule } from '@angular/core';
@@ -639,16 +585,16 @@ Now, let’s add Scully to our project. We're going to use Scully to make it int
 ng add @scullyio/init --project="your-project-name"
 ```
 
-The above command creates a Scully config file named *Scully.`<projectName>.config.ts`, `scully.blog-app.config.ts`  where the Project Name is the name of your Angular project.
+The above command creates a Scully config file named `Scully.<projectName>.config.ts`, `scully.blog-app.config.ts` where the projectName is the name of your Angular project.
 
 ```jsx
 import { ScullyConfig } from '@scullyio/Scully;
 
 export const config: ScullyConfig = {
-projectRoot: './src',
-projectName: 'blog-app',
-outDir: './dist/static',
-routes: {},
+    projectRoot: './src',
+    projectName: 'blog-app',
+    outDir: './dist/static',
+    routes: {},
 };
 ```
 
@@ -669,7 +615,7 @@ export class AppModule { }
 
 Modify plugin in Scully to fetch our data. First, copy the default plugin and edit it as follows:
 
-You can create a new router plugin name it articleServicePlugin.js in the plugins folder.
+You can create a new router plugin name it `articleServicePlugin.js` in the plugins folder.
 
 ```jsx
 import {
@@ -730,9 +676,9 @@ registerPlugin(
 );
 ```
 
-Depending on where you acquire the data from, there are many ways to construct routes for Scully. Here, we're using a headless CMS and a graphql API to obtain the data. As a result, we are making a GraphQL query to get a list of article posts which includes their IDs and titles. Then maps the posts to the route and returns an array of HandledRoutes.
+Depending on where you acquire the data from, there are many ways to construct routes for Scully. Here, we're using a Headless CMS and a graphql API to obtain the data. As a result, we are making a GraphQL query to get a list of article posts which includes their IDs and titles. Then maps the posts to the route and returns an array of HandledRoutes.
 
-Here is how to configure this in scully.config.ts
+Here is how to configure this in `scully.config.ts`
 
 ```jsx
 import { ScullyConfig } from '@scullyio/scully';
@@ -753,34 +699,27 @@ export const config: ScullyConfig = {
     }
   }
 };
-};
 ```
 
- 
-
-To ensure your app looks good, add styling.
-
-To view our site, execute this command in shell.
+To view our site, execute this command in your terminal.
 
 ```jsx
 npm run build && npm run scully
 ```
 
-This is the final site that will be rendered after hosting our app locally, there is a home page and individual articles
+This is the final site that will be rendered after hosting our app locally, there is a home page and individual articles.
 
-Run the code below in your terminal or console:
+Run the code below in your terminal:
 
 ```jsx
 npm run scully:serve
 ```
 
-
-
 ![Scully Blog App](./assets/build-blog-scully-webiny-headless-cms/final-scully-app.jpg)
 
 ## Conclusion
 
-In this article, we have gone over how to build a small blog with a home page and individual articles in Scully and fetch data from Webiny Headless CMS. We have gone over how to set up the content structure, create, update, and delete articles, and build a list of articles and single article pages. 
+In this article, we have discussed the step-by-step process of building a small blog using Scully and fetching data from Webiny Headless CMS. We covered important topics such as setting up the content structure, creating, updating, and deleting articles, as well as building a comprehensive list of articles and single article pages. By following this guide, readers can learn how to efficiently create a fully functional blog that showcases their content in an organized and visually appealing manner.
 
 **Full source code:** https://github.com/webiny/write-with-webiny/tree/main/tutorials/scully-webiny-blog
 
