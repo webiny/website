@@ -20,7 +20,7 @@ const Wrapper = styled("div")(
         "--nl-text-align": "right",
     },
     mq({
-        padding: ["16px 16px 20px 16px", "16px 25px 20px 25px", "50px 0 5px"],
+        padding: ["16px 16px 20px 16px", "16px 25px 20px 25px", "0 0 5px"],
     }),
 );
 
@@ -104,7 +104,7 @@ const Paragraph = styled("span")(
 
 const Footer = () => (
     <Wrapper>
-        <FooterMenu />
+        {/*<FooterMenu />*/}
 
         <Bottom>
             <ContentContainer className={FlexDisplay}>

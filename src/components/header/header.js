@@ -10,8 +10,8 @@ import Button from "../ui/button";
 import { trackGoToGithub } from "../ui/functions";
 import { ModalContext } from "../ui/layout/video-modal";
 import NewsBanner from "../ui/news-banner";
-// assets
 
+// assets
 import logoOrange from "./assets/webiny-logo-with-icon-left-orange.svg";
 import menuIconBlack from "./assets/burger-menu-icon.svg";
 import closeMenuIcon from "./assets/close-burger-menu.svg";
@@ -19,8 +19,10 @@ import RightArrowIcon from "./assets/arrow-orange.svg";
 import DownArrowIcon from "./assets/down-arrow-black.inline.svg";
 import MobileDownArrowIcon from "./assets/mobile-menu-icon.svg";
 import RightArrow from "./assets/arrow-right.svg";
+
 // data
 import { DROPDOWN_MENUS } from "./header-data";
+
 // styles
 import {
     MenuItem,
