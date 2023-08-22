@@ -88,7 +88,7 @@ const heroSectionData = {
                 benefitName: "Multi-tenancy",
                 info: true,
                 toolTipDecription:
-                    "Unlocks the ability to have an unlimited number of tenants or projects on your Webiny instance",
+                    "Unlocks the ability host multiple tenants/projects under a single Webiny instance.",
             },
             {
                 benefitName: "Advanced roles & permissions without team management",

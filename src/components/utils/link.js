@@ -9,11 +9,18 @@ export default ({ children, ...props }) => {
             </a>
         );
     } else if (props.to !== null) {
-        return (
-            <GatsbyLink key={props.key} className={"link"} rel="prerender" to={props.to}>
+        if(props.to.startsWith("/blog")){
+            return (
+                <GatsbyLink key={props.key} className={"link"} rel="prerender" to={props.to}>
+                    {children}
+                </GatsbyLink>
+            );
+        }else{
+            return (
+            <a key={props.key} className="link" rel="prerender" href={props.to}>
                 {children}
-            </GatsbyLink>
-        );
+            </a>);
+        }
     } else {
         return (
             <span key={props.key} className="link">

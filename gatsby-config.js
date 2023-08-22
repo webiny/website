@@ -1,4 +1,6 @@
 module.exports = {
+    //pathPrefix: "/blog_build",
+    assetPrefix: 'https://webiny.netlify.app',
     siteMetadata: {
         title: "Webiny",
     },

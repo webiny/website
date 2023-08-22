@@ -16,10 +16,12 @@ import MeetupIcon from "./assets/meetupIcon.svg";
 
 export const WEBINY_MENU = {
     id: 0,
-    label: "Why Webiny",
-    link: "/why-webiny",
+    label: "BACK TO HOMEPAGE",
+    link: "/",
 };
 
+export const PRODUCTS_MENU = {};
+/*
 export const PRODUCTS_MENU = {
     id: 1,
     label: "Product",
@@ -76,6 +78,7 @@ export const PRODUCTS_MENU = {
     },
     secondarySection: {},
 };
+*/
 
 export const PRICING_MENU = {
     id: 2,
@@ -89,6 +92,7 @@ export const DOCUMENTATION_MENU = {
     link: "/docs/webiny/introduction/",
 };
 
+/*
 export const RESOURCES_MENU = {
     id: 4,
     label: "Resources",
@@ -133,11 +137,11 @@ export const RESOURCES_MENU = {
         title: "FROM THE BLOG",
     },
 };
-
+*/
 export const DROPDOWN_MENUS = [
     WEBINY_MENU,
-    PRODUCTS_MENU,
-    PRICING_MENU,
-    DOCUMENTATION_MENU,
-    RESOURCES_MENU,
+    //PRODUCTS_MENU,
+    //PRICING_MENU,
+    //DOCUMENTATION_MENU,
+    //RESOURCES_MENU,
 ];

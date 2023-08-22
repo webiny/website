@@ -59,7 +59,7 @@ const priceList = [
                 label: "Number of users",
                 open_source: "Unlimited",
                 business: { title: "First user free", text: "Then $9 per user per month. Max 100 users." },
-                enterprise: "Volume pricing on request",
+                enterprise: "Volume-based pricing on request",
             },
             {
                 label: "Number of API calls",
@@ -117,9 +117,26 @@ const priceList = [
             {
                 label: "Tenants / projects / websites",
                 open_source: "1",
-                business: "Unlimited",
-                enterprise: "Unlimited",
+                business: { title: "5 included / 100 max", text: "Number of tenants scales with number of users" },
+                enterprise: "Volume-based pricing on request",
             },
+            {
+                label: "Advanced roles and permissions",
+                open_source: false,
+                business: true,
+                enterprise: true,
+            },
+            {
+                label: "Team management",
+                open_source: false,
+                business: false,
+                enterprise: true,
+            },
+        ],
+    },
+    {
+        label: "Security",
+        values: [
             {
                 label: "OKTA integration",
                 open_source: false,
@@ -144,17 +161,40 @@ const priceList = [
                 business: false,
                 enterprise: true,
             },
+        ],
+    },
+    {
+        label: "Infrastructure",
+        values: [
             {
-                label: "Advanced roles and permissions",
-                open_source: false,
-                business: true,
-                enterprise: true,
-            },
-            {
-                label: "Team management",
+                label: "Deploy inside an existing VPC",
                 open_source: false,
                 business: false,
                 enterprise: true,
+            },
+            {
+                label: "Integrate with VPC endpoints",
+                open_source: false,
+                business: false,
+                enterprise: true,
+            },
+            {
+                label: "SOC2 compliany setup",
+                open_source: false,
+                business: false,
+                enterprise: true,
+            },
+            {
+                label: "Use API Gateway Lambda Authorizers",
+                open_source: false,
+                business: false,
+                enterprise: true,
+            },
+            {
+                label: "Multi-region deployment",
+                open_source: false,
+                business: false,
+                enterprise: "Coming soon",
             },
         ],
     },

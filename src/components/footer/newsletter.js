@@ -166,7 +166,7 @@ class Newsletter extends React.Component {
                     <NlReason>Contains only Webiny relevant content.</NlReason>
                     <NlReason>Your email is not shared with any 3rd parties.</NlReason>
                 </NlReasons>
-                <Paragraph>Webiny Ltd © 2022</Paragraph>
+                <Paragraph>Webiny Inc © {new Date().getFullYear()}</Paragraph>
             </React.Fragment>
         );
     }
