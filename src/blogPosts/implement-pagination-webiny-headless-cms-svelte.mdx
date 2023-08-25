@@ -1,11 +1,11 @@
 ---
 slug: "blog/implement-pagination-webiny-headless-cms-svelte"
-title: "How to Implement Pagination with Webiny Headless CMS in React"
+title: "How to Implement Pagination with Webiny Headless CMS in Svelte"
 description: "In this tutorial, we are going to learn how to implement cursor-based pagination when using Webiny headless CMS in Svelte."
 tags: ["svelte", "build projects", "pagination", "contributed articles"]
 featureImage: "./assets/implement-pagination-webiny-headless-cms-svelte/cover.png"
 author: tammi
-date: 2023-01-04
+date: 2023-08-25
 tech: ["svelte"]
 ---
 import OnPagePromo from "../components/ui/on-page-promo/on-page-promo"
@@ -24,7 +24,7 @@ To follow along with this tutorial, you need to have the following:
 - Basic knowledge of Svelte and GraphQL.
 - Node.js >=14 and yarn ^1.22.0 || >=2 installed in your system.
 
-## Introduction to Webiny Headless CMS
+## Introduction to Headless CMS
 
 A headless CMS is one that deals strictly with the content. It is a backend-only CMS where the content repository is separated from the presentation layer. Once created its content is served via an API giving front-end developers full control over the user experience using their native tools.
 The Webiny [Headless CMS](https://www.webiny.com/enterprise-serverless-cms/headless-cms/) is GraphQL based, with a powerful content modeling feature and it’s serverless, so optimized for scalability by default.
@@ -255,13 +255,13 @@ After setting the controls, click on the **SAVE API KEY** button at the bottom o
 
 ![token.png](./assets/implement-pagination-webiny-headless-cms-svelte/token.png)
 
-Now we can copy the token and store it in a **.env** file in our React app.
+Now we can copy the token and store it in a **.env** file in our Svelte app.
 
 Next, to get the URL, go to the API playground in the Admin app, click on the **Headless CMS - Read API** tab at the top of the page and copy the URL directly below the tab.
 
 ![read-api-url.png](./assets/implement-pagination-webiny-headless-cms-svelte/read-api-url.png)
 
-After copying the URL we should also store it in the **.env** file in our React app.
+After copying the URL we should also store it in the **.env** file in our Svelte app.
 
 Now, to initialize Apollo client, head over to **src/App.svelte** and add the following lines of code after the imports in the script tag:
 
