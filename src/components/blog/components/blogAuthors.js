@@ -32,6 +32,7 @@ import zaccheausImg from "../assets/zaccheaus-amenya.png"
 import athImg from "../assets/ath-tripathi.png"
 import graceNjeriImg from "../assets/graceNjeriImg.png"
 import temidayoAzeezImg from "../assets/temidayo-azeez.png"
+import kevineNzapdiImg from "../assets/kevine-nzapdi.png"
 
 export default {
     sven: {
@@ -231,5 +232,11 @@ export default {
         description: "Software Developer & Technical Writer",
         avatar: temidayoAzeezImg,
         twitter: "Temiday62034939"
+    },
+    kevineNzapdi: {
+        name: "Kevine Nzapdi",
+        description: "Frontend Developer & Technical Writer",
+        avatar: kevineNzapdiImg,
+        twitter: "gunkev11oz"
     },
 };
