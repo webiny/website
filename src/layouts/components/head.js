@@ -74,7 +74,7 @@ class Head extends React.Component {
                     link={[
                         {
                             rel: "shortcut icon",
-                            href: withPrefix("./favicon.ico"),
+                            href: withPrefix("/favicons/favicon.ico"),
                             type: "image/x-icon",
                         },
                     ]}
@@ -84,25 +84,25 @@ class Head extends React.Component {
                     <link
                         rel="apple-touch-icon"
                         sizes="180x180"
-                        href="/favicons/apple-touch-icon.png"
+                        href={withPrefix("/favicons/apple-touch-icon.png")}
                     />
                     <link
                         rel="icon"
                         type="image/png"
                         sizes="32x32"
-                        href="/favicons/favicon-32x32.png"
+                        href={withPrefix("/favicons/favicon-32x32.png")}
                     />
                     <link
                         rel="icon"
                         type="image/png"
                         sizes="16x16"
-                        href="/favicons/favicon-16x16.png"
+                        href={withPrefix("/favicons/favicon-16x16.png")}
                     />
-                    <link rel="manifest" href="/favicons/site.webmanifest" />
-                    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#d76543" />
-                    <link rel="shortcut icon" href="/favicons/favicon.ico" />
+                    <link rel="manifest" href={withPrefix("/favicons/site.webmanifest")} />
+                    <link rel="mask-icon" href={withPrefix("/favicons/safari-pinned-tab.svg")} color="#d76543" />
+                    <link rel="shortcut icon" href={withPrefix("/favicons/favicon.ico")} />
                     <meta name="msapplication-TileColor" content="#603cba" />
-                    <meta name="msapplication-config" content="/favicons/browserconfig.xml" />
+                    <meta name="msapplication-config" content={withPrefix("/favicons/browserconfig.xml")} />
                     <meta name="theme-color" content="#ffffff" />
                 </Helmet>
 
