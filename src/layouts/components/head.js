@@ -1,6 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { withPrefix } from "gatsby-link";
+import { withPrefix, withAssetPrefix } from "gatsby-link";
 import ogImageDefault from "../assets/webiny-social-share.jpg";
 
 class Head extends React.Component {
@@ -74,7 +74,7 @@ class Head extends React.Component {
                     link={[
                         {
                             rel: "shortcut icon",
-                            href: withPrefix("/favicons/favicon.ico"),
+                            href: withAssetPrefix("/favicons/favicon.ico"),
                             type: "image/x-icon",
                         },
                     ]}
@@ -84,25 +84,25 @@ class Head extends React.Component {
                     <link
                         rel="apple-touch-icon"
                         sizes="180x180"
-                        href={withPrefix("/favicons/apple-touch-icon.png")}
+                        href={withAssetPrefix("/favicons/apple-touch-icon.png")}
                     />
                     <link
                         rel="icon"
                         type="image/png"
                         sizes="32x32"
-                        href={withPrefix("/favicons/favicon-32x32.png")}
+                        href={withAssetPrefix("/favicons/favicon-32x32.png")}
                     />
                     <link
                         rel="icon"
                         type="image/png"
                         sizes="16x16"
-                        href={withPrefix("/favicons/favicon-16x16.png")}
+                        href={withAssetPrefix("/favicons/favicon-16x16.png")}
                     />
-                    <link rel="manifest" href={withPrefix("/favicons/site.webmanifest")} />
-                    <link rel="mask-icon" href={withPrefix("/favicons/safari-pinned-tab.svg")} color="#d76543" />
-                    <link rel="shortcut icon" href={withPrefix("/favicons/favicon.ico")} />
+                    <link rel="manifest" href={withAssetPrefix("/favicons/site.webmanifest")} />
+                    <link rel="mask-icon" href={withAssetPrefix("/favicons/safari-pinned-tab.svg")} color="#d76543" />
+                    <link rel="shortcut icon" href={withAssetPrefix("/favicons/favicon.ico")} />
                     <meta name="msapplication-TileColor" content="#603cba" />
-                    <meta name="msapplication-config" content={withPrefix("/favicons/browserconfig.xml")} />
+                    <meta name="msapplication-config" content={withAssetPrefix("/favicons/browserconfig.xml")} />
                     <meta name="theme-color" content="#ffffff" />
                 </Helmet>
 
