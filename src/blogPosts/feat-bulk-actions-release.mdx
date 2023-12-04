@@ -1,0 +1,97 @@
+---
+slug: "blog/bulk-actions"
+title: "Introducing Bulk Actions"
+description: "It is now possible to perform bulk actions in Webiny. Whether you're managing Headless CMS entries, pages, or assets, bulk actions can save you time and effort, making your content management process more efficient and your team more productive."
+tags: ["cms", "UX", "product news"]
+featureImage: "./assets/feat-bulk-actions/cover.png"
+author: monika
+date: 2023-12-03
+---
+
+In Webiny 5.38, we introduce a feature that significantly enhances your CMS experience  - the ability to perform Bulk Actions. Whether you're managing Headless CMS entries, pages, or assets, Bulk Actions **save you time and effort**, **making your content management process more efficient and your team more productive.** You can use them with Headless CMS, Page Builder and File Manager.
+
+## Bulk Actions for Headless CMS
+
+The following Bulk Actions are enabled out-of-the-box for Headless CMS. All you need to do is to select one or multiple entries and the bulk actions will appear at the top of the Advanced Content Organization (ACO) table.
+
+- **Publish Entries** - you can select multiple HCMS entries to publish in one go. Please note, when you select entries which are in different statuses (e.g. ***Draft, Unpublished*** and ***Published***) for publishing, if they are in ***Draft*** or ***Unpublished*** status, they will be published and if they are in ***Published*** status- remain published.
+    
+    In the end of the operation, you will get a log to confirm that all the actions were completed successfully or flag the errors, if there are any. This applies to all Bulk Actions operations.
+
+<video width="800px" height="auto" controls autoplay>
+  <source src="./assets/feat-bulk-actions/ba-intro.mp4" type="video/mp4" />
+</video>
+
+- **Unpublish Entries** - similarly when you unpublish entries with Bulk Actions, different statuses can managed together with this operation but it will not change the status of already ***Unpublishe*** or ***Draft*** entries.
+
+<video width="800px" height="auto" controls autoplay>
+  <source src="./assets/feat-bulk-actions/ba-unpublish-hcsm.mp4" type="video/mp4" />
+</video>
+
+- **Move Entries** - a group of entries can be easily moved to a different folder. 
+
+<video width="800px" height="auto" controls autoplay>
+  <source src="./assets/feat-bulk-actions/ba-move-hcms.mp4" type="video/mp4" />
+</video>
+
+- **Delete Entries** - please note the delete action is not reversible so use with care.
+
+<video width="800px" height="auto" controls autoplay>
+  <source src="./assets/feat-bulk-actions/ba-delete-hcms.mp4" type="video/mp4" />
+</video>
+
+We also offer developers the ability to customize the Bulk Actions available in the Headless CMS. Bulk actions can be added, replaced, or removed from the Entry list, to find out how, check out [this article](https://www.webiny.com/docs/headless-cms/extending/customize-entry-list-bulk-actions) on our documentation portal.
+
+## Bulk Actions for Page Builder
+The following bulk actions are enabled out-of-the-box to manage Pages:
+
+- **Export Pages**- you can easily create a zip file with your Pages to import into another folder or project, or just use as a back-up.
+
+<video width="800px" height="auto" controls autoplay>
+  <source src="./assets/feat-bulk-actions/ba-pb-export.mp4" type="video/mp4" />
+</video>
+
+- **Publish Pages** - when you select pages which are different in statuses for publishing - all of them will be published, if they are in ***Draft*** or ***Unpublished*** status, and they remain published, if they are already in ***Published*** status. Please note no re-publishing of the latter will take place. 
+
+<video width="800px" height="auto" controls autoplay>
+  <source src="./assets/feat-bulk-actions/ba-pb-publish.mp4" type="video/mp4" />
+</video>
+
+- **Unpublish Pages** - please note only ***Published*** pages will be unpublished, the ones in status ***Draft*** or ***Unpublished*** will remain the same.
+
+<video width="800px" height="auto" controls autoplay>
+  <source src="./assets/feat-bulk-actions/ba-pb-unpublish.mp4" type="video/mp4" />
+</video>
+
+- **Move Pages** - a group of Pages can be easily moved to a different folder. 
+
+<video width="800px" height="auto" controls autoplay>
+  <source src="./assets/feat-bulk-actions/ba-pb-move.mp4" type="video/mp4" />
+</video>
+
+- **Delete Pages** - please note the delete action is not reversible so use with care.
+
+<video width="800px" height="auto" controls autoplay>
+  <source src="./assets/feat-bulk-actions/ba-pb-delete.mp4" type="video/mp4" />
+</video>
+
+We also offer developers the ability to customize the Bulk Actions available in the Page Builder. Bulk actions can be added, replaced, or removed from the list, to find out how, check out [this article](https://www.webiny.com/docs/page-builder/extending/customize-page-bulk-actions) on our documentation portal.
+
+## Bulk Actions for File Manager
+In File Manager,  the following bulk actions are enabled out-of-the-box:
+
+- **Move** - a group of assets can be easily moved to a different folder.
+<video width="800px" height="auto" controls autoplay>
+  <source src="./assets/feat-bulk-actions/ba-fm-move.mp4" type="video/mp4" />
+</video>
+
+- **Delete** - please note the delete action is not reversible so use with care.
+
+<video width="800px" height="auto" controls autoplay>
+  <source src="./assets/feat-bulk-actions/ba-fm-delete.mp4" type="video/mp4" />
+</video>
+
+Similar to the other applications, File Manager offers customization for the existing actions and the ability to add new ones. Please refer to [this article](https://www.webiny.com/docs/file-manager/extending/customize-file-bulk-actions) for more details.
+
+We hope you find Bulk Actions useful. It is a simple feature, but a powerful one. If you have any interesting use cases or you have built your own Bulk Action, and you feel that the community will benefit from it, please share it with us on our [Slack channel](https://www.webiny.com/slack/). It would be great to see what you created with Webiny. Also if you have any other feedback or ideas for improvement, let us know. you can always use our [Idea Board](https://github.com/webiny/webiny-js/discussions/categories/ideas) to submit your improvement ideas.
+
