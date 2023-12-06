@@ -1,17 +1,16 @@
 import React, { Fragment, useContext, useState } from "react";
-import { navigate } from "gatsby-link";
-import Link from "../utils/link";
-import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
-import GitHubButton from "react-github-btn"
 
 import ContentContainer from "../ui/content-container";
 import Button from "../ui/button";
+import Link from "../utils/link";
 import { trackGoToGithub } from "../ui/functions";
+
+import GitHubButton from "react-github-btn"
+
 import { ModalContext } from "../ui/layout/video-modal";
 import NewsBanner from "../ui/news-banner";
-
 // assets
+
 import logoOrange from "./assets/webiny-logo-with-icon-left-orange.svg";
 import menuIconBlack from "./assets/burger-menu-icon.svg";
 import closeMenuIcon from "./assets/close-burger-menu.svg";
@@ -19,40 +18,37 @@ import RightArrowIcon from "./assets/arrow-orange.svg";
 import DownArrowIcon from "./assets/down-arrow-black.inline.svg";
 import MobileDownArrowIcon from "./assets/mobile-menu-icon.svg";
 import RightArrow from "./assets/arrow-right.svg";
-
 // data
 import { DROPDOWN_MENUS } from "./header-data";
-
 // styles
 import {
     MenuItem,
-    parentMenu,
-    horizontalLine,
-    verticalLine,
+    HorizontalLine,
+    VerticalLine,
     DropDown,
     HeaderContainer,
-    headerInnerContainer,
+    HeaderInnerContainer,
     NavBar,
     WebinyLogo,
     Card,
     DropDownTitle,
-    logoImage,
     Menu,
     MobileMenu,
     MenuItemMobile,
     MobileMenuIcon,
     MobileDownArrow,
-    MobileMenuBackground,
     downArrowClass,
+    MobileMenuBackground,
+    DownArrowElement,
     ProductDropdownItem,
-    ResourcesDropdownItem,
     ResourcesDropdownItemMobile,
     ProductDropdownItemMobile,
     FromTheBlogCOntainer,
-    itemsParent,
+    ItemsParent,
     TitleContainer,
-    mobileMenuList,
-    headerButton,
+    MobileMenuList,
+    HeaderButton,
+    Whitepaper
 } from "./header-styles";
 import { Helmet } from "react-helmet";
 
@@ -63,14 +59,14 @@ const handleClick = (item, playVideo) => {
     if (fullLink) {
         window.open(item.actionLink, "_blank", "noopener noreferrer");
     } else {
-        navigate("/" + item.actionLink);
+        window.location = "/" + item.actionLink;
     }
 };
 
 const MobileMenuItemList = () => {
     return (
         <React.Fragment>
-            <ul className={mobileMenuList}>
+            <MobileMenuList>
                 {DROPDOWN_MENUS.map(menu => (
                     <MenuItemMobile key={menu.id}>
                         <Link className="mobile-link" to={menu.link}>
@@ -78,9 +74,49 @@ const MobileMenuItemList = () => {
                         </Link>
                         {menu.hasOwnProperty("primarySection") && (
                             <React.Fragment>
-                                <MobileDownArrow src={MobileDownArrowIcon} alt="menu-arrow" />
                                 <div className="section--primary">
+                                    <h3>{menu.primarySection.title}</h3>
                                     {menu.primarySection.menuItems.map(menuItem => {
+                                        return (
+                                            <Link
+                                                key={menu.id+'-'+menuItem.id}
+                                                className={"link"}
+                                                rel="prerender"
+                                                to={menuItem.link}
+                                            >
+                                                <ProductDropdownItemMobile>
+                                                    <div className="image--container-mobile">
+                                                        {menuItem.isComingSoon && (
+                                                            <div className="coming--soon">
+                                                                coming soon
+                                                            </div>
+                                                        )}
+                                                        <img src={menuItem.image} alt="menu-icon" />
+                                                    </div>
+                                                    <div
+                                                        className={
+                                                            menuItem.isComingSoon
+                                                                ? "add-margin" +
+                                                                  " " +
+                                                                  "label-arrow-container"
+                                                                : "label-arrow-container"
+                                                        }
+                                                    >
+                                                        <span>{menuItem.label}</span>
+                                                        <img src={RightArrow} alt="right-arrow" />
+                                                    </div>
+                                                </ProductDropdownItemMobile>
+                                            </Link>
+                                        );
+                                    })}
+                                </div>
+                            </React.Fragment>
+                        )}
+                        {menu.hasOwnProperty("secondarySection") && (
+                            <React.Fragment>
+                                <div className="section--secondary">
+                                    <h3>{menu.secondarySection.title}</h3>
+                                    {menu.secondarySection.menuItems.map(menuItem => {
                                         return (
                                             <Link
                                                 key={menuItem.id}
@@ -118,8 +154,7 @@ const MobileMenuItemList = () => {
                         )}
                         {menu.hasOwnProperty("mainSection") && (
                             <React.Fragment>
-                                <MobileDownArrow src={MobileDownArrowIcon} alt="menu-arrow" />
-                                <div className={itemsParent}>
+                                <ItemsParent>
                                     {menu.mainSection.menuItems.map(menuItem => {
                                         if (typeof menuItem.renderItem === "function") {
                                             return menuItem.renderItem();
@@ -146,84 +181,140 @@ const MobileMenuItemList = () => {
                                             </Link>
                                         );
                                     })}
-                                </div>
+                                </ItemsParent>
                             </React.Fragment>
                         )}
                     </MenuItemMobile>
                 ))}
-            </ul>
-            <hr className={verticalLine} />
-            <Button link="/pricing" type={"primary"}>
-                TRY IT NOW FOR FREE
+            </MobileMenuList>
+            <VerticalLine />
+            <Button link="/forms/product-demo" type={"primary"}>
+                BOOK A CALL
             </Button>
         </React.Fragment>
     );
 };
 
 const MenuItemList = ({ cards, sticky = true }) => {
+    const [isMenuOpen, setIsMenuOpen] = useState(true);
     return (
         <React.Fragment>
             <ul className="menu--left">
                 {DROPDOWN_MENUS.map(menu => (
-                    <MenuItem key={menu.id} className={parentMenu}>
+                    <MenuItem key={menu.id} className={"parent-item "+(menu.hasOwnProperty("primarySection") ? 'has-child' : '')}>
                         <Link rel="prerender" to={menu.link}>
                             {menu.label}
                         </Link>
                         {menu.hasOwnProperty("primarySection") && (
                             <React.Fragment>
                                 <DownArrowIcon className={downArrowClass + " arrow-icon"} />
-                                <DropDown className={menu.className}>
-                                    <DropDownTitle>{menu.primarySection.title}</DropDownTitle>
-                                    <div className="section--primary">
-                                        {menu.primarySection.menuItems.map(menuItem => {
-                                            return (
-                                                <Link
-                                                    key={menuItem.id}
-                                                    className={"link"}
-                                                    rel="prerender"
-                                                    to={menuItem.link}
-                                                >
-                                                    <ProductDropdownItem>
-                                                        <div className="image--container">
-                                                            {menuItem.isComingSoon && (
-                                                                <div className="coming--soon">
-                                                                    coming soon
-                                                                </div>
-                                                            )}
-                                                            <img
-                                                                src={menuItem.image}
-                                                                alt="menu-icon"
-                                                            />
-                                                        </div>
-                                                        <div className="text--container">
-                                                            <div className="label-arrow-container">
-                                                                <span>{menuItem.label}</span>
+                                {/*<DownArrowElement src={DownArrowIcon} className={"arrow-icon"} width="24" height="24"/> */}
+                                
+                                <DropDown className={menu.className} style={{display: (isMenuOpen ? 'flex' : 'none' )}}>
+                                    
+                                    <div className={"section--primary"+ (menu.hasOwnProperty("secondarySection") && " has-secondary")}>
+                                        <DropDownTitle>{menu.primarySection.title}</DropDownTitle>
+                                        <div>
+                                            {menu.primarySection.menuItems.map(menuItem => {
+                                                return (
+                                                    <Link
+                                                        key={menuItem.id}
+                                                        className={"link"}
+                                                        rel="prerender"
+                                                        to={menuItem.link}
+                                                        onClick={() => {
+                                                            setIsMenuOpen(false);
+                                                            setTimeout(() => {
+                                                                setIsMenuOpen(true);
+                                                            }, 100);
+                                                        } }
+                                                    >
+                                                        <ProductDropdownItem>
+                                                            <div className="image--container">
+                                                                {menuItem.isComingSoon && (
+                                                                    <div className="coming--soon">
+                                                                        coming soon
+                                                                    </div>
+                                                                )}
                                                                 <img
-                                                                    src={RightArrow}
-                                                                    alt="right-arrow"
+                                                                    src={menuItem.image}
+                                                                    alt="menu-icon"
                                                                 />
                                                             </div>
-                                                            <span>{menuItem.text}</span>
-                                                        </div>
-                                                    </ProductDropdownItem>
-                                                </Link>
-                                            );
-                                        })}
+                                                            <div className="text--container">
+                                                                <div className="label-arrow-container">
+                                                                    <span>{menuItem.label}</span>
+                                                                    <img
+                                                                        src={RightArrow}
+                                                                        alt="right-arrow"
+                                                                    />
+                                                                </div>
+                                                                <span>{menuItem.text}</span>
+                                                            </div>
+                                                        </ProductDropdownItem>
+                                                    </Link>
+                                                );
+                                            })}
+                                        </div>
                                     </div>
+                                    {menu.hasOwnProperty("secondarySection") && (
+                                        <div className="section--secondary">
+                                            <DropDownTitle>{menu.secondarySection.title}</DropDownTitle>
+                                            <div>
+                                                {menu.secondarySection.menuItems.map(menuItem => {
+                                                    return (
+                                                        <Link
+                                                            key={menuItem.id}
+                                                            className={"link"}
+                                                            rel="prerender"
+                                                            to={menuItem.link}
+                                                            onClick={() => {
+                                                                setIsMenuOpen(false);
+                                                                setTimeout(() => {
+                                                                    setIsMenuOpen(true);
+                                                                }, 100);
+                                                            } }
+                                                        >
+                                                            <ProductDropdownItem>
+                                                                <div className="image--container">
+                                                                    {menuItem.isComingSoon && (
+                                                                        <div className="coming--soon">
+                                                                            coming soon
+                                                                        </div>
+                                                                    )}
+                                                                    <img
+                                                                        src={menuItem.image}
+                                                                        alt="menu-icon"
+                                                                    />
+                                                                </div>
+                                                                <div className="text--container">
+                                                                    <div className="label-arrow-container">
+                                                                        <span>{menuItem.label}</span>
+                                                                        <img
+                                                                            src={RightArrow}
+                                                                            alt="right-arrow"
+                                                                        />
+                                                                    </div>
+                                                                    <span>{menuItem.text}</span>
+                                                                </div>
+                                                            </ProductDropdownItem>
+                                                        </Link>
+                                                    );
+                                                })}
+                                            </div>
+                                        </div>
+                                    )}
                                 </DropDown>
                             </React.Fragment>
                         )}
+                        
                         {menu.hasOwnProperty("mainSection") && (
                             <React.Fragment>
                                 <DownArrowIcon className={downArrowClass + " arrow-icon"} />
+                                {/*<DownArrowElement className={"arrow-icon"} width="24" height="24"/> */}
                                 <DropDown className={menu.className}>
-                                    <div className="two-rows-background"></div>
-                                    <TitleContainer>
-                                        <DropDownTitle>{menu.mainSection.title}</DropDownTitle>
-                                        <DropDownTitle>{menu.secondarySection.title}</DropDownTitle>
-                                    </TitleContainer>
                                     <div className="section--secondary">
-                                        <div className={itemsParent}>
+                                        <ItemsParent>
                                             {menu.mainSection.menuItems.map(menuItem => {
                                                 if (typeof menuItem.renderItem === "function") {
                                                     return menuItem.renderItem();
@@ -235,57 +326,49 @@ const MenuItemList = ({ cards, sticky = true }) => {
                                                         className={"link"}
                                                         rel="prerender"
                                                         to={menuItem.link}
+                                                        onClick={() => {
+                                                            setIsMenuOpen(false);
+                                                            setTimeout(() => {
+                                                                setIsMenuOpen(true);
+                                                            }, 100);
+                                                        } }
                                                     >
-                                                        <ResourcesDropdownItem>
+                                                        <ProductDropdownItem>
                                                             <div className="image--container">
                                                                 <img
                                                                     src={menuItem.image}
                                                                     alt="menu-icon"
                                                                 />
                                                             </div>
-                                                            <div className="label--container">
-                                                                <span className="label">
-                                                                    {menuItem.label}
-                                                                </span>
-                                                                <img
-                                                                    src={RightArrow}
-                                                                    alt="right-arrow"
-                                                                />
+                                                            <div className="text--container">
+                                                                <div className="label-arrow-container">
+                                                                    <span className="label">
+                                                                        {menuItem.label}
+                                                                    </span>
+                                                                    <img
+                                                                        src={RightArrow}
+                                                                        alt="right-arrow"
+                                                                    />
+                                                                </div>
+                                                                <span>{menuItem.text}</span>
                                                             </div>
-                                                        </ResourcesDropdownItem>
+                                                        </ProductDropdownItem>
                                                     </Link>
                                                 );
                                             })}
-                                        </div>
-                                        <FromTheBlogCOntainer>
-                                            {cards.map(item => (
-                                                <Card
-                                                    key={item.id}
-                                                    onClick={() => handleClick(item)}
-                                                >
-                                                    <Img
-                                                        className="blog-image"
-                                                        fluid={item.imgSrc}
-                                                        alt={item.imgAlt}
-                                                    />
-                                                    <div className="blog-text-container">
-                                                        <span className="blog-title">
-                                                            {item.title}
-                                                        </span>
-                                                        <div className="arrow-container">
-                                                            <span className="blog-subtitle">
-                                                                {item.actionLabel}
-                                                            </span>
-                                                            <img
-                                                                src={RightArrowIcon}
-                                                                alt="right-arrow"
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                </Card>
-                                            ))}
-                                        </FromTheBlogCOntainer>
+                                        </ItemsParent>
+                                        
+                                        <Whitepaper>
+                                            <div>
+                                                <h5>WHITEPAPER</h5>
+                                                <h3>{menu.secondarySection.menuItems[0].label}</h3>
+                                                <a className="" href={menu.secondarySection.menuItems[0].link} title={menu.secondarySection.menuItems[0].label}>Read the Whitepaper <img src={RightArrow} alt="right-arrow" /></a>
+                                            </div>
+                                            <img src={menu.secondarySection.menuItems[0].image}/>
+                                        </Whitepaper>
+                                        
                                     </div>
+                                    
                                 </DropDown>
                             </React.Fragment>
                         )}
@@ -305,11 +388,11 @@ const MenuItemList = ({ cards, sticky = true }) => {
                         aria-label="Star webiny/webiny-js on GitHub"
                     />
                 </li>
-                <hr className={horizontalLine} />
+                <HorizontalLine />
                 <li>
-                    <Button className={headerButton} link="/pricing" type={sticky && "primary"}>
-                        TRY IT NOW FOR FREE
-                    </Button>
+                    <HeaderButton link="/forms/product-demo" type={sticky && "primary"}>
+                        BOOK A CALL
+                    </HeaderButton>
                 </li>
             </ul>
         </React.Fragment>
@@ -317,6 +400,7 @@ const MenuItemList = ({ cards, sticky = true }) => {
 };
 
 const Header = ({ hasBanner = true, sticky = false }) => {
+    /*
     const { latestBlockPosts } = useStaticQuery(graphql`
         query HeaderQuery {
             latestBlockPosts: allMdx(sort: {fields: frontmatter___date, order: DESC}, limit: 2, filter: {frontmatter: {type: {eq: "blog"}}}) {
@@ -348,6 +432,9 @@ const Header = ({ hasBanner = true, sticky = false }) => {
             actionLink: card.frontmatter.slug,
         };
     });
+    */
+
+    const resourcesCards = [];
 
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -384,35 +471,37 @@ const Header = ({ hasBanner = true, sticky = false }) => {
                 </Fragment>
             )}
             <HeaderContainer isSticky={true} hideBanner={false} hasBanner={hasBanner}>
-                <ContentContainer className={headerInnerContainer}>
-                    <NavBar className={mobileMenuOpen ? "mobile-opened" : "mobile-closed"}>
-                        <WebinyLogo alt="Webiny Home">
-                            <Link rel="prerender" to="/">
-                                <img alt="Webiny Logo" className={logoImage} src={logoOrange} />
-                            </Link>
-                        </WebinyLogo>
+                <ContentContainer>
+                    <HeaderInnerContainer>
+                        <NavBar className={mobileMenuOpen ? "mobile-opened" : "mobile-closed"}>
+                            <WebinyLogo alt="Webiny Home">
+                                <Link rel="prerender" to="/">
+                                    <img alt="Webiny Logo" src={logoOrange} />
+                                </Link>
+                            </WebinyLogo>
 
-                        <Menu>
-                            <MenuItemList
-                                cards={resourcesCards}
-                                handleVideoPlay={videoId => {
-                                    setModalOpen(true);
-                                    setVideoId(videoId);
-                                }}
+                            <Menu>
+                                <MenuItemList
+                                    cards={resourcesCards}
+                                    handleVideoPlay={videoId => {
+                                        setModalOpen(true);
+                                        setVideoId(videoId);
+                                    }}
+                                />
+                            </Menu>
+
+                            <MobileMenuIcon
+                                onClick={toggleMobileMenu}
+                                alt="Mobile Menu"
+                                src={mobileMenuOpen ? closeMenuIcon : menuIconBlack}
                             />
-                        </Menu>
-
-                        <MobileMenuIcon
-                            onClick={toggleMobileMenu}
-                            alt="Mobile Menu"
-                            src={mobileMenuOpen ? closeMenuIcon : menuIconBlack}
-                        />
-                        <MobileMenuBackground className={mobileMenuOpen ? "show-background" : ""}>
-                            <MobileMenu>
-                                <MobileMenuItemList />
-                            </MobileMenu>
-                        </MobileMenuBackground>
-                    </NavBar>
+                            <MobileMenuBackground className={mobileMenuOpen ? "show-background" : ""}>
+                                <MobileMenu>
+                                    <MobileMenuItemList />
+                                </MobileMenu>
+                            </MobileMenuBackground>
+                        </NavBar>
+                    </HeaderInnerContainer>
                 </ContentContainer>
             </HeaderContainer>
         </Fragment>
