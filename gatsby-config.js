@@ -6,10 +6,15 @@ module.exports = {
         siteUrl: `https://www.webiny.com`,
     },
     plugins: [
-        `gatsby-plugin-sitemap`,
         "gatsby-plugin-react-helmet",
         "gatsby-plugin-sharp",
         "gatsby-transformer-sharp",
+        {
+            resolve: `gatsby-plugin-sitemap`,
+            options: {
+               output: `/blog/sitemap.xml`,
+            }
+        },
         {
             resolve: "gatsby-plugin-google-fonts",
             options: {
