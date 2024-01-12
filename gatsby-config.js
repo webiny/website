@@ -3,11 +3,18 @@ module.exports = {
     assetPrefix: 'https://webiny.netlify.app',
     siteMetadata: {
         title: "Webiny",
+        siteUrl: `https://www.webiny.com`,
     },
     plugins: [
         "gatsby-plugin-react-helmet",
         "gatsby-plugin-sharp",
         "gatsby-transformer-sharp",
+        {
+            resolve: `gatsby-plugin-sitemap`,
+            options: {
+               output: `/blog/sitemap.xml`,
+            }
+        },
         {
             resolve: "gatsby-plugin-google-fonts",
             options: {

@@ -1,0 +1,15 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="18.7998" width="24.0001" height="1.2" rx="0.600002" fill="#FC8C69"/>
+<path d="M7.19995 3.59985H16.8V18.7999H7.19995V3.59985Z" fill="#FA5A28"/>
+<path d="M2.3999 10.3998L7.19992 7.99976V18.7998H2.3999V10.3998Z" fill="#FCAC93"/>
+<path d="M21.6001 10.3998L16.8001 7.99976V18.7998H21.6001V10.3998Z" fill="#FCAC93"/>
+<rect x="10.8" y="14" width="2.40001" height="4.80002" fill="#FEDED4"/>
+<rect x="3.6001" y="16.3999" width="2.40001" height="2.40001" fill="#FEDED4"/>
+<rect x="18" y="16.3999" width="2.40001" height="2.40001" fill="#FEDED4"/>
+<rect width="2.40001" height="1.2" transform="matrix(1 0 0 -1 3.6001 15.1997)" fill="#FEDED4"/>
+<rect width="2.40001" height="1.2" transform="matrix(1 0 0 -1 18 15.1997)" fill="#FEDED4"/>
+<rect width="2.40001" height="1.2" transform="matrix(1 0 0 -1 3.6001 12.7998)" fill="#FEDED4"/>
+<rect width="2.40001" height="1.2" transform="matrix(1 0 0 -1 18 12.7998)" fill="#FEDED4"/>
+<rect x="14.4001" y="10.3999" width="1.2" height="4.80002" transform="rotate(90 14.4001 10.3999)" fill="#FEDED4"/>
+<rect x="14.4001" y="7.99976" width="1.2" height="4.80002" transform="rotate(90 14.4001 7.99976)" fill="#FEDED4"/>
+</svg>

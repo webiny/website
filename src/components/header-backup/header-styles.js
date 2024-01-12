@@ -1,9 +1,8 @@
 import styled from "react-emotion";
 import { css } from "emotion";
 // Utils
-import Button from "../ui/button";
-import theme from "../utils/theme";
 import mq from "../utils/breakpoints";
+import theme from "../utils/theme";
 // assets
 import downArrowWhite from "./assets/down-arrow-white.svg";
 import { BANNER_HEIGHT } from "./banner";
@@ -11,12 +10,11 @@ import downArrowBlack from "./assets/down-arrow-black.svg";
 
 export const DROPDOWN_LINK_HEIGHT = 18;
 
-export const HeaderInnerContainer = styled('div')(
+export const headerInnerContainer = css(
     {
         maxWidth: 1200,
         width: "100%",
         boxSizing: "border-box",
-        //fontFamily: theme.fonts.
     },
     mq({
         width: ["100%", "100%"],
@@ -27,102 +25,15 @@ export const HeaderInnerContainer = styled('div')(
 export const WebinyLogo = styled("div")({
     padding: 0,
     lineHeight: "100%",
-}, mq({
-    img:{
+});
+
+export const logoImage = css(
+    mq({
         marginLeft: [20, 14, 0],
         height: [32, 32, 28],
         marginTop: [7],
-    }
-}),);
-
-export const ProductDropdownItem = styled("div")({
-    display: "flex",
-    marginBottom: 5,
-
-    "& .image--container": {
-        marginRight: "15px",
-        position: "relative",
-
-        "& .coming--soon": {
-            position: "absolute",
-            top: "-4px",
-            left: "3px",
-            width: "42px",
-            height: "10px",
-            background: "#00CCB0",
-            paddingLeft: "2px",
-            borderRadius: "2px",
-            fontWeight: "600",
-            fontSize: "7px",
-            lineHeight: "9px",
-            color: "#FFFFFF",
-        },
-    },
-
-    "& .label-arrow-container": {
-        display: "flex",
-        flexDirection: "row",
-
-        "& img": {
-            marginLeft: "10px",
-            paddingBottom: "0px",
-            transition: "margin 250ms",
-        },
-        "&:hover": {
-            "span:first-of-type": {
-                color: "#FA5A28",
-                whiteSpace: "nowrap",
-                overflow: "hidden",
-            },
-            "& img": {
-                marginLeft: "15px",
-                paddingBottom: "0px",
-            },
-        },
-    },
-
-    "& .text--container": {
-        display: "flex",
-        flexDirection: "column",
-        position: "relative",
-        whiteSpace: "nowrap",
-        overflow: "hidden",
-        justifyContent: "center",
-
-        "& span:first-of-type": {
-            marginBottom: "0px",
-            fontFamily: "Source Sans Pro",
-            fontWeight: "700",
-            fontSize: "16px",
-            lineHeight: "20px",
-            color: "#000E1A",
-        },
-
-        "& span:last-child": {
-            fontFamily: "Source Sans Pro",
-            fontWeight: "normal",
-            fontSize: "14px",
-            lineHeight: "18px",
-            letterSpacing: "-0.2px",
-            color: "#6A6E7C",
-        },
-
-        "& .label-arrow-container": {
-            display: "flex",
-            flexDirection: "row",
-        },
-    },
-});
-
-export const ItemsParent = styled('div')(
-    {
-        display: "grid",
-    },
-    mq({
-        rowGap: [5, 10],
     }),
 );
-
 
 export const Menu = styled("div")(
     {
@@ -139,13 +50,16 @@ export const Menu = styled("div")(
             justifyContent: "center",
         },
         "& .menu--left": {
-            "& li:first-of-type": {
+            "& li:first-child": {
                 marginLeft: "46px",
+            },
+            "& li:nth-child(3)": {
+                marginLeft: "15px",
             },
         },
         "& .menu--right": {
-            marginTop: -35,
-            "& li:first-of-type": {
+            marginTop: -20,
+            "& li:first-child": {
                 height: "24px",
             },
         },
@@ -161,21 +75,10 @@ export const Menu = styled("div")(
     }),
 );
 
-export const TitleContainer = styled("div")({
-    marginBottom: "18px",
-    zIndex: "1",
-    "& span:first-of-type":
-        ({},
-        mq({
-            marginRight: [102, 102, 154],
-        })),
-});
-
 export const DropDown = styled("div")(
     {
         backgroundColor: theme.color.white,
-        //flexDirection: "column",
-        flexDirection: "row",
+        flexDirection: "column",
         textAlign: "left",
         borderRadius: 4,
         visibility: "hidden",
@@ -190,18 +93,17 @@ export const DropDown = styled("div")(
             "& .section--primary": {
                 width: "100%",
                 position: "relative",
-            }
+            },
         },
-        "& .section--primary, & .section--secondary": {
+        "& .section--primary": {
             boxSizing: "border-box",
             width: "45%",
             height: "100%",
             padding: "0px",
-            display: "flex",
-            flexDirection: 'column',
+            display: "grid",
             columnGap: "39px",
             rowGap: "10px",
-            //gridTemplateColumns: "320px auto",
+            gridTemplateColumns: "320px auto",
 
             "& .spacer": {
                 height: DROPDOWN_LINK_HEIGHT,
@@ -211,42 +113,12 @@ export const DropDown = styled("div")(
                 borderLeft: "1px solid #E3E3E3",
                 paddingLeft: 26,
             },
-            '&.has-secondary':{
-                width: '50%'
-            }
         },
-        '&.one-row.developers':{
-            "& .section--primary, & .section--secondary": {
-                '&.has-secondary':{
-                    width: '90%'
-                }
-            }
-        },
-        '&.row-with-whitepaper':{
-            width: 700,
-            //padding: '0 30px 30px 30px',
-            '.section--secondary':{
-                marginTop: 0,
-                display: 'grid',
-                width: '100%',
-                
-            },
-            [ItemsParent]:{
-                width: '300px',
-            },
-            [TitleContainer]:{
-                position: 'absolute'
-            },
-            [ProductDropdownItem]:{
-                '.text--container':{
-                    overflow: 'visible',
-                    whiteSpace: 'normal',
-                }
-            }
-        },
-        'a:hover':{
-            textDecoration: 'none !important',
-        }
+        "& .section--secondary":
+            ({},
+            mq({
+                gridTemplateColumns: ["147px auto", "154px auto", "207px auto"],
+            })),
     },
     mq({
         position: ["relative", "absolute"],
@@ -255,32 +127,15 @@ export const DropDown = styled("div")(
         width: ["100%", "785px"],
         left: [0, -225],
         padding: ["20px 62px 27px 30px"],
-        top: [25, 34],
+        top: [25, 56],
         ".open": {
             display: "block",
         },
         "& .section--secondary": {
-            display: ["none", "flex"],
-            gridTemplateColumns: ["147px auto", "154px auto", "207px auto"],
-        },
-        '&.row-with-whitepaper':{
-            "& .section--secondary": {
-                display: ["none", "flex"],
-                flexDirection: 'row',
-                width: ["100%", "700px"],
-            },
+            display: ["none", "grid"],
         },
         "&.one-row": {
-            //width: ["100%", "740px"],
-            width: ["100%", "760px"],
-            '&.partners':{
-                width: ["100%", "450px"],
-            }
-        },
-        "&.one-line": {
-            width: ["100%", "250px"],
-            left: -26,
-            flexDirection: 'column'
+            width: ["100%", "740px"],
         },
         "&.two-rows": {
             width: ["550px", "580px", "646px"],
@@ -297,45 +152,6 @@ export const DropDown = styled("div")(
     }),
 );
 
-export const Whitepaper = styled('div')({
-    display: 'flex',
-    flexDirection: 'row-reverse',
-    columnGap: 25,
-    marginTop: -20,
-    marginBottom: -27,
-    marginRight: -62,
-    alignItems: 'center',
-    padding: 15,
-    backgroundColor: '#F6F4F8',
-    '> img':{
-        width: 150,
-        boxShadow: '2px 3px 15px rgba(100, 100, 100, 0.239216)',
-        borderRadius: 5
-    },
-    h3:{
-        fontSize: "1.5em",
-        fontWeight: 600,
-        margin: '10px 0'
-    },
-    'a':{
-        color: theme.color.primaryDark+' !important',
-        textTransform: 'uppercase',
-        display: "flex",
-        flexDirection: "row",
-
-        "& img": {
-            marginLeft: "10px",
-            paddingBottom: "1px",
-            transition: "margin 250ms",
-        },
-        '&:hover':{
-            "& img": {
-                marginLeft: "15px",
-            },
-        }
-    }
-});
-
 export const DropDownTitle = styled("span")({
     fontFamily: "Source Sans Pro",
     fontSize: "16px",
@@ -347,8 +163,8 @@ export const DropDownTitle = styled("span")({
     color: "#6A6E7C",
 });
 
-export const MobileMenuList = styled('ul')({
-    paddingLeft: "0",
+export const mobileMenuList = css({
+    paddingLeft: "14px",
 });
 
 export const MobileMenu = styled("div")(
@@ -368,9 +184,6 @@ export const MobileMenu = styled("div")(
 
         "& ul": {
             listStyle: "none",
-        },
-        "a":{
-            textDecoration: 'none'
         },
         [DropDown]: {
             transform: "translateY(0) translateX(0)",
@@ -410,9 +223,6 @@ export const NavBar = styled("div")(
         [MobileMenu]: {
             display: "none",
         },
-        'a:hover':{
-            textDecoration: 'none'
-        }
     },
     mq({
         flexDirection: ["column", "row"],
@@ -438,8 +248,7 @@ export const MenuItem = styled("li")(
         fontSize: 14,
         color: theme.color.black,
         // Make `Dropdown` visible
-        "&:hover, &:focus, &.opened": {
-            textDecoration: 'none',
+        "&:hover, &:focus": {
             [DropDown]: {
                 visibility: "visible",
                 display: "flex",
@@ -460,35 +269,12 @@ export const MenuItem = styled("li")(
 
             transition: "150ms color",
             "&:hover": {
-                textDecoration: 'none',
                 color: "#FA5A28",
-                '&:hover':{
-                    textDecoration: 'none'
-                }
             },
             "&:hover .arrow-icon path": {
                 fill: "#FA5A28",
             },
         },
-        '&.parent-item':{
-            paddingRight: 25,
-            marginRight: -5,
-            marginTop: "1px !important",
-            a: {
-                color: "inherit",
-                textDecoration: "none",
-            },
-            span: {
-                color: "inherit",
-                textDecoration: "none",
-            },
-            "&:hover": {
-                opacity: 1,
-            },
-            '&.has-child':{
-                marginRight: 20,
-            }
-        }
     },
     mq({
         marginLeft: [0, -4],
@@ -497,10 +283,6 @@ export const MenuItem = styled("li")(
         paddingBottom: [15, 15],
         paddingTop: [0, 15],
         borderBottom: ["1px solid " + theme.color.lightGray, "none"],
-        '&.parent-item':{
-            marginBottom: [15, 0],
-            paddingBottom: [15, 0],
-        }
     }),
 );
 
@@ -517,15 +299,30 @@ export const MenuItemMobile = styled("li")({
         color: "#000E1A",
         marginBottom: "16px",
     },
-    '>div':{
-        marginLeft: 20
-    },
-    h3:{
-        fontSize: '0.8em',
-        color: 'grey',
-        marginBottom: 10
-    }
 });
+
+export const parentMenu = css(
+    {
+        paddingRight: 25,
+        marginRight: -5,
+        marginTop: "-3px !important",
+        a: {
+            color: "inherit",
+            textDecoration: "none",
+        },
+        span: {
+            color: "inherit",
+            textDecoration: "none",
+        },
+        "&:hover": {
+            opacity: 1,
+        },
+    },
+    mq({
+        marginBottom: [15, 0],
+        paddingBottom: [15, 20],
+    }),
+);
 
 export const DownArrow = styled("div")(
     {
@@ -541,7 +338,7 @@ export const DownArrow = styled("div")(
     }),
 );
 
-export const DownArrowElement = styled('img')(
+export const downArrowClass = css(
     {
         position: "absolute",
         right: 0,
@@ -552,7 +349,7 @@ export const DownArrowElement = styled('img')(
         },
     },
     mq({
-        top: [-1, 12],
+        top: [-1, 14],
     }),
 );
 
@@ -584,6 +381,42 @@ export const HeaderContainer = styled("header")(
     }),
 );
 
+export const dropdownArrow = css`
+    position: absolute;
+    background: #fff;
+    border: 4px solid #fff;
+    top: 0;
+    left: 5%;
+    z-index: -1;
+
+    &:after,
+    &:before {
+        bottom: 100%;
+        left: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    &:after {
+        border-color: rgba(136, 183, 213, 0);
+        border-bottom-color: #fff;
+        border-width: 5px;
+        margin-left: -5px;
+    }
+
+    &:before {
+        border-color: rgba(194, 225, 245, 0);
+        border-bottom-color: #fff;
+        border-width: 11px;
+        margin-left: -11px;
+        left: 25px;
+    }
+`;
+
 export const MobileMenuIcon = styled("img")(
     {
         zIndex: 100,
@@ -599,6 +432,20 @@ export const MobileMenuIcon = styled("img")(
         top: [25, 15],
     }),
 );
+
+export const githubMenu = css(
+    {},
+    mq({
+        paddingTop: [5, 10],
+    }),
+);
+
+export const buttonOutlinePrimary = css({
+    backgroundColor: `${theme.color.white} !important`,
+    color: `${theme.color.primaryDark} !important`,
+    border: `solid 2px ${theme.color.primaryDark} !important`,
+    padding: "12px 20px !important",
+});
 
 export const Card = styled("div")({
     display: "flex",
@@ -646,24 +493,101 @@ export const Card = styled("div")({
     },
 });
 
-export const HorizontalLine = styled('hr')({
-    width: 1,
-    height: 38,
-    backgroundColor: '#e5e5e5',
-    border: 'none',
-    margin: '0 20px'
-});
+export const horizontalLine = css`
+    width: 1px;
+    height: 38px;
+    background-color: #e5e5e5;
+    border: none;
+    margin: 0 20px;
+`;
 
-export const VerticalLine = styled('hr')({
-    marginBottom: 20,
-    height: 1,
-    width: '100%',
-    background: '#e5e5e5',
-    border: 'none'
-});
+export const verticalLine = css`
+    margin-bottom: 20px;
+    height: 1px;
+    width: 100%;
+    background: #e5e5e5;
+    border: none;
+`;
 
-export const HeaderButton = styled(Button)({
-    padding: '9px 13px 10px !important'
+export const headerButton = css`
+    padding: 9px 13px 10px !important;
+`;
+
+export const ProductDropdownItem = styled("div")({
+    display: "flex",
+
+    "& .image--container": {
+        marginRight: "15px",
+        position: "relative",
+
+        "& .coming--soon": {
+            position: "absolute",
+            top: "-4px",
+            left: "3px",
+            width: "42px",
+            height: "10px",
+            background: "#00CCB0",
+            paddingLeft: "2px",
+            borderRadius: "2px",
+            fontWeight: "600",
+            fontSize: "7px",
+            lineHeight: "9px",
+            color: "#FFFFFF",
+        },
+    },
+
+    "& .label-arrow-container": {
+        display: "flex",
+        flexDirection: "row",
+
+        "& img": {
+            marginLeft: "10px",
+            paddingBottom: "5px",
+            transition: "margin 250ms",
+        },
+        "&:hover": {
+            "span:first-child": {
+                color: "#FA5A28",
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+            },
+            "& img": {
+                marginLeft: "15px",
+                paddingBottom: "5px",
+            },
+        },
+    },
+
+    "& .text--container": {
+        display: "flex",
+        flexDirection: "column",
+        position: "relative",
+        whiteSpace: "nowrap",
+        overflow: "hidden",
+
+        "& span:first-child": {
+            marginBottom: "7px",
+            fontFamily: "Source Sans Pro",
+            fontWeight: "700",
+            fontSize: "16px",
+            lineHeight: "20px",
+            color: "#000E1A",
+        },
+
+        "& span:last-child": {
+            fontFamily: "Source Sans Pro",
+            fontWeight: "normal",
+            fontSize: "14px",
+            lineHeight: "18px",
+            letterSpacing: "-0.2px",
+            color: "#6A6E7C",
+        },
+
+        "& .label-arrow-container": {
+            display: "flex",
+            flexDirection: "row",
+        },
+    },
 });
 
 export const ProductDropdownItemMobile = styled("div")({
@@ -719,7 +643,7 @@ export const ProductDropdownItemMobile = styled("div")({
         flexDirection: "column",
         position: "relative",
 
-        "& span:first-of-type": {
+        "& span:first-child": {
             marginBottom: "7px",
             fontFamily: "Source Sans Pro",
             fontWeight: "700",
@@ -728,7 +652,7 @@ export const ProductDropdownItemMobile = styled("div")({
             color: "#000E1A",
         },
 
-        "& span:last-of-type": {
+        "& span:last-child": {
             fontFamily: "Source Sans Pro",
             fontWeight: "normal",
             fontSize: "14px",
@@ -740,6 +664,53 @@ export const ProductDropdownItemMobile = styled("div")({
         "& .label-arrow-container": {
             display: "flex",
             flexDirection: "row",
+        },
+    },
+});
+
+export const itemsParent = css(
+    {
+        display: "grid",
+    },
+    mq({
+        rowGap: [5, 10],
+    }),
+);
+
+export const TitleContainer = styled("div")({
+    marginBottom: "18px",
+    zIndex: "1",
+    "& span:first-child":
+        ({},
+        mq({
+            marginRight: [102, 102, 154],
+        })),
+});
+
+export const ResourcesDropdownItem = styled("div")({
+    display: "flex",
+    "& .image--container": {
+        marginRight: "15px",
+    },
+    "& .label--container": {
+        "& .label": {
+            marginRight: "10px",
+            fontFamily: "Source Sans Pro",
+            fontWeight: "700",
+            fontSize: "16px",
+            lineHeight: "20px",
+            color: "#000E1A",
+        },
+        img: {
+            transition: "margin 250ms",
+        },
+        "&:hover": {
+            "& .label": {
+                color: "#FA5A28",
+            },
+            "& img": {
+                marginLeft: "5px",
+            },
         },
     },
 });
@@ -771,18 +742,3 @@ export const MobileDownArrow = styled("img")({
     left: "-15px",
     transform: "rotate(90deg)",
 });
-
-export const downArrowClass = css(
-    {
-        position: "absolute",
-        right: 0,
-        width: 24,
-        height: 24,
-        "& path": {
-            fill: theme.color.black,
-        },
-    },
-    mq({
-        top: [-1, 14],
-    }),
-);
