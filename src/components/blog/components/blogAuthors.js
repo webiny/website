@@ -244,6 +244,6 @@ export default {
         name: "Sachin M Mane",
         description: "Full-stack Developer",
         avatar: sachinmmaneImg,
-        twitter: ""
+        twitter: "WebinyCMS"
     },
 };
