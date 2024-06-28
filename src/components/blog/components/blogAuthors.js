@@ -33,6 +33,7 @@ import athImg from "../assets/ath-tripathi.png"
 import graceNjeriImg from "../assets/graceNjeriImg.png"
 import temidayoAzeezImg from "../assets/temidayo-azeez.png"
 import kevineNzapdiImg from "../assets/kevine-nzapdi.png"
+import sachinmmaneImg from "../assets/sachin-m-mane.png"
 
 export default {
     sven: {
@@ -238,5 +239,11 @@ export default {
         description: "Frontend Developer & Technical Writer",
         avatar: kevineNzapdiImg,
         twitter: "gunkev11oz"
+    },
+    sachinmmane: {
+        name: "Sachin M Mane",
+        description: "Full-stack Developer",
+        avatar: sachinmmaneImg,
+        twitter: "WebinyCMS"
     },
 };
