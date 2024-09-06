@@ -3,7 +3,7 @@ slug: "blog/building-notion-clone-nextjs-webiny-part-1"
 title: "Building a Notion Clone with Next.js and Webiny: Part 1"
 description: "In this tutorial, we will build a Notion clone with Next.js and Webiny. In this first article, we'll introduce the project and guide you through setting up the Webiny infrastructure."
 tags: ["Next.js", "build projects", "contributed articles"]
-featureImage: "./assets/building-notion-clone-nextjs-webiny-part-1/cover.png"
+featureImage: "./assets/building-notion-clone-nextjs-webiny/cover-part-1.png"
 author: sachinmmane
 date: 2024-06-24
 tech: ["Next.js"]
@@ -14,7 +14,7 @@ Welcome to the first part of our blog series where we’ll be building a Notion 
 In this first article, we'll introduce the project and walk you through the initial setup of Webiny infrastructure, mainly on how to set up a new User Pool in Webiny for Notion App users authentication. Learn more about setting up Webiny Infrastructure in the official documentation [here](https://www.webiny.com/docs/headless-cms/notes-app/webiny-infrastructure-setup).
 
 <video width="800px" height="auto" controls autoplay>
-  <source src="./assets/building-notion-clone-nextjs-webiny-part-1/notion-clone-demo.mp4" type="video/mp4" />
+  <source src="./assets/building-notion-clone-nextjs-webiny/notion-clone-demo.mp4" type="video/mp4" />
 </video>
 
 ## Prerequisites
@@ -344,7 +344,7 @@ Now, we will create a role for Notion App users and define the permissions for t
 
 Navigate to the Roles section under Access Management.
 
-![Access Management / Roles](./assets/building-notion-clone-nextjs-webiny-part-1/roles-creation-step-1.png)
+![Access Management / Roles](./assets/building-notion-clone-nextjs-webiny/roles-creation-step-1.png)
 
 **Step 1:** Enter the Role Name, Slug, Description, and set All locales or Specific locales permissions based on your use case.
 
@@ -353,11 +353,11 @@ Navigate to the Roles section under Access Management.
 Additionally, under the Permissions/Content section, select "**All locales**" (as shown in the image below). For this demo, we've chosen "All locales." However, for your app, you can opt to select specific locales if needed.
 
 
-![Role Details](./assets/building-notion-clone-nextjs-webiny-part-1/roles-creation-step-2.png)
+![Role Details](./assets/building-notion-clone-nextjs-webiny/roles-creation-step-2.png)
 
 **Step 2:** Set the custom access level for the Headless CMS. Grant Read access to the content model group and content model. For Content Entries, set the scope to `Only entries created by the user`. Refer to the screenshot below for details.
 
-![Headless CMS permissions](./assets/building-notion-clone-nextjs-webiny-part-1/roles-creation-step-3.png)
+![Headless CMS permissions](./assets/building-notion-clone-nextjs-webiny/roles-creation-step-3.png)
 
 
 ### Create Document Model to Store Notion Documents
