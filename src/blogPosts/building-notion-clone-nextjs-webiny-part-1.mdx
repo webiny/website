@@ -11,7 +11,7 @@ tech: ["Next.js"]
 
 Welcome to the first part of our blog series where we’ll be building a Notion clone using Next.js and Webiny. This series will guide you step-by-step through the process of creating a fully functional clone of Notion, the popular note-taking and collaboration application.
 
-In this first article, we'll introduce the project and walk you through the initial setup of Webiny infrastructure, mainly on how to set up a new User Pool in Webiny for Notion website users authentication.
+In this first article, we'll introduce the project and walk you through the initial setup of Webiny infrastructure, mainly on how to set up a new User Pool in Webiny for Notion App users authentication. Learn more about setting up Webiny Infrastructure in the official documentation [here](https://www.webiny.com/docs/headless-cms/notes-app/webiny-infrastructure-setup).
 
 <video width="800px" height="auto" controls autoplay>
   <source src="./assets/building-notion-clone-nextjs-webiny-part-1/notion-clone-demo.mp4" type="video/mp4" />
@@ -31,7 +31,7 @@ Webiny [headless CMS](https://www.webiny.com/enterprise-serverless-cms/headless-
 The first step is to create a new Webiny application using the command below:
 
 ```bash
-npx create-webiny-project my-new-project
+npx create-webiny-project notion-clone-backend
 ```
 
 Upon executing the command, you will be prompted to choose an AWS region and the database for your project deployment. We will be using **DynamoDB.**
@@ -39,7 +39,7 @@ Upon executing the command, you will be prompted to choose an AWS region and the
 Once the project has been created, open and deploy it with the command below:
 
 ```bash
-cd my-new-project && yarn webiny deploy
+cd notion-clone-backend && yarn webiny deploy
 ```
 
 This deploy command downloads the necessary dependencies and automatically deploys the application to your AWS account with a list of URLs for the admin panel, website, and GraphQL. More details on [Webiny installation can be found here](https://www.webiny.com/docs/get-started/install-webiny).
@@ -48,15 +48,23 @@ This deploy command downloads the necessary dependencies and automatically deplo
 
 This section focuses on creating the necessary infrastructure on the Webiny side and enabling authentication for the Notion users.
 
-### Notion Website User Pool and User Pool Client
+### Notion App User Pool and User Pool Client
 
-The first step is to set up an AWS Cognito User Pool and User Pool Client specifically for Notion website users. All the users who will sign up from our Notion app will be created in this User Pool.
+The first step is to set up an AWS Cognito User Pool and User Pool Client specifically for Notion App users. All users who sign up through our Notion App (React App) will be created in this User Pool.
 
-1. Create a `pulumi/src` directory in the `webiny-project-home/packages` directory.
-2. Create `configureWebsiteCognitoUserPool.ts` and `applyWebsiteEnvVariables.ts` files in `packages/pulumi/src`.
+1. To get started, we first scaffold a new workspace extension in the `/extensions/notionApp` folder, via the following command:
 
-#### configureWebsiteCognitoUserPool.ts
+```bash
+yarn webiny scaffold workspace \
+--name notionApp \
+--dependencies @webiny/api-headless-cms
+```
 
+This command will create `notionApp` extensions in `<webiny-project-home>/extensions/` location.
+
+2. In the `extensions/notionApp/src` directory, create the `configureNotionAppCognitoUserPool.ts` and `applyNotionAppEnvVariables.ts` files.
+
+**configureNotionAppCognitoUserPool.ts**
 ```tsx
 import * as aws from "@pulumi/aws";
 import * as pulumi from "@pulumi/pulumi";
@@ -68,15 +76,16 @@ const protectResource = (app: CorePulumiApp) => {
 };
 
 export type CustomCoreOutput = {
-    websiteUserPoolId: string;
-    websiteUserPoolRegion: string;
-    websiteUserPoolClient: string;
-    websiteUserPoolArn: string;
+    notionAppUserPoolId: string;
+    notionAppUserPoolRegion: string;
+    notionAppUserPoolClient: string;
+    notionAppUserPoolArn: string;
 };
 
-export const configureWebsiteCognitoUserPool = (app: CorePulumiApp) => {
+export const configureNotionAppCognitoUserPool = (app: CorePulumiApp) => {
+
     const userPool = app.addResource(aws.cognito.UserPool, {
-        name: "notion-website-users",
+        name: "notion-app-users",
         config: {
             schemas: [
                 {
@@ -125,7 +134,7 @@ export const configureWebsiteCognitoUserPool = (app: CorePulumiApp) => {
                 },
                 {
                     attributeDataType: "String",
-                    name: "wby_website_group",
+                    name: "wby_notion_app_group",
                     required: false,
                     developerOnlyAttribute: false,
                     mutable: true,
@@ -150,7 +159,7 @@ export const configureWebsiteCognitoUserPool = (app: CorePulumiApp) => {
     });
 
     const userPoolClient = app.addResource(aws.cognito.UserPoolClient, {
-        name: "website",
+        name: "notion-app",
         config: {
             userPoolId: userPool.output.id,
             explicitAuthFlows: [
@@ -158,26 +167,28 @@ export const configureWebsiteCognitoUserPool = (app: CorePulumiApp) => {
                 "ALLOW_CUSTOM_AUTH",
                 "ALLOW_REFRESH_TOKEN_AUTH"
             ],
+
             supportedIdentityProviders: ["COGNITO"]
         }
     });
 
     app.addOutputs({
-        websiteUserPoolId: userPool.output.id,
-        websiteUserPoolRegion: String(process.env.AWS_REGION),
-        websiteUserPoolArn: userPool.output.arn,
-        websiteUserPoolClient: userPoolClient.output.id
+        notionAppUserPoolId: userPool.output.id,
+        notionAppUserPoolRegion: String(process.env.AWS_REGION),
+        notionAppUserPoolArn: userPool.output.arn,
+        notionAppUserPoolClient: userPoolClient.output.id
     });
 };
 ```
 
-#### applyWebsiteEnvVariables.ts
 
-```tsx
+**applyNotionAppEnvVariables**
+``` tsx applyNotionAppEnvVariables.ts
+
 import { ApiPulumiApp } from "@webiny/pulumi-aws";
 import { getStackOutput } from "@webiny/cli-plugin-deploy-pulumi/utils";
 
-export const applyWebsiteEnvVariables = (app: ApiPulumiApp) => {
+export const applyNotionAppEnvVariables = (app: ApiPulumiApp) => {
     const core = getStackOutput({
         folder: "apps/core",
         env: app.params.run["env"]
@@ -188,11 +199,11 @@ export const applyWebsiteEnvVariables = (app: ApiPulumiApp) => {
     }
 
     app.setCommonLambdaEnvVariables({
-        WEBSITE_COGNITO_REGION: core["websiteUserPoolRegion"],
-        WEBSITE_COGNITO_USER_POOL_ID: core["websiteUserPoolId"]
+        NOTION_APP_COGNITO_REGION: core["notionAppUserPoolRegion"],
+        NOTION_APP_COGNITO_USER_POOL_ID: core["notionAppUserPoolId"]
     });
 
-    // Add permission to GraphQL Lambda policy to interact with the Notion Website User Pool
+    // Add permission to GraphQL Lambda policy to interact with the Notion App User Pool
     app.resources.graphql.policy.config.policy(policy => {
         if (typeof policy === "string") {
             return policy;
@@ -203,84 +214,71 @@ export const applyWebsiteEnvVariables = (app: ApiPulumiApp) => {
             Statement: [
                 ...policy.Statement,
                 {
-                    Sid: "PermissionForWebsiteCognitoUserPool",
+                    Sid: "PermissionForNotionAppCognitoUserPool",
                     Effect: "Allow",
                     Action: "cognito-idp:*",
-                    Resource: `${core["websiteUserPoolArn"]}`
+                    Resource: `${core["notionAppUserPoolArn"]}`
                 }
             ]
         };
     });
 };
+
 ```
 
-3. Create the `packages/pulumi/src/index.ts` file and export `configureWebsiteCognitoUserPool` and `applyWebsiteEnvVariables`.
+3. Now export the `configureNotionAppCognitoUserPool` and `applyNotionAppEnvVariables` modules.
+Add the following content in the `extensions/notionApp/src/index.ts` file.
 
-```tsx
-export * from "./configureWebsiteCognitoUserPool";
-export * from "./applyWebsiteEnvVariables";
+``` tsx index.ts
+export * from "./configureNotionAppCognitoUserPool";
+export * from "./applyNotionAppEnvVariables";
 ```
 
-4. Create the `packages/pulumi/tsconfig.json` file.
+4. In the core app configuration, add the Cognito User Pool for Notion App users by updating the `apps/core/webiny.application.ts` file with the following changes.
 
-```json
-{
-  "extends": "../../tsconfig",
-  "include": ["."],
-  "compilerOptions": {
-    "composite": false
-  }
-}
-```
-
-5. Run the `yarn` command from the Webiny project home.
-6. In the core app configuration, add the Cognito User Pool for Notion website users. Update the `apps/core/webiny.application.ts` file with the following changes.
-
-``` tsx
+```diff apps/core/webiny.application.ts
 import { createCoreApp } from "@webiny/serverless-cms-aws";
-+ import { configureWebsiteCognitoUserPool } from "@plugins/pulumi"
++ import { configureNotionAppCognitoUserPool } from "notion-app"
 
 export default createCoreApp({
 -    pulumiResourceNamePrefix: "wby-"
 +    pulumiResourceNamePrefix: "wby-",
 +    pulumi(app) {
-+        configureWebsiteCognitoUserPool(app);
++        configureNotionAppCognitoUserPool(app);
 +    }
 });
 
 ```
 
-7. Add environment variables related to the website's Cognito User Pool to the Webiny API application. Update the `apps/api/webiny.application.ts` file with the following changes.
+7. Add environment variables related to the Notion App's Cognito User Pool to the Webiny API application by updating the `apps/api/webiny.application.ts` file with the following changes.
 
-``` tsx
+```diff apps/api/webiny.application.ts
 import { createApiApp } from "@webiny/serverless-cms-aws";
-+ import { applyWebsiteEnvVariables } from "@plugins/pulumi";
++ import { applyNotionAppEnvVariables } from "notion-app";
 
 export default createApiApp({
 -    pulumiResourceNamePrefix: "wby-",
 +    pulumiResourceNamePrefix: "wby-",
 +    pulumi(app) {
-+        applyWebsiteEnvVariables(app);
++        applyNotionAppEnvVariables(app);
 +    }
 });
 ```
 
-### Add Cognito Authenticator for Notion Website Users
+### Add Cognito Authenticator for Notion App Users
 
-Add the Cognito Authenticator for Notion Website
+Add the Cognito Authenticator for Notion App users. This authenticator will be responsible for authenticating and authorizing the Notion App users. Add the following Cognito Authenticator to the `apps/api/graphql/src/security.ts` file.
 
- users. This Authenticator will be responsible for authenticating and authorizing the Notion website users. Add the following Cognito Authenticator in the `apps/api/graphql/src/security.ts` file.
-
-```tsx apps/api/graphql/src/security.ts
+```diff apps/api/graphql/src/security.ts
     cognitoAuthentication({
         region: String(process.env.COGNITO_REGION),
         userPoolId: String(process.env.COGNITO_USER_POOL_ID),
         identityType: "admin"
     }),
 +    cognitoAuthentication({
-+        region: String(process.env.WEBSITE_COGNITO_REGION),
-+        userPoolId: String(process.env.WEBSITE_COGNITO_USER_POOL_ID),
-+        identityType: "notion-website-users",
++        region: String(process.env.NOTION_APP_COGNITO_REGION),
++        userPoolId: String(process.env.NOTION_APP_COGNITO_USER_POOL_ID),
++        identityType: "notion-app-users",
 +        getIdentity({ token, identityType}) {
 +            return {
 +                id: token.sub,
@@ -289,56 +287,101 @@ Add the Cognito Authenticator for Notion Website
 +               email: token.email,
 +               firstName: token.given_name,
 +               lastName: token.family_name,
-+               group: token["custom:wby_website_group"]
++               group: token["custom:wby_notion_app_group"]
 +           }
 +       }
 +   }),
 
 ```
 
-### Deploy the Core and API Application
+### Add Types for Environment Variables
 
-As the next step, we will deploy the Core and API application. This will create the necessary infrastructure and enable the Cognito authenticator for Notion website users that we created earlier.
+Since we have used `process.env.NOTION_APP_COGNITO_REGION` and `process.env.NOTION_APP_COGNITO_USER_POOL_ID` in
+the `security.ts` file above, let's add these types to the `types/env/index.d.ts` file.
+This file is located at `<project-root>/types/env/index.d.ts`.
 
-Please run the following commands to deploy the Core and API app in the development environment. If you are deploying it in another environment, replace "dev" with the appropriate environment in the command.
+```diff types/env/index.d.ts
+        COGNITO_USER_POOL_ID?: string;
+        COGNITO_REGION?: string;
++       NOTION_APP_COGNITO_REGION?: string;
++       NOTION_APP_COGNITO_USER_POOL_ID?: string;
+```
+
+### Deploy the Core and API Applications
+
+The next step is to deploy the Core and API applications. This will create the necessary infrastructure and enable the Cognito authenticator for Notion App users that we created earlier.
+
+Please run the following commands to deploy the Core and API applications in the development environment. If you are deploying to another environment, replace "dev" with the appropriate environment in the command.
 
 ```bash
 yarn webiny deploy apps/core --env dev
 yarn webiny deploy apps/api --env dev
 ```
 
-<Alert type="info">
+---
+
 After deployment, you will receive the following values as output:
-- websiteUserPoolId
-- websiteUserPoolRegion
-- websiteUserPoolArn
-- websiteUserPoolClient
+- `notionAppUserPoolId`
+- `notionAppUserPoolRegion`
+- `notionAppUserPoolArn`
+- `notionAppUserPoolClient`
 
-Please save these values somewhere, as we will need them when we create the React App.
-</Alert>
+Please save these values, as they will be needed when creating the React App.
 
-<Alert type="success">
+If you lost these values, don't worry. You can also retrieve them from the `your-webiny-project-root/.pulumi/apps/core/.pulumi/stacks/core/dev.json` file within your Webiny project.
 
-With the <ExternalLink href="https://www.webiny.com/docs/core-development-concepts/basics/watch-command">webiny watch</ExternalLink> command up and running, the performed application code changes will be automatically rebuilt and redeployed into the cloud.
-</Alert>
+Since we've deployed the `dev` environment for the demo, we're seeing the `dev.json` file. If you've deployed your project in a different environment, you'll find a file named after your environment, such as `your-env-name.json` stack file .
 
-### Create Role for Notion Website Users
+---
 
-Now we will create a Role for Notion Website users. Under this role, we will define the users' permissions for our case. In our scenario, the user can read, write, and delete only the content entries created by them.
+With the [`webiny watch`](/docs/{version}/core-development-concepts/basics/watch-command) command running, any changes to the application code will be automatically rebuilt and redeployed to the cloud.
+
+---
+
+### Create Role for Notion App Users
+
+Now, we will create a role for Notion App users and define the permissions for this role. In our scenario, users can read, write, and delete only the content entries they have created.
 
 Navigate to the Roles section under Access Management.
 
 ![Access Management / Roles](./assets/building-notion-clone-nextjs-webiny-part-1/roles-creation-step-1.png)
 
-**Step 1:** Enter the Role Name, Slug, Description, and set All locales or Specific locales permissions based on your use case. 
+**Step 1:** Enter the Role Name, Slug, Description, and set All locales or Specific locales permissions based on your use case.
 
-Please note that the `slug` is important and should be the same as the one we defined in the Cognito Authenticator for Notion website users above. For our use case, the `slug` should be `notion-website-users`.
+**Please note that the `slug` is important and should match the one we defined in the Cognito Authenticator for Notion App Users. For our use case, the `slug` should be `notion-app-users`.**
+
+Additionally, under the Permissions/Content section, select "**All locales**" (as shown in the image below). For this demo, we've chosen "All locales." However, for your app, you can opt to select specific locales if needed.
+
 
 ![Role Details](./assets/building-notion-clone-nextjs-webiny-part-1/roles-creation-step-2.png)
 
-**Step 2:** Set the Custom access level for Headless CMS. Set Read access to the content model group and content model. For Content Entries, set the scope to `Only entries created by the user`. Please refer to the screenshot below for details.
+**Step 2:** Set the custom access level for the Headless CMS. Grant Read access to the content model group and content model. For Content Entries, set the scope to `Only entries created by the user`. Refer to the screenshot below for details.
 
 ![Headless CMS permissions](./assets/building-notion-clone-nextjs-webiny-part-1/roles-creation-step-3.png)
+
+
+### Create Document Model to Store Notion Documents
+
+As the final step on the Webiny side, we'll create a Document Content Model to store Notion documents that will be created by users. If you're new to creating models in Webiny, refer to the [Create Content Model](webiny.com/docs/user-guides/headless-cms/essentials/create-content-model) user guide.
+
+We'll set up a Document content model with the following fields:
+
+---
+
+| Field       | Field Type |
+| :---------- | :--------- |
+| Title        | Text       |
+| Content | Long text  |
+| parentDocument | Reference (will refer to the Document model itself) |
+| coverImage | File |
+| icon | File |
+
+
+---
+
+**Step 1**: Create the Document Model.
+
+**Step 2**: Add mentioned Fields above to the Document Model.
 
 ### Conclusion & Next Step!
 
