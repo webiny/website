@@ -1,0 +1,318 @@
+---
+slug: "blog/building-notion-clone-nextjs-webiny-part-3"
+title: "Building a Notion Clone with Next.js and Webiny: Part 3 - Sign Up & Login with Amplify UI "
+description: "In this tutorial, we will implement the Sign Up and Login functionality using Amplify UI."
+tags: ["Next.js", "build projects", "contributed articles"]
+featureImage: "./assets/building-notion-clone-nextjs-webiny/part-3/cover-part-3.png"
+author: sachinmmane
+date: 2024-08-06
+tech: ["Next.js"]
+---
+
+Our [Next.js application](https://www.webiny.com/blog/building-notion-clone-nextjs-webiny-part-2) is ready, so now we can proceed to implement the Sign Up and Login functionality using Amplify UI.
+
+<video width="800px" height="auto" controls autoplay>
+    <source src="./assets/building-notion-clone-nextjs-webiny/part-3/wotion-amplify.mp4" type="video/mp4" />
+</video>
+
+### Install Required Dependencies
+
+First, let's install the following packages:
+
+```jsx
+npm install @aws-amplify/ui-react aws-amplify @apollo/client
+```
+
+### Amplify Configuration
+
+Configure Amplify with your AWS account details.
+
+Create an `aws-config.js` file in the root directory of your project with the following configuration, replacing the placeholders with your actual AWS settings.
+
+
+💡 You can find these configuration values in [the first tutorial](https://www.webiny.com/blog/building-notion-clone-nextjs-webiny-part-1#deploy-the-core-and-api-applications) where we set up the Webiny infrastructure.
+
+
+```jsx
+const config = {
+    "aws_project_region": "us-east-1",
+    "aws_cognito_region": "us-east-1",
+    "aws_user_pools_id": "us-east-1_XXXXXXX",
+    "aws_user_pools_web_client_id": "XXXXXXXXXXXXXXXXXXXXX",
+};
+
+export default config;
+```
+
+Create an `auth` directory within the root `components` directory.
+
+Inside the `auth` directory, create a file named `Auth.tsx`.
+
+```jsx
+"use client";
+
+import { Amplify } from "aws-amplify";
+import config from "@/aws-config";
+import "@aws-amplify/ui-react/styles.css";
+import { Authenticator } from "@aws-amplify/ui-react";
+import React from "react";
+
+Amplify.configure(config);
+
+const Auth = ({ children }: { children: React.ReactNode }) => {
+    return <Authenticator.Provider>{children}</Authenticator.Provider>;
+};
+
+export default Auth;
+```
+
+Now, create another file named `AuthClient.tsx` in the same `auth` directory.
+
+```jsx
+"use client";
+
+import { Authenticator } from "@aws-amplify/ui-react";
+import { useAuthenticator } from "@aws-amplify/ui-react";
+import { signUp } from "@aws-amplify/auth";
+import React, { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
+import { Button } from "@/components/ui/button";
+const AuthClient = ({ children }: { children: React.ReactNode }) => {
+    const formFields = {
+        signUp: {
+            given_name: {
+                placeholder: "Enter your first name",
+                isRequired: true,
+                label: "First Name",
+            },
+            family_name: {
+                placeholder: "Enter your last name",
+                isRequired: true,
+                label: "Last Name",
+            },
+        },
+    };
+    const signUpAttributes: any = ["email", "given_name", "family_name"];
+    const router = useRouter();
+    const { authStatus } = useAuthenticator((context) => [context.authStatus]);
+
+    useEffect(() => {
+        if (authStatus === "authenticated") {
+            router.push("/");
+        }
+    }, [authStatus, router]);
+
+    return (
+        <div className="flex min-h-screen items-center justify-center">
+            {authStatus !== "authenticated" ? (
+                <Authenticator
+                    className="flex flex-col items-center justify-start"
+                    formFields={formFields}
+                    signUpAttributes={signUpAttributes}
+                    /* Passing the addition wby_website_group attribute to the signUp method
+                     * We use this attribute to assign the user to the website-users group
+                     * The website-users group has the necessary permissions to access the website in Webiny side
+                     */
+                    services={{
+                        async handleSignUp(formData) {
+                            const { options, username, password } = formData;
+                            if (options) {
+                                options.userAttributes["custom:wby_website_group"] =
+                                    "website-users";
+                            }
+                            const res = await signUp({
+                                username,
+                                password,
+                                options,
+                            });
+                            return res;
+                        },
+                    }}
+                >
+                    {({ signOut, user }) => (
+                        <main>
+                            <div>
+                                <div>Welcome, {user?.username}</div>
+                                <Button onClick={signOut} variant="outline">
+                                    Sign out
+                                </Button>
+                            </div>
+                        </main>
+                    )}
+                </Authenticator>
+            ) : (
+                <div>{children}</div>
+            )}
+        </div>
+    );
+};
+
+export default AuthClient;
+```
+
+Create the `app/(auth)/signin` directories within the `app` folder.
+
+Then, create a `page.tsx` file inside the `(auth)/signin` directory. The file should look something like this:
+
+```bash
+app
+-- (auth)
+   -- signin
+      page.tsx
+```
+
+`page.tsx` file:
+
+```bash
+import AuthClient from "@/components/auth/AuthClient";
+import React from "react";
+
+const SignIn = () => {
+  return <AuthClient />;
+};
+
+export default SignIn;
+```
+
+---
+
+Create a `page.tsx` file in the `app/(auth)/signin` folder.
+
+```jsx
+import AuthClient from "@/components/auth/AuthClient";
+import React from "react";
+
+const SignIn = () => {
+    return <AuthClient> </AuthClient>;
+};
+
+export default SignIn;
+```
+
+Now that our signin route is ready, let's update our home marketing page by adding a route in the heading.
+
+But before doing that, let's create a spinner to display on the sign-in button.
+
+Create a `spinner.tsx` file in the `components` directory of your project.
+
+### `spinner.tsx` file
+
+```bash
+import { Loader } from "lucide-react";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
+
+const spinnerVariants = cva("text-muted-foreground animate-spin", {
+  variants: {
+    size: {
+      default: "h-4 w-4",
+      sm: "h-2 w-2",
+      lg: "h-6 w-6",
+      icon: "h-10 w-10",
+    },
+  },
+  defaultVariants: {
+    size: "default",
+  },
+});
+
+interface SpinnerProps extends VariantProps<typeof spinnerVariants> {}
+
+export const Spinner = ({ size }: SpinnerProps) => {
+  return <Loader className={cn(spinnerVariants({ size }))} />;
+};
+```
+
+Update the `app/(marketing)/_components/heading.tsx` file with the following content:
+
+```bash
+"use client";
+
+import { useAuthenticator } from "@aws-amplify/ui-react";
+import Link from "next/link";
+
+import { ArrowRight } from "lucide-react";
+
+import { Spinner } from "@/components/spinner";
+import { Button } from "@/components/ui/button";
+export const Heading = () => {
+  const { authStatus } = useAuthenticator((context) => [context.authStatus]);
+  return (
+    <div className="max-w-3xl space-y-4">
+      <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold">
+        Welcome to <span className="underline">Wotion</span>{" "}
+      </h1>
+      <h3 className="text-base sm:text-xl md:text-2xl">
+        Wotion is the the connected workspace where <br />
+        better and faster work gets dones
+      </h3>
+      {authStatus == "configuring" && (
+        <div className="w-full flex items-center justify-center">
+          <Spinner size="lg" />
+        </div>
+      )}
+      {authStatus != "configuring" && authStatus === "authenticated" && (
+        <Button asChild>
+          <Link href="/documents">
+            Enter Wotion
+            <ArrowRight className="h-4 w-4 ml-2" />
+          </Link>
+        </Button>
+      )}
+      {authStatus != "configuring" && authStatus === "unauthenticated" && (
+        <Button asChild>
+          <Link href="/signin">
+            Get Wotion Free
+            <ArrowRight className="h-4 w-4 ml-2" />
+          </Link>
+        </Button>
+      )}
+    </div>
+  );
+};
+```
+
+Now, let's add the Auth provider to the `app/layout.tsx` file.
+
+```bash
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import Auth from "@/components/auth/Auth";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Wotion",
+  description:
+      "The connected workspace where better and faster work gets done."
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>
+      <Auth>
+        {children}
+      </Auth>
+      </body>
+    </html>
+  );
+}
+
+```
+
+Here, we imported `Auth` from `@/components/auth/Auth` and wrapped `{children}` with the `Auth` component.
+
+Run the app with `npm run dev`.
+
+Once you click on **Get Wotion Free**, you'll be redirected to the Sign In/Sign Up page, where you can create an account and sign in.
+
+<video width="800px" height="auto" controls autoplay>
+    <source src="./assets/building-notion-clone-nextjs-webiny/part-3/wotion-amplify.mp4" type="video/mp4" />
+</video>
