@@ -1,0 +1,81 @@
+---
+slug: "blog/webiny-v5.42.0-new-release"
+title: "Introducing Our Latest Release: Version 5.42.0"
+description: "We’re excited to announce Webiny 5.42.0, packed with new features and improvements to enhance your experience! This release brings even more powerful content management capabilities, enhanced developer tools, and critical performance upgrades."
+tags: ["cms", "enterprise", "new release", "updates"]
+featureImage: "./assets/webiny-v5.42.0-release/webiny-v5.42.0-release-cover.png"
+author: monika
+date: 2025-01-20
+featured: false
+---
+
+## ❄️ Webiny 5.42 ❄️
+We’re excited to announce **Webiny 5.42.0**, packed with new features and improvements to enhance your experience! This release brings even more powerful content management capabilities, enhanced developer tools, and critical performance upgrades.
+
+![intro-release-5.42.png](./assets/webiny-v5.42.0-release/intro-release-5.42.png)
+
+#### HEADLESS CMS
+
+✅ **Fully Delete a Content Model and All Entries**
+
+Now, you can completely remove a content model along with all of its entries and folders. This ensures a clean but also irreversible deletion process, preventing outdated or unused models from cluttering your CMS. Use this feature with caution, as deleted entries cannot be restored.
+
+✅ **Full-Screen Editor for Content Entries**
+
+We’ve introduced a full-screen editor for a more immersive content creation experience! This new interface enhances usability, especially on smaller screens, while aligning the design with our Page Builder editor for a consistent workflow. If needed, you can revert to the previous editor using the cmsLegacyEntryEditor: true feature flag.
+
+#### DEVELOPMENT
+
+✅** Yarn 4.6.0 Upgrade**
+
+We’ve upgraded to Yarn 4.6.0, ensuring compatibility with the latest features and improvements. For a seamless transition, check out our upgrade guide.
+
+✅ **New Logger for System Monitoring**
+
+Webiny now includes an internal Logger that records errors and other critical system information in a DynamoDB log table. While this feature is mainly for internal use, developers can leverage it for additional monitoring needs.
+
+✅ **Updated Dependencies**
+
+We’ve updated several dependencies to improve stability and performance. The upgrade process will notify you if any of your project’s packages are out of sync and provide an option to align them with Webiny’s latest versions.
+
+✅ **Removed apps/api/graphql/src/types.ts (New Projects Only)**
+
+New Webiny projects will no longer include the types.ts file. Instead, the Context interface can be imported directly from the @webiny/api-serverless-cms package, ensuring a more streamlined and type-safe development experience.
+
+✅ **MailerContext Added to the Context Interface**
+
+Developers can now access the mailer object in a type-safe way when writing backend extensions, enabling seamless email integration.
+
+#### DEPLOYMENTS
+
+✅ **Default Throttling Limits for Amazon API Gateway**
+
+To prevent excessive request failures, we’ve introduced default throttling limits:
+
+🔹 Burst limit: 5000 (maximum concurrent requests)
+
+🔹 Rate limit: 10,000 (requests per second)
+
+You can customize these limits in your webiny.application.ts configuration if required.
+
+🚨 This release does NOT introduce any major breaking changes, but if you are upgrading from an older version, be sure to check our upgrade guide.
+
+For the full details, refer to the 5.42.0 [change log](https://www.webiny.com/docs/release-notes/5.42.0/changelog).
+
+## The Community 🤍 
+
+### Latest Tutorials from Our Blog
+This month, we’ve pulled together some awesome blog posts for you, with a focus on helping our users learn more about how they can get the best value from Webiny.
+
+As we continue to welcome new authors to our Writing with Webiny program, if you're interested in contributing and becoming part of it, you can explore further details [here](https://www.webiny.com/docs/write-with-webiny/write-with-webiny?utm_source=Newsletter&utm_medium=monthly-newsletter&utm_campaign=Regular-content&utm_content=quarter-in-review-february&utm_term=W00908). We're eager to engage with you, so feel free to leave a comment [here](https://www.webiny.com/slack?utm_source=Newsletter&utm_medium=monthly-newsletter&utm_campaign=Regular-content&utm_content=quarter-in-review-february&utm_term=W00909) or send a direct message to Swapnil M Mane.
+
+#### 🧬 Headless CMS - Conditional Rendering by Pavel Denisjuk
+Learn how to programmatically control fields, validators, and field renderers: How to customize every field in the content entry form, validation logic, field visibility, field renderers in this [article](https://www.webiny.com/docs/headless-cms/extending/conditional-rendering?utm_source=Newsletter&utm_medium=monthly-newsletter&utm_campaign=Regular-content&utm_content=quarter-in-review-february&utm_term=W00910).
+
+#### 🤖 Smart SEO - OpenAI in Webiny by Swapnil M Mane
+Learn how to integrate OpenAI with Webiny to build a Smart SEO tool for Headless CMS in this [tutorial](https://www.webiny.com/docs/headless-cms/ai/smart-seo-open-ai?utm_source=Newsletter&utm_medium=monthly-newsletter&utm_campaign=Regular-content&utm_content=quarter-in-review-february&utm_term=W00911). This tool automatically generates SEO titles, descriptions, and tags for your articles.
+
+Stay tuned and let us know what you think about our [roadmap](https://github.com/orgs/webiny/projects/5/views/7). We are available on [our Slack channel](https://www.webiny.com/slack/).
+
+
+
