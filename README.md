@@ -46,6 +46,8 @@ This repository contains the source code for the official [Webiny Blog](https://
    yarn develop
    ```
 
+6. **Access the Blog**
+   Open your browser and go to [http://localhost:8000/blog/](http://localhost:8000/blog/) to view the blog posts.
 ---
 
 ## 🗂 Project Structure
