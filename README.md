@@ -1,54 +1,62 @@
-# Webiny Website 📝
+# Webiny Blog Source Code 📝
 
-The official [www.webiny.com](https://www.webiny.com) website source code.
+This repository contains the source code for the official [Webiny Blog](https://www.webiny.com/blog/).
 
-## Repository setup
+> _Note:_ Previously, the [www.webiny.com](https://www.webiny.com) website also used this repository.  
+> It is now powered by the [Webiny Page Builder](https://www.webiny.com/enterprise-serverless-cms/page-builder).
 
-Webiny uses [Gatsby](https://www.gatsbyjs.com/) for its website. Here is how you can run the project locally:
+---
 
-1. Install Gatsby CLI globally
+## 🚀 Quick Start
 
-   ```sh
-   npm install --global gatsby-cli
-   ```
+### ✅ Prerequisites
 
-2. Clone this repository
+- **Node.js**: v16  
+- **Yarn**: v3+
 
-   ```sh
+### ⚙️ Setup Instructions
+
+1. **Clone the Repository**
+
+   ```bash
    git clone https://github.com/webiny/website.git
    ```
 
-3. Go into the project root directory
+2. **Navigate to the Project**
 
-   ```sh
+   ```bash
    cd website
    ```
 
-4. Install JS dependencies
+3. **Install Dependencies**
 
-   ```sh
+   ```bash
    yarn
    ```
 
-5. Build the project
+4. **Build the Project**
 
-   ```sh
+   ```bash
    yarn build
    ```
 
-6. Start the dev server
+5. **Start the Development Server**
 
-   ```sh
+   ```bash
    yarn develop
    ```
 
-## Project structure
+---
 
-All the blogs are inside the [`src/blogPosts`](https://github.com/webiny/website/tree/master/src/blogPosts) folder. And you can manage main menu items from the [`src/components/header/header-data.js`](https://github.com/webiny/website/blob/master/src/components/header/header-data.js) file.
+## 🗂 Project Structure
 
-## Contributors
+All blog posts are located in the [`src/blogPosts`](https://github.com/webiny/website/tree/master/src/blogPosts) directory.
 
-### 🧡 Thanks goes to these wonderful people!
+---
+
+## 👥 Contributors
+
+### 🧡 A big thanks to these amazing people:
 
 <a href="https://github.com/webiny/website/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=webiny/website" />
